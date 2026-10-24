@@ -14,7 +14,7 @@ import time
 from ...play import latest, standing
 from ..llm import LLMAgent
 from . import writer
-from .policy import Negotiator
+from .policy import Negotiator, flags_off
 
 log = logging.getLogger("arena")
 
@@ -38,6 +38,10 @@ class ProcuDealAgent:
             if move.get("action"):
                 decision = {"supplier_id": move["supplier_id"], "message": {"action": move["action"]}}
                 why = {"why": move["why"]}
+            elif move.get("note"):  # no term sheet: its standing offer stays
+                message = writer.note_email(case, threads[move["supplier_id"]], move)
+                decision = {"supplier_id": move["supplier_id"], "message": message}
+                why = move["why"]
             else:
                 side = self.negotiator.sides[move["supplier_id"]]
                 message = writer.offer_email(case, threads[move["supplier_id"]], move, side)
@@ -67,5 +71,7 @@ class ProcuDealAgent:
             "source": source,
             **why,
         }
+        if not self.trace:  # every run file shows which v1.7 features were switched off
+            entry["features_off"] = flags_off()
         self.trace.append(entry)
         log.info("decision %s", entry)

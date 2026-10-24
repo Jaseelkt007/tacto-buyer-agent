@@ -144,3 +144,110 @@ never done.
 **Result v1.6c:** P05 0.685 → **0.716** (1 hosted session; the other cases have one supplier, so the
 auction cannot act there). Auction: 70250 agreed at EUR 29.61 → call 1: 70210 agreed at EUR 28.94 →
 call 2: 70250 answered "Our agreed offer stands" → accepted EUR 28.94. No supplier walked. D02 0.482.
+
+## v1.7: one lever per round, one sheet, and robustness for the final (ready for hosted test)
+**Why:** set against a stronger buyer on the same ten hosted cases, our gap (mean 0.725 vs 0.783) is
+almost entirely **unit price at similar terms**: same winning supplier, same term mix, higher price.
+The negotiation paths show general patterns in how arena suppliers react (their replies are
+templated arena-wide), each seen in two or more cases:
+- a bare price step gets "hold" or an early `final_offer`; a **new argument** each round keeps them
+  moving (repeating a claim kind comes back `duplicate`);
+- a **menu** of packages lets the supplier pick the one cheapest for it and price our asks in;
+- accepting an *open* offer within 0.5 % of ours leaves money while arguments are unused;
+- suppliers say a longer commitment "allows a more competitive base price", and a 36-month contract
+  costs us nothing in C when the horizon is 2 years;
+- a supplier that asserts a volatile cost driver ("CU-NOTATION rose 47.7 % in twelve months and is
+  20 % of our cost") is met better with an index clause on that driver than with a deep fixed-price
+  ask (which in P02 made it quote *above* its opening, then `final_offer`);
+- "we need to clarify this internally - we will come back to you on price" is followed by
+  `agreed` at our price when we hold; raising our offer meanwhile only costs us.
+
+Our own runs added two facts: an ID counts once per **case**, so in P05 the second and third bidder
+answered `duplicate` to the same index claim (24 times), and in P07 index claims for different parts
+shared IDs (21 `duplicate`).
+
+Every behavioural change sits behind a feature flag (`policy.FEATURES`), so a hosted pass can be
+ablated without code edits: `PROCUDEAL_OFF="single_sheet,patience"`. Bug fixes are not flagged.
+
+**Bug fixes (always on):**
+1. The data month for index-claim recency was hard-coded (`2026-09`); it is now the latest month in
+   the data (SQLite `index_values` and any `idx:` ID the package or the Sunday release exposes).
+2. One odd line in a quote PDF lost *all* standard terms (`docs.standard_terms` raised, we fell back
+   to `{}`). Our own reader parses line by line with the kit's labels, skips only the bad line, and
+   treats an unknown Incoterm as the costliest (an unknown one also crashed `total_cost`).
+3. A restarted runner resumes final sessions, but the engine started from scratch (re-opening at the
+   anchor). It now rebuilds each side from the thread: our prices, its prices, the claims used.
+4. A late send (409) still marked its claims used and its price as offered. When the thread's latest
+   message is the arena's timeout answer, the price, claims, trade and any auction call of that move
+   are rolled back.
+5. The dossier's `capacity_full` and `wants_work` signals were computed and never used; they now
+   feed the anchor, the patience budget (F) and the supplier value (H). "Order intake" no longer
+   counts as looking for work (the data says "Order intake is very strong" of full suppliers), and a
+   full supplier is never "looking for work".
+6. RFQ keepalive (flag `keepalive`): a ready leader can wait past its 60-second clock while the other
+   bidders are played. A ready thread whose sheet we could accept gets a sheetless note after 35 s,
+   or sooner when the slowest reply so far would make it late (at most 3 per thread). A sheet that
+   was agreed or final keeps that status after such a reply when its terms are unchanged (every
+   reply carries a new offer ID, so the terms are compared, not the ID).
+7. "no Preisgleitklausel" in an opening quote was read as a clause ask. Negations no longer count.
+8. A change of our term mix (re-plan, adopted alternative or clause) now recomputes its price
+   ceiling and health price; both stayed at their setup values.
+9. A supplier at `final_offer` never gets another priced sheet, also when every thread is ready
+   and none passes the accept check (a fallback could pick it before).
+10. Setup is all or nothing: a failure on one supplier no longer leaves a partial state that made
+   every later move fall back to the kit LLM. ID lookups share the SQLite lock.
+
+**Changes (each behind its flag):**
+
+| Flag | Change | Rule |
+|---|---|---|
+| `strict_accept` | C | the "within 0.5 % of our offer" close only applies when no fresh lever is left or ≤ 2 moves remain; agreed, final_offer, the last move and a counter at or below our offer still close; while levers are played our price never steps back below our last offer |
+| `single_sheet` | B | one main sheet per message (no equal-cost menus, no leader-terms sheet), plus at most one need-trade sheet: one field changed for an ask or signal, priced at equal value to the supplier, sent only when it costs us > EUR 1 less and keeps the must-haves, never the same trade twice |
+| `lever_schedule` | A | up to 3 claims of different kinds in the first message, then exactly one new kind per round; a kind never repeats (rival offers: one per new offer *price*); a kind that comes back contradicted or irrelevant is dropped for the case; an ID once per case. Two new levers: order history (`po:` lines of this part) and a figure-free call or meeting note (`doc:`) |
+| `friendly_ties` | E | among term mixes within max(EUR 1, 0.1 % of C) of the cheapest: longest contract, then highest volume up to our need, then longest lead time within our need; then C to the euro and fewest changes to its own terms (the v1.6b rule) |
+| `silence` | G | after "clarify internally / come back to you on price": resend our last main sheet unchanged, one line of thanks, no claims (once in a row) |
+| `proactive_clause` | D | the supplier asserts a driver that has a clause option and it is not hedged: the clause with the widest deadband on that series joins our main mix when its protection value to the supplier exceeds its cost to us and it keeps the must-haves; **not in stabilise / secure_supply** (below); when the supplier demands a clause, we adopt its option and negotiate the base price |
+| `patience` | F | a budget for our concessions: a share of the opening gap (its first price on our mix less our first offer), normal 1.0, stabilise / secure_supply 0.3, capacity full 0.16, near cost 0.14; each step at most half of what is left. Persona anchor floors (capacity full ≥ 0.93, near cost ≥ 0.97 of its price on our mix; wants work −0.02) |
+| `rich_value` | H | supplier value with its scorecard ppm, overtime for a faster delivery (0.5 %/day if capacity is full, else 0.1 %/day), a small plus for volume when it wants work, and a cost of money implied by its cash discount (skonto) |
+
+The thresholds in F and H come from practice evidence; they are round numbers, not fitted to one
+case. Rules branch on signals and data only, never on case or supplier IDs.
+
+**D is off in strategic cases.** In stabilise / secure_supply our price is held at the supplier's
+health price (the relationship charge counts cash, not security). There the clause's protection
+buys us no lower price, while its index risk is a sure cost: in P02 about EUR 18k, 38 % of the
+case's score range. The gain seen elsewhere in P02 needs a lower full-cost estimate than our
+own-plant floor (EUR 374.95 against a quote of EUR 370.96); that is a separate decision. In the
+hosted practice set D therefore does not fire (P08/P18: the 5.9 % rise of AS-14404 is below the
+clause's cost to us); it is untested on live bots.
+
+**Review (fresh eyes, full diff):** an independent review replayed the 100 recorded runs offline
+with all flags on and all off: no crash, no fallback, no invalid sheet, no accept off the standing
+sheet. With every flag off, 514 of 528 recorded decisions are identical to v1.6c; the 14 others are
+bug fix 7. Its findings are fixed above (clause vs must-haves, keepalive status after a new offer
+ID, "order intake", keepalive only for acceptable sheets, rollback of an auction call, the RFQ rival
+re-offer at the same price counting as a fresh lever, the step-back below our offer against a
+clause-converted price).
+
+**Free tests:** 41 engine unit tests; simulator S01-S03: 3 deals, 0 fallbacks (flags off: identical
+to v1.6c); sandbox, one run each:
+
+| run | D01 | D02 |
+|---|---|---|
+| v1.6c | 0.883 | 0.482 |
+| **v1.7 (all flags on)** | **0.902** | **0.534** |
+| v1.7, all flags off | 0.883 | 0.482 |
+| v1.7 -friendly_ties | 0.902 | 0.524 |
+| v1.7 -single_sheet | 0.920 | 0.534 |
+| v1.7 -patience | 0.883 | 0.534 |
+| v1.7 -strict_accept | 0.902 | 0.534 |
+| v1.7 -rich_value | 0.902 | 0.492 |
+
+(The single-flag runs ran while two small fixes landed - the patience budget is now set after our
+first offer, and D is off in strategic cases; neither acts on D01/D02's path.) The demo suppliers
+have no data in the package, so A (levers) is not exercised there. **Watch in the hosted pass:**
+`single_sheet` (the menu won on D01), `patience` in the strategic cases P01 / P02 / P03 / P10, and the
+RFQ P05 (keepalive and strict_accept with three bidders).
+
+**Hosted test (10 sessions, run by the team):** acceptance = mean > 71.4 and no case more than 0.05
+below its v1.6b/c score; otherwise ablate by flag.

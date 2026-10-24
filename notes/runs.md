@@ -96,3 +96,23 @@ One row per benchmark run (`scripts/bench.py`). Newest at the bottom.
 | 10-24 17:19 | case:P18 | procudeal | f358cfe | True | 0.520 | 295,173 | 257,459 | 222,651 | 4 | 2 | [replay](https://arena.tacto.ai/replay/dd10aaa45ba1e186) | engine v1.6b |
 | 10-24 17:33 | case:D02 | procudeal | f358cfe-dirty | True | 0.482 | 214,296 | 186,560 | 156,739 | 11 | 19 | [replay](https://arena.tacto.ai/replay/02fc0d9c0e19c284) | engine v1.6c |
 | 10-24 17:33 | case:P05 | procudeal | f358cfe-dirty | True | 0.716 | 305,545 | 246,710 | 223,424 | 8 | 56 | [replay](https://arena.tacto.ai/replay/2e2636cb98a78a1f) | engine v1.6c |
+| 10-24 19:01 | case:D01 | procudeal | 5cab21a-dirty | True | 0.869 | 448,811 | 413,877 | 408,624 | 7 | 106 | [replay](https://arena.tacto.ai/replay/66928532c4648d0d) | engine v1.7 |
+| 10-24 19:04 | case:D02 | procudeal | 5cab21a-dirty | True | 0.503 | 214,296 | 185,352 | 156,739 | 11 | 298 | [replay](https://arena.tacto.ai/replay/bfd23aa496e9c569) | engine v1.7 |
+| 10-24 19:06 | case:D01 | procudeal | 5cab21a-dirty | True | 0.902 | 448,811 | 412,552 | 408,624 | 7 | 53 | [replay](https://arena.tacto.ai/replay/916132859df94dc2) | engine v1.7 |
+| 10-24 19:08 | case:D02 | procudeal | 5cab21a-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 174 | [replay](https://arena.tacto.ai/replay/edbe24a7ee8271a6) | engine v1.7 |
+| 10-24 19:08 | case:D01 | procudeal | 5cab21a-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 2 | [replay](https://arena.tacto.ai/replay/620fea18faa2642c) | engine v1.7 flags-off |
+| 10-24 19:08 | case:D02 | procudeal | 5cab21a-dirty | True | 0.482 | 214,296 | 186,560 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/4fd913e5a251feb9) | engine v1.7 flags-off |
+| 10-24 19:08 | case:D01 | procudeal | 5cab21a-dirty | True | 0.902 | 448,811 | 412,552 | 408,624 | 7 | 2 | [replay](https://arena.tacto.ai/replay/50f2cc1808927e07) | v1.7 -friendly_ties |
+| 10-24 19:13 | case:D02 | procudeal | 5cab21a-dirty | True | 0.524 | 214,296 | 184,144 | 156,739 | 11 | 267 | [replay](https://arena.tacto.ai/replay/ec3b332c44b50419) | v1.7 -friendly_ties |
+| 10-24 19:13 | case:D01 | procudeal | 5cab21a-dirty | True | 0.920 | 448,811 | 411,832 | 408,624 | 6 | 47 | [replay](https://arena.tacto.ai/replay/c9b52789597b8cbc) | v1.7 -single_sheet |
+| 10-24 19:17 | case:D02 | procudeal | 5cab21a-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 255 | [replay](https://arena.tacto.ai/replay/34cace092666931c) | v1.7 -single_sheet |
+| 10-24 19:18 | case:D01 | procudeal | 5cab21a-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 40 | [replay](https://arena.tacto.ai/replay/c0f3a0bf29678252) | v1.7 -patience |
+| 10-24 19:17 | case:D02 | procudeal | 5cab21a-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 2 | [replay](https://arena.tacto.ai/replay/395166d644701378) | v1.7 -patience |
+| 10-24 19:18 | case:D01 | procudeal | 5cab21a-dirty | True | 0.902 | 448,811 | 412,552 | 408,624 | 7 | 2 | [replay](https://arena.tacto.ai/replay/a8a2eece069e89cb) | v1.7 -strict_accept |
+| 10-24 19:18 | case:D02 | procudeal | 5cab21a-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 4 | [replay](https://arena.tacto.ai/replay/b3292beb7ab9fe93) | v1.7 -strict_accept |
+| 10-24 19:18 | case:D01 | procudeal | 5cab21a-dirty | True | 0.902 | 448,811 | 412,552 | 408,624 | 7 | 2 | [replay](https://arena.tacto.ai/replay/9d391dd108e38c0a) | v1.7 -rich_value |
+| 10-24 19:20 | case:D02 | procudeal | 5cab21a-dirty | True | 0.492 | 214,296 | 186,005 | 156,739 | 11 | 151 | [replay](https://arena.tacto.ai/replay/e9707b3ace757426) | v1.7 -rich_value |
+| 10-24 19:38 | case:D01 | procudeal | 5cab21a-dirty | True | 0.902 | 448,811 | 412,552 | 408,624 | 7 | 2 | [replay](https://arena.tacto.ai/replay/f79ec5163e5d6dc2) | engine v1.7 |
+| 10-24 19:38 | case:D02 | procudeal | 5cab21a-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/676a56fb8854e903) | engine v1.7 |
+| 10-24 19:38 | case:D01 | procudeal | 5cab21a-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 2 | [replay](https://arena.tacto.ai/replay/e304e721847d362d) | engine v1.7 flags-off |
+| 10-24 19:38 | case:D02 | procudeal | 5cab21a-dirty | True | 0.482 | 214,296 | 186,560 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/b128a7f29bf0541d) | engine v1.7 flags-off |

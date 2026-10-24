@@ -4,15 +4,44 @@ Built on the kit's published cost function (`arena_kit.cost`). A "supplier estim
 `supplier_value` and `relationship_cost` take: {"standard", "interest_rate", "full_cost", ...}.
 Without an estimate the relationship charge (stabilise / secure_supply) is left out, so pass one
 whenever the dossier has it.
+
+v1.7: an estimate may also carry `"extras": fn(terms, deal) -> EUR per unit` - what one sheet costs
+or brings the supplier beyond the kit's items (overtime for a faster delivery, idle capacity a
+larger volume fills; with `deal`, also the protection an index clause on its asserted driver gives
+it). `cost` and `value` resolve it per sheet. The arena's relationship charge counts cash only, so
+`cost` never includes the clause protection.
 """
 
 import itertools
 import math
 
-from ...cost import RELATIONSHIP_GOALS, complete_offer, must_haves_ok, supplier_value, total_cost
+from ...cost import RELATIONSHIP_GOALS, closing_terms, complete_offer, must_haves_ok, supplier_value, total_cost
 
 GOLDEN = (math.sqrt(5) - 1) / 2
 MAX_COMBOS = 2000
+TIE_EUR, TIE_SHARE = 1.0, 0.001  # friendly tie-break: mixes within max(EUR 1, 0.1 % of C) of the cheapest
+
+
+def _for_sheet(case, supplier, terms, deal):
+    """The kit's estimate for one sheet: our per-sheet extras resolved into its `extra`."""
+    if not supplier or not callable(supplier.get("extras")):
+        return supplier
+    std = {**supplier.get("standard", {}), **case.get("fixed_terms", {})}
+    t = closing_terms(case, terms, std)
+    out = {k: v for k, v in supplier.items() if k != "extras"}
+    out["extra"] = supplier.get("extra", 0.0) + (supplier["extras"](t, deal) if t.get("unit_price") is not None else 0)
+    return out
+
+
+def cost(case, terms, standard=None, supplier=None):
+    """C (`total_cost`) with the supplier's per-sheet cash extras in its relationship estimate."""
+    return total_cost(case, terms, standard, _for_sheet(case, supplier, terms, deal=False))
+
+
+def value(case, terms, supplier, deal=True):
+    """What the sheet is worth to the supplier per unit (`supplier_value`) with its per-sheet extras;
+    `deal`: with the clause protection too (how it judges an offer, not what the arena charges)."""
+    return supplier_value(case, terms, _for_sheet(case, supplier, terms, deal))
 
 
 def alternative_cost(case):
@@ -40,7 +69,7 @@ def opening_cost(case, quotes):
 
 
 def cost_at(case, terms, price, standard=None, supplier=None):
-    return total_cost(case, {**terms, "unit_price": price}, standard, supplier)
+    return cost(case, {**terms, "unit_price": price}, standard, supplier)
 
 
 def accept_check(case, terms, standard=None, supplier=None, c_open=math.inf):
@@ -50,7 +79,7 @@ def accept_check(case, terms, standard=None, supplier=None, c_open=math.inf):
         return False, "no price on the sheet"
     if not must_haves_ok(case, terms, standard):
         return False, "breaks a must-have"
-    c, limit = total_cost(case, terms, standard, supplier), walk_away_limit(case, c_open)
+    c, limit = cost(case, terms, standard, supplier), walk_away_limit(case, c_open)
     if c >= limit:
         return False, f"C {c:,.0f} does not beat the limit {limit:,.0f}"
     return True, f"C {c:,.0f} below the limit {limit:,.0f}"
@@ -93,36 +122,55 @@ def price_ceiling(case, terms, limit_c, standard=None, supplier=None, tol=0.005)
     return math.floor(lo * 100) / 100
 
 
-def price_for_value(case, terms, supplier, value):
-    """The unit price at which `terms` are worth `value` per unit to the supplier (its cash value at
-    its standard terms). `supplier_value` is linear in the price, so two points solve it."""
-    v0 = supplier_value(case, {**terms, "unit_price": 0.0}, supplier)
-    v1 = supplier_value(case, {**terms, "unit_price": 1.0}, supplier)
+def price_for_value(case, terms, supplier, target):
+    """The unit price at which `terms` are worth `target` per unit to the supplier (its cash value at
+    its standard terms). The value is linear in the price (extras are shares of it), so two points
+    solve it."""
+    v0 = value(case, {**terms, "unit_price": 0.0}, supplier)
+    v1 = value(case, {**terms, "unit_price": 1.0}, supplier)
     if v1 == v0:
         return None
-    return (value - v0) / (v1 - v0)
+    return (target - v0) / (v1 - v0)
 
 
-def term_mixes(case, base):
-    """Every allowed mix of the negotiable non-price fields (from `term_options`), on top of `base`."""
-    fields = [f for f in case["negotiable"] if f != "unit_price" and case.get("term_options", {}).get(f)]
-    options = [case["term_options"][f] for f in fields]
-    for combo in itertools.islice(itertools.product(*options), MAX_COMBOS):
+def term_mixes(case, base, options=None):
+    """Every allowed mix of the negotiable non-price fields (from `term_options`), on top of `base`.
+    `options` overrides the allowed values of some fields (e.g. one index clause)."""
+    allowed = {**case.get("term_options", {}), **(options or {})}
+    fields = [f for f in case["negotiable"] if f != "unit_price" and allowed.get(f)]
+    values = [allowed[f] for f in fields]
+    for combo in itertools.islice(itertools.product(*values), MAX_COMBOS):
         yield {**base, **dict(zip(fields, combo, strict=True))}
 
 
-def plan_terms(case, quote, standard, supplier, our_supplier=None, deal_ratio=1.0):
+def friendly_key(case, sheet):
+    """Sort key for mixes of (nearly) equal C, the side a supplier prefers first (v1.7): the longest
+    commitment, the highest volume up to our need, the longest lead time within our need."""
+    b = case["buyer"]
+    months = sheet.get("contract_months") or 0
+    volume = sheet.get("volume_per_year") or 0
+    lead = sheet.get("lead_time_days") or 0
+    return (
+        -months,
+        -(volume if volume <= b["need_per_year"] else -volume),
+        -(lead if lead <= b["need_lead_time_days"] else -lead),
+    )
+
+
+def plan_terms(case, quote, standard, supplier, our_supplier=None, deal_ratio=1.0, friendly=False, options=None):
     """For every allowed term mix: the price worth exactly as much to the supplier as its `quote`,
     and our C at that price. Returns [(C, sheet)] cheapest first, must-haves kept. The cheapest is
     the mix the supplier should accept at no loss to itself while costing us least: what we offer
     on the terms that are cheap for it and dear for us. `our_supplier` prices the relationship
     charge into our C (defaults to `supplier`). `deal_ratio` values each mix at the price level we
     expect to close at (a share of the equal-value price), not at the quote: whether a longer contract
-    beats buying the rest at the fallback price depends on that level."""
-    target = supplier_value(case, quote, supplier)
+    beats buying the rest at the fallback price depends on that level. `friendly` (v1.7): among mixes
+    within max(EUR 1, 0.1 % of C) of the cheapest, the supplier-friendly one first (`friendly_key`).
+    `options`: allowed values per field instead of the case's `term_options`."""
+    target = value(case, quote, supplier)
     base = complete_offer(case, quote)
     out = []
-    for mix in term_mixes(case, base):
+    for mix in term_mixes(case, base, options):
         price = price_for_value(case, mix, supplier, target)
         if price is None or price <= 0:
             continue
@@ -130,12 +178,36 @@ def plan_terms(case, quote, standard, supplier, our_supplier=None, deal_ratio=1.
         if not must_haves_ok(case, sheet, standard):
             continue
         at_deal = {**sheet, "unit_price": round(price * deal_ratio, 2)}
-        out.append((total_cost(case, at_deal, standard, our_supplier or supplier), sheet))
+        out.append((cost(case, at_deal, standard, our_supplier or supplier), sheet))
     # On (nearly) equal C, ask for as little as possible: every change to its own terms gets priced in.
     own = {**supplier.get("standard", {}), **{k: v for k, v in quote.items() if v is not None}}
     changes = lambda sheet: sum(1 for k, v in sheet.items() if k != "unit_price" and k in own and own[k] != v)  # noqa: E731
-    out.sort(key=lambda x: (round(x[0]), changes(x[1])))
-    return out
+    if not friendly or not out:
+        out.sort(key=lambda x: (round(x[0]), changes(x[1])))
+        return out
+    cheapest = min(c for c, _ in out)
+    tie = cheapest + max(TIE_EUR, TIE_SHARE * abs(cheapest))
+    # the supplier-friendly mix first; on the same commitment, the v1.6b order (C to the euro, fewest changes)
+    ties = sorted((x for x in out if x[0] <= tie), key=lambda x: (friendly_key(case, x[1]), round(x[0]), changes(x[1])))
+    rest = sorted((x for x in out if x[0] > tie), key=lambda x: (round(x[0]), changes(x[1])))
+    return ties + rest
+
+
+def clause_cost_rate(case, clause):
+    """What an index clause costs us per EUR of price bought at the new price: the expected index
+    move beyond the deadband and the risk we carry (the `cost_breakdown` formula, per unit)."""
+    b = case["buyer"]
+    path = b.get("index_paths", {}).get(clause["series"], 0.0)
+    moved = max(0.0, abs(path) - clause["deadband_pct"] / 100) * math.copysign(1, path)
+    return clause["material_share"] * (moved + b.get("index_risk_pct", 0) / 100)
+
+
+def clause_value_rate(clause, driver):
+    """What an index clause on its asserted driver is worth to the supplier per EUR of price: the
+    protection beyond the deadband on its stated share, at most its stated rise on that share."""
+    share = min(driver.share_pct / 100, clause["material_share"])
+    protected = max(0.0, driver.rise_pct - clause["deadband_pct"]) / 100
+    return min(share * protected, driver.share_pct / 100 * driver.rise_pct / 100)
 
 
 def equal_cost_price(case, terms, c_target, standard=None, supplier=None):
