@@ -9,6 +9,7 @@ the negotiation. Update the page in the same commit as the code.
 
 | Section | Route | Page | Status |
 |---|---|---|---|
+| Home and Story (step-through player) | `/`, `/story/<session>` | [home.md](home.md) | done (phase 7) |
 | Mail | `/mail` | [../README.md](../README.md) | done |
 | Deals (negotiation replay) | `/negotiations` | [deals.md](deals.md) | done |
 | Suppliers | `/suppliers` | [suppliers.md](suppliers.md) | done (phase 1) |
@@ -30,6 +31,7 @@ the negotiation. Update the page in the same commit as the code.
 6. **Deal anatomy**: one section per cost label (price, payment days, freight, quality, lead time,
    coverage, supplier health, index clause, tooling), the argument ledger, and a fact search over
    `data/facts.json`.
+7. **Home and Story**: a step-through player for any run (case opens → supplier → cost and market → demand → plan → each round → score), with Previous / Play / Next and links into every tab.
 
 ## Traceability: every data ID is a link
 
@@ -94,10 +96,10 @@ web/
     sync-demand.mjs        Demand & Sourcing snapshot + fc:/rfq:/quote: link index
     sync-facts.mjs         facts.json for the Facts page
   src/
-    app/                   one folder per section (mail, negotiations + anatomy, suppliers, parts, market, contracts, demand, arguments, facts)
-    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/, market/, contracts/, demand/, arguments/, facts/
+    app/                   one folder per section (home, story, mail, negotiations + anatomy, suppliers, parts, market, contracts, demand, arguments, facts)
+    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/, market/, contracts/, demand/, arguments/, facts/, story/
     data/                  committed snapshots
-    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, market.ts, indexRules.ts, contracts.ts, demand.ts, anatomy.ts, arguments.ts, links.ts, format.ts
+    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, market.ts, indexRules.ts, contracts.ts, demand.ts, anatomy.ts, arguments.ts, story.ts, links.ts, format.ts
 ```
 
 Add a section: a route under `src/app/`, one entry in `SECTIONS` in `src/components/AppRail.tsx`,
