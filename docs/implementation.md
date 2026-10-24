@@ -24,7 +24,11 @@ starter-kit/arena_kit/agents/procudeal/
   signals.py     what a supplier e-mail asks for, its traits, the cost drivers it asserts
   policy.py      Negotiator: setup, per-move decision, concessions, closing; FEATURES flags
   writer.py      template e-mail around a move
+  research/      zone 0 (v2.0, offline): evidence, argument library, Opus 5.5 agents, dossiers,
+                 practice corpus and playbook - see docs/research.md
 starter-kit/arena_kit/cli.py      registers `--agent procudeal` (only change to a kit file)
+starter-kit/scripts/research.py   builds knowledge/ (supplier dossiers, playbook) offline
+starter-kit/knowledge/            zone 0 output: suppliers/*.json, playbook.json, index.json
 starter-kit/scripts/bench.py      benchmark runner: plays cases, saves runs, logs a row
 starter-kit/scripts/compare.py    score table per agent or per run note
 starter-kit/tests/test_procudeal_economics.py   economics pinned to the brief's worked example
@@ -184,8 +188,9 @@ The `PATIENCE`, `ANCHOR_FLOOR` and `OVERTIME` values come from practice evidence
 
 ### Feature flags (v1.7)
 Every v1.7 behaviour change can be switched off without a code edit, for ablation runs:
-`PROCUDEAL_OFF="single_sheet,patience" uv run python scripts/bench.py ...`. The variable is read once
-at import; unknown names are logged and ignored. The setup log line and the first entry of the
+`PROCUDEAL_OFF="single_sheet,rich_value" uv run python scripts/bench.py ...`, and a flag that is off by
+default switched on: `PROCUDEAL_ON="patience"`. Both are read once at import; unknown names are logged
+and ignored. Defaults since v1.7c: every flag on except `patience` and `call_note_lever`. The setup log line and the first entry of the
 decision trace (`features_off`) show which flags were off. Bug fixes are never flagged. With every
 flag off the engine behaves like v1.6c plus the bug fixes (sandbox D01 0.883, D02 0.482: identical).
 
@@ -197,7 +202,8 @@ flag off the engine behaves like v1.6c plus the bug fixes (sandbox D01 0.883, D0
 | `friendly_ties` | E | on a C tie: longest contract, then volume up to our need, then longest lead time within need |
 | `silence` | G | "clarify internally": resend the last main sheet unchanged, no claims (once in a row) |
 | `proactive_clause` | D | index clause on the supplier's asserted driver when it is worth more to it than it costs us; adopt the clause it demands |
-| `patience` | F | patience budget on our concessions, persona anchor floors |
+| `patience` (default **off** since v1.7c) | F | patience budget on our concessions, persona anchor floors |
+| `call_note_lever` (default **off**, v1.7c) | A | the figure-free call / meeting note claim in the lever schedule |
 | `rich_value` | H | supplier value with scorecard ppm, overtime, volume, skonto-implied cost of money |
 | `keepalive` | bug 6 | RFQ: a sheetless note to a ready, acceptable thread that has waited long enough (see RFQ tactics); its agreed / final status stays after a reply with the same terms (a new offer ID each reply) |
 

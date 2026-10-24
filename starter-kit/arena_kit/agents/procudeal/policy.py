@@ -30,29 +30,37 @@ from .dossier import CASH_PREMIUM, Dossier, build
 log = logging.getLogger("arena")
 
 # v1.7 feature flags. Every behaviour change can be switched off for an ablation run, e.g.
-# PROCUDEAL_OFF="single_sheet,patience" (read once at import). Bug fixes are not flagged.
+# PROCUDEAL_OFF="single_sheet,rich_value", and a default-off one on with PROCUDEAL_ON="patience"
+# (read once at import). Bug fixes are not flagged.
 FEATURES = {
     "lever_schedule": True,  # A: 3 claims of different kinds first, then one new kind per round
     "single_sheet": True,  # B: one main sheet, at most one need-trade sheet
     "strict_accept": True,  # C: "within 0.5 %" closes only when no fresh lever is left
     "proactive_clause": True,  # D: index clause on the supplier's asserted cost driver
     "friendly_ties": True,  # E: on a C tie, the supplier-friendly mix (longest contract first)
-    "patience": True,  # F: patience budget on our concessions, persona anchor floors
+    "patience": False,  # F: patience budget, persona anchor floors - off since v1.7c (token steps, higher finals)
     "silence": True,  # G: our sheet stands while it clarifies internally
     "rich_value": True,  # H: ppm, overtime, volume and skonto in the supplier value
     "keepalive": True,  # bug 6: RFQ keepalive for a ready thread
+    "call_note_lever": False,  # A: the call / meeting note claim - off since v1.7c (it drew requests for proof)
 }
 
 
-def parse_off(text):
-    """{flag: on} with the flags named in `text` (comma-separated) off; unknown names are ignored."""
-    off = {name.strip() for name in (text or "").split(",") if name.strip()}
-    if unknown := off - FEATURES.keys():
-        log.warning("PROCUDEAL_OFF: unknown flags ignored: %s", ", ".join(sorted(unknown)))
-    return {name: default and name not in off for name, default in FEATURES.items()}
+def _names(text, var):
+    names = {name.strip() for name in (text or "").split(",") if name.strip()}
+    if unknown := names - FEATURES.keys():
+        log.warning("%s: unknown flags ignored: %s", var, ", ".join(sorted(unknown)))
+    return names
 
 
-FLAGS = parse_off(os.environ.get("PROCUDEAL_OFF", ""))
+def parse_off(text, on_text=""):
+    """{flag: on}: the defaults, with the flags named in `on_text` on and those in `text` off
+    (comma-separated; unknown names are ignored)."""
+    off, extra = _names(text, "PROCUDEAL_OFF"), _names(on_text, "PROCUDEAL_ON")
+    return {name: (default or name in extra) and name not in off for name, default in FEATURES.items()}
+
+
+FLAGS = parse_off(os.environ.get("PROCUDEAL_OFF", ""), os.environ.get("PROCUDEAL_ON", ""))
 
 
 def on(name):
@@ -252,6 +260,8 @@ class Negotiator:
         side.bank = cl.build_bank(case, dossier, self.package, quote.get("unit_price"))
         if not on("lever_schedule"):  # the order-history and call-note levers came with the schedule
             side.bank = [c for c in side.bank if c.kind not in cl.SCHEDULE_KINDS]
+        if not on("call_note_lever"):  # a note cited without data drew requests for proof (v1.7c)
+            side.bank = [c for c in side.bank if c.kind != "call_note"]
         log.info(
             "side %s: mix %s quote~%.2f anchor %.2f (shift %+.2f, delay %s, persona %s) ceiling %s best %.2f"
             " full_cost %s (%s) rate %.3f clause %s budget %s claims %d",

@@ -80,10 +80,27 @@ def claim(kind, ref, strength=5):
 
 # ---------- flags ----------
 def test_procudeal_off_parsing():
-    assert po.parse_off("") == dict.fromkeys(po.FEATURES, True)
+    assert po.parse_off("") == po.FEATURES
+    assert not po.FEATURES["patience"] and not po.FEATURES["call_note_lever"]  # off by default since v1.7c
     got = po.parse_off(" single_sheet , patience,,nonsense ")
     assert not got["single_sheet"] and not got["patience"] and got["lever_schedule"]
     assert set(got) == set(po.FEATURES)
+    on = po.parse_off("", "patience, call_note_lever")
+    assert on["patience"] and on["call_note_lever"]
+    assert not po.parse_off("patience", "patience")["patience"]  # off wins
+
+
+def test_call_note_lever_is_off_by_default(monkeypatch):
+    bank = [claim("should_cost", "cost:T1"), claim("call_note", "doc:N1", 1)]
+    monkeypatch.setattr(cl, "build_bank", lambda *a, **k: list(bank))
+    monkeypatch.setattr(po, "FLAGS", po.parse_off(""))
+    n = po.Negotiator(CASE)
+    n.setup({SID: [supplier_msg(44.0)]})
+    assert [c.kind for c in n.sides[SID].bank] == ["should_cost"]
+    monkeypatch.setattr(po, "FLAGS", po.parse_off("", "call_note_lever"))
+    n = po.Negotiator(CASE)
+    n.setup({SID: [supplier_msg(44.0)]})
+    assert [c.kind for c in n.sides[SID].bank] == ["should_cost", "call_note"]
 
 
 def test_trace_records_flags(flags):

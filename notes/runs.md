@@ -146,3 +146,5 @@ One row per benchmark run (`scripts/bench.py`). Newest at the bottom.
 | 10-24 19:52 | case:P10 | procudeal | 8ab7b67-dirty | True | 0.679 | 1,932,492 | 1,522,963 | 1,328,927 | 3 | 17 | [replay](https://arena.tacto.ai/replay/fa357ed1b8e78ef6) | v1.7b -patience |
 | 10-24 19:52 | case:P11 | procudeal | 8ab7b67-dirty | True | 0.710 | 817,578 | 750,082 | 722,500 | 8 | 10 | [replay](https://arena.tacto.ai/replay/e23d0bbccab06203) | v1.7b -patience |
 | 10-24 19:54 | case:P18 | procudeal | 8ab7b67-dirty | True | 0.564 | 295,173 | 254,244 | 222,651 | 5 | 78 | [replay](https://arena.tacto.ai/replay/605b064ccdf599cd) | v1.7b -patience |
+| 10-24 22:48 | case:D01 | procudeal | 8809ac4-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 2 | [replay](https://arena.tacto.ai/replay/09445658e5493587) | engine v1.7c |
+| 10-24 22:48 | case:D02 | procudeal | 8809ac4-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/a837a22f6efed8bd) | engine v1.7c |

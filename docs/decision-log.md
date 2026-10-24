@@ -278,3 +278,38 @@ patience off is 0.036 better in total, from the two cases with persona budgets. 
 (relationship share 0.3, no persona) gained 0.019 with patience. **Open decision:** keep `patience`
 on, or switch it off (or drop only the persona budgets). The budget caps our total concessions; a
 supplier near its cost or out of capacity then sees almost no movement and calls its final offer.
+
+## v1.7c: two lessons from the playbook in the fallback engine
+**Why:** the playbook built from 142 practice runs (`knowledge/playbook.json`) found two v1.7 levers
+that work against us, both matching the hosted ablation:
+- token concession steps of 0.1-0.2 "led to higher finals" (high confidence, 7 cases) - the patience
+  budget: P02 0.465 with it, 0.504 without; P10 0.671 / 0.679;
+- citing a meeting or call note without data "brings repeated requests for proof and costs
+  credibility" (high, 9 cases) - P08: "please provide the meeting notes you mentioned".
+
+**Changes:** `patience` is off by default; the call-note lever has its own flag `call_note_lever`,
+off by default. `PROCUDEAL_ON="patience"` switches a default-off flag back on for an A/B run. This is
+the baseline that the zone 1 A/B compares against.
+
+**Free tests:** 31 v1.7 unit tests (full suite 97 passed); simulator S01-S03: 3 deals, no fallback;
+sandbox D01 0.883 (0.902 with patience; the hosted ablation favoured patience off on P02 and P10),
+D02 0.534 (unchanged). Hosted: not run yet (part of the zone 1 A/B).
+
+## v2.0 (in progress): an LLM layer on top of the rules - zone 0, offline research
+**Why:** the engine's opponent model (reading replies, levers, steps, wording) is rules fitted to the
+12 practice suppliers; the final brings "new suppliers and settings". Before a session opens we already
+hold the case file and the whole data package, which the engine reads only through a few regexes. Plan
+(four time zones, `docs/research.md`): 0 offline research, 1 case strategist at wave start, 2 opening,
+3 rounds. Code keeps every number, sheet, claim figure and accept / walk; v1.7b stays the fallback.
+
+**Zone 0 (built):** per supplier, code gathers every record (evidence) and every verifiable argument
+(argument library, figures computed by code); Claude Opus 5.5 runs four specialists in parallel
+(economics, persona, contract, performance), a lead strategist, a red-team supplier role-play and our
+figure-free rebuttals; code validates every returned ID and drops figures from e-mail text. A playbook
+of 20 lessons comes from 142 practice runs (one debrief per case, then a synthesis keyed by goal, case
+type and traits).
+
+**Result:** 46 dossiers (effort low: 11 min, $34.17) and the playbook ($1.98). The P01 dossier holds
+every fact found by hand plus a second part as bundle leverage and a trap list. The playbook confirms
+two v1.7b weaknesses: token steps led to higher finals (the patience budget), and citing meeting notes
+without data drew requests for proof (the call-note lever). Not yet used by any live move.
