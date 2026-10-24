@@ -27,7 +27,7 @@ export function PricePath({ title, supplier, ours, ceiling, anchor, end }: Price
   useEffect(() => {
     const el = box.current;
     if (!el) return;
-    const ro = new ResizeObserver(([e]) => setW(Math.max(320, Math.round(e.contentRect.width))));
+    const ro = new ResizeObserver(([e]) => setW(Math.max(280, Math.round(e.contentRect.width))));
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
@@ -65,7 +65,7 @@ export function PricePath({ title, supplier, ours, ceiling, anchor, end }: Price
   const h = hover === null ? null : at(hover);
 
   return (
-    <figure className="space-y-2">
+    <figure className="min-w-0 space-y-2">
       <figcaption className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <span className="text-[13px] font-semibold">{title}</span>
         <span className="flex items-center gap-3 text-[12px] text-[var(--ink-2)]">
@@ -85,7 +85,7 @@ export function PricePath({ title, supplier, ours, ceiling, anchor, end }: Price
           )}
         </span>
       </figcaption>
-      <div ref={box} className="relative">
+      <div ref={box} className="relative w-full overflow-hidden">
         <svg width={w} height={H} className="block" role="img" aria-label={`${title}: unit price per round`}>
           {ticks.map((t) => (
             <g key={t}>

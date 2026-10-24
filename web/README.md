@@ -1,4 +1,9 @@
-# Purchasing mail: what the buyer agent sees
+# ProcuDeal web app
+
+Sections: **Mail** (below), **Deals** (negotiation replays), **Suppliers**. Full docs per section,
+data sources and the phase plan: [docs/README.md](docs/README.md).
+
+## Mail: what the buyer agent sees
 
 A mail-client view of every practice and sandbox case at the moment it opens: the case file, the
 trigger document (supplier letter, internal memo or our RFQ) and each supplier's opening quote with
@@ -8,7 +13,7 @@ signals, must-haves and what can be negotiated.
 
 For people only. The agent never imports anything from here.
 
-## Run
+### Run
 
 ```bash
 cd web

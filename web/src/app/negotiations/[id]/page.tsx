@@ -114,12 +114,12 @@ export default async function Page({ params }: PageProps<"/negotiations/[id]">) 
         <Outcome run={run} />
 
         <div className="grid gap-4 lg:grid-cols-[1fr_22rem]">
-          <section className="space-y-4 rounded-md border border-[var(--line)] bg-[var(--surface)] p-4">
+          <section className="min-w-0 space-y-4 rounded-md border border-[var(--line)] bg-[var(--surface)] p-4">
             {suppliers.map((s) => (
               <PricePath key={s} {...pricePath(run, steps, s)} />
             ))}
           </section>
-          <section className="space-y-4 rounded-md border border-[var(--line)] bg-[var(--surface)] p-4">
+          <section className="min-w-0 space-y-4 rounded-md border border-[var(--line)] bg-[var(--surface)] p-4">
             <div className="space-y-2">
               <h2 className="text-[12px] font-semibold uppercase tracking-wide text-[var(--ink-2)]">How our agent negotiated</h2>
               <BrainSummary run={run} steps={steps} />

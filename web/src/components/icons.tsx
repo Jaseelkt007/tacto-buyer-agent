@@ -32,6 +32,13 @@ export const HandshakeIcon = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const FactoryIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}>
+    <path d="M3 21V10l6 4V10l6 4V6l6-3v18z" />
+    <path d="M7 17h2M12 17h2M17 17h2" />
+  </svg>
+);
+
 export const SendIcon =(p: SVGProps<SVGSVGElement>) => (
   <svg {...base} {...p}>
     <path d="m22 2-7 20-4-9-9-4Z" />

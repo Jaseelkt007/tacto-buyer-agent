@@ -1,14 +1,24 @@
+import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
+import { hrefFor } from "@/lib/links";
 
 // Data IDs the agent can cite (brief: "Data IDs"), e.g. part:310010, idx:PPI-D351@2026-08.
 const ID = /\b(?:sup|part|po|gr|inv|qn|ctr|quote|rfq|fc|idx|sc|cost|news|doc|offer):[A-Za-z0-9\-.#@]+/g;
 
+/** A data ID; links to the page that explains it when there is one. */
 export function DataId({ id }: { id: string }) {
-  return (
-    <code className="rounded bg-[var(--id-bg)] px-1 py-px font-mono text-[0.85em] text-[var(--id-fg)]" title="Data ID">
+  const href = hrefFor(id);
+  const code = (
+    <code
+      className={`rounded bg-[var(--id-bg)] px-1 py-px font-mono text-[0.85em] text-[var(--id-fg)] ${
+        href ? "underline decoration-[var(--accent-line)] underline-offset-2 hover:bg-[var(--select)]" : ""
+      }`}
+      title={href ? "Data ID: open its page" : "Data ID"}
+    >
       {id}
     </code>
   );
+  return href ? <Link href={href}>{code}</Link> : code;
 }
 
 /** Inline text: **bold** and data IDs. */
