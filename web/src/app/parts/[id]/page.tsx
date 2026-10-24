@@ -238,6 +238,9 @@ export default async function Page({ params }: PageProps<"/parts/[id]">) {
               {p.pump_series && <>· <span>pump series {p.pump_series}</span></>}
               {p.abc_class && <>· <span>ABC {p.abc_class}</span></>}
               <span>· prices {perUnit(p)}</span>
+              <Link href={`/demand/${p.id.replace("part:", "")}`} className="text-[var(--accent-ink)] hover:underline">
+                · demand and sourcing →
+              </Link>
               {p.status !== "series" && <span className="rounded bg-[var(--accent-wash)] px-1.5 text-[var(--accent-ink)]">{p.status}</span>}
             </p>
           </div>

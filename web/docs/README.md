@@ -15,7 +15,7 @@ the negotiation. Update the page in the same commit as the code.
 | Parts & Cost | `/parts` | [parts.md](parts.md) | done (phase 2) |
 | Market (indices) | `/market` | [market.md](market.md) | done (phase 3) |
 | Contracts & Performance | `/contracts` | [contracts.md](contracts.md) | done (phase 4) |
-| Demand & Sourcing | — | — | phase 5 |
+| Demand & Sourcing | `/demand` | [demand.md](demand.md) | done (phase 5) |
 | Deal anatomy + Facts | — | — | phase 6 |
 
 ## Phase plan
@@ -40,12 +40,13 @@ the negotiation. Update the page in the same commit as the code.
 | `sc:70110@2026Q3` | `/suppliers/70110#scorecards` |
 | `ctr:4600070110`, `ctr:4600070110#3.1` | `/contracts/4600070110`, at § 3.1 |
 | `qn:20004995` | the contract page, at that quality notification |
+| `fc:310010@2026-09`, `rfq:…`, `quote:…` | `/demand/310010`, at that forecast, RFQ or quote |
 | `part:310010` | `/parts/310010` |
 | `cost:310010`, `cost:310012-70110` | that should-cost row on the part page |
 | `doc:…`, `news:…` | that item in the supplier's timeline |
 | `idx:PPI-D351@2026-08` | `/market/PPI-D351`, that month selected in the claim checker (`#idx:S@A..idx:S@B` selects a window) |
 
-Later phases add `fc:`, `rfq:`, `quote:` and the rest.
+Not linked yet: `po:`, `gr:`, `inv:`, `news:` without a detailed supplier, and in-session `offer:` IDs.
 
 ## Data snapshots
 
@@ -59,8 +60,9 @@ The app reads committed JSON snapshots, so it builds and deploys without keys.
 | `npm run sync:parts` | `../data` (CSV) | `src/data/parts.json` | none |
 | `npm run sync:market` | `../data` (CSV) | `src/data/market.json` | none |
 | `npm run sync:contracts` | `../data` (CSV, contract texts) | `src/data/contracts.json`, `src/data/qn-links.json` | none |
+| `npm run sync:demand` | `../data` (CSV, `facts.json`) | `src/data/demand.json`, `src/data/demand-links.json` | none |
 
-After the **Sunday 08:00 data release**: `uv run arena data`, then `npm run sync:suppliers && npm run sync:parts && npm run sync:market && npm run sync:contracts`
+After the **Sunday 08:00 data release**: `uv run arena data`, then `npm run sync:suppliers && npm run sync:parts && npm run sync:market && npm run sync:contracts && npm run sync:demand`
 (and later phases' syncs). After new benchmark runs on main: `git fetch origin && npm run sync:runs`.
 
 ## Run
@@ -86,11 +88,12 @@ web/
     sync-parts.mjs         Parts & Cost snapshot
     sync-market.mjs        Market snapshot
     sync-contracts.mjs     Contracts & Performance snapshot + qn: link index
+    sync-demand.mjs        Demand & Sourcing snapshot + fc:/rfq:/quote: link index
   src/
-    app/                   one folder per section (mail, negotiations, suppliers, parts, market, contracts)
-    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/, market/, contracts/
+    app/                   one folder per section (mail, negotiations, suppliers, parts, market, contracts, demand)
+    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/, market/, contracts/, demand/
     data/                  committed snapshots
-    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, market.ts, indexRules.ts, contracts.ts, links.ts, format.ts
+    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, market.ts, indexRules.ts, contracts.ts, demand.ts, links.ts, format.ts
 ```
 
 Add a section: a route under `src/app/`, one entry in `SECTIONS` in `src/components/AppRail.tsx`,

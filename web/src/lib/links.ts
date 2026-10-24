@@ -1,8 +1,10 @@
 import owners from "@/data/links.json";
+import demandParts from "@/data/demand-links.json";
 import qnContracts from "@/data/qn-links.json";
 
 const owner = owners as Record<string, string>;
 const qnContract = qnContracts as Record<string, string>;
+const demandPart = demandParts as Record<string, string>;
 const page = (sup: string, anchor?: string) => `/suppliers/${sup.replace("sup:", "")}${anchor ? `#${anchor}` : ""}`;
 
 /** Where a data ID is explained in the app, or null when no page covers it yet. */
@@ -20,6 +22,8 @@ export function hrefFor(id: string): string | null {
     return `/contracts/${no}${clause ? `#clause-${clause}` : ""}`;
   }
   if (id.startsWith("qn:") && qnContract[id]) return `/contracts/${qnContract[id]}#${id}`;
+  // fc:, rfq:, quote: open the part's Demand & Sourcing page at that row.
+  if (demandPart[id]) return `/demand/${demandPart[id].replace("part:", "")}#${id}`;
   if (owner[id]) return page(owner[id], id);
   return null;
 }

@@ -61,6 +61,12 @@ export const ContractIcon = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const BoxesIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}>
+    <path d="M3 13h8v8H3zM13 13h8v8h-8zM8 3h8v8H8z" />
+  </svg>
+);
+
 export const SendIcon =(p: SVGProps<SVGSVGElement>) => (
   <svg {...base} {...p}>
     <path d="m22 2-7 20-4-9-9-4Z" />

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { ChartIcon, CogIcon, ContractIcon, FactoryIcon, HandshakeIcon, HomeIcon, InboxIcon } from "./icons";
+import { BoxesIcon, ChartIcon, CogIcon, ContractIcon, FactoryIcon, HandshakeIcon, HomeIcon, InboxIcon } from "./icons";
 
 // One entry per section of the site; add new pages here.
 const SECTIONS: { href: string; label: string; icon: ReactNode }[] = [
@@ -13,6 +13,7 @@ const SECTIONS: { href: string; label: string; icon: ReactNode }[] = [
   { href: "/parts", label: "Parts", icon: <CogIcon width={20} height={20} /> },
   { href: "/market", label: "Market", icon: <ChartIcon width={20} height={20} /> },
   { href: "/contracts", label: "Contracts", icon: <ContractIcon width={20} height={20} /> },
+  { href: "/demand", label: "Demand", icon: <BoxesIcon width={20} height={20} /> },
   { href: "/negotiations", label: "Deals", icon: <HandshakeIcon width={20} height={20} /> },
 ];
 

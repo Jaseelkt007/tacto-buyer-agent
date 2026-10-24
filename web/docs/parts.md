@@ -86,6 +86,8 @@ Volute casing HN 50-200 (`part:310010`), Gießerei Brandlhuber:
 
 ## Links
 
+The part page links to its Demand & Sourcing page (forecast, coverage, RFQs) and back.
+
 `part:` IDs open `/parts/<number>`; `cost:` IDs open the part at that should-cost row
 (`cost:310012-70110` → `/parts/310012#cost:310012-70110`). `idx:` IDs will link to the Market section
 in phase 3.
