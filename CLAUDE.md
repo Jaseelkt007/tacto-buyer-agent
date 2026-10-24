@@ -27,6 +27,13 @@ If this file and Tacto's docs disagree, **Tacto's docs win**. Then fix this file
    is pushed to `main`. Tacto checks the top 5 for later pushes. The final runs the commit we submit.
 6. **Never push to `upstream`** (Tacto's kit). It is fetch-only. We push to `origin` only.
 7. **No AI attribution in commits or PRs**: no `Co-Authored-By: Claude` lines and no "Generated with" footers.
+8. **Document before you implement.** Every implementation change updates `docs/` first, or in the
+   same commit at the latest:
+   - `docs/implementation.md`: architecture, modules, constants, how to run.
+   - `docs/decision-log.md`: what changed, why, and the measured effect.
+   - `docs/results.md`: score tables.
+
+   Code without matching docs is not done.
 
 ## 2. Timing rules the agent must respect
 
@@ -67,7 +74,7 @@ If this file and Tacto's docs disagree, **Tacto's docs win**. Then fix this file
   Read its notes, letters, news and quote remarks to find what it wants (cash, work, capacity,
   respect) and trade for that.
 - **Never leak** urgency, a budget, or that we have no alternative. Don't take the first offer.
-  Pushing past `final_offer` risks `walked_away`.
+  **Never push past `final_offer`.** In engine v1.2, all 6 suppliers we pushed walked away.
 - **RFQ cases** (2–3 suppliers) run in parallel threads, each with its own clock. Accepting one ends
   the case. Citing a rival's quote reveals it to the supplier we cite it to.
 
@@ -94,8 +101,11 @@ starter-kit/
   .env                    our keys (git-ignored)
   data/package/           `arena data` output (git-ignored)
   arena_kit/              Tacto's kit: client, cost, docs, data, play, sim (avoid editing)
-  arena_kit/agents/       naive.py, llm.py (Tacto) + OUR agent code
-notes/                    our run log, analysis, decisions (create as needed)
+  arena_kit/agents/       naive.py, llm.py (Tacto) + OUR agent: agents/procudeal/
+  scripts/                bench.py (benchmark runner), compare.py (score tables)
+docs/                     OUR documentation: implementation, decision log, results (keep current)
+notes/                    run log (notes/runs.md)
+runs/                     one JSON per benchmark run: result, trace, back office, our decisions
 CLAUDE.md                 this file
 ```
 
