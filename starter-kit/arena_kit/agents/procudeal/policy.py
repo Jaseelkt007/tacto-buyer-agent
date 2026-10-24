@@ -29,7 +29,9 @@ DEEP_DROP = 0.06  # a first counter this far down signals a deep floor
 CLOSE_GAP = 0.005  # accept when its price is within this of our last offer
 FIRST_CLAIMS, LATER_CLAIMS, DATA_CLAIMS = 3, 1, 2
 DROP_GAP = 0.10  # RFQ: a bidder this far above the leader in C gets no more rounds
-LAST_CALL_EDGE = 0.01  # RFQ: the runner-up's last call must beat the leader's C by this
+AUCTION_EDGE = 0.02  # RFQ reverse auction: a call asks the runner-up to beat the leader's C by this
+AUCTION_MIN_GAIN = 0.005  # keep calling while the best C improves at least this much
+AUCTION_CALLS = 4  # at most this many calls
 HEALTH_BAND = 0.98  # in strategic cases, a price this far below the health price is countered at it
 STUCK_STEP = 0.45  # it said it cannot move without a move from us
 PATIENT_SHIFT = 0.03  # anchor lower for slow, founder-run suppliers; higher for quick group replies
@@ -71,7 +73,8 @@ class Negotiator:
         self.limit = math.inf
         self.rfq = False
         self.board = {}  # sid -> (C, sheet_id, terms) of each standing sheet that keeps the must-haves
-        self.last_call = None  # (runner-up sid, its replies when we called)
+        self.last_call = None  # (runner-up sid, its replies when we called, best C then)
+        self.calls = 0  # reverse-auction calls made
 
     # ---------- setup ----------
     def setup(self, threads):
@@ -220,31 +223,43 @@ class Negotiator:
         return self.offer(self.sides[sid], threads, offers, leader)
 
     def rfq_close(self, threads, live, ready, best, leader):
-        """Last call: the leader is ready, so the runner-up gets one chance to beat it; after its
-        reply we take the best sheet in C. An agreed offer stands, so the leader is not at risk."""
-        if not best or leader is None or not ready.get(leader) or best[1] != leader:
+        """Reverse auction: once the leader is ready, the best runner-up is asked to beat it; while
+        the best C keeps improving, the new runner-up is asked next. Agreed offers stand, so nobody
+        is at risk; a bidder at final_offer is never pushed. Then we take the best sheet in C."""
+        if not best or leader is None or best[1] != leader:
             return None
-        if self.last_call:
-            runner, replies = self.last_call
-            if runner not in live or self.sides[runner].replies > replies:
-                return self.accept(best, f"best after the last call to {runner}")
+        if self.last_call:  # a call is out: wait for its reply, then judge it
+            runner, replies, c_before = self.last_call
+            if runner in live and self.sides[runner].replies <= replies:
+                return None
+            self.last_call = None
+            self.calls += 1
+            if best[0] >= c_before * (1 - AUCTION_MIN_GAIN) or self.calls >= AUCTION_CALLS:
+                return self.accept(best, f"best after {self.calls} auction call(s)")
+        elif not ready.get(leader):
             return None
         runners = [
             s
             for s in live
-            if s != leader and moves_left(self.case, threads[s]) > 0 and s in self.board and not self.sides[s].dropped
+            if s != leader
+            and moves_left(self.case, threads[s]) > 0
+            and s in self.board
+            and not self.sides[s].dropped
+            and latest(threads[s]).get("status") != "final_offer"
         ]
-        if not runners:
-            return None
-        runner = min(runners, key=lambda s: self.board[s][0])
-        move = self.last_call_offer(self.sides[runner], threads, leader)
-        if move:
-            self.last_call = (runner, self.sides[runner].replies)
+        move = None
+        if runners:
+            runner = min(runners, key=lambda s: self.board[s][0])
+            move = self.last_call_offer(self.sides[runner], threads, leader)
+            if move:
+                self.last_call = (runner, self.sides[runner].replies, best[0])
+        if move is None and self.calls:
+            return self.accept(best, f"best after {self.calls} auction call(s), no runner-up left")
         return move
 
     def last_call_offer(self, side, threads, leader):
         case, std = self.case, side.standard
-        target = self.board[leader][0] * (1 - LAST_CALL_EDGE)
+        target = self.board[leader][0] * (1 - AUCTION_EDGE)
         price = eco.equal_cost_price(case, side.mix, target, std)
         if not price or price == math.inf or price <= 0:
             return None

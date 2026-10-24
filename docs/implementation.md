@@ -149,7 +149,7 @@ sheet, its term mix becomes ours.
 | leader's terms sheet | leader's mix differs from ours | extra sheet on that mix at equal cost to us |
 | hold | its price fell ≥ `DEEP_DROP` since its previous reply | step `HOLD_STEP` instead of `STEP` |
 | drop | after 2 replies its C > leader × (1 + `DROP_GAP` = 0.10) | no more rounds unless the others end |
-| last call | leader ready and a live runner-up exists | one message to the runner-up beating the leader's C by `LAST_CALL_EDGE` = 1 %; then accept the best C |
+| reverse auction (v1.6c) | leader ready and a live runner-up exists (not at final_offer) | the runner-up is asked to beat the leader's C by `AUCTION_EDGE` = 2 %; repeat with the new runner-up while the best C improves ≥ 0.5 %, at most `AUCTION_CALLS` = 4; then accept the best C |
 
 ### writer.py
 Template e-mail: thanks, claim sentences, one line on the packages, an offer of faster payment when

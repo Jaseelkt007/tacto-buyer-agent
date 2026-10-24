@@ -20,7 +20,8 @@ Regenerate this table after every benchmark pass.
 v1.2 (31.5, pushed after final_offer) is in the decision log.
 
 Sandbox (free): v1.2 D01 0.909, D02 0.461 · v1.6 D01 0.883, D02 0.461 · **v1.6b D01 0.883, D02 0.482**.
-v1.6/v1.6b (RFQ tactics) have not been run on the hosted practice cases yet.
+Hosted RFQ (P05): v1.5b 0.654 · v1.6b 0.685 (full pass, mean **71.4**) · **v1.6c 0.716** (P05 only).
+With v1.6c on P05 the expected mean is about 71.7.
 
-Practice budget: 200 sessions per rolling 24 h. After v1.5b on Sat 24 Oct: 136 left. A full hosted
+Practice budget: 200 sessions per rolling 24 h. After v1.6c on Sat 24 Oct: 125 left (the quota is going up to 400). A full hosted
 pass costs 10; the sandbox is free.

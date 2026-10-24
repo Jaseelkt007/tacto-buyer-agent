@@ -120,3 +120,27 @@ works (runner-up asked once, then the best C taken). Two gaps seen in the D02 tr
 **Result v1.6b (sandbox only):** D01 0.883, D02 0.461 → 0.482. The plan now keeps the supplier's own
 lead time and Incoterm; the last call ran (runner-up asked once at EUR 15.18, could not beat it; the
 leader's final offer EUR 15.40 taken). Hosted practice (P05 with three bidders) not yet run, to save sessions.
+
+**Result v1.6b (hosted):** mean **71.4** (v1.5b 71.1), 10/10 deals; P05 0.654 → 0.685, other cases
+unchanged (RFQ rules only act with two or more bidders). In P05 the bidder at EUR 34.50 (its EUR 31.00
+alternative broke the lead-time must-have) was correctly dropped; 70250 **agreed at once** to EUR 29.61
+and 70210 agreed to the last call at EUR 29.24, while C_best is about EUR 26.6 per unit: our offers were
+still above their floors.
+
+## v1.6c: reverse auction instead of one last call
+**Why:** agreed offers stand (suppliers answer "Our agreed offer stands", they do not walk), so bidders
+that agree can be played against each other until nobody improves. Pushing a `final_offer` is still
+never done.
+
+**Changes:**
+1. When the leader is ready, the best runner-up (live, not dropped, moves left, not at final_offer) is
+   asked to beat the leader's C by `AUCTION_EDGE` = 2 %, with the leader's offer cited.
+2. After its reply: if the best C improved by at least 0.5 %, the next call goes to the new runner-up
+   (often the previous leader); otherwise we accept the best sheet. At most `AUCTION_CALLS` = 4 calls.
+3. **Not done: the country cost-base target.** P05 bidders agreed at EUR 29.24-29.61 against a German
+   should-cost of EUR 36.87, so cost-based targets would make us less aggressive; live bids are the
+   better signal.
+
+**Result v1.6c:** P05 0.685 → **0.716** (1 hosted session; the other cases have one supplier, so the
+auction cannot act there). Auction: 70250 agreed at EUR 29.61 → call 1: 70210 agreed at EUR 28.94 →
+call 2: 70250 answered "Our agreed offer stands" → accepted EUR 28.94. No supplier walked. D02 0.482.
