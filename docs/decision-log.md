@@ -145,7 +145,7 @@ never done.
 auction cannot act there). Auction: 70250 agreed at EUR 29.61 → call 1: 70210 agreed at EUR 28.94 →
 call 2: 70250 answered "Our agreed offer stands" → accepted EUR 28.94. No supplier walked. D02 0.482.
 
-## v1.7: one lever per round, one sheet, and robustness for the final (ready for hosted test)
+## v1.7: one lever per round, one sheet, and robustness for the final
 **Why:** set against a stronger buyer on the same ten hosted cases, our gap (mean 0.725 vs 0.783) is
 almost entirely **unit price at similar terms**: same winning supplier, same term mix, higher price.
 The negotiation paths show general patterns in how arena suppliers react (their replies are
@@ -249,5 +249,32 @@ have no data in the package, so A (levers) is not exercised there. **Watch in th
 `single_sheet` (the menu won on D01), `patience` in the strategic cases P01 / P02 / P03 / P10, and the
 RFQ P05 (keepalive and strict_accept with three bidders).
 
-**Hosted test (10 sessions, run by the team):** acceptance = mean > 71.4 and no case more than 0.05
-below its v1.6b/c score; otherwise ablate by flag.
+**Result v1.7 (hosted):** mean **70.8** (v1.6b/c 71.7), 10/10 deals - not accepted. P05 0.716 → 0.762,
+P07 0.717 → 0.743, but **P08 0.626 → 0.538**, P02 0.499 → 0.465, P18 0.520 → 0.497, P10 0.686 → 0.671.
+- P08 (a bug): the supplier demanded its 0-deadband AS-14404 clause at EUR 5.45 and offered a
+  5-deadband alternative at EUR 5.57, which is cheaper for us at those prices. The v1.4 rule "adopt a
+  cheaper alternative" ran after the clause adoption and switched us to the 5 % deadband. With one
+  sheet we then negotiated only that track, where it conceded less ("to accommodate the 5% deadband,
+  which increases our risk … EUR 5.55"): final EUR 5.48 against EUR 5.28 on the 0-deadband track in v1.6b.
+- P02 / P10 (patience): both suppliers got the tight persona budgets (near cost 0.14, capacity full
+  0.16), so our steps shrank to about EUR 2, 1, 0.5; they called their final offer early and a little
+  higher (P02 EUR 372.25 vs 371.95, P10 EUR 31.60 vs 31.40).
+- P18 (single sheet): v1.6b's menu had a 90-day package that it took at the same EUR 5.30; one
+  sheet kept us at 60 days.
+- The keepalive fired live for the first time (P05, five notes to bidders at final_offer while the
+  auction ran): each answered with its final offer standing; nobody walked.
+
+## v1.7b: the clause it demands wins over a cheaper-looking alternative deadband
+**Change (proactive_clause):** once we adopted the clause a supplier demanded, an alternative sheet
+with a different clause no longer replaces our mix; we keep its clause and negotiate the price.
+
+**Result v1.7b (hosted):** mean **71.8** (v1.6b/c 71.7, v1.7 70.8), 10/10 deals; no case more than 0.05
+below v1.6b/c - **accepted**. P08 0.538 → 0.615, P18 0.497 → 0.564 (both keep the 0-deadband clause
+now; P18 beats v1.6b by 0.044), P05 0.710 (noise: 0.762 with the same code the run before).
+
+**Ablation (hosted, same code):** `PROCUDEAL_OFF=patience` mean 71.6: P02 0.465 → **0.504**, P10
+0.671 → **0.679**, P08 0.615 → 0.604, P05 0.710 → 0.659 (noise), the rest unchanged. Without P05,
+patience off is 0.036 better in total, from the two cases with persona budgets. The sandbox D01
+(relationship share 0.3, no persona) gained 0.019 with patience. **Open decision:** keep `patience`
+on, or switch it off (or drop only the persona budgets). The budget caps our total concessions; a
+supplier near its cost or out of capacity then sees almost no movement and calls its final offer.

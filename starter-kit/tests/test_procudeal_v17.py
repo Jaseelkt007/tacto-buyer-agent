@@ -463,3 +463,26 @@ def test_keepalive_only_for_an_acceptable_ready_thread(flags):
     n.acceptable = {"sup:T2"}
     move = n.keepalive(threads, list(threads), ready, SID)
     assert move["supplier_id"] == "sup:T2" and move["sheets"] == [] and move["note"]
+
+
+def test_demanded_clause_beats_a_cheaper_alternative_deadband(flags):
+    """P08: it demands its 0-deadband clause and offers a 5-deadband alternative that is cheaper for us
+    at its prices; we keep the clause it demanded and negotiate the price."""
+    c = clause_case()
+    c["buyer"]["index_paths"] = {"CU-NOTATION": 0.06}
+    n = po.Negotiator(c)
+    threads = {SID: [supplier_msg(6.05, payment_days=30)]}
+    n.decide(threads)
+    reply = supplier_msg(
+        5.45, 1, body="We can offer a Preisgleitklausel on CU-NOTATION.", payment_days=90, index_clause=CLAUSES[0]
+    )
+    reply["term_sheets"].append(
+        {"term_sheet_id": "offer:T1-1-a", "terms": {"unit_price": 5.46, "payment_days": 90, "index_clause": CLAUSES[2]}}
+    )
+    threads[SID] += [buyer_msg(5.0, payment_days=90, index_clause=None), reply]
+    move = n.decide(threads)
+    assert all(s["index_clause"] == CLAUSES[0] for s in move["sheets"])
+    flags["proactive_clause"] = False  # v1.6c: the cheaper alternative's terms become ours
+    n = po.Negotiator(c)
+    n.decide({SID: threads[SID][:1]})
+    assert n.decide(threads)["why"]["mix"]["index_clause"] == CLAUSES[2]

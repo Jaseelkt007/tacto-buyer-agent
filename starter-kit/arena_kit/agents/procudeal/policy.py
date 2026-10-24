@@ -633,6 +633,8 @@ class Negotiator:
                 terms = ts.get("terms") or {}
                 if terms.get("unit_price") is None or not must_haves_ok(case, terms, std):
                     continue
+                if side.clause_adopted and terms.get("index_clause") != side.mix.get("index_clause"):
+                    continue  # proactive_clause: it demanded its clause - we keep it and talk price
                 if eco.cost(case, terms, std, est) < standing_c - 1:
                     mix = {k: v for k, v in complete_offer(case, terms).items() if k != "unit_price"}
                     log.info(

@@ -116,3 +116,33 @@ One row per benchmark run (`scripts/bench.py`). Newest at the bottom.
 | 10-24 19:38 | case:D02 | procudeal | 5cab21a-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/676a56fb8854e903) | engine v1.7 |
 | 10-24 19:38 | case:D01 | procudeal | 5cab21a-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 2 | [replay](https://arena.tacto.ai/replay/e304e721847d362d) | engine v1.7 flags-off |
 | 10-24 19:38 | case:D02 | procudeal | 5cab21a-dirty | True | 0.482 | 214,296 | 186,560 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/b128a7f29bf0541d) | engine v1.7 flags-off |
+| 10-24 19:43 | case:P01 | procudeal | 8ab7b67 | True | 0.914 | 1,153,780 | 1,101,723 | 1,096,816 | 3 | 26 | [replay](https://arena.tacto.ai/replay/ffa7a4c3caa8d217) | engine v1.7 |
+| 10-24 19:45 | case:P02 | procudeal | 8ab7b67 | True | 0.465 | 2,282,867 | 2,260,865 | 2,235,514 | 5 | 118 | [replay](https://arena.tacto.ai/replay/926e585a1148c82c) | engine v1.7 |
+| 10-24 19:45 | case:P03 | procudeal | 8ab7b67 | True | 0.923 | 4,246,314 | 3,935,069 | 3,909,043 | 4 | 117 | [replay](https://arena.tacto.ai/replay/35c3f123bfa8b03b) | engine v1.7 |
+| 10-24 19:44 | case:P04 | procudeal | 8ab7b67 | True | 0.860 | 198,846 | 196,853 | 196,529 | 4 | 65 | [replay](https://arena.tacto.ai/replay/d3ab84c6a7997fef) | engine v1.7 |
+| 10-24 19:49 | case:P05 | procudeal | 8ab7b67 | True | 0.762 | 305,545 | 242,976 | 223,424 | 18 | 379 | [replay](https://arena.tacto.ai/replay/5fe54d947e4fd9d2) | engine v1.7 |
+| 10-24 19:45 | case:P07 | procudeal | 8ab7b67 | True | 0.743 | 391,027 | 322,829 | 299,241 | 4 | 82 | [replay](https://arena.tacto.ai/replay/2a31ead87a1cf0f1) | engine v1.7 |
+| 10-24 19:46 | case:P08 | procudeal | 8ab7b67 | True | 0.538 | 1,135,887 | 1,041,432 | 960,309 | 5 | 156 | [replay](https://arena.tacto.ai/replay/b7c1504adb46f3b8) | engine v1.7 |
+| 10-24 19:46 | case:P10 | procudeal | 8ab7b67 | True | 0.671 | 1,932,492 | 1,527,674 | 1,328,927 | 3 | 65 | [replay](https://arena.tacto.ai/replay/579b1f5b8b3ad2e5) | engine v1.7 |
+| 10-24 19:48 | case:P11 | procudeal | 8ab7b67 | True | 0.710 | 817,578 | 750,082 | 722,500 | 8 | 171 | [replay](https://arena.tacto.ai/replay/e1883716a501c405) | engine v1.7 |
+| 10-24 19:46 | case:P18 | procudeal | 8ab7b67 | True | 0.497 | 295,173 | 259,133 | 222,651 | 4 | 90 | [replay](https://arena.tacto.ai/replay/b06c73ffcdf3f92d) | engine v1.7 |
+| 10-24 19:52 | case:P01 | procudeal | 8ab7b67-dirty | True | 0.914 | 1,153,780 | 1,101,723 | 1,096,816 | 3 | 3 | [replay](https://arena.tacto.ai/replay/6a0e3b52abf8659d) | engine v1.7b |
+| 10-24 19:52 | case:P02 | procudeal | 8ab7b67-dirty | True | 0.465 | 2,282,867 | 2,260,865 | 2,235,514 | 5 | 12 | [replay](https://arena.tacto.ai/replay/68e9e3bef0563516) | engine v1.7b |
+| 10-24 19:52 | case:P03 | procudeal | 8ab7b67-dirty | True | 0.923 | 4,246,314 | 3,935,069 | 3,909,043 | 4 | 11 | [replay](https://arena.tacto.ai/replay/0dffcc9b45f62313) | engine v1.7b |
+| 10-24 19:52 | case:P04 | procudeal | 8ab7b67-dirty | True | 0.860 | 198,846 | 196,853 | 196,529 | 4 | 11 | [replay](https://arena.tacto.ai/replay/db21396fc2c59d60) | engine v1.7b |
+| 10-24 19:56 | case:P05 | procudeal | 8ab7b67-dirty | True | 0.710 | 305,545 | 247,219 | 223,424 | 14 | 254 | [replay](https://arena.tacto.ai/replay/54a07f2d6e98361f) | engine v1.7b |
+| 10-24 19:52 | case:P07 | procudeal | 8ab7b67-dirty | True | 0.743 | 391,027 | 322,829 | 299,241 | 4 | 13 | [replay](https://arena.tacto.ai/replay/ad31154e44acbfbc) | engine v1.7b |
+| 10-24 19:54 | case:P08 | procudeal | 8ab7b67-dirty | True | 0.615 | 1,135,887 | 1,027,891 | 960,309 | 6 | 89 | [replay](https://arena.tacto.ai/replay/44f0daef02a305f9) | engine v1.7b |
+| 10-24 19:52 | case:P10 | procudeal | 8ab7b67-dirty | True | 0.671 | 1,932,492 | 1,527,674 | 1,328,927 | 3 | 5 | [replay](https://arena.tacto.ai/replay/52e71378ea7a4542) | engine v1.7b |
+| 10-24 19:52 | case:P11 | procudeal | 8ab7b67-dirty | True | 0.710 | 817,578 | 750,082 | 722,500 | 8 | 11 | [replay](https://arena.tacto.ai/replay/5016cad16f2361cf) | engine v1.7b |
+| 10-24 19:54 | case:P18 | procudeal | 8ab7b67-dirty | True | 0.564 | 295,173 | 254,244 | 222,651 | 5 | 68 | [replay](https://arena.tacto.ai/replay/02fc2e8f0b9d6210) | engine v1.7b |
+| 10-24 19:52 | case:P01 | procudeal | 8ab7b67-dirty | True | 0.914 | 1,153,780 | 1,101,723 | 1,096,816 | 3 | 3 | [replay](https://arena.tacto.ai/replay/da105d0b32091188) | v1.7b -patience |
+| 10-24 19:53 | case:P02 | procudeal | 8ab7b67-dirty | True | 0.504 | 2,282,867 | 2,258,979 | 2,235,514 | 5 | 56 | [replay](https://arena.tacto.ai/replay/00961be74eff740f) | v1.7b -patience |
+| 10-24 19:52 | case:P03 | procudeal | 8ab7b67-dirty | True | 0.923 | 4,246,314 | 3,935,069 | 3,909,043 | 4 | 3 | [replay](https://arena.tacto.ai/replay/29e7fe0e70cecec2) | v1.7b -patience |
+| 10-24 19:52 | case:P04 | procudeal | 8ab7b67-dirty | True | 0.860 | 198,846 | 196,853 | 196,529 | 4 | 17 | [replay](https://arena.tacto.ai/replay/116cd9fd0026943a) | v1.7b -patience |
+| 10-24 19:57 | case:P05 | procudeal | 8ab7b67-dirty | True | 0.659 | 305,545 | 251,462 | 223,424 | 14 | 274 | [replay](https://arena.tacto.ai/replay/c8bafd96c437a00e) | v1.7b -patience |
+| 10-24 19:52 | case:P07 | procudeal | 8ab7b67-dirty | True | 0.743 | 391,027 | 322,829 | 299,241 | 4 | 2 | [replay](https://arena.tacto.ai/replay/6bde64204e468dc0) | v1.7b -patience |
+| 10-24 19:54 | case:P08 | procudeal | 8ab7b67-dirty | True | 0.604 | 1,135,887 | 1,029,835 | 960,309 | 6 | 88 | [replay](https://arena.tacto.ai/replay/4f6698a6ffe2bcd4) | v1.7b -patience |
+| 10-24 19:52 | case:P10 | procudeal | 8ab7b67-dirty | True | 0.679 | 1,932,492 | 1,522,963 | 1,328,927 | 3 | 17 | [replay](https://arena.tacto.ai/replay/fa357ed1b8e78ef6) | v1.7b -patience |
+| 10-24 19:52 | case:P11 | procudeal | 8ab7b67-dirty | True | 0.710 | 817,578 | 750,082 | 722,500 | 8 | 10 | [replay](https://arena.tacto.ai/replay/e23d0bbccab06203) | v1.7b -patience |
+| 10-24 19:54 | case:P18 | procudeal | 8ab7b67-dirty | True | 0.564 | 295,173 | 254,244 | 222,651 | 5 | 78 | [replay](https://arena.tacto.ai/replay/605b064ccdf599cd) | v1.7b -patience |

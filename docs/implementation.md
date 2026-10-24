@@ -225,7 +225,8 @@ applies. **Not in stabilise / secure_supply:** there our price is held at the su
 index risk still costs (P02: about EUR 18k, 38 % of the case's score range). While our clause is
 proposed, its sheet without the clause is not compared on price (only agreed / final close). When
 the supplier demands a clause and its sheet carries an allowed option, that option goes into our mix
-and every re-plan keeps it.
+and every re-plan keeps it; an alternative sheet with a different clause no longer replaces our mix
+(v1.7b: in P08 the 5-deadband alternative looked cheaper, but the supplier conceded far less on it).
 
 **F. Patience.** The budget is a share of the opening gap (its first price on our mix less our first
 offer), the lowest share that applies: relationship goals 0.3, capacity full 0.16, near cost 0.14,
