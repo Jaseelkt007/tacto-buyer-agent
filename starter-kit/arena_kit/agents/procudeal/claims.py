@@ -7,6 +7,8 @@ so a claim is never contradicted. The arena checks at most three per message; on
 import logging
 from dataclasses import dataclass, field
 
+from .dossier import query
+
 log = logging.getLogger("arena")
 MIN_INDEX_FALL = -0.5  # % - smaller moves are not worth a claim
 DATA_MONTH = "2026-09"  # the data package is as of 2026-09-30
@@ -95,11 +97,12 @@ def _index_falls(case, d, package, _):
     ends at the series' latest month."""
     out = []
     for part in case.get("parts", []):
-        drivers = package.query("SELECT series_id, weight FROM cost_drivers WHERE part_id = ?", (part,))
+        drivers = query(package, "SELECT series_id, weight FROM cost_drivers WHERE part_id = ?", (part,))
         for drv in drivers:
             series = drv["series_id"]
-            meta = (package.query("SELECT name FROM index_series WHERE id = ?", (series,)) or [{}])[0]
-            rows = package.query(
+            meta = (query(package, "SELECT name FROM index_series WHERE id = ?", (series,)) or [{}])[0]
+            rows = query(
+                package,
                 "SELECT id, month, value FROM index_values WHERE series_id = ? ORDER BY month DESC LIMIT 13",
                 (series,),
             )
@@ -140,7 +143,7 @@ def _recent(month, latest=DATA_MONTH):
 def _should_cost(case, d, package, price_ref):
     if len(case.get("parts", [])) != 1:
         return []
-    rows = package.query("SELECT id, supplier_id, unit_cost FROM should_cost WHERE part_id = ?", (case["parts"][0],))
+    rows = query(package, "SELECT id, supplier_id, unit_cost FROM should_cost WHERE part_id = ?", (case["parts"][0],))
     row = next((r for r in rows if r["supplier_id"] == d.supplier_id), None) or next(
         (r for r in rows if not r["supplier_id"]), None
     )

@@ -18,7 +18,8 @@ from ...docs import quote_terms, standard_terms
 from ...play import latest, live_threads, moves_left, standing
 from . import claims as cl
 from . import economics as eco
-from .dossier import Dossier, build
+from . import signals as sg
+from .dossier import CASH_PREMIUM, Dossier, build
 
 log = logging.getLogger("arena")
 
@@ -26,7 +27,10 @@ ANCHOR = {"leverage": 0.80, "routine": 0.84, "quality_first": 0.88, "secure_supp
 STEP, HOLD_STEP = 0.30, 0.10  # share of the gap we close per round; after a deep first drop, hold
 DEEP_DROP = 0.06  # a first counter this far down signals a deep floor
 CLOSE_GAP = 0.005  # accept when its price is within this of our last offer
-FIRST_CLAIMS, LATER_CLAIMS = 3, 1
+FIRST_CLAIMS, LATER_CLAIMS, DATA_CLAIMS = 3, 1, 2
+HEALTH_BAND = 0.98  # in strategic cases, a price this far below the health price is countered at it
+STUCK_STEP = 0.45  # it said it cannot move without a move from us
+PATIENT_SHIFT = 0.03  # anchor lower for slow, founder-run suppliers; higher for quick group replies
 DONE = {"agreed", "final_offer"}  # final_offer is final: these suppliers walk if pushed again
 
 
@@ -46,6 +50,10 @@ class Side:
     theirs: list = field(default_factory=list)  # its price converted to our term mix
     used: set = field(default_factory=set)
     seen: int = 0
+    replies: int = 0  # supplier e-mails read so far
+    asks: set = field(default_factory=set)  # every ask so far
+    last: sg.Reading = field(default_factory=sg.Reading)  # what its latest e-mail said
+    rate_raised: bool = False
 
     def estimate(self):
         return self.dossier.estimate(self.reference)
@@ -69,6 +77,20 @@ class Negotiator:
         self.limit = eco.walk_away_limit(self.case, self.c_open)
         for sid, events in threads.items():
             self.sides[sid] = self.new_side(sid, events)
+        # C_open and every later C with the same relationship estimate, so comparisons match
+        with_estimate = [
+            (standing(threads[sid])[1], side.standard, side.estimate()) for sid, side in self.sides.items()
+        ]
+        costs = [
+            total_cost(self.case, t, std, est)
+            for t, std, est in with_estimate
+            if t.get("unit_price") is not None and must_haves_ok(self.case, t, std)
+        ]
+        self.c_open = min(costs, default=self.c_open)
+        self.limit = eco.walk_away_limit(self.case, self.c_open)
+        for side in self.sides.values():
+            ceiling = eco.price_ceiling(self.case, side.mix, self.limit, side.standard, side.estimate())
+            side.ceiling = ceiling or 0.0
         log.info("setup %s: C_open %.0f limit %.0f", self.case["case_id"], self.c_open, self.limit)
 
     def new_side(self, sid, events):
@@ -78,14 +100,21 @@ class Negotiator:
         dossier = build(case, sid, self.package, quote.get("unit_price"))
         ref = _reference_terms(case, events)
         est = dossier.estimate(ref)
-        ratio = (1 + ANCHOR.get(self.goal, 0.85)) / 2  # where we expect to close, relative to its quote
+        delay = sg.read(events[0]).delay_days if events else None
+        shift = 0.0
+        if (delay or 0) >= 4 or dossier.owner_type == "founder":
+            shift = -PATIENT_SHIFT  # small, slow shops have deep floors
+        elif dossier.owner_type == "group" and delay is not None and delay <= 2:
+            shift = PATIENT_SHIFT  # groups move little and call final offers early
+        anchor_ratio = ANCHOR.get(self.goal, 0.85) + shift
+        ratio = (1 + anchor_ratio) / 2  # where we expect to close, relative to its quote
         plan = []
         if quote.get("unit_price"):
             plan = eco.plan_terms(case, eco_fill(case, quote), std, est, deal_ratio=ratio)
         mix = dict(plan[0][1]) if plan else complete_offer(case, quote)
         mix.pop("unit_price", None)
         q_eq = _their_price(case, quote, mix, est, std)
-        anchor = (q_eq or quote.get("unit_price") or 0) * ANCHOR.get(self.goal, 0.85)
+        anchor = (q_eq or quote.get("unit_price") or 0) * anchor_ratio
         best = eco.cheapest_price(case, mix, std, est) if self.goal in RELATIONSHIP_GOALS else 0.0
         anchor = max(anchor, best)
         current = case["buyer"].get("current_unit_price")
@@ -96,11 +125,14 @@ class Negotiator:
             ceiling = 0.0
         bank = cl.build_bank(case, dossier, self.package, quote.get("unit_price"))
         log.info(
-            "side %s: mix %s quote~%.2f anchor %.2f ceiling %s best %.2f full_cost %s (%s) rate %.3f claims %d",
+            "side %s: mix %s quote~%.2f anchor %.2f (shift %+.2f, delay %s) ceiling %s best %.2f full_cost %s (%s)"
+            " rate %.3f claims %d",
             sid,
             mix,
             q_eq or 0,
             anchor,
+            shift,
+            delay,
             ceiling,
             best,
             dossier.full_cost,
@@ -135,7 +167,9 @@ class Negotiator:
         # close on the best standing sheet once its supplier is ready, or every thread is
         if best and (ready[best[1]] or all(ready.values())):
             return self.accept(best, ready[best[1]])
-        finished = all(latest(threads[s]).get("status") in DONE or moves_left(self.case, threads[s]) <= 0 for s in live)
+        finished = all(
+            latest(threads[s]).get("status") == "final_offer" or moves_left(self.case, threads[s]) <= 0 for s in live
+        )
         if not best and finished:
             return self.walk(live[0], "no standing sheet passes the accept check")
 
@@ -152,6 +186,10 @@ class Negotiator:
         their = [m for m in events if m.get("from") != "buyer"]
         if len(their) <= len(side.theirs):
             return
+        for m in their[side.replies :]:
+            side.last = sg.read(m)
+            side.asks |= side.last.asks
+        side.replies = len(their)
         side.seen = sum(len(s.theirs) for s in self.sides.values())  # arrival order across threads
         _, terms = standing(events)
         if terms.get("unit_price") is not None:
@@ -160,24 +198,96 @@ class Negotiator:
             side.theirs.append(price if price else terms["unit_price"])
         else:
             side.theirs.append(side.theirs[-1] if side.theirs else math.inf)
+        self.react(side, events)
+
+    def react(self, side, events):
+        """Act on what its latest e-mail said and on any alternative sheets it sent."""
+        case = self.case
+        if "payment" in side.last.asks and not side.rate_raised and "payment_days" in case["negotiable"]:
+            side.rate_raised = True
+            if not side.dossier.cash_need:
+                side.dossier.interest_rate += CASH_PREMIUM
+            self.replan(side, events, "it asked for faster payment")
+        if "hedged" in side.last.traits:
+            side.bank = [c for c in side.bank if c.kind != "index_change"]
+        sheets = latest(events).get("term_sheets") or []
+        if len(sheets) > 1 and sheets[0]["terms"].get("unit_price") is not None:
+            est, std = side.estimate(), side.standard
+            standing_c = total_cost(case, sheets[0]["terms"], std, est)
+            for ts in sheets[1:]:
+                terms = ts.get("terms") or {}
+                if terms.get("unit_price") is None or not must_haves_ok(case, terms, std):
+                    continue
+                if total_cost(case, terms, std, est) < standing_c - 1:
+                    mix = {k: v for k, v in complete_offer(case, terms).items() if k != "unit_price"}
+                    log.info(
+                        "%s: its alternative %s costs us less - adopting its terms %s",
+                        side.sid,
+                        ts.get("term_sheet_id"),
+                        mix,
+                    )
+                    side.mix = mix
+                    side.theirs[-1] = terms["unit_price"]
+                    standing_c = total_cost(case, terms, std, est)
+
+    def replan(self, side, events, why):
+        """Re-rank the term mixes with what we now know about the supplier."""
+        _, terms = standing(events)
+        if terms.get("unit_price") is None:
+            return
+        ratio = (side.anchor / side.theirs[0]) if side.theirs and side.theirs[0] else 0.9
+        plan = eco.plan_terms(
+            self.case, eco_fill(self.case, terms), side.standard, side.estimate(), deal_ratio=(1 + ratio) / 2
+        )
+        if plan:
+            side.plan = plan
+            new = {k: v for k, v in plan[0][1].items() if k != "unit_price"}
+            if new != side.mix:
+                log.info("%s: re-planned terms (%s): %s -> %s", side.sid, why, side.mix, new)
+                side.mix = new
+                side.theirs[-1] = (
+                    _their_price(self.case, terms, side.mix, side.estimate(), side.standard) or side.theirs[-1]
+                )
 
     def ready(self, side, events):
         """Is this supplier at the point where we should take its standing sheet?"""
         status = latest(events).get("status")
-        if status in DONE or moves_left(self.case, events) <= 1:
+        below_health = (
+            self.goal in RELATIONSHIP_GOALS
+            and side.best_for_us
+            and side.theirs
+            and side.theirs[-1] < side.best_for_us * HEALTH_BAND
+        )
+        if status == "final_offer" or moves_left(self.case, events) <= 1:
             return status or "last move"
+        if status == "agreed":
+            return False if below_health else "agreed"  # below its health price: counter at that price
         if not side.ours or not side.theirs:
             return False
         if side.theirs[-1] <= side.ours[-1] * (1 + CLOSE_GAP):
             return "within half a percent of our offer"
         if self.goal in RELATIONSHIP_GOALS and side.best_for_us and side.theirs[-1] <= side.best_for_us:
+            if below_health:
+                return False
             return "at the price that is cheapest for us with the relationship charge"
         return False
 
     def next_price(self, side):
         theirs = side.theirs[-1]
+        if (
+            self.goal in RELATIONSHIP_GOALS
+            and side.best_for_us
+            and side.ours
+            and theirs < side.best_for_us * HEALTH_BAND
+        ):
+            # it would go below a healthy margin, which C charges us for: offer the healthy price instead
+            return round(min(side.best_for_us, side.ceiling or math.inf), 2)
         if not side.ours:
             price = min(side.anchor, theirs * 0.99)
+        elif "price_frozen" in side.last.traits:
+            price = theirs  # its price stands; we win on the terms of our mix instead
+        elif "stuck" in side.last.traits:
+            price = max(side.ours[-1] + STUCK_STEP * (theirs - side.ours[-1]), side.ours[-1])
         else:
             first_drop = (side.theirs[0] - side.theirs[1]) / side.theirs[0] if len(side.theirs) > 1 else 0
             step = HOLD_STEP if len(side.ours) == 1 and first_drop >= DEEP_DROP else STEP
@@ -217,12 +327,20 @@ class Negotiator:
                     sheet = complete_offer(case, {**mix, "unit_price": p})
                     if must_haves_ok(case, sheet, std):
                         sheets.append(sheet)
+        clause = self.clause_sheet(side, main, c_main)
+        if clause and len(sheets) < 3:
+            sheets.insert(1, clause)
+        if self.goal in RELATIONSHIP_GOALS and side.best_for_us:  # never offer below its health point
+            floor = side.best_for_us * 0.995
+            sheets = [main] + [s for s in sheets[1:] if s["unit_price"] >= floor]
+            clause = clause if clause in sheets else None
         claims = self.pick_claims(side, offers)
         side.ours.append(price)
         return {
             "supplier_id": side.sid,
             "sheets": sheets,
             "claims": claims,
+            "answers": self.answers(side, main, sheets, clause),
             "why": {
                 "price": price,
                 "anchor": side.anchor,
@@ -232,11 +350,53 @@ class Negotiator:
                 "limit": round(self.limit) if self.limit < math.inf else None,
                 "sheets": len(sheets),
                 "claims": [c.kind for c in claims],
+                "asks": sorted(side.last.asks),
+                "traits": sorted(side.last.traits),
+                "mix": side.mix,
             },
         }
 
+    def clause_sheet(self, side, main, c_main):
+        """It offered or asked for an index clause: one sheet with the clause that costs us least,
+        at the same total cost to us as the main sheet."""
+        case = self.case
+        if "clause" not in side.asks or "index_clause" not in case["negotiable"] or main.get("index_clause"):
+            return None
+        options = [o for o in case.get("term_options", {}).get("index_clause", []) if o]
+        if not options:
+            return None
+        best = max(options, key=lambda o: o.get("deadband_pct", 0))
+        mix = {**{k: v for k, v in main.items() if k != "unit_price"}, "index_clause": best}
+        p = eco.equal_cost_price(case, mix, c_main, side.standard)
+        if not p or p == math.inf or p <= 0:
+            return None
+        sheet = complete_offer(case, {**mix, "unit_price": p})
+        return sheet if must_haves_ok(case, sheet, side.standard) else None
+
+    def answers(self, side, main, sheets, clause):
+        """Sentences that answer what it asked for, in words."""
+        case, out = self.case, []
+        t = closing_terms(case, main, side.standard)
+        if "volume" in side.last.asks:
+            out.append(
+                f"We can commit to {t['volume_per_year']:,} pieces per year over {t['contract_months']} months, "
+                "as set out in the packages below."
+            )
+        reference_days = side.reference.get("payment_days")
+        if (
+            "payment" in side.last.asks
+            and reference_days
+            and any((s.get("payment_days") or 999) < reference_days for s in sheets)
+        ):
+            out.append("We have included faster payment, as you asked.")
+        if clause:
+            out.append("We are open to a price adjustment clause; one of the packages includes it.")
+        if "price_frozen" in side.last.traits:
+            out.append("We understand that your price is fixed for now, so we have looked at the terms instead.")
+        return out
+
     def pick_claims(self, side, offers):
-        n = FIRST_CLAIMS if not side.ours else LATER_CLAIMS
+        n = FIRST_CLAIMS if not side.ours else (DATA_CLAIMS if "data" in side.last.asks else LATER_CLAIMS)
         out = []
         # RFQ: the cheapest rival offer is the strongest argument
         rivals = [(c, s, sh) for c, s, sh, _ in offers if s != side.sid]

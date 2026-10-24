@@ -19,6 +19,8 @@ def offer_email(case, events, move, side):
         lines.append("Thank you for your offer and for explaining your position.")
     else:
         lines.append("Thank you for your reply and for the step you have taken.")
+    if move.get("answers"):
+        lines += move["answers"]
     if move["claims"]:
         lines.append("")
         lines.append("Our data shows a different picture on some points:" if first else "One more point from our side:")

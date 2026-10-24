@@ -36,6 +36,7 @@ open session ──► every supplier's quote e-mail + quote PDF
 SETUP (once per case, policy.Negotiator.setup)
   C_open  = cheapest opening quote that keeps the must-haves (with each supplier's standard terms)
   limit   = min(C of our alternative, C_open)        a deal must cost less than this
+            (C_open and every accept check use the same relationship estimate)
   per supplier (policy.new_side):
     standard  = quote PDF "standard terms"            what closes for fields a sheet leaves out
     reference = offered + standard + fixed + plan     the supplier's own baseline for valuing a deal
@@ -61,6 +62,7 @@ EACH MOVE (policy.Negotiator.decide)
               price  = anchor first, then our last + 30 % of the gap (10 % after a deep first drop)
               sheets = main sheet + equal-cost alternatives (first move: next mixes from the plan;
                        later: its own term mix at the same cost to us)
+              (stabilise / secure_supply: no extra sheet below the relationship optimum)
               claims = 3 in the first message, 1 later; in an RFQ the cheapest rival offer first
               e-mail = writer.offer_email(...)
 ```
@@ -81,11 +83,15 @@ EACH MOVE (policy.Negotiator.decide)
 | `equal_cost_price(case, terms, c_target, ...)` | price at which other terms cost us the same: for alternative sheets |
 
 ### dossier.py
+All SQLite reads go through `dossier.query` / `dossier.document` under one lock: cases running in
+parallel share one connection (v1.5).
+
 - **Cost of money** by owner type: group 5 %, private 7 %, family 7.5 %, founder 10 %, plus 5 points
   when its letters, e-mails or news show a cash need ("overdue invoices", "cash discount", ...).
 - **Full cost**: the should-cost of its own plant, else the German should-cost x country factor
   (AT 1.05, CH 1.1, CZ/PL/HU 0.82, TR 0.75, CN 0.7), else its quote less 10 %. Every price it
-  offers later caps the estimate at 99.5 % of that price.
+  offers later caps the estimate at 99.5 % of that price, but never below the source's error band
+  (own plant −5 %, German × country −15 %): suppliers do go below full cost for a clause (v1.5).
 - **Signals**: cash need, looks for work, capacity full (regex over its documents and news).
 
 ### claims.py
@@ -113,6 +119,27 @@ Claims whose IDs are not in the data are dropped, and each ID is used once per c
 | `CLOSE_GAP` | 0.005 | accept when its price is within this of our last offer |
 | `FIRST_CLAIMS` / `LATER_CLAIMS` | 3 / 1 | claims per message |
 | `DONE` | agreed, final_offer | statuses we accept on; we never push after final_offer |
+| `STUCK_STEP` | 0.45 | step for one round after "without movement from your side…" |
+| `PATIENT_SHIFT` | 0.03 | anchor −3 points for founder / ≥ 4-day replies, +3 for groups with ≤ 2-day replies |
+| `DATA_CLAIMS` | 2 | claims after "which figures is that based on?" |
+| `HEALTH_BAND` | 0.98 | stabilise / secure_supply: a price this far below the health price is countered at it, even after `agreed` |
+
+### signals.py (v1.4)
+Reads each supplier e-mail (the bots' replies are templated across the arena):
+
+| Signal | Matches (examples) | Effect in policy |
+|---|---|---|
+| ask: volume | "Which volume can you commit to?", "binding higher volume" | writer states our volume and contract commitment |
+| ask: payment | "Faster payment is welcome", "need faster payment terms" | supplier cost of money +5 points once, term mix re-planned |
+| ask: clause | "Preisgleitklausel", "price adjustment clause" | one sheet with the index clause at equal cost to us |
+| ask: data | "Which figures is that based on?", "provide proof" | two claims in the next message |
+| trait: price_frozen | "freeze on price reductions", "talk about the terms instead" | no more discounting; its price on our term mix |
+| trait: hedged | "not our reality", "covered at fixed prices" | index claims dropped |
+| trait: stuck | "Without movement from your side", "we are stuck" | step 45 % of the gap for one round |
+| reply delay | `signals.reply_delay_days` of its first e-mail | ≥ 4 days or founder: anchor −3 points; group with ≤ 2 days: +3 points |
+
+Alternative sheets in a reply (`offer:…-a`) are priced too; if one costs us less than its standing
+sheet, its term mix becomes ours.
 
 ### writer.py
 Template e-mail: thanks, claim sentences, one line on the packages, an offer of faster payment when
@@ -140,9 +167,7 @@ decision trace) and a row in `notes/runs.md`.
 
 ## 5. Known gaps (next work)
 
-- No index-clause trade yet (P02-type cases where the supplier wants a clause).
-- Supplier questions ("Which volume can you commit to?", faster payment) are not answered in words.
-- Hedged suppliers reject index claims ("not our reality"); we keep citing them.
+- v1.4 covers supplier asks, alternatives, clause offers and hedged suppliers (see signals.py).
 - RFQ: no pruning of losing bidders and no keepalives; P05 stays at 0.55.
 - The e-mail is a template; an LLM-written paragraph (no digits, with a fallback) is planned.
 - Sunday release data is merged by `DataPackage` for facts, but the dossier only reads SQLite.
