@@ -160,6 +160,7 @@ export const STATUS_LABEL: Record<string, string> = {
 
 export const CLAIM_LABEL: Record<string, string> = {
   rival_offer: "Rival offer",
+  rival_quote: "Rival quote",
   notice_period: "Notice period",
   should_cost: "Should-cost",
   quality_record: "Quality record",

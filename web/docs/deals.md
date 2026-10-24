@@ -64,6 +64,10 @@ It shows at a glance, for example, that engine v1.2 scored 0 on six cases and v1
   `duplicate` means we had already used that fact; `irrelevant` means it does not bear on this
   supplier's cost. A `contradicted` claim costs trust.
 
+## Deal anatomy
+
+Every replay links to `/negotiations/<session>/anatomy`: each cost term worked out with this deal's numbers, checked against the arena (see [anatomy.md](anatomy.md)).
+
 ## Files
 
 `scripts/sync-runs.mjs`, `src/lib/runs.ts` (types; `buildSteps` joins each supplier move with its

@@ -74,9 +74,17 @@ export default async function Page({ params }: PageProps<"/negotiations/[id]">) 
     <main className="h-full overflow-auto bg-[var(--page)]">
       <div className="mx-auto max-w-6xl space-y-5 p-4 sm:p-6">
         <header className="space-y-2">
-          <Link href="/negotiations" className="inline-flex items-center gap-1 text-[12.5px] text-[var(--accent-ink)] hover:underline">
-            <BackIcon width={14} height={14} /> All negotiations
-          </Link>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <Link href="/negotiations" className="inline-flex items-center gap-1 text-[12.5px] text-[var(--accent-ink)] hover:underline">
+              <BackIcon width={14} height={14} /> All negotiations
+            </Link>
+            <Link
+              href={`/negotiations/${run.session_id}/anatomy`}
+              className="rounded border border-[var(--accent-line)] bg-[var(--accent-wash)] px-2.5 py-1 text-[12.5px] font-medium text-[var(--accent-ink)] hover:bg-[var(--select)]"
+            >
+              Deal anatomy: every cost term, worked out →
+            </Link>
+          </div>
           <div>
             <h1 className="text-[22px] font-semibold">
               {run.case_id.replace("case:", "")} · {cf?.title ?? run.case_id}

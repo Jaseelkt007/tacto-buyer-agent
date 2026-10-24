@@ -16,7 +16,9 @@ the negotiation. Update the page in the same commit as the code.
 | Market (indices) | `/market` | [market.md](market.md) | done (phase 3) |
 | Contracts & Performance | `/contracts` | [contracts.md](contracts.md) | done (phase 4) |
 | Demand & Sourcing | `/demand` | [demand.md](demand.md) | done (phase 5) |
-| Deal anatomy + Facts | — | — | phase 6 |
+| Deal anatomy | `/negotiations/<session>/anatomy` | [anatomy.md](anatomy.md) | done (phase 6) |
+| Arguments (ledger) | `/arguments` | [arguments.md](arguments.md) | done (phase 6) |
+| Facts | `/facts` | [facts.md](facts.md) | done (phase 6) |
 
 ## Phase plan
 
@@ -61,8 +63,9 @@ The app reads committed JSON snapshots, so it builds and deploys without keys.
 | `npm run sync:market` | `../data` (CSV) | `src/data/market.json` | none |
 | `npm run sync:contracts` | `../data` (CSV, contract texts) | `src/data/contracts.json`, `src/data/qn-links.json` | none |
 | `npm run sync:demand` | `../data` (CSV, `facts.json`) | `src/data/demand.json`, `src/data/demand-links.json` | none |
+| `npm run sync:facts` | `../data/facts.json` | `public/facts.json` (loaded by the browser on `/facts` only) | none |
 
-After the **Sunday 08:00 data release**: `uv run arena data`, then `npm run sync:suppliers && npm run sync:parts && npm run sync:market && npm run sync:contracts && npm run sync:demand`
+After the **Sunday 08:00 data release**: `uv run arena data`, then `npm run sync:suppliers && npm run sync:parts && npm run sync:market && npm run sync:contracts && npm run sync:demand && npm run sync:facts`
 (and later phases' syncs). After new benchmark runs on main: `git fetch origin && npm run sync:runs`.
 
 ## Run
@@ -89,11 +92,12 @@ web/
     sync-market.mjs        Market snapshot
     sync-contracts.mjs     Contracts & Performance snapshot + qn: link index
     sync-demand.mjs        Demand & Sourcing snapshot + fc:/rfq:/quote: link index
+    sync-facts.mjs         facts.json for the Facts page
   src/
-    app/                   one folder per section (mail, negotiations, suppliers, parts, market, contracts, demand)
-    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/, market/, contracts/, demand/
+    app/                   one folder per section (mail, negotiations + anatomy, suppliers, parts, market, contracts, demand, arguments, facts)
+    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/, market/, contracts/, demand/, arguments/, facts/
     data/                  committed snapshots
-    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, market.ts, indexRules.ts, contracts.ts, demand.ts, links.ts, format.ts
+    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, market.ts, indexRules.ts, contracts.ts, demand.ts, anatomy.ts, arguments.ts, links.ts, format.ts
 ```
 
 Add a section: a route under `src/app/`, one entry in `SECTIONS` in `src/components/AppRail.tsx`,

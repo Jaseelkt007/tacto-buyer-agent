@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { BoxesIcon, ChartIcon, CogIcon, ContractIcon, FactoryIcon, HandshakeIcon, HomeIcon, InboxIcon } from "./icons";
+import { BoxesIcon, ChartIcon, CogIcon, ContractIcon, DatabaseIcon, FactoryIcon, HandshakeIcon, HomeIcon, InboxIcon, ScaleIcon } from "./icons";
 
 // One entry per section of the site; add new pages here.
 const SECTIONS: { href: string; label: string; icon: ReactNode }[] = [
@@ -15,6 +15,8 @@ const SECTIONS: { href: string; label: string; icon: ReactNode }[] = [
   { href: "/contracts", label: "Contracts", icon: <ContractIcon width={20} height={20} /> },
   { href: "/demand", label: "Demand", icon: <BoxesIcon width={20} height={20} /> },
   { href: "/negotiations", label: "Deals", icon: <HandshakeIcon width={20} height={20} /> },
+  { href: "/arguments", label: "Arguments", icon: <ScaleIcon width={20} height={20} /> },
+  { href: "/facts", label: "Facts", icon: <DatabaseIcon width={20} height={20} /> },
 ];
 
 export function AppRail() {
