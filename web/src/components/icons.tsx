@@ -18,7 +18,13 @@ export const InboxIcon = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export const SendIcon = (p: SVGProps<SVGSVGElement>) => (
+export const HomeIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}>
+    <path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z" />
+  </svg>
+);
+
+export const SendIcon =(p: SVGProps<SVGSVGElement>) => (
   <svg {...base} {...p}>
     <path d="m22 2-7 20-4-9-9-4Z" />
     <path d="M22 2 11 13" />

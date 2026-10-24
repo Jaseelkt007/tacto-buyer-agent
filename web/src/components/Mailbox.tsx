@@ -118,7 +118,7 @@ export function Mailbox({ mails, syncedAt }: { mails: Mail[]; syncedAt: string }
   const title = caseId ? cases.find((c) => c.caseId === caseId)?.caseTitle : FOLDERS.find((f) => f.id === folder)?.label;
 
   return (
-    <div className="flex h-dvh flex-col bg-[var(--page)] text-[var(--ink)]">
+    <div className="flex h-full flex-col bg-[var(--page)] text-[var(--ink)]">
       {/* Top bar */}
       <header className="flex h-12 shrink-0 items-center gap-4 bg-[var(--bar)] px-4 text-white">
         <div className="flex min-w-0 items-center gap-2">

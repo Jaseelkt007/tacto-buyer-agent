@@ -35,7 +35,7 @@ export type CaseFile = {
   suppliers: { id: string; name: string; country: string | null }[];
   negotiable: string[];
   fixed_terms: Terms;
-  term_options: Record<string, (string | number | null)[]>;
+  term_options: Record<string, unknown[]>;
   round_limit: number;
   refs: string[];
   buyer: {

@@ -189,7 +189,7 @@ function CaseView({ mail }: { mail: Mail }) {
               {f === "unit_price" ? (
                 <span>any price</span>
               ) : (
-                (c.term_options[f] ?? []).map((o) => <Chip key={String(o)}>{termValue(f, o)}</Chip>)
+                (c.term_options[f] ?? []).map((o) => <Chip key={JSON.stringify(o)}>{termValue(f, o)}</Chip>)
               )}
             </li>
           ))}

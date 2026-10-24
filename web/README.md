@@ -14,12 +14,12 @@ For people only. The agent never imports anything from here.
 cd web
 npm install
 npm run sync     # snapshot from the arena (reads starter-kit/.env; uses no practice quota)
-npm run dev      # http://localhost:3000
+npm run dev      # http://localhost:3000, mail at /mail
 ```
 
 `npm run sync` reads the latest session we already played for each hosted practice and sandbox case,
 it never opens a new one. It writes `src/data/inbox.json` and the quote PDFs to `public/inbox/`. The
 key stays in the sync script; the web app only reads the snapshot, so it builds and deploys without it.
 
-Deep links open one mail, e.g. `/#case:P01/msg:70110-0-0` or `/#case:P05/case`. Arrow keys move
+Deep links open one mail, e.g. `/mail#case:P01/msg:70110-0-0` or `/mail#case:P05/case`. Arrow keys move
 through the list.

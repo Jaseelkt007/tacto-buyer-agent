@@ -19,7 +19,14 @@ export function termLabel(field: string) {
   return TERM_LABELS[field] ?? field.replace(/_/g, " ");
 }
 
+type IndexClause = { series: string; material_share: number; deadband_pct: number; base_month: string };
+
 export function termValue(field: string, v: unknown): string {
+  if (field === "index_clause") {
+    if (!v) return "none";
+    const c = v as IndexClause;
+    return `${c.series} · ${Math.round(c.material_share * 100)} % material · ±${c.deadband_pct} % deadband · base ${c.base_month}`;
+  }
   if (v === null || v === undefined || v === "") return "—";
   if (typeof v !== "number") return String(v);
   if (field === "unit_price") return eur.format(v);
