@@ -111,12 +111,14 @@ def term_mixes(case, base):
         yield {**base, **dict(zip(fields, combo, strict=True))}
 
 
-def plan_terms(case, quote, standard, supplier, our_supplier=None):
+def plan_terms(case, quote, standard, supplier, our_supplier=None, deal_ratio=1.0):
     """For every allowed term mix: the price worth exactly as much to the supplier as its `quote`,
     and our C at that price. Returns [(C, sheet)] cheapest first, must-haves kept. The cheapest is
     the mix the supplier should accept at no loss to itself while costing us least: what we offer
     on the terms that are cheap for it and dear for us. `our_supplier` prices the relationship
-    charge into our C (defaults to `supplier`)."""
+    charge into our C (defaults to `supplier`). `deal_ratio` values each mix at the price level we
+    expect to close at (a share of the equal-value price), not at the quote: whether a longer contract
+    beats buying the rest at the fallback price depends on that level."""
     target = supplier_value(case, quote, supplier)
     base = complete_offer(case, quote)
     out = []
@@ -127,7 +129,8 @@ def plan_terms(case, quote, standard, supplier, our_supplier=None):
         sheet = complete_offer(case, {**mix, "unit_price": price})
         if not must_haves_ok(case, sheet, standard):
             continue
-        out.append((total_cost(case, sheet, standard, our_supplier or supplier), sheet))
+        at_deal = {**sheet, "unit_price": round(price * deal_ratio, 2)}
+        out.append((total_cost(case, at_deal, standard, our_supplier or supplier), sheet))
     out.sort(key=lambda x: x[0])
     return out
 
