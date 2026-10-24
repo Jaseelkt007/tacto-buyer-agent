@@ -24,6 +24,14 @@ export const HomeIcon = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const HandshakeIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}>
+    <path d="M7 7h4l2-2 3 3-4 4-3-3" />
+    <path d="M17 8l4 4-6 6-2-2" />
+    <path d="M3 12l4-4M3 12l6 6 2-2M9 14l2 2M11 12l2 2" />
+  </svg>
+);
+
 export const SendIcon =(p: SVGProps<SVGSVGElement>) => (
   <svg {...base} {...p}>
     <path d="m22 2-7 20-4-9-9-4Z" />
