@@ -49,74 +49,101 @@ export function DemoDeck({ chapters, footer }: { chapters: Chapter[]; footer?: R
   }, [at, go]);
 
   const c = chapters[at];
+  const prev = chapters[at - 1];
+  const next = chapters[at + 1];
   return (
-    <div className={`${s.root} fixed inset-0 z-50 flex flex-col font-[family-name:var(--font-demo)] text-[14px]`}>
-      <header className="flex shrink-0 items-center gap-4 border-b border-[var(--d-line)] bg-[var(--d-panel)] px-4 py-2 sm:px-6">
-        <Link href="/" className="text-[12px] text-[var(--d-ink-2)] hover:text-[var(--d-ink)] hover:underline">
-          Back to the app
-        </Link>
-        <div className={`${s.plate} ${s.wide} hidden text-[15px] sm:block`}>ProcuDeal, inside one negotiation</div>
-        <div className="ml-auto flex items-center gap-2 text-[12px] text-[var(--d-muted)]">
-          <span className="hidden tabular-nums sm:inline">
-            {at + 1} of {chapters.length}
+    <div className={`${s.root} fixed inset-0 z-50 flex flex-col font-[family-name:var(--font-demo)] text-[14px] leading-normal`}>
+      <header className="flex h-14 shrink-0 items-center gap-4 border-b border-[var(--d-line)] bg-[var(--d-panel)] px-4 sm:px-6">
+        <div className="flex items-center gap-2.5">
+          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--d-ink)] text-[11px] font-semibold tracking-wide text-white" aria-hidden>
+            PD
+          </span>
+          <span className="text-[14px] font-semibold">ProcuDeal</span>
+          <span className="hidden text-[var(--d-line)] sm:inline" aria-hidden>
+            /
+          </span>
+          <span className="hidden text-[14px] text-[var(--d-ink-2)] sm:inline">Pipeline demo</span>
+        </div>
+        <div className="ml-auto flex items-center gap-2">
+          <span className="mr-2 hidden text-[12.5px] tabular-nums text-[var(--d-muted)] md:inline">
+            Chapter {at + 1} of {chapters.length}
           </span>
           <button
             type="button"
             onClick={() => go(at - 1)}
             disabled={at === 0}
-            className="rounded border border-[var(--d-line)] px-2.5 py-1 text-[var(--d-ink)] enabled:hover:bg-[var(--d-panel-2)] disabled:opacity-40"
+            className="h-8 rounded-md border border-[var(--d-line)] bg-white px-3 text-[13px] font-medium text-[var(--d-ink)] shadow-[var(--d-shadow)] enabled:hover:bg-[var(--d-panel-2)] disabled:opacity-40"
             aria-label="Previous chapter"
           >
-            ‹ Back
+            Previous
           </button>
           <button
             type="button"
             onClick={() => go(at + 1)}
             disabled={at === chapters.length - 1}
-            className="rounded border border-[var(--d-ink)] bg-[var(--d-ink)] px-2.5 py-1 text-[var(--d-panel)] enabled:hover:opacity-90 disabled:opacity-40"
+            className="h-8 rounded-md bg-[var(--d-ink)] px-3 text-[13px] font-medium text-white shadow-[var(--d-shadow)] enabled:hover:bg-[#2a2d35] disabled:opacity-40"
             aria-label="Next chapter"
           >
-            Next ›
+            Next
           </button>
+          <Link href="/" className="ml-2 hidden h-8 items-center rounded-md px-2 text-[13px] text-[var(--d-ink-2)] hover:bg-[var(--d-sunk)] hover:text-[var(--d-ink)] sm:inline-flex">
+            Exit
+          </Link>
         </div>
       </header>
 
       <div className="flex min-h-0 flex-1">
-        <nav aria-label="Chapters" className={`${s.scrollPane} hidden w-[232px] shrink-0 overflow-y-auto border-r border-[var(--d-line)] py-4 lg:block`}>
-          <ol className="space-y-0.5 px-3">
+        <nav aria-label="Chapters" className={`${s.scrollPane} hidden w-[256px] shrink-0 flex-col overflow-y-auto border-r border-[var(--d-line)] bg-[var(--d-panel)] lg:flex`}>
+          <div className="px-5 pb-2 pt-5 text-[12px] font-medium text-[var(--d-muted)]">Contents</div>
+          <ol className="space-y-px px-3">
             {chapters.map((ch, i) => (
               <li key={ch.id}>
                 <button
                   type="button"
                   onClick={() => go(i)}
                   aria-current={i === at ? "step" : undefined}
-                  className={`group flex w-full items-start gap-3 rounded-md px-2 py-2 text-left ${i === at ? "bg-[var(--d-panel)] shadow-[0_0_0_1px_var(--d-line)]" : "hover:bg-[var(--d-panel-2)]"}`}
+                  className={`relative flex w-full items-baseline gap-3 rounded-md py-2 pl-3 pr-2 text-left text-[13.5px] ${
+                    i === at ? "bg-[var(--d-sunk)] font-medium text-[var(--d-ink)]" : "text-[var(--d-ink-2)] hover:bg-[var(--d-panel-2)] hover:text-[var(--d-ink)]"
+                  }`}
                 >
-                  <span
-                    className={`${s.plate} mt-px w-5 shrink-0 text-right text-[17px] tabular-nums ${i === at ? "text-[var(--d-buyer)]" : i < at ? "text-[var(--d-ink-2)]" : "text-[var(--d-muted)]"}`}
-                  >
-                    {i + 1}
-                  </span>
-                  <span className="min-w-0">
-                    <span className={`block text-[13px] leading-snug ${i === at ? "font-semibold" : "text-[var(--d-ink-2)]"}`}>{ch.short}</span>
-                  </span>
+                  {i === at && <span className="absolute inset-y-1.5 left-0 w-[2px] rounded-full bg-[var(--d-buyer)]" aria-hidden />}
+                  <span className={`w-4 shrink-0 text-right text-[12px] tabular-nums ${i === at ? "text-[var(--d-buyer)]" : "text-[var(--d-muted)]"}`}>{i + 1}</span>
+                  <span className="min-w-0 leading-snug">{ch.short}</span>
                 </button>
               </li>
             ))}
           </ol>
-          {footer && <div className="mt-6 border-t border-[var(--d-line-soft)] px-5 pt-4 text-[11.5px] leading-relaxed text-[var(--d-muted)]">{footer}</div>}
+          <div className="mt-auto px-5 pb-5 pt-8">
+            <div className="h-1 overflow-hidden rounded-full bg-[var(--d-sunk)]">
+              <div className="h-full rounded-full bg-[var(--d-buyer)] transition-[width] duration-300" style={{ width: `${((at + 1) / chapters.length) * 100}%` }} />
+            </div>
+            {footer && <div className="mt-3 text-[11.5px] leading-relaxed text-[var(--d-muted)]">{footer}</div>}
+          </div>
         </nav>
 
         <main ref={main} className={`${s.scrollPane} min-w-0 flex-1 overflow-y-auto`}>
-          <div key={c.id} className={`${s.enter} mx-auto max-w-[1360px] px-4 py-6 sm:px-8 sm:py-8`}>
-            <div className="mb-6 max-w-[74ch]">
-              <div className="mb-2 text-[12px] text-[var(--d-muted)] lg:hidden">
-                Chapter {at + 1} of {chapters.length}
-              </div>
-              <h1 className={`${s.plate} text-[clamp(30px,4.2vw,52px)]`}>{c.title}</h1>
-              <p className="mt-3 text-[15px] leading-relaxed text-[var(--d-ink-2)]">{c.lede}</p>
+          <div key={c.id} className={`${s.enter} mx-auto max-w-[1320px] px-4 py-8 sm:px-10 sm:py-10`}>
+            <div className="mb-8 max-w-[72ch]">
+              <h1 className="text-[clamp(24px,2.4vw,32px)] font-semibold leading-tight tracking-[-0.02em]">{c.title}</h1>
+              <p className="mt-2.5 text-[15px] leading-relaxed text-[var(--d-ink-2)]">{c.lede}</p>
             </div>
             {c.render()}
+            <div className="mt-12 grid gap-3 border-t border-[var(--d-line)] pt-6 sm:grid-cols-2">
+              {prev ? (
+                <button type="button" onClick={() => go(at - 1)} className="rounded-lg border border-[var(--d-line)] bg-[var(--d-panel)] px-4 py-3 text-left shadow-[var(--d-shadow)] hover:border-[#cfd4da]">
+                  <div className="text-[12px] text-[var(--d-muted)]">Previous</div>
+                  <div className="text-[14px] font-medium">{prev.short}</div>
+                </button>
+              ) : (
+                <span />
+              )}
+              {next && (
+                <button type="button" onClick={() => go(at + 1)} className="rounded-lg border border-[var(--d-line)] bg-[var(--d-panel)] px-4 py-3 text-right shadow-[var(--d-shadow)] hover:border-[#cfd4da]">
+                  <div className="text-[12px] text-[var(--d-muted)]">Next</div>
+                  <div className="text-[14px] font-medium">{next.short}</div>
+                </button>
+              )}
+            </div>
           </div>
         </main>
       </div>

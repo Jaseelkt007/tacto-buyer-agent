@@ -43,10 +43,10 @@ export function Replay({ sessions }: { sessions: Session[] }) {
             aria-selected={i === pick}
             type="button"
             onClick={() => setPick(i)}
-            className={`rounded-lg border px-3 py-2.5 text-left ${i === pick ? "border-[var(--d-ink)] bg-[var(--d-panel)] shadow-[inset_0_0_0_1px_var(--d-ink)]" : "border-[var(--d-line)] bg-[var(--d-panel-2)] hover:bg-[var(--d-panel)]"}`}
+            className={`rounded-xl border px-4 py-3 text-left ${i === pick ? "border-[var(--d-buyer)] bg-[var(--d-panel)] ring-2 ring-[var(--d-buyer-wash)]" : "border-[var(--d-line)] bg-[var(--d-panel)] shadow-[var(--d-shadow)] hover:border-[#cfd4da]"}`}
           >
             <div className="flex items-baseline justify-between gap-2">
-              <span className={`${s.plate} text-[20px]`}>{shortCase(x.meta.case_id)}</span>
+              <span className={`${s.plate} text-[16px]`}>{shortCase(x.meta.case_id)}</span>
               <span className="text-[11.5px] text-[var(--d-muted)]">{x.meta.note}</span>
             </div>
             <div className="mt-0.5 truncate text-[12.5px] text-[var(--d-ink-2)]">{x.meta.title}</div>
@@ -128,7 +128,7 @@ function Player({ session }: { session: Session }) {
             <div className="text-[12px] text-[var(--d-muted)]">
               {m.type.replaceAll("_", " ")}, goal {m.category_goal ?? "—"}, engine {m.note.replace("engine ", "")} at {m.commit}
             </div>
-            <h2 className={`${s.plate} mt-1 text-[26px]`}>{m.title}</h2>
+            <h2 className={`${s.plate} mt-1 text-[20px]`}>{m.title}</h2>
             {m.briefing && <p className="mt-2 max-w-[76ch] text-[13px] leading-relaxed text-[var(--d-ink-2)]">{m.briefing}</p>}
             <div className="mt-3 flex flex-wrap gap-1.5 text-[11.5px]">
               {(m.negotiable ?? []).map((f) => (
@@ -182,7 +182,7 @@ function Player({ session }: { session: Session }) {
             <button
               type="button"
               onClick={togglePlay}
-              className="rounded border border-[var(--d-ink)] bg-[var(--d-ink)] px-3 py-1 text-[12px] font-medium text-[var(--d-panel)]"
+              className="h-7 rounded-md bg-[var(--d-ink)] px-3 text-[12.5px] font-medium text-white shadow-[var(--d-shadow)] hover:bg-[#2a2d35]"
             >
               {live ? "Pause" : "Play"}
             </button>
@@ -233,7 +233,7 @@ function Mini({ k, v, tone }: { k: string; v: ReactNode; tone?: string }) {
   return (
     <div>
       <dt className="text-[11px] text-[var(--d-muted)]">{k}</dt>
-      <dd className={`${s.plate} text-[22px] tabular-nums`} style={tone ? { color: tone } : undefined}>
+      <dd className={`${s.plate} text-[19px] tabular-nums`} style={tone ? { color: tone } : undefined}>
         {v}
       </dd>
     </div>
@@ -242,7 +242,7 @@ function Mini({ k, v, tone }: { k: string; v: ReactNode; tone?: string }) {
 
 function CtlButton({ onClick, label, children }: { onClick: () => void; label: string; children: ReactNode }) {
   return (
-    <button type="button" onClick={onClick} aria-label={label} className="rounded border border-[var(--d-line)] px-2 py-1 text-[12px] hover:bg-[var(--d-panel-2)]">
+    <button type="button" onClick={onClick} aria-label={label} className="h-7 min-w-[28px] rounded-md border border-[var(--d-line)] bg-white px-2 text-[12px] text-[var(--d-ink-2)] shadow-[var(--d-shadow)] hover:bg-[var(--d-panel-2)]">
       {children}
     </button>
   );
@@ -257,7 +257,7 @@ function ScoreScale({ session }: { session: Session }) {
     <div>
       <div className="flex items-baseline justify-between text-[12px]">
         <span className="text-[var(--d-muted)]">Total cost C over the horizon</span>
-        <span className={`${s.plate} text-[26px] tabular-nums`}>{m.score.toFixed(3)}</span>
+        <span className={`${s.plate} text-[24px] tabular-nums`}>{m.score.toFixed(3)}</span>
       </div>
       <div className="relative mt-2 h-2 rounded-full bg-[var(--d-sunk)]">
         <div className="absolute inset-y-0 left-0 rounded-full bg-[var(--d-good)]" style={{ width: `${pos * 100}%` }} />
@@ -363,14 +363,14 @@ function Corridor({
                     <foreignObject x={padL} y={6} width={W - padL - padR} height={Math.max(0, yOf(ceiling) - 6)}>
                       <div className={`${s.hatch} h-full w-full opacity-70`} />
                     </foreignObject>
-                    <line x1={padL} x2={W - padR} y1={yOf(ceiling)} y2={yOf(ceiling)} stroke="var(--d-ink-2)" strokeWidth={1} />
+                    <line x1={padL} x2={W - padR} y1={yOf(ceiling)} y2={yOf(ceiling)} stroke="#a3aab5" strokeWidth={1} />
                   </>
                 )}
                 {anchor !== null && <line x1={padL} x2={W - padR} y1={yOf(anchor)} y2={yOf(anchor)} stroke="var(--d-line)" strokeWidth={1} />}
                 {placed.map((l) => (
                   <g key={l.text}>
                     {Math.abs(l.at - l.y) > 2 && <line x1={W - padR + 1} x2={W - padR + 6} y1={l.y} y2={l.at} stroke="var(--d-line)" />}
-                    <text x={W - padR + 8} y={l.at + 4} fontSize={12} fontWeight={l.weight} fill={l.fill}>
+                    <text x={W - padR + 8} y={l.at + 4} fontSize={11} fontWeight={l.weight ?? 500} fill={l.fill}>
                       {l.text}
                     </text>
                   </g>
@@ -677,7 +677,7 @@ function WhyPanel({ d, prevOurs }: { d: Decision; prevOurs: number | null }) {
   const claims = (d.claims as string[] | undefined) ?? [];
   const mix = d.mix as Record<string, unknown> | undefined;
   return (
-    <div className="rounded-md border border-[var(--d-buyer)] bg-[var(--d-buyer-wash)] p-3">
+    <div className="rounded-lg border border-[#d3dff8] bg-[var(--d-buyer-wash)] p-4">
       <div className="flex flex-wrap items-center gap-2 text-[12px]">
         <span className="font-semibold">Why the engine sent this</span>
         <span className="text-[var(--d-ink-2)]">{d.source === "engine" ? "decided in code, 0 model calls" : "kit LLM fallback, 1 model call"}</span>
@@ -717,7 +717,7 @@ function WhyPanel({ d, prevOurs }: { d: Decision; prevOurs: number | null }) {
 
 function Mail({ text, tone, subject }: { text: string; tone: "buyer" | "supplier"; subject?: string }) {
   return (
-    <div className="rounded-md border border-[var(--d-line)] bg-[var(--d-panel-2)]" style={{ borderLeft: `3px solid var(--d-${tone})` }}>
+    <div className="rounded-lg border border-[var(--d-line-soft)] bg-[var(--d-panel-2)]" style={{ borderLeft: `2px solid var(--d-${tone})` }}>
       {subject && <div className="border-b border-[var(--d-line-soft)] px-3 py-1.5 text-[12px] text-[var(--d-ink-2)]">{subject}</div>}
       <div className="max-h-[300px] overflow-y-auto whitespace-pre-wrap px-3 py-2.5 text-[13px] leading-relaxed">{text}</div>
     </div>

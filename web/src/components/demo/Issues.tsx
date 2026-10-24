@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { code } from "@/lib/demo";
 import { Ticks } from "./DecideFlow";
-import { s } from "./styles";
 import { CodeRef, Seg, Tag } from "./ui";
 
 const TONE = { high: "bad", medium: "warn", low: "neutral" } as const;
@@ -38,20 +37,20 @@ export function Issues() {
         {list.map((i) => (
           <li
             key={i.title}
-            className={`rounded-lg border bg-[var(--d-panel)] p-4 ${i.severity === "high" ? "border-[var(--d-bad)] lg:col-span-2" : "border-[var(--d-line)]"}`}
+            className={`rounded-xl border bg-[var(--d-panel)] p-5 shadow-[var(--d-shadow)] ${i.severity === "high" ? "border-[#e8b4bd] lg:col-span-2" : "border-[var(--d-line)]"}`}
           >
             <div className="flex flex-wrap items-center gap-2">
               <Tag tone={TONE[i.severity]}>{i.severity}</Tag>
               <CodeRef file={i.file} line={i.line} />
             </div>
-            <h3 className={`${s.plate} mt-2 ${i.severity === "high" ? "text-[24px]" : "text-[18px]"}`}>{i.title}</h3>
+            <h3 className={`mt-2.5 font-semibold tracking-[-0.01em] ${i.severity === "high" ? "text-[18px]" : "text-[15px]"}`}>{i.title}</h3>
             <p className="mt-1.5 text-[13px] leading-relaxed text-[var(--d-ink-2)]">
               <Ticks text={i.detail} />
             </p>
           </li>
         ))}
       </ol>
-      <div className="rounded-lg border border-dashed border-[var(--d-line)] p-4">
+      <div className="rounded-xl border border-[var(--d-line)] bg-[var(--d-panel-2)] p-5">
         <h3 className="text-[13.5px] font-semibold">What the run files themselves show</h3>
         <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[13px] leading-relaxed text-[var(--d-ink-2)]">
           {DATA_NOTES.map((t) => (

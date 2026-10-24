@@ -2,8 +2,9 @@
 
 A full-screen deck that explains how our engine negotiates one case, for the demo and for our own
 analysis. Everything shown about the engine is read from the **code**, not from `docs/`. It covers
-the section rail on purpose and has its own look (Archivo condensed, cool greys, colours by role:
-buyer blue, supplier orange, arena teal, LLM violet). ← → move between chapters.
+the section rail on purpose and has its own look: one light theme (white panels on a soft grey page,
+hairline borders), IBM Plex Sans with IBM Plex Mono for code, and muted colours by role (buyer blue,
+supplier orange, arena teal, LLM violet). ← → move between chapters.
 
 | # | Chapter | What it answers | Data |
 |---|---|---|---|

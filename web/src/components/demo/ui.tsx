@@ -32,7 +32,7 @@ const KIND: Record<string, { label: string; cls: string }> = {
 export function KindBadge({ kind, className = "" }: { kind: Kind; className?: string }) {
   const k = KIND[kind] ?? { label: kind, cls: "bg-[var(--d-sunk)] text-[var(--d-ink-2)] [--k:var(--d-muted)]" };
   return (
-    <span className={`inline-flex shrink-0 items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] font-medium ${k.cls} ${className}`}>
+    <span className={`inline-flex shrink-0 items-center gap-1.5 rounded-md px-1.5 py-0.5 text-[11.5px] font-medium ring-1 ring-inset ring-black/5 ${k.cls} ${className}`}>
       <span className="h-1.5 w-1.5 rounded-full bg-[var(--k)]" aria-hidden />
       {k.label}
     </span>
@@ -65,7 +65,7 @@ export function CodeRef({ file, line }: { file?: string; line?: number }) {
           () => {},
         );
       }}
-      className={`${s.code} inline-flex max-w-full items-center truncate rounded border border-[var(--d-line)] bg-[var(--d-panel)] px-1.5 py-px !text-[11px] text-[var(--d-ink-2)] hover:border-[var(--d-buyer)] hover:text-[var(--d-ink)]`}
+      className={`${s.code} inline-flex max-w-full items-center truncate rounded-md bg-[var(--d-sunk)] px-1.5 py-0.5 !text-[11px] text-[var(--d-ink-2)] hover:bg-[var(--d-buyer-wash)] hover:text-[var(--d-buyer)]`}
     >
       {copied ? "copied" : `${short}${line ? `:${line}` : ""}`}
     </button>
@@ -74,11 +74,11 @@ export function CodeRef({ file, line }: { file?: string; line?: number }) {
 
 export function Panel({ children, className = "", title, aside }: { children: ReactNode; className?: string; title?: ReactNode; aside?: ReactNode }) {
   return (
-    <section className={`min-w-0 rounded-lg border border-[var(--d-line)] bg-[var(--d-panel)] ${className}`}>
+    <section className={`min-w-0 rounded-xl border border-[var(--d-line)] bg-[var(--d-panel)] shadow-[var(--d-shadow)] ${className}`}>
       {(title || aside) && (
-        <header className="flex items-baseline justify-between gap-3 border-b border-[var(--d-line-soft)] px-4 py-2.5">
-          {title && <h3 className="text-[13.5px] font-semibold">{title}</h3>}
-          {aside && <div className="text-[12px] text-[var(--d-muted)]">{aside}</div>}
+        <header className="flex min-h-[48px] flex-wrap items-center justify-between gap-x-3 gap-y-1 border-b border-[var(--d-line-soft)] px-5 py-2.5">
+          {title && <h3 className="text-[14px] font-semibold tracking-[-0.005em]">{title}</h3>}
+          {aside && <div className="text-[12.5px] text-[var(--d-muted)]">{aside}</div>}
         </header>
       )}
       {children}
@@ -89,11 +89,11 @@ export function Panel({ children, className = "", title, aside }: { children: Re
 export function Figure({ value, label, sub, tone }: { value: ReactNode; label: ReactNode; sub?: ReactNode; tone?: string }) {
   return (
     <div className="min-w-0">
-      <div className={`${s.plate} text-[34px] tabular-nums`} style={tone ? { color: tone } : undefined}>
+      <div className={`${s.plate} text-[28px] tabular-nums`} style={tone ? { color: tone } : undefined}>
         {value}
       </div>
-      <div className="mt-1 text-[12.5px] font-medium text-[var(--d-ink)]">{label}</div>
-      {sub && <div className="text-[11.5px] text-[var(--d-muted)]">{sub}</div>}
+      <div className="mt-1.5 text-[13px] text-[var(--d-ink-2)]">{label}</div>
+      {sub && <div className="mt-0.5 text-[12px] text-[var(--d-muted)]">{sub}</div>}
     </div>
   );
 }
@@ -101,7 +101,7 @@ export function Figure({ value, label, sub, tone }: { value: ReactNode; label: R
 export function Pre({ children, className = "", max = "max-h-[420px]" }: { children: ReactNode; className?: string; max?: string }) {
   return (
     <pre
-      className={`${s.code} ${s.scrollPane} ${max} overflow-auto whitespace-pre-wrap break-words rounded-md border border-[var(--d-line)] bg-[var(--d-sunk)] p-3 text-[var(--d-ink)] ${className}`}
+      className={`${s.code} ${s.scrollPane} ${max} overflow-auto whitespace-pre-wrap break-words rounded-lg border border-[var(--d-line-soft)] bg-[var(--d-panel-2)] p-4 text-[var(--d-ink)] ${className}`}
     >
       {children}
     </pre>
@@ -120,7 +120,7 @@ export function Seg<T extends string>({
   label: string;
 }) {
   return (
-    <div role="radiogroup" aria-label={label} className="inline-flex flex-wrap rounded-md border border-[var(--d-line)] bg-[var(--d-panel)] p-0.5">
+    <div role="radiogroup" aria-label={label} className="inline-flex flex-wrap gap-0.5 rounded-lg bg-[var(--d-sunk)] p-[3px]">
       {options.map((o) => (
         <button
           key={o.value}
@@ -128,8 +128,8 @@ export function Seg<T extends string>({
           role="radio"
           aria-checked={o.value === value}
           onClick={() => onChange(o.value)}
-          className={`rounded px-2.5 py-1 text-[12px] ${
-            o.value === value ? "bg-[var(--d-ink)] font-medium text-[var(--d-panel)]" : "text-[var(--d-ink-2)] hover:bg-[var(--d-panel-2)]"
+          className={`rounded-md px-3 py-1 text-[12.5px] ${
+            o.value === value ? "bg-white font-medium text-[var(--d-ink)] shadow-[0_1px_2px_rgba(16,24,40,0.08)] ring-1 ring-black/5" : "text-[var(--d-ink-2)] hover:text-[var(--d-ink)]"
           }`}
         >
           {o.label}
@@ -150,5 +150,5 @@ export function Tag({ children, tone = "neutral" }: { children: ReactNode; tone?
     llm: "bg-[var(--d-llm-wash)] text-[var(--d-ink)]",
     arena: "bg-[var(--d-arena-wash)] text-[var(--d-ink)]",
   }[tone];
-  return <span className={`inline-flex items-center rounded px-1.5 py-px text-[11px] font-medium ${cls}`}>{children}</span>;
+  return <span className={`inline-flex items-center rounded-md px-1.5 py-0.5 text-[11.5px] font-medium ring-1 ring-inset ring-black/[0.04] ${cls}`}>{children}</span>;
 }

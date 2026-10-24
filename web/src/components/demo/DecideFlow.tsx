@@ -73,7 +73,7 @@ export function DecideFlow() {
                 <li key={f.id} className="relative">
                   <button type="button" onClick={() => setOpen(isOpen ? null : f.id)} aria-expanded={isOpen} className="flex w-full items-start gap-3 rounded-md py-1.5 pr-2 text-left hover:bg-[var(--d-panel-2)]">
                     <span
-                      className={`${s.plate} relative z-[1] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 text-[13px] tabular-nums`}
+                      className="relative z-[1] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-[1.5px] text-[12px] font-semibold tabular-nums"
                       style={{ borderColor: t.c, background: "var(--d-panel)" }}
                     >
                       {f.order}
@@ -89,7 +89,7 @@ export function DecideFlow() {
                     </span>
                   </button>
                   {isOpen && (
-                    <div className={`${s.enter} mb-2 ml-10 space-y-1.5 rounded-md border border-[var(--d-line)] bg-[var(--d-panel-2)] p-3 text-[12.5px]`}>
+                    <div className={`${s.enter} mb-2 ml-10 space-y-1.5 rounded-lg border border-[var(--d-line-soft)] bg-[var(--d-panel-2)] p-3 text-[12.5px]`}>
                       {f.reason_key && (
                         <p>
                           <span className="text-[var(--d-muted)]">Logged as </span>
@@ -110,7 +110,7 @@ export function DecideFlow() {
             <ol className="space-y-2 p-4 text-[12.5px]">
               {code.ready_flow.map((r) => (
                 <li key={r.order} className="grid grid-cols-[22px_1fr] gap-2">
-                  <span className={`${s.plate} text-[16px] text-[var(--d-muted)]`}>{r.order}</span>
+                  <span className="text-[12.5px] font-semibold tabular-nums text-[var(--d-muted)]">{r.order}</span>
                   <span>
                     <span className="block">
                       <Ticks text={r.condition} />

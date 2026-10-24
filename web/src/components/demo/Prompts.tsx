@@ -33,7 +33,7 @@ export function Prompts() {
                   <td className="py-1.5 pr-3">
                     <KindBadge kind={st.kind} />
                   </td>
-                  <td className={`${s.plate} py-1.5 pr-3 text-right text-[17px] tabular-nums`}>{st.kind === "llm" ? "1" : "0"}</td>
+                  <td className="py-1.5 pr-3 text-right text-[14px] font-semibold tabular-nums">{st.kind === "llm" ? "1" : "0"}</td>
                   <td className="py-1.5 pr-4">
                     <CodeRef file={st.file} line={st.line} />
                   </td>

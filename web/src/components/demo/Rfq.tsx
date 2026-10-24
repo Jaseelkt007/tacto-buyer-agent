@@ -3,21 +3,20 @@
 import { useState } from "react";
 import { code, sheetPrice, shortName, showcase, type TimelineEvent } from "@/lib/demo";
 import { Ticks } from "./DecideFlow";
-import { s } from "./styles";
 import { CodeRef, eur, Panel } from "./ui";
 
 export function Rfq() {
   const session = showcase.sessions.find((x) => x.suppliers.length > 1);
   return (
     <div className="space-y-5">
-      <p className="max-w-[90ch] text-[14px] leading-relaxed">{code.rfq.summary}</p>
+      <p className="max-w-[90ch] text-[14px] leading-relaxed text-[var(--d-ink-2)]">{code.rfq.summary}</p>
       {session && <Swimlanes events={session.timeline} suppliers={session.suppliers.map((x) => ({ id: x.id, name: x.name, status: x.thread.status }))} title={session.meta.title} note={session.meta.note} />}
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
         <Panel title="The RFQ rules, in the order they apply">
           <ol className="divide-y divide-[var(--d-line-soft)]">
             {code.rfq.steps.map((st) => (
               <li key={st.order} className="grid grid-cols-[34px_1fr] gap-2 px-4 py-2.5 text-[12.5px]">
-                <span className={`${s.plate} text-[20px] tabular-nums text-[var(--d-buyer)]`}>{st.order}</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--d-buyer-wash)] text-[12px] font-semibold tabular-nums text-[var(--d-buyer)]">{st.order}</span>
                 <div className="space-y-1">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <span className="font-semibold">{st.name}</span>
@@ -39,8 +38,8 @@ export function Rfq() {
         <div className="space-y-3">
           <h3 className="text-[13.5px] font-semibold">Scenarios, walked through the code</h3>
           {code.rfq.examples.map((ex, i) => (
-            <div key={i} className="rounded-lg border border-[var(--d-line)] bg-[var(--d-panel)] p-4">
-              <div className={`${s.plate} mb-1 text-[15px] text-[var(--d-muted)]`}>Scenario {String.fromCharCode(65 + i)}</div>
+            <div key={i} className="rounded-xl border border-[var(--d-line)] bg-[var(--d-panel)] p-5 shadow-[var(--d-shadow)]">
+              <div className="mb-1.5 text-[12.5px] font-semibold text-[var(--d-ink-2)]">Scenario {String.fromCharCode(65 + i)}</div>
               <p className="text-[13px] leading-relaxed">{ex}</p>
             </div>
           ))}

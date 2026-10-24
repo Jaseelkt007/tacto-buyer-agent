@@ -1,109 +1,80 @@
 /* Tokens and helpers for the /demo deck only. Every selector sits under .pd-demo so nothing leaks into
    the rest of the app (a plain stylesheet: next.config sends *.css through the Tailwind loader, not CSS modules).
-   Categorical roles validated with the dataviz palette checker (light on #f7f9fb, dark on #16212c). */
+   One light theme on purpose: white panels on a soft grey page, hairline borders, muted role colours.
+   Role colours validated with the dataviz palette checker on #ffffff. */
 
 .pd-demo {
   color-scheme: light;
-  --d-bg: #e8ecf0;
-  --d-panel: #f7f9fb;
-  --d-panel-2: #eef2f5;
-  --d-sunk: #dfe5eb;
-  --d-line: #c9d2db;
-  --d-line-soft: #dce3e9;
-  --d-ink: #121c26;
-  --d-ink-2: #44535f;
-  --d-muted: #6f7d8a;
-  --d-buyer: #2a62d6;
-  --d-buyer-wash: #e3ebfb;
-  --d-supplier: #e0682b;
-  --d-supplier-wash: #fbebe2;
-  --d-arena: #0e9a82;
-  --d-arena-wash: #dcf3ee;
-  --d-llm: #7a4fd6;
-  --d-llm-wash: #ece5fb;
-  --d-code: #44535f;
-  --d-code-wash: #e3e8ec;
-  --d-good: #1f7a45;
-  --d-good-wash: #e2f2e8;
-  --d-bad: #c4314b;
-  --d-bad-wash: #fbe6ea;
-  --d-warn: #9a6400;
-  --d-warn-wash: #fbf0d9;
-  --d-focus: #2a62d6;
+  --d-bg: #f5f6f8;
+  --d-panel: #ffffff;
+  --d-panel-2: #fafbfc;
+  --d-sunk: #f1f3f5;
+  --d-line: #e3e6ea;
+  --d-line-soft: #eef0f3;
+  --d-ink: #16181d;
+  --d-ink-2: #4b5260;
+  --d-muted: #868c98;
+  --d-buyer: #2f5fcf;
+  --d-buyer-wash: #eef3fd;
+  --d-supplier: #cf6a2e;
+  --d-supplier-wash: #fcf1ea;
+  --d-arena: #0f8f7a;
+  --d-arena-wash: #e9f6f3;
+  --d-llm: #6d50cf;
+  --d-llm-wash: #f2effc;
+  --d-code: #5b6270;
+  --d-code-wash: #f1f3f5;
+  --d-good: #1d7a4a;
+  --d-good-wash: #ebf6ef;
+  --d-bad: #c03a4f;
+  --d-bad-wash: #fcedef;
+  --d-warn: #9a6a00;
+  --d-warn-wash: #fdf5e3;
+  --d-focus: #2f5fcf;
+  --d-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.03);
   background: var(--d-bg);
   color: var(--d-ink);
-}
-
-@media (prefers-color-scheme: dark) {
-  .pd-demo {
-    color-scheme: dark;
-    --d-bg: #0f1720;
-    --d-panel: #16212c;
-    --d-panel-2: #1a2632;
-    --d-sunk: #111a23;
-    --d-line: #2a3a4a;
-    --d-line-soft: #223040;
-    --d-ink: #e6edf3;
-    --d-ink-2: #a9b8c6;
-    --d-muted: #7a8c9d;
-    --d-buyer: #4f86ea;
-    --d-buyer-wash: #18304f;
-    --d-supplier: #d9652e;
-    --d-supplier-wash: #3a2418;
-    --d-arena: #1fa48f;
-    --d-arena-wash: #123630;
-    --d-llm: #9479e8;
-    --d-llm-wash: #2a2346;
-    --d-code: #a9b8c6;
-    --d-code-wash: #213040;
-    --d-good: #57c486;
-    --d-good-wash: #143323;
-    --d-bad: #f07a8c;
-    --d-bad-wash: #3a161d;
-    --d-warn: #e2a74a;
-    --d-warn-wash: #392a10;
-    --d-focus: #7ea7f2;
-  }
+  -webkit-font-smoothing: antialiased;
 }
 
 .pd-demo :focus-visible {
   outline: 2px solid var(--d-focus);
   outline-offset: 2px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
-/* Condensed nameplate headings: Archivo's width axis does the work. */
+/* Headings and key figures: one family, set by weight and tracking. */
 .pd-demo .pd-plate {
-  font-stretch: 72%;
-  font-weight: 640;
-  letter-spacing: -0.005em;
-  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -0.014em;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
 }
 
 .pd-demo .pd-wide {
-  font-stretch: 112%;
+  letter-spacing: -0.005em;
 }
 
 .pd-demo .pd-code {
   font-family: var(--font-demo-mono), ui-monospace, monospace;
   font-size: 12px;
-  line-height: 1.55;
+  line-height: 1.6;
   tab-size: 4;
 }
 
 /* Hatched band: our walk-away zone in the price corridor. */
 .pd-demo .pd-hatch {
-  background-image: repeating-linear-gradient(135deg, var(--d-line) 0 1px, transparent 1px 7px);
+  background-image: repeating-linear-gradient(135deg, #dfe3e8 0 1px, transparent 1px 8px);
 }
 
 .pd-demo .pd-scroll {
   scrollbar-width: thin;
-  scrollbar-color: var(--d-line) transparent;
+  scrollbar-color: #d5d9df transparent;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .pd-demo .pd-enter {
-    animation: pd-enter 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation: pd-enter 320ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
   .pd-demo .pd-draw {
     stroke-dasharray: var(--len, 2000);
@@ -115,7 +86,7 @@
 @keyframes pd-enter {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(4px);
   }
   to {
     opacity: 1;

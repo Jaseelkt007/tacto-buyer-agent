@@ -203,9 +203,9 @@ function Dossier({ d }: { d: DetailedSupplier }) {
   return (
     <Panel key={d.id} className={s.enter} title={d.name} aside={d.id}>
       <div className="space-y-4 p-4 text-[12.5px]">
-        <div className="rounded-md border border-[var(--d-line)] bg-[var(--d-panel-2)] p-3">
+        <div className="rounded-lg border border-[var(--d-line-soft)] bg-[var(--d-panel-2)] p-4">
           <div className="mb-1 text-[12px] font-semibold">Its cost of money, as the engine computes it</div>
-          <div className={`${s.plate} text-[26px] tabular-nums`}>
+          <div className={`${s.plate} text-[22px] tabular-nums`}>
             {pct(ownerRate, 1)} {d.dossier.cash_need ? `+ ${pct(d.dossier.cash_premium)} ` : ""}= {pct(d.dossier.interest_rate, 1)}
           </div>
           <div className="text-[11.5px] text-[var(--d-muted)]">

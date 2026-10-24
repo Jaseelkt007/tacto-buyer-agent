@@ -25,10 +25,10 @@ export function Pipeline() {
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-6 rounded-lg border border-[var(--d-line)] bg-[var(--d-panel)] p-5 sm:grid-cols-2 xl:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div className="grid gap-8 rounded-xl border border-[var(--d-line)] bg-[var(--d-panel)] p-6 shadow-[var(--d-shadow)] sm:grid-cols-2 xl:grid-cols-[1.4fr_1fr_1fr_1fr] xl:divide-x xl:divide-[var(--d-line-soft)] [&>*]:xl:pl-8 [&>*:first-child]:xl:pl-0">
         <div>
-          <div className={`${s.plate} text-[72px] leading-none tabular-nums text-[var(--d-ink)]`}>{code.llm.engine_calls_per_move}</div>
-          <div className="mt-2 text-[14px] font-medium">model calls when the engine makes a move</div>
+          <div className={`${s.plate} text-[52px] leading-none tabular-nums text-[var(--d-ink)]`}>{code.llm.engine_calls_per_move}</div>
+          <div className="mt-3 text-[14px] font-medium">model calls when the engine makes a move</div>
           <p className="mt-1 max-w-[46ch] text-[12.5px] leading-relaxed text-[var(--d-ink-2)]">
             Code decides every price, sheet, claim, accept and walk-away. The e-mail is a fixed template. A model is called only when the engine throws, and then once for that move.
           </p>
@@ -62,12 +62,12 @@ export function Pipeline() {
                     onClick={() => setSel(st.id)}
                     aria-pressed={st.id === sel}
                     className={`relative w-[188px] rounded-md border px-3 py-2 text-left transition-colors ${
-                      st.id === sel ? "border-[var(--d-ink)] bg-[var(--d-panel)] shadow-[inset_0_0_0_1px_var(--d-ink)]" : "border-[var(--d-line)] bg-[var(--d-panel-2)] hover:bg-[var(--d-panel)]"
+                      st.id === sel ? "border-[var(--d-buyer)] bg-[var(--d-panel)] ring-2 ring-[var(--d-buyer-wash)]" : "border-[var(--d-line)] bg-[var(--d-panel)] shadow-[var(--d-shadow)] hover:border-[#cfd4da]"
                     }`}
                   >
                     <span className="absolute inset-y-2 left-0 w-[3px] rounded-r" style={{ background: kindColor(st.kind) }} aria-hidden />
                     <span className="flex items-baseline gap-2">
-                      <span className={`${s.plate} text-[18px] tabular-nums text-[var(--d-muted)]`}>{order(st.id)}</span>
+                      <span className="text-[12px] font-medium tabular-nums text-[var(--d-muted)]">{order(st.id)}</span>
                       <span className="text-[12.5px] font-medium leading-snug">{st.name}</span>
                     </span>
                   </button>
@@ -90,7 +90,7 @@ export function Pipeline() {
         className={s.enter}
         title={
           <span className="flex flex-wrap items-center gap-2">
-            <span className={`${s.plate} text-[20px] text-[var(--d-muted)]`}>{order(stage.id)}</span>
+            <span className="text-[13px] font-medium tabular-nums text-[var(--d-muted)]">{order(stage.id)}</span>
             {stage.name}
             <KindBadge kind={stage.kind} />
           </span>

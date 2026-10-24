@@ -50,7 +50,7 @@ export function Stops() {
           id="ver"
           value={ver}
           onChange={(e) => setVer(e.target.value)}
-          className="rounded-md border border-[var(--d-line)] bg-[var(--d-panel)] px-2 py-1 text-[12.5px]"
+          className="h-8 rounded-md border border-[var(--d-line)] bg-white px-2.5 text-[13px] shadow-[var(--d-shadow)]"
         >
           {versions.map((v) => (
             <option key={v} value={v}>
@@ -64,7 +64,7 @@ export function Stops() {
         <Panel title={`How ${runs.length} recorded runs ended`}>
           <div className="grid gap-5 p-4 sm:grid-cols-[180px_minmax(0,1fr)]">
             <div>
-              <div className={`${s.plate} text-[64px] leading-none tabular-nums`}>{Math.round(finalShare * 100)} %</div>
+              <div className={`${s.plate} text-[44px] leading-none tabular-nums`}>{Math.round(finalShare * 100)} %</div>
               <p className="mt-2 text-[12.5px] leading-relaxed text-[var(--d-ink-2)]">closed because the supplier said final offer, not because the prices met. The supplier decides how long these talks last.</p>
             </div>
             <ul className="space-y-2.5">
