@@ -1,19 +1,21 @@
-/* Tokens and helpers for the /demo deck only. Every selector sits under .pd-demo so nothing leaks into
-   the rest of the app (a plain stylesheet: next.config sends *.css through the Tailwind loader, not CSS modules).
-   One light theme on purpose: white panels on a soft grey page, hairline borders, muted role colours.
-   Role colours validated with the dataviz palette checker on #ffffff. */
+/* Tokens and helpers for the /demo deck only. The look follows the arena site: flat white cards with
+   hairline borders on light grey, monospace caps labels, light large figures, one orange accent.
+   Every selector sits under .pd-demo so nothing leaks into the rest of the app (a plain stylesheet:
+   next.config sends *.css through the Tailwind loader, not CSS modules). Role colours validated with
+   the dataviz palette checker on #ffffff. */
 
 .pd-demo {
   color-scheme: light;
-  --d-bg: #f5f6f8;
+  --d-bg: #f4f4f4;
   --d-panel: #ffffff;
-  --d-panel-2: #fafbfc;
-  --d-sunk: #f1f3f5;
-  --d-line: #e3e6ea;
-  --d-line-soft: #eef0f3;
-  --d-ink: #16181d;
-  --d-ink-2: #4b5260;
-  --d-muted: #868c98;
+  --d-panel-2: #fafafa;
+  --d-sunk: #f2f2f2;
+  --d-line: #e4e4e4;
+  --d-line-soft: #eeeeee;
+  --d-ink: #111111;
+  --d-ink-2: #555555;
+  --d-muted: #8a8a8a;
+  --d-accent: #ff5a1f;
   --d-buyer: #2f5fcf;
   --d-buyer-wash: #eef3fd;
   --d-supplier: #cf6a2e;
@@ -22,16 +24,16 @@
   --d-arena-wash: #e9f6f3;
   --d-llm: #6d50cf;
   --d-llm-wash: #f2effc;
-  --d-code: #5b6270;
-  --d-code-wash: #f1f3f5;
+  --d-code: #6a6a6a;
+  --d-code-wash: #f2f2f2;
   --d-good: #1d7a4a;
   --d-good-wash: #ebf6ef;
   --d-bad: #c03a4f;
   --d-bad-wash: #fcedef;
   --d-warn: #9a6a00;
   --d-warn-wash: #fdf5e3;
-  --d-focus: #2f5fcf;
-  --d-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.03);
+  --d-focus: #ff5a1f;
+  --d-shadow: 0 0 #0000; /* flat: borders only */
   background: var(--d-bg);
   color: var(--d-ink);
   -webkit-font-smoothing: antialiased;
@@ -43,12 +45,22 @@
   border-radius: 4px;
 }
 
-/* Headings and key figures: one family, set by weight and tracking. */
+/* Headings and key figures: light and large, set by size, not weight. */
 .pd-demo .pd-plate {
-  font-weight: 600;
-  letter-spacing: -0.014em;
-  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
   font-variant-numeric: tabular-nums;
+}
+
+/* Small monospace caps for labels above figures and sections. */
+.pd-demo .pd-label {
+  font-family: var(--font-demo-mono), ui-monospace, monospace;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6b6b;
 }
 
 .pd-demo .pd-wide {

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 import { DemoApp } from "@/components/demo/DemoApp";
 import "@/components/demo/demo.css";
 
 // The demo deck: how our engine negotiates one case, read from our code and our recorded runs.
 // It covers the whole screen (the section rail stays underneath) and has its own look on purpose.
 
-const sans = IBM_Plex_Sans({ subsets: ["latin"], variable: "--font-demo", display: "swap" });
-const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-demo-mono", display: "swap" });
+const sans = Inter({ subsets: ["latin"], variable: "--font-demo", display: "swap" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-demo-mono", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Pipeline demo · ProcuDeal",

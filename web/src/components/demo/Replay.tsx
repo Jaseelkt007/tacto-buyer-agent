@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
 import { sheetPrice, sheetTerms, shortCase, shortName, type Decision, type Session, type TimelineEvent } from "@/lib/demo";
 import { s } from "./styles";
-import { eur, eurK, KindBadge, Panel, Tag } from "./ui";
+import { Callout, eur, eurK, KindBadge, Panel, Tag } from "./ui";
 
 const STATUS_TONE: Record<string, "neutral" | "good" | "warn" | "bad"> = { open: "neutral", agreed: "good", final_offer: "warn", withdrawn: "bad" };
 const STEP_NAMES: [number, string][] = [
@@ -43,7 +43,7 @@ export function Replay({ sessions }: { sessions: Session[] }) {
             aria-selected={i === pick}
             type="button"
             onClick={() => setPick(i)}
-            className={`rounded-xl border px-4 py-3 text-left ${i === pick ? "border-[var(--d-buyer)] bg-[var(--d-panel)] ring-2 ring-[var(--d-buyer-wash)]" : "border-[var(--d-line)] bg-[var(--d-panel)] shadow-[var(--d-shadow)] hover:border-[#cfd4da]"}`}
+            className={`rounded-xl border px-4 py-3 text-left ${i === pick ? "border-[var(--d-ink)] bg-[var(--d-panel)]" : "border-[var(--d-line)] bg-[var(--d-panel)] shadow-[var(--d-shadow)] hover:border-[#cfcfcf]"}`}
           >
             <div className="flex items-baseline justify-between gap-2">
               <span className={`${s.plate} text-[16px]`}>{shortCase(x.meta.case_id)}</span>
@@ -218,13 +218,10 @@ function Player({ session }: { session: Session }) {
         <div className="min-w-0">{cur && <EventDetail key={cur.t_index} e={cur} session={session} names={names} prevOurs={prevOurs(session, cur)} />}</div>
       </div>
 
-      <Panel>
-        <div className="flex flex-wrap items-start gap-3 p-4">
-          <Tag tone={session.stop.category === "accepted" ? "good" : "bad"}>Why it stopped</Tag>
-          <p className="min-w-0 flex-1 text-[13.5px] leading-relaxed">{session.stop.why}</p>
-        </div>
-        <p className="border-t border-[var(--d-line-soft)] px-4 py-3 text-[12.5px] leading-relaxed text-[var(--d-ink-2)]">{session.pick}</p>
-      </Panel>
+      <Callout title="Why it stopped">
+        <p>{session.stop.why}</p>
+        <p className="mt-2 text-[13.5px] text-[var(--d-ink-2)]">{session.pick}</p>
+      </Callout>
     </div>
   );
 }

@@ -3,6 +3,7 @@ export const s = {
   root: "pd-demo",
   plate: "pd-plate",
   wide: "pd-wide",
+  label: "pd-label",
   code: "pd-code",
   hatch: "pd-hatch",
   scrollPane: "pd-scroll",

@@ -16,6 +16,7 @@ import { Suppliers } from "./Suppliers";
 const CHAPTERS: Chapter[] = [
   {
     id: "pipeline",
+    tab: "Pipeline",
     short: "The whole pipeline",
     title: "How ProcuDeal runs a case",
     lede: "Fourteen steps take a case from the opening quote to accept or walk away. Code decides every number. A language model is only the safety net when the code fails.",
@@ -23,6 +24,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "suppliers",
+    tab: "Suppliers",
     short: "Who we negotiate with",
     title: `${suppliers.total} suppliers, ${suppliers.detailed_count} we can read`,
     lede: "Before the first e-mail, the engine builds a dossier from the data package: owner type, cash signals, should-cost. Most suppliers only have spend data; the detailed ones carry letters, notes and intel.",
@@ -30,6 +32,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "decide",
+    tab: "Each move",
     short: "What happens on every move",
     title: "One move, branch by branch",
     lede: "Each time a supplier answers, Negotiator.decide() walks the same list: read the reply, price every standing sheet, accept if a supplier is ready, else counter the one that waited longest.",
@@ -37,6 +40,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "prompts",
+    tab: "Model calls",
     short: "Model calls and prompts",
     title: "Where the words come from",
     lede: `The engine writes e-mails from a template; ${stats.moves.engine} of ${stats.moves.total} recorded moves never touched a model. The kit's LLM agent takes over only when the engine throws. Here is its prompt, as it is in the code.`,
@@ -44,6 +48,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "arguments",
+    tab: "Arguments",
     short: "Arguments and reading replies",
     title: "What we claim, and what we hear",
     lede: "Claims carry our figures next to their data IDs, so the arena can check them. Replies are read with fixed patterns that trigger a concrete change in the next move.",
@@ -51,6 +56,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "replay",
+    tab: "Replay",
     short: "Replay a negotiation",
     title: "Replay a negotiation, one e-mail at a time",
     lede: "Every e-mail, claim check and decision from a recorded session, joined to the reason our engine logged for it. Press Play, or click the replay and use the arrow keys.",
@@ -58,6 +64,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "rfq",
+    tab: "RFQ",
     short: "RFQ with several suppliers",
     title: "Several suppliers, one winner",
     lede: "In an RFQ each supplier has its own thread. The engine plays them against each other with the leader's total cost, drops the hopeless ones and ends with a short reverse auction.",
@@ -65,6 +72,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "stops",
+    tab: "Stops",
     short: "Why negotiations stop",
     title: "Why a negotiation stops",
     lede: `${stats.totals.procudeal_runs} recorded runs, ${stats.totals.deals} deals. Most talks end when the supplier calls its offer final, not when the prices meet or the rounds run out.`,
@@ -72,6 +80,7 @@ const CHAPTERS: Chapter[] = [
   },
   {
     id: "issues",
+    tab: "Fixes",
     short: "What to fix next",
     title: "What the code review found",
     lede: "Read from the engine code, each with the line it lives on. The first one explains most of the short negotiations above.",
@@ -83,9 +92,14 @@ export function DemoApp() {
   return (
     <DemoDeck
       chapters={CHAPTERS}
-      footer={
+      meta={
         <>
-          Engine {code.engine} at {code.commit}. {stats.totals.procudeal_runs} runs and {suppliers.total} suppliers synced {stats.synced_at.slice(0, 10)}. Use ← → to move between chapters.
+          <span className="font-[family-name:var(--font-demo-mono)] text-[12.5px] text-[var(--d-ink)]">
+            Engine {code.engine} at {code.commit}
+          </span>
+          <span className="rounded border border-[var(--d-line)] bg-white px-2 py-0.5 font-[family-name:var(--font-demo-mono)] text-[12px] uppercase tracking-[0.08em]">
+            {stats.totals.procudeal_runs} runs, {suppliers.total} suppliers
+          </span>
         </>
       }
     />

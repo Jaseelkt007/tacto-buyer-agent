@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { code, stats, suppliers, type Stage } from "@/lib/demo";
 import { s } from "./styles";
-import { CodeRef, Figure, kindColor, KindBadge, Panel } from "./ui";
+import { Callout, CodeRef, Figure, kindColor, KindBadge, Panel } from "./ui";
 
 const GROUPS: { id: string; title: string; note: string; test: (st: Stage) => boolean }[] = [
   { id: "before", title: "Before the case", note: "once per run or session", test: (st) => /once per run/.test(st.when) || st.id === "session_open" },
@@ -25,17 +25,43 @@ export function Pipeline() {
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-8 rounded-xl border border-[var(--d-line)] bg-[var(--d-panel)] p-6 shadow-[var(--d-shadow)] sm:grid-cols-2 xl:grid-cols-[1.4fr_1fr_1fr_1fr] xl:divide-x xl:divide-[var(--d-line-soft)] [&>*]:xl:pl-8 [&>*:first-child]:xl:pl-0">
-        <div>
-          <div className={`${s.plate} text-[52px] leading-none tabular-nums text-[var(--d-ink)]`}>{code.llm.engine_calls_per_move}</div>
-          <div className="mt-3 text-[14px] font-medium">model calls when the engine makes a move</div>
-          <p className="mt-1 max-w-[46ch] text-[12.5px] leading-relaxed text-[var(--d-ink-2)]">
-            Code decides every price, sheet, claim, accept and walk-away. The e-mail is a fixed template. A model is called only when the engine throws, and then once for that move.
-          </p>
-        </div>
-        <Figure value={`${m.kit_llm}`} label={`of ${m.total} recorded moves went to the LLM`} sub={`${m.engine} came from the engine; causes in chapter 4`} tone="var(--d-llm)" />
-        <Figure value={`${stats.totals.procudeal_runs}`} label="recorded runs of our engine" sub={`${stats.totals.deals} deals over ${stats.totals.cases} cases`} />
-        <Figure value={`${suppliers.total}`} label="suppliers in the data package" sub={`${suppliers.detailed_count} with letters, notes and intel for a dossier`} />
+      <Callout title="Code decides, a model only catches errors">
+        Every price, term sheet, claim, accept and walk-away is computed by our code, and the e-mail is a fixed template. A language model is called
+        only when the engine throws, and then <b>once, for that move</b>: the kit&apos;s LLM agent writes it, guarded by code.
+      </Callout>
+
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <StatCard label="Model calls per engine move" value={code.llm.engine_calls_per_move} sub="decided and written in code" />
+        <StatCard
+          label="Moves written by the LLM"
+          value={
+            <>
+              {m.kit_llm}
+              <span className="ml-1.5 text-[17px] text-[var(--d-muted)]">/ {m.total}</span>
+            </>
+          }
+          sub={`${m.engine} from the engine; causes in Model calls`}
+        />
+        <StatCard
+          label="Recorded runs"
+          value={
+            <>
+              {stats.totals.procudeal_runs}
+              <span className="ml-1.5 text-[17px] text-[var(--d-muted)]">runs</span>
+            </>
+          }
+          sub={`${stats.totals.deals} deals over ${stats.totals.cases} cases`}
+        />
+        <StatCard
+          label="Suppliers in the data"
+          value={
+            <>
+              {suppliers.total}
+              <span className="ml-1.5 text-[17px] text-[var(--d-muted)]">of which {suppliers.detailed_count} detailed</span>
+            </>
+          }
+          sub="letters, notes and intel for a dossier"
+        />
       </div>
 
       <div className="flex flex-wrap items-center gap-2 text-[12px] text-[var(--d-ink-2)]">
@@ -62,7 +88,7 @@ export function Pipeline() {
                     onClick={() => setSel(st.id)}
                     aria-pressed={st.id === sel}
                     className={`relative w-[188px] rounded-md border px-3 py-2 text-left transition-colors ${
-                      st.id === sel ? "border-[var(--d-buyer)] bg-[var(--d-panel)] ring-2 ring-[var(--d-buyer-wash)]" : "border-[var(--d-line)] bg-[var(--d-panel)] shadow-[var(--d-shadow)] hover:border-[#cfd4da]"
+                      st.id === sel ? "border-[var(--d-ink)] bg-[var(--d-panel)]" : "border-[var(--d-line)] bg-[var(--d-panel)] shadow-[var(--d-shadow)] hover:border-[#cfcfcf]"
                     }`}
                   >
                     <span className="absolute inset-y-2 left-0 w-[3px] rounded-r" style={{ background: kindColor(st.kind) }} aria-hidden />
@@ -142,6 +168,14 @@ export function Pipeline() {
       <p className="text-[11.5px] text-[var(--d-muted)]">
         Read from the engine code at commit {code.commit} ({code.engine}). Runs and suppliers synced {stats.synced_at.slice(0, 16).replace("T", " ")} UTC.
       </p>
+    </div>
+  );
+}
+
+function StatCard({ label, value, sub }: { label: string; value: React.ReactNode; sub: string }) {
+  return (
+    <div className="rounded-lg border border-[var(--d-line)] bg-white px-5 py-4">
+      <Figure label={label} value={value} sub={sub} />
     </div>
   );
 }

@@ -2,8 +2,10 @@
 
 A full-screen deck that explains how our engine negotiates one case, for the demo and for our own
 analysis. Everything shown about the engine is read from the **code**, not from `docs/`. It covers
-the section rail on purpose and has its own look: one light theme (white panels on a soft grey page,
-hairline borders), IBM Plex Sans with IBM Plex Mono for code, and muted colours by role (buyer blue,
+the section rail on purpose and follows the arena site's look: a white top bar with the chapters as
+monospace caps tabs (orange underline on the current one), one centred column on light grey, flat
+white cards with hairline borders, monospace caps labels over light large figures, orange-edged
+callouts. Inter for text, Geist Mono for labels and code. Chart colours stay by role (buyer blue,
 supplier orange, arena teal, LLM violet). ← → move between chapters.
 
 | # | Chapter | What it answers | Data |

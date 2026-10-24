@@ -26,13 +26,13 @@ export function Arguments() {
     <div className="space-y-5">
       <div className="grid gap-4 sm:grid-cols-4">
         {RESULT_ORDER.map((k) => (
-          <div key={k} className="rounded-xl border border-[var(--d-line)] bg-[var(--d-panel)] px-5 py-4 shadow-[var(--d-shadow)]">
-            <div className="flex items-center gap-2 text-[12.5px] font-medium">
-              <span className={`h-2.5 w-2.5 rounded-sm ${RESULT_STYLE[k]}`} />
+          <div key={k} className="rounded-lg border border-[var(--d-line)] bg-white px-5 py-4">
+            <div className={`${s.label} flex items-center gap-2`}>
+              <span className={`h-2 w-2 rounded-full ${RESULT_STYLE[k]}`} aria-hidden />
               {k}
             </div>
-            <div className={`${s.plate} mt-1.5 text-[26px] tabular-nums`}>{res[k] ?? 0}</div>
-            <div className="text-[11.5px] text-[var(--d-muted)]">of {sent} claims the arena checked</div>
+            <div className={`${s.plate} mt-2 text-[32px] tabular-nums`}>{res[k] ?? 0}</div>
+            <div className="mt-1 text-[12.5px] text-[var(--d-ink-2)]">of {sent} claims the arena checked</div>
           </div>
         ))}
       </div>
