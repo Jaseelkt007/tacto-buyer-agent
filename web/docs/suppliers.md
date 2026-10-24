@@ -45,7 +45,7 @@ practice cases the supplier is in.
      shorter payment terms for price.
    - **Needs cash / Looks for work / Capacity full**: regex signals over its letters and news. Each
      one lists the document ID and the exact phrase that triggered it, linked to the timeline.
-4. **Company** and **Terms and contract.** Vendor master terms are what closes any field a deal
+4. **Company** and **Terms and contract** (links to the full contract page in Contracts). Vendor master terms are what closes any field a deal
    leaves open, so they matter for total cost. Notes flag terms that differ from our policy
    (60 days net, DAP). The contract card shows the notice period for price changes.
 5. **Spend with us** per fiscal year, and **Parts they supply** (source list).

@@ -1,6 +1,8 @@
 import owners from "@/data/links.json";
+import qnContracts from "@/data/qn-links.json";
 
 const owner = owners as Record<string, string>;
+const qnContract = qnContracts as Record<string, string>;
 const page = (sup: string, anchor?: string) => `/suppliers/${sup.replace("sup:", "")}${anchor ? `#${anchor}` : ""}`;
 
 /** Where a data ID is explained in the app, or null when no page covers it yet. */
@@ -12,7 +14,12 @@ export function hrefFor(id: string): string | null {
   if (id.startsWith("cost:")) return `/parts/${id.slice(5).split("-")[0]}#${id}`;
   // idx:<series>@<month>: the series page, with that month selected in the claim checker.
   if (id.startsWith("idx:")) return `/market/${id.slice(4).split("@")[0]}#${id}`;
-  const base = id.split("#")[0];
-  if (owner[base]) return page(owner[base], base);
+  // ctr:<no> or ctr:<no>#<clause>: the contract page, at that clause.
+  if (id.startsWith("ctr:")) {
+    const [no, clause] = id.slice(4).split("#");
+    return `/contracts/${no}${clause ? `#clause-${clause}` : ""}`;
+  }
+  if (id.startsWith("qn:") && qnContract[id]) return `/contracts/${qnContract[id]}#${id}`;
+  if (owner[id]) return page(owner[id], id);
   return null;
 }

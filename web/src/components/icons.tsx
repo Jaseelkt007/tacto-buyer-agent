@@ -53,6 +53,14 @@ export const ChartIcon = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const ContractIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}>
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <path d="M14 2v6h6M8 13h8M8 17h3" />
+    <path d="m14 18 1.5 1.5L19 16" />
+  </svg>
+);
+
 export const SendIcon =(p: SVGProps<SVGSVGElement>) => (
   <svg {...base} {...p}>
     <path d="m22 2-7 20-4-9-9-4Z" />

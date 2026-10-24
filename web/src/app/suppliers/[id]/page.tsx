@@ -330,9 +330,12 @@ export default async function Page({ params }: PageProps<"/suppliers/[id]">) {
             />
             {d?.contract ? (
               <div className="space-y-1 border-t border-[var(--line)] pt-3">
-                <div className="flex items-center gap-2 text-[13px]">
+                <div className="flex flex-wrap items-center gap-2 text-[13px]">
                   <DataId id={d.contract.id} />
                   <span className="text-[var(--ink-2)]">{d.contract.type}</span>
+                  <Link href={`/contracts/${d.contract.id.replace("ctr:", "")}`} className="text-[12.5px] text-[var(--accent-ink)] hover:underline">
+                    clauses, delivery, quality, our payments →
+                  </Link>
                 </div>
                 <KV
                   rows={[

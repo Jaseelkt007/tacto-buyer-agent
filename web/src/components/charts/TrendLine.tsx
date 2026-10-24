@@ -82,7 +82,7 @@ export function TrendLine({
             </g>
           ))}
           {points.map((p, i) =>
-            i % every === 0 || i === n - 1 ? (
+            (i % every === 0 && n - 1 - i >= every / 2) || i === n - 1 ? (
               <text
                 key={p.label}
                 x={x(i)}
