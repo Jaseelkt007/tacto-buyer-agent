@@ -146,7 +146,8 @@ for (const p of parts) {
       current_since: current?.valid_from ?? null,
       current_basis: current?.basis ?? null,
       full_cost: full,
-      margin_pct: price && full ? round((price / full.unit_cost - 1) * 100, 1) : null,
+      // The arena's supplier margin (brief/api.md): (value - full_cost) / value, here at the price.
+      margin_pct: price && full ? round(((price - full.unit_cost) / price) * 100, 1) : null,
       should_cost_claim: !!(price && full && full.unit_cost < SHOULD_COST_CLAIM * price),
     };
   });

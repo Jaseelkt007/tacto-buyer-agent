@@ -46,6 +46,13 @@ export const CogIcon = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const ChartIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}>
+    <path d="M3 3v18h18" />
+    <path d="m7 15 4-5 3 3 5-7" />
+  </svg>
+);
+
 export const SendIcon =(p: SVGProps<SVGSVGElement>) => (
   <svg {...base} {...p}>
     <path d="m22 2-7 20-4-9-9-4Z" />

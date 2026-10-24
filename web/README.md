@@ -1,6 +1,6 @@
 # ProcuDeal web app
 
-Sections: **Mail** (below), **Deals** (negotiation replays), **Suppliers**, **Parts & Cost**. Full docs per section,
+Sections: **Mail** (below), **Deals** (negotiation replays), **Suppliers**, **Parts & Cost**, **Market**. Full docs per section,
 data sources and the phase plan: [docs/README.md](docs/README.md).
 
 ## Mail: what the buyer agent sees

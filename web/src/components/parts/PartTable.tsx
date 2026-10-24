@@ -73,7 +73,7 @@ export function PartTable({ rows, fy }: { rows: PartRow[]; fy: string }) {
               <th className="px-3 py-2 text-right font-medium" title="The full cost our agent assumes for the main supplier">
                 Full cost
               </th>
-              <th className="px-3 py-2 text-right font-medium" title="Price over full cost">
+              <th className="px-3 py-2 text-right font-medium" title="(price − full cost) ÷ price, as the arena computes the supplier margin">
                 Margin
               </th>
               <th className="px-3 py-2 text-right font-medium" title="Weighted 12-month move of the part's cost-driver indices">

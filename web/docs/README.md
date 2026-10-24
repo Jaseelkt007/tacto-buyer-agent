@@ -13,7 +13,7 @@ the negotiation. Update the page in the same commit as the code.
 | Deals (negotiation replay) | `/negotiations` | [deals.md](deals.md) | done |
 | Suppliers | `/suppliers` | [suppliers.md](suppliers.md) | done (phase 1) |
 | Parts & Cost | `/parts` | [parts.md](parts.md) | done (phase 2) |
-| Market (indices) | — | — | phase 3 |
+| Market (indices) | `/market` | [market.md](market.md) | done (phase 3) |
 | Contracts & Performance | — | — | phase 4 |
 | Demand & Sourcing | — | — | phase 5 |
 | Deal anatomy + Facts | — | — | phase 6 |
@@ -42,8 +42,9 @@ the negotiation. Update the page in the same commit as the code.
 | `part:310010` | `/parts/310010` |
 | `cost:310010`, `cost:310012-70110` | that should-cost row on the part page |
 | `doc:…`, `news:…` | that item in the supplier's timeline |
+| `idx:PPI-D351@2026-08` | `/market/PPI-D351`, that month selected in the claim checker (`#idx:S@A..idx:S@B` selects a window) |
 
-Later phases add `idx:`, `fc:` and the rest.
+Later phases add `fc:`, `po:`, `qn:` and the rest.
 
 ## Data snapshots
 
@@ -55,8 +56,9 @@ The app reads committed JSON snapshots, so it builds and deploys without keys.
 | `npm run sync:runs` | `runs/` on `origin/main` via git (`RUNS_DIR=../runs` for a local folder) | `src/data/runs.json` | none |
 | `npm run sync:suppliers` | `../data` (CSV, correspondence) | `src/data/suppliers.json`, `src/data/links.json` | none |
 | `npm run sync:parts` | `../data` (CSV) | `src/data/parts.json` | none |
+| `npm run sync:market` | `../data` (CSV) | `src/data/market.json` | none |
 
-After the **Sunday 08:00 data release**: `uv run arena data`, then `npm run sync:suppliers && npm run sync:parts`
+After the **Sunday 08:00 data release**: `uv run arena data`, then `npm run sync:suppliers && npm run sync:parts && npm run sync:market`
 (and later phases' syncs). After new benchmark runs on main: `git fetch origin && npm run sync:runs`.
 
 ## Run
@@ -80,11 +82,12 @@ web/
     sync-runs.mjs          Deals snapshot
     sync-suppliers.mjs     Suppliers snapshot + ID link index
     sync-parts.mjs         Parts & Cost snapshot
+    sync-market.mjs        Market snapshot
   src/
-    app/                   one folder per section (mail, negotiations, suppliers, parts)
-    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/
+    app/                   one folder per section (mail, negotiations, suppliers, parts, market)
+    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/, market/
     data/                  committed snapshots
-    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, links.ts, format.ts
+    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, market.ts, indexRules.ts, links.ts, format.ts
 ```
 
 Add a section: a route under `src/app/`, one entry in `SECTIONS` in `src/components/AppRail.tsx`,

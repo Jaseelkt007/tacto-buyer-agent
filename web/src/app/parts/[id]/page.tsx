@@ -103,7 +103,8 @@ function Findings({ p, main }: { p: Part; main: PartSupplier | undefined }) {
     out.push(
       main.margin_pct < 0 ? (
         <>
-          Today&apos;s price {money(main.current_price)} is <strong className="text-[var(--bad)]">{Math.abs(main.margin_pct)} % below</strong> its full cost{" "}
+          Today&apos;s price {money(main.current_price)} is <strong className="text-[var(--bad)]">below</strong> its full cost (margin{" "}
+          <strong className="text-[var(--bad)]">{main.margin_pct} %</strong>){" "}
           {money(main.full_cost.unit_cost)} <DataId id={main.full_cost.source} />: the supplier loses money on this part. Squeezing it further adds risk,
           and for strategic and bottleneck parts the score charges for a supplier left below a sustainable margin.
         </>
@@ -265,7 +266,7 @@ export default async function Page({ params }: PageProps<"/parts/[id]">) {
           <Tile
             label="Margin"
             value={main?.margin_pct != null ? signed(main.margin_pct) : "—"}
-            sub="price over full cost"
+            sub="(price − full cost) ÷ price"
             tone={main?.margin_pct != null && main.margin_pct < 0 ? "bad" : undefined}
           />
           <Tile label="Drivers, 12 months" value={p.implied_change_12m_pct !== null ? signed(p.implied_change_12m_pct) : "—"} sub={`${Math.round(p.index_share * 100)} % of cost index-linked`} />

@@ -31,7 +31,7 @@ so the page shows what the agent believes.
 | Figure | How it is computed |
 |---|---|
 | **Full cost** per supplier | should-cost of the supplier's own plant if there is a row for it; else the German should-cost × country factor (AT 1.05, CH 1.1, CZ/PL/HU 0.82, TR 0.75, CN 0.7); else none |
-| **Margin** | current price ÷ full cost − 1. Negative = the supplier sells below its full cost |
+| **Margin** | (price − full cost) ÷ price, the arena's supplier-margin formula (`brief/api.md`), taken at today's price. Negative = the supplier sells below its full cost |
 | **Should-cost argument** | yes when full cost < 98 % of the current price (the agent's threshold) |
 | **12-month change** of a driver | latest index value ÷ the value 12 months earlier − 1 |
 | **Contribution** | driver weight × its 12-month change, in percentage points |
@@ -79,7 +79,7 @@ Volute casing HN 50-200 (`part:310010`), Gießerei Brandlhuber:
   the one that fell.
 - The agent can cite electricity **−6.1 %** (`idx:PPI-D351@2025-11` → `idx:PPI-D351@2026-08`). That is
   exactly the claim it sent in the P01 replay, and the supplier verified it.
-- Today's €126.53 is **4.6 % below** Brandlhuber's full cost of €132.64 (`cost:310010`), and every
+- Today's €126.53 is €6.11 below Brandlhuber's full cost (margin **−4.8 %**) of €132.64 (`cost:310010`), and every
   past round is noted "accepted below full cost to keep the volume". So the agent does **not** argue
   should-cost here. Squeezing further hurts a supplier we depend on, which the score charges for in
   stabilise cases. This is why the deal settled near cost (€130.90) rather than at the anchor.
