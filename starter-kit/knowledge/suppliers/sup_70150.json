@@ -1,0 +1,2129 @@
+{
+ "supplier_id": "sup:70150",
+ "name": "Tarsevi Döküm Sanayi A.Ş.",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "built": "2026-10-25T00:08:12",
+  "seconds": 96.4,
+  "evidence_chars": 27593,
+  "arguments": 58,
+  "errors": {}
+ },
+ "strategy": {
+  "summary": "Tarsevi Döküm is a family-owned Turkish iron foundry (380 staff, ~EUR 15.8 M turnover) that supplies 60% of our HB 40 pump housing (part:310060). It is our cheapest source by far: the German second source Pfaffenreuth is about 35% dearer. Its price is only about 8% above our TR-adjusted should-cost, whose error band is about 12%, so it is effectively near cost. It is financially stressed: a bank restructuring after two loss years (news:20260809-22), half the shop floor idle, short hours, and repeated pleas for early payment (doc:20260804-70150-M4, doc:20260905-70150-M6). The MD says he cannot sign anything that lowers margin. Its latest quote holds the price flat but asks for 10-day payment. Performance is poor and worsening: delivery is class C red (sc:70150@2026Q3) and ppm is far above peers, with recent large porosity and dimension lots. The way in is cash and volume traded for price, performance commitments and stability, not a margin squeeze. It is also invited to the new HX volute RFQ (rfq:6000000306). Its spare capacity makes it eager, but its delivery record makes it risky. Financial-health data in the records is stale (FY2024, credit index unchanged); treat the supplier as weaker than the records show.",
+  "decision_maker": "Owner/managing director of the family firm. He personally offered an open-book calculation and personally pressed for earlier payment. Under the restructuring the banks are watching monthly, so his margin decisions are effectively under bank scrutiny. Sales handles capacity and volume talk.",
+  "persona": {
+   "owner_type": "family-owned A.Ş., owner-managed",
+   "style": "Personal, open and candid about distress. Offers transparency (an open calculation) and asks directly for cash. Historically settles below its ask but now defends margin explicitly.",
+   "openness": "open",
+   "traits": [
+    "cash_need",
+    "financial_stress",
+    "spare_capacity",
+    "open_book_offer",
+    "quality_issues",
+    "delivery_issues",
+    "cost_pressure_real",
+    "relationship_long"
+   ],
+   "other_traits": [
+    "in bank restructuring after two loss-making years",
+    "owns the tooling for part:310060",
+    "credit and equity data stale (FY2024) and likely flattering",
+    "plant closed over Christmas/New Year; January call-offs needed early"
+   ]
+  },
+  "needs": [
+   {
+    "need": "cash",
+    "detail": "Liquidity under bank watch. It wants payment within 10 days and offers a cash discount in return. Its latest quote requests 10-day payment at an unchanged price.",
+    "evidence": [
+     "doc:20260804-70150-M4",
+     "doc:20260905-70150-M6",
+     "quote:7300068",
+     "news:20260809-22"
+    ],
+    "strength": "strong"
+   },
+   {
+    "need": "work_for_idle_capacity",
+    "detail": "Half the floor is idle, the second shift has been on hold since spring, and sales offered to take additional parts at short notice. The HX volute and extra HB 40 quota are both valuable to it.",
+    "evidence": [
+     "doc:20260610-70150-M1",
+     "doc:20260414-70150-M5",
+     "doc:20260419-70150-M3",
+     "rfq:6000000306"
+    ],
+    "strength": "strong"
+   },
+   {
+    "need": "planning_security",
+    "detail": "A longer, binding commitment reassures its banks during the restructuring.",
+    "evidence": [
+     "news:20260809-22",
+     "ctr:4600070150#8.1"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "price_stability",
+    "detail": "No margin cut. The steel PPI rise gives it a modest, checkable case for about +2% if it asks.",
+    "evidence": [
+     "doc:20260804-70150-M4",
+     "idx:PPI-C241@2026-08",
+     "cost:310060"
+    ],
+    "strength": "moderate"
+   }
+  ],
+  "constraints": [
+   {
+    "kind": "cash_tight",
+    "detail": "Bank restructuring and monthly bank monitoring. It cannot fund long payment terms.",
+    "evidence": [
+     "news:20260809-22",
+     "doc:20260804-70150-M4"
+    ]
+   },
+   {
+    "kind": "other",
+    "detail": "Margin floor: the MD refuses anything that lowers margin, and the price is already near the TR should-cost.",
+    "evidence": [
+     "doc:20260804-70150-M4",
+     "cost:310060"
+    ]
+   },
+   {
+    "kind": "price_frozen",
+    "detail": "The contract fixes prices per calendar year; changes need 90 days' written notice before year end.",
+    "evidence": [
+     "ctr:4600070150#3.1"
+    ]
+   },
+   {
+    "kind": "single_source",
+    "detail": "It owns the HB 40 tooling. Moving its 60% share means new tooling and about 35% higher price at Pfaffenreuth.",
+    "evidence": [
+     "sup:70190",
+     "quote:7100017"
+    ]
+   },
+   {
+    "kind": "other",
+    "detail": "Delivery and quality are degrading (on-time about half, ppm many times peer median). This limits how far it can promise short lead times or tight ppm without real fixes.",
+    "evidence": [
+     "sc:70150@2026Q3",
+     "qn:20004846",
+     "qn:20004946"
+    ]
+   }
+  ],
+  "levers": [
+   {
+    "arg_id": "correspondence:all:7c8feb3b",
+    "why": "Its own written offer of a cash discount for fast payment. Answering it directly turns payment days into a price or discount concession without cutting its margin.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "volume_change:310060:96ffdcd0",
+    "why": "Shared forecast slightly above last year's orders. Volume fills idle shifts, so a unit-price give need not hurt its margin.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "call_note:all:969508b1",
+    "why": "Take up the owner's open-book offer to settle price on its own calculation. This is respectful and lets our should-cost be tested jointly.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "should_cost:310060:b9df045e",
+    "why": "Checkable anchor. Use it to cap any increase rather than to force a deep cut, since the gap is within the error band.",
+    "when": "later"
+   },
+   {
+    "arg_id": "index_change:310060:803deac9",
+    "why": "Checkable power decline that offsets part of any steel-driven ask.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "order_history:310060:63a23929",
+    "why": "Anchors the current price against an increase request.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "negotiation_pattern:310060:c7599748",
+    "why": "It has historically settled below its ask. This is fresh filler for a later round.",
+    "when": "later"
+   },
+   {
+    "arg_id": "delivery_record:all:648e7705",
+    "why": "Frame it as a joint fix and justification for performance commitments, not as a price club. Late filler fact.",
+    "when": "later"
+   },
+   {
+    "arg_id": "quality_record:all:a32b9cf7",
+    "why": "Supports a ppm commitment or chargeback discussion. Raise it respectfully, as a joint fix.",
+    "when": "later"
+   },
+   {
+    "arg_id": "contract_clause:310060:6b9c528c",
+    "why": "If it asks for an increase without timely notice, the contract fixes the price for the year.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "should_cost:310070:64748ff5",
+    "why": "Anchor for the HX volute RFQ quote.",
+    "when": "opening"
+   }
+  ],
+  "trades": [
+   {
+    "field": "payment_days",
+    "direction": "lower",
+    "why": "Its strongest need. Trade short payment for a price step or cash discount. In competitive cases hold it for the last round; give it once, not piecemeal."
+   },
+   {
+    "field": "volume_per_year",
+    "direction": "higher",
+    "why": "Binding volume, extra quota or the HX volute fills idle capacity and is worth more to it than it costs us within our real need."
+   },
+   {
+    "field": "contract_months",
+    "direction": "higher",
+    "why": "Planning security for its banks. 24 months captures the value."
+   },
+   {
+    "field": "ppm_commitment",
+    "direction": "add",
+    "why": "It needs to repair its standing; secure a tighter ppm target alongside the cash trade."
+   },
+   {
+    "field": "chargeback_eur_per_complaint",
+    "direction": "higher",
+    "why": "The flat fee does not cover our cost. Keep it as a tradeable item, but do not escalate it hard against a cash-starved firm."
+   },
+   {
+    "field": "lead_time_days",
+    "direction": "keep",
+    "why": "Accept its standard lead time; demanding shorter lead time on top of poor delivery invites refusal or a price rise."
+   },
+   {
+    "field": "index_clause",
+    "direction": "keep",
+    "why": "No fixed-price-incapacity signal so far; the steel index is rising, so avoid offering a clause unless it insists."
+   }
+  ],
+  "price_view": {
+   "room": "little",
+   "reasoning": "The price is about 8% above the TR should-cost, inside its error band, and the supplier is loss-making and refuses margin cuts. Cost drivers modestly favour it (steel up, power down; net about +2%). Room comes only through trades: a cash discount for fast payment, and volume absorbing fixed cost. It does not come from pressure. Its rival is far dearer, so it knows it is cheap.",
+   "squeeze_risk": "high"
+  },
+  "tone": {
+   "style": "warm",
+   "do": [
+    "Acknowledge its situation and answer the cash request explicitly in every message",
+    "Frame performance issues as a joint recovery plan",
+    "Take up the owner's open-calculation offer",
+    "Commit to paying on time and put the payment trade in writing",
+    "Offer volume and length as partnership signals"
+   ],
+   "dont": [
+    "Do not demand long payment terms",
+    "Do not threaten to move volume to the rival",
+    "Do not mention the rival's price or level",
+    "Do not lecture about restructuring or insolvency risk",
+    "Do not ask open questions about margin without our own data"
+   ]
+  },
+  "traps": [
+   "Citing the rival quote or rival price (rival_quote:310060:7d4306e8, rival_price:310060:11768893) reveals that it is much cheaper and undercuts us.",
+   "supplier_health:all:7a49971a is stale and says 'sound'; do not rely on it.",
+   "Peak-based index declines (index_peak args) are not checkable; citing them costs trust.",
+   "Copper, electronics and alloy-surcharge market news is irrelevant to grey iron; do not cite it for either side.",
+   "Our late payment record (payment_behaviour:all:11829f07) is a grievance it can raise. Pre-empt it by committing to punctuality.",
+   "Using the exit clause (contract_clause:310060:7e24bf43) as a threat against a distressed sole-tooling holder risks supply.",
+   "A deep price cut pushes it below a healthy margin and risks supply failure.",
+   "Offering short payment mid-negotiation without a matching price or discount step gives away the interest cost for nothing.",
+   "A token or repeated step after a hold will bring a final offer; a final offer is final."
+  ],
+  "writer_notes": "Lead with cash. Answer its fast-payment and discount request with a concrete sheet that converts short payment into price or discount, and pair it with binding volume and a longer term. Keep the price roughly where it is, or seek a small reduction via the trade only. If it asks for an increase, cap it with the contract's annual fixed price, the power decline and the should-cost, and accept at most a modest steel-driven move. Ask for a ppm commitment and a delivery recovery plan as part of the package. For the HX volute, welcome its quote, anchor on the should-cost, and require a credible delivery plan given current performance. Do not over-promise volume until delivery recovers. Keep the tone warm and personal toward the owner.",
+  "questions_to_ask": [
+   "What cash discount would you grant for short payment, and would you prefer it reflected in the unit price instead?",
+   "What is your recovery plan for on-time delivery and for the recent porosity and dimensional issues?",
+   "Could you restart the second shift if we committed additional binding volume, and what would that do to your price?",
+   "Are you planning to quote the HX volute casing, and how would you secure ramp-up deliveries?"
+  ]
+ },
+ "specialists": {
+  "economics": {
+   "findings": [
+    {
+     "text": "Part 310060: price EUR 32.24 sits only about 8% above our TR-adjusted should-cost (EUR 39.82 DE x 0.75 = 29.87, no margin). With a 12% error band on the estimate, this is roughly cost plus a thin margin. Price room is small, perhaps 0-3%. A deeper cut risks pushing a loss-making supplier below a healthy margin.",
+     "evidence": [
+      "cost:310060",
+      "should_cost:310060:b9df045e"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Price history on 310060 runs 34.41 (2023), 32.87 (2024), 32.87 (2025) and 32.24 (from 2026-01), which is -6.3% since 2023. It has settled below its ask in each of three renewals, by 3.1 pp on average. The latest quote [quote:7300068] holds 32.24 but asks for 10-day payment instead of 60. The real request is cash, not price.",
+     "evidence": [
+      "price_trend:310060:ba86195a",
+      "negotiation_pattern:310060:c7599748",
+      "quote:7300068",
+      "order_history:310060:63a23929"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Weighted cost drivers over 12 months point to about +2.0% on 310060: labour +2.7% x 0.31, steel PPI +6.5% x 0.22 and power -3.7% x 0.06. Labour and power are German indices, a weak proxy for a TR foundry. Iron castings PPI is only +1.8% y/y. This modestly supports a rise if they ask, but not more than about 2%. The peak-based declines are not checkable.",
+     "evidence": [
+      "idx:LCI-C@2026-06",
+      "idx:PPI-C241@2026-08",
+      "idx:PPI-D351@2026-08",
+      "news:20260914-31"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "The rival German source sup:70190 is 35-42% dearer: EUR 43.39 currently and EUR 45.70 quoted in rfq:6000000107. Tarsevi knows it is cheap. Citing the rival's price would reveal it and undercut us.",
+     "evidence": [
+      "quote:7100017",
+      "rival_price:310060:11768893",
+      "rfq:6000000107"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Part 310070 is a new part with no price history and no quotes. RFQ 6000000306 is open (4,200/yr, SOP 2027-03). The TR-adjusted should-cost is about EUR 145.63, and its 5% stated error is the best anchor available. Driver weights imply about +2.0-2.3% y/y.",
+     "evidence": [
+      "cost:310070",
+      "should_cost:310070:64748ff5",
+      "rfq:6000000306"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Financial stress: restructuring with its banks after two loss years, idle capacity, and repeated requests for early payment. Its cash need is the main tradable lever. A short payment term costs us interest but is worth more to it than price. The credit index is unchanged at 228.",
+     "evidence": [
+      "news:all:19db5487",
+      "call_note:all:af07fea3",
+      "correspondence:all:7c8feb3b",
+      "call_note:all:b15a76e6"
+     ],
+     "importance": "high"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Payment within 10 days, with a cash discount offered",
+    "Binding volume, to fill idle capacity and the second shift",
+    "No margin reduction",
+    "Possibly about +2% on cost drivers, mainly steel"
+   ],
+   "risks": [
+    "The should-cost margin is thin; squeezing the price adds a below-healthy-margin charge and supply risk from a restructuring supplier",
+    "Its delivery (52% on time) and quality (2652 ppm) are deteriorating",
+    "Tarsevi owns the tooling; moving to sup:70190 costs about +35%",
+    "Our late payments give it a counter-argument"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "should_cost:310060:b9df045e",
+     "why": "A checkable anchor showing the price is already near cost; use it to cap any increase."
+    },
+    {
+     "arg_id": "index_change:310060:803deac9",
+     "why": "Power fell 3.7% over 12 months, which offsets part of the steel rise."
+    },
+    {
+     "arg_id": "order_history:310060:63a23929",
+     "why": "Anchors the current 32.24."
+    },
+    {
+     "arg_id": "volume_change:310060:96ffdcd0",
+     "why": "Rising volume can be traded for a discount or for a price held flat."
+    },
+    {
+     "arg_id": "correspondence:all:7c8feb3b",
+     "why": "Its own offer of a cash discount for 10-day payment; quantify it in exchange."
+    },
+    {
+     "arg_id": "should_cost:310070:64748ff5",
+     "why": "Anchor for the new HX volute RFQ."
+    },
+    {
+     "arg_id": "call_note:all:969508b1",
+     "why": "The owner offered an open calculation; it can validate the cost split."
+    }
+   ],
+   "open_questions": [
+    "What cash discount % does it offer for 10-day payment, and does it exceed our interest cost?",
+    "Is the 0.75 TR factor valid for this foundry? The owner's calculation walkthrough could confirm it.",
+    "Will Tarsevi quote 310070, and can it reliably ramp up given its delivery record?",
+    "Who are the competitors in rfq:6000000306?"
+   ]
+  },
+  "persona": {
+   "findings": [
+    {
+     "text": "The decision-maker is the owner/MD of a family firm (founded 1988, 380 staff, ~EUR 15.8 M turnover). He is under bank scrutiny and in a restructuring programme after two loss-making years. He is preoccupied with cash and the banks and said explicitly: 'I cannot sign anything that lowers our margin now.' A plain price cut will hit a hard wall. Trades that improve his cash without cutting margin are the way in.",
+     "evidence": [
+      "sup:70150",
+      "doc:20260610-70150-M1",
+      "doc:20260804-70150-M4",
+      "news:20260809-22"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "His main need is cash. He asked twice on the phone for earlier payment, and on 2026-09-05 wrote asking us to pay within 10 days in exchange for a cash discount. Shorter payment days are our main currency: trade them against price or a cash discount rather than a margin cut.",
+     "evidence": [
+      "doc:20260804-70150-M4",
+      "doc:20260905-70150-M6"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "He also needs volume. Half the shop floor was idle and two shifts were on short hours. Sales said twice that they could take additional parts at short notice, with the second shift on hold since spring. Extra volume, the new HX volute casing (RFQ part:310070, 4200 pc/yr, with Velkenreith competing) and a longer commitment are valuable to them. They also fill fixed costs, so a lower unit price need not mean lower margin.",
+     "evidence": [
+      "doc:20260414-70150-M5",
+      "doc:20260419-70150-M3",
+      "doc:20260610-70150-M1",
+      "doc:20260926-70120-P06"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "The owner offered to walk us through their costing (hourly rates, material). This openness is a lever: an open-book review can be set against our should-cost. On a TR cost base, part:310060 sits about 8% above should-cost, but that should-cost has a ~12% error, so the gap is soft.",
+     "evidence": [
+      "doc:20260418-70150-M2"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "The profile data looks stale and contradicts the recent evidence. The credit index (228) is unchanged in 12 months and the equity ratio is 30.7% from the FY2024 filing, which reads as 'sound'. The news and call notes show losses and a bank restructuring. Treat the supplier as financially stressed, which is a supply risk. Do not push it below a healthy margin, as that carries a charge for strategic and bottleneck parts.",
+     "evidence": [
+      "sup:70150",
+      "news:20260809-22"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Performance is deteriorating, possibly from the stress. Over the last 12 months on-time delivery was 52% (79.2% a year earlier, against a target of 95% and a peer median of 84.6%), and quality ran at 2652 ppm (peer median 457). These are legitimate arguments, but they should be framed respectfully, as a joint fix.",
+     "evidence": [
+      "sup:70150"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Our payment record is a sensitivity. We are on average 6.2 days late, and 89.4% of invoices are paid late. To a cash-starved supplier this is an irritant they may raise, and simply paying on time is a cheap goodwill gesture.",
+     "evidence": [
+      "sup:70150"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "On price history, the supplier usually settles below its ask (three renewals: asked +1.0%, settled -2.1%). The price is fixed for each calendar year, with 90 days' notice required for changes. Our spend is about 3.2% of its turnover. The rival source, Pfaffenreuth, is ~35-42% dearer, so do not reveal that price.",
+     "evidence": [
+      "ctr:4600070150#3.1",
+      "ctr:4600070150#8.1"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "The plant closes from 23 December to 6 January, and January call-offs are needed by 10 December.",
+     "evidence": [
+      "doc:20251017-70150-N"
+     ],
+     "importance": "low"
+    }
+   ],
+   "leverage": "ours",
+   "supplier_wants": [
+    "Faster payment (10 days) in exchange for a cash discount",
+    "Additional volume to fill idle capacity and the second shift",
+    "No margin reduction while under bank watch",
+    "Award of the new HX volute casing (part:310070)",
+    "Longer, stable commitment that reassures the banks",
+    "Punctual payment of invoices"
+   ],
+   "risks": [
+    "Financial distress or insolvency during the restructuring: a supply-continuity risk, especially since it owns the part:310060 tooling",
+    "Pushing the price too hard may trigger a walk-away or erode its margin below healthy",
+    "Delivery (52% OTD) and quality (2652 ppm) are worsening",
+    "Profile and credit data are stale; real health is likely worse than the records show",
+    "Our late payments may be raised as a grievance"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "news:all:19db5487",
+     "why": "Checkable restructuring fact; frames our offer around their cash and volume needs."
+    },
+    {
+     "arg_id": "call_note:all:af07fea3",
+     "why": "Records their explicit request for faster payment, which sets up a payment-days-for-price trade."
+    },
+    {
+     "arg_id": "correspondence:all:7c8feb3b",
+     "why": "Their own written offer of a cash discount for 10-day payment."
+    },
+    {
+     "arg_id": "call_note:all:b15a76e6",
+     "why": "Idle capacity makes our volume valuable to them."
+    },
+    {
+     "arg_id": "call_note:all:3153ecc9",
+     "why": "Their own statement of spare capacity."
+    },
+    {
+     "arg_id": "call_note:all:969508b1",
+     "why": "Takes up the owner's open-book offer to settle prices by calculation."
+    },
+    {
+     "arg_id": "should_cost:310060:b9df045e",
+     "why": "Their price sits 8% above a TR should-cost; supports an open-book discussion."
+    },
+    {
+     "arg_id": "volume_change:310060:96ffdcd0",
+     "why": "Rising volume is a trade they value."
+    },
+    {
+     "arg_id": "delivery_record:all:648e7705",
+     "why": "Factual performance gap that justifies conditions."
+    },
+    {
+     "arg_id": "quality_record:all:a32b9cf7",
+     "why": "ppm far above the peer median."
+    },
+    {
+     "arg_id": "negotiation_pattern:310060:c7599748",
+     "why": "They historically settle below their ask."
+    },
+    {
+     "arg_id": "index_change:310060:803deac9",
+     "why": "Checkable fall in power prices offsets claimed cost increases."
+    }
+   ],
+   "open_questions": [
+    "What is the real current financial position? FY2025 figures and the terms of the bank covenants are unknown.",
+    "Who signs: the owner/MD alone, or the banks under the restructuring?",
+    "What cash-discount rate do they offer for 10-day payment?",
+    "Is the poor OTD caused by short-time work or cash constraints on material purchases?",
+    "Will they quote part:310070 DAP, and with what tooling?",
+    "Should we raise Pfaffenreuth's quota as a risk hedge?"
+   ]
+  },
+  "contract": {
+   "findings": [
+    {
+     "text": "Framework contract ctr:4600070150 covers only part:310060 (HB 40 housing): price fixed per calendar year, changes need written notice 90 days before year end (i.e. by ~2 Oct for 2027); payment 60 days net; FCA; lead time 70 days; quality agreement with 95% OTD target and EUR 150 flat fee per complaint. Term to 2027-06-30, auto-extends 12 months unless terminated with 90 days' notice (by 2027-04-01) - a live exit option for us.",
+     "evidence": [
+      "ctr:4600070150#3.1",
+      "ctr:4600070150#4.1",
+      "ctr:4600070150#5.1",
+      "ctr:4600070150#6.1",
+      "ctr:4600070150#8.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Renewal history: three renewals, average ask +1.0%, settled -2.1% (gap ~3.1 pp); 2025 asked +3% settled 0; latest asked +0.7% settled -1.9%. Price fell 34.41 (2023) to 32.24 (2026). Supplier reliably concedes below its ask.",
+     "evidence": [
+      "EV-2024-70150-310060",
+      "EV-2025-70150-310060",
+      "EV-2026-70150-310060"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Dual sourcing: Tarsevi 60% quota, Pfaffenreuth (DE) 40% at EUR 43.39 (quote 45.70) - Tarsevi is ~35% cheaper, so shifting volume to the rival costs us heavily; the rival price must not be revealed. Tarsevi owns its tooling (moving its share needs new tooling); Hollerau owns Pfaffenreuth's tooling. Tarsevi won the 2025 benchmark RFQ.",
+     "evidence": [
+      "rfq:6000000107",
+      "sup:70150",
+      "sup:70190"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Mutual dependence is asymmetric in our favour on cash, theirs on price: our spend ~EUR 0.5M is ~3.2% of its turnover; it is in bank restructuring after two loss years, idle capacity, MD asks for faster payment and refuses margin cuts. Performance is poor: 52% OTD vs 95% contractual target, 2652 ppm vs peers 457. Restructuring is also a supply risk on a 60% share part.",
+     "evidence": [
+      "sup:70150",
+      "ctr:4600070150#6.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "New part 310070 (HX volute, SOP 2027-03, 4200/yr) is in open RFQ rfq:6000000306 with no contract or history; it can be bundled with 310060 renewal as volume the supplier needs. Should-cost TR ~EUR 145.63.",
+     "evidence": [
+      "rfq:6000000306"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "We pay late on average (6.2 days, 89% of invoices late) - a weak spot they can raise; offering contractual on-time or faster payment is a cheap trade.",
+     "evidence": [
+      "sup:70150"
+     ],
+     "importance": "medium"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Faster payment (10 days with cash discount)",
+    "Binding volume / additional parts to fill idle capacity",
+    "No margin reduction while banks watch",
+    "Possible price increase citing steel PPI and labour"
+   ],
+   "risks": [
+    "Supplier insolvency/restructuring disrupts 60% of HB 40 supply; tooling is theirs",
+    "Pressing price below healthy margin could push them to walk or fail",
+    "Shifting to Pfaffenreuth costs ~35% more",
+    "Poor delivery and quality persist",
+    "Our habitual late payment undermines credibility"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "negotiation_pattern:310060:c7599748",
+     "why": "History shows settlements well below asks"
+    },
+    {
+     "arg_id": "contract_clause:310060:6b9c528c",
+     "why": "Price fixed per year; increases need timely notice"
+    },
+    {
+     "arg_id": "contract_clause:310060:7e24bf43",
+     "why": "Exit possible by 2027-04-01"
+    },
+    {
+     "arg_id": "contract_clause:310060:62c241ac",
+     "why": "95% OTD target vs actual 52%"
+    },
+    {
+     "arg_id": "delivery_record:all:648e7705",
+     "why": "Checkable poor delivery"
+    },
+    {
+     "arg_id": "quality_record:all:a32b9cf7",
+     "why": "ppm far above peers"
+    },
+    {
+     "arg_id": "news:all:19db5487",
+     "why": "Restructuring: cash/volume trades valued"
+    },
+    {
+     "arg_id": "correspondence:all:7c8feb3b",
+     "why": "Their own request for faster payment with discount"
+    },
+    {
+     "arg_id": "volume_change:310060:96ffdcd0",
+     "why": "Rising volume to offer"
+    },
+    {
+     "arg_id": "should_cost:310060:b9df045e",
+     "why": "Price 8% above TR should-cost"
+    },
+    {
+     "arg_id": "order_history:310060:63a23929",
+     "why": "Anchor at 32.24"
+    },
+    {
+     "arg_id": "index_change:310060:803deac9",
+     "why": "Energy down, counters cost claims"
+    }
+   ],
+   "open_questions": [
+    "Has Tarsevi served a price-change notice for 2027 before the 90-day deadline?",
+    "Category goal for HB 40: stabilise vs leverage?",
+    "Can Pfaffenreuth take more quota and at what price?",
+    "Tooling transfer/ownership terms if Tarsevi fails?",
+    "Bank restructuring status and covenants?"
+   ]
+  },
+  "performance": {
+   "findings": [
+    {
+     "text": "Delivery performance has collapsed. Rolling on-time delivery against the requested date fell from 79.2% (2025Q3) to 52% (2026Q3), and against its own confirmed date to 56%. The target is 95% and the peer median is 84.6%. The scorecard turned class C red from 2025Q4 and has kept declining (score 79.5 → 62.7). Last 12 months: 36% of receipts late, averaging 13.8 days late, max 25. With a 70-day lead time, this forces safety stock and rush orders on our side: 7 of its 73 order lines are rush, against 1 of 71 at Pfaffenreuth.",
+     "evidence": [
+      "sc:70150@2025Q3",
+      "sc:70150@2025Q4",
+      "sc:70150@2026Q3",
+      "ctr:4600070150#6.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Quality is deteriorating and is far above the peer level. Rolling ppm rose from 1395 (2024Q3) to 2652 (2026Q3), peaking at 2842 in 2026Q2; the peer median is 457. Pfaffenreuth runs at 1019 ppm on the same part. Recent lots show larger defect batches: porosity with 14 complaints (17949 ppm) and dimension out of tolerance with 16 (20779 ppm). Both of these coincide with the half-idle plant and short hours. 17 of 19 QNs on this part were supplier-caused, but only EUR 1,950 has been recharged in total. The EUR 150 flat fee does not cover our cost, so a higher chargeback or a ppm commitment is a fair ask. Note: 8D closure is slow (often 2–3 months) but nothing is currently overdue.",
+     "evidence": [
+      "sc:70150@2024Q3",
+      "sc:70150@2026Q2",
+      "sc:70150@2026Q3",
+      "qn:20004846",
+      "qn:20004946",
+      "qn:20004770"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Our volume is stable and material to it. The forecast is 26,400 pcs over the next 12 months against 25,760 ordered in the last 12. Its volume has been flat at about 15,300–15,700 pcs/yr on a 60% quota, and our spend is about 3.2% of its turnover. Shifting quota from Pfaffenreuth (40%) would be meaningful volume for a supplier in restructuring with idle capacity. The new part 310070 (volute casing, SOP 2027-03, 2,490 pcs in the first 12 months, should-cost about EUR 146 in TR) is a further volume lever, though it carries risk given current performance.",
+     "evidence": [
+      "fc:310060@2026-09",
+      "fc:310070@2026-09"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Price: we pay EUR 32.24, which is +8% above the TR should-cost of 29.87 (should-cost error is about 12%, so this is not decisive). The price is far below Pfaffenreuth's 43.39, which argues its case and is part of why it is losing money. Its weak finances, cash pleas and the line 'cannot sign anything that lowers our margin' suggest that further cuts risk supplier failure. Better terms lie in quality, delivery and cash-for-performance trades rather than a deep price cut.",
+     "evidence": [
+      "po:4500014450-10",
+      "po:4500014361-10"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "There is a gap between the restructuring news and the supplier's health record. The credit index is 228 and unchanged, the equity ratio is 30.7%, and the latest filing is FY2024. These figures predate the losses. Our own late payment (89.4% of invoices late, 6.2 days on average) is a counterpoint it can raise.",
+     "evidence": [
+      "sup:70150"
+     ],
+     "importance": "medium"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Faster payment (10 days with a cash discount)",
+    "Binding volume / more quota to fill its idle second shift",
+    "No margin reduction",
+    "Index clause for steel and labour increases",
+    "A longer commitment"
+   ],
+   "risks": [
+    "Supplier failure or supply interruption during the bank restructuring; it holds the tooling for 310060",
+    "Delivery could slide further below 52% and porosity and dimensional defects could escalate",
+    "Squeezing price could push it below a healthy margin",
+    "It may cite our late payments",
+    "Awarding 310070 to it could add risk"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "delivery_record:all:648e7705",
+     "why": "Checkable, severe and worsening delivery record against the 95% target"
+    },
+    {
+     "arg_id": "quality_record:all:a32b9cf7",
+     "why": "2652 ppm against a 457 ppm peer median"
+    },
+    {
+     "arg_id": "quality_notification:310060:662d75cd",
+     "why": "Part-level supplier-caused complaints"
+    },
+    {
+     "arg_id": "contract_clause:310060:62c241ac",
+     "why": "Contractual OTD target and the chargeback basis"
+    },
+    {
+     "arg_id": "volume_change:310060:96ffdcd0",
+     "why": "Stable, slightly higher volume to trade for performance commitments"
+    },
+    {
+     "arg_id": "correspondence:all:7c8feb3b",
+     "why": "Its own request for early payment with a discount, which we can trade"
+    },
+    {
+     "arg_id": "call_note:all:af07fea3",
+     "why": "Shows it values cash; trade payment days for price or ppm"
+    },
+    {
+     "arg_id": "order_history:310060:63a23929",
+     "why": "Anchors the current price against any increase"
+    },
+    {
+     "arg_id": "contract_clause:310060:6b9c528c",
+     "why": "Prices are fixed per calendar year, with 90 days' notice required"
+    },
+    {
+     "arg_id": "should_cost:310060:b9df045e",
+     "why": "Price is 8% above the TR should-cost (use cautiously)"
+    },
+    {
+     "arg_id": "index_change:310060:803deac9",
+     "why": "Power cost is falling and offsets part of its claims"
+    },
+    {
+     "arg_id": "sourcing_position:310060:162fce38",
+     "why": "An approved second source exists"
+    }
+   ],
+   "open_questions": [
+    "What is the root cause of the 2026 porosity and dimensional failures, and is it linked to short hours?",
+    "Is the tooling for 310060 Hollerau-owned or supplier-owned, and could it be transferred if the supplier fails?",
+    "Why are 89.4% of our payments late, and can this be fixed as a goodwill trade?",
+    "Is there current financial data after FY2024 and the restructuring terms with its banks?",
+    "Can Pfaffenreuth absorb more quota at 43.39, and with what lead time?",
+    "Should 310070 be sourced here given its performance?"
+   ]
+  }
+ },
+ "red_team": {
+  "arguments": [
+   {
+    "text": "We are already by far your cheapest source: EUR 32.24 against Pfaffenreuth's EUR 43.39, about 35% dearer. Our price has fallen 6.3% since 2023 (34.41 to 32.24) while steel and labour rose. We have given three renewals in a row without any increase.",
+    "evidence": [
+     "EV-2024-70150-310060",
+     "EV-2026-70150-310060",
+     "quote:7100017"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Our price sits below your own German-base should-cost of EUR 39.82, which carries no margin. There is no fat left to cut. Our owner is willing to open our calculation (hourly rates and material) to show it.",
+    "evidence": [
+     "cost:310060",
+     "doc:20260418-70150-M2"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Our input costs are rising, not falling. Basic iron and steel PPI is up 6.5% in 12 months and 7.3% since January. Iron castings producer prices are up 1.8% and manufacturing labour is up 2.7%. Holding the price flat already means we absorb these increases.",
+    "evidence": [
+     "idx:PPI-C241@2026-08",
+     "news:20260922-35",
+     "news:20260914-31",
+     "news:20260920-34"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "text": "We own the HB 40 tooling. Moving our 60% share would cost you new tooling, requalification and roughly EUR 11 per piece on about 15,600 pc a year at Pfaffenreuth.",
+    "evidence": [],
+    "strength": "strong"
+   },
+   {
+    "text": "The contract fixes prices per calendar year. It runs to 2027-06 and extends automatically. Any change you request needs the agreed process; we keep the 2026 price.",
+    "evidence": [
+     "ctr:4600070150#3.1",
+     "ctr:4600070150#8.1"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "text": "We have free capacity now and can absorb extra HB 40 quota or the HX volute at short notice. This gives you security that Pfaffenreuth's price does not.",
+    "evidence": [
+     "doc:20260414-70150-M5",
+     "doc:20260419-70150-M3",
+     "rfq:6000000306"
+    ],
+    "strength": "moderate"
+   }
+  ],
+  "weak_points": [
+   "Delivery performance is class C red: 52% on time in the last 12 months, average 13.8 days late, maximum 25.",
+   "ppm has risen to 2652, against Pfaffenreuth's 1019, and recent lots were large: porosity at 17,949 ppm and dimension at 20,779 ppm.",
+   "There are repeated wrong material certificates and coating defects, which point to systemic process issues.",
+   "We are in bank restructuring after two loss years and the bank watches us monthly; the customer knows we are desperate for cash.",
+   "Half the shop floor is idle and the second shift is on hold. We need volume more than they need us.",
+   "The MD's pleas for early payment and the 10-day request reveal our liquidity squeeze.",
+   "Our 2024 financials and credit index are stale; the real picture is worse.",
+   "Lead time drifted to 79 days in the 2025 quote, longer than Pfaffenreuth's 50 days.",
+   "The customer pays us late on average (6.2 days late) and could use that as leverage."
+  ],
+  "wants": [
+   "Payment within 10 days (or 14) in exchange for a cash discount of about 1.5-2%.",
+   "A binding annual volume, or a higher quota share (for example 70% of about 26,400 pc), to fill idle capacity.",
+   "Extension of the framework by 24 months to reassure our banks.",
+   "Award of the HX volute (4,200 pc/yr from 2027-03), even at a sharp price.",
+   "A ppm or OTD improvement plan in place of chargebacks, with no higher penalty per complaint.",
+   "A longer contract with an index clause on steel PPI instead of a fixed price."
+  ],
+  "red_lines": [
+   "No price below EUR 32.24 without cash or volume in return.",
+   "No longer payment terms than 60 days.",
+   "No higher chargeback per complaint and no hard ppm commitment without a ramp-up period.",
+   "No shorter lead time commitment than 70 days.",
+   "Nothing that lowers our margin overall."
+  ],
+  "opening": "Thank you for the long cooperation. We hold the HB 40 price at EUR 32.24 for 2027 despite steel up 6.5%, well below your own cost benchmark and 35% under your alternative. In return we ask for payment within 10 days, against which we offer a 1.5% cash discount. We would welcome a longer commitment with a higher share. We are committed to fixing delivery and the recent casting defects with a concrete action plan, and we are keen to quote competitively for the HX volute."
+ },
+ "rebuttals": {
+  "rebuttals": [
+   {
+    "to": 1,
+    "answer": "We agree that your price is competitive and we value the reductions you have given over the renewals. That is why we want to keep and grow the partnership rather than squeeze you. Price is only part of our cost, though. Late deliveries and rejected lots cost us real money in rework, expediting and line stoppages, and on that side the comparison is much less favourable to you. We are not asking for a deep cut. We want a fair package in which faster payment and planning security from us are matched by a small price or discount step and a credible recovery in delivery and quality from you.",
+    "arg_ids": [
+     "order_history:310060:63a23929",
+     "negotiation_pattern:310060:c7599748",
+     "delivery_record:all:648e7705",
+     "quality_record:all:a32b9cf7"
+    ]
+   },
+   {
+    "to": 2,
+    "answer": "Thank you for the owner's offer to walk us through your calculation; we would gladly take it up and test it against our own estimate together. Note that our estimate uses a German cost base. Adjusted to a Turkish cost base, your current price sits somewhat above it, though within the estimate's uncertainty. We read that as near cost, not below it, so we are not looking to cut your margin. We are looking to fund a small improvement through cash and volume, which lower your cost rather than your margin.",
+    "arg_ids": [
+     "call_note:all:969508b1",
+     "should_cost:310060:b9df045e"
+    ]
+   },
+   {
+    "to": 3,
+    "answer": "The steel index has risen over the year, and we acknowledge it. It is a minority share of the part's cost, though, so it supports only a modest effect on price. Power, which matters in a foundry, has fallen over the same period. Labour figures for German manufacturing say little about a Turkish plant. The broad iron castings figure is small. Taken together, the drivers do not justify more than a small move. The faster payment we are prepared to offer is worth more to you than that.",
+    "arg_ids": [
+     "index_change:310060:319b1fa0",
+     "index_change:310060:803deac9",
+     "index_change:310060:7cf5bf31"
+    ]
+   },
+   {
+    "to": 4,
+    "answer": "That is true, and it is not our intention to move the part. We want stable supply from you. Stability works both ways, however. Lots with porosity and dimensional defects, and late deliveries, are what put supply at risk for us today. A joint recovery plan protects both of us better than the tooling does.",
+    "arg_ids": [
+     "quality_notification:310060:662d75cd",
+     "delivery_record:all:648e7705"
+    ]
+   },
+   {
+    "to": 5,
+    "answer": "Agreed. The contract fixes the price per calendar year, and we respect that process for both sides; it equally means no increase without timely notice. Our proposal does not need to break the contract. It is an addition: shorter payment in exchange for a discount or small price step, plus a longer binding term that gives your banks planning security.",
+    "arg_ids": [
+     "contract_clause:310060:6b9c528c",
+     "contract_clause:310060:7e24bf43"
+    ]
+   },
+   {
+    "to": 6,
+    "answer": "Extra volume only gives us security if it arrives on time and to specification. So we would link additional quota to a measurable recovery in on-time delivery and ppm.",
+    "arg_ids": [
+     "volume_change:310060:96ffdcd0",
+     "call_note:all:3153ecc9",
+     "should_cost:310070:64748ff5",
+     "delivery_record:all:648e7705"
+    ]
+   }
+  ],
+  "press": [
+   "We understand cash matters to you right now, and we are ready to pay within a short period if that is reflected in a discount or in the unit price.",
+   "On-time delivery has fallen well short of the agreed target over the last year, and we would welcome a concrete recovery plan from you.",
+   "The recent porosity and dimensional lots concern us, and we would like to agree a ppm commitment together as part of the package.",
+   "Repeated certificate and coating issues suggest a process cause, and we would appreciate your view on the root fix.",
+   "We would be glad to discuss additional binding volume and a longer term, since that should help you use idle capacity.",
+   "On our side, we commit to paying punctually on the agreed terms going forward."
+  ]
+ },
+ "arguments": [
+  {
+   "arg_id": "index_change:310060:7cf5bf31",
+   "kind": "index_change",
+   "part": "part:310060",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.31,
+    "window": "12 months",
+    "weighted_pct": 0.82
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 31% of the part's cost, so about +0.82% on the price."
+  },
+  {
+   "arg_id": "index_change:310060:319b1fa0",
+   "kind": "index_change",
+   "part": "part:310060",
+   "refs": [
+    "idx:PPI-C241@2025-08",
+    "idx:PPI-C241@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C241",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 99.4,
+    "to_value": 105.9,
+    "change_pct": 6.5,
+    "weight": 0.22,
+    "window": "12 months",
+    "weighted_pct": 1.44
+   },
+   "sentence": "Producer prices DE: basic iron and steel, ferro-alloys changed +6.5% from 2025-08 to 2026-08 (idx:PPI-C241@2025-08, idx:PPI-C241@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C241 (Producer prices DE: basic iron and steel, ferro-alloys): +6.5% 12 months (2025-08 to 2026-08); 22% of the part's cost, so about +1.44% on the price."
+  },
+  {
+   "arg_id": "index_change:310060:e7c246ca",
+   "kind": "index_change",
+   "part": "part:310060",
+   "refs": [
+    "idx:PPI-C241@2025-12",
+    "idx:PPI-C241@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C241",
+    "from_month": "2025-12",
+    "to_month": "2026-08",
+    "from_value": 98.2,
+    "to_value": 105.9,
+    "change_pct": 7.8,
+    "weight": 0.22,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 1.73
+   },
+   "sentence": "Producer prices DE: basic iron and steel, ferro-alloys changed +7.8% from 2025-12 to 2026-08 (idx:PPI-C241@2025-12, idx:PPI-C241@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C241 (Producer prices DE: basic iron and steel, ferro-alloys): +7.8% largest rise within 12 months (2025-12 to 2026-08); 22% of the part's cost, so about +1.73% on the price."
+  },
+  {
+   "arg_id": "index_peak:310060:71303e77",
+   "kind": "index_peak",
+   "part": "part:310060",
+   "refs": [
+    "idx:PPI-C241@2023-08",
+    "idx:PPI-C241@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C241",
+    "from_month": "2023-08",
+    "to_month": "2026-08",
+    "from_value": 113.0,
+    "to_value": 105.9,
+    "change_pct": -6.3,
+    "weight": 0.22,
+    "window": "since the 36-month peak",
+    "weighted_pct": -1.38
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-C241 (Producer prices DE: basic iron and steel, ferro-alloys): -6.3% since the 36-month peak (2023-08 to 2026-08); 22% of the part's cost, so about -1.38% on the price. Not checkable: 36 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:310060:f3338003",
+   "kind": "index_peak",
+   "part": "part:310060",
+   "refs": [
+    "idx:PPI-C241@2022-05",
+    "idx:PPI-C241@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C241",
+    "from_month": "2022-05",
+    "to_month": "2026-08",
+    "from_value": 144.4,
+    "to_value": 105.9,
+    "change_pct": -26.7,
+    "weight": 0.22,
+    "window": "since the high of all the data",
+    "weighted_pct": -5.87
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-C241 (Producer prices DE: basic iron and steel, ferro-alloys): -26.7% since the high of all the data (2022-05 to 2026-08); 22% of the part's cost, so about -5.87% on the price. Not checkable: 51 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:310060:803deac9",
+   "kind": "index_change",
+   "part": "part:310060",
+   "refs": [
+    "idx:PPI-D351@2025-08",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 137.0,
+    "to_value": 131.9,
+    "change_pct": -3.7,
+    "weight": 0.06,
+    "window": "12 months",
+    "weighted_pct": -0.22
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -3.7% from 2025-08 to 2026-08 (idx:PPI-D351@2025-08, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -3.7% 12 months (2025-08 to 2026-08); 6% of the part's cost, so about -0.22% on the price."
+  },
+  {
+   "arg_id": "index_change:310060:1d742bd7",
+   "kind": "index_change",
+   "part": "part:310060",
+   "refs": [
+    "idx:PPI-D351@2025-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-11",
+    "to_month": "2026-08",
+    "from_value": 140.5,
+    "to_value": 131.9,
+    "change_pct": -6.1,
+    "weight": 0.06,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.37
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -6.1% largest fall within 12 months (2025-11 to 2026-08); 6% of the part's cost, so about -0.37% on the price."
+  },
+  {
+   "arg_id": "index_change:310060:59ef43cd",
+   "kind": "index_change",
+   "part": "part:310060",
+   "refs": [
+    "idx:PPI-D351@2026-04",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2026-04",
+    "to_month": "2026-08",
+    "from_value": 123.7,
+    "to_value": 131.9,
+    "change_pct": 6.6,
+    "weight": 0.06,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 0.4
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed +6.6% from 2026-04 to 2026-08 (idx:PPI-D351@2026-04, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): +6.6% largest rise within 12 months (2026-04 to 2026-08); 6% of the part's cost, so about +0.40% on the price."
+  },
+  {
+   "arg_id": "index_peak:310060:724cd622",
+   "kind": "index_peak",
+   "part": "part:310060",
+   "refs": [
+    "idx:PPI-D351@2024-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2024-11",
+    "to_month": "2026-08",
+    "from_value": 155.1,
+    "to_value": 131.9,
+    "change_pct": -15.0,
+    "weight": 0.06,
+    "window": "since the 36-month peak",
+    "weighted_pct": -0.9
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -15.0% since the 36-month peak (2024-11 to 2026-08); 6% of the part's cost, so about -0.90% on the price. Not checkable: 21 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:310060:c9782dfb",
+   "kind": "index_peak",
+   "part": "part:310060",
+   "refs": [
+    "idx:PPI-D351@2022-09",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2022-09",
+    "to_month": "2026-08",
+    "from_value": 233.4,
+    "to_value": 131.9,
+    "change_pct": -43.5,
+    "weight": 0.06,
+    "window": "since the high of all the data",
+    "weighted_pct": -2.61
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -43.5% since the high of all the data (2022-09 to 2026-08); 6% of the part's cost, so about -2.61% on the price. Not checkable: 47 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:310070:d1e99cb3",
+   "kind": "index_change",
+   "part": "part:310070",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.3,
+    "window": "12 months",
+    "weighted_pct": 0.8
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 30% of the part's cost, so about +0.80% on the price."
+  },
+  {
+   "arg_id": "index_change:310070:55617542",
+   "kind": "index_change",
+   "part": "part:310070",
+   "refs": [
+    "idx:PPI-C241@2025-08",
+    "idx:PPI-C241@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C241",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 99.4,
+    "to_value": 105.9,
+    "change_pct": 6.5,
+    "weight": 0.25,
+    "window": "12 months",
+    "weighted_pct": 1.63
+   },
+   "sentence": "Producer prices DE: basic iron and steel, ferro-alloys changed +6.5% from 2025-08 to 2026-08 (idx:PPI-C241@2025-08, idx:PPI-C241@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C241 (Producer prices DE: basic iron and steel, ferro-alloys): +6.5% 12 months (2025-08 to 2026-08); 25% of the part's cost, so about +1.63% on the price."
+  },
+  {
+   "arg_id": "index_change:310070:c2fe2c0d",
+   "kind": "index_change",
+   "part": "part:310070",
+   "refs": [
+    "idx:PPI-C241@2025-12",
+    "idx:PPI-C241@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C241",
+    "from_month": "2025-12",
+    "to_month": "2026-08",
+    "from_value": 98.2,
+    "to_value": 105.9,
+    "change_pct": 7.8,
+    "weight": 0.25,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 1.96
+   },
+   "sentence": "Producer prices DE: basic iron and steel, ferro-alloys changed +7.8% from 2025-12 to 2026-08 (idx:PPI-C241@2025-12, idx:PPI-C241@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C241 (Producer prices DE: basic iron and steel, ferro-alloys): +7.8% largest rise within 12 months (2025-12 to 2026-08); 25% of the part's cost, so about +1.96% on the price."
+  },
+  {
+   "arg_id": "index_peak:310070:c7e42193",
+   "kind": "index_peak",
+   "part": "part:310070",
+   "refs": [
+    "idx:PPI-C241@2023-08",
+    "idx:PPI-C241@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C241",
+    "from_month": "2023-08",
+    "to_month": "2026-08",
+    "from_value": 113.0,
+    "to_value": 105.9,
+    "change_pct": -6.3,
+    "weight": 0.25,
+    "window": "since the 36-month peak",
+    "weighted_pct": -1.57
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-C241 (Producer prices DE: basic iron and steel, ferro-alloys): -6.3% since the 36-month peak (2023-08 to 2026-08); 25% of the part's cost, so about -1.57% on the price. Not checkable: 36 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:310070:3638050c",
+   "kind": "index_peak",
+   "part": "part:310070",
+   "refs": [
+    "idx:PPI-C241@2022-05",
+    "idx:PPI-C241@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C241",
+    "from_month": "2022-05",
+    "to_month": "2026-08",
+    "from_value": 144.4,
+    "to_value": 105.9,
+    "change_pct": -26.7,
+    "weight": 0.25,
+    "window": "since the high of all the data",
+    "weighted_pct": -6.67
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-C241 (Producer prices DE: basic iron and steel, ferro-alloys): -26.7% since the high of all the data (2022-05 to 2026-08); 25% of the part's cost, so about -6.67% on the price. Not checkable: 51 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:310070:e75632a8",
+   "kind": "index_change",
+   "part": "part:310070",
+   "refs": [
+    "idx:PPI-D351@2025-08",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 137.0,
+    "to_value": 131.9,
+    "change_pct": -3.7,
+    "weight": 0.11,
+    "window": "12 months",
+    "weighted_pct": -0.41
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -3.7% from 2025-08 to 2026-08 (idx:PPI-D351@2025-08, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -3.7% 12 months (2025-08 to 2026-08); 11% of the part's cost, so about -0.41% on the price."
+  },
+  {
+   "arg_id": "index_change:310070:a9914e47",
+   "kind": "index_change",
+   "part": "part:310070",
+   "refs": [
+    "idx:PPI-D351@2025-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-11",
+    "to_month": "2026-08",
+    "from_value": 140.5,
+    "to_value": 131.9,
+    "change_pct": -6.1,
+    "weight": 0.11,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.67
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -6.1% largest fall within 12 months (2025-11 to 2026-08); 11% of the part's cost, so about -0.67% on the price."
+  },
+  {
+   "arg_id": "index_change:310070:d10561e6",
+   "kind": "index_change",
+   "part": "part:310070",
+   "refs": [
+    "idx:PPI-D351@2026-04",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2026-04",
+    "to_month": "2026-08",
+    "from_value": 123.7,
+    "to_value": 131.9,
+    "change_pct": 6.6,
+    "weight": 0.11,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 0.73
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed +6.6% from 2026-04 to 2026-08 (idx:PPI-D351@2026-04, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): +6.6% largest rise within 12 months (2026-04 to 2026-08); 11% of the part's cost, so about +0.73% on the price."
+  },
+  {
+   "arg_id": "index_peak:310070:ed57c168",
+   "kind": "index_peak",
+   "part": "part:310070",
+   "refs": [
+    "idx:PPI-D351@2024-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2024-11",
+    "to_month": "2026-08",
+    "from_value": 155.1,
+    "to_value": 131.9,
+    "change_pct": -15.0,
+    "weight": 0.11,
+    "window": "since the 36-month peak",
+    "weighted_pct": -1.65
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -15.0% since the 36-month peak (2024-11 to 2026-08); 11% of the part's cost, so about -1.65% on the price. Not checkable: 21 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:310070:dd20c51c",
+   "kind": "index_peak",
+   "part": "part:310070",
+   "refs": [
+    "idx:PPI-D351@2022-09",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2022-09",
+    "to_month": "2026-08",
+    "from_value": 233.4,
+    "to_value": 131.9,
+    "change_pct": -43.5,
+    "weight": 0.11,
+    "window": "since the high of all the data",
+    "weighted_pct": -4.78
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -43.5% since the high of all the data (2022-09 to 2026-08); 11% of the part's cost, so about -4.78% on the price. Not checkable: 47 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "should_cost:310060:b9df045e",
+   "kind": "should_cost",
+   "part": "part:310060",
+   "refs": [
+    "cost:310060"
+   ],
+   "figures": {
+    "unit_cost": 39.82,
+    "price_unit": 1,
+    "estimate_of": "DE cost base",
+    "price": 32.24,
+    "price_unit_of_price": 1,
+    "margin_pct": 8.0
+   },
+   "sentence": "Our bottom-up cost model puts the full cost of this part at EUR 39.82 per unit (cost:310060).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Should-cost EUR 39.82 per unit (a German cost base, error about 12%); x 0.75 for TR = EUR 29.87; its price EUR 32.24 per unit (price from 2026-01-01) is +8.0% against it."
+  },
+  {
+   "arg_id": "should_cost:310070:64748ff5",
+   "kind": "should_cost",
+   "part": "part:310070",
+   "refs": [
+    "cost:310070"
+   ],
+   "figures": {
+    "unit_cost": 194.18,
+    "price_unit": 1,
+    "estimate_of": "DE cost base",
+    "price": null,
+    "price_unit_of_price": null,
+    "margin_pct": null
+   },
+   "sentence": "Our bottom-up cost model puts the full cost of this part at EUR 194.18 per unit (cost:310070).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Should-cost EUR 194.18 per unit (a German cost base, error about 5%); x 0.75 for TR = EUR 145.63; no current price of this supplier found."
+  },
+  {
+   "arg_id": "delivery_record:all:648e7705",
+   "kind": "delivery_record",
+   "part": null,
+   "refs": [
+    "sc:70150@2026Q3"
+   ],
+   "figures": {
+    "otd_pct": 52.0,
+    "quarter": "2026Q3",
+    "target_pct": 95.0,
+    "peer_median_pct": 84.6
+   },
+   "sentence": "Your rolling scorecard shows on-time delivery of 52.0% (sc:70150@2026Q3).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Rolling 12 months to 2026-09-30: 52.0% on time against the requested date (56.0% against its own confirmed date); target 95%; peers' median 84.6%; class C red. A year earlier 79.2%."
+  },
+  {
+   "arg_id": "quality_record:all:a32b9cf7",
+   "kind": "quality_record",
+   "part": null,
+   "refs": [
+    "sc:70150@2026Q3"
+   ],
+   "figures": {
+    "ppm": 2652,
+    "quarter": "2026Q3",
+    "peer_median_ppm": 457.0
+   },
+   "sentence": "Your rolling scorecard shows 2652 ppm defects (sc:70150@2026Q3).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Rolling 12 months to 2026-09-30: 2652 ppm from 5 complaints; peers' median 457.0 ppm; 8D reports overdue 0. A year earlier 2023 ppm."
+  },
+  {
+   "arg_id": "quality_notification:310060:662d75cd",
+   "kind": "quality_notification",
+   "part": "part:310060",
+   "refs": [
+    "qn:20004946",
+    "qn:20004846",
+    "qn:20004770",
+    "qn:20004713",
+    "qn:20004681"
+   ],
+   "figures": {
+    "ppm_mean": 12579,
+    "ppms": [
+     20779,
+     17949,
+     6122,
+     9091,
+     8955
+    ],
+    "complaints_12m": 5
+   },
+   "sentence": "Our recent quality notifications on this part average 12579 ppm (qn:20004946, qn:20004846, qn:20004770, qn:20004713, qn:20004681).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "5 supplier-caused complaints on this part in the last 12 months (coating defect, dimension out of tolerance, porosity, surface damage); EUR 600 recharged; 0 without a closed 8D. Per-lot ppm is jumpy (KNOWN_ISSUES 10): the scorecard's rolling ppm is the fairer figure."
+  },
+  {
+   "arg_id": "order_history:310060:63a23929",
+   "kind": "order_history",
+   "part": "part:310060",
+   "refs": [
+    "po:4500014450-10",
+    "po:4500014374-10",
+    "po:4500014314-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     32.24,
+     32.24,
+     32.24
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2026-09-23",
+     "2026-09-07",
+     "2026-08-24"
+    ]
+   },
+   "sentence": "Our latest orders for this part were all at EUR 32.24 per unit (po:4500014450-10, po:4500014374-10, po:4500014314-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "What we pay now: [32.24, 32.24, 32.24] per unit (2026-08-24 to 2026-09-23); anchors any increase."
+  },
+  {
+   "arg_id": "order_history:310060:4ccf57b6",
+   "kind": "order_history",
+   "part": "part:310060",
+   "refs": [
+    "po:4500010031-10",
+    "po:4500010111-10",
+    "po:4500010118-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     34.41,
+     34.41,
+     34.41
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2023-10-06",
+     "2023-10-25",
+     "2023-10-27"
+    ]
+   },
+   "sentence": "Our earliest orders on record for this part were all at EUR 34.41 per unit (po:4500010031-10, po:4500010111-10, po:4500010118-10).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "Earliest orders [34.41, 34.41, 34.41] per unit (2023-10-06 to 2023-10-27); now -6.3% against them - it has already cut its price since."
+  },
+  {
+   "arg_id": "volume_change:310060:96ffdcd0",
+   "kind": "volume_change",
+   "part": "part:310060",
+   "refs": [
+    "fc:310060@2026-09"
+   ],
+   "figures": {
+    "change_pct": 2.5,
+    "volume_per_year": 26400,
+    "snapshot": "2026-09"
+   },
+   "sentence": "Our demand forecast for this part has risen 2.5% (fc:310060@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Snapshot 2026-09: 26400 for the next 12 months against 25760 ordered in the last 12 months (requested dates); shared with suppliers: True. More volume is worth more to it."
+  },
+  {
+   "arg_id": "news:all:19db5487",
+   "kind": "news",
+   "part": null,
+   "refs": [
+    "news:20260809-22"
+   ],
+   "figures": {
+    "topic": "restructuring",
+    "date": "2026-08-09"
+   },
+   "sentence": "We have noted the press report \"Tarsevi Döküm Sanayi A.Ş. restructures\" (news:20260809-22).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "2026-08-09 restructuring: Tarsevi Döküm Sanayi A.Ş. restructures. Tarsevi Döküm Sanayi A.Ş. has started a restructuring programme with its banks after two loss-making years; management says customers will not be affected. -> restructuring after losses: it values cash and volume (and is a supply risk)."
+  },
+  {
+   "arg_id": "contract_clause:310060:6b9c528c",
+   "kind": "contract_clause",
+   "part": "part:310060",
+   "refs": [
+    "ctr:4600070150#3.1"
+   ],
+   "figures": {
+    "type": "price",
+    "days": 90
+   },
+   "sentence": "Our framework agreement fixes prices for each calendar year.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070150#3.1 (price): Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+  },
+  {
+   "arg_id": "contract_clause:310060:37608e9c",
+   "kind": "contract_clause",
+   "part": "part:310060",
+   "refs": [
+    "ctr:4600070150#4.1"
+   ],
+   "figures": {
+    "type": "payment",
+    "days": 60
+   },
+   "sentence": "Our framework agreement sets the payment terms.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070150#4.1 (payment): Payment: 60 days net. Our standard is 60 days; shorter terms are its benefit."
+  },
+  {
+   "arg_id": "contract_clause:310060:579bb903",
+   "kind": "contract_clause",
+   "part": "part:310060",
+   "refs": [
+    "ctr:4600070150#5.1"
+   ],
+   "figures": {
+    "type": "delivery",
+    "days": 70
+   },
+   "sentence": "Our framework agreement sets the delivery terms and the standard lead time.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070150#5.1 (delivery): Delivery FCA; standard lead time 70 days from order."
+  },
+  {
+   "arg_id": "contract_clause:310060:62c241ac",
+   "kind": "contract_clause",
+   "part": "part:310060",
+   "refs": [
+    "ctr:4600070150#6.1"
+   ],
+   "figures": {
+    "type": "quality",
+    "days": null
+   },
+   "sentence": "Our framework agreement includes the quality agreement with its delivery target.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070150#6.1 (quality): The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint."
+  },
+  {
+   "arg_id": "contract_clause:310060:7e24bf43",
+   "kind": "contract_clause",
+   "part": "part:310060",
+   "refs": [
+    "ctr:4600070150#8.1"
+   ],
+   "figures": {
+    "type": "term",
+    "days": 90,
+    "valid_to": "2027-06-30",
+    "notice_deadline": "2027-04-01"
+   },
+   "sentence": "Our framework agreement renews only unless either side gives notice.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070150#8.1 (term): Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice. To stop the renewal, notice by 2027-04-01 (still open: a credible exit)."
+  },
+  {
+   "arg_id": "correspondence:all:4785706f",
+   "kind": "correspondence",
+   "part": null,
+   "refs": [
+    "doc:20251017-70150-N"
+   ],
+   "figures": {
+    "doc_kind": "email",
+    "date": "2025-10-17",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We refer to your e-mail \"Holiday shutdown\" (doc:20251017-70150-N).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "email 2025-10-17 by Tarsevi Döküm Sanayi A.Ş.: Our plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December."
+  },
+  {
+   "arg_id": "call_note:all:3153ecc9",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260414-70150-M5"
+   ],
+   "figures": {
+    "doc_kind": "call_note",
+    "date": "2026-04-14",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our call about \"Capacity\" (doc:20260414-70150-M5).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "call_note 2026-04-14 by Hollerau Pumpenwerke, Purchasing: Call with sales at Tarsevi Döküm Sanayi A.Ş.: they could take additional parts at short notice; the second shift has been on hold since spring."
+  },
+  {
+   "arg_id": "call_note:all:969508b1",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260418-70150-M2"
+   ],
+   "figures": {
+    "doc_kind": "call_note",
+    "date": "2026-04-18",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our call about \"Price discussion\" (doc:20260418-70150-M2).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "call_note 2026-04-18 by Hollerau Pumpenwerke, Purchasing: Call with the owner of Tarsevi Döküm Sanayi A.Ş.: he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+  },
+  {
+   "arg_id": "call_note:all:5eeb298d",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260419-70150-M3"
+   ],
+   "figures": {
+    "doc_kind": "call_note",
+    "date": "2026-04-19",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our call about \"Capacity\" (doc:20260419-70150-M3).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "call_note 2026-04-19 by Hollerau Pumpenwerke, Purchasing: Call with sales at Tarsevi Döküm Sanayi A.Ş.: they could take additional parts at short notice; the second shift has been on hold since spring."
+  },
+  {
+   "arg_id": "call_note:all:b15a76e6",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260610-70150-M1"
+   ],
+   "figures": {
+    "doc_kind": "meeting_note",
+    "date": "2026-06-10",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our meeting about \"Supplier visit\" (doc:20260610-70150-M1).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "meeting_note 2026-06-10 by Hollerau Pumpenwerke, Purchasing: Visit at Tarsevi Döküm Sanayi A.Ş.: half the shop floor was idle, two shifts are on short hours, and the MD spoke mostly about cash and the banks."
+  },
+  {
+   "arg_id": "call_note:all:af07fea3",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260804-70150-M4"
+   ],
+   "figures": {
+    "doc_kind": "call_note",
+    "date": "2026-08-04",
+    "signals_us": [
+     "asks for faster payment / values cash"
+    ],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our call about \"Liquidity\" (doc:20260804-70150-M4).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "call_note 2026-08-04 by Hollerau Pumpenwerke, Purchasing: Call with the managing director of Tarsevi Döküm Sanayi A.Ş.: he asked twice whether we could pay earlier and said the bank is watching every month. 'I cannot sign anything that lowers our margin now.' [for us: asks for faster payment / values cash]"
+  },
+  {
+   "arg_id": "correspondence:all:7c8feb3b",
+   "kind": "correspondence",
+   "part": null,
+   "refs": [
+    "doc:20260905-70150-M6"
+   ],
+   "figures": {
+    "doc_kind": "email",
+    "date": "2026-09-05",
+    "signals_us": [
+     "asks for faster payment / values cash"
+    ],
+    "signals_them": []
+   },
+   "sentence": "We refer to your e-mail \"Payment of invoices\" (doc:20260905-70150-M6).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "email 2026-09-05 by Tarsevi Döküm Sanayi A.Ş.: Could you pay our invoices within 10 days? In return we would grant a cash discount. [for us: asks for faster payment / values cash]"
+  },
+  {
+   "arg_id": "negotiation_pattern:310060:c7599748",
+   "kind": "negotiation_pattern",
+   "part": "part:310060",
+   "refs": [],
+   "figures": {
+    "events": [
+     [
+      "EV-2024-70150-310060",
+      "2023-11-19",
+      -0.7,
+      -4.5
+     ],
+     [
+      "EV-2025-70150-310060",
+      "2024-11-17",
+      3.0,
+      0.0
+     ],
+     [
+      "EV-2026-70150-310060",
+      "2025-12-08",
+      0.7,
+      -1.9
+     ]
+    ],
+    "mean_asked_pct": 1.0,
+    "mean_settled_pct": -2.13
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "3 renewals: asked +1.0% on average, settled -2.1% (gap 3.1 pp); last 2025-12-08: asked +0.7%, settled -1.9%. It usually settles well below its ask."
+  },
+  {
+   "arg_id": "relationship:310060:91e59d6c",
+   "kind": "relationship",
+   "part": "part:310060",
+   "refs": [
+    "part:310060"
+   ],
+   "figures": {
+    "years": 3.9,
+    "quota_pct": 60
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Approved since 2022-11-01 (3.9 years), status active, quota 60%."
+  },
+  {
+   "arg_id": "tooling:310060:21714034",
+   "kind": "tooling",
+   "part": "part:310060",
+   "refs": [
+    "part:310060"
+   ],
+   "figures": {
+    "owner": "supplier"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "It owns the tooling: moving the part needs new tooling."
+  },
+  {
+   "arg_id": "sourcing_position:310060:162fce38",
+   "kind": "sourcing_position",
+   "part": "part:310060",
+   "refs": [
+    "part:310060"
+   ],
+   "figures": {
+    "alternatives": [
+     "sup:70190"
+    ]
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Other approved sources: sup:70190 Gießerei Pfaffenreuth GmbH (DE, active, quota 40%)."
+  },
+  {
+   "arg_id": "price_trend:310060:ba86195a",
+   "kind": "price_trend",
+   "part": "part:310060",
+   "refs": [],
+   "figures": {
+    "prices": [
+     [
+      "2023-01-01",
+      34.41
+     ],
+     [
+      "2024-01-01",
+      32.87
+     ],
+     [
+      "2025-01-01",
+      32.87
+     ],
+     [
+      "2026-01-01",
+      32.24
+     ]
+    ],
+    "change_pct": -6.3
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Price per unit: 2023 34.41, 2024 32.87, 2025 32.87, 2026 32.24 (-6.3% since 2023). It has already cut its price over the years."
+  },
+  {
+   "arg_id": "rival_quote:310060:7d4306e8",
+   "kind": "rival_quote",
+   "part": "part:310060",
+   "refs": [
+    "quote:7100017"
+   ],
+   "figures": {
+    "unit_price": 45.7,
+    "price_unit": 1,
+    "supplier": "sup:70190",
+    "date": "2025-04-10",
+    "vs_its_price_pct": 41.7
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "sup:70190 Gießerei Pfaffenreuth GmbH quoted EUR 45.70 per unit on 2025-04-10 (FCA, 30 days, lead time 50 days, tooling 0); +41.7% against its own price (price from 2026-01-01). Checkable only when the case lists this quote."
+  },
+  {
+   "arg_id": "rival_price:310060:11768893",
+   "kind": "rival_price",
+   "part": "part:310060",
+   "refs": [
+    "po:4500014361-10",
+    "po:4500014308-10",
+    "po:4500014251-10"
+   ],
+   "figures": {
+    "unit_price": 43.39,
+    "price_unit": 1,
+    "supplier": "sup:70190",
+    "vs_its_price_pct": 34.6
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "We also buy this part from sup:70190 at EUR 43.39 per unit (order of 2026-09-03); +34.6% against its own price. Its order lines are citable as order history (same part); citing them reveals the rival's price."
+  },
+  {
+   "arg_id": "payment_behaviour:all:11829f07",
+   "kind": "payment_behaviour",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "avg_days_paid_after_due": 4.9,
+    "avg_days_paid_after_due_last_12m": 6.2,
+    "paid_late_pct": 89.4
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "70 invoices; we pay 6.2 days after due on average (last 12 months), 89.4% late, 3.0% over 10 days late, max 12; discounts taken 0 (0 after the period); short-paid 0. It can complain that we pay late."
+  },
+  {
+   "arg_id": "supplier_health:all:7a49971a",
+   "kind": "supplier_health",
+   "part": null,
+   "refs": [
+    "sup:70150"
+   ],
+   "figures": {
+    "credit_index": 228,
+    "credit_index_12m_ago": 228,
+    "equity_ratio_pct": 30.7,
+    "weak": false
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "A.Ş., founded 1988, family owned, 380 staff, turnover 15800000; equity ratio 30.7%, credit index 228 (12 months ago 228; higher is worse); audit C. Sound: it can afford to walk away."
+  },
+  {
+   "arg_id": "dependency:all:f11abdaf",
+   "kind": "dependency",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "fiscal_year": "FY2026",
+    "spend_eur": 503212.1,
+    "turnover_eur": 15800000,
+    "share_pct": 3.2
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Our spend FY2026: EUR 503,212, about 3.2% of its turnover."
+  },
+  {
+   "arg_id": "market_news:all:5a37223b",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260910-27"
+   ],
+   "figures": {
+    "date": "2026-09-10"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-10 market: Copper notation at EUR 1,289 per 100 kg. The copper notation for cables averaged EUR 1,289/100 kg in September, +48 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:20eac6ee",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260912-30"
+   ],
+   "figures": {
+    "date": "2026-09-12"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "2026-09-12 market: Industrial power prices -43 % on 2022. Producer prices for electric power stand -43 % against August 2022. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:6902032a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260914-31"
+   ],
+   "figures": {
+    "date": "2026-09-14"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-14 market: Iron castings +1.8 % year on year. Producer prices for iron castings rose +1.8 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f855aade",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260916-32"
+   ],
+   "figures": {
+    "date": "2026-09-16"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-16 market: Alloy surcharge 1.4404 at EUR 3,008 per tonne. The alloy surcharge for 1.4404 stands at EUR 3,008/t, +6 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:0e3ce486",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260918-33"
+   ],
+   "figures": {
+    "date": "2026-09-18"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-18 market: Electronic boards +41 % year on year. Producer prices for assembled electronic boards rose +41 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:3071261a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260920-34"
+   ],
+   "figures": {
+    "date": "2026-09-20"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-20 market: Labour costs in manufacturing +2.7 %. Labour costs in German manufacturing rose +2.7 % year on year in the second quarter. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f8eeb840",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260922-35"
+   ],
+   "figures": {
+    "date": "2026-09-22"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-22 market: Steel prices +7.3 % since January. Producer prices for basic iron and steel are +7.3 % above January. Do not cite it as about this supplier."
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "where": "lead.questions",
+    "value": "Would you walk us through your calculation for the HB 40 housing as you offered?",
+    "why": "figure in e-mail text"
+   },
+   {
+    "where": "red_team.arguments",
+    "value": "price_history part:310060",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "red_team.arguments",
+    "value": "sourcing part:310060 tooling_owner supplier",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "red_team.arguments",
+    "value": "orders sup:70150 qty_last_12m 15620",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "rebuttals.answer",
+    "value": "Your spare capacity is welcome, and we would like to use it, both for the forecast HB 40 volume, which is slightly above last year's orders, and through your quote for the new volute. Extra volume onl",
+    "why": "figure in e-mail text"
+   }
+  ]
+ }
+}

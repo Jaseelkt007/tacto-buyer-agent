@@ -1,0 +1,1516 @@
+{
+ "supplier_id": "sup:70560",
+ "name": "Kabelwerk Rhönsberg GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "built": "2026-10-25T00:14:59",
+  "seconds": 79.7,
+  "evidence_chars": 22667,
+  "arguments": 35,
+  "errors": {}
+ },
+ "strategy": {
+  "summary": "Kabelwerk Rhönsberg is a sound, group-owned German cable maker and our single source for motor cable part:350040. It holds a framework agreement with a quarterly copper index clause (55% share, no deadband). The agreement auto-renews unless we give notice by early November. The supplier has opened the renewal itself and asked for our volumes. The copper index has already passed most of the copper rise into the price: the current price sits only slightly above our margin-free should-cost, which carries a wide error. By its own admission the supplier bought copper forward until March 2027, so any extra copper-based uplift at renewal would double-count a cost it does not yet bear. Our levers are a sizeable volume increase, a longer commitment, our reliable payment record and the hedge admission. Their leverage is that they are our single source, they own the tooling, and we are a small customer to them. Realistic aim: hold the current price, with no add-on above the index. Possibly soften the index during the hedged period. Do not squeeze margin hard.",
+  "decision_maker": "Key account manager can settle changes up to about 2%; larger changes go to a pricing committee meeting fortnightly (doc:20260415-70560-M2).",
+  "persona": {
+   "owner_type": "group",
+   "style": "cooperative, operational, process-bound (committee approval above a threshold); proactive (returnable packaging)",
+   "openness": "open",
+   "traits": [
+    "approval_ladder",
+    "hedged",
+    "relationship_long",
+    "we_depend_on_it",
+    "cost_pressure_overstated",
+    "delivery_issues"
+   ],
+   "other_traits": [
+    "small customer to them (about 0.8% of turnover)",
+    "financially sound, can walk away",
+    "settles well below its ask historically",
+    "owns tooling, 100% quota"
+   ]
+  },
+  "needs": [
+   {
+    "need": "planning_security",
+    "detail": "Wants our expected volumes for the renewal; the rising forecast is valuable to them.",
+    "evidence": [
+     "doc:20260910-70560-P14",
+     "fc:350040@2026-09"
+    ],
+    "strength": "strong"
+   },
+   {
+    "need": "volume",
+    "detail": "Forecast volume is well above last year's orders; binding volume earns credit.",
+    "evidence": [
+     "fc:350040@2026-09"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "material_risk_protection",
+    "detail": "Will want to keep the copper index clause after its hedge runs out in spring 2027.",
+    "evidence": [
+     "ctr:4600070560#3.2",
+     "doc:20260617-70560-M1"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "relationship",
+    "detail": "Long relationship; cooperative gestures.",
+    "evidence": [
+     "doc:20251014-70560-N",
+     "sup:70560"
+    ],
+    "strength": "weak"
+   }
+  ],
+  "constraints": [
+   {
+    "kind": "approval_needed",
+    "detail": "Price changes above about 2% need the pricing committee, so rounds will be slow.",
+    "evidence": [
+     "doc:20260415-70560-M2"
+    ]
+   },
+   {
+    "kind": "hedged",
+    "detail": "Copper is bought forward to March 2027; they will reject index-down arguments but cannot credibly claim spot cost before then.",
+    "evidence": [
+     "doc:20260617-70560-M1",
+     "quote:7300014"
+    ]
+   },
+   {
+    "kind": "single_source",
+    "detail": "No other approved source; the supplier owns the tooling.",
+    "evidence": [
+     "sourcing_position:350040:edd5cc8f",
+     "tooling:350040:119fdb24"
+    ]
+   },
+   {
+    "kind": "contract_binding",
+    "detail": "The agreement auto-extends 12 months unless notice is given 60 days before year end; the price is fixed per year plus the quarterly index.",
+    "evidence": [
+     "ctr:4600070560#8.1",
+     "ctr:4600070560#3.1",
+     "ctr:4600070560#3.2"
+    ]
+   }
+  ],
+  "levers": [
+   {
+    "arg_id": "volume_change:350040:c34c5201",
+    "why": "Answers their own request for volumes; the clear rise is worth price to them.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "call_note:all:eb56f478",
+    "why": "Their own admission that copper is hedged, so the spot rise is not their cost before spring 2027 and any extra uplift double-counts.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "should_cost:350040:3d7886c0",
+    "why": "The price already exceeds our should-cost; there is no cost gap to justify more. Use calmly given the estimate's error.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "index_change:350040:0f108f83",
+    "why": "Labour adds only a fraction of a percent; non-copper drivers are negligible.",
+    "when": "later"
+   },
+   {
+    "arg_id": "price_trend:350040:d39392d5",
+    "why": "Shows copper has already been passed through via the index; a fresh fact for a later round.",
+    "when": "later"
+   },
+   {
+    "arg_id": "payment_behaviour:all:11829f07",
+    "why": "Reliable payer on short terms, so we are a fair customer.",
+    "when": "later"
+   },
+   {
+    "arg_id": "delivery_record:all:d4b5f0b1",
+    "why": "On-time delivery is below the contract target and declining; a late filler, framed constructively.",
+    "when": "later"
+   },
+   {
+    "arg_id": "order_history:350040:65030f9d",
+    "why": "Anchors the discussion at the current price.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "contract_clause:350040:469a8063",
+    "why": "Reminds them the term is open for renegotiation; use only as a quiet fact, never as a threat.",
+    "when": "if_challenged"
+   }
+  ],
+  "trades": [
+   {
+    "field": "volume_per_year",
+    "direction": "higher",
+    "why": "They asked for volumes; commit binding volume within our real need for price."
+   },
+   {
+    "field": "contract_months",
+    "direction": "higher",
+    "why": "24 months gives them security; offer it as an explicit trade."
+   },
+   {
+    "field": "index_clause",
+    "direction": "keep",
+    "why": "They value copper protection after the hedge ends; keep the clause but seek a rebase or no pass-through during the hedged period."
+   },
+   {
+    "field": "payment_days",
+    "direction": "keep",
+    "why": "Already short and a benefit to them; avoid asking for longer terms unless they turn out to be free."
+   },
+   {
+    "field": "lead_time_days",
+    "direction": "keep",
+    "why": "Accept their standard lead time given the volume ramp and lateness."
+   },
+   {
+    "field": "effective_date",
+    "direction": "later",
+    "why": "Any increase should start after the hedge expires; test a later date in an alternative sheet."
+   }
+  ],
+  "price_view": {
+   "room": "little",
+   "reasoning": "The price is only slightly above our margin-free should-cost, so there is little cost room for a cut. But the hedge means no justification for an extra copper uplift before spring 2027. Target: hold the current price, with any increase limited to the index mechanics and deferred.",
+   "squeeze_risk": "medium"
+  },
+  "tone": {
+   "style": "businesslike",
+   "do": [
+    "Thank them for opening the renewal early and provide volume data promptly",
+    "Frame proposals within the KAM's mandate where possible",
+    "Quote the hedge remark factually, as their own statement",
+    "Pair each step with a fresh record or term trade"
+   ],
+   "dont": [
+    "Threaten termination or bluff about alternatives",
+    "Attack quality, which is far better than peers",
+    "Ask open questions about their cost structure",
+    "Rush them past committee timing"
+   ]
+  },
+  "traps": [
+   "quality_record:all:ce253f82 favours them: their ppm is far below peers",
+   "Citing copper market news (market_news:all:5a37223b) supports their case",
+   "supplier_health and dependency show they can walk away; never signal that we have no alternative",
+   "Pushing an index-down argument while they are hedged will be rejected",
+   "Letting the notice date pass silently removes our leverage",
+   "Pressing hard on the quality notifications or the low chargeback could sour a good supplier",
+   "news:all:aa8db5f9 is noise"
+  ],
+  "writer_notes": "Open by sending the volume forecast as they asked, combined with an offer of a longer term and binding volume. In the same e-mail, state that their own hedge means no copper add-on on top of the index is justified. Keep the index clause on the table as their protection after the hedge. Expect an inflated first ask and committee pauses; move in shrinking steps. Never threaten. Keep delivery performance as a later, constructive point tied to the volume ramp and capacity.",
+  "questions_to_ask": [
+   "Can you confirm capacity for our peak months at your standard lead time?",
+   "How do you propose the index base should reflect your forward-bought copper?",
+   "Which term combination (length, binding volume) would let you hold the current price?",
+   "What cover do you plan for copper after your current hedge ends?"
+  ]
+ },
+ "specialists": {
+  "economics": {
+   "findings": [
+    {
+     "text": "Current price EUR 316.35/100 m (since 2026-07-01, re-quoted 2026-09-16) sits only +3.9% above our bottom-up should-cost of EUR 304.49, which includes no margin. Confidence is stated as 5%, so the true margin is roughly 0-9%. That is thin, not excessive, and leaves little room for a cut on cost grounds alone.",
+     "evidence": [
+      "cost:350040",
+      "quote:7300014"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Copper (weight 0.56) is +47.7% in 12 months and at its 36-month peak (EUR 1,288.59/100 kg). Taken alone this implies about +26.7% on cost. However, the contract index clause (55% copper share, quarterly) has already passed most of it on: the price rose +6% at the 2026 renewal, +9.4% in Q2 and +3.5% in Q3, about +20% since 2025-Q4 (263.62 to 316.35). Any new copper-based increase on top of the index would double count.",
+     "evidence": [
+      "idx:CU-NOTATION@2026-09",
+      "idx:CU-NOTATION@2025-09",
+      "ctr:4600070560#3.2"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "The supplier said it bought copper forward until March 2027 and that the market price is 'not our reality'. The quote remark repeats 'Material covered until March 2027'. Its actual material cost is therefore fixed below the spot notation, while the index has been paying it spot-linked increases. This argues against any further rise before 2027-04 and for a freeze or a reduction. It is our strongest economic lever.",
+     "evidence": [
+      "quote:7300014",
+      "ctr:4600070560#3.2"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Labour (weight 0.11) is up only +2.7%, about +0.3% on price. Power prices are -43% against 2022 (market-level, not supplier-specific). Non-copper drivers do not justify an increase.",
+     "evidence": [
+      "idx:LCI-C@2026-06",
+      "idx:LCI-C@2025-06",
+      "news:20260912-30"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Its renewal pattern: on average it asks +4.5% and settles at +2.2%; last time it asked +8.6% and settled at +6.0%. Price changes above 2% need its pricing committee, which meets every two weeks. Expect an ask well above the index and plan to concede only slowly.",
+     "evidence": [
+      "ctr:4600070560#3.1"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Our position is weak: we are its single source, it owns the tooling, we are 0.8% of its turnover, and it is financially sound. On the other side, volume rises from 288,600 to 342,000 m (+18.5%). That volume is our main tradeable asset, together with the 30-day payment term, which is already below our 60-day standard.",
+     "evidence": [
+      "ctr:4600070560#4.1",
+      "ctr:4600070560#8.1"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Room on price: realistic target is to hold EUR 316.35 or reach about EUR 305-310 (the should-cost plus a small margin), with the index clause kept or the copper share reduced. The case for a cut is the forward hedge; the case against it is the thin margin over should-cost.",
+     "evidence": [
+      "cost:350040",
+      "quote:7300014"
+     ],
+     "importance": "high"
+    }
+   ],
+   "leverage": "theirs",
+   "supplier_wants": [
+    "Renewal from 2027 at or above the current EUR 316.35, likely with a further increase ask citing copper +48%",
+    "Keep the copper index clause",
+    "Binding volume commitment (it asked for our expected volumes)",
+    "Short payment terms (keep 30 days)",
+    "Possibly a longer contract term"
+   ],
+   "risks": [
+    "Should-cost confidence is only ±5%, so arguing for a big cut risks pushing it below a healthy margin; it can walk away and we are single sourced",
+    "Copper at its peak: if we fix the price, the index clause may later work against them, and if copper falls they will resist index-down moves",
+    "Citing the copper hedge too aggressively could sour the relationship, since it is call-note context, not a checkable record",
+    "Notice to stop the auto-renewal is due by 2026-11-01; missing it removes our exit option"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "should_cost:350040:3d7886c0",
+     "why": "Shows the price is already above full cost; there is no cost gap to justify more"
+    },
+    {
+     "arg_id": "call_note:all:eb56f478",
+     "why": "Copper is hedged until March 2027, so the spot rise is not its actual cost"
+    },
+    {
+     "arg_id": "order_history:350040:65030f9d",
+     "why": "Anchors the negotiation at EUR 316.35"
+    },
+    {
+     "arg_id": "price_trend:350040:d39392d5",
+     "why": "Price is already +21.9% since 2023, so copper has largely been passed through"
+    },
+    {
+     "arg_id": "index_change:350040:0f108f83",
+     "why": "Labour adds only +0.3%, so non-copper drivers are small"
+    },
+    {
+     "arg_id": "volume_change:350040:c34c5201",
+     "why": "+18.5% volume to trade for price"
+    },
+    {
+     "arg_id": "negotiation_pattern:350040:112ab1bd",
+     "why": "Expect its ask to be inflated; it usually settles about half lower"
+    },
+    {
+     "arg_id": "contract_clause:350040:469a8063",
+     "why": "Credible exit timing, notice by 2026-11-01"
+    },
+    {
+     "arg_id": "market_news:all:20eac6ee",
+     "why": "Energy cost relief, as general market context only"
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "We pay reliably, so we are a fair customer"
+    }
+   ],
+   "open_questions": [
+    "Price level of its copper hedge versus the index base used for the 2026 P0?",
+    "Will it accept the index base reset to its hedged cost or a lower copper share than 55%?",
+    "What increase will it ask at the meeting, and is copper above or below base at renewal?",
+    "Is any second source qualifiable for H07RN-F 4G2.5 (standard cable) despite its tooling?"
+   ]
+  },
+  "persona": {
+   "findings": [
+    {
+     "text": "Decision ladder: the key account manager can only grant price changes up to 2 %. Anything larger goes to a pricing committee that meets every two weeks. Expect slow rounds, and keep asks or concessions near 2 % if we want a quick close by the KAM.",
+     "evidence": [
+      "doc:20260415-70560-M2"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "They have admitted that copper is bought forward until March 2027 and called the market price 'not our reality'. Their actual copper cost is therefore hedged and does not follow the +47.7 % CU-NOTATION move. This weakens any copper-driven increase, and it weakens a full pass-through of the index clause (55 % copper share) during Q1 2027.",
+     "evidence": [
+      "doc:20260617-70560-M1",
+      "ctr:4600070560#3.2"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "They opened the renewal themselves, with no figure. Their offer will come 'when we meet', and they asked for our expected volumes. Their need is volume visibility. Our forecast of 342,000 against 288,600 ordered last year (already shared) is a trade item.",
+     "evidence": [
+      "doc:20260910-70560-P14"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Financially sound and stable: group owned, 400 staff, EUR 98.1 M turnover, 32.3 % equity, credit index unchanged at 149, VDA 6.3 grade A. There is no financial stress to exploit and little health concern. We are about 0.8 % of their turnover, a small customer, so they can walk away.",
+     "evidence": [
+      "sup:70560"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Their style is cooperative and operational. They made a proactive move to returnable packaging. There is no record of complaints about our payment: we pay on average 1.6 days late, never more than 10 days late. Our only payment exposure is that 72.6 % of invoices are paid slightly late; they may raise faster payment.",
+     "evidence": [
+      "doc:20251014-70560-N",
+      "sup:70560"
+     ],
+     "importance": "low"
+    },
+    {
+     "text": "The evidence on persona is thin. There are no named decision makers, no complaints, and no written cost claims yet. The only news item is noise.",
+     "evidence": [
+      "news:20260303-02"
+     ],
+     "importance": "low"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Binding/expected volume figures for the renewal",
+    "Price increase likely justified by copper (index) despite their hedge",
+    "Keeping the index clause",
+    "Possibly faster payment or a longer commitment"
+   ],
+   "risks": [
+    "Single source and they own the tooling, so exit is hard",
+    "Index clause auto-raises the price quarterly by about 26 % with the copper move while their cost is hedged",
+    "Asks above 2 % trigger committee delays",
+    "We are a small customer, so they can deprioritise us",
+    "Contract auto-renews unless notice is given by 2026-11-01"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "call_note:all:eb56f478",
+     "why": "Their own admission of hedged copper counters copper-based increases and index pass-through until March 2027"
+    },
+    {
+     "arg_id": "call_note:all:600099e9",
+     "why": "Frame the deal at ≤2 % so the KAM can approve it without the committee"
+    },
+    {
+     "arg_id": "volume_change:350040:c34c5201",
+     "why": "Answers their volume request; about +18.5 % volume to trade for price"
+    },
+    {
+     "arg_id": "should_cost:350040:3d7886c0",
+     "why": "Price is already 3.9 % above should-cost"
+    },
+    {
+     "arg_id": "negotiation_pattern:350040:112ab1bd",
+     "why": "They historically settle about half their ask"
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "We are a reliable payer, a fair customer"
+    },
+    {
+     "arg_id": "delivery_record:all:d4b5f0b1",
+     "why": "On-time delivery is 88.5 %, below the 95 % target and down from 92.3 %"
+    },
+    {
+     "arg_id": "contract_clause:350040:469a8063",
+     "why": "Notice window to 2026-11-01 gives timing leverage on the clause terms"
+    }
+   ],
+   "open_questions": [
+    "Who sits on their pricing committee, and what is the KAM's exact mandate?",
+    "What hedge price and volume cover do they have after March 2027?",
+    "Will they accept suspending or rebasing the index clause during the hedged period?",
+    "Do they want faster payment or a longer contract in exchange?"
+   ]
+  },
+  "contract": {
+   "findings": [
+    {
+     "text": "Framework ctr:4600070560 (part:350040 only) runs to 2026-12-31 and auto-extends 12 months unless terminated with 60 days' notice, i.e. by 2026-11-01. The supplier has opened renewal talks itself (email 2026-09-10) and asked for our volumes. Our exit option stays open only until 1 Nov, so it is weak in practice: the supplier is our single source.",
+     "evidence": [
+      "ctr:4600070560#8.1",
+      "contract_clause:350040:469a8063",
+      "correspondence:350040:90b8fdcd"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "The price is fixed per calendar year with 60 days' notice before year end (#3.1). It also moves quarterly on a copper index: material share 0.55, no deadband, base = index two months before the price year (#3.2). Copper notation is +47.7% year on year. The clause has already passed copper through in 2026: 279.40 → 305.70 → 316.35 per 100. A renewal claim for copper on top of the index would therefore double-count.",
+     "evidence": [
+      "ctr:4600070560#3.1",
+      "ctr:4600070560#3.2",
+      "price_trend:350040:d39392d5",
+      "order_history:350040:65030f9d"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "The supplier said it bought copper forward until March 2027 and that the market price is 'not our reality'. Its actual cost therefore lags the index, and the zero-deadband clause gives it a windfall. This argues for no extra copper increase and possibly for a review of the index base or share at renewal.",
+     "evidence": [
+      "call_note:all:eb56f478",
+      "ctr:4600070560#3.2"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Renewal history: asked +2.1 / settled -1.0; asked +2.7 / settled +1.6; asked +8.6 / settled +6.0. On average it settles about 2.3 pp below its ask, roughly 70% of the ask in recent rounds. Increases above 2% need its pricing committee, which meets every two weeks, so expect slow, stepwise moves.",
+     "evidence": [
+      "negotiation_pattern:350040:112ab1bd",
+      "call_note:all:600099e9"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Payment is 30 days net and Incoterm is DAP with a 14-day lead time. Our standard is 60 days, so 30 days is already a concession to the supplier. We pay reliably (1.6 days late on average), which supports keeping 30 days rather than shortening it further.",
+     "evidence": [
+      "ctr:4600070560#4.1",
+      "ctr:4600070560#5.1",
+      "payment_behaviour:all:11829f07"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "The quality agreement sets a 95% on-time target and a EUR 150 fee per complaint. On-time delivery has fallen to 88.5% from 92.3% a year earlier, below target. There were 8 complaints (EUR 900 recharged, all 8Ds closed). Rolling ppm is 111, well below the peers' median of 457, so quality overall is good.",
+     "evidence": [
+      "ctr:4600070560#6.1",
+      "delivery_record:all:d4b5f0b1",
+      "quality_notification:350040:187efbde",
+      "quality_record:all:ce253f82"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Dependency is asymmetric. The supplier holds a 100% quota and is our only approved source (approved since 2021), and it owns the tooling. We spend about EUR 0.83M a year, roughly 0.8% of its turnover, and it is financially sound. Our levers are rising volume (342,000 against 288,600 m) and a longer commitment.",
+     "evidence": [
+      "relationship:350040:592f6863",
+      "sourcing_position:350040:edd5cc8f",
+      "tooling:350040:119fdb24",
+      "dependency:all:f11abdaf",
+      "supplier_health:all:b698d4fa",
+      "volume_change:350040:c34c5201"
+     ],
+     "importance": "high"
+    }
+   ],
+   "leverage": "theirs",
+   "supplier_wants": [
+    "A renewal increase beyond the index adjustment, likely justified by copper",
+    "Our volume forecast and a binding volume",
+    "Keeping or shortening 30-day payment",
+    "A longer contract term"
+   ],
+   "risks": [
+    "Silent auto-extension after 2026-11-01 removes our exit leverage",
+    "Copper double-counting in a renewal uplift on top of the quarterly index",
+    "We have no alternative source and the supplier owns the tooling; it can afford to walk away",
+    "Index with zero deadband passes copper volatility straight to us while its own copper is hedged"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "call_note:all:eb56f478",
+     "why": "Copper is bought forward to March 2027, so there is no real cost rise to justify an extra increase."
+    },
+    {
+     "arg_id": "contract_clause:350040:2ba6cc76",
+     "why": "The price is fixed per year and changes need 60 days' notice."
+    },
+    {
+     "arg_id": "should_cost:350040:3d7886c0",
+     "why": "The current price is already 3.9% above should-cost."
+    },
+    {
+     "arg_id": "negotiation_pattern:350040:112ab1bd",
+     "why": "It habitually settles well below its ask."
+    },
+    {
+     "arg_id": "volume_change:350040:c34c5201",
+     "why": "Volume is up about 18%, which we can trade for price."
+    },
+    {
+     "arg_id": "delivery_record:all:d4b5f0b1",
+     "why": "On-time delivery is below the contractual 95% and declining."
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "We are a reliable payer on short terms."
+    },
+    {
+     "arg_id": "order_history:350040:65030f9d",
+     "why": "The current price of 316.35 anchors any discussion."
+    },
+    {
+     "arg_id": "contract_clause:350040:469a8063",
+     "why": "The notice window until 1 Nov keeps a renegotiation lever open."
+    }
+   ],
+   "open_questions": [
+    "Is there any qualifiable second source for H07RN-F 4G2.5? The evidence shows none and no RFQ.",
+    "What is the exact index base for 2027, and does the supplier intend to reset P0 as well?",
+    "Will the supplier accept a deadband or a lower material share in exchange for a longer term?",
+    "What did the 2026 renewal +6% cover, and was it on top of index adjustments?"
+   ]
+  },
+  "performance": {
+   "findings": [
+    {
+     "text": "Delivery has slipped: rolling OTD against the requested date fell from 96.2% (2025Q2) to 81.5% (2026Q1) and has partly recovered to 88.5% (2026Q3). That is still below the 95% contract target and below 92.3% a year earlier. Against its own confirmed dates it reaches 92.3%. When it is late, it is late by 14.3 days on average and up to 21 days, against a 14-day lead time, so a late lot roughly doubles the lead time. Peers' median is 84.6%, so it is not worst in class; we should present this as a breach of target, not a scandal.",
+     "evidence": [
+      "sc:70560@2025Q2",
+      "sc:70560@2026Q1",
+      "sc:70560@2026Q3",
+      "ctr:4600070560#6.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Quality is a steady trickle rather than a crisis. There were 24 QNs on part:350040, 21 of them supplier-caused, across recurring defect types (porosity, burr, wrong material certificate, surface damage). Rolling ppm peaked at 142 (2025Q2) and is now 111, against a peers' median of 457. All 8Ds are closed and none is overdue. Recharges total only EUR 2,550 under the EUR 150 flat fee, and some supplier-caused QNs were not recharged (qn:20004712, qn:20004855). Quality argues their case more than ours; the low flat fee is the term to work on.",
+     "evidence": [
+      "sc:70560@2025Q2",
+      "sc:70560@2026Q3",
+      "qn:20004997",
+      "qn:20004971",
+      "qn:20004712",
+      "qn:20004855"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Volume outlook is up sharply. The forecast of 342,000 m for the next 12 months is +18.5% and compares with 288,600 m ordered in the last 12 months. It has already been shared with the supplier, which asked for our volumes for the renewal. This is our main give: offer a binding volume or a longer term in exchange for price. The monthly profile is lumpy (17k-38k), so we should check its capacity, given the lateness already seen.",
+     "evidence": [
+      "fc:350040@2026-09",
+      "fc:350040@2026-06"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Price has risen 23.9% since 2023, from 255.27 to 316.35 per 100 m, driven mostly by the copper index clause (55% weight) during 2026. The should-cost is 304.49, putting the current price about 3.9% above it, which is within the roughly 5% error of the estimate. The supplier said its copper is bought forward to March 2027, so index pass-through overstates its real cost before then.",
+     "evidence": [
+      "po:4500014438-10",
+      "po:4500014291-10",
+      "ctr:4600070560#3.2"
+     ],
+     "importance": "high"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Copper pass-through or a price increase at renewal (CU +47.7%)",
+    "Binding volume and our expected volumes for 2027",
+    "Keep 30-day payment",
+    "Renewal of the framework agreement beyond 2026-12-31"
+   ],
+   "risks": [
+    "Single source and supplier-owned tooling: we have no quick exit",
+    "We are 0.8% of its turnover and it is financially sound, so it can walk away",
+    "The +18.5% volume ramp could worsen the already sub-target OTD",
+    "Citing quality against it backfires: its ppm is far better than peers'"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "delivery_record:all:d4b5f0b1",
+     "why": "OTD of 88.5% is below the 95% target and down from 92.3% a year ago; supports a higher chargeback or delivery terms"
+    },
+    {
+     "arg_id": "volume_change:350040:c34c5201",
+     "why": "+18.5% volume is a trade we can offer for price"
+    },
+    {
+     "arg_id": "should_cost:350040:3d7886c0",
+     "why": "Current price is above should-cost"
+    },
+    {
+     "arg_id": "call_note:all:eb56f478",
+     "why": "Copper bought forward undercuts the index-driven cost claim"
+    },
+    {
+     "arg_id": "quality_notification:350040:187efbde",
+     "why": "Recurring supplier-caused defects justify a ppm commitment or higher chargeback; use cautiously"
+    },
+    {
+     "arg_id": "order_history:350040:65030f9d",
+     "why": "Anchors the current price"
+    },
+    {
+     "arg_id": "negotiation_pattern:350040:112ab1bd",
+     "why": "It usually settles well below its ask"
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "We are a reliable payer"
+    }
+   ],
+   "open_questions": [
+    "Can its capacity cover 38k m peak months while OTD is still below target?",
+    "Why are confirmed dates later than requested dates (KNOWN_ISSUES 1)?",
+    "Why were some supplier-caused QNs not recharged?",
+    "Is there a realistic second source to qualify before the 2026-11-01 notice date?"
+   ]
+  }
+ },
+ "red_team": {
+  "arguments": [
+   {
+    "text": "Our current price is barely above a margin-free cost: your own bottom-up estimate puts cost at EUR 304.49/100 m with no margin, against our 316.35, which is roughly 3.9% gross for margin, risk and financing. There is no room for a cut.",
+    "evidence": [
+     "cost:350040",
+     "quote:7300014"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Copper is at a 36-month peak, up 47.7% in 12 months and 67% from the low. The index clause passed through only 55% of it, and with a lag. Our renewal quote simply holds today's price and adds nothing above the index.",
+    "evidence": [
+     "idx:CU-NOTATION@2026-09",
+     "news:20260910-27",
+     "ctr:4600070560#3.2",
+     "quote:7300014"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Labour costs are up 2.7% and steel is up 7.3%. Conversion cost is about a third of the part, and none of this is covered by the copper index.",
+    "evidence": [
+     "news:20260920-34",
+     "news:20260922-35",
+     "idx:LCI-C@2026-06"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "text": "Over the years we have been moderate. We settled well below our asks (2.1→-1, 2.7→1.6, 8.6→6) and the index also passed decreases through to you.",
+    "evidence": [
+     "EV-2024-70560-350040",
+     "EV-2025-70560-350040",
+     "EV-2026-70560-350040"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "text": "We are a reliable sole source: class A and green, 14-day lead time, returnable packaging introduced, and no overdue 8D reports.",
+    "evidence": [
+     "sc:70560@2026Q3",
+     "doc:20251014-70560-N",
+     "ctr:4600070560#5.1"
+    ],
+    "strength": "weak"
+   }
+  ],
+  "weak_points": [
+   "We admitted buying copper forward to March 2027. The index uplifts in Q2 and Q3 2026 (+9.4%, +3.5%) therefore gave us windfall margin over hedged cost, and further index increases before spring 2027 would double-count.",
+   "Quality is not good enough: 21 supplier-caused complaints and ppm around 110-140, against about 42 in 2024. We have repeat defects, including wrong certificates (4x), burrs and porosity.",
+   "Delivery performance missed the 95% target: OTD was 81.5-88.5% over the last year, late deliveries averaged 14 days and the worst was 21 days.",
+   "Electricity is down 43% on 2022, which offsets our energy-based cost story.",
+   "Their forecast is up 18.5% (342k m), which lowers our unit cost and fixed cost absorption.",
+   "The price has risen 23.9% since 2023.",
+   "The should-cost confidence is only 5%, so they cannot argue precisely, but neither can we.",
+   "The customer pays reliably, on average only about 2 days late."
+  ],
+  "wants": [
+   "A binding annual volume of about 330-340k m. For that I would hold 316.35 flat until the hedge ends.",
+   "A 24-36 month term, with the index clause kept after March 2027. In exchange I could accept a deadband or freezing the index until April 2027.",
+   "Shorter payment terms (e.g. 14-20 days) in exchange for a 0.5-1% concession.",
+   "A quality improvement plan rather than a higher chargeback per complaint, if they press on ppm."
+  ],
+  "red_lines": [
+   "No price below about 305/100 m, which is our cost floor.",
+   "No fixed price without a copper index beyond March 2027.",
+   "No ppm penalty regime or chargeback far above EUR 150 tied to the current defect rate.",
+   "Any change above 2% needs pricing committee approval, so I will not commit to it on the spot.",
+   "Once I declare a final offer, I will not move further."
+  ],
+  "opening": "Thank you for the forecast — the growth to 342k m is welcome, and we want to support it. Given copper at a record EUR 1,289/100 kg and labour up 2.7%, we propose to renew at the current 316.35 per 100 m, keeping the quarterly copper clause, DAP, 30 days and a 14-day lead time. We have deliberately added nothing above the index. We are open to a longer term with committed volume and would like to discuss how we make the most of it together."
+ },
+ "rebuttals": {
+  "rebuttals": [
+   {
+    "to": 1,
+    "answer": "We agree the current price is close to our estimate of your cost, and we are not seeking a deep cut; our aim is to hold today's price as the basis for the renewal. The estimate also shows there is no cost gap that would justify anything on top of it, and the higher volume we expect will improve your fixed-cost absorption. That leaves room for a fair margin without a further increase.",
+    "arg_ids": [
+     "should_cost:350040:3d7886c0",
+     "order_history:350040:65030f9d",
+     "volume_change:350040:c34c5201"
+    ]
+   },
+   {
+    "to": 2,
+    "answer": "Copper has clearly risen, and the index clause exists to protect you; we intend to keep it. But your price has already followed copper upward through the recent quarterly adjustments. You told us yourselves that your copper is bought forward until next spring, so the current market level is not yet your cost. Any further copper-based uplift before your cover runs out would charge for a cost you do not yet carry. We suggest the renewal reflects that, with the clause working as protection after your hedge ends.",
+    "arg_ids": [
+     "call_note:all:eb56f478",
+     "price_trend:350040:d39392d5",
+     "contract_clause:350040:82b221ad"
+    ]
+   },
+   {
+    "to": 3,
+    "answer": "Labour costs did rise, but only modestly, and their share of this part makes the effect on the price very small. Steel is not a meaningful input in a rubber-sheathed copper cable. Lower industrial power prices also work in your favour on conversion cost. Taken together, the non-copper drivers do not support an increase beyond the index mechanics.",
+    "arg_ids": [
+     "index_change:350040:0f108f83",
+     "market_news:all:20eac6ee"
+    ]
+   },
+   {
+    "to": 4,
+    "answer": "We appreciate that past renewals were settled in a constructive way, and the index has worked in both directions. The overall result is still a clearly higher price than when we started buying. We see that as the outcome of a fair mechanism, not as a reserve to draw on now. We would like to continue in the same spirit, with a renewal that holds the price.",
+    "arg_ids": [
+     "negotiation_pattern:350040:112ab1bd",
+     "order_history:350040:ee13c07c",
+     "price_trend:350040:d39392d5"
+    ]
+   },
+   {
+    "to": 5,
+    "answer": "On delivery, however, on-time performance has fallen below the contract target over the past year. With our volumes rising, we would like to work with you on improving it. As a reliable payer, we hope to build on the partnership with a longer, larger commitment rather than a higher price.",
+    "arg_ids": [
+     "delivery_record:all:d4b5f0b1",
+     "contract_clause:350040:a0eb4afc",
+     "payment_behaviour:all:11829f07",
+     "quality_record:all:ce253f82"
+    ]
+   }
+  ],
+  "press": [
+   "Since you mentioned that your copper is covered until next spring, we would welcome a renewal that adds no copper uplift before that cover ends and lets the index protect you afterwards.",
+   "Our forecast for the coming year is clearly above last year's orders, and we are glad to make part of it binding together with a longer term in exchange for holding today's price.",
+   "As volumes grow, could we agree together how to bring on-time delivery back up to the contract target, especially in our peak months?",
+   "We would like to understand how you would like the index base to reflect your forward-bought copper, so the clause stays fair to both sides.",
+   "We continue to pay reliably on the agreed short terms, and we hope that counts in your favour when your pricing committee reviews the renewal."
+  ]
+ },
+ "arguments": [
+  {
+   "arg_id": "index_change:350040:fcb6be31",
+   "kind": "index_change",
+   "part": "part:350040",
+   "refs": [
+    "idx:CU-NOTATION@2025-09",
+    "idx:CU-NOTATION@2026-09"
+   ],
+   "figures": {
+    "series": "CU-NOTATION",
+    "from_month": "2025-09",
+    "to_month": "2026-09",
+    "from_value": 872.264,
+    "to_value": 1288.5918,
+    "change_pct": 47.7,
+    "weight": 0.56,
+    "window": "12 months",
+    "weighted_pct": 26.73
+   },
+   "sentence": "Copper notation for cables and motors changed +47.7% from 2025-09 to 2026-09 (idx:CU-NOTATION@2025-09, idx:CU-NOTATION@2026-09).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "CU-NOTATION (Copper notation for cables and motors (derived)): +47.7% 12 months (2025-09 to 2026-09); 56% of the part's cost, so about +26.73% on the price."
+  },
+  {
+   "arg_id": "index_change:350040:0f108f83",
+   "kind": "index_change",
+   "part": "part:350040",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.11,
+    "window": "12 months",
+    "weighted_pct": 0.29
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 11% of the part's cost, so about +0.29% on the price."
+  },
+  {
+   "arg_id": "should_cost:350040:3d7886c0",
+   "kind": "should_cost",
+   "part": "part:350040",
+   "refs": [
+    "cost:350040"
+   ],
+   "figures": {
+    "unit_cost": 304.49,
+    "price_unit": 100,
+    "estimate_of": "sup:70560",
+    "price": 316.35,
+    "price_unit_of_price": 100,
+    "margin_pct": 3.9
+   },
+   "sentence": "Our bottom-up cost model puts the full cost of this part at EUR 304.49 per 100 units (cost:350040).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Should-cost EUR 304.49 per 100 units (its own plant, error about 5%); its price EUR 316.35 per 100 units (price from 2026-07-01) is +3.9% against it."
+  },
+  {
+   "arg_id": "delivery_record:all:d4b5f0b1",
+   "kind": "delivery_record",
+   "part": null,
+   "refs": [
+    "sc:70560@2026Q3"
+   ],
+   "figures": {
+    "otd_pct": 88.5,
+    "quarter": "2026Q3",
+    "target_pct": 95.0,
+    "peer_median_pct": 84.6
+   },
+   "sentence": "Your rolling scorecard shows on-time delivery of 88.5% (sc:70560@2026Q3).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Rolling 12 months to 2026-09-30: 88.5% on time against the requested date (92.3% against its own confirmed date); target 95%; peers' median 84.6%; class A green. A year earlier 92.3%."
+  },
+  {
+   "arg_id": "quality_record:all:ce253f82",
+   "kind": "quality_record",
+   "part": null,
+   "refs": [
+    "sc:70560@2026Q3"
+   ],
+   "figures": {
+    "ppm": 111,
+    "quarter": "2026Q3",
+    "peer_median_ppm": 457.0
+   },
+   "sentence": "Your rolling scorecard shows 111 ppm defects (sc:70560@2026Q3).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "Rolling 12 months to 2026-09-30: 111 ppm from 8 complaints; peers' median 457.0 ppm; 8D reports overdue 0. A year earlier 136 ppm."
+  },
+  {
+   "arg_id": "quality_notification:350040:187efbde",
+   "kind": "quality_notification",
+   "part": "part:350040",
+   "refs": [
+    "qn:20004997",
+    "qn:20004971",
+    "qn:20004956",
+    "qn:20004927",
+    "qn:20004900",
+    "qn:20004855"
+   ],
+   "figures": {
+    "ppm_mean": 348,
+    "ppms": [
+     435,
+     364,
+     417,
+     243,
+     357,
+     273
+    ],
+    "complaints_12m": 8
+   },
+   "sentence": "Our recent quality notifications on this part average 348 ppm (qn:20004997, qn:20004971, qn:20004956, qn:20004927, qn:20004900, qn:20004855).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "8 supplier-caused complaints on this part in the last 12 months (burr / sharp edge, coating defect, dimension out of tolerance, missing marking, porosity, surface damage, wrong material certificate); EUR 900 recharged; 0 without a closed 8D. Per-lot ppm is jumpy (KNOWN_ISSUES 10): the scorecard's rolling ppm is the fairer figure."
+  },
+  {
+   "arg_id": "order_history:350040:65030f9d",
+   "kind": "order_history",
+   "part": "part:350040",
+   "refs": [
+    "po:4500014438-10",
+    "po:4500014352-10",
+    "po:4500014291-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     316.35,
+     316.35,
+     316.35
+    ],
+    "price_unit": 100,
+    "dates": [
+     "2026-09-21",
+     "2026-08-31",
+     "2026-08-18"
+    ]
+   },
+   "sentence": "Our latest orders for this part were all at EUR 316.35 per 100 units (po:4500014438-10, po:4500014352-10, po:4500014291-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "What we pay now: [316.35, 316.35, 316.35] per 100 units (2026-08-18 to 2026-09-21); anchors any increase."
+  },
+  {
+   "arg_id": "order_history:350040:ee13c07c",
+   "kind": "order_history",
+   "part": "part:350040",
+   "refs": [
+    "po:4500010011-10",
+    "po:4500010076-10",
+    "po:4500010133-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     255.27,
+     255.27,
+     255.27
+    ],
+    "price_unit": 100,
+    "dates": [
+     "2023-10-02",
+     "2023-10-18",
+     "2023-10-31"
+    ]
+   },
+   "sentence": "Our earliest orders on record for this part were all at EUR 255.27 per 100 units (po:4500010011-10, po:4500010076-10, po:4500010133-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Earliest orders [255.27, 255.27, 255.27] per 100 units (2023-10-02 to 2023-10-31); now +23.9% against them - its price has not fallen since."
+  },
+  {
+   "arg_id": "volume_change:350040:c34c5201",
+   "kind": "volume_change",
+   "part": "part:350040",
+   "refs": [
+    "fc:350040@2026-09"
+   ],
+   "figures": {
+    "change_pct": 18.5,
+    "volume_per_year": 342000,
+    "snapshot": "2026-09"
+   },
+   "sentence": "Our demand forecast for this part has risen 18.5% (fc:350040@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Snapshot 2026-09: 342000 for the next 12 months against 288600 ordered in the last 12 months (requested dates); shared with suppliers: True. More volume is worth more to it."
+  },
+  {
+   "arg_id": "news:all:aa8db5f9",
+   "kind": "news",
+   "part": null,
+   "refs": [
+    "news:20260303-02"
+   ],
+   "figures": {
+    "topic": "noise",
+    "date": "2026-03-03"
+   },
+   "sentence": "We have noted the press report \"Kabelwerk Rhönsberg GmbH at the trade fair\" (news:20260303-02).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "2026-03-03 noise: Kabelwerk Rhönsberg GmbH at the trade fair. Kabelwerk Rhönsberg GmbH presents its products at a regional supplier fair. -> no lever: noise."
+  },
+  {
+   "arg_id": "contract_clause:350040:2ba6cc76",
+   "kind": "contract_clause",
+   "part": "part:350040",
+   "refs": [
+    "ctr:4600070560#3.1"
+   ],
+   "figures": {
+    "type": "price",
+    "days": 60
+   },
+   "sentence": "Our framework agreement fixes prices for each calendar year.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070560#3.1 (price): Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 60 days before the end of the calendar year."
+  },
+  {
+   "arg_id": "contract_clause:350040:82b221ad",
+   "kind": "contract_clause",
+   "part": "part:350040",
+   "refs": [
+    "ctr:4600070560#3.2"
+   ],
+   "figures": {
+    "type": "index",
+    "days": null,
+    "series": "CU-NOTATION",
+    "material_share": 0.55,
+    "deadband_pct": 0,
+    "series_change_12m_pct": 47.7
+   },
+   "sentence": "Our framework agreement ties the price to an agreed index formula.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070560#3.2 (index): The price follows index CU-NOTATION: P = P0 x (1 - 0.55 + 0.55 x I(m-2) / I(base)), base = the index two months before the price year starts, adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %. The series moved +47.7% in 12 months."
+  },
+  {
+   "arg_id": "contract_clause:350040:b9d97e0a",
+   "kind": "contract_clause",
+   "part": "part:350040",
+   "refs": [
+    "ctr:4600070560#4.1"
+   ],
+   "figures": {
+    "type": "payment",
+    "days": 30
+   },
+   "sentence": "Our framework agreement sets the payment terms.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070560#4.1 (payment): Payment: 30 days net. Our standard is 60 days; shorter terms are its benefit."
+  },
+  {
+   "arg_id": "contract_clause:350040:81d7cd76",
+   "kind": "contract_clause",
+   "part": "part:350040",
+   "refs": [
+    "ctr:4600070560#5.1"
+   ],
+   "figures": {
+    "type": "delivery",
+    "days": 14
+   },
+   "sentence": "Our framework agreement sets the delivery terms and the standard lead time.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070560#5.1 (delivery): Delivery DAP; standard lead time 14 days from order."
+  },
+  {
+   "arg_id": "contract_clause:350040:a0eb4afc",
+   "kind": "contract_clause",
+   "part": "part:350040",
+   "refs": [
+    "ctr:4600070560#6.1"
+   ],
+   "figures": {
+    "type": "quality",
+    "days": null
+   },
+   "sentence": "Our framework agreement includes the quality agreement with its delivery target.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070560#6.1 (quality): The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint."
+  },
+  {
+   "arg_id": "contract_clause:350040:469a8063",
+   "kind": "contract_clause",
+   "part": "part:350040",
+   "refs": [
+    "ctr:4600070560#8.1"
+   ],
+   "figures": {
+    "type": "term",
+    "days": 60,
+    "valid_to": "2026-12-31",
+    "notice_deadline": "2026-11-01"
+   },
+   "sentence": "Our framework agreement renews only unless either side gives notice.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070560#8.1 (term): Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 60 days' notice. To stop the renewal, notice by 2026-11-01 (still open: a credible exit)."
+  },
+  {
+   "arg_id": "correspondence:all:31dc97fc",
+   "kind": "correspondence",
+   "part": null,
+   "refs": [
+    "doc:20251014-70560-N"
+   ],
+   "figures": {
+    "doc_kind": "email",
+    "date": "2025-10-14",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We refer to your e-mail \"Packaging\" (doc:20251014-70560-N).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "email 2025-10-14 by Kabelwerk Rhönsberg GmbH: From November we deliver in returnable boxes instead of cardboard."
+  },
+  {
+   "arg_id": "call_note:all:600099e9",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260415-70560-M2"
+   ],
+   "figures": {
+    "doc_kind": "meeting_note",
+    "date": "2026-04-15",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our meeting about \"Annual review\" (doc:20260415-70560-M2).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "meeting_note 2026-04-15 by Hollerau Pumpenwerke, Purchasing: Annual review with Kabelwerk Rhönsberg GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+  },
+  {
+   "arg_id": "call_note:all:eb56f478",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260617-70560-M1"
+   ],
+   "figures": {
+    "doc_kind": "call_note",
+    "date": "2026-06-17",
+    "signals_us": [
+     "material bought forward at fixed prices"
+    ],
+    "signals_them": []
+   },
+   "sentence": "In our call (doc:20260617-70560-M1) you told us your material is bought forward at fixed prices, so recent index rises do not reach your cost yet.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "call_note 2026-06-17 by Hollerau Pumpenwerke, Purchasing: Call with Kabelwerk Rhönsberg GmbH: they bought their copper forward until March 2027 and said the market price is 'not our reality' before then. [for us: material bought forward at fixed prices]"
+  },
+  {
+   "arg_id": "correspondence:350040:90b8fdcd",
+   "kind": "correspondence",
+   "part": "part:350040",
+   "refs": [
+    "doc:20260910-70560-P14"
+   ],
+   "figures": {
+    "doc_kind": "email",
+    "date": "2026-09-10",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "email 2026-09-10 by Kabelwerk Rhönsberg GmbH: Hello, our framework agreement ctr:4600070560 for Motor cable H07RN-F 4G2.5 (part:350040) expires on 31 December 2026. We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes. Best regards, Kabelwerk Rhönsberg GmbH"
+  },
+  {
+   "arg_id": "negotiation_pattern:350040:112ab1bd",
+   "kind": "negotiation_pattern",
+   "part": "part:350040",
+   "refs": [],
+   "figures": {
+    "events": [
+     [
+      "EV-2024-70560-350040",
+      "2023-12-10",
+      2.1,
+      -1.0
+     ],
+     [
+      "EV-2025-70560-350040",
+      "2024-11-15",
+      2.7,
+      1.6
+     ],
+     [
+      "EV-2026-70560-350040",
+      "2025-11-22",
+      8.6,
+      6.0
+     ]
+    ],
+    "mean_asked_pct": 4.47,
+    "mean_settled_pct": 2.2
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "3 renewals: asked +4.5% on average, settled +2.2% (gap 2.3 pp); last 2025-11-22: asked +8.6%, settled +6.0%. It usually settles well below its ask."
+  },
+  {
+   "arg_id": "relationship:350040:592f6863",
+   "kind": "relationship",
+   "part": "part:350040",
+   "refs": [
+    "part:350040"
+   ],
+   "figures": {
+    "years": 5.7,
+    "quota_pct": 100
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Approved since 2021-01-01 (5.7 years), status active, quota 100%."
+  },
+  {
+   "arg_id": "tooling:350040:119fdb24",
+   "kind": "tooling",
+   "part": "part:350040",
+   "refs": [
+    "part:350040"
+   ],
+   "figures": {
+    "owner": "n/a"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "It owns the tooling: moving the part needs new tooling."
+  },
+  {
+   "arg_id": "sourcing_position:350040:edd5cc8f",
+   "kind": "sourcing_position",
+   "part": "part:350040",
+   "refs": [
+    "part:350040"
+   ],
+   "figures": {
+    "alternatives": []
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "No other approved source for this part: it is our single source."
+  },
+  {
+   "arg_id": "price_trend:350040:d39392d5",
+   "kind": "price_trend",
+   "part": "part:350040",
+   "refs": [],
+   "figures": {
+    "prices": [
+     [
+      "2023-01-01",
+      259.57
+     ],
+     [
+      "2023-04-01",
+      267.7
+     ],
+     [
+      "2023-07-01",
+      253.6
+     ],
+     [
+      "2023-10-01",
+      255.27
+     ],
+     [
+      "2024-01-01",
+      252.82
+     ],
+     [
+      "2024-04-01",
+      254.95
+     ],
+     [
+      "2024-07-01",
+      285.85
+     ],
+     [
+      "2024-10-01",
+      263.28
+     ],
+     [
+      "2025-01-01",
+      267.49
+     ],
+     [
+      "2025-04-01",
+      274.78
+     ],
+     [
+      "2025-07-01",
+      266.02
+     ],
+     [
+      "2025-10-01",
+      263.62
+     ],
+     [
+      "2026-01-01",
+      279.4
+     ],
+     [
+      "2026-04-01",
+      305.7
+     ],
+     [
+      "2026-07-01",
+      316.35
+     ]
+    ],
+    "change_pct": 21.9
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Price per 100 units: 2023 259.57, 2023 267.70, 2023 253.60, 2023 255.27, 2024 252.82, 2024 254.95, 2024 285.85, 2024 263.28, 2025 267.49, 2025 274.78, 2025 266.02, 2025 263.62, 2026 279.40, 2026 305.70, 2026 316.35 (+21.9% since 2023). Its price has not fallen."
+  },
+  {
+   "arg_id": "payment_behaviour:all:11829f07",
+   "kind": "payment_behaviour",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "avg_days_paid_after_due": 2.2,
+    "avg_days_paid_after_due_last_12m": 1.6,
+    "paid_late_pct": 72.6
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "75 invoices; we pay 1.6 days after due on average (last 12 months), 72.6% late, 0.0% over 10 days late, max 7; discounts taken 0 (0 after the period); short-paid 0. We pay reliably: a fair customer."
+  },
+  {
+   "arg_id": "supplier_health:all:b698d4fa",
+   "kind": "supplier_health",
+   "part": null,
+   "refs": [
+    "sup:70560"
+   ],
+   "figures": {
+    "credit_index": 149,
+    "credit_index_12m_ago": 149,
+    "equity_ratio_pct": 32.3,
+    "weak": false
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "GmbH, founded 1957, group owned, 400 staff, turnover 98100000; equity ratio 32.3%, credit index 149 (12 months ago 149; higher is worse); audit A. Sound: it can afford to walk away."
+  },
+  {
+   "arg_id": "dependency:all:f11abdaf",
+   "kind": "dependency",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "fiscal_year": "FY2026",
+    "spend_eur": 833606.85,
+    "turnover_eur": 98100000,
+    "share_pct": 0.8
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Our spend FY2026: EUR 833,607, about 0.8% of its turnover. We are a small customer to it."
+  },
+  {
+   "arg_id": "market_news:all:5a37223b",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260910-27"
+   ],
+   "figures": {
+    "date": "2026-09-10"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-10 market: Copper notation at EUR 1,289 per 100 kg. The copper notation for cables averaged EUR 1,289/100 kg in September, +48 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:20eac6ee",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260912-30"
+   ],
+   "figures": {
+    "date": "2026-09-12"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "2026-09-12 market: Industrial power prices -43 % on 2022. Producer prices for electric power stand -43 % against August 2022. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:6902032a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260914-31"
+   ],
+   "figures": {
+    "date": "2026-09-14"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-14 market: Iron castings +1.8 % year on year. Producer prices for iron castings rose +1.8 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f855aade",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260916-32"
+   ],
+   "figures": {
+    "date": "2026-09-16"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-16 market: Alloy surcharge 1.4404 at EUR 3,008 per tonne. The alloy surcharge for 1.4404 stands at EUR 3,008/t, +6 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:0e3ce486",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260918-33"
+   ],
+   "figures": {
+    "date": "2026-09-18"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-18 market: Electronic boards +41 % year on year. Producer prices for assembled electronic boards rose +41 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:3071261a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260920-34"
+   ],
+   "figures": {
+    "date": "2026-09-20"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-20 market: Labour costs in manufacturing +2.7 %. Labour costs in German manufacturing rose +2.7 % year on year in the second quarter. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f8eeb840",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260922-35"
+   ],
+   "figures": {
+    "date": "2026-09-22"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-22 market: Steel prices +7.3 % since January. Producer prices for basic iron and steel are +7.3 % above January. Do not cite it as about this supplier."
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "where": "rebuttals.answer",
+    "value": "We value you as a long-standing partner: the returnable packaging, the prompt 8D closures and your quality relative to peers are real strengths. On delivery, however, on-time performance has fallen be",
+    "why": "figure in e-mail text"
+   }
+  ]
+ }
+}

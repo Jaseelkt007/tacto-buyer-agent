@@ -1,0 +1,113 @@
+/* Tokens and helpers for the /demo deck only. The look follows the arena site: flat white cards with
+   hairline borders on light grey, monospace caps labels, light large figures, one orange accent.
+   Every selector sits under .pd-demo so nothing leaks into the rest of the app (a plain stylesheet:
+   next.config sends *.css through the Tailwind loader, not CSS modules). Role colours validated with
+   the dataviz palette checker on #ffffff. */
+
+.pd-demo {
+  color-scheme: light;
+  --d-bg: #f4f4f4;
+  --d-panel: #ffffff;
+  --d-panel-2: #fafafa;
+  --d-sunk: #f2f2f2;
+  --d-line: #e4e4e4;
+  --d-line-soft: #eeeeee;
+  --d-ink: #111111;
+  --d-ink-2: #555555;
+  --d-muted: #8a8a8a;
+  --d-accent: #ff5a1f;
+  --d-buyer: #2f5fcf;
+  --d-buyer-wash: #eef3fd;
+  --d-supplier: #cf6a2e;
+  --d-supplier-wash: #fcf1ea;
+  --d-arena: #0f8f7a;
+  --d-arena-wash: #e9f6f3;
+  --d-llm: #6d50cf;
+  --d-llm-wash: #f2effc;
+  --d-code: #6a6a6a;
+  --d-code-wash: #f2f2f2;
+  --d-good: #1d7a4a;
+  --d-good-wash: #ebf6ef;
+  --d-bad: #c03a4f;
+  --d-bad-wash: #fcedef;
+  --d-warn: #9a6a00;
+  --d-warn-wash: #fdf5e3;
+  --d-focus: #ff5a1f;
+  --d-shadow: 0 0 #0000; /* flat: borders only */
+  background: var(--d-bg);
+  color: var(--d-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.pd-demo :focus-visible {
+  outline: 2px solid var(--d-focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Headings and key figures: light and large, set by size, not weight. */
+.pd-demo .pd-plate {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Small monospace caps for labels above figures and sections. */
+.pd-demo .pd-label {
+  font-family: var(--font-demo-mono), ui-monospace, monospace;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+.pd-demo .pd-wide {
+  letter-spacing: -0.005em;
+}
+
+.pd-demo .pd-code {
+  font-family: var(--font-demo-mono), ui-monospace, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  tab-size: 4;
+}
+
+/* Hatched band: our walk-away zone in the price corridor. */
+.pd-demo .pd-hatch {
+  background-image: repeating-linear-gradient(135deg, #dfe3e8 0 1px, transparent 1px 8px);
+}
+
+.pd-demo .pd-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d5d9df transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pd-demo .pd-enter {
+    animation: pd-enter 320ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .pd-demo .pd-draw {
+    stroke-dasharray: var(--len, 2000);
+    stroke-dashoffset: var(--len, 2000);
+    animation: pd-draw 1400ms cubic-bezier(0.4, 0, 0.2, 1) 120ms forwards;
+  }
+}
+
+@keyframes pd-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pd-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

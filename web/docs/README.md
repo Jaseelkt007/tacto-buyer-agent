@@ -21,6 +21,7 @@ the negotiation. Update the page in the same commit as the code.
 | Deal anatomy | `/negotiations/<session>/anatomy` | [anatomy.md](anatomy.md) | done (phase 6) |
 | Arguments (ledger) | `/arguments` | [arguments.md](arguments.md) | done (phase 6) |
 | Facts | `/facts` | [facts.md](facts.md) | done (phase 6) |
+| Pipeline demo (deck) | `/demo` | [demo.md](demo.md) | done |
 
 ## Phase plan
 

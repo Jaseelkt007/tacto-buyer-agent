@@ -1,0 +1,1853 @@
+{
+ "supplier_id": "sup:70440",
+ "name": "Kohlering-Technik Pirkheim GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "built": "2026-10-25T00:13:52",
+  "seconds": 91.4,
+  "evidence_chars": 31209,
+  "arguments": 48,
+  "errors": {}
+ },
+ "strategy": {
+  "summary": "Kohlering-Technik Pirkheim is a sound, family-owned seal maker (credit index flat, VDA 6.3 A). We are a small customer to it, about 0.8 % of its turnover. It supplies two dual-sourced parts under a framework agreement with prices fixed per calendar year.\n\nThe two parts call for opposite approaches.\n- Part 340011 (mechanical seal): it is our cheaper source. Its price sits about 8 % above our should-cost. It has recently put standard mechanical seals on allocation (news:20260827-25), and its delivery on this part is weak. Here we need supply security: a moderate stance plus volume and length.\n- Part 340040 (lip seal): it is about 10 % dearer than Elasto-Dicht (sup:70430). It has the worse ppm and two open 8Ds. This is our real price lever.\n\nHow it negotiates:\n- It states that only multi-year volume agreements change prices (doc:20260910-70440-M1).\n- Moves above 2 % need a pricing committee that meets every two weeks (doc:20260524-70440-M2).\n- It historically settles far below its ask.\n\nNo cash stress is visible.",
+  "decision_maker": "Key account manager (authority up to about 2 % on price) backed by a pricing committee meeting fortnightly for larger changes; day-to-day contact is a new inside-sales colleague since Oct 2025 with likely limited authority.",
+  "persona": {
+   "owner_type": "family-owned GmbH, founded 1972, 140 staff",
+   "style": "Rule-bound and firm on list prices ('standard items are not discounted'). Moves through structured deals (multi-year, volume) and settles near its committee threshold.",
+   "openness": "guarded",
+   "traits": [
+    "approval_ladder",
+    "capacity_full",
+    "relationship_long",
+    "high_margin",
+    "delivery_issues",
+    "quality_issues",
+    "cost_pressure_overstated"
+   ],
+   "other_traits": [
+    "allocating mechanical seals on prior-year call-offs",
+    "we are a small customer (about 0.8 % of turnover)",
+    "financially sound, can walk away",
+    "historically settles well below ask"
+   ]
+  },
+  "needs": [
+   {
+    "need": "planning_security",
+    "detail": "It wants multi-year, binding volume agreements and says this is the only route to price changes.",
+    "evidence": [
+     "doc:20260910-70440-M1"
+    ],
+    "strength": "strong"
+   },
+   {
+    "need": "capacity_relief",
+    "detail": "It is allocating standard mechanical seals on last year's call-offs. Our delivery record on 340011 is poor, so it likely values predictable call-offs and realistic lead times.",
+    "evidence": [
+     "news:20260827-25",
+     "sc:70440@2026Q3"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "volume",
+    "detail": "Our forecasts for both parts are rising and have been shared with it. Firm volume is valued, especially on the lip seal, where it risks losing quota.",
+    "evidence": [
+     "fc:340011@2026-09",
+     "fc:340040@2026-09"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "price_stability",
+    "detail": "Labour and rubber indices are at their 36-month peak. It may seek recovery or an index link on 340040, which is rubber-heavy.",
+    "evidence": [
+     "idx:PPI-C2219@2026-08",
+     "idx:LCI-C@2026-06"
+    ],
+    "strength": "weak"
+   }
+  ],
+  "constraints": [
+   {
+    "kind": "approval_needed",
+    "detail": "Price moves above 2 % need pricing committee approval, which adds about two weeks.",
+    "evidence": [
+     "doc:20260524-70440-M2"
+    ]
+   },
+   {
+    "kind": "capacity_full",
+    "detail": "Allocation of standard mechanical seals means 340011 growth may not be served without an agreement.",
+    "evidence": [
+     "news:20260827-25"
+    ]
+   },
+   {
+    "kind": "contract_binding",
+    "detail": "Prices are fixed per calendar year and changes need 90 days' notice before year end. The contract auto-extends 12 months unless notice is given.",
+    "evidence": [
+     "ctr:4600070440#3.1",
+     "ctr:4600070440#8.1"
+    ]
+   },
+   {
+    "kind": "other",
+    "detail": "It refuses discounts on standard items outside multi-year volume deals.",
+    "evidence": [
+     "doc:20260910-70440-M1"
+    ]
+   }
+  ],
+  "levers": [
+   {
+    "arg_id": "rival_price:340040:b36a3c2f",
+    "why": "Same lip seal from the approved second source is about 10 % cheaper and has better ppm. This is the strongest price argument; use it only on 340040.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "volume_change:340040:d60778bf",
+    "why": "Growing volume fits its own 'multi-year volume' rule. Offer it in exchange for price.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "call_note:all:d9da750c",
+    "why": "Quote its own rule back to it: we are offering exactly the multi-year volume agreement it requires.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "should_cost:340011:0196aea5",
+    "why": "Shows its 340011 price already carries margin. Use it to deflect an increase, not to force a deep cut, given allocation.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "volume_change:340011:11429a78",
+    "why": "Forecast growth on the mechanical seal. A secured allocation in return for a binding volume is worth more than a price cut.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "negotiation_pattern:340040:8a3c279e",
+    "why": "It has repeatedly settled near zero. Use this to anchor expectations on any increase ask.",
+    "when": "later"
+   },
+   {
+    "arg_id": "negotiation_pattern:340011:fa9753a4",
+    "why": "Same point for the mechanical seal.",
+    "when": "later"
+   },
+   {
+    "arg_id": "quality_notification:340040:3ee4ee9b",
+    "why": "Eight supplier-caused complaints on the lip seal, with 8Ds still open. A fresh fact to justify our price position or a ppm commitment.",
+    "when": "later"
+   },
+   {
+    "arg_id": "delivery_record:all:d08251da",
+    "why": "On-time delivery is far below the contract target and the peer median. Use it as a later fresh fact, not as the main lever.",
+    "when": "later"
+   },
+   {
+    "arg_id": "contract_clause:all:e487d4b9",
+    "why": "Annual fixed prices with a notice requirement. Use it if a late or mid-year increase is asked.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "rival_quote:340040:bc806945",
+    "why": "Confirms the 340040 gap. Use it only if the case lists that quote.",
+    "when": "later"
+   },
+   {
+    "arg_id": "market_news:all:20eac6ee",
+    "why": "Counters any energy-cost claim.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "payment_behaviour:all:11829f07",
+    "why": "We are a reliable payer, though slightly late. Mention it only if payment is raised, and pair it with a commitment to pay on time.",
+    "when": "if_challenged"
+   }
+  ],
+  "trades": [
+   {
+    "field": "contract_months",
+    "direction": "higher",
+    "why": "It explicitly links price movement to multi-year agreements. 24 months captures most of the value."
+   },
+   {
+    "field": "volume_per_year",
+    "direction": "higher",
+    "why": "Binding volume within our real need answers its allocation logic and its stated pricing rule."
+   },
+   {
+    "field": "lead_time_days",
+    "direction": "keep",
+    "why": "It is capacity-strained on mechanical seals. Accepting its standard lead time avoids a steep premium and supports reliable supply."
+   },
+   {
+    "field": "payment_days",
+    "direction": "keep",
+    "why": "There is no cash need, so faster payment buys little. Asking for long payment would cost price. Keep the current terms and promise to pay on time."
+   },
+   {
+    "field": "ppm_commitment",
+    "direction": "add",
+    "why": "On 340040 its quality is worse than the rival's. A tighter ppm target is a fair ask from a supplier wanting to keep its quota."
+   },
+   {
+    "field": "index_clause",
+    "direction": "remove",
+    "why": "Rubber and labour indices are at their peaks. Avoid a clause unless it insists on one for a long term, and then price the risk carefully."
+   }
+  ],
+  "price_view": {
+   "room": "some",
+   "reasoning": "There is real room on 340040, where the rival is about 10 % cheaper and has better quality. On 340011 there is little room: the price is near a healthy margin over should-cost, it beats the rival, and allocation gives it the upper hand. Its index-driven case is modest and already covered by the last increase on 340011.",
+   "squeeze_risk": "medium"
+  },
+  "tone": {
+   "style": "businesslike",
+   "do": [
+    "Frame offers as the multi-year volume agreement it says it wants",
+    "Keep 340011 discussions cooperative and focused on secured allocation",
+    "Bring verified records, one fresh one per round",
+    "Make real, shrinking steps paired with term trades",
+    "Allow for the committee cycle when a move exceeds its threshold"
+   ],
+   "dont": [
+    "Threaten to delist or walk on the mechanical seal",
+    "Ask open questions about its cost structure",
+    "Use deadlines or bluffs",
+    "Ask for short lead times on mechanical seals",
+    "Counter after a declared final offer"
+   ]
+  },
+  "traps": [
+   "Citing the 340011 rival price or rival quote reveals that Kohlering is our cheaper source (rival_price:340011:e4e5c9be, rival_quote:340011:64f87cc1).",
+   "The quality_record shows its overall ppm beats the peer median. Citing it helps it, not us.",
+   "Copper, electronics and steel news are not drivers for these seals. Do not let it import them, and do not cite them ourselves.",
+   "Treating the supplier's tooling ownership as fact is risky: the sourcing data says n/a.",
+   "Pushing hard on 340011 price during allocation risks our share of a scarce supply.",
+   "Long payment terms requested together with a price cut will stall it.",
+   "Hinting at volume without committing it brings no credit."
+  ],
+  "writer_notes": "Treat the two parts differently. - Lip seal: lead with the rival's current price and a binding multi-year volume offer. Back it with the quality record as a later fresh fact. - Mechanical seal: aim to hold the price or accept a small step. Secure an allocation covering our forecast growth in exchange for binding volume and a longer term. Keep individual requested moves within its key account manager's authority where possible so it can close quickly. Expect its first counter to carry most of the concession. Answer every round. Note: evidence on its personal negotiating style is thin, and there is no should-cost for the lip seal.",
+  "questions_to_ask": [
+   "Does the allocation on standard mechanical seals also apply to the lip seal, and what volume is reserved for us?",
+   "What binding volume and term would let you lift our allocation to cover our forecast?",
+   "What on-time improvement plan can you commit to for the mechanical seal?",
+   "Would you price a multi-year agreement covering both parts together?"
+  ]
+ },
+ "specialists": {
+  "economics": {
+   "findings": [
+    {
+     "text": "Part 340011: price EUR 37.55 sits +8.1% above our bottom-up should-cost of EUR 34.74, which already includes overhead but no margin. That is a modest, roughly healthy margin, not an excessive one. Confidence is about ±5%, so realistic room for a cut from cost alone is small, around 0-3%.",
+     "evidence": [
+      "cost:340011"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Part 340011 drivers: labour (weight 0.33) rose +2.7% and rubber PPI (weight 0.17) rose +3.9% over 12 months. Together they imply about +1.5% on price. The 2026-01 increase of +2.1% already covers more than that. A further rise is not justified now. Both indices are at their 36-month peak, so they give no argument for a decrease either.",
+     "evidence": [
+      "idx:LCI-C@2026-06",
+      "idx:LCI-C@2025-06",
+      "idx:PPI-C2219@2026-08",
+      "idx:PPI-C2219@2025-08"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Part 340011 competitive position: Kohlering is the cheaper of our two sources. It charges 37.55, while Ravensteiner (sup:70410) charges 38.29. Kohlering also won the 2024 benchmark RFQ at 40.23 against Ravensteiner's 41.55. The rival price argues for them, not for us, so we should not cite it.",
+     "evidence": [
+      "quote:7100036",
+      "quote:7100037",
+      "rfq:6000000117"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Part 340040: Kohlering charges 111.69 per 100. The alternative source Elasto-Dicht (sup:70430) charges 100.98, so Kohlering is about 10.6% dearer. In the 2025 RFQ, Kohlering quoted 121.27 against 102.34 and lost. Its lead time was also much longer, 36 days against 7. This is the strongest price lever with this supplier: there is room of around 8-10% to match the market.",
+     "evidence": [
+      "quote:7100040",
+      "quote:7100041",
+      "rfq:6000000119"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Part 340040 drivers: rubber PPI (weight 0.54, +3.9%) and labour (weight 0.12, +2.7%) imply about +2.4% on price. Kohlering held its price flat in 2026 after +1.8% in 2025, so it may claim this. The claim is outweighed by the 10% gap to the competitor. We have no should-cost for 340040, so the evidence on its margin is thin.",
+     "evidence": [
+      "idx:PPI-C2219@2026-08",
+      "idx:LCI-C@2026-06"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Market news that Kohlering might use (copper +48%, electronic boards +41%, steel +7.3%) is not among its weighted drivers for these seals. Industrial power prices are -43% on 2022, which argues against energy-based claims.",
+     "evidence": [
+      "news:20260910-27",
+      "news:20260918-33",
+      "news:20260922-35",
+      "news:20260912-30"
+     ],
+     "importance": "low"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Index-based increase for rubber and labour (about +1.5% on 340011, about +2.4% on 340040)",
+    "Multi-year volume agreement (states that standard items are only discounted under such agreements)",
+    "Shorter payment or binding volume",
+    "Keep allocation discipline on mechanical seals"
+   ],
+   "risks": [
+    "Allocation of mechanical seals (340011) weakens our position on that part.",
+    "Increases above 2% need approval from its pricing committee, which meets every two weeks; this slows any move.",
+    "Citing the 340011 rival price would reveal that Kohlering is the cheaper source.",
+    "The supplier is financially sound and we are about 0.8% of its turnover, so it can walk away.",
+    "The should-cost for 340011 rests on a single estimate with about 5% error."
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "rival_price:340040:b36a3c2f",
+     "why": "The current rival price is 9.6% below Kohlering's price on 340040; this is the strongest price lever."
+    },
+    {
+     "arg_id": "rival_quote:340040:bc806945",
+     "why": "Confirms the gap through the 2025 RFQ, if the case lists that quote."
+    },
+    {
+     "arg_id": "should_cost:340011:0196aea5",
+     "why": "Shows the margin on 340011 is already adequate, so no increase is needed."
+    },
+    {
+     "arg_id": "price_trend:340011:8c31d5b8",
+     "why": "The 2026 increase of +2.1% already covers the driver rise."
+    },
+    {
+     "arg_id": "negotiation_pattern:340040:8a3c279e",
+     "why": "Kohlering has settled near 0% on 340040."
+    },
+    {
+     "arg_id": "negotiation_pattern:340011:fa9753a4",
+     "why": "Kohlering settles well below its ask on 340011."
+    },
+    {
+     "arg_id": "volume_change:340011:11429a78",
+     "why": "Volume is growing; we can offer it in a trade instead of a price increase."
+    },
+    {
+     "arg_id": "volume_change:340040:d60778bf",
+     "why": "Volume is growing; it supports the multi-year volume agreement Kohlering asks for."
+    },
+    {
+     "arg_id": "market_news:all:20eac6ee",
+     "why": "Falling power prices counter any energy-cost claim."
+    },
+    {
+     "arg_id": "contract_clause:all:e487d4b9",
+     "why": "Prices are fixed per calendar year and any change needs 90 days' notice."
+    }
+   ],
+   "open_questions": [
+    "Do we have a should-cost estimate for 340040?",
+    "Will the case list the 2025 RFQ quotes for 340040?",
+    "Is Kohlering's ask driven by the allocation on mechanical seals, which would affect 340011?",
+    "Is a combined multi-year volume deal across both parts acceptable to us?"
+   ]
+  },
+  "persona": {
+   "findings": [
+    {
+     "text": "Decision structure: the key account manager can only move up to 2 % on his own. Larger price changes go to a pricing committee that meets every two weeks. Any ask or concession above 2 % adds up to two weeks of latency. Packaging moves inside 2 % lets them close fast.",
+     "evidence": [
+      "doc:20260524-70440-M2"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Stated stance: standard items are not discounted; only multi-year volume agreements change prices. Their lever is commitment length and binding volume, not argument alone. A multi-year term sheet is the door to price movement.",
+     "evidence": [
+      "doc:20260910-70440-M1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Capacity red flag: since 2026-08 they allocate standard mechanical seals in line with last year's call-offs. Our planned increases (part 340011: 12,720 vs 11,420; part 340040: 39,100 vs 37,200) may not be served without an agreement. This gives them supply leverage.",
+     "evidence": [
+      "news:20260827-25"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Financially sound, stable family-owned GmbH: 35.2 M EUR turnover, equity ratio 24.5 %, credit index flat at 147, VDA 6.3 grade A. There is no cash stress to exploit, and they can walk away. We are about 0.8 % of their turnover, a small customer.",
+     "evidence": [
+      "sup:70440"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Our payment behaviour: average 3 days late and 86.7 % of invoices late, though never more than 9 days. They may raise this. Paying on time or faster at 30 days is a cheap concession we could trade.",
+     "evidence": [
+      "sup:70440"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Contact change: inside sales took over our account in October 2025. The working contact may have limited authority, so the key account manager and committee are the real decision makers.",
+     "evidence": [
+      "doc:20251012-70440-N"
+     ],
+     "importance": "low"
+    },
+    {
+     "text": "Evidence on their personal style and specific complaints is thin. No letters from them asking for increases appear in the record.",
+     "evidence": [],
+     "importance": "low"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Multi-year volume commitment",
+    "Binding volumes, given allocation",
+    "Possibly on-time or faster payment",
+    "Price increases justified by rubber PPI and labour costs"
+   ],
+   "risks": [
+    "Allocation could cap our increased volumes",
+    "The committee step slows any change above 2 %",
+    "Small-customer status could lead them to deprioritise us",
+    "They own the tooling for both parts, so switching is costly",
+    "Quality trend worsening (294 to 387 ppm), with 2 open 8Ds on part 340040"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "call_note:all:d9da750c",
+     "why": "Their own rule: multi-year volume changes prices, so offer it in exchange for a reduction."
+    },
+    {
+     "arg_id": "call_note:all:42109500",
+     "why": "Keeps asks below 2 % for a quick close."
+    },
+    {
+     "arg_id": "volume_change:340040:d60778bf",
+     "why": "Growing volume is worth something to them."
+    },
+    {
+     "arg_id": "volume_change:340011:11429a78",
+     "why": "Growing volume is worth something to them."
+    },
+    {
+     "arg_id": "rival_price:340040:b36a3c2f",
+     "why": "The second source on part 340040 is 9.6 % cheaper."
+    },
+    {
+     "arg_id": "should_cost:340011:0196aea5",
+     "why": "Their price on part 340011 is 8.1 % above our should-cost."
+    },
+    {
+     "arg_id": "delivery_record:all:d08251da",
+     "why": "75.5 % on time against a 95 % target undermines any premium."
+    },
+    {
+     "arg_id": "quality_notification:340040:3ee4ee9b",
+     "why": "8 complaints on part 340040, 2 of them without a closed 8D."
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "Shows we are a reliable payer, though we should not overstate it."
+    },
+    {
+     "arg_id": "contract_clause:all:38c9c1da",
+     "why": "Notice to stop the renewal is possible until 2027-04-01: a credible exit."
+    },
+    {
+     "arg_id": "negotiation_pattern:340040:8a3c279e",
+     "why": "They historically settle well below their ask."
+    }
+   ],
+   "open_questions": [
+    "Is our allocation based on last year's call-offs, and does it cover the planned volume growth?",
+    "Who sits on the pricing committee, and when does it next meet?",
+    "Will they ask for faster payment?",
+    "Will they demand an index clause on the rubber PPI?"
+   ]
+  },
+  "contract": {
+   "findings": [
+    {
+     "text": "Framework agreement ctr:4600070440 covers both parts (340011 mechanical seal, 340040 lip seal), runs 2025-07-01 to 2027-06-30 and auto-extends 12 months unless terminated with 90 days' notice (by 2027-04-01). Prices are fixed per calendar year; a change needs written notice at least 90 days before year end, so by about 2026-10-02 for a 2027 change. A notice arriving later cannot change the 2027 price under the contract.",
+     "evidence": [
+      "ctr:4600070440#3.1",
+      "ctr:4600070440#8.1",
+      "ctr:4600070440#2.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Commercial terms favour the supplier: payment is 30 days net against our 60-day standard, delivery is DAP with a 35-day lead time, and the quality agreement sets a 95% on-time target and a EUR 150 flat fee per supplier-caused complaint. Moving payment toward 60 days is a lever, or a currency we can trade.",
+     "evidence": [
+      "ctr:4600070440#4.1",
+      "ctr:4600070440#5.1",
+      "ctr:4600070440#6.1"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "It settles well below what it asks. On 340011 it asked 2.9/1.1/4.8% and settled 0/0/2.1%. On 340040 it asked 3.9/4.7/1.7% and settled 0/1.8/0%. In the last 3 years each part took only one increase. The 2% pricing-committee threshold matches settlements that stay at or near 2%.",
+     "evidence": [
+      "EV-2024-70440-340011",
+      "EV-2025-70440-340011",
+      "EV-2026-70440-340011",
+      "EV-2024-70440-340040",
+      "EV-2025-70440-340040",
+      "EV-2026-70440-340040"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Both parts are dual-sourced. On 340011 it holds 60% and Ravensteiner (sup:70410) 40%; it won the 2024 benchmark RFQ (rfq:6000000117), and the rival's current price is about 2% higher, so our leverage there is limited. On 340040 the quota is split 50/50 with Elasto-Dicht (sup:70430), which won the 2025 benchmark (rfq:6000000119) and is currently about 9.6% cheaper, giving us strong leverage to shift quota. Tooling owner is recorded as n/a in sourcing, while the argument library says it owns tooling; this contradiction is unresolved.",
+     "evidence": [
+      "rfq:6000000117",
+      "rfq:6000000119",
+      "sup:70440"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Mutual dependency is low. Our spend of EUR 288k is about 0.8% of its EUR 35.2M turnover, the company is financially sound (credit index 147 unchanged), and it is allocating mechanical seal volumes on last year's call-offs. For 340011 it has the upper hand on supply; on 340040 we can walk.",
+     "evidence": [
+      "sup:70440"
+     ],
+     "importance": "medium"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Price increase for 2027 justified by labour and rubber PPI",
+    "Multi-year volume agreement (only route it accepts to change prices)",
+    "Keep 30-day payment",
+    "Volume allocation on call-off history for mechanical seals"
+   ],
+   "risks": [
+    "Allocation on 340011 could limit supply if we push too hard; Ravensteiner is pricier and needs 45-day lead time",
+    "Notice deadline: an increase notified after ~2026-10-02 is not valid for 2027; supplier may still press",
+    "Renewal auto-extends unless notice by 2027-04-01",
+    "Increases above 2% require committee approval, adding about two weeks per round",
+    "Delivery performance at 75.5% vs 95% target suggests capacity strain"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "contract_clause:all:e487d4b9",
+     "why": "Price fixed per calendar year with 90-day notice requirement"
+    },
+    {
+     "arg_id": "negotiation_pattern:340011:fa9753a4",
+     "why": "Historical gap between ask and settlement"
+    },
+    {
+     "arg_id": "negotiation_pattern:340040:8a3c279e",
+     "why": "Settled 0% in 2 of 3 renewals"
+    },
+    {
+     "arg_id": "rival_price:340040:b36a3c2f",
+     "why": "Rival is 9.6% cheaper on the same lip seal; supports a quota shift"
+    },
+    {
+     "arg_id": "sourcing_position:340040:5f1f2983",
+     "why": "Approved 50% second source"
+    },
+    {
+     "arg_id": "contract_clause:all:38c9c1da",
+     "why": "Credible exit window before 2027-04-01"
+    },
+    {
+     "arg_id": "delivery_record:all:d08251da",
+     "why": "75.5% on time against a 95% contractual target"
+    },
+    {
+     "arg_id": "quality_notification:340040:3ee4ee9b",
+     "why": "8 complaints, 2 without a closed 8D"
+    },
+    {
+     "arg_id": "should_cost:340011:0196aea5",
+     "why": "Price is 8.1% above should-cost"
+    },
+    {
+     "arg_id": "volume_change:340011:11429a78",
+     "why": "Rising volume is a trade for a multi-year deal"
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "Reliable payer"
+    }
+   ],
+   "open_questions": [
+    "Has the supplier already sent written notice of a 2027 price change, and was it before the 90-day deadline?",
+    "Who owns the tooling? The sourcing records say n/a, while the argument library says the supplier owns it.",
+    "Can Ravensteiner absorb more 340011 volume, and can Elasto-Dicht take 100% of 340040?",
+    "Does the allocation also cover lip seals?",
+    "Would a multi-year volume agreement be worth trading against 60-day payment?"
+   ]
+  },
+  "performance": {
+   "findings": [
+    {
+     "text": "Delivery is weak and getting worse: rolling OTD against requested date 75.5% (Q3 2026) vs 77.6% a year earlier and 81.5% peak in 2025Q2; against its own confirmed date only 79.2%. The target is 95% and the peer median is 84.6%. Late lines average 12.1 days late, with a maximum of 21. The 'class A green' label hides a 20-point gap to the contract target.",
+     "evidence": [
+      "sc:70440@2026Q3",
+      "sc:70440@2025Q3",
+      "sc:70440@2025Q2",
+      "ctr:4600070440#6.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Lateness is concentrated on mechanical seal part:340011: 65.4% on time requested and 73.1% confirmed, with 34.6% of lines late (avg 13.3 days). Lip seal part:340040 runs at 85.2%. The 35-day lead time on 340011 plus lateness pushes us to buffer stock.",
+     "evidence": [
+      "sc:70440@2026Q3"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Quality is drifting up: rolling ppm 294 a year ago, now 387, with complaints rising from 7 to 10. It is still below the peer median of 457 ppm, and no 8Ds are overdue, so overall quality partly argues its case.",
+     "evidence": [
+      "sc:70440@2026Q3",
+      "sc:70440@2025Q3"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Part:340040 is the quality problem. It had 8 supplier-caused QNs in 12 months, covering coating, dimension, leakage at test, wrong certificate, burr and surface damage, and 2 are still without a closed 8D. Its 12-month ppm of 429 is worse than rival sup:70430 at 338, which is also about 9.6% cheaper. Part:340011 is better: 279 ppm vs rival sup:70410 at 218, with 2 supplier-caused QNs in 12 months.",
+     "evidence": [
+      "qn:20004921",
+      "qn:20004939",
+      "qn:20005003",
+      "qn:20005017",
+      "qn:20005029",
+      "qn:20004914",
+      "qn:20004692"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "The volume outlook is up and has been shared with the supplier. For part:340011 the forecast is 12,720 for the next 12 months vs 11,420 ordered (+11%). For part:340040 it is 39,100 vs 37,200 (+5%). Forecasts have been stable, which makes them credible as a basis for a multi-year volume agreement. The supplier has stated that only such agreements change its prices.",
+     "evidence": [
+      "fc:340011@2026-09",
+      "fc:340040@2026-09"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Price history: part:340011 rose from 36.77 to 37.55 (+2.1%). Part:340040 rose from 109.71 to 111.69 per 100 (+1.8%), against rival sup:70430 at 100.98. Recent orders were confirmed on the requested dates, with one exception at +8 days on the 340040 line.",
+     "evidence": [
+      "po:4500014473-10",
+      "po:4500014471-10",
+      "po:4500014341-10",
+      "po:4500014463-10"
+     ],
+     "importance": "medium"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Price increase citing rubber PPI +3.9% and labour cost +2.7%",
+    "Binding multi-year volume agreement",
+    "Keep 30-day payment (our standard is 60)",
+    "Allocation per last year's call-offs on mechanical seals"
+   ],
+   "risks": [
+    "Allocation on standard mechanical seals (news 2026-08-27) threatens supply of part:340011 at forecast growth",
+    "Its overall ppm beats the peer median, so it can deflect the quality argument",
+    "We are only 0.8% of its turnover; it is financially sound and may walk away",
+    "Its tooling ownership makes moving parts costly"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "delivery_record:all:d08251da",
+     "why": "Shows 75.5% OTD against the 95% target and the 84.6% peer median, and a declining trend."
+    },
+    {
+     "arg_id": "contract_clause:all:a0b42441",
+     "why": "The contract sets a 95% OTD target and a EUR 150 fee per supplier-caused complaint."
+    },
+    {
+     "arg_id": "quality_notification:340040:3ee4ee9b",
+     "why": "Eight supplier-caused complaints on part:340040 in 12 months, two still without a closed 8D."
+    },
+    {
+     "arg_id": "rival_price:340040:b36a3c2f",
+     "why": "The second source on part:340040 is about 9.6% cheaper and has better ppm."
+    },
+    {
+     "arg_id": "volume_change:340011:11429a78",
+     "why": "The +11% volume outlook can be traded for price or delivery commitments."
+    },
+    {
+     "arg_id": "volume_change:340040:d60778bf",
+     "why": "The +5% volume outlook is a trade item."
+    },
+    {
+     "arg_id": "should_cost:340011:0196aea5",
+     "why": "Its price on part:340011 is +8.1% above should-cost."
+    },
+    {
+     "arg_id": "negotiation_pattern:340040:8a3c279e",
+     "why": "It usually settles well below its ask, and last time settled at 0%."
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "We pay reliably, which supports our standing as a fair customer."
+    }
+   ],
+   "open_questions": [
+    "Is the poor OTD on part:340011 driven by capacity (linked to the allocation), or by our requested dates (KNOWN_ISSUES 1)?",
+    "What is the cause of the rising 340040 defects, and when will the two open 8Ds close?",
+    "Could sup:70410 and sup:70430 absorb a quota shift?",
+    "What did late deliveries actually cost us (line stops, rush orders)?"
+   ]
+  }
+ },
+ "red_team": {
+  "arguments": [
+   {
+    "text": "On the mechanical seal 340011 we are already your cheaper source, and we have been for years. We are at 37.55 against Ravensteiner's 38.29. We held 36.77 flat for three years (2023-2025) and settled 2026 at only +2.1 % against a 4.8 % ask. In the 2024 benchmark we also won at 40.23 against 41.55.",
+    "evidence": [
+     "quote:7100036",
+     "quote:7100037",
+     "rfq:6000000117",
+     "EV-2026-70440-340011"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Our costs are at their 36-month peak. Rubber products PPI is +3.9 % year on year and manufacturing labour +2.7 %, with labour about a third of the seal cost. Your own should-cost of 34.74 carries no margin, so 37.55 leaves only about 8 %. That is thin for a 140-person family firm with a 24.5 % equity ratio.",
+    "evidence": [
+     "idx:PPI-C2219@2026-08",
+     "idx:LCI-C@2026-06",
+     "cost:340011",
+     "news:20260920-34"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Standard mechanical seals are on allocation, based on last year's call-offs. Your forecast for 340011 is up to 12,720 pcs, against roughly 11,420 ordered. We can only secure that growth inside a binding multi-year volume agreement. That is also the only route by which prices move, as we stated on 10 September.",
+    "evidence": [
+     "news:20260827-25",
+     "fc:340011@2026-09",
+     "doc:20260910-70440-M1"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Under the contract, prices are fixed per calendar year. The framework runs to 2027-06 and extends automatically. Any change needs 90 days' notice, and anything above 2 % has to go to our pricing committee.",
+    "evidence": [
+     "ctr:4600070440#3.1",
+     "ctr:4600070440#8.1",
+     "doc:20260524-70440-M2"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "text": "On the lip seal we have kept price changes small: 0 % in 2024 (asked 3.9 %), +1.8 % in 2025, and 0 % in 2026. Rubber, which is about half of that part's cost, has since risen 3.9 %.",
+    "evidence": [
+     "EV-2024-70440-340040",
+     "EV-2025-70440-340040",
+     "EV-2026-70440-340040",
+     "idx:PPI-C2219@2026-08"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "text": "Our commercial and quality record is solid. We hold VDA 6.3 grade A, ISO 9001 and ISO 14001, a stable credit index, scorecard class A green throughout, no overdue 8Ds, and full payment of the EUR 150 chargebacks.",
+    "evidence": [
+     "sc:70440@2026Q3"
+    ],
+    "strength": "weak"
+   }
+  ],
+  "weak_points": [
+   "Delivery on 340011 is poor. Only 65.4 % arrived on time to the requested date in the last 12 months, with an average 13 days late, and the scorecard OTD of 75.5 % is far below the contractual 95 % target.",
+   "The lip seal 340040 is about 10.6 % dearer than Elasto-Dicht (111.69 vs 100.98). We lost the 2025 benchmark heavily: 121.27 with a 36-day lead time against their 102.34 with 7 days.",
+   "Lip seal ppm is 429, against 338 at Elasto-Dicht. Two 8Ds are still open (qn:20005017, qn:20005029), and complaints are recurring: dimensions, wrong certificates, coating.",
+   "Ppm on the 340011 part is also worse than Ravensteiner's (279 vs 218).",
+   "The scorecard trend is falling: 88.6 down to 85.8, with complaints rising to 10.",
+   "Our cost argument is thin. Steel is not a material driver for us, power prices are down 43 % on 2022, and the 2026 increase on 340011 already absorbed part of the index rise.",
+   "We are a small customer relationship for them: about 0.8 % of our turnover, and both parts are dual-sourced, so they can shift quota."
+  ],
+  "wants": [
+   "A binding 24-36 month volume agreement covering both parts. In return: price stability on 340011, and possibly a step down on 340040 toward about 105-107.",
+   "Higher quota on 340040, ideally 60 % or more, plus firm call-off schedules, in return for a lip seal price cut.",
+   "Payment at 30 days kept or shortened. They currently pay about 3 days late on average; we would trade a small concession for punctual or shorter payment.",
+   "A rubber index clause on 340040 as an alternative to fixed-price absorption.",
+   "A guaranteed 340011 allocation tied to forecast commitment, at the current price.",
+   "A realistic lead time on 340011 written into the agreement, around 35-42 days, instead of disputes over the 95 % OTD target."
+  ],
+  "red_lines": [
+   "No price reduction on 340011 below about 37.0. Margin over cost is already thin, and they are not getting volume beyond allocation without a commitment.",
+   "No discounts on standard items without a multi-year volume commitment.",
+   "No unilateral changes to fixed annual prices outside the contract's notice rules.",
+   "No chargeback above EUR 150 per complaint, and no ppm commitment that is not matched by a price adjustment.",
+   "No lip seal cut deeper than about 5 % without quota or volume in return."
+  ],
+  "opening": "Thank you for the forecast update; we welcome the growth. On the mechanical seal 340011 we have been your most cost-effective source for years. With rubber at +3.9 % and labour at +2.7 %, both at 36-month highs, we cannot reduce, and we would ask for a modest adjustment of about 2.5 %. Because standard mechanical seals are currently allocated on last year's call-offs, we suggest securing your higher 12,720 pcs through a 24-month volume agreement covering both seals. Within such an agreement we would be prepared to review the lip seal 340040 price, and to agree a delivery plan for 340011 that we can reliably meet."
+ },
+ "rebuttals": {
+  "rebuttals": [
+   {
+    "to": 1,
+    "answer": "We value that you have been a competitive source on the mechanical seal, and we have rewarded that with the larger share of the volume. A competitive position is the basis of that share, though, not a reason for an increase. The current price is our anchor, and it has not fallen at any point over the period. Your own history also shows that renewals settle well below the opening ask, and we expect the same realism this time.",
+    "arg_ids": [
+     "order_history:340011:02063a5c",
+     "order_history:340011:c6281bba",
+     "price_trend:340011:8c31d5b8",
+     "negotiation_pattern:340011:fa9753a4"
+    ]
+   },
+   {
+    "to": 2,
+    "answer": "The two indices you name are real, and we accept that they have risen. Weighted by their share of the seal's cost, together they support well under the increase you are asking for. The last renewal already absorbed part of that rise. Our bottom-up estimate of your plant shows the current price already carries a margin above cost. Your financial standing is stable and sound, so we see no case for recovery beyond the weighted index effect. Energy, a large cost for many producers, has fallen sharply over recent years.",
+    "arg_ids": [
+     "index_change:340011:04590e87",
+     "index_change:340011:8b88dd89",
+     "should_cost:340011:0196aea5",
+     "market_news:all:20eac6ee",
+     "supplier_health:all:2f04b9d0"
+    ]
+   },
+   {
+    "to": 3,
+    "answer": "We hear you on allocation, and we are ready to give you exactly what you asked for: a binding multi-year volume agreement. Our forecast has been shared with you and shows growth on both parts. In return, we expect that agreement to secure allocation for our full forecast and to be reflected in price, as your own rule describes. Growing, committed volume is worth more to you, not less.",
+    "arg_ids": [
+     "volume_change:340011:11429a78",
+     "volume_change:340040:d60778bf",
+     "call_note:all:d9da750c"
+    ]
+   },
+   {
+    "to": 4,
+    "answer": "Agreed, the contract fixes prices per calendar year and requires notice. That works in both directions: it protects the current prices until a properly notified change has been agreed. We will respect your committee cycle. For that reason we propose an agreement your account manager can close within his authority wherever possible.",
+    "arg_ids": [
+     "contract_clause:all:e487d4b9",
+     "call_note:all:42109500",
+     "contract_clause:all:38c9c1da"
+    ]
+   },
+   {
+    "to": 5,
+    "answer": "We acknowledge your restraint on the lip seal and the rise in rubber prices. However, our approved second source supplies the same part today at a clearly lower price. It also offered a much shorter lead time in the last benchmark. For you to keep or grow your share on this part, the price needs to move toward the market level. Holding it or raising it would not achieve that.",
+    "arg_ids": [
+     "index_change:340040:dcc85ac6",
+     "rival_price:340040:b36a3c2f",
+     "rival_quote:340040:bc806945",
+     "sourcing_position:340040:5f1f2983",
+     "order_history:340040:78952aeb"
+    ]
+   },
+   {
+    "to": 6,
+    "answer": "The operational record, however, is weaker than the labels suggest. On-time delivery stays far below the contractual target and below the peer median. We would welcome a ppm and delivery commitment as part of the new agreement.",
+    "arg_ids": [
+     "delivery_record:all:d08251da",
+     "quality_notification:340040:3ee4ee9b",
+     "quality_notification:340011:9b31b35f",
+     "contract_clause:all:a0b42441"
+    ]
+   }
+  ],
+  "press": [
+   "Could you share the improvement plan you can commit to for on-time delivery on the mechanical seal, given how far it sits below the agreed target?",
+   "On the lip seal, how do you intend to close the gap to the price our second approved source currently charges for the same part?",
+   "Would you include a firm ppm target for both parts in a multi-year agreement?",
+   "Since your cost drivers are rubber and labour, could we keep the discussion to those weighted effects rather than broader metal or energy trends?",
+   "Would you price one multi-year agreement covering both seals together, with binding volumes in line with our shared forecast?"
+  ]
+ },
+ "arguments": [
+  {
+   "arg_id": "index_change:340011:04590e87",
+   "kind": "index_change",
+   "part": "part:340011",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.33,
+    "window": "12 months",
+    "weighted_pct": 0.88
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 33% of the part's cost, so about +0.88% on the price."
+  },
+  {
+   "arg_id": "index_change:340011:8b88dd89",
+   "kind": "index_change",
+   "part": "part:340011",
+   "refs": [
+    "idx:PPI-C2219@2025-08",
+    "idx:PPI-C2219@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2219",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 117.8,
+    "to_value": 122.4,
+    "change_pct": 3.9,
+    "weight": 0.17,
+    "window": "12 months",
+    "weighted_pct": 0.66
+   },
+   "sentence": "Producer prices DE: other rubber products changed +3.9% from 2025-08 to 2026-08 (idx:PPI-C2219@2025-08, idx:PPI-C2219@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2219 (Producer prices DE: other rubber products): +3.9% 12 months (2025-08 to 2026-08); 17% of the part's cost, so about +0.66% on the price."
+  },
+  {
+   "arg_id": "index_change:340040:dcc85ac6",
+   "kind": "index_change",
+   "part": "part:340040",
+   "refs": [
+    "idx:PPI-C2219@2025-08",
+    "idx:PPI-C2219@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2219",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 117.8,
+    "to_value": 122.4,
+    "change_pct": 3.9,
+    "weight": 0.54,
+    "window": "12 months",
+    "weighted_pct": 2.11
+   },
+   "sentence": "Producer prices DE: other rubber products changed +3.9% from 2025-08 to 2026-08 (idx:PPI-C2219@2025-08, idx:PPI-C2219@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2219 (Producer prices DE: other rubber products): +3.9% 12 months (2025-08 to 2026-08); 54% of the part's cost, so about +2.11% on the price."
+  },
+  {
+   "arg_id": "index_change:340040:082cdfd6",
+   "kind": "index_change",
+   "part": "part:340040",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.12,
+    "window": "12 months",
+    "weighted_pct": 0.32
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 12% of the part's cost, so about +0.32% on the price."
+  },
+  {
+   "arg_id": "should_cost:340011:0196aea5",
+   "kind": "should_cost",
+   "part": "part:340011",
+   "refs": [
+    "cost:340011"
+   ],
+   "figures": {
+    "unit_cost": 34.74,
+    "price_unit": 1,
+    "estimate_of": "sup:70440",
+    "price": 37.55,
+    "price_unit_of_price": 1,
+    "margin_pct": 8.1
+   },
+   "sentence": "Our bottom-up cost model puts the full cost of this part at EUR 34.74 per unit (cost:340011).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Should-cost EUR 34.74 per unit (its own plant, error about 5%); its price EUR 37.55 per unit (price from 2026-01-01) is +8.1% against it."
+  },
+  {
+   "arg_id": "delivery_record:all:d08251da",
+   "kind": "delivery_record",
+   "part": null,
+   "refs": [
+    "sc:70440@2026Q3"
+   ],
+   "figures": {
+    "otd_pct": 75.5,
+    "quarter": "2026Q3",
+    "target_pct": 95.0,
+    "peer_median_pct": 84.6
+   },
+   "sentence": "Your rolling scorecard shows on-time delivery of 75.5% (sc:70440@2026Q3).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Rolling 12 months to 2026-09-30: 75.5% on time against the requested date (79.2% against its own confirmed date); target 95%; peers' median 84.6%; class A green. A year earlier 77.6%."
+  },
+  {
+   "arg_id": "quality_record:all:5df5e0c1",
+   "kind": "quality_record",
+   "part": null,
+   "refs": [
+    "sc:70440@2026Q3"
+   ],
+   "figures": {
+    "ppm": 387,
+    "quarter": "2026Q3",
+    "peer_median_ppm": 457.0
+   },
+   "sentence": "Your rolling scorecard shows 387 ppm defects (sc:70440@2026Q3).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "Rolling 12 months to 2026-09-30: 387 ppm from 10 complaints; peers' median 457.0 ppm; 8D reports overdue 0. A year earlier 294 ppm."
+  },
+  {
+   "arg_id": "quality_notification:340011:9b31b35f",
+   "kind": "quality_notification",
+   "part": "part:340011",
+   "refs": [
+    "qn:20004914",
+    "qn:20004692"
+   ],
+   "figures": {
+    "ppm_mean": 3337,
+    "ppms": [
+     3226,
+     3448
+    ],
+    "complaints_12m": 2
+   },
+   "sentence": "Our recent quality notifications on this part average 3337 ppm (qn:20004914, qn:20004692).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "2 supplier-caused complaints on this part in the last 12 months (burr / sharp edge, missing marking); EUR 150 recharged; 0 without a closed 8D. Per-lot ppm is jumpy (KNOWN_ISSUES 10): the scorecard's rolling ppm is the fairer figure."
+  },
+  {
+   "arg_id": "quality_notification:340040:3ee4ee9b",
+   "kind": "quality_notification",
+   "part": "part:340040",
+   "refs": [
+    "qn:20005029",
+    "qn:20005017",
+    "qn:20005003",
+    "qn:20004939",
+    "qn:20004921",
+    "qn:20004751"
+   ],
+   "figures": {
+    "ppm_mean": 1391,
+    "ppms": [
+     1176,
+     1176,
+     2381,
+     1266,
+     1250,
+     1099
+    ],
+    "complaints_12m": 8
+   },
+   "sentence": "Our recent quality notifications on this part average 1391 ppm (qn:20005029, qn:20005017, qn:20005003, qn:20004939, qn:20004921, qn:20004751).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "8 supplier-caused complaints on this part in the last 12 months (burr / sharp edge, coating defect, dimension out of tolerance, leakage at test, missing marking, surface damage, wrong material certificate); EUR 900 recharged; 2 without a closed 8D. Per-lot ppm is jumpy (KNOWN_ISSUES 10): the scorecard's rolling ppm is the fairer figure."
+  },
+  {
+   "arg_id": "order_history:340011:02063a5c",
+   "kind": "order_history",
+   "part": "part:340011",
+   "refs": [
+    "po:4500014473-10",
+    "po:4500014412-10",
+    "po:4500014338-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     37.55,
+     37.55,
+     37.55
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2026-09-30",
+     "2026-09-14",
+     "2026-08-27"
+    ]
+   },
+   "sentence": "Our latest orders for this part were all at EUR 37.55 per unit (po:4500014473-10, po:4500014412-10, po:4500014338-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "What we pay now: [37.55, 37.55, 37.55] per unit (2026-08-27 to 2026-09-30); anchors any increase."
+  },
+  {
+   "arg_id": "order_history:340011:c6281bba",
+   "kind": "order_history",
+   "part": "part:340011",
+   "refs": [
+    "po:4500010069-10",
+    "po:4500010129-10",
+    "po:4500010190-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     36.77,
+     36.77,
+     36.77
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2023-10-16",
+     "2023-10-30",
+     "2023-11-13"
+    ]
+   },
+   "sentence": "Our earliest orders on record for this part were all at EUR 36.77 per unit (po:4500010069-10, po:4500010129-10, po:4500010190-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Earliest orders [36.77, 36.77, 36.77] per unit (2023-10-16 to 2023-11-13); now +2.1% against them - its price has not fallen since."
+  },
+  {
+   "arg_id": "order_history:340040:78952aeb",
+   "kind": "order_history",
+   "part": "part:340040",
+   "refs": [
+    "po:4500014471-10",
+    "po:4500014412-20",
+    "po:4500014341-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     111.69,
+     111.69,
+     111.69
+    ],
+    "price_unit": 100,
+    "dates": [
+     "2026-09-29",
+     "2026-09-14",
+     "2026-08-28"
+    ]
+   },
+   "sentence": "Our latest orders for this part were all at EUR 111.69 per 100 units (po:4500014471-10, po:4500014412-20, po:4500014341-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "What we pay now: [111.69, 111.69, 111.69] per 100 units (2026-08-28 to 2026-09-29); anchors any increase."
+  },
+  {
+   "arg_id": "order_history:340040:9d0c8a7b",
+   "kind": "order_history",
+   "part": "part:340040",
+   "refs": [
+    "po:4500010049-10",
+    "po:4500010129-20",
+    "po:4500010176-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     109.71,
+     109.71,
+     109.71
+    ],
+    "price_unit": 100,
+    "dates": [
+     "2023-10-10",
+     "2023-10-30",
+     "2023-11-10"
+    ]
+   },
+   "sentence": "Our earliest orders on record for this part were all at EUR 109.71 per 100 units (po:4500010049-10, po:4500010129-20, po:4500010176-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Earliest orders [109.71, 109.71, 109.71] per 100 units (2023-10-10 to 2023-11-10); now +1.8% against them - its price has not fallen since."
+  },
+  {
+   "arg_id": "volume_change:340011:11429a78",
+   "kind": "volume_change",
+   "part": "part:340011",
+   "refs": [
+    "fc:340011@2026-09"
+   ],
+   "figures": {
+    "change_pct": 11.4,
+    "volume_per_year": 12720,
+    "snapshot": "2026-09"
+   },
+   "sentence": "Our demand forecast for this part has risen 11.4% (fc:340011@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Snapshot 2026-09: 12720 for the next 12 months against 11420 ordered in the last 12 months (requested dates); shared with suppliers: True. More volume is worth more to it."
+  },
+  {
+   "arg_id": "volume_change:340040:d60778bf",
+   "kind": "volume_change",
+   "part": "part:340040",
+   "refs": [
+    "fc:340040@2026-09"
+   ],
+   "figures": {
+    "change_pct": 5.1,
+    "volume_per_year": 39100,
+    "snapshot": "2026-09"
+   },
+   "sentence": "Our demand forecast for this part has risen 5.1% (fc:340040@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Snapshot 2026-09: 39100 for the next 12 months against 37200 ordered in the last 12 months (requested dates); shared with suppliers: True. More volume is worth more to it."
+  },
+  {
+   "arg_id": "news:all:657387d4",
+   "kind": "news",
+   "part": null,
+   "refs": [
+    "news:20260827-25"
+   ],
+   "figures": {
+    "topic": "allocation",
+    "date": "2026-08-27"
+   },
+   "sentence": "We have noted the press report \"Kohlering-Technik Pirkheim GmbH allocates volumes\" (news:20260827-25).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "2026-08-27 allocation: Kohlering-Technik Pirkheim GmbH allocates volumes. Kohlering-Technik Pirkheim GmbH has informed customers that deliveries of standard mechanical seals will be allocated in line with last year's call-offs. -> it allocates volumes: supply is scarce."
+  },
+  {
+   "arg_id": "contract_clause:all:e487d4b9",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070440#3.1"
+   ],
+   "figures": {
+    "type": "price",
+    "days": 90
+   },
+   "sentence": "Our framework agreement fixes prices for each calendar year.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070440#3.1 (price): Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+  },
+  {
+   "arg_id": "contract_clause:all:523f9c10",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070440#4.1"
+   ],
+   "figures": {
+    "type": "payment",
+    "days": 30
+   },
+   "sentence": "Our framework agreement sets the payment terms.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070440#4.1 (payment): Payment: 30 days net. Our standard is 60 days; shorter terms are its benefit."
+  },
+  {
+   "arg_id": "contract_clause:all:ec28d589",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070440#5.1"
+   ],
+   "figures": {
+    "type": "delivery",
+    "days": 35
+   },
+   "sentence": "Our framework agreement sets the delivery terms and the standard lead time.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070440#5.1 (delivery): Delivery DAP; standard lead time 35 days from order."
+  },
+  {
+   "arg_id": "contract_clause:all:a0b42441",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070440#6.1"
+   ],
+   "figures": {
+    "type": "quality",
+    "days": null
+   },
+   "sentence": "Our framework agreement includes the quality agreement with its delivery target.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070440#6.1 (quality): The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint."
+  },
+  {
+   "arg_id": "contract_clause:all:38c9c1da",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070440#8.1"
+   ],
+   "figures": {
+    "type": "term",
+    "days": 90,
+    "valid_to": "2027-06-30",
+    "notice_deadline": "2027-04-01"
+   },
+   "sentence": "Our framework agreement renews only unless either side gives notice.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070440#8.1 (term): Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice. To stop the renewal, notice by 2027-04-01 (still open: a credible exit)."
+  },
+  {
+   "arg_id": "correspondence:all:aaa42438",
+   "kind": "correspondence",
+   "part": null,
+   "refs": [
+    "doc:20251012-70440-N"
+   ],
+   "figures": {
+    "doc_kind": "email",
+    "date": "2025-10-12",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We refer to your e-mail \"New contact person\" (doc:20251012-70440-N).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "email 2025-10-12 by Kohlering-Technik Pirkheim GmbH: From 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same."
+  },
+  {
+   "arg_id": "call_note:all:42109500",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260524-70440-M2"
+   ],
+   "figures": {
+    "doc_kind": "meeting_note",
+    "date": "2026-05-24",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our meeting about \"Annual review\" (doc:20260524-70440-M2).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "meeting_note 2026-05-24 by Hollerau Pumpenwerke, Purchasing: Annual review with Kohlering-Technik Pirkheim GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+  },
+  {
+   "arg_id": "call_note:all:d9da750c",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260910-70440-M1"
+   ],
+   "figures": {
+    "doc_kind": "meeting_note",
+    "date": "2026-09-10",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our meeting about \"Commercial terms\" (doc:20260910-70440-M1).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "meeting_note 2026-09-10 by Hollerau Pumpenwerke, Purchasing: Kohlering-Technik Pirkheim GmbH stated that standard items are not discounted; only multi-year volume agreements change prices."
+  },
+  {
+   "arg_id": "negotiation_pattern:340011:fa9753a4",
+   "kind": "negotiation_pattern",
+   "part": "part:340011",
+   "refs": [],
+   "figures": {
+    "events": [
+     [
+      "EV-2024-70440-340011",
+      "2023-12-07",
+      2.9,
+      0.0
+     ],
+     [
+      "EV-2025-70440-340011",
+      "2024-11-25",
+      1.1,
+      0.0
+     ],
+     [
+      "EV-2026-70440-340011",
+      "2025-11-17",
+      4.8,
+      2.1
+     ]
+    ],
+    "mean_asked_pct": 2.93,
+    "mean_settled_pct": 0.7
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "3 renewals: asked +2.9% on average, settled +0.7% (gap 2.2 pp); last 2025-11-17: asked +4.8%, settled +2.1%. It usually settles well below its ask."
+  },
+  {
+   "arg_id": "negotiation_pattern:340040:8a3c279e",
+   "kind": "negotiation_pattern",
+   "part": "part:340040",
+   "refs": [],
+   "figures": {
+    "events": [
+     [
+      "EV-2024-70440-340040",
+      "2023-11-14",
+      3.9,
+      0.0
+     ],
+     [
+      "EV-2025-70440-340040",
+      "2024-11-25",
+      4.7,
+      1.8
+     ],
+     [
+      "EV-2026-70440-340040",
+      "2025-11-12",
+      1.7,
+      0.0
+     ]
+    ],
+    "mean_asked_pct": 3.43,
+    "mean_settled_pct": 0.6
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "3 renewals: asked +3.4% on average, settled +0.6% (gap 2.8 pp); last 2025-11-12: asked +1.7%, settled +0.0%. It usually settles well below its ask."
+  },
+  {
+   "arg_id": "relationship:340011:1e9e9e0b",
+   "kind": "relationship",
+   "part": "part:340011",
+   "refs": [
+    "part:340011"
+   ],
+   "figures": {
+    "years": 14.7,
+    "quota_pct": 60
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Approved since 2012-01-01 (14.7 years), status active, quota 60%."
+  },
+  {
+   "arg_id": "tooling:340011:2e86c177",
+   "kind": "tooling",
+   "part": "part:340011",
+   "refs": [
+    "part:340011"
+   ],
+   "figures": {
+    "owner": "n/a"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "It owns the tooling: moving the part needs new tooling."
+  },
+  {
+   "arg_id": "sourcing_position:340011:10a270f9",
+   "kind": "sourcing_position",
+   "part": "part:340011",
+   "refs": [
+    "part:340011"
+   ],
+   "figures": {
+    "alternatives": [
+     "sup:70410"
+    ]
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Other approved sources: sup:70410 Dichtungswerk Ravensteiner GmbH (DE, active, quota 40%)."
+  },
+  {
+   "arg_id": "relationship:340040:06bd2cd8",
+   "kind": "relationship",
+   "part": "part:340040",
+   "refs": [
+    "part:340040"
+   ],
+   "figures": {
+    "years": 11.7,
+    "quota_pct": 50
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Approved since 2015-01-01 (11.7 years), status active, quota 50%."
+  },
+  {
+   "arg_id": "tooling:340040:f1b3f437",
+   "kind": "tooling",
+   "part": "part:340040",
+   "refs": [
+    "part:340040"
+   ],
+   "figures": {
+    "owner": "n/a"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "It owns the tooling: moving the part needs new tooling."
+  },
+  {
+   "arg_id": "sourcing_position:340040:5f1f2983",
+   "kind": "sourcing_position",
+   "part": "part:340040",
+   "refs": [
+    "part:340040"
+   ],
+   "figures": {
+    "alternatives": [
+     "sup:70430"
+    ]
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Other approved sources: sup:70430 Elasto-Dicht Hermannsdorfer GmbH (DE, active, quota 50%)."
+  },
+  {
+   "arg_id": "price_trend:340011:8c31d5b8",
+   "kind": "price_trend",
+   "part": "part:340011",
+   "refs": [],
+   "figures": {
+    "prices": [
+     [
+      "2023-01-01",
+      36.77
+     ],
+     [
+      "2024-01-01",
+      36.77
+     ],
+     [
+      "2025-01-01",
+      36.77
+     ],
+     [
+      "2026-01-01",
+      37.55
+     ]
+    ],
+    "change_pct": 2.1
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Price per unit: 2023 36.77, 2024 36.77, 2025 36.77, 2026 37.55 (+2.1% since 2023). Its price has not fallen."
+  },
+  {
+   "arg_id": "price_trend:340040:0adfd2d8",
+   "kind": "price_trend",
+   "part": "part:340040",
+   "refs": [],
+   "figures": {
+    "prices": [
+     [
+      "2023-01-01",
+      109.71
+     ],
+     [
+      "2024-01-01",
+      109.71
+     ],
+     [
+      "2025-01-01",
+      111.69
+     ],
+     [
+      "2026-01-01",
+      111.69
+     ]
+    ],
+    "change_pct": 1.8
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Price per 100 units: 2023 109.71, 2024 109.71, 2025 111.69, 2026 111.69 (+1.8% since 2023). Its price has not fallen."
+  },
+  {
+   "arg_id": "rival_quote:340011:64f87cc1",
+   "kind": "rival_quote",
+   "part": "part:340011",
+   "refs": [
+    "quote:7100037"
+   ],
+   "figures": {
+    "unit_price": 41.55,
+    "price_unit": 1,
+    "supplier": "sup:70410",
+    "date": "2024-04-21",
+    "vs_its_price_pct": 10.7
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "sup:70410 Dichtungswerk Ravensteiner GmbH quoted EUR 41.55 per unit on 2024-04-21 (DAP, 30 days, lead time 45 days, tooling 0); +10.7% against its own price (price from 2026-01-01). Checkable only when the case lists this quote."
+  },
+  {
+   "arg_id": "rival_price:340011:e4e5c9be",
+   "kind": "rival_price",
+   "part": "part:340011",
+   "refs": [
+    "po:4500014444-10",
+    "po:4500014383-20",
+    "po:4500014318-20"
+   ],
+   "figures": {
+    "unit_price": 38.29,
+    "price_unit": 1,
+    "supplier": "sup:70410",
+    "vs_its_price_pct": 2.0
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "We also buy this part from sup:70410 at EUR 38.29 per unit (order of 2026-09-22); +2.0% against its own price. Its order lines are citable as order history (same part); citing them reveals the rival's price."
+  },
+  {
+   "arg_id": "rival_quote:340040:bc806945",
+   "kind": "rival_quote",
+   "part": "part:340040",
+   "refs": [
+    "quote:7100040"
+   ],
+   "figures": {
+    "unit_price": 102.34,
+    "price_unit": 100,
+    "supplier": "sup:70430",
+    "date": "2025-01-12",
+    "vs_its_price_pct": -8.4
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "sup:70430 Elasto-Dicht Hermannsdorfer GmbH quoted EUR 102.34 per 100 units on 2025-01-12 (DAP, 30 days, lead time 7 days, tooling 0); -8.4% against its own price (price from 2026-01-01). Checkable only when the case lists this quote."
+  },
+  {
+   "arg_id": "rival_price:340040:b36a3c2f",
+   "kind": "rival_price",
+   "part": "part:340040",
+   "refs": [
+    "po:4500014463-10",
+    "po:4500014384-10",
+    "po:4500014319-10"
+   ],
+   "figures": {
+    "unit_price": 100.98,
+    "price_unit": 100,
+    "supplier": "sup:70430",
+    "vs_its_price_pct": -9.6
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "We also buy this part from sup:70430 at EUR 100.98 per 100 units (order of 2026-09-28); -9.6% against its own price. Its order lines are citable as order history (same part); citing them reveals the rival's price."
+  },
+  {
+   "arg_id": "payment_behaviour:all:11829f07",
+   "kind": "payment_behaviour",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "avg_days_paid_after_due": 2.9,
+    "avg_days_paid_after_due_last_12m": 3.0,
+    "paid_late_pct": 86.7
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "148 invoices; we pay 3.0 days after due on average (last 12 months), 86.7% late, 0.0% over 10 days late, max 9; discounts taken 0 (0 after the period); short-paid 0. We pay reliably: a fair customer."
+  },
+  {
+   "arg_id": "supplier_health:all:2f04b9d0",
+   "kind": "supplier_health",
+   "part": null,
+   "refs": [
+    "sup:70440"
+   ],
+   "figures": {
+    "credit_index": 147,
+    "credit_index_12m_ago": 147,
+    "equity_ratio_pct": 24.5,
+    "weak": false
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "GmbH, founded 1972, family owned, 140 staff, turnover 35200000; equity ratio 24.5%, credit index 147 (12 months ago 147; higher is worse); audit A. Sound: it can afford to walk away."
+  },
+  {
+   "arg_id": "dependency:all:f11abdaf",
+   "kind": "dependency",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "fiscal_year": "FY2026",
+    "spend_eur": 287769.44,
+    "turnover_eur": 35200000,
+    "share_pct": 0.8
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Our spend FY2026: EUR 287,769, about 0.8% of its turnover. We are a small customer to it."
+  },
+  {
+   "arg_id": "market_news:all:5a37223b",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260910-27"
+   ],
+   "figures": {
+    "date": "2026-09-10"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-10 market: Copper notation at EUR 1,289 per 100 kg. The copper notation for cables averaged EUR 1,289/100 kg in September, +48 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:20eac6ee",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260912-30"
+   ],
+   "figures": {
+    "date": "2026-09-12"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "2026-09-12 market: Industrial power prices -43 % on 2022. Producer prices for electric power stand -43 % against August 2022. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:6902032a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260914-31"
+   ],
+   "figures": {
+    "date": "2026-09-14"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-14 market: Iron castings +1.8 % year on year. Producer prices for iron castings rose +1.8 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f855aade",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260916-32"
+   ],
+   "figures": {
+    "date": "2026-09-16"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-16 market: Alloy surcharge 1.4404 at EUR 3,008 per tonne. The alloy surcharge for 1.4404 stands at EUR 3,008/t, +6 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:0e3ce486",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260918-33"
+   ],
+   "figures": {
+    "date": "2026-09-18"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-18 market: Electronic boards +41 % year on year. Producer prices for assembled electronic boards rose +41 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:3071261a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260920-34"
+   ],
+   "figures": {
+    "date": "2026-09-20"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-20 market: Labour costs in manufacturing +2.7 %. Labour costs in German manufacturing rose +2.7 % year on year in the second quarter. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f8eeb840",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260922-35"
+   ],
+   "figures": {
+    "date": "2026-09-22"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-22 market: Steel prices +7.3 % since January. Producer prices for basic iron and steel are +7.3 % above January. Do not cite it as about this supplier."
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "where": "economics.findings",
+    "value": "price_history sup:70440 2026-01-01 37.55",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "economics.findings",
+    "value": "price_history sup:70430 2026-01-01 100.98",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "lead.questions",
+    "value": "Which actions and closure dates apply to the open 8D reports on the lip seal?",
+    "why": "figure in e-mail text"
+   },
+   {
+    "where": "rebuttals.answer",
+    "value": "Your certifications, audit grade and 8D discipline are appreciated. The operational record, however, is weaker than the labels suggest. On-time delivery stays far below the contractual target and belo",
+    "why": "figure in e-mail text"
+   },
+   {
+    "where": "rebuttals.press",
+    "value": "We would appreciate an update on closing the open 8D reports on the lip seal, and on what you are doing about the recurring defect types.",
+    "why": "figure in e-mail text"
+   }
+  ]
+ }
+}

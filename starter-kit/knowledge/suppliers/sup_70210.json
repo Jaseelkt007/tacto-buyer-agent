@@ -1,0 +1,3354 @@
+{
+ "supplier_id": "sup:70210",
+ "name": "Zerspanung Dralveck GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "built": "2026-10-25T00:09:38",
+  "seconds": 94.4,
+  "evidence_chars": 47563,
+  "arguments": 108,
+  "errors": {}
+ },
+ "strategy": {
+  "summary": "Zerspanung Dralveck GmbH is a small, founder-owned machining shop with 22 staff. It is financially sound (sup:70210) and supplies two parts under framework agreement ctr:4600070210: shaft HN 24 (part:320010, where Rottaler holds the larger quota) and lantern HN (part:320080, where Dralveck is our single source). It is also qualified at zero quota on part:320011 and is invited to the HX shaft RFQ (part:320070, rfq:6000000305).\n\nWhat it needs:\n- Volume. Its second shift has been idle since spring (doc:20260722-70210-M2).\n- Cash and on-time payment. It complained about our late payments (doc:20260504-70210-P), and our record bears the complaint out.\n- Recognition. It calls us a reference customer (doc:20260910-70210-M3).\n\nWhere it is weak: performance is slipping, with delivery well below the contract target and ppm several times the peer median (sc:70210@2026Q3).\n\nOn price:\n- The shaft price already sits below our should-cost (cost:320010). However, that estimate models the rival's plant, so it is a weak anchor for Dralveck's own cost.\n- The cost drivers (bars, labour) argue for increases.\n- Its costing is stale (doc:20260908-70210-M1). That could cut either way.\n\nOur best currency is volume (HX, quota, forecasts) plus reliable or faster payment and a longer term, traded for price discipline and quality commitments. Deep price cuts are not the currency.",
+  "decision_maker": "The founder-owner decides personally. Costing is prepared by his office manager (doc:20260908-70210-M1).",
+  "persona": {
+   "owner_type": "founder",
+   "style": "Small, personal, relationship-driven owner shop. It settles below its ask in renewals but is sensitive to being treated unfairly, especially on payment.",
+   "openness": "open",
+   "traits": [
+    "spare_capacity",
+    "stale_costing",
+    "reference_customer",
+    "complains_late_payment",
+    "quality_issues",
+    "delivery_issues",
+    "sells_below_cost",
+    "we_depend_on_it",
+    "relationship_long",
+    "cost_pressure_real"
+   ],
+   "other_traits": [
+    "financially sound, can walk away",
+    "about 9% of its turnover is ours",
+    "eager for the HX award"
+   ]
+  },
+  "needs": [
+   {
+    "need": "work_for_idle_capacity",
+    "detail": "Second shift paused since spring; it offered to take extra parts at short notice. HX shaft and more quota on 320010 are highly valuable to it.",
+    "evidence": [
+     "doc:20260722-70210-M2",
+     "rfq:6000000305",
+     "fc:320010@2026-09",
+     "fc:320080@2026-09"
+    ],
+    "strength": "strong"
+   },
+   {
+    "need": "cash",
+    "detail": "It complained in writing about overdue invoices and threatened to review its conditions. Its skonto signals that it values cash. Our late payment record confirms the grievance.",
+    "evidence": [
+     "doc:20260504-70210-P",
+     "sup:70210",
+     "ctr:4600070210#4.1"
+    ],
+    "strength": "strong"
+   },
+   {
+    "need": "reference_customer",
+    "detail": "It publicly called Hollerau an important reference customer.",
+    "evidence": [
+     "doc:20260910-70210-M3"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "planning_security",
+    "detail": "It is a small shop on fixed annual prices. A longer commitment and binding volume help it plan a second-shift restart.",
+    "evidence": [
+     "ctr:4600070210#8.1",
+     "doc:20260722-70210-M2"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "material_risk_protection",
+    "detail": "Cold-drawn bars and alloy surcharge have risen over the year; prices are fixed per year.",
+    "evidence": [
+     "idx:PPI-C2431@2026-08",
+     "idx:AS-14404@2026-09"
+    ],
+    "strength": "weak"
+   }
+  ],
+  "constraints": [
+   {
+    "kind": "sells_below_cost",
+    "detail": "The shaft 320010 price is below our no-margin should-cost. That estimate is based on the rival's plant, so it is a weak anchor for Dralveck.",
+    "evidence": [
+     "cost:320010"
+    ]
+   },
+   {
+    "kind": "single_source",
+    "detail": "Lantern 320080 has no other approved source. We own the tooling, but requalification would be needed.",
+    "evidence": [
+     "part:320080"
+    ]
+   },
+   {
+    "kind": "contract_binding",
+    "detail": "Prices are fixed per calendar year. Changes require notice before year end. The term auto-extends unless notice is given.",
+    "evidence": [
+     "ctr:4600070210#3.1",
+     "ctr:4600070210#8.1"
+    ]
+   },
+   {
+    "kind": "other",
+    "detail": "Delivery and quality capability is under strain. Taking on extra volume may worsen it unless the second shift restarts.",
+    "evidence": [
+     "sc:70210@2026Q3",
+     "sc:70210@2026Q2"
+    ]
+   }
+  ],
+  "levers": [
+   {
+    "arg_id": "volume_change:320010:5aad46ba",
+    "why": "Rising shared forecast; volume is what an idle shop needs most.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "volume_change:320080:bbbfedd3",
+    "why": "Rising lantern volume; it supports holding price despite the bar increase.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "call_note:all:5a9e4926",
+    "why": "Its own statement about idle capacity makes volume a fair trade for price.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "should_cost:320070:e5c2ec82",
+    "why": "Anchor for the HX quote; its stale costing may produce an off-market quote.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "cash_discount:all:7b5b1691",
+    "why": "Its skonto shows cash is worth a lot to it; faster payment buys price.",
+    "when": "later"
+   },
+   {
+    "arg_id": "quality_record:all:0c5d1d45",
+    "why": "ppm is far above the peer median and worsening; it supports ppm commitments and resisting increases.",
+    "when": "later"
+   },
+   {
+    "arg_id": "delivery_record:all:2d5ec520",
+    "why": "Delivery is well below the contract target; use it as a fresh fact in a later round.",
+    "when": "later"
+   },
+   {
+    "arg_id": "quality_notification:320080:f79d9b43",
+    "why": "Complaints on the single-source lantern, including open 8Ds; it backs a ppm and chargeback trade.",
+    "when": "later"
+   },
+   {
+    "arg_id": "index_change:320080:c27dd62b",
+    "why": "Recent fall in bar prices offsets part of a lantern increase claim.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "index_change:320010:5a39cd48",
+    "why": "Recent alloy surcharge fall counters a shaft increase claim.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "index_change:320010:d1ba9929",
+    "why": "Recent fall in bar prices for the shaft.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "negotiation_pattern:320080:590fccb8",
+    "why": "It habitually settles below its ask.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "contract_clause:all:72c3c497",
+    "why": "A late increase request has no basis under the annual price clause.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "rival_price:320011:514a2a6a",
+    "why": "Only if it wants 320011 quota: the incumbent is clearly cheaper.",
+    "when": "if_challenged"
+   }
+  ],
+  "trades": [
+   {
+    "field": "payment_days",
+    "direction": "lower",
+    "why": "It is short of cash and aggrieved by our late payments. Faster payment is worth more to it than it costs us; hold it back for the final round."
+   },
+   {
+    "field": "volume_per_year",
+    "direction": "higher",
+    "why": "Binding volume and more quota on 320010 fill its idle shift."
+   },
+   {
+    "field": "contract_months",
+    "direction": "higher",
+    "why": "Gives a small shop planning security; 24 months captures the value."
+   },
+   {
+    "field": "ppm_commitment",
+    "direction": "add",
+    "why": "Its quality is poor; secure a tight target while it wants the HX award and volume."
+   },
+   {
+    "field": "chargeback_eur_per_complaint",
+    "direction": "keep",
+    "why": "Recharges have been applied inconsistently. Keep the chargeback or trade it only for a price or ppm gain."
+   },
+   {
+    "field": "lead_time_days",
+    "direction": "keep",
+    "why": "With spare capacity, a standard lead time costs it little; do not pay for shorter."
+   },
+   {
+    "field": "index_clause",
+    "direction": "remove",
+    "why": "Its drivers are rising; a clause would mostly raise our cost. Offer one only if it insists, and then at a price well below the fixed price."
+   }
+  ],
+  "price_view": {
+   "room": "little",
+   "reasoning": "Shaft 320010 is already below the rival's price and below our no-margin should-cost. The drivers (bars, labour) support increases on both parts. Lantern 320080 is single-source with no should-cost. Its stale costing means it might also under-quote HX, and new volume is where real room lies. On existing parts, aim to hold or limit increases via volume and payment trades rather than deep cuts.",
+   "squeeze_risk": "high"
+  },
+  "tone": {
+   "style": "warm",
+   "do": [
+    "Acknowledge the late payments and commit to paying on time",
+    "Address the owner personally and respectfully; recognise the long relationship and its reference status",
+    "Frame performance issues factually as a joint improvement plan",
+    "Tie every concession we ask for to volume or payment it values",
+    "Bring our own verified index figures"
+   ],
+   "dont": [
+    "Do not humiliate the owner about his outdated costing",
+    "Do not threaten to move 320080, set deadlines or bluff",
+    "Do not ask open questions about its cost structure",
+    "Do not demand long payment terms"
+   ]
+  },
+  "traps": [
+   "Citing the rival's price on 320010 reveals that the rival is dearer and helps Dralveck",
+   "Citing the not-checkable peak index comparisons costs trust; use only the 12-month changes",
+   "Pushing the shaft price below cost risks a margin charge and further quality decline",
+   "Using the 320080 exit or a tooling move as a threat on a single-source part with poor delivery risks our supply",
+   "Asking for longer payment while we are already paying late invites retaliation",
+   "Using should-cost 320010 as our main lever is risky because it models a different plant",
+   "Do not push past a declared final offer",
+   "Taking extra volume onto a shop with falling on-time delivery without a ppm or delivery commitment adds risk"
+  ],
+  "writer_notes": "Lead with volume: the rising forecasts, the HX opportunity and possible quota growth, linked to their idle capacity. Recognise their wish to be a reference supplier. Say early that we will pay on time, and keep faster payment as the closing trade. Raise quality and delivery as a shared improvement goal and ask for a ppm commitment rather than price punishment. Resist increases on the lantern with the recent bar-price fall and their settling pattern. Do not squeeze the shaft further. For HX, anchor near our should-cost and check whether they quoted DAP freight. Ask how a second-shift restart would support delivery. The evidence is thin on their own cost base.",
+  "questions_to_ask": [
+   "What volume would let you restart the second shift, and how would that improve delivery reliability?",
+   "Would a longer framework with binding volume help you plan staffing?",
+   "How would faster payment on our side be reflected in your prices?",
+   "What corrective actions are planned for leakage at test, burrs and certificate errors, and could you commit to a quality target?",
+   "Is your HX quote based on DAP delivery to Hollerau, including freight?"
+  ]
+ },
+ "specialists": {
+  "economics": {
+   "findings": [
+    {
+     "text": "Part 320010 (shaft HN 24): its price EUR 24.37 sits 3.4% below our should-cost of EUR 25.22, and that should-cost carries no margin. But the estimate models the plant of the rival sup:70290, not Dralveck, so it is a weak anchor for Dralveck's own cost. There is little room to cut on price; a push below cost risks a margin complaint.",
+     "evidence": [
+      "cost:320010"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Price trend 320010: 26.31 (2023), 24.58, 25.13, 24.37 (2026), down 7.4% overall. Dralveck has cut in 3 of 3 renewals. The rival 70290 now gets EUR 24.92, 2.3% above Dralveck. In the 2025 RFQ Dralveck quoted 26.00, under the rival's 27.00, yet lost the award.",
+     "evidence": [
+      "EV-2026-70290-320010",
+      "quote:7100018",
+      "quote:7100019",
+      "rfq:6000000108"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "The drivers argue for an increase, not a cut. Weighted 12-month change for 320010 is about +3.9%: bars PPI-C2431 +12.3% at weight 0.19, labour +2.7% at 0.33, alloy surcharge +5.9% at 0.12, power -3.7% at 0.01. For 320080 it is about +4.3%: bars at weight 0.28 and labour at 0.37. The 'for us' points are recent short dips: bars -2.3% since 2026-06 and alloy surcharge -5.5% since the 2026-06 level. The peak comparisons are not checkable.",
+     "evidence": [
+      "idx:PPI-C2431@2026-08",
+      "idx:LCI-C@2026-06",
+      "idx:AS-14404@2026-09",
+      "idx:PPI-D351@2026-08"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Part 320080 (lantern, S355): price flat at 41.63 since 2024, after a 2.1% cut. There is no should-cost and no rival quote, and Dralveck is our single source. With bars +12.3% and labour +2.7%, an increase claim of about 3-4% would be checkable and plausible. Price room here is the weakest of all parts.",
+     "evidence": [
+      "idx:PPI-C2431@2026-08"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Part 320011: Dralveck holds 0% quota. Its last quote in 2024 was EUR 36 against Wälzhammer's 35; Wälzhammer now quotes 33.06. Dralveck would need roughly 8% below its old quote to compete.",
+     "evidence": [
+      "quote:7100021",
+      "quote:7300056",
+      "rfq:6000000109"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Part 320070 (new HX shaft): should-cost EUR 36.87, with no margin and only ±10% confidence. A fair target is about 38.5-40 including a margin. Dralveck's costing is out of date (meeting note 2026-09-08), so it may quote off old cost assumptions. Note that the RFQ asks for DAP delivery, while Dralveck normally delivers EXW.",
+     "evidence": [
+      "cost:320070",
+      "rfq:6000000305"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "The evidence is thin: there is no Dralveck-specific should-cost for any current part. The driver weights are category-team estimates.",
+     "evidence": [
+      "cost:320010"
+     ],
+     "importance": "low"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "faster payment (overdue invoices complaint, skonto values cash ~20%/yr)",
+    "price increase backed by bars +12.3% and labour +2.7%",
+    "more volume to fill idle second shift",
+    "bigger quota on 320010"
+   ],
+   "risks": [
+    "320010 already below should-cost: pushing for cuts could breach a healthy margin",
+    "single source on 320080 weakens price pressure",
+    "our late payment record gives them a grievance",
+    "citing rival 70290 price reveals it is dearer, helping them"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "order_history:320010:9ae8b706",
+     "why": "anchors current price 24.37"
+    },
+    {
+     "arg_id": "order_history:320080:bb9c6827",
+     "why": "anchors 41.63"
+    },
+    {
+     "arg_id": "index_change:320010:5a39cd48",
+     "why": "recent alloy surcharge fall offsets part of increase claim"
+    },
+    {
+     "arg_id": "index_change:320010:d1ba9929",
+     "why": "bars falling since June"
+    },
+    {
+     "arg_id": "index_change:320080:c27dd62b",
+     "why": "bars recent fall on heaviest-weight driver"
+    },
+    {
+     "arg_id": "index_change:320080:e0b3079f",
+     "why": "power down"
+    },
+    {
+     "arg_id": "volume_change:320010:5aad46ba",
+     "why": "+18% volume trade instead of price"
+    },
+    {
+     "arg_id": "volume_change:320080:bbbfedd3",
+     "why": "+15% volume"
+    },
+    {
+     "arg_id": "cash_discount:all:7b5b1691",
+     "why": "trade faster payment for price"
+    },
+    {
+     "arg_id": "rival_price:320011:514a2a6a",
+     "why": "Dralveck 8% above incumbent on 320011"
+    },
+    {
+     "arg_id": "should_cost:320070:e5c2ec82",
+     "why": "target for HX quote"
+    },
+    {
+     "arg_id": "negotiation_pattern:320080:590fccb8",
+     "why": "settles below ask"
+    },
+    {
+     "arg_id": "quality_record:all:0c5d1d45",
+     "why": "1863 ppm vs 457 median erodes price claims"
+    }
+   ],
+   "open_questions": [
+    "What is Dralveck's own cost structure? Our should-cost models a different plant.",
+    "Will Dralveck file a price increase notice by the 90-day deadline (end of September for 2027)?",
+    "Will it quote DAP or EXW for 320070, and at what freight?",
+    "Is a should-cost for 320080 available?"
+   ]
+  },
+  "persona": {
+   "findings": [
+    {
+     "text": "Small founder-owned shop (22 staff, 2-5 M EUR turnover). The owner decides personally, but costing is delegated to an office manager. The owner admitted he has not tracked material and energy prices closely since the 2022 peak, so its cost claims may rest on stale assumptions. Treat this carefully: cite index facts rather than humiliate him.",
+     "evidence": [
+      "doc:20260908-70210-M1",
+      "sup:70210"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "It has idle capacity. The second shift has been on hold since spring, and sales offered to take additional parts at short notice. Volume (the HX shaft RFQ, rising forecasts on 320010/320011/320080) is what it needs most, and this makes it eager in the 320070 RFQ.",
+     "evidence": [
+      "doc:20260722-70210-M2",
+      "doc:20260923-70210-P05"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Cash is a sensitivity. It complained in writing about overdue invoices and threatened to review its conditions. Our record backs the complaint: 35.6% of invoices paid late, 19.9% more than 10 days late, max 24 days late, and 11 discounts taken after the discount period. Offering reliable or faster payment is a cheap trade it values (2%/10 skonto implies about 20% p.a.). Expect it to raise late payment if we push hard.",
+     "evidence": [
+      "doc:20260504-70210-P",
+      "sup:70210"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "It values the relationship and recognition: it called Hollerau an important reference customer at the supplier day. Our spend is about 9% of its turnover, which is material dependence for a 22-person firm. A respectful tone and reference value matter to it.",
+     "evidence": [
+      "doc:20260910-70210-M3"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "It is financially sound, not distressed: equity ratio 43.6%, credit index 249 unchanged over 12 months, ISO 9001 renewed, VDA 6.3 grade B. It is not desperate, but there is no health risk.",
+     "evidence": [
+      "sup:70210",
+      "doc:20251123-70210-N"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Its performance is weakening: on-time delivery fell from 93.9% to 80.8% and ppm rose from 1278 to 1863, against a peer median of 457. This is a legitimate lever. Raise it factually, since a small shop may react defensively.",
+     "evidence": [
+      "sup:70210"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "The old e.K. record sup:71999 is blocked and was replaced on the 2024 conversion to a GmbH. This is a pure name and legal-form change and gives no lever.",
+     "evidence": [
+      "sup:71999",
+      "news:20240514-00"
+     ],
+     "importance": "low"
+    }
+   ],
+   "leverage": "ours",
+   "supplier_wants": [
+    "Steady, larger volume to restart the second shift (the HX shaft win)",
+    "On-time payment and cash; possibly skonto honoured correctly",
+    "Recognition as a reference supplier and a stable relationship",
+    "A longer commitment and binding volume"
+   ],
+   "risks": [
+    "Our late payments give it a credible grievance and a reason to harden terms",
+    "Single source on part:320080, which limits pressure there",
+    "Stale costing may also understate its costs, so pushing too low risks an unsustainable price or a walk-away",
+    "Its sound finances mean it can walk away if handled disrespectfully",
+    "Rising delivery and quality problems may worsen if it takes on extra work"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "call_note:all:311db839",
+     "why": "Owner admits his costing is out of date; supports challenging cost-increase claims (use tactfully)"
+    },
+    {
+     "arg_id": "call_note:all:5a9e4926",
+     "why": "Idle capacity: volume is worth a price concession to it"
+    },
+    {
+     "arg_id": "call_note:all:65c8bf56",
+     "why": "Reference-customer value: appeal to the relationship"
+    },
+    {
+     "arg_id": "cash_discount:all:7b5b1691",
+     "why": "Trade reliable or faster payment for price"
+    },
+    {
+     "arg_id": "correspondence:all:75fcf59f",
+     "why": "Shows it values cash, so payment terms are a currency"
+    },
+    {
+     "arg_id": "dependency:all:f11abdaf",
+     "why": "About 9% of its turnover comes from us"
+    },
+    {
+     "arg_id": "delivery_record:all:2d5ec520",
+     "why": "Declining on-time delivery"
+    },
+    {
+     "arg_id": "quality_record:all:0c5d1d45",
+     "why": "ppm about 4x the peer median"
+    },
+    {
+     "arg_id": "volume_change:320010:5aad46ba",
+     "why": "Growing volume to offer"
+    },
+    {
+     "arg_id": "should_cost:320070:e5c2ec82",
+     "why": "Anchor for the HX RFQ"
+    },
+    {
+     "arg_id": "contract_clause:all:f71de2c8",
+     "why": "Exit option still open until 2027-04-01"
+    }
+   ],
+   "open_questions": [
+    "Why do we pay late (process issue)? Can we commit to reliable payment as a trade?",
+    "Who exactly is the office manager doing the costing, and do they join negotiations?",
+    "How much capacity would the second shift add, and at what volume would it restart?",
+    "Is the decline in delivery and quality linked to staffing?"
+   ]
+  },
+  "contract": {
+   "findings": [
+    {
+     "text": "Framework agreement covers part:320010 (pump shaft HN 24 mm) and part:320080 (lantern HN). Prices are fixed per calendar year. A price change needs written notice at least 90 days before year end, so a 2027 increase had to be announced by about 2026-10-02. Any later request for 2027 has no contractual basis.",
+     "evidence": [
+      "ctr:4600070210#3.1",
+      "ctr:4600070210#2.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "The agreement runs 2025-07-01 to 2027-06-30 and auto-extends by 12 months unless terminated with 90 days' notice. To stop renewal we must give notice by 2027-04-01. That exit is still open to us.",
+     "evidence": [
+      "ctr:4600070210#8.1"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Payment is net 30 with 2% skonto within 10 days, against our standard of 60 days. Incoterm is EXW with a 28-day lead time. The quality agreement sets a 95% on-time target and a EUR 150 flat fee per supplier-caused complaint.",
+     "evidence": [
+      "ctr:4600070210#4.1",
+      "ctr:4600070210#5.1",
+      "ctr:4600070210#6.1"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "We are in breach on payment ourselves. We pay 8.8 days late on average, 35.6% of invoices are late, and 11 discounts were taken after the period. The supplier complained in May 2026 and threatened to review its conditions. This is its strongest grievance, and keeping to terms (or paying faster) is a cheap concession for us.",
+     "evidence": [
+      "sup:70210",
+      "ctr:4600070210#4.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Over the renewals it settles well below its ask. On 320010 the average ask was +0.2% and the average settlement -2.5% (last round: asked -0.9%, settled -3.0%). On 320080 the average ask was +0.9% and the average settlement -0.7% (asked +1.2% and settled 0% in each of the last two rounds). The price of 320010 is down 7.4% since 2023 and 320080 is down 2.1%.",
+     "evidence": [
+      "ctr:4600070210#3.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Dependency differs by part. On 320010 it holds only 30% quota, with Rottaler at 70% (Rottaler won rfq:6000000108). On 320011 it is qualified but at 0%, with Wälzhammer at 8.2% lower. On 320080 it is our single source. We own the tooling on all three parts, so moving a part is feasible but needs requalification. 320080 is our weak spot.",
+     "evidence": [
+      "rfq:6000000108",
+      "rfq:6000000109"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Our spend is about EUR 317k, roughly 9% of its turnover. It has spare capacity (second shift on hold) and calls us an important reference customer. Its finances are sound: equity ratio 43.6%, credit index stable.",
+     "evidence": [
+      "sup:70210"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Performance is below contract. On-time delivery is 80.8% against the 95% target (93.9% a year ago). Quality is 1863 ppm against a peer median of 457. 320080 has 10 complaints, 2 with open 8D reports.",
+     "evidence": [
+      "ctr:4600070210#6.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "It is invited to the open RFQ for the new HX shaft (part:320070, 4200 pc/yr, DAP, start of production 2027-03). This is new volume we can trade for concessions.",
+     "evidence": [
+      "rfq:6000000305"
+     ],
+     "importance": "medium"
+    }
+   ],
+   "leverage": "ours",
+   "supplier_wants": [
+    "Payment on time or faster (it values cash: skonto, May 2026 complaint)",
+    "Volume to fill idle capacity (second shift on hold)",
+    "Award of the new HX shaft and more quota on 320010",
+    "Recovery of bar and alloy cost rises (PPI-C2431 +12.3%)",
+    "Longer commitment / reference-customer status"
+   ],
+   "risks": [
+    "Single source on 320080 with weak quality; pushing too hard risks supply",
+    "Our late payment undermines our credibility on contract compliance",
+    "Its costing is out of date; it may suddenly reprice upward once it reviews costs",
+    "It is financially sound and can walk away",
+    "Rival price on 320010 (Rottaler EUR 24.92) is higher than its EUR 24.37; citing it helps the supplier"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "contract_clause:all:72c3c497",
+     "why": "Prices are fixed per year with 90-day notice; this blocks late increase requests."
+    },
+    {
+     "arg_id": "negotiation_pattern:320010:5740588a",
+     "why": "Shows it habitually settles about 2.6 pp below its ask."
+    },
+    {
+     "arg_id": "negotiation_pattern:320080:590fccb8",
+     "why": "Same settling pattern on the lantern."
+    },
+    {
+     "arg_id": "delivery_record:all:2d5ec520",
+     "why": "80.8% on time against the contractual 95% target."
+    },
+    {
+     "arg_id": "quality_record:all:0c5d1d45",
+     "why": "1863 ppm, about 4x the peer median."
+    },
+    {
+     "arg_id": "quality_notification:320080:f79d9b43",
+     "why": "Open 8D reports on our single-source part."
+    },
+    {
+     "arg_id": "cash_discount:all:7b5b1691",
+     "why": "Trade faster or on-time payment for price."
+    },
+    {
+     "arg_id": "sourcing_position:320010:0171aabe",
+     "why": "An established second source already holds 70%."
+    },
+    {
+     "arg_id": "tooling:320080:c12cf5a7",
+     "why": "We own the tooling, which makes the single-source position movable."
+    },
+    {
+     "arg_id": "volume_change:320080:bbbfedd3",
+     "why": "Rising volume is worth something to it."
+    },
+    {
+     "arg_id": "volume_change:320010:5aad46ba",
+     "why": "Higher volume for the next 12 months, plus room to shift quota."
+    },
+    {
+     "arg_id": "call_note:all:5a9e4926",
+     "why": "Idle capacity means it wants volume."
+    },
+    {
+     "arg_id": "contract_clause:all:f71de2c8",
+     "why": "The termination window by 2027-04-01 gives us a credible exit."
+    },
+    {
+     "arg_id": "index_change:320080:c27dd62b",
+     "why": "Bar prices are falling recently, which counters the +12.3% claim."
+    }
+   ],
+   "open_questions": [
+    "Did it send a 2027 price notice before about 2026-10-02?",
+    "Is there a second source qualifiable for 320080, and what does requalification cost and take?",
+    "Can we commit to on-time payment internally?",
+    "What did it quote for HX in rfq:6000000305?",
+    "Is the quality agreement document itself available (escalation and chargeback beyond EUR 150)?"
+   ]
+  },
+  "performance": {
+   "findings": [
+    {
+     "text": "Delivery has deteriorated for a year: rolling OTD against requested date fell from 93.9% (2025Q3) to 80.8% (2026Q3), 84.6% against its own confirmed dates, against a 95% contract target. Late receipts average 13.2 days, max 21. Lantern 320080 is worst (76.9% on time, 80.8% vs confirmed). Note: requested vs confirmed dates differ by data issue, so cite the confirmed-date figure as the fairer one.",
+     "evidence": [
+      "sc:70210@2025Q3",
+      "sc:70210@2026Q3",
+      "ctr:4600070210#6.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Quality is worsening and far above peers: rolling ppm rose from about 936 (2025Q2) to 1997 (2026Q2) and 1863 (2026Q3), versus a peer median of 457 ppm. In the last 12 months there were 17 complaints. Recurring causes are leakage at test, burr, wrong material certificates and missing marking, which suggests systemic process and paperwork weakness. On 320010 its 1882 ppm is about twice the 921 ppm of co-source sup:70290.",
+     "evidence": [
+      "sc:70210@2025Q2",
+      "sc:70210@2026Q2",
+      "sc:70210@2026Q3",
+      "qn:20005032",
+      "qn:20005018",
+      "qn:20004949"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "The cost to us is understated. The EUR 150 flat recharge has been applied inconsistently: several supplier-caused QNs carry EUR 0, e.g. qn:20004786, qn:20004843, qn:20004874, qn:20004906 and qn:20004932. Total recharges are EUR 1,200 on 320010 and EUR 2,850 on 320080. 8D closures often take 2-3 months, and 3 QNs from Aug/Sep 2026 have no 8D closed yet. This supports a firmer ppm/chargeback commitment in any term sheet.",
+     "evidence": [
+      "qn:20004786",
+      "qn:20004843",
+      "qn:20004874",
+      "qn:20004932",
+      "qn:20005006",
+      "qn:20005018",
+      "qn:20005032"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Our volume outlook is rising and has been shared with the supplier:\n- 320010: 14,650 forecast vs 12,400 ordered last 12 months.\n- 320080: 6,170 vs 5,380.\n- 320070: the new HX shaft has an RFQ out at 4,200 pc/yr from SOP 2027-03.\n\nThe supplier has idle capacity (second shift on hold) and our spend is about 9% of its turnover. Extra volume is worth a lot to it and can be traded for price and performance commitments. Forecasts have been reasonably stable.",
+     "evidence": [
+      "fc:320010@2026-09",
+      "fc:320080@2026-09",
+      "fc:320070@2026-09"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Where it holds its own:\n- It is the single approved source for lantern 320080. We own the tooling, but no alternate is qualified.\n- On 320010 its price of 24.37 is below the co-source's 24.92 and below should-cost.\n- Order execution is clean: quantity variance 0.1% and almost all recent POs confirmed on the requested date.\n- Our late payment (35.6% late) undercuts any purely punitive stance.",
+     "evidence": [
+      "po:4500014362-10",
+      "po:4500014420-10",
+      "po:4500014461-10"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Supplier 70210 holds no orders for part 320011, where it has 0% quota. Its 2026 performance data rests on 52 receipts across 2 parts, so the trends are real but rest on small samples.",
+     "evidence": [
+      "sc:70210@2026Q3"
+     ],
+     "importance": "low"
+    }
+   ],
+   "leverage": "ours",
+   "supplier_wants": [
+    "Payment on time / faster payment (has complained about overdue invoices)",
+    "More volume to fill idle capacity, especially the HX shaft award",
+    "Binding volume and longer commitment",
+    "Recognition as a reference supplier",
+    "Possibly price relief on 320010 citing bar and alloy cost rises"
+   ],
+   "risks": [
+    "Single source on 320080 with worsening OTD and ppm: supply disruption if pushed too hard",
+    "Our own late payment weakens a pure performance argument",
+    "Pressing price on 320010, which already sits below should-cost, could hurt its margin and quality further",
+    "The supplier may counter with index rises: PPI cold-drawn bars +12.3%"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "delivery_record:all:2d5ec520",
+     "why": "Documented OTD fall to 80.8% vs a 95% target."
+    },
+    {
+     "arg_id": "quality_record:all:0c5d1d45",
+     "why": "1863 ppm vs a 457 peer median, and worsening."
+    },
+    {
+     "arg_id": "quality_notification:320080:f79d9b43",
+     "why": "10 supplier-caused complaints on the single-source lantern, 2 with open 8Ds."
+    },
+    {
+     "arg_id": "quality_notification:320010:bdaefaa8",
+     "why": "7 supplier-caused complaints on the shaft; worse than the co-source."
+    },
+    {
+     "arg_id": "contract_clause:all:a0053ec0",
+     "why": "Contractual 95% OTD target and EUR 150 per complaint fee."
+    },
+    {
+     "arg_id": "volume_change:320010:5aad46ba",
+     "why": "Rising volume as a trade for price and performance commitments."
+    },
+    {
+     "arg_id": "volume_change:320080:bbbfedd3",
+     "why": "Rising lantern volume to trade."
+    },
+    {
+     "arg_id": "call_note:all:5a9e4926",
+     "why": "Idle capacity makes our volume valuable to it."
+    },
+    {
+     "arg_id": "dependency:all:f11abdaf",
+     "why": "We are about 9% of its turnover."
+    },
+    {
+     "arg_id": "sourcing_position:320010:0171aabe",
+     "why": "A qualified alternative already holds 70% of 320010."
+    },
+    {
+     "arg_id": "tooling:320080:c12cf5a7",
+     "why": "We own the tooling, so moving the part is feasible in principle."
+    },
+    {
+     "arg_id": "order_history:320080:bb9c6827",
+     "why": "Anchors the current lantern price."
+    },
+    {
+     "arg_id": "cash_discount:all:7b5b1691",
+     "why": "Trade punctual or faster payment for price or performance."
+    }
+   ],
+   "open_questions": [
+    "Why are EUR 150 recharges missing on many supplier-caused QNs, and can we still recover them?",
+    "Root cause of the 2026 OTD drop: staffing, with the second shift paused?",
+    "Could an alternate source be qualified for 320080, and how fast?",
+    "Is the HX RFQ capacity real, given current OTD?",
+    "Can we fix our own late payments before negotiating?"
+   ]
+  }
+ },
+ "red_team": {
+  "arguments": [
+   {
+    "text": "Our shaft HN 24 price is already the lowest you pay and sits below your own no-margin cost estimate. We are at 24.37, Rottaler is at 24.92, and your bottom-up figure is 25.22 before any margin. There is nothing left to cut there. If anything, we need a correction upward.",
+    "evidence": [
+     "cost:320010",
+     "quote:7100019"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Material cost has risen sharply while our prices fell or stayed flat. Cold-drawn bars are +12.3% in 12 months, the 1.4404 alloy surcharge is +5.9%, steel is +7.3% since January and labour is +2.7%. We have cut the shaft by 7.4% since 2023 and held the lantern flat since 2024.",
+    "evidence": [
+     "idx:PPI-C2431@2026-08",
+     "idx:AS-14404@2026-09",
+     "news:20260922-35",
+     "idx:LCI-C@2026-06",
+     "EV-2026-70210-320010",
+     "EV-2026-70210-320080"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Our negotiation history shows we have been a fair partner. We settled below our ask in every renewal: shaft -6.6% and -3%, lantern 0% twice even though we had asked for +1.2%.",
+    "evidence": [
+     "EV-2024-70210-320010",
+     "EV-2026-70210-320010",
+     "EV-2025-70210-320080",
+     "EV-2026-70210-320080"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "text": "Your payment behaviour costs us money. You pay on average about 8 days late, 35.6% of invoices are paid late, and 11 times the discount was taken after the discount period. We wrote to you about this in May. Any price talk has to include payment discipline.",
+    "evidence": [
+     "doc:20260504-70210-P",
+     "ctr:4600070210#4.1"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "We are your only approved source for the lantern HN. Requalifying another shop would cost you time and money.",
+    "evidence": [],
+    "strength": "moderate"
+   },
+   {
+    "text": "We are financially stable, have run the same ownership for 35 years, hold a renewed ISO 9001 certificate and have spare capacity to grow with you on HX.",
+    "evidence": [
+     "sup:70210",
+     "doc:20251123-70210-N",
+     "doc:20260722-70210-M2"
+    ],
+    "strength": "moderate"
+   }
+  ],
+  "weak_points": [
+   "Delivery has slipped: OTD is 80.8% in the last 12 months against the 95% contract target, late deliveries average 13 days, and the lantern is at 76.9%.",
+   "Quality is getting worse: ppm is around 1,860–2,000 against Rottaler's 921 on the same shaft. On the lantern there are 25 supplier-caused complaints, with recurring leakage, burr and wrong-certificate defects, and several 8D reports are still open.",
+   "Our scorecard has been amber and B-class since 2025Q4, with a score of 71.4 in 2026Q2.",
+   "The owner admitted our costing is stale and not tracked since 2022, so I cannot defend cost figures in detail.",
+   "Some drivers argue against us: power is -43% since 2022, bars are -7.5% below their 2022 high, and the alloy surcharge is -36% below its 2022 high.",
+   "The idle second shift shows we need volume, which weakens us if they sense it.",
+   "We lost the 2025 shaft benchmark to Rottaler even though our quote was lower, presumably on performance, and we lost the 320011 RFQ.",
+   "They could shift shaft quota to Rottaler, who already holds 70%."
+  ],
+  "wants": [
+   "An award of the HX shaft (4,200 pcs/yr) or a share of it; I would sharpen the HX quote and the existing prices for it.",
+   "A higher quota on shaft HN 24, for example 50%, or an active share of 320011.",
+   "Payment on time; for payment within 10 days or binding on-time payment I would accept skonto and a lower price.",
+   "A longer contract term, 2–3 years, with binding annual volume to justify restarting the second shift.",
+   "An index clause on bar and alloy material, in exchange for a lower base price.",
+   "A reasonable chargeback level rather than a raised fee; I would offer a quality improvement plan instead."
+  ],
+  "red_lines": [
+   "No further price cut on shaft HN 24 below 24.37 without added volume.",
+   "No lantern price cut without volume or term security; at minimum we hold 41.63.",
+   "No hard ppm or chargeback penalties far above EUR 150 per complaint before the improvement plan has had time to work.",
+   "No longer payment terms than 30 days."
+  ],
+  "opening": "Thank Hollerau as an important reference customer and say we want to grow with you on HX. Then state plainly that material costs (bars +12.3%, alloy surcharge +6%, labour +2.7%) and years of flat or falling prices leave us below cost on the shaft. Ask for +3–4% on the lantern and on the shaft, but signal openness: a fixed price for 24 months if we get the HX award, more shaft quota and payment on time. Acknowledge the quality and delivery issues briefly, with a concrete corrective plan and the second shift restarting as volume arrives, before they raise them."
+ },
+ "rebuttals": {
+  "rebuttals": [
+   {
+    "to": 1,
+    "answer": "You are right that your shaft price is competitive, and we are not asking for a cut on it. Our cost estimate models a different plant, so it says little about your own cost base. What it does show is that the shaft is fairly priced today. The better route for you is more volume: our shared forecast for the shaft is rising, and you have told us you have room to take more work. Volume and on-time payment are where we can help you. Raising the price on a part where you already hold the smaller share is not.",
+    "arg_ids": [
+     "order_history:320010:9ae8b706",
+     "volume_change:320010:5aad46ba",
+     "call_note:all:5a9e4926",
+     "contract_clause:all:72c3c497"
+    ]
+   },
+   {
+    "to": 2,
+    "answer": "Bar and labour costs have risen over the year, and we take that seriously. In proportion, though, these drivers make up only part of the cost of each part. Bars and the alloy surcharge have also fallen in recent months, and power has gone down. The steel figure is a broad market series, not your input. The net effect is modest and well short of a correction. Under our framework, prices are fixed per calendar year with notice before year end. We are glad to look at the verified index movements together, on that basis.",
+    "arg_ids": [
+     "index_change:320080:c27dd62b",
+     "index_change:320010:d1ba9929",
+     "index_change:320010:5a39cd48",
+     "index_change:320080:e0b3079f",
+     "index_change:320010:148b8f9a",
+     "contract_clause:all:72c3c497"
+    ]
+   },
+   {
+    "to": 3,
+    "answer": "We agree that you have been a fair partner, and we value that. The same history shows that our renewals have always landed close to the market through dialogue rather than through increases. We would like to continue in that spirit, tying any agreement to volume and term security rather than to price moves.",
+    "arg_ids": [
+     "negotiation_pattern:320010:5740588a",
+     "negotiation_pattern:320080:590fccb8"
+    ]
+   },
+   {
+    "to": 4,
+    "answer": "This is a fair complaint and we accept it. Some of our payments have been late, and taking the discount after the discount period was not correct. We will commit to paying on time under the agreed terms and to taking the discount only within its period. We are also open to discussing faster payment, since we understand that cash matters to you. We would like that to be part of an overall package rather than a separate issue.",
+    "arg_ids": [
+     "correspondence:all:75fcf59f",
+     "payment_behaviour:all:11829f07",
+     "cash_discount:all:7b5b1691"
+    ]
+   },
+   {
+    "to": 5,
+    "answer": "You are our only approved source for the lantern, and we value the long relationship on it. We want it to continue. Because we depend on you there, its delivery and quality matter all the more to us: on-time delivery is well below the contract target and complaints are recurring. Our aim is a joint improvement plan with a quality commitment, so that the lantern stays reliably with you.",
+    "arg_ids": [
+     "relationship:320080:b47c1f75",
+     "delivery_record:all:2d5ec520",
+     "quality_notification:320080:f79d9b43",
+     "contract_clause:all:a0053ec0"
+    ]
+   },
+   {
+    "to": 6,
+    "answer": "We welcome your stability, your renewed certification and your capacity. They are good reasons to consider you for HX and for further growth with us. For that award, delivery reliability and defect rates will weigh as much as price. A credible plan to restart the second shift and to commit to a ppm target would strengthen your offer considerably. We will assess HX against our own cost estimate and on total delivered cost.",
+    "arg_ids": [
+     "supplier_health:all:818b3a7c",
+     "correspondence:all:c4709b41",
+     "call_note:all:5a9e4926",
+     "should_cost:320070:e5c2ec82",
+     "correspondence:320070:26eda639",
+     "quality_record:all:0c5d1d45"
+    ]
+   }
+  ],
+  "press": [
+   "We would like to agree a joint plan to bring on-time delivery back to the contract target, especially for the lantern.",
+   "Could you share the corrective actions you plan for the recurring leakage, burr and certificate defects, and would you commit to a ppm target?",
+   "Your rolling defect rate is well above our peer median and has risen over the year, so a quality commitment matters to us for any additional volume.",
+   "How would restarting the second shift improve delivery reliability if we place additional volume with you?",
+   "Since prices are fixed per calendar year under our framework, we would like to discuss any changes on that basis together with volume and payment terms."
+  ]
+ },
+ "arguments": [
+  {
+   "arg_id": "index_change:320010:447a04af",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.33,
+    "window": "12 months",
+    "weighted_pct": 0.88
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 33% of the part's cost, so about +0.88% on the price."
+  },
+  {
+   "arg_id": "index_change:320010:54a6d0d7",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:PPI-C2431@2025-08",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 115.0,
+    "to_value": 129.1,
+    "change_pct": 12.3,
+    "weight": 0.19,
+    "window": "12 months",
+    "weighted_pct": 2.33
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed +12.3% from 2025-08 to 2026-08 (idx:PPI-C2431@2025-08, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): +12.3% 12 months (2025-08 to 2026-08); 19% of the part's cost, so about +2.33% on the price."
+  },
+  {
+   "arg_id": "index_change:320010:d1ba9929",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:PPI-C2431@2026-06",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2026-06",
+    "to_month": "2026-08",
+    "from_value": 132.1,
+    "to_value": 129.1,
+    "change_pct": -2.3,
+    "weight": 0.19,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.43
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): -2.3% largest fall within 12 months (2026-06 to 2026-08); 19% of the part's cost, so about -0.43% on the price."
+  },
+  {
+   "arg_id": "index_change:320010:460dab1a",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:PPI-C2431@2025-09",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2025-09",
+    "to_month": "2026-08",
+    "from_value": 115.0,
+    "to_value": 129.1,
+    "change_pct": 12.3,
+    "weight": 0.19,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 2.33
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed +12.3% from 2025-09 to 2026-08 (idx:PPI-C2431@2025-09, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): +12.3% largest rise within 12 months (2025-09 to 2026-08); 19% of the part's cost, so about +2.33% on the price."
+  },
+  {
+   "arg_id": "index_peak:320010:b849a39d",
+   "kind": "index_peak",
+   "part": "part:320010",
+   "refs": [
+    "idx:PPI-C2431@2022-06",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2022-06",
+    "to_month": "2026-08",
+    "from_value": 139.5,
+    "to_value": 129.1,
+    "change_pct": -7.5,
+    "weight": 0.19,
+    "window": "since the high of all the data",
+    "weighted_pct": -1.42
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): -7.5% since the high of all the data (2022-06 to 2026-08); 19% of the part's cost, so about -1.42% on the price. Not checkable: 50 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320010:eb99cd1b",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:AS-14404@2025-09",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2025-09",
+    "to_month": "2026-09",
+    "from_value": 2839.7103,
+    "to_value": 3007.8019,
+    "change_pct": 5.9,
+    "weight": 0.12,
+    "window": "12 months",
+    "weighted_pct": 0.71
+   },
+   "sentence": "Alloy surcharge Isartal Edelstahlwerk changed +5.9% from 2025-09 to 2026-09 (idx:AS-14404@2025-09, idx:AS-14404@2026-09).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): +5.9% 12 months (2025-09 to 2026-09); 12% of the part's cost, so about +0.71% on the price."
+  },
+  {
+   "arg_id": "index_change:320010:5a39cd48",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:AS-14404@2026-06",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2026-06",
+    "to_month": "2026-09",
+    "from_value": 3182.6744,
+    "to_value": 3007.8019,
+    "change_pct": -5.5,
+    "weight": 0.12,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.66
+   },
+   "sentence": "Alloy surcharge Isartal Edelstahlwerk changed -5.5% from 2026-06 to 2026-09 (idx:AS-14404@2026-06, idx:AS-14404@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): -5.5% largest fall within 12 months (2026-06 to 2026-09); 12% of the part's cost, so about -0.66% on the price."
+  },
+  {
+   "arg_id": "index_change:320010:8cf119ca",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:AS-14404@2025-12",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2025-12",
+    "to_month": "2026-09",
+    "from_value": 2822.7323,
+    "to_value": 3007.8019,
+    "change_pct": 6.6,
+    "weight": 0.12,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 0.79
+   },
+   "sentence": "Alloy surcharge Isartal Edelstahlwerk changed +6.6% from 2025-12 to 2026-09 (idx:AS-14404@2025-12, idx:AS-14404@2026-09).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): +6.6% largest rise within 12 months (2025-12 to 2026-09); 12% of the part's cost, so about +0.79% on the price."
+  },
+  {
+   "arg_id": "index_peak:320010:ea666fff",
+   "kind": "index_peak",
+   "part": "part:320010",
+   "refs": [
+    "idx:AS-14404@2023-09",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2023-09",
+    "to_month": "2026-09",
+    "from_value": 3459.0663,
+    "to_value": 3007.8019,
+    "change_pct": -13.0,
+    "weight": 0.12,
+    "window": "since the 36-month peak",
+    "weighted_pct": -1.57
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): -13.0% since the 36-month peak (2023-09 to 2026-09); 12% of the part's cost, so about -1.57% on the price. Not checkable: 36 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:320010:b701d8fe",
+   "kind": "index_peak",
+   "part": "part:320010",
+   "refs": [
+    "idx:AS-14404@2022-04",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2022-04",
+    "to_month": "2026-09",
+    "from_value": 4727.5731,
+    "to_value": 3007.8019,
+    "change_pct": -36.4,
+    "weight": 0.12,
+    "window": "since the high of all the data",
+    "weighted_pct": -4.37
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): -36.4% since the high of all the data (2022-04 to 2026-09); 12% of the part's cost, so about -4.37% on the price. Not checkable: 53 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320010:148b8f9a",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:PPI-D351@2025-08",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 137.0,
+    "to_value": 131.9,
+    "change_pct": -3.7,
+    "weight": 0.01,
+    "window": "12 months",
+    "weighted_pct": -0.04
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -3.7% from 2025-08 to 2026-08 (idx:PPI-D351@2025-08, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -3.7% 12 months (2025-08 to 2026-08); 1% of the part's cost, so about -0.04% on the price."
+  },
+  {
+   "arg_id": "index_change:320010:e0f7268f",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:PPI-D351@2025-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-11",
+    "to_month": "2026-08",
+    "from_value": 140.5,
+    "to_value": 131.9,
+    "change_pct": -6.1,
+    "weight": 0.01,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.06
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -6.1% largest fall within 12 months (2025-11 to 2026-08); 1% of the part's cost, so about -0.06% on the price."
+  },
+  {
+   "arg_id": "index_change:320010:c8755c85",
+   "kind": "index_change",
+   "part": "part:320010",
+   "refs": [
+    "idx:PPI-D351@2026-04",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2026-04",
+    "to_month": "2026-08",
+    "from_value": 123.7,
+    "to_value": 131.9,
+    "change_pct": 6.6,
+    "weight": 0.01,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 0.07
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed +6.6% from 2026-04 to 2026-08 (idx:PPI-D351@2026-04, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): +6.6% largest rise within 12 months (2026-04 to 2026-08); 1% of the part's cost, so about +0.07% on the price."
+  },
+  {
+   "arg_id": "index_peak:320010:949f1645",
+   "kind": "index_peak",
+   "part": "part:320010",
+   "refs": [
+    "idx:PPI-D351@2024-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2024-11",
+    "to_month": "2026-08",
+    "from_value": 155.1,
+    "to_value": 131.9,
+    "change_pct": -15.0,
+    "weight": 0.01,
+    "window": "since the 36-month peak",
+    "weighted_pct": -0.15
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -15.0% since the 36-month peak (2024-11 to 2026-08); 1% of the part's cost, so about -0.15% on the price. Not checkable: 21 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:320010:c23e8d1b",
+   "kind": "index_peak",
+   "part": "part:320010",
+   "refs": [
+    "idx:PPI-D351@2022-09",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2022-09",
+    "to_month": "2026-08",
+    "from_value": 233.4,
+    "to_value": 131.9,
+    "change_pct": -43.5,
+    "weight": 0.01,
+    "window": "since the high of all the data",
+    "weighted_pct": -0.43
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -43.5% since the high of all the data (2022-09 to 2026-08); 1% of the part's cost, so about -0.43% on the price. Not checkable: 47 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320011:2ce9b710",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.31,
+    "window": "12 months",
+    "weighted_pct": 0.82
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 31% of the part's cost, so about +0.82% on the price."
+  },
+  {
+   "arg_id": "index_change:320011:3501123c",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:PPI-C2431@2025-08",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 115.0,
+    "to_value": 129.1,
+    "change_pct": 12.3,
+    "weight": 0.18,
+    "window": "12 months",
+    "weighted_pct": 2.21
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed +12.3% from 2025-08 to 2026-08 (idx:PPI-C2431@2025-08, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): +12.3% 12 months (2025-08 to 2026-08); 18% of the part's cost, so about +2.21% on the price."
+  },
+  {
+   "arg_id": "index_change:320011:bc42090a",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:PPI-C2431@2026-06",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2026-06",
+    "to_month": "2026-08",
+    "from_value": 132.1,
+    "to_value": 129.1,
+    "change_pct": -2.3,
+    "weight": 0.18,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.41
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): -2.3% largest fall within 12 months (2026-06 to 2026-08); 18% of the part's cost, so about -0.41% on the price."
+  },
+  {
+   "arg_id": "index_change:320011:0c48cb2d",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:PPI-C2431@2025-09",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2025-09",
+    "to_month": "2026-08",
+    "from_value": 115.0,
+    "to_value": 129.1,
+    "change_pct": 12.3,
+    "weight": 0.18,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 2.21
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed +12.3% from 2025-09 to 2026-08 (idx:PPI-C2431@2025-09, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): +12.3% largest rise within 12 months (2025-09 to 2026-08); 18% of the part's cost, so about +2.21% on the price."
+  },
+  {
+   "arg_id": "index_peak:320011:cf05ed74",
+   "kind": "index_peak",
+   "part": "part:320011",
+   "refs": [
+    "idx:PPI-C2431@2022-06",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2022-06",
+    "to_month": "2026-08",
+    "from_value": 139.5,
+    "to_value": 129.1,
+    "change_pct": -7.5,
+    "weight": 0.18,
+    "window": "since the high of all the data",
+    "weighted_pct": -1.34
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): -7.5% since the high of all the data (2022-06 to 2026-08); 18% of the part's cost, so about -1.34% on the price. Not checkable: 50 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320011:918d3f90",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:AS-14404@2025-09",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2025-09",
+    "to_month": "2026-09",
+    "from_value": 2839.7103,
+    "to_value": 3007.8019,
+    "change_pct": 5.9,
+    "weight": 0.11,
+    "window": "12 months",
+    "weighted_pct": 0.65
+   },
+   "sentence": "Alloy surcharge Isartal Edelstahlwerk changed +5.9% from 2025-09 to 2026-09 (idx:AS-14404@2025-09, idx:AS-14404@2026-09).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): +5.9% 12 months (2025-09 to 2026-09); 11% of the part's cost, so about +0.65% on the price."
+  },
+  {
+   "arg_id": "index_change:320011:d50fc464",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:AS-14404@2026-06",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2026-06",
+    "to_month": "2026-09",
+    "from_value": 3182.6744,
+    "to_value": 3007.8019,
+    "change_pct": -5.5,
+    "weight": 0.11,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.6
+   },
+   "sentence": "Alloy surcharge Isartal Edelstahlwerk changed -5.5% from 2026-06 to 2026-09 (idx:AS-14404@2026-06, idx:AS-14404@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): -5.5% largest fall within 12 months (2026-06 to 2026-09); 11% of the part's cost, so about -0.60% on the price."
+  },
+  {
+   "arg_id": "index_change:320011:a1572052",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:AS-14404@2025-12",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2025-12",
+    "to_month": "2026-09",
+    "from_value": 2822.7323,
+    "to_value": 3007.8019,
+    "change_pct": 6.6,
+    "weight": 0.11,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 0.72
+   },
+   "sentence": "Alloy surcharge Isartal Edelstahlwerk changed +6.6% from 2025-12 to 2026-09 (idx:AS-14404@2025-12, idx:AS-14404@2026-09).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): +6.6% largest rise within 12 months (2025-12 to 2026-09); 11% of the part's cost, so about +0.72% on the price."
+  },
+  {
+   "arg_id": "index_peak:320011:dce8e15a",
+   "kind": "index_peak",
+   "part": "part:320011",
+   "refs": [
+    "idx:AS-14404@2023-09",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2023-09",
+    "to_month": "2026-09",
+    "from_value": 3459.0663,
+    "to_value": 3007.8019,
+    "change_pct": -13.0,
+    "weight": 0.11,
+    "window": "since the 36-month peak",
+    "weighted_pct": -1.44
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): -13.0% since the 36-month peak (2023-09 to 2026-09); 11% of the part's cost, so about -1.44% on the price. Not checkable: 36 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:320011:089bc9b8",
+   "kind": "index_peak",
+   "part": "part:320011",
+   "refs": [
+    "idx:AS-14404@2022-04",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2022-04",
+    "to_month": "2026-09",
+    "from_value": 4727.5731,
+    "to_value": 3007.8019,
+    "change_pct": -36.4,
+    "weight": 0.11,
+    "window": "since the high of all the data",
+    "weighted_pct": -4.0
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): -36.4% since the high of all the data (2022-04 to 2026-09); 11% of the part's cost, so about -4.00% on the price. Not checkable: 53 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320011:a6d015d8",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:PPI-D351@2025-08",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 137.0,
+    "to_value": 131.9,
+    "change_pct": -3.7,
+    "weight": 0.05,
+    "window": "12 months",
+    "weighted_pct": -0.19
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -3.7% from 2025-08 to 2026-08 (idx:PPI-D351@2025-08, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -3.7% 12 months (2025-08 to 2026-08); 5% of the part's cost, so about -0.19% on the price."
+  },
+  {
+   "arg_id": "index_change:320011:f7b538f1",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:PPI-D351@2025-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-11",
+    "to_month": "2026-08",
+    "from_value": 140.5,
+    "to_value": 131.9,
+    "change_pct": -6.1,
+    "weight": 0.05,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.31
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -6.1% largest fall within 12 months (2025-11 to 2026-08); 5% of the part's cost, so about -0.31% on the price."
+  },
+  {
+   "arg_id": "index_change:320011:01ae71ba",
+   "kind": "index_change",
+   "part": "part:320011",
+   "refs": [
+    "idx:PPI-D351@2026-04",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2026-04",
+    "to_month": "2026-08",
+    "from_value": 123.7,
+    "to_value": 131.9,
+    "change_pct": 6.6,
+    "weight": 0.05,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 0.33
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed +6.6% from 2026-04 to 2026-08 (idx:PPI-D351@2026-04, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): +6.6% largest rise within 12 months (2026-04 to 2026-08); 5% of the part's cost, so about +0.33% on the price."
+  },
+  {
+   "arg_id": "index_peak:320011:4b38c818",
+   "kind": "index_peak",
+   "part": "part:320011",
+   "refs": [
+    "idx:PPI-D351@2024-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2024-11",
+    "to_month": "2026-08",
+    "from_value": 155.1,
+    "to_value": 131.9,
+    "change_pct": -15.0,
+    "weight": 0.05,
+    "window": "since the 36-month peak",
+    "weighted_pct": -0.75
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -15.0% since the 36-month peak (2024-11 to 2026-08); 5% of the part's cost, so about -0.75% on the price. Not checkable: 21 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:320011:a6f44126",
+   "kind": "index_peak",
+   "part": "part:320011",
+   "refs": [
+    "idx:PPI-D351@2022-09",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2022-09",
+    "to_month": "2026-08",
+    "from_value": 233.4,
+    "to_value": 131.9,
+    "change_pct": -43.5,
+    "weight": 0.05,
+    "window": "since the high of all the data",
+    "weighted_pct": -2.17
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -43.5% since the high of all the data (2022-09 to 2026-08); 5% of the part's cost, so about -2.17% on the price. Not checkable: 47 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320070:7f41c105",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.36,
+    "window": "12 months",
+    "weighted_pct": 0.96
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 36% of the part's cost, so about +0.96% on the price."
+  },
+  {
+   "arg_id": "index_change:320070:1adbdcfe",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:PPI-C2431@2025-08",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 115.0,
+    "to_value": 129.1,
+    "change_pct": 12.3,
+    "weight": 0.19,
+    "window": "12 months",
+    "weighted_pct": 2.33
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed +12.3% from 2025-08 to 2026-08 (idx:PPI-C2431@2025-08, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): +12.3% 12 months (2025-08 to 2026-08); 19% of the part's cost, so about +2.33% on the price."
+  },
+  {
+   "arg_id": "index_change:320070:3251eba0",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:PPI-C2431@2026-06",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2026-06",
+    "to_month": "2026-08",
+    "from_value": 132.1,
+    "to_value": 129.1,
+    "change_pct": -2.3,
+    "weight": 0.19,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.43
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): -2.3% largest fall within 12 months (2026-06 to 2026-08); 19% of the part's cost, so about -0.43% on the price."
+  },
+  {
+   "arg_id": "index_change:320070:8cdc58c9",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:PPI-C2431@2025-09",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2025-09",
+    "to_month": "2026-08",
+    "from_value": 115.0,
+    "to_value": 129.1,
+    "change_pct": 12.3,
+    "weight": 0.19,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 2.33
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed +12.3% from 2025-09 to 2026-08 (idx:PPI-C2431@2025-09, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): +12.3% largest rise within 12 months (2025-09 to 2026-08); 19% of the part's cost, so about +2.33% on the price."
+  },
+  {
+   "arg_id": "index_peak:320070:758ba2d9",
+   "kind": "index_peak",
+   "part": "part:320070",
+   "refs": [
+    "idx:PPI-C2431@2022-06",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2022-06",
+    "to_month": "2026-08",
+    "from_value": 139.5,
+    "to_value": 129.1,
+    "change_pct": -7.5,
+    "weight": 0.19,
+    "window": "since the high of all the data",
+    "weighted_pct": -1.42
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): -7.5% since the high of all the data (2022-06 to 2026-08); 19% of the part's cost, so about -1.42% on the price. Not checkable: 50 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320070:4d645503",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:AS-14404@2025-09",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2025-09",
+    "to_month": "2026-09",
+    "from_value": 2839.7103,
+    "to_value": 3007.8019,
+    "change_pct": 5.9,
+    "weight": 0.16,
+    "window": "12 months",
+    "weighted_pct": 0.95
+   },
+   "sentence": "Alloy surcharge Isartal Edelstahlwerk changed +5.9% from 2025-09 to 2026-09 (idx:AS-14404@2025-09, idx:AS-14404@2026-09).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): +5.9% 12 months (2025-09 to 2026-09); 16% of the part's cost, so about +0.95% on the price."
+  },
+  {
+   "arg_id": "index_change:320070:5a21b49a",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:AS-14404@2026-06",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2026-06",
+    "to_month": "2026-09",
+    "from_value": 3182.6744,
+    "to_value": 3007.8019,
+    "change_pct": -5.5,
+    "weight": 0.16,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.88
+   },
+   "sentence": "Alloy surcharge Isartal Edelstahlwerk changed -5.5% from 2026-06 to 2026-09 (idx:AS-14404@2026-06, idx:AS-14404@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): -5.5% largest fall within 12 months (2026-06 to 2026-09); 16% of the part's cost, so about -0.88% on the price."
+  },
+  {
+   "arg_id": "index_change:320070:209604e8",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:AS-14404@2025-12",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2025-12",
+    "to_month": "2026-09",
+    "from_value": 2822.7323,
+    "to_value": 3007.8019,
+    "change_pct": 6.6,
+    "weight": 0.16,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 1.05
+   },
+   "sentence": "Alloy surcharge Isartal Edelstahlwerk changed +6.6% from 2025-12 to 2026-09 (idx:AS-14404@2025-12, idx:AS-14404@2026-09).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): +6.6% largest rise within 12 months (2025-12 to 2026-09); 16% of the part's cost, so about +1.05% on the price."
+  },
+  {
+   "arg_id": "index_peak:320070:d5707f06",
+   "kind": "index_peak",
+   "part": "part:320070",
+   "refs": [
+    "idx:AS-14404@2023-09",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2023-09",
+    "to_month": "2026-09",
+    "from_value": 3459.0663,
+    "to_value": 3007.8019,
+    "change_pct": -13.0,
+    "weight": 0.16,
+    "window": "since the 36-month peak",
+    "weighted_pct": -2.09
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): -13.0% since the 36-month peak (2023-09 to 2026-09); 16% of the part's cost, so about -2.09% on the price. Not checkable: 36 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:320070:e4e4ec49",
+   "kind": "index_peak",
+   "part": "part:320070",
+   "refs": [
+    "idx:AS-14404@2022-04",
+    "idx:AS-14404@2026-09"
+   ],
+   "figures": {
+    "series": "AS-14404",
+    "from_month": "2022-04",
+    "to_month": "2026-09",
+    "from_value": 4727.5731,
+    "to_value": 3007.8019,
+    "change_pct": -36.4,
+    "weight": 0.16,
+    "window": "since the high of all the data",
+    "weighted_pct": -5.82
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "AS-14404 (Alloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived)): -36.4% since the high of all the data (2022-04 to 2026-09); 16% of the part's cost, so about -5.82% on the price. Not checkable: 53 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320070:aa3c6563",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:PPI-D351@2025-08",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 137.0,
+    "to_value": 131.9,
+    "change_pct": -3.7,
+    "weight": 0.05,
+    "window": "12 months",
+    "weighted_pct": -0.19
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -3.7% from 2025-08 to 2026-08 (idx:PPI-D351@2025-08, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -3.7% 12 months (2025-08 to 2026-08); 5% of the part's cost, so about -0.19% on the price."
+  },
+  {
+   "arg_id": "index_change:320070:bbf21db8",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:PPI-D351@2025-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-11",
+    "to_month": "2026-08",
+    "from_value": 140.5,
+    "to_value": 131.9,
+    "change_pct": -6.1,
+    "weight": 0.05,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.31
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -6.1% largest fall within 12 months (2025-11 to 2026-08); 5% of the part's cost, so about -0.31% on the price."
+  },
+  {
+   "arg_id": "index_change:320070:c00b212c",
+   "kind": "index_change",
+   "part": "part:320070",
+   "refs": [
+    "idx:PPI-D351@2026-04",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2026-04",
+    "to_month": "2026-08",
+    "from_value": 123.7,
+    "to_value": 131.9,
+    "change_pct": 6.6,
+    "weight": 0.05,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 0.33
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed +6.6% from 2026-04 to 2026-08 (idx:PPI-D351@2026-04, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): +6.6% largest rise within 12 months (2026-04 to 2026-08); 5% of the part's cost, so about +0.33% on the price."
+  },
+  {
+   "arg_id": "index_peak:320070:839feb6a",
+   "kind": "index_peak",
+   "part": "part:320070",
+   "refs": [
+    "idx:PPI-D351@2024-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2024-11",
+    "to_month": "2026-08",
+    "from_value": 155.1,
+    "to_value": 131.9,
+    "change_pct": -15.0,
+    "weight": 0.05,
+    "window": "since the 36-month peak",
+    "weighted_pct": -0.75
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -15.0% since the 36-month peak (2024-11 to 2026-08); 5% of the part's cost, so about -0.75% on the price. Not checkable: 21 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:320070:0d96a3fe",
+   "kind": "index_peak",
+   "part": "part:320070",
+   "refs": [
+    "idx:PPI-D351@2022-09",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2022-09",
+    "to_month": "2026-08",
+    "from_value": 233.4,
+    "to_value": 131.9,
+    "change_pct": -43.5,
+    "weight": 0.05,
+    "window": "since the high of all the data",
+    "weighted_pct": -2.17
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -43.5% since the high of all the data (2022-09 to 2026-08); 5% of the part's cost, so about -2.17% on the price. Not checkable: 47 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320080:6f97dbf7",
+   "kind": "index_change",
+   "part": "part:320080",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.37,
+    "window": "12 months",
+    "weighted_pct": 0.98
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 37% of the part's cost, so about +0.98% on the price."
+  },
+  {
+   "arg_id": "index_change:320080:020e4b25",
+   "kind": "index_change",
+   "part": "part:320080",
+   "refs": [
+    "idx:PPI-C2431@2025-08",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 115.0,
+    "to_value": 129.1,
+    "change_pct": 12.3,
+    "weight": 0.28,
+    "window": "12 months",
+    "weighted_pct": 3.43
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed +12.3% from 2025-08 to 2026-08 (idx:PPI-C2431@2025-08, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): +12.3% 12 months (2025-08 to 2026-08); 28% of the part's cost, so about +3.43% on the price."
+  },
+  {
+   "arg_id": "index_change:320080:c27dd62b",
+   "kind": "index_change",
+   "part": "part:320080",
+   "refs": [
+    "idx:PPI-C2431@2026-06",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2026-06",
+    "to_month": "2026-08",
+    "from_value": 132.1,
+    "to_value": 129.1,
+    "change_pct": -2.3,
+    "weight": 0.28,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.64
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): -2.3% largest fall within 12 months (2026-06 to 2026-08); 28% of the part's cost, so about -0.64% on the price."
+  },
+  {
+   "arg_id": "index_change:320080:d7512b4b",
+   "kind": "index_change",
+   "part": "part:320080",
+   "refs": [
+    "idx:PPI-C2431@2025-09",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2025-09",
+    "to_month": "2026-08",
+    "from_value": 115.0,
+    "to_value": 129.1,
+    "change_pct": 12.3,
+    "weight": 0.28,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 3.43
+   },
+   "sentence": "Producer prices DE: cold drawing of bars changed +12.3% from 2025-09 to 2026-08 (idx:PPI-C2431@2025-09, idx:PPI-C2431@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): +12.3% largest rise within 12 months (2025-09 to 2026-08); 28% of the part's cost, so about +3.43% on the price."
+  },
+  {
+   "arg_id": "index_peak:320080:eb4f3fff",
+   "kind": "index_peak",
+   "part": "part:320080",
+   "refs": [
+    "idx:PPI-C2431@2022-06",
+    "idx:PPI-C2431@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2431",
+    "from_month": "2022-06",
+    "to_month": "2026-08",
+    "from_value": 139.5,
+    "to_value": 129.1,
+    "change_pct": -7.5,
+    "weight": 0.28,
+    "window": "since the high of all the data",
+    "weighted_pct": -2.09
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-C2431 (Producer prices DE: cold drawing of bars): -7.5% since the high of all the data (2022-06 to 2026-08); 28% of the part's cost, so about -2.09% on the price. Not checkable: 50 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_change:320080:e0b3079f",
+   "kind": "index_change",
+   "part": "part:320080",
+   "refs": [
+    "idx:PPI-D351@2025-08",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 137.0,
+    "to_value": 131.9,
+    "change_pct": -3.7,
+    "weight": 0.03,
+    "window": "12 months",
+    "weighted_pct": -0.11
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -3.7% from 2025-08 to 2026-08 (idx:PPI-D351@2025-08, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -3.7% 12 months (2025-08 to 2026-08); 3% of the part's cost, so about -0.11% on the price."
+  },
+  {
+   "arg_id": "index_change:320080:34ab74a1",
+   "kind": "index_change",
+   "part": "part:320080",
+   "refs": [
+    "idx:PPI-D351@2025-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2025-11",
+    "to_month": "2026-08",
+    "from_value": 140.5,
+    "to_value": 131.9,
+    "change_pct": -6.1,
+    "weight": 0.03,
+    "window": "largest fall within 12 months",
+    "weighted_pct": -0.18
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -6.1% largest fall within 12 months (2025-11 to 2026-08); 3% of the part's cost, so about -0.18% on the price."
+  },
+  {
+   "arg_id": "index_change:320080:48546f4a",
+   "kind": "index_change",
+   "part": "part:320080",
+   "refs": [
+    "idx:PPI-D351@2026-04",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2026-04",
+    "to_month": "2026-08",
+    "from_value": 123.7,
+    "to_value": 131.9,
+    "change_pct": 6.6,
+    "weight": 0.03,
+    "window": "largest rise within 12 months",
+    "weighted_pct": 0.2
+   },
+   "sentence": "Producer prices DE: electric power generation, transmission and distribution changed +6.6% from 2026-04 to 2026-08 (idx:PPI-D351@2026-04, idx:PPI-D351@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): +6.6% largest rise within 12 months (2026-04 to 2026-08); 3% of the part's cost, so about +0.20% on the price."
+  },
+  {
+   "arg_id": "index_peak:320080:379468d9",
+   "kind": "index_peak",
+   "part": "part:320080",
+   "refs": [
+    "idx:PPI-D351@2024-11",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2024-11",
+    "to_month": "2026-08",
+    "from_value": 155.1,
+    "to_value": 131.9,
+    "change_pct": -15.0,
+    "weight": 0.03,
+    "window": "since the 36-month peak",
+    "weighted_pct": -0.45
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -15.0% since the 36-month peak (2024-11 to 2026-08); 3% of the part's cost, so about -0.45% on the price. Not checkable: 21 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "index_peak:320080:11fa31a1",
+   "kind": "index_peak",
+   "part": "part:320080",
+   "refs": [
+    "idx:PPI-D351@2022-09",
+    "idx:PPI-D351@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-D351",
+    "from_month": "2022-09",
+    "to_month": "2026-08",
+    "from_value": 233.4,
+    "to_value": 131.9,
+    "change_pct": -43.5,
+    "weight": 0.03,
+    "window": "since the high of all the data",
+    "weighted_pct": -1.3
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "PPI-D351 (Producer prices DE: electric power generation, transmission and distribution): -43.5% since the high of all the data (2022-09 to 2026-08); 3% of the part's cost, so about -1.30% on the price. Not checkable: 47 months apart; cite the 12-month change instead."
+  },
+  {
+   "arg_id": "should_cost:320010:a0f87a6d",
+   "kind": "should_cost",
+   "part": "part:320010",
+   "refs": [
+    "cost:320010"
+   ],
+   "figures": {
+    "unit_cost": 25.22,
+    "price_unit": 1,
+    "estimate_of": "sup:70290",
+    "price": 24.37,
+    "price_unit_of_price": 1,
+    "margin_pct": -3.4
+   },
+   "sentence": "Our bottom-up cost model puts the full cost of this part at EUR 25.22 per unit (cost:320010).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "Should-cost EUR 25.22 per unit (the plant of sup:70290, error about 5%); its price EUR 24.37 per unit (price from 2026-01-01) is -3.4% against it - it sells below this cost."
+  },
+  {
+   "arg_id": "should_cost:320070:e5c2ec82",
+   "kind": "should_cost",
+   "part": "part:320070",
+   "refs": [
+    "cost:320070"
+   ],
+   "figures": {
+    "unit_cost": 36.87,
+    "price_unit": 1,
+    "estimate_of": "DE cost base",
+    "price": null,
+    "price_unit_of_price": null,
+    "margin_pct": null
+   },
+   "sentence": "Our bottom-up cost model puts the full cost of this part at EUR 36.87 per unit (cost:320070).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Should-cost EUR 36.87 per unit (a German cost base, error about 10%); no current price of this supplier found."
+  },
+  {
+   "arg_id": "delivery_record:all:2d5ec520",
+   "kind": "delivery_record",
+   "part": null,
+   "refs": [
+    "sc:70210@2026Q3"
+   ],
+   "figures": {
+    "otd_pct": 80.8,
+    "quarter": "2026Q3",
+    "target_pct": 95.0,
+    "peer_median_pct": 84.6
+   },
+   "sentence": "Your rolling scorecard shows on-time delivery of 80.8% (sc:70210@2026Q3).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Rolling 12 months to 2026-09-30: 80.8% on time against the requested date (84.6% against its own confirmed date); target 95%; peers' median 84.6%; class B amber. A year earlier 93.9%."
+  },
+  {
+   "arg_id": "quality_record:all:0c5d1d45",
+   "kind": "quality_record",
+   "part": null,
+   "refs": [
+    "sc:70210@2026Q3"
+   ],
+   "figures": {
+    "ppm": 1863,
+    "quarter": "2026Q3",
+    "peer_median_ppm": 457.0
+   },
+   "sentence": "Your rolling scorecard shows 1863 ppm defects (sc:70210@2026Q3).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Rolling 12 months to 2026-09-30: 1863 ppm from 17 complaints; peers' median 457.0 ppm; 8D reports overdue 0. A year earlier 1278 ppm."
+  },
+  {
+   "arg_id": "quality_notification:320010:bdaefaa8",
+   "kind": "quality_notification",
+   "part": "part:320010",
+   "refs": [
+    "qn:20004949",
+    "qn:20004932",
+    "qn:20004917",
+    "qn:20004892",
+    "qn:20004875",
+    "qn:20004795"
+   ],
+   "figures": {
+    "ppm_mean": 6818,
+    "ppms": [
+     6667,
+     5882,
+     5882,
+     5556,
+     5556,
+     11364
+    ],
+    "complaints_12m": 7
+   },
+   "sentence": "Our recent quality notifications on this part average 6818 ppm (qn:20004949, qn:20004932, qn:20004917, qn:20004892, qn:20004875, qn:20004795).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "7 supplier-caused complaints on this part in the last 12 months (leakage at test, missing marking, porosity, surface damage, wrong material certificate); EUR 900 recharged; 0 without a closed 8D. Per-lot ppm is jumpy (KNOWN_ISSUES 10): the scorecard's rolling ppm is the fairer figure."
+  },
+  {
+   "arg_id": "quality_notification:320080:f79d9b43",
+   "kind": "quality_notification",
+   "part": "part:320080",
+   "refs": [
+    "qn:20005032",
+    "qn:20005018",
+    "qn:20004936",
+    "qn:20004906",
+    "qn:20004904",
+    "qn:20004874"
+   ],
+   "figures": {
+    "ppm_mean": 6581,
+    "ppms": [
+     4000,
+     3891,
+     3891,
+     4000,
+     20000,
+     3704
+    ],
+    "complaints_12m": 10
+   },
+   "sentence": "Our recent quality notifications on this part average 6581 ppm (qn:20005032, qn:20005018, qn:20004936, qn:20004906, qn:20004904, qn:20004874).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "10 supplier-caused complaints on this part in the last 12 months (burr / sharp edge, coating defect, dimension out of tolerance, leakage at test, missing marking, surface damage); EUR 750 recharged; 2 without a closed 8D. Per-lot ppm is jumpy (KNOWN_ISSUES 10): the scorecard's rolling ppm is the fairer figure."
+  },
+  {
+   "arg_id": "order_history:320010:9ae8b706",
+   "kind": "order_history",
+   "part": "part:320010",
+   "refs": [
+    "po:4500014362-10",
+    "po:4500014293-10",
+    "po:4500014252-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     24.37,
+     24.37,
+     24.37
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2026-09-03",
+     "2026-08-19",
+     "2026-08-17"
+    ]
+   },
+   "sentence": "Our latest orders for this part were all at EUR 24.37 per unit (po:4500014362-10, po:4500014293-10, po:4500014252-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "What we pay now: [24.37, 24.37, 24.37] per unit (2026-08-17 to 2026-09-03); anchors any increase."
+  },
+  {
+   "arg_id": "order_history:320010:20f2b183",
+   "kind": "order_history",
+   "part": "part:320010",
+   "refs": [
+    "po:4500010004-10",
+    "po:4500010136-10",
+    "po:4500010146-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     26.31,
+     26.31,
+     26.31
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2023-10-02",
+     "2023-11-02",
+     "2023-11-03"
+    ]
+   },
+   "sentence": "Our earliest orders on record for this part were all at EUR 26.31 per unit (po:4500010004-10, po:4500010136-10, po:4500010146-10).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "Earliest orders [26.31, 26.31, 26.31] per unit (2023-10-02 to 2023-11-03); now -7.4% against them - it has already cut its price since."
+  },
+  {
+   "arg_id": "order_history:320080:bb9c6827",
+   "kind": "order_history",
+   "part": "part:320080",
+   "refs": [
+    "po:4500014420-10",
+    "po:4500014368-10",
+    "po:4500014293-20"
+   ],
+   "figures": {
+    "unit_prices": [
+     41.63,
+     41.63,
+     41.63
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2026-09-17",
+     "2026-09-04",
+     "2026-08-19"
+    ]
+   },
+   "sentence": "Our latest orders for this part were all at EUR 41.63 per unit (po:4500014420-10, po:4500014368-10, po:4500014293-20).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "What we pay now: [41.63, 41.63, 41.63] per unit (2026-08-19 to 2026-09-17); anchors any increase."
+  },
+  {
+   "arg_id": "order_history:320080:3698d5be",
+   "kind": "order_history",
+   "part": "part:320080",
+   "refs": [
+    "po:4500010014-10",
+    "po:4500010079-10",
+    "po:4500010154-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     42.51,
+     42.51,
+     42.51
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2023-10-04",
+     "2023-10-19",
+     "2023-11-06"
+    ]
+   },
+   "sentence": "Our earliest orders on record for this part were all at EUR 42.51 per unit (po:4500010014-10, po:4500010079-10, po:4500010154-10).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "Earliest orders [42.51, 42.51, 42.51] per unit (2023-10-04 to 2023-11-06); now -2.1% against them - it has already cut its price since."
+  },
+  {
+   "arg_id": "volume_change:320010:5aad46ba",
+   "kind": "volume_change",
+   "part": "part:320010",
+   "refs": [
+    "fc:320010@2026-09"
+   ],
+   "figures": {
+    "change_pct": 18.1,
+    "volume_per_year": 14650,
+    "snapshot": "2026-09"
+   },
+   "sentence": "Our demand forecast for this part has risen 18.1% (fc:320010@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Snapshot 2026-09: 14650 for the next 12 months against 12400 ordered in the last 12 months (requested dates); shared with suppliers: True. More volume is worth more to it."
+  },
+  {
+   "arg_id": "volume_change:320011:1d883b73",
+   "kind": "volume_change",
+   "part": "part:320011",
+   "refs": [
+    "fc:320011@2026-09"
+   ],
+   "figures": {
+    "change_pct": 23.2,
+    "volume_per_year": 8670,
+    "snapshot": "2026-09"
+   },
+   "sentence": "Our demand forecast for this part has risen 23.2% (fc:320011@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Snapshot 2026-09: 8670 for the next 12 months against 7040 ordered in the last 12 months (requested dates); shared with suppliers: True. More volume is worth more to it."
+  },
+  {
+   "arg_id": "volume_change:320080:bbbfedd3",
+   "kind": "volume_change",
+   "part": "part:320080",
+   "refs": [
+    "fc:320080@2026-09"
+   ],
+   "figures": {
+    "change_pct": 14.7,
+    "volume_per_year": 6170,
+    "snapshot": "2026-09"
+   },
+   "sentence": "Our demand forecast for this part has risen 14.7% (fc:320080@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Snapshot 2026-09: 6170 for the next 12 months against 5380 ordered in the last 12 months (requested dates); shared with suppliers: True. More volume is worth more to it."
+  },
+  {
+   "arg_id": "news:all:4e160da4",
+   "kind": "news",
+   "part": null,
+   "refs": [
+    "news:20240514-00"
+   ],
+   "figures": {
+    "topic": "renamed",
+    "date": "2024-05-14"
+   },
+   "sentence": "We have noted the press report \"Zerspanung Dralveck becomes a GmbH\" (news:20240514-00).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "2024-05-14 renamed: Zerspanung Dralveck becomes a GmbH. The sole trader Zerspanung Dralveck e.K. continues as Zerspanung Dralveck GmbH; customers receive a new supplier number. -> no lever: a change of name."
+  },
+  {
+   "arg_id": "contract_clause:all:72c3c497",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070210#3.1"
+   ],
+   "figures": {
+    "type": "price",
+    "days": 90
+   },
+   "sentence": "Our framework agreement fixes prices for each calendar year.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070210#3.1 (price): Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+  },
+  {
+   "arg_id": "contract_clause:all:8b716d0a",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070210#4.1"
+   ],
+   "figures": {
+    "type": "payment",
+    "days": 30
+   },
+   "sentence": "Our framework agreement sets the payment terms.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070210#4.1 (payment): Payment: 30 days net, 2 % discount within 10 days. Our standard is 60 days; shorter terms are its benefit."
+  },
+  {
+   "arg_id": "contract_clause:all:5b6c57b8",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070210#5.1"
+   ],
+   "figures": {
+    "type": "delivery",
+    "days": 28
+   },
+   "sentence": "Our framework agreement sets the delivery terms and the standard lead time.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070210#5.1 (delivery): Delivery EXW; standard lead time 28 days from order."
+  },
+  {
+   "arg_id": "contract_clause:all:a0053ec0",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070210#6.1"
+   ],
+   "figures": {
+    "type": "quality",
+    "days": null
+   },
+   "sentence": "Our framework agreement includes the quality agreement with its delivery target.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070210#6.1 (quality): The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint."
+  },
+  {
+   "arg_id": "contract_clause:all:f71de2c8",
+   "kind": "contract_clause",
+   "part": null,
+   "refs": [
+    "ctr:4600070210#8.1"
+   ],
+   "figures": {
+    "type": "term",
+    "days": 90,
+    "valid_to": "2027-06-30",
+    "notice_deadline": "2027-04-01"
+   },
+   "sentence": "Our framework agreement renews only unless either side gives notice.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070210#8.1 (term): Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice. To stop the renewal, notice by 2027-04-01 (still open: a credible exit)."
+  },
+  {
+   "arg_id": "correspondence:all:c4709b41",
+   "kind": "correspondence",
+   "part": null,
+   "refs": [
+    "doc:20251123-70210-N"
+   ],
+   "figures": {
+    "doc_kind": "email",
+    "date": "2025-11-23",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "email 2025-11-23 by Zerspanung Dralveck GmbH: Please find attached our renewed ISO 9001 certificate."
+  },
+  {
+   "arg_id": "correspondence:all:75fcf59f",
+   "kind": "correspondence",
+   "part": null,
+   "refs": [
+    "doc:20260504-70210-P"
+   ],
+   "figures": {
+    "doc_kind": "email",
+    "date": "2026-05-04",
+    "signals_us": [
+     "asks for faster payment / values cash"
+    ],
+    "signals_them": []
+   },
+   "sentence": "We refer to your e-mail \"Overdue invoices\" (doc:20260504-70210-P).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "email 2026-05-04 by Zerspanung Dralveck GmbH: Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions. [for us: asks for faster payment / values cash]"
+  },
+  {
+   "arg_id": "call_note:all:5a9e4926",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260722-70210-M2"
+   ],
+   "figures": {
+    "doc_kind": "call_note",
+    "date": "2026-07-22",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our call about \"Capacity\" (doc:20260722-70210-M2).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "call_note 2026-07-22 by Hollerau Pumpenwerke, Purchasing: Call with sales at Zerspanung Dralveck GmbH: they could take additional parts at short notice; the second shift has been on hold since spring."
+  },
+  {
+   "arg_id": "call_note:all:311db839",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260908-70210-M1"
+   ],
+   "figures": {
+    "doc_kind": "meeting_note",
+    "date": "2026-09-08",
+    "signals_us": [
+     "its costing is out of date"
+    ],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our meeting about \"Visit by the owner\" (doc:20260908-70210-M1).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "meeting_note 2026-09-08 by Hollerau Pumpenwerke, Purchasing: The owner of Zerspanung Dralveck GmbH admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing. [for us: its costing is out of date]"
+  },
+  {
+   "arg_id": "call_note:all:65c8bf56",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260910-70210-M3"
+   ],
+   "figures": {
+    "doc_kind": "meeting_note",
+    "date": "2026-09-10",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our meeting about \"Supplier day\" (doc:20260910-70210-M3).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "meeting_note 2026-09-10 by Hollerau Pumpenwerke, Purchasing: At our supplier day Zerspanung Dralveck GmbH said Hollerau is an important reference customer for them."
+  },
+  {
+   "arg_id": "correspondence:320070:26eda639",
+   "kind": "correspondence",
+   "part": "part:320070",
+   "refs": [
+    "doc:20260923-70210-P05"
+   ],
+   "figures": {
+    "doc_kind": "rfq",
+    "date": "2026-09-23",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We refer to our request for quotation \"Request for quotation: Pump shaft HX\" (doc:20260923-70210-P05).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "rfq 2026-09-23 by Hollerau Pumpenwerke, Purchasing: Request for quotation for Pump shaft HX (part:320070), series HX (start of production March 2027), drawing rev. B. - Annual volume: 4200 pc - Material: 1.4404, net weight 3.0 kg - Delivery DAP Hollerau; please state price, payment terms, lead time and any tooling. Invited: Zerspanung Dralveck GmbH, Strojírna Hrvelec s.r.o., Drehteile Fuchsreiter GmbH"
+  },
+  {
+   "arg_id": "negotiation_pattern:320010:5740588a",
+   "kind": "negotiation_pattern",
+   "part": "part:320010",
+   "refs": [],
+   "figures": {
+    "events": [
+     [
+      "EV-2024-70210-320010",
+      "2023-11-30",
+      -3.2,
+      -6.6
+     ],
+     [
+      "EV-2025-70210-320010",
+      "2024-12-10",
+      4.6,
+      2.2
+     ],
+     [
+      "EV-2026-70210-320010",
+      "2025-11-23",
+      -0.9,
+      -3.0
+     ]
+    ],
+    "mean_asked_pct": 0.17,
+    "mean_settled_pct": -2.47
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "3 renewals: asked +0.2% on average, settled -2.5% (gap 2.6 pp); last 2025-11-23: asked -0.9%, settled -3.0%. It usually settles well below its ask."
+  },
+  {
+   "arg_id": "negotiation_pattern:320080:590fccb8",
+   "kind": "negotiation_pattern",
+   "part": "part:320080",
+   "refs": [],
+   "figures": {
+    "events": [
+     [
+      "EV-2024-70210-320080",
+      "2023-12-02",
+      0.2,
+      -2.1
+     ],
+     [
+      "EV-2025-70210-320080",
+      "2024-11-28",
+      1.2,
+      0.0
+     ],
+     [
+      "EV-2026-70210-320080",
+      "2025-12-08",
+      1.2,
+      0.0
+     ]
+    ],
+    "mean_asked_pct": 0.87,
+    "mean_settled_pct": -0.7
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "3 renewals: asked +0.9% on average, settled -0.7% (gap 1.6 pp); last 2025-12-08: asked +1.2%, settled +0.0%. It usually settles well below its ask."
+  },
+  {
+   "arg_id": "relationship:320010:173b299e",
+   "kind": "relationship",
+   "part": "part:320010",
+   "refs": [
+    "part:320010"
+   ],
+   "figures": {
+    "years": 3.9,
+    "quota_pct": 30
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Approved since 2022-11-01 (3.9 years), status active, quota 30%."
+  },
+  {
+   "arg_id": "tooling:320010:90d0d84e",
+   "kind": "tooling",
+   "part": "part:320010",
+   "refs": [
+    "part:320010"
+   ],
+   "figures": {
+    "owner": "Hollerau"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "We own the tooling: the part can move to another source."
+  },
+  {
+   "arg_id": "sourcing_position:320010:0171aabe",
+   "kind": "sourcing_position",
+   "part": "part:320010",
+   "refs": [
+    "part:320010"
+   ],
+   "figures": {
+    "alternatives": [
+     "sup:70290"
+    ]
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Other approved sources: sup:70290 Feinmechanik Rottaler GmbH (DE, active, quota 70%)."
+  },
+  {
+   "arg_id": "relationship:320011:6e219834",
+   "kind": "relationship",
+   "part": "part:320011",
+   "refs": [
+    "part:320011"
+   ],
+   "figures": {
+    "years": 15.9,
+    "quota_pct": 0
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Approved since 2010-11-01 (15.9 years), status qualified, quota 0%."
+  },
+  {
+   "arg_id": "tooling:320011:3738937e",
+   "kind": "tooling",
+   "part": "part:320011",
+   "refs": [
+    "part:320011"
+   ],
+   "figures": {
+    "owner": "Hollerau"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "We own the tooling: the part can move to another source."
+  },
+  {
+   "arg_id": "sourcing_position:320011:1cc87439",
+   "kind": "sourcing_position",
+   "part": "part:320011",
+   "refs": [
+    "part:320011"
+   ],
+   "figures": {
+    "alternatives": [
+     "sup:70280"
+    ]
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Other approved sources: sup:70280 Wälzhammer Präzision GmbH (DE, active, quota 100%)."
+  },
+  {
+   "arg_id": "relationship:320080:b47c1f75",
+   "kind": "relationship",
+   "part": "part:320080",
+   "refs": [
+    "part:320080"
+   ],
+   "figures": {
+    "years": 11.9,
+    "quota_pct": 100
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Approved since 2014-11-01 (11.9 years), status active, quota 100%."
+  },
+  {
+   "arg_id": "tooling:320080:c12cf5a7",
+   "kind": "tooling",
+   "part": "part:320080",
+   "refs": [
+    "part:320080"
+   ],
+   "figures": {
+    "owner": "Hollerau"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "We own the tooling: the part can move to another source."
+  },
+  {
+   "arg_id": "sourcing_position:320080:98c71646",
+   "kind": "sourcing_position",
+   "part": "part:320080",
+   "refs": [
+    "part:320080"
+   ],
+   "figures": {
+    "alternatives": []
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "No other approved source for this part: it is our single source."
+  },
+  {
+   "arg_id": "price_trend:320010:d223d5f4",
+   "kind": "price_trend",
+   "part": "part:320010",
+   "refs": [],
+   "figures": {
+    "prices": [
+     [
+      "2023-01-01",
+      26.31
+     ],
+     [
+      "2024-01-01",
+      24.58
+     ],
+     [
+      "2025-01-01",
+      25.13
+     ],
+     [
+      "2026-01-01",
+      24.37
+     ]
+    ],
+    "change_pct": -7.4
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Price per unit: 2023 26.31, 2024 24.58, 2025 25.13, 2026 24.37 (-7.4% since 2023). It has already cut its price over the years."
+  },
+  {
+   "arg_id": "price_trend:320080:738eed8a",
+   "kind": "price_trend",
+   "part": "part:320080",
+   "refs": [],
+   "figures": {
+    "prices": [
+     [
+      "2023-01-01",
+      42.51
+     ],
+     [
+      "2024-01-01",
+      41.63
+     ],
+     [
+      "2025-01-01",
+      41.63
+     ],
+     [
+      "2026-01-01",
+      41.63
+     ]
+    ],
+    "change_pct": -2.1
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Price per unit: 2023 42.51, 2024 41.63, 2025 41.63, 2026 41.63 (-2.1% since 2023). It has already cut its price over the years."
+  },
+  {
+   "arg_id": "rival_quote:320010:4d9563d6",
+   "kind": "rival_quote",
+   "part": "part:320010",
+   "refs": [
+    "quote:7100018"
+   ],
+   "figures": {
+    "unit_price": 27.0,
+    "price_unit": 1,
+    "supplier": "sup:70290",
+    "date": "2025-06-21",
+    "vs_its_price_pct": 10.8
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "sup:70290 Feinmechanik Rottaler GmbH quoted EUR 27.00 per unit on 2025-06-21 (?, None days, lead time 41 days, tooling 0); +10.8% against its own price (price from 2026-01-01). Checkable only when the case lists this quote."
+  },
+  {
+   "arg_id": "rival_price:320010:ab3be40c",
+   "kind": "rival_price",
+   "part": "part:320010",
+   "refs": [
+    "po:4500014461-10",
+    "po:4500014408-10",
+    "po:4500014348-10"
+   ],
+   "figures": {
+    "unit_price": 24.92,
+    "price_unit": 1,
+    "supplier": "sup:70290",
+    "vs_its_price_pct": 2.3
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "We also buy this part from sup:70290 at EUR 24.92 per unit (order of 2026-09-28); +2.3% against its own price. Its order lines are citable as order history (same part); citing them reveals the rival's price."
+  },
+  {
+   "arg_id": "rival_quote:320011:acdb8841",
+   "kind": "rival_quote",
+   "part": "part:320011",
+   "refs": [
+    "quote:7300056"
+   ],
+   "figures": {
+    "unit_price": 33.06,
+    "price_unit": 1,
+    "supplier": "sup:70280",
+    "date": "2026-09-08",
+    "vs_its_price_pct": -8.2
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "sup:70280 Wälzhammer Präzision GmbH quoted EUR 33.06 per unit on 2026-09-08 (EXW, 10 days, lead time 28 days, tooling 0); -8.2% against its own price (quote quote:7100021). Checkable only when the case lists this quote."
+  },
+  {
+   "arg_id": "rival_price:320011:514a2a6a",
+   "kind": "rival_price",
+   "part": "part:320011",
+   "refs": [
+    "po:4500014364-10",
+    "po:4500014295-10",
+    "po:4500014258-10"
+   ],
+   "figures": {
+    "unit_price": 33.06,
+    "price_unit": 1,
+    "supplier": "sup:70280",
+    "vs_its_price_pct": -8.2
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "We also buy this part from sup:70280 at EUR 33.06 per unit (order of 2026-09-03); -8.2% against its own price. Its order lines are citable as order history (same part); citing them reveals the rival's price."
+  },
+  {
+   "arg_id": "payment_behaviour:all:11829f07",
+   "kind": "payment_behaviour",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "avg_days_paid_after_due": -8.4,
+    "avg_days_paid_after_due_last_12m": -8.8,
+    "paid_late_pct": 35.6
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "148 invoices; we pay -8.8 days after due on average (last 12 months), 35.6% late, 19.9% over 10 days late, max 24; discounts taken 90 (11 after the period); short-paid 0. It can complain that we pay late."
+  },
+  {
+   "arg_id": "cash_discount:all:7b5b1691",
+   "kind": "cash_discount",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "skonto_pct": 2,
+    "skonto_days": 10,
+    "implied_rate": 0.2
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "It offers 2% cash discount for payment within 10 days (net 30): cash is worth about 20% a year to it - trade faster payment for price."
+  },
+  {
+   "arg_id": "supplier_health:all:818b3a7c",
+   "kind": "supplier_health",
+   "part": null,
+   "refs": [
+    "sup:70210"
+   ],
+   "figures": {
+    "credit_index": 249,
+    "credit_index_12m_ago": 249,
+    "equity_ratio_pct": 43.6,
+    "weak": false
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "GmbH, founded 1991, founder owned, 22 staff, turnover 2-5 M EUR; equity ratio 43.6%, credit index 249 (12 months ago 249; higher is worse); audit B. Sound: it can afford to walk away."
+  },
+  {
+   "arg_id": "dependency:all:f11abdaf",
+   "kind": "dependency",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "fiscal_year": "FY2026",
+    "spend_eur": 316635.38,
+    "turnover_eur": 3500000.0,
+    "share_pct": 9.0
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Our spend FY2026: EUR 316,635, about 9.0% of its turnover."
+  },
+  {
+   "arg_id": "market_news:all:5a37223b",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260910-27"
+   ],
+   "figures": {
+    "date": "2026-09-10"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-10 market: Copper notation at EUR 1,289 per 100 kg. The copper notation for cables averaged EUR 1,289/100 kg in September, +48 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:20eac6ee",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260912-30"
+   ],
+   "figures": {
+    "date": "2026-09-12"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "2026-09-12 market: Industrial power prices -43 % on 2022. Producer prices for electric power stand -43 % against August 2022. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:6902032a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260914-31"
+   ],
+   "figures": {
+    "date": "2026-09-14"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-14 market: Iron castings +1.8 % year on year. Producer prices for iron castings rose +1.8 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f855aade",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260916-32"
+   ],
+   "figures": {
+    "date": "2026-09-16"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-16 market: Alloy surcharge 1.4404 at EUR 3,008 per tonne. The alloy surcharge for 1.4404 stands at EUR 3,008/t, +6 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:0e3ce486",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260918-33"
+   ],
+   "figures": {
+    "date": "2026-09-18"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-18 market: Electronic boards +41 % year on year. Producer prices for assembled electronic boards rose +41 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:3071261a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260920-34"
+   ],
+   "figures": {
+    "date": "2026-09-20"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-20 market: Labour costs in manufacturing +2.7 %. Labour costs in German manufacturing rose +2.7 % year on year in the second quarter. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f8eeb840",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260922-35"
+   ],
+   "figures": {
+    "date": "2026-09-22"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-22 market: Steel prices +7.3 % since January. Producer prices for basic iron and steel are +7.3 % above January. Do not cite it as about this supplier."
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "where": "economics.findings",
+    "value": "price_history EV-2026-70210-320010",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "economics.findings",
+    "value": "price_history EV-2023/2024/2025/2026-70210-320010",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "economics.findings",
+    "value": "price_history EV-2024/2026-70210-320080",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "red_team.arguments",
+    "value": "part:320010 price_history",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "red_team.arguments",
+    "value": "invoices record",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "red_team.arguments",
+    "value": "part:320080 sourcing",
+    "why": "unknown record ID"
+   },
+   {
+    "where": "rebuttals.press",
+    "value": "We would welcome closure of the open 8D reports on the lantern before we discuss new work.",
+    "why": "figure in e-mail text"
+   }
+  ]
+ }
+}

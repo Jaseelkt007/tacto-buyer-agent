@@ -1,0 +1,1756 @@
+{
+ "supplier_id": "sup:70540",
+ "name": "Konvertek Antriebselektronik GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "built": "2026-10-25T00:14:34",
+  "seconds": 91.9,
+  "evidence_chars": 23837,
+  "arguments": 45,
+  "errors": {}
+ },
+ "strategy": {
+  "summary": "Konvertek (AT, group-owned, about 196 M EUR turnover, sound finances) is the sole active source for the 15 kW converter part:350021 under framework ctr:4600070540, which runs to mid-2027 with auto-renewal. It is a qualified but unused second source for the 7.5 kW part:350020, where it quotes well above the incumbent Selvbrunn. The price of 350021 has been flat since 2023 and sits about at our should-cost, so Konvertek earns roughly zero margin there. Cost drivers (electronic components, copper) have risen sharply. Konvertek has frozen its list for all customers until June 2027 and points to payment and logistics as the negotiable levers. We are a small account (about 0.6% of its turnover) to a supplier that is reviewing small accounts and facing a semiconductor shortage. Leverage is balanced, tilting toward Konvertek on 350021. On 350020, real competitive leverage exists through Selvbrunn. Strategy: protect supply and the flat price on 350021 by giving volume, length and payment, not by squeezing price. Use competition and should-cost only on 350020, and consider a bundle.",
+  "decision_maker": "The key account manager negotiates within about 2%. Larger price changes go to a pricing committee that meets every two weeks (doc:20260711-70540-M3). The sales director sets account priorities (doc:20260223-70540-M2). A head-office directive bars discounts (quote:7300067, quote:7300003 remark).",
+  "persona": {
+   "owner_type": "group",
+   "style": "Policy-driven, firm on list price, polite. It redirects price talk to payment and logistics, and historically accepts zero-increase settlements after a modest ask.",
+   "openness": "guarded",
+   "traits": [
+    "price_frozen",
+    "approval_ladder",
+    "deprioritising_us",
+    "sells_below_cost",
+    "we_depend_on_it",
+    "delivery_issues",
+    "cost_pressure_real",
+    "relationship_long"
+   ],
+   "other_traits": [
+    "Financially sound, so it can afford to walk away",
+    "Sole source on 350021 amid a power-semiconductor shortage",
+    "Strong quality: 0 ppm in the last 12 months",
+    "Fixed holiday shutdown requiring early call-offs"
+   ]
+  },
+  "needs": [
+   {
+    "need": "volume",
+    "detail": "It is focusing on customers with volume, and we are a small account. Growing, binding volume, and possibly 350020 volume, makes us worth keeping.",
+    "evidence": [
+     "doc:20260223-70540-M2",
+     "fc:350021@2026-09",
+     "fc:350020@2026-09",
+     "dependency:all:f11abdaf"
+    ],
+    "strength": "strong"
+   },
+   {
+    "need": "cash",
+    "detail": "It explicitly invites talks on payment conditions. Paying on time or faster is valued even though it has no financial stress.",
+    "evidence": [
+     "doc:20260906-70540-M1",
+     "sup:70540"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "price_stability",
+    "detail": "It wants its list price upheld with no exceptions, and is likely to seek an increase or index cover once the freeze ends, given copper and electronics costs.",
+    "evidence": [
+     "doc:20260906-70540-M1",
+     "idx:PPI-C2611@2026-08",
+     "idx:CU-NOTATION@2026-09"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "planning_security",
+    "detail": "Under the chip shortage and around its shutdown, it values early, stable call-offs and longer commitments.",
+    "evidence": [
+     "news:20260302-01",
+     "doc:20251005-70540-N"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "need": "material_risk_protection",
+    "detail": "Electronics and copper are rising and at their 36-month peaks while the 350021 price sits at about cost. An index clause may be requested at renewal.",
+    "evidence": [
+     "cost:350021",
+     "idx:CU-NOTATION@2026-09"
+    ],
+    "strength": "weak"
+   }
+  ],
+  "constraints": [
+   {
+    "kind": "price_frozen",
+    "detail": "Its list applies to all customers without exception until June 2027, and discounts are barred by a head-office directive.",
+    "evidence": [
+     "doc:20260906-70540-M1",
+     "quote:7300067"
+    ]
+   },
+   {
+    "kind": "approval_needed",
+    "detail": "Any price change above about 2% needs pricing committee approval, which meets every two weeks.",
+    "evidence": [
+     "doc:20260711-70540-M3"
+    ]
+   },
+   {
+    "kind": "sells_below_cost",
+    "detail": "The 350021 price is slightly below our no-margin should-cost, though within its error band.",
+    "evidence": [
+     "cost:350021"
+    ]
+   },
+   {
+    "kind": "capacity_full",
+    "detail": "A power-semiconductor shortage has extended lead times. On-time delivery is weak against the contract target, and the plant shuts down over the year end.",
+    "evidence": [
+     "news:20260302-01",
+     "sc:70540@2026Q3",
+     "doc:20251005-70540-N"
+    ]
+   },
+   {
+    "kind": "contract_binding",
+    "detail": "The price is fixed per calendar year and changes need notice before year end. The term auto-renews unless notice is given.",
+    "evidence": [
+     "ctr:4600070540#3.1",
+     "ctr:4600070540#8.1"
+    ]
+   },
+   {
+    "kind": "single_source",
+    "detail": "It holds a 100% quota on 350021. Selvbrunn is only qualified and its quote is stale.",
+    "evidence": [
+     "rfq:6000000125",
+     "quote:7100053"
+    ]
+   }
+  ],
+  "levers": [
+   {
+    "arg_id": "volume_change:350021:f41622a9",
+    "why": "Speaks directly to its focus on volume customers and counters the small-account review.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "correspondence:all:74e7dcb0",
+    "why": "Its own statement that list prices hold until June 2027 blocks any increase before then and opens payment and logistics trades.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "rival_quote:350020:cb8ac487",
+    "why": "On 350020 only: a live competitor quote well below Konvertek's. This is our real competitive lever there.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "volume_change:350020:47c6485c",
+    "why": "Offers new volume, which it wants, in exchange for a 350020 price near the benchmark, and strengthens a bundle.",
+    "when": "opening"
+   },
+   {
+    "arg_id": "should_cost:350020:24e30d64",
+    "why": "Its 350020 quote sits well above should-cost. Use it as a second record on 350020, noting that the estimate models another plant.",
+    "when": "later"
+   },
+   {
+    "arg_id": "contract_clause:350021:27271c52",
+    "why": "The price is fixed per calendar year and changes need timely notice. Use it to hold the 2027 price if no notice was given.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "negotiation_pattern:350021:3c0c1aea",
+    "why": "Past asks all settled at zero. Use it as a fresh fact in a later round to temper an increase ask.",
+    "when": "later"
+   },
+   {
+    "arg_id": "payment_behaviour:all:11829f07",
+    "why": "Shows we are a reliable payer and supports a payment trade.",
+    "when": "later"
+   },
+   {
+    "arg_id": "order_history:350021:32eedc63",
+    "why": "Anchors any increase discussion at the current price.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "delivery_record:all:8cf8dd66",
+    "why": "On-time delivery is below the contract target and peers. Use it as a late fresh fact or to ask for service commitments, not as a main price lever.",
+    "when": "later"
+   },
+   {
+    "arg_id": "market_news:all:20eac6ee",
+    "why": "Power costs are far below 2022 and offset part of the cost pressure if it argues energy.",
+    "when": "if_challenged"
+   },
+   {
+    "arg_id": "contract_clause:350021:ebd02062",
+    "why": "An exit window still exists before auto-renewal. Mention it only softly and only if pressed hard, as a fact, not a threat.",
+    "when": "if_challenged"
+   }
+  ],
+  "trades": [
+   {
+    "field": "payment_days",
+    "direction": "lower",
+    "why": "It invites payment talks. Shorter payment is cheap for us and buys a price hold or a step, especially on 350020. Give it late in the negotiation as the closing trade."
+   },
+   {
+    "field": "contract_months",
+    "direction": "higher",
+    "why": "A 24-month commitment gives a volume-focused supplier security and locks the flat price past the freeze. Longer adds nothing extra."
+   },
+   {
+    "field": "volume_per_year",
+    "direction": "higher",
+    "why": "Binding volume within our real need (rising forecast), plus possible 350020 volume, answers the small-account review."
+   },
+   {
+    "field": "lead_time_days",
+    "direction": "keep",
+    "why": "It is capacity-constrained by the chip shortage. Asking for shorter lead time would be priced steeply, so accept its standard lead time."
+   },
+   {
+    "field": "index_clause",
+    "direction": "add",
+    "why": "Only if it insists at renewal. Electronics and copper are at their peaks, so price the risk carefully and keep the base well below the fixed price."
+   },
+   {
+    "field": "effective_date",
+    "direction": "later",
+    "why": "If an increase becomes unavoidable, tie any new price to after June 2027, in line with its own freeze statement."
+   },
+   {
+    "field": "chargeback_eur_per_complaint",
+    "direction": "keep",
+    "why": "Quality is excellent and defects cost little. Chargeback is a minor bargaining chip, not a priority."
+   }
+  ],
+  "price_view": {
+   "room": "little",
+   "reasoning": "On 350021 the price sits at about our no-margin should-cost and drivers have risen substantially. The realistic aim is to hold the flat price, ideally extended for longer, not to cut it. On 350020 there is real room: Konvertek quotes far above both the incumbent and should-cost, though the should-cost models Selvbrunn's plant. A bundle could convert 350020 volume into a competitive 350020 price while keeping 350021 stable.",
+   "squeeze_risk": "high"
+  },
+  "tone": {
+   "style": "warm",
+   "do": [
+    "Treat them as a valued strategic partner for the 15 kW drive and acknowledge the cost pressure on electronics and copper",
+    "Frame asks within their list policy and the KAM's approval range so decisions are quick",
+    "Lead with volume, commitment and payment trades",
+    "Answer every message promptly and plan for committee cycles",
+    "Coordinate call-offs early around their holiday shutdown"
+   ],
+   "dont": [
+    "Do not demand price cuts on 350021",
+    "Do not threaten termination or a move to Selvbrunn",
+    "Do not ask open questions about their cost structure",
+    "Do not signal urgency or that we have no alternative",
+    "Do not cite market news as if it were about Konvertek"
+   ]
+  },
+  "traps": [
+   "Using should_cost:350021:0ebe7750: it shows Konvertek selling below cost, which argues for an increase",
+   "Citing index_change arguments for 350021 or 350020: they hand Konvertek a checkable case for about a 10% increase",
+   "Citing news:all:34c5e0e9 or market_news on copper and electronics: these support Konvertek",
+   "Using supplier_health or dependency arguments: they show it can walk away and that we are small",
+   "Citing rival_price:350020:a07cbd0e: it reveals Selvbrunn's order price. Prefer the quote, and only if the case lists it",
+   "Citing the stale Selvbrunn quote for 350021 (rival_quote:350021:b300c57b) as a current alternative",
+   "Pushing past a declared final offer, or asking for a short lead time during the chip shortage",
+   "Asking for long payment plus a price cut under the freeze",
+   "Missing the auto-renewal notice window or the year-end price-notice timing",
+   "Over-relying on the delivery record: OTD data has a known requested-versus-confirmed date issue"
+  ],
+  "writer_notes": "Open warmly, acknowledge the long partnership and their excellent quality. Keep each price ask small enough for the KAM to approve, or allow time for the committee. Hold back the payment improvement for the final round. Bring one fresh true record each round. If they name a final offer, accept it or pick their alternative sheet.",
+  "questions_to_ask": [
+   "Which payment or logistics conditions would be most valuable to you in return for keeping prices stable?",
+   "How can we best align our call-offs with your allocation and shutdown planning to improve on-time delivery?",
+   "Does your price-list commitment until mid-next-year also apply to our framework renewal terms?"
+  ]
+ },
+ "specialists": {
+  "economics": {
+   "findings": [
+    {
+     "text": "Part 350021 (15 kW converter, Konvertek sole active source, quota 100%): price EUR 684.92 has been flat since 2023, and that price is 1.2% BELOW our own bottom-up should-cost of EUR 692.92 for its AT plant. The should-cost carries no margin and is said to be accurate to about 5%, so the gap lies within its error band. The fair reading is that Konvertek earns roughly zero margin on this part. There is no room to push the price down; the economic case points to holding it, not cutting it.",
+     "evidence": [
+      "cost:350021",
+      "ctr:4600070540#3.1",
+      "quote:7300067"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Cost drivers for 350021 have risen since the last price. Electronic components PPI rose 13.5% in 12 months (weight 0.43, about +5.8% on price). Copper rose 47.7% (weight 0.08, about +3.8%). Labour rose 2.7% (weight 0.15, about +0.4%). Together that is roughly +10% on the weighted cost base. All three indices are at their 36-month peak. Electronic components are only back to the 2022-10 high, not above it, and the price did not move down when the index was lower. Konvertek has nevertheless quoted the unchanged list price (684.92) and says its list holds for all customers until June 2027. Its history shows asks averaging +2.3% that settled at 0%. Any increase request in the 2027 renewal would be backed by real index data.",
+     "evidence": [
+      "idx:PPI-C2611@2026-08",
+      "idx:PPI-C2611@2025-08",
+      "idx:CU-NOTATION@2026-09",
+      "idx:CU-NOTATION@2025-09",
+      "idx:LCI-C@2026-06",
+      "idx:LCI-C@2025-06",
+      "quote:7300067"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Part 350020 (7.5 kW converter, Konvertek qualified at 0% quota): Konvertek quoted EUR 466.99 on 2026-09-04. That is 15.8% above should-cost of EUR 403.21 and 13.1% above the incumbent Selvbrunn price of EUR 412.74. Caveat: this should-cost models Selvbrunn's DE plant, not Konvertek's, so it is a weaker benchmark for Konvertek. Konvertek's quote also rose 8.8% versus its 2025 quote of EUR 429.18. Index drivers support about +9.6%, so the rise is broadly index-consistent. Konvertek is consistently about 4-13% dearer than Selvbrunn on this part, with longer lead time (84 vs 49 days).",
+     "evidence": [
+      "quote:7200003",
+      "quote:7100051",
+      "quote:7300003",
+      "cost:350020",
+      "rfq:6000000203"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Cross-part economics are inconsistent. Konvertek prices 350020 well above cost, while 350021 sits about at cost. Bundling both parts could balance this: give Konvertek volume on 350020 at a price nearer EUR 413-430, while 350021 stays flat. Evidence on Konvertek's real cost structure is thin: the should-cost confidence is about 5% error and there is no Konvertek-plant estimate for 350020.",
+     "evidence": [
+      "cost:350020",
+      "cost:350021",
+      "quote:7200003"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Not every market signal supports Konvertek's cost argument. Power prices are 43% below 2022. Copper and electronic-board inflation are real and published. Konvertek's own warning of a power-semiconductor shortage supports its pricing power.",
+     "evidence": [
+      "news:20260912-30",
+      "news:20260910-27",
+      "news:20260918-33"
+     ],
+     "importance": "low"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Keep its list price unchanged until June 2027 with no discounts (head-office directive)",
+    "Talk about logistics and payment conditions instead of price; the 30-day payment term is already its benefit",
+    "More volume: its sales director favours customers with volume",
+    "Likely a price increase or index clause at renewal, given the copper and electronics rise"
+   ],
+   "risks": [
+    "Pushing price on 350021 when it sits about at cost could make Konvertek walk away, since we are only 0.6% of its turnover and it is financially sound",
+    "Index-driven increase claims of about +10% on 350021 are checkable and largely true",
+    "Konvertek is the sole active source on 350021, owns the tooling and has warned of chip shortages, so this is a supply risk",
+    "Citing Selvbrunn's 350020 order price reveals a rival's price"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "rival_quote:350020:cb8ac487",
+     "why": "Konvertek's 350020 quote is 11.6% above a live competitor quote"
+    },
+    {
+     "arg_id": "should_cost:350020:24e30d64",
+     "why": "Konvertek's 350020 quote is 15.8% above should-cost (estimate based on the Selvbrunn plant)"
+    },
+    {
+     "arg_id": "volume_change:350020:47c6485c",
+     "why": "Offers Konvertek the volume it wants in exchange for a price near the benchmark"
+    },
+    {
+     "arg_id": "volume_change:350021:f41622a9",
+     "why": "Rising volume on 350021 counters an increase request"
+    },
+    {
+     "arg_id": "price_trend:350021:7c43d159",
+     "why": "Anchors 350021 at its flat price since 2023"
+    },
+    {
+     "arg_id": "negotiation_pattern:350021:3c0c1aea",
+     "why": "Konvertek has historically settled at 0% after asking for increases"
+    },
+    {
+     "arg_id": "contract_clause:350021:27271c52",
+     "why": "The price is fixed per calendar year with 90 days' notice required for changes"
+    },
+    {
+     "arg_id": "market_news:all:20eac6ee",
+     "why": "Power cost relief offsets part of the rising cost drivers"
+    },
+    {
+     "arg_id": "correspondence:all:74e7dcb0",
+     "why": "Konvertek's own statement that its list price holds until June 2027"
+    }
+   ],
+   "open_questions": [
+    "What is Konvertek's real cost for 350020 at its AT plant (no Konvertek-plant should-cost exists)?",
+    "Is the 7.5 kW and 15 kW bundle worth more to Konvertek than the price on either part alone?",
+    "Will Konvertek demand a copper or electronics index clause at the 2027 renewal?",
+    "How reliable is the 5% should-cost error band given the 2026 cost surge?"
+   ]
+  },
+  "persona": {
+   "findings": [
+    {
+     "text": "Pricing decisions sit with a pricing committee, not the key account manager: any change above 2 % needs committee approval, and the committee meets every two weeks. Expect the KAM to move freely only within about ±2 %. Larger moves add at least two-week cycles, so plan the timeline accordingly.",
+     "evidence": [
+      "doc:20260711-70540-M3"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Red flag (frozen price list): Konvertek states its price list applies to all customers without exception until June 2027. It points to logistics and payment conditions as the negotiable levers. Unit-price cuts will meet a policy wall, so trades on payment days, Incoterm and volume are the likely currency. The 'without exception' line may also block increases until then; June 2027 matches the contract end date.",
+     "evidence": [
+      "doc:20260906-70540-M1",
+      "ctr:4600070540#8.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Red flag (deprioritising small accounts): the sales director said they are reviewing small accounts and will focus on customers with volume. We are about 0.6 % of its turnover, so Konvertek wants volume and binding commitments. Our rising forecasts are the counter (part 350020: 4580 vs 4154 units; part 350021: 1947 vs 1848 units).",
+     "evidence": [
+      "doc:20260223-70540-M2"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Financially sound and stable: 196 M EUR turnover, 38.4 % equity ratio, credit index unchanged at 178, VDA 6.3 grade A, group owned. There is no financial stress to exploit, and Konvertek can afford to walk away.",
+     "evidence": [
+      "sup:70540"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Capacity constraint: in March 2026 Konvertek reported shortages of power semiconductors and extended lead times for frequency converters. It also has a fixed holiday shutdown (23 December to 6 January, with January call-offs due by 10 December). Availability is its lever; on-time delivery is weak at 81.5 %.",
+     "evidence": [
+      "news:20260302-01",
+      "doc:20251005-70540-N"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "We are a fair payer: 2.1 days late on average and never more than 6 days late. However, 84.9 % of invoices are paid slightly late, which a sensitive supplier may raise. Paying on time or faster is a cheap gesture with real value to them.",
+     "evidence": [
+      "sup:70540"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Negotiation history on part 350021: across three renewals it asked for about +2.3 % on average and settled at 0 %. Its asks stay near the 2 % committee threshold, and it settles below its ask.",
+     "evidence": [
+      "ctr:4600070540#3.1"
+     ],
+     "importance": "medium"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Volume and binding commitments (focus on volume customers)",
+    "Faster payment / better payment conditions",
+    "Logistics trades (Incoterm)",
+    "Price stability per list until June 2027; possible increase citing semiconductors and copper",
+    "Early call-offs around the shutdown"
+   ],
+   "risks": [
+    "Committee approval delays for any move above 2 %",
+    "Being deprioritised as a small account during the chip shortage",
+    "Policy wall on list price limits unit-price cuts",
+    "Part 350021 priced slightly below should-cost; pushing hard may hurt supply",
+    "Single source with supplier-owned tooling on 350021"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "volume_change:350020:47c6485c",
+     "why": "Counters the small-account concern with growing volume."
+    },
+    {
+     "arg_id": "volume_change:350021:f41622a9",
+     "why": "Shows growing volume on 350021."
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "Shows we are a reliable payer and supports a payment-terms trade."
+    },
+    {
+     "arg_id": "correspondence:all:74e7dcb0",
+     "why": "Their own commitment to the price list until June 2027 blocks increases and opens payment and logistics trades."
+    },
+    {
+     "arg_id": "negotiation_pattern:350021:3c0c1aea",
+     "why": "Its history of settling at 0 % anchors expectations."
+    },
+    {
+     "arg_id": "call_note:all:51b6c85f",
+     "why": "Lets us frame offers within the 2 % threshold for quick approval."
+    },
+    {
+     "arg_id": "rival_quote:350020:cb8ac487",
+     "why": "Credible alternative at -11.6 % on 350020."
+    },
+    {
+     "arg_id": "should_cost:350020:24e30d64",
+     "why": "Its 350020 price is 15.8 % above should-cost."
+    },
+    {
+     "arg_id": "delivery_record:all:8cf8dd66",
+     "why": "Delivery performance is below target and below peers."
+    },
+    {
+     "arg_id": "contract_clause:350021:ebd02062",
+     "why": "Notice by 2027-04-01 gives us a credible exit."
+    }
+   ],
+   "open_questions": [
+    "Does 'without exception' also cover the copper and chip cost increases, i.e. no increase before June 2027?",
+    "Which payment-day trade would they value most?",
+    "How severe is the semiconductor allocation now, and how is it allocated between customers?",
+    "Who sits on the pricing committee, and when is its next meeting date?",
+    "Evidence on its actual cost structure and material hedging is thin."
+   ]
+  },
+  "contract": {
+   "findings": [
+    {
+     "text": "Framework contract ctr:4600070540 covers only part:350021 (15 kW converter). It runs 2025-07-01 to 2027-06-30 and extends automatically by 12 months unless terminated with 90 days' notice. To stop the renewal, notice must be given by 2027-04-01, so a credible exit window is still open.",
+     "evidence": [
+      "ctr:4600070540#8.1",
+      "ctr:4600070540#2.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Prices are fixed per calendar year. Any change needs written notice at least 90 days before year end, i.e. by about 2026-10-02 for 2027. If Konvertek has not given notice by then, the contract supports holding the 2027 price at EUR 684.92. Its own e-mail of 2026-09-06 says its price list applies to all customers until June 2027.",
+     "evidence": [
+      "ctr:4600070540#3.1",
+      "correspondence:all:74e7dcb0"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Payment is 30 days net against our standard of 60, which is already a benefit to the supplier. Delivery is DAP with an 84-day lead time; planned lead time for the part is 56 days. The quality agreement sets a 95% on-time target and a EUR 150 flat fee per supplier-caused complaint.",
+     "evidence": [
+      "ctr:4600070540#4.1",
+      "ctr:4600070540#5.1",
+      "ctr:4600070540#6.1"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Price history on part:350021: three renewals asked +3.2%, +1.0% and +2.8% and all settled at 0%. The price has been flat at EUR 684.92 since 2023. Konvertek has repeatedly accepted a zero result. However, should-cost (EUR 692.92) suggests it already sells about 1.2% below cost, within the ±5% error.",
+     "evidence": [
+      "EV-2024-70540-350021",
+      "EV-2025-70540-350021",
+      "EV-2026-70540-350021",
+      "negotiation_pattern:350021:3c0c1aea",
+      "price_trend:350021:7c43d159",
+      "should_cost:350021:0ebe7750"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Mutual dependency is asymmetric. Konvertek holds 100% of part:350021 (A-class, used in all pump series). Selvbrunn is qualified at 0%; its only quote was EUR 672 in Feb 2024 and is stale. Konvertek is a qualified 0% second source on part:350020, where an RFQ (rfq:6000000203) is open. Our roughly EUR 1.27 M spend is about 0.6% of its turnover. Its finances are sound and it has said it is reviewing small accounts.",
+     "evidence": [
+      "rfq:6000000125",
+      "rfq:6000000203",
+      "dependency:all:f11abdaf",
+      "supplier_health:all:be38ef8a",
+      "call_note:all:c9879027"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Supply risk: Konvertek announced power-semiconductor shortages and longer lead times in March 2026. Its on-time delivery is 81.5% against the 95% contract target. Quality is 0 ppm. Its pricing committee approves price changes above 2%.",
+     "evidence": [
+      "news:all:34c5e0e9",
+      "delivery_record:all:8cf8dd66",
+      "quality_record:all:1fb5529e",
+      "call_note:all:51b6c85f"
+     ],
+     "importance": "medium"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Price increase for 2027 backed by electronic components (+13.5%) and copper (+47.7%) costs",
+    "Faster payment or other logistics/payment trades (offered in its e-mail)",
+    "Binding volume and a longer commitment, since it is focusing on customers with volume",
+    "Possibly an index clause on electronics or copper"
+   ],
+   "risks": [
+    "Konvertek is sole active source on part:350021; a semiconductor shortage plus being a small account could lead it to deprioritise us or walk away",
+    "Pushing for a price cut where it may already sell below cost could harm a supplier we depend on",
+    "Selvbrunn's alternative quote dates from 2024 and is not citable as a current price",
+    "Missing the 2027-04-01 notice date locks in another 12 months"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "contract_clause:350021:27271c52",
+     "why": "Price is fixed per calendar year and any change requires 90 days' notice."
+    },
+    {
+     "arg_id": "negotiation_pattern:350021:3c0c1aea",
+     "why": "Its past asks have consistently settled at 0%."
+    },
+    {
+     "arg_id": "order_history:350021:32eedc63",
+     "why": "Anchors the price at EUR 684.92."
+    },
+    {
+     "arg_id": "contract_clause:350021:ebd02062",
+     "why": "Gives us a credible exit window before 2027-04-01."
+    },
+    {
+     "arg_id": "volume_change:350021:f41622a9",
+     "why": "Our volume is growing, which matters to a supplier focusing on volume customers."
+    },
+    {
+     "arg_id": "delivery_record:all:8cf8dd66",
+     "why": "On-time delivery of 81.5% is well short of the 95% target in clause 6.1."
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "Shows we are a reliable payer."
+    },
+    {
+     "arg_id": "sourcing_position:350021:f18d9dfd",
+     "why": "Selvbrunn is a qualified alternative source; use it softly."
+    },
+    {
+     "arg_id": "contract_clause:350021:c357e1d6",
+     "why": "Contractual basis for the delivery target and complaint fee."
+    }
+   ],
+   "open_questions": [
+    "Has Konvertek given written notice of a 2027 price change before about 2026-10-02?",
+    "What is Konvertek's quote in rfq:6000000203 for part:350020, and could a bundle across both parts trade volume for price stability?",
+    "Is there a current Selvbrunn price for part:350021? The only data is the 2024 quote, so evidence is thin.",
+    "The tooling arguments claim Konvertek owns the tooling while the sourcing records say n/a. Which is correct?"
+   ]
+  },
+  "performance": {
+   "findings": [
+    {
+     "text": "Delivery is the weak spot: rolling 12 months to 2026-09 on-time is 81.5% against requested dates (85.2% against its own confirmations), well short of the 95% contractual target and below the peer median of 84.6%. It has also slipped from 88% in 2026Q1 and 84% a year earlier. When it is late, it is late by an average of 22.4 days (17.1 over all history), with a maximum of 41 days. All 27 receipts in the last 12 months are part:350021.",
+     "evidence": [
+      "sc:70540@2026Q3",
+      "sc:70540@2026Q1",
+      "sc:70540@2025Q3",
+      "ctr:4600070540#6.1"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Quality is strong and argues its case. There have been 0 ppm and 0 complaints since 2026Q2, against a peer median of 457 ppm. Only two single-piece QNs have been raised since 2024, both on part:350021 and both recharged at the EUR 150 flat fee. Both 8Ds were closed in about 5 weeks and none are overdue. Defects cost us almost nothing.",
+     "evidence": [
+      "qn:20004185",
+      "qn:20004580",
+      "sc:70540@2026Q2",
+      "sc:70540@2026Q3"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "The price of part:350021 has been flat at EUR 684.92 since 2023. Its three renewal asks (+2.3% on average) all settled at 0%. Our in-house should-cost of EUR 692.92 (±5%) suggests it sells slightly below cost, a point for the supplier if the part is strategic.",
+     "evidence": [
+      "po:4500014458-10",
+      "po:4500014386-10",
+      "po:4500014327-10"
+     ],
+     "importance": "high"
+    },
+    {
+     "text": "Volume outlook for part:350021 is stable to slightly rising: the 2026-09 forecast of 1947 pcs over the next 12 months compares with 1848 ordered in the last 12 months (+5.4%). The forecast is shared with the supplier, and snapshots have stayed in a steady 1800-2100 band. We are a small account to it, at about 0.6% of its turnover.",
+     "evidence": [
+      "fc:350021@2026-09",
+      "fc:350021@2026-06",
+      "fc:350021@2023-12"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Ordering friction on part:350021 runs on both sides. On ours: 7 rush lines and 5 changed lines. On its side: 9 partial deliveries and 5 lines confirmed later than requested, the latest PO by 5 days. That PO's 2026-12-23 confirmation falls on the first day of the plant shutdown (23 Dec to 6 Jan). The data also has a known issue: requested and confirmed dates differ by 10-30 points, so OTD figures should be cited carefully.",
+     "evidence": [
+      "po:4500014458-10"
+     ],
+     "importance": "medium"
+    },
+    {
+     "text": "Part:350020 is supplied by sup:70530, not this supplier. Its forecast data covers only sup:70530 and is relevant here only if we bundle or move it. Our order history shows sup:70530 at EUR 412.74.",
+     "evidence": [
+      "fc:350020@2026-09",
+      "po:4500014465-10"
+     ],
+     "importance": "low"
+    }
+   ],
+   "leverage": "balanced",
+   "supplier_wants": [
+    "Price increase on part:350021, driven by electronic components PPI (+13.5%) and copper (+47.7%)",
+    "Binding volume and a longer commitment",
+    "Its contract terms, including 30-day payment and the 84-day lead time, kept as they are",
+    "Early call-offs around the plant shutdown"
+   ],
+   "risks": [
+    "The power semiconductor shortage (March 2026) could lengthen lead times further and worsen OTD",
+    "Our price sits below should-cost, so pushing it lower could strain the relationship on a part where it holds a 100% quota",
+    "We are a small customer, and it has said it is reviewing small accounts",
+    "December 2026 deliveries could slip into January because of the shutdown"
+   ],
+   "useful_arguments": [
+    {
+     "arg_id": "delivery_record:all:8cf8dd66",
+     "why": "81.5% on time against a 95% target and below the peer median, and declining; the basis for asking for a service improvement or price compensation"
+    },
+    {
+     "arg_id": "contract_clause:350021:c357e1d6",
+     "why": "The contract sets the 95% OTD target that it misses"
+    },
+    {
+     "arg_id": "volume_change:350021:f41622a9",
+     "why": "+5% volume outlook, shared with the supplier, to offer in trade"
+    },
+    {
+     "arg_id": "order_history:350021:32eedc63",
+     "why": "Anchors any increase at EUR 684.92"
+    },
+    {
+     "arg_id": "negotiation_pattern:350021:3c0c1aea",
+     "why": "Every past ask settled at 0%"
+    },
+    {
+     "arg_id": "payment_behaviour:all:11829f07",
+     "why": "We pay reliably, so we are a fair customer"
+    },
+    {
+     "arg_id": "contract_clause:350021:27271c52",
+     "why": "Prices are fixed per calendar year and changes need 90 days' notice"
+    }
+   ],
+   "open_questions": [
+    "Is the rise in late lines from a year earlier linked to the semiconductor shortage?",
+    "Are the OTD figures reliable given the known requested-vs-confirmed date issue?",
+    "How quickly could sup:70530, qualified but at 0% quota, take over volume on part:350021?",
+    "Will we need December call-offs placed by 10 December again?"
+   ]
+  }
+ },
+ "red_team": {
+  "arguments": [
+   {
+    "text": "Our 15 kW price has not moved since 2023 despite three requested increases (3.2 %, 1 %, 2.8 %), all settled at 0. We have absorbed the cost rise for the customer and have no room left.",
+    "evidence": [
+     "EV-2024-70540-350021",
+     "EV-2025-70540-350021",
+     "EV-2026-70540-350021"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Our cost drivers have risen sharply. Electronic components are +13.5 % in 12 months and make up about 43 % of the part. Copper is +47.7 % and at a 36-month peak. Assembled boards are +41 %. The 684.92 price sits at or below the customer's own no-margin should-cost of 692.92.",
+    "evidence": [
+     "idx:PPI-C2611@2026-08",
+     "idx:CU-NOTATION@2026-09",
+     "news:20260918-33",
+     "cost:350021"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Our price list applies to all customers without exception until June 2027, and a head-office directive bars discounts. I cannot sell an exception internally.",
+    "evidence": [
+     "doc:20260906-70540-M1",
+     "quote:7300067"
+    ],
+    "strength": "strong"
+   },
+   {
+    "text": "Power semiconductors are short across the market. Allocation goes to customers who plan reliably and commit volume, not to those who press on price.",
+    "evidence": [
+     "news:20260302-01",
+     "doc:20260223-70540-M2"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "text": "Quality is solid: 0 ppm over the last 12 months, scorecard class A at 90.7, and no overdue 8D reports.",
+    "evidence": [
+     "sc:70540@2026Q3"
+    ],
+    "strength": "moderate"
+   },
+   {
+    "text": "The contract fixes the price per calendar year and runs to mid-2027. The customer has stable terms and should value that stability.",
+    "evidence": [
+     "ctr:4600070540#3.1",
+     "ctr:4600070540#8.1"
+    ],
+    "strength": "moderate"
+   }
+  ],
+  "weak_points": [
+   "On-time delivery is about 81.5 % against the contract target of 95 %, with late deliveries averaging 22 days and up to 41 days.",
+   "Our 7.5 kW quote of 466.99 is 13 % above Selvbrunn at 412.74 and up 8.8 % on our own 2025 quote. It is hard to justify.",
+   "Selvbrunn is qualified on the 15 kW part and quoted 672 in 2024, below our 702.43 at that time.",
+   "Industrial power prices are -43 % on 2022 and labour is only +2.7 %, so not all our costs are rising.",
+   "The customer pays almost on time (about 2 days late on average) and has never short-paid, so I cannot claim payment-behaviour pain.",
+   "Should-cost confidence is only 5 %, so my 'zero margin' claim is not proven either way.",
+   "Quantities and lead times are not firm: 7 rush lines on our orders, 84-day lead time versus a planned 56 days."
+  ],
+  "wants": [
+   "A binding annual volume on the 15 kW part of about 1,950 pcs or more, with a longer commitment (24-36 months).",
+   "Volume on the 7.5 kW part (a share or bundle). For real volume I would sharpen the 7.5 kW price toward about 430.",
+   "Faster payment (for example 14 days) or strict on-time payment.",
+   "An index clause on electronic components and copper from mid-2027 as the alternative to a fixed increase.",
+   "Early, stable call-offs and an accepted 84-day lead time, with call-offs before the shutdown in December."
+  ],
+  "red_lines": [
+   "No price cut on the 15 kW part. It sits at cost.",
+   "No fixed price beyond June 2027 without either an index clause or an increase.",
+   "No contractual 95 % on-time penalties during the chip shortage.",
+   "No higher complaint chargeback than the current EUR 150 flat fee.",
+   "Any change above 2 % only via the pricing committee, which meets every two weeks."
+  ],
+  "opening": "I will thank the customer for a stable partnership with class A quality. I will point out that the 15 kW price has been held flat since 2023 despite electronics and copper inflation, and say the list is frozen for all customers until June 2027. I will then invite talks on payment terms, logistics, a binding volume and a longer commitment. In return I will offer to secure allocation of semiconductors and to discuss a bundled 7.5 kW share at a better price. I will signal that from mid-2027 an index clause or adjustment will be necessary."
+ },
+ "rebuttals": {
+  "rebuttals": [
+   {
+    "to": 1,
+    "answer": "We recognise that the price has held for several years and we value that. It also reflects agreements both sides signed after open talks each year. Your own list commitment keeps it stable for now. Rather than argue the past, we would like to reward that stability going forward with a longer commitment, binding volume in line with our rising forecast, and better payment terms.",
+    "arg_ids": [
+     "negotiation_pattern:350021:3c0c1aea",
+     "order_history:350021:32eedc63",
+     "correspondence:all:74e7dcb0",
+     "volume_change:350021:f41622a9"
+    ]
+   },
+   {
+    "to": 2,
+    "answer": "We do not dispute that electronics and copper have risen, and we take that seriously. Not every cost moved the same way, though. Energy is far below its earlier peak and labour has risen only moderately. Our should-cost estimate also has a wide error band, so it neither proves nor rules out a margin. We would rather address material risk jointly at renewal, for example with a fair clause or an agreed effective date, than through a fixed step now.",
+    "arg_ids": [
+     "market_news:all:20eac6ee",
+     "contract_clause:350021:27271c52"
+    ]
+   },
+   {
+    "to": 3,
+    "answer": "That same policy means the current price holds for all customers until next summer. Your note invites talks on payment and logistics, and that is exactly where we want to work with you.",
+    "arg_ids": [
+     "correspondence:all:74e7dcb0",
+     "contract_clause:350021:27271c52"
+    ]
+   },
+   {
+    "to": 4,
+    "answer": "We agree that reliable planning deserves priority, and we want to be that kind of customer. We share rolling forecasts and pay reliably. We are ready to commit binding volume and align call-offs with your shutdown and allocation planning. In return we expect on-time performance to move closer to the contract target.",
+    "arg_ids": [
+     "volume_change:350021:f41622a9",
+     "payment_behaviour:all:11829f07",
+     "correspondence:all:27cf551f",
+     "delivery_record:all:8cf8dd66"
+    ]
+   },
+   {
+    "to": 5,
+    "answer": "Your quality performance is genuinely excellent and we say so openly. Quality and delivery belong together in the quality agreement, and delivery reliability is still below the agreed target, so the overall service picture is good but not yet complete.",
+    "arg_ids": [
+     "contract_clause:350021:c357e1d6",
+     "delivery_record:all:8cf8dd66"
+    ]
+   },
+   {
+    "to": 6,
+    "answer": "We do value the stable framework. Extending it for a further term at today's conditions, with volume and payment improvements from our side, would give both sides the stability you describe beyond its current end.",
+    "arg_ids": [
+     "contract_clause:350021:ebd02062",
+     "contract_clause:350021:27271c52",
+     "volume_change:350021:f41622a9"
+    ]
+   }
+  ],
+  "press": [
+   "We would welcome a plan with you to bring on-time delivery closer to the target in our quality agreement, since late receipts have recently averaged several weeks.",
+   "Part of your cost base, such as energy, has eased considerably, which we hope can be weighed alongside the material increases.",
+   "We have consistently paid reliably and in full, and we would like that to count when we discuss payment conditions together.",
+   "We are happy to give firmer call-offs earlier around your shutdown if that helps you confirm our requested dates more reliably."
+  ]
+ },
+ "arguments": [
+  {
+   "arg_id": "index_change:350020:3e31d9f8",
+   "kind": "index_change",
+   "part": "part:350020",
+   "refs": [
+    "idx:PPI-C2611@2025-08",
+    "idx:PPI-C2611@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2611",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 97.9,
+    "to_value": 111.1,
+    "change_pct": 13.5,
+    "weight": 0.44,
+    "window": "12 months",
+    "weighted_pct": 5.93
+   },
+   "sentence": "Producer prices DE: electronic components changed +13.5% from 2025-08 to 2026-08 (idx:PPI-C2611@2025-08, idx:PPI-C2611@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2611 (Producer prices DE: electronic components): +13.5% 12 months (2025-08 to 2026-08); 44% of the part's cost, so about +5.93% on the price."
+  },
+  {
+   "arg_id": "index_change:350020:c96ad37c",
+   "kind": "index_change",
+   "part": "part:350020",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.14,
+    "window": "12 months",
+    "weighted_pct": 0.37
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 14% of the part's cost, so about +0.37% on the price."
+  },
+  {
+   "arg_id": "index_change:350020:5e5fce56",
+   "kind": "index_change",
+   "part": "part:350020",
+   "refs": [
+    "idx:CU-NOTATION@2025-09",
+    "idx:CU-NOTATION@2026-09"
+   ],
+   "figures": {
+    "series": "CU-NOTATION",
+    "from_month": "2025-09",
+    "to_month": "2026-09",
+    "from_value": 872.264,
+    "to_value": 1288.5918,
+    "change_pct": 47.7,
+    "weight": 0.07,
+    "window": "12 months",
+    "weighted_pct": 3.34
+   },
+   "sentence": "Copper notation for cables and motors changed +47.7% from 2025-09 to 2026-09 (idx:CU-NOTATION@2025-09, idx:CU-NOTATION@2026-09).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "CU-NOTATION (Copper notation for cables and motors (derived)): +47.7% 12 months (2025-09 to 2026-09); 7% of the part's cost, so about +3.34% on the price."
+  },
+  {
+   "arg_id": "index_change:350021:1b9a492a",
+   "kind": "index_change",
+   "part": "part:350021",
+   "refs": [
+    "idx:PPI-C2611@2025-08",
+    "idx:PPI-C2611@2026-08"
+   ],
+   "figures": {
+    "series": "PPI-C2611",
+    "from_month": "2025-08",
+    "to_month": "2026-08",
+    "from_value": 97.9,
+    "to_value": 111.1,
+    "change_pct": 13.5,
+    "weight": 0.43,
+    "window": "12 months",
+    "weighted_pct": 5.8
+   },
+   "sentence": "Producer prices DE: electronic components changed +13.5% from 2025-08 to 2026-08 (idx:PPI-C2611@2025-08, idx:PPI-C2611@2026-08).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "PPI-C2611 (Producer prices DE: electronic components): +13.5% 12 months (2025-08 to 2026-08); 43% of the part's cost, so about +5.80% on the price."
+  },
+  {
+   "arg_id": "index_change:350021:10049a3e",
+   "kind": "index_change",
+   "part": "part:350021",
+   "refs": [
+    "idx:LCI-C@2025-06",
+    "idx:LCI-C@2026-06"
+   ],
+   "figures": {
+    "series": "LCI-C",
+    "from_month": "2025-06",
+    "to_month": "2026-06",
+    "from_value": 116.5,
+    "to_value": 119.6,
+    "change_pct": 2.7,
+    "weight": 0.15,
+    "window": "12 months",
+    "weighted_pct": 0.4
+   },
+   "sentence": "Labour cost index DE, manufacturing, seasonally and calendar adjusted changed +2.7% from 2025-06 to 2026-06 (idx:LCI-C@2025-06, idx:LCI-C@2026-06).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "LCI-C (Labour cost index DE, manufacturing, seasonally and calendar adjusted (quarterly, carried to its three months)): +2.7% 12 months (2025-06 to 2026-06); 15% of the part's cost, so about +0.40% on the price."
+  },
+  {
+   "arg_id": "index_change:350021:6e3074e6",
+   "kind": "index_change",
+   "part": "part:350021",
+   "refs": [
+    "idx:CU-NOTATION@2025-09",
+    "idx:CU-NOTATION@2026-09"
+   ],
+   "figures": {
+    "series": "CU-NOTATION",
+    "from_month": "2025-09",
+    "to_month": "2026-09",
+    "from_value": 872.264,
+    "to_value": 1288.5918,
+    "change_pct": 47.7,
+    "weight": 0.08,
+    "window": "12 months",
+    "weighted_pct": 3.82
+   },
+   "sentence": "Copper notation for cables and motors changed +47.7% from 2025-09 to 2026-09 (idx:CU-NOTATION@2025-09, idx:CU-NOTATION@2026-09).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "CU-NOTATION (Copper notation for cables and motors (derived)): +47.7% 12 months (2025-09 to 2026-09); 8% of the part's cost, so about +3.82% on the price."
+  },
+  {
+   "arg_id": "should_cost:350020:24e30d64",
+   "kind": "should_cost",
+   "part": "part:350020",
+   "refs": [
+    "cost:350020"
+   ],
+   "figures": {
+    "unit_cost": 403.21,
+    "price_unit": 1,
+    "estimate_of": "sup:70530",
+    "price": 466.99,
+    "price_unit_of_price": 1,
+    "margin_pct": 15.8
+   },
+   "sentence": "Our bottom-up cost model puts the full cost of this part at EUR 403.21 per unit (cost:350020).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Should-cost EUR 403.21 per unit (the plant of sup:70530, error about 5%); its price EUR 466.99 per unit (quote quote:7200003) is +15.8% against it."
+  },
+  {
+   "arg_id": "should_cost:350021:0ebe7750",
+   "kind": "should_cost",
+   "part": "part:350021",
+   "refs": [
+    "cost:350021"
+   ],
+   "figures": {
+    "unit_cost": 692.92,
+    "price_unit": 1,
+    "estimate_of": "sup:70540",
+    "price": 684.92,
+    "price_unit_of_price": 1,
+    "margin_pct": -1.2
+   },
+   "sentence": "Our bottom-up cost model puts the full cost of this part at EUR 692.92 per unit (cost:350021).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "Should-cost EUR 692.92 per unit (its own plant, error about 5%); its price EUR 684.92 per unit (price from 2026-01-01) is -1.2% against it - it sells below this cost."
+  },
+  {
+   "arg_id": "delivery_record:all:8cf8dd66",
+   "kind": "delivery_record",
+   "part": null,
+   "refs": [
+    "sc:70540@2026Q3"
+   ],
+   "figures": {
+    "otd_pct": 81.5,
+    "quarter": "2026Q3",
+    "target_pct": 95.0,
+    "peer_median_pct": 84.6
+   },
+   "sentence": "Your rolling scorecard shows on-time delivery of 81.5% (sc:70540@2026Q3).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Rolling 12 months to 2026-09-30: 81.5% on time against the requested date (85.2% against its own confirmed date); target 95%; peers' median 84.6%; class A green. A year earlier 84.0%."
+  },
+  {
+   "arg_id": "quality_record:all:1fb5529e",
+   "kind": "quality_record",
+   "part": null,
+   "refs": [
+    "sc:70540@2026Q3"
+   ],
+   "figures": {
+    "ppm": 0,
+    "quarter": "2026Q3",
+    "peer_median_ppm": 457.0
+   },
+   "sentence": "Your rolling scorecard shows 0 ppm defects (sc:70540@2026Q3).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "Rolling 12 months to 2026-09-30: 0 ppm from 0 complaints; peers' median 457.0 ppm; 8D reports overdue 0. A year earlier 574 ppm."
+  },
+  {
+   "arg_id": "order_history:350021:32eedc63",
+   "kind": "order_history",
+   "part": "part:350021",
+   "refs": [
+    "po:4500014458-10",
+    "po:4500014386-10",
+    "po:4500014327-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     684.92,
+     684.92,
+     684.92
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2026-09-25",
+     "2026-09-07",
+     "2026-08-25"
+    ]
+   },
+   "sentence": "Our latest orders for this part were all at EUR 684.92 per unit (po:4500014458-10, po:4500014386-10, po:4500014327-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "What we pay now: [684.92, 684.92, 684.92] per unit (2026-08-25 to 2026-09-25); anchors any increase."
+  },
+  {
+   "arg_id": "order_history:350021:50d5201c",
+   "kind": "order_history",
+   "part": "part:350021",
+   "refs": [
+    "po:4500010042-10",
+    "po:4500010102-10",
+    "po:4500010306-10"
+   ],
+   "figures": {
+    "unit_prices": [
+     684.92,
+     684.92,
+     684.92
+    ],
+    "price_unit": 1,
+    "dates": [
+     "2023-10-09",
+     "2023-10-23",
+     "2023-12-11"
+    ]
+   },
+   "sentence": "Our earliest orders on record for this part were all at EUR 684.92 per unit (po:4500010042-10, po:4500010102-10, po:4500010306-10).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Earliest orders [684.92, 684.92, 684.92] per unit (2023-10-09 to 2023-12-11); now +0.0% against them - its price has not fallen since."
+  },
+  {
+   "arg_id": "volume_change:350020:47c6485c",
+   "kind": "volume_change",
+   "part": "part:350020",
+   "refs": [
+    "fc:350020@2026-09"
+   ],
+   "figures": {
+    "change_pct": 10.3,
+    "volume_per_year": 4580,
+    "snapshot": "2026-09"
+   },
+   "sentence": "Our demand forecast for this part has risen 10.3% (fc:350020@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Snapshot 2026-09: 4580 for the next 12 months against 4154 ordered in the last 12 months (requested dates); shared with suppliers: True. More volume is worth more to it."
+  },
+  {
+   "arg_id": "volume_change:350021:f41622a9",
+   "kind": "volume_change",
+   "part": "part:350021",
+   "refs": [
+    "fc:350021@2026-09"
+   ],
+   "figures": {
+    "change_pct": 5.4,
+    "volume_per_year": 1947,
+    "snapshot": "2026-09"
+   },
+   "sentence": "Our demand forecast for this part has risen 5.4% (fc:350021@2026-09).",
+   "checkable": true,
+   "side": "for_us",
+   "note": "Snapshot 2026-09: 1947 for the next 12 months against 1848 ordered in the last 12 months (requested dates); shared with suppliers: True. More volume is worth more to it."
+  },
+  {
+   "arg_id": "news:all:34c5e0e9",
+   "kind": "news",
+   "part": null,
+   "refs": [
+    "news:20260302-01"
+   ],
+   "figures": {
+    "topic": "chip_shortage",
+    "date": "2026-03-02"
+   },
+   "sentence": "We have noted the press report \"Konvertek Antriebselektronik GmbH warns of longer delivery times\" (news:20260302-01).",
+   "checkable": true,
+   "side": "for_them",
+   "note": "2026-03-02 chip_shortage: Konvertek Antriebselektronik GmbH warns of longer delivery times. Konvertek Antriebselektronik GmbH reports shortages of power semiconductors and has extended lead times for frequency converters. -> component shortage: longer lead times, scarce supply."
+  },
+  {
+   "arg_id": "contract_clause:350021:27271c52",
+   "kind": "contract_clause",
+   "part": "part:350021",
+   "refs": [
+    "ctr:4600070540#3.1"
+   ],
+   "figures": {
+    "type": "price",
+    "days": 90
+   },
+   "sentence": "Our framework agreement fixes prices for each calendar year.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070540#3.1 (price): Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+  },
+  {
+   "arg_id": "contract_clause:350021:57bac077",
+   "kind": "contract_clause",
+   "part": "part:350021",
+   "refs": [
+    "ctr:4600070540#4.1"
+   ],
+   "figures": {
+    "type": "payment",
+    "days": 30
+   },
+   "sentence": "Our framework agreement sets the payment terms.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070540#4.1 (payment): Payment: 30 days net. Our standard is 60 days; shorter terms are its benefit."
+  },
+  {
+   "arg_id": "contract_clause:350021:ccd879b8",
+   "kind": "contract_clause",
+   "part": "part:350021",
+   "refs": [
+    "ctr:4600070540#5.1"
+   ],
+   "figures": {
+    "type": "delivery",
+    "days": 84
+   },
+   "sentence": "Our framework agreement sets the delivery terms and the standard lead time.",
+   "checkable": false,
+   "side": "for_them",
+   "note": "ctr:4600070540#5.1 (delivery): Delivery DAP; standard lead time 84 days from order."
+  },
+  {
+   "arg_id": "contract_clause:350021:c357e1d6",
+   "kind": "contract_clause",
+   "part": "part:350021",
+   "refs": [
+    "ctr:4600070540#6.1"
+   ],
+   "figures": {
+    "type": "quality",
+    "days": null
+   },
+   "sentence": "Our framework agreement includes the quality agreement with its delivery target.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070540#6.1 (quality): The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint."
+  },
+  {
+   "arg_id": "contract_clause:350021:ebd02062",
+   "kind": "contract_clause",
+   "part": "part:350021",
+   "refs": [
+    "ctr:4600070540#8.1"
+   ],
+   "figures": {
+    "type": "term",
+    "days": 90,
+    "valid_to": "2027-06-30",
+    "notice_deadline": "2027-04-01"
+   },
+   "sentence": "Our framework agreement renews only unless either side gives notice.",
+   "checkable": false,
+   "side": "for_us",
+   "note": "ctr:4600070540#8.1 (term): Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice. To stop the renewal, notice by 2027-04-01 (still open: a credible exit)."
+  },
+  {
+   "arg_id": "correspondence:all:27cf551f",
+   "kind": "correspondence",
+   "part": null,
+   "refs": [
+    "doc:20251005-70540-N"
+   ],
+   "figures": {
+    "doc_kind": "email",
+    "date": "2025-10-05",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We refer to your e-mail \"Holiday shutdown\" (doc:20251005-70540-N).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "email 2025-10-05 by Konvertek Antriebselektronik GmbH: Our plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December."
+  },
+  {
+   "arg_id": "call_note:all:c9879027",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260223-70540-M2"
+   ],
+   "figures": {
+    "doc_kind": "meeting_note",
+    "date": "2026-02-23",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our meeting about \"Customer portfolio\" (doc:20260223-70540-M2).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "meeting_note 2026-02-23 by Hollerau Pumpenwerke, Purchasing: The sales director of Konvertek Antriebselektronik GmbH said they are reviewing small accounts and will focus on customers with volume."
+  },
+  {
+   "arg_id": "call_note:all:51b6c85f",
+   "kind": "call_note",
+   "part": null,
+   "refs": [
+    "doc:20260711-70540-M3"
+   ],
+   "figures": {
+    "doc_kind": "meeting_note",
+    "date": "2026-07-11",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "We would also welcome your view on the points from our meeting about \"Annual review\" (doc:20260711-70540-M3).",
+   "checkable": false,
+   "side": "for_us",
+   "note": "meeting_note 2026-07-11 by Hollerau Pumpenwerke, Purchasing: Annual review with Konvertek Antriebselektronik GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+  },
+  {
+   "arg_id": "correspondence:all:74e7dcb0",
+   "kind": "correspondence",
+   "part": null,
+   "refs": [
+    "doc:20260906-70540-M1"
+   ],
+   "figures": {
+    "doc_kind": "email",
+    "date": "2026-09-06",
+    "signals_us": [],
+    "signals_them": []
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "email 2026-09-06 by Konvertek Antriebselektronik GmbH: Our price list applies to all customers without exception until June 2027. We are happy to discuss logistics and payment conditions."
+  },
+  {
+   "arg_id": "negotiation_pattern:350021:3c0c1aea",
+   "kind": "negotiation_pattern",
+   "part": "part:350021",
+   "refs": [],
+   "figures": {
+    "events": [
+     [
+      "EV-2024-70540-350021",
+      "2023-11-18",
+      3.2,
+      0.0
+     ],
+     [
+      "EV-2025-70540-350021",
+      "2024-11-26",
+      1.0,
+      0.0
+     ],
+     [
+      "EV-2026-70540-350021",
+      "2025-12-09",
+      2.8,
+      0.0
+     ]
+    ],
+    "mean_asked_pct": 2.33,
+    "mean_settled_pct": 0.0
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "3 renewals: asked +2.3% on average, settled +0.0% (gap 2.3 pp); last 2025-12-09: asked +2.8%, settled +0.0%. It usually settles well below its ask."
+  },
+  {
+   "arg_id": "relationship:350020:53a6b9b0",
+   "kind": "relationship",
+   "part": "part:350020",
+   "refs": [
+    "part:350020"
+   ],
+   "figures": {
+    "years": 6.4,
+    "quota_pct": 0
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Approved since 2020-05-01 (6.4 years), status qualified, quota 0%."
+  },
+  {
+   "arg_id": "tooling:350020:65f97aa3",
+   "kind": "tooling",
+   "part": "part:350020",
+   "refs": [
+    "part:350020"
+   ],
+   "figures": {
+    "owner": "n/a"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "It owns the tooling: moving the part needs new tooling."
+  },
+  {
+   "arg_id": "sourcing_position:350020:205be159",
+   "kind": "sourcing_position",
+   "part": "part:350020",
+   "refs": [
+    "part:350020"
+   ],
+   "figures": {
+    "alternatives": [
+     "sup:70530"
+    ]
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Other approved sources: sup:70530 Selvbrunn Drive Systems GmbH (DE, active, quota 100%)."
+  },
+  {
+   "arg_id": "relationship:350021:72828e60",
+   "kind": "relationship",
+   "part": "part:350021",
+   "refs": [
+    "part:350021"
+   ],
+   "figures": {
+    "years": 5.4,
+    "quota_pct": 100
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Approved since 2021-05-01 (5.4 years), status active, quota 100%."
+  },
+  {
+   "arg_id": "tooling:350021:23fb5226",
+   "kind": "tooling",
+   "part": "part:350021",
+   "refs": [
+    "part:350021"
+   ],
+   "figures": {
+    "owner": "n/a"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "It owns the tooling: moving the part needs new tooling."
+  },
+  {
+   "arg_id": "sourcing_position:350021:f18d9dfd",
+   "kind": "sourcing_position",
+   "part": "part:350021",
+   "refs": [
+    "part:350021"
+   ],
+   "figures": {
+    "alternatives": [
+     "sup:70530"
+    ]
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Other approved sources: sup:70530 Selvbrunn Drive Systems GmbH (DE, qualified, quota 0%)."
+  },
+  {
+   "arg_id": "price_trend:350021:7c43d159",
+   "kind": "price_trend",
+   "part": "part:350021",
+   "refs": [],
+   "figures": {
+    "prices": [
+     [
+      "2023-01-01",
+      684.92
+     ],
+     [
+      "2024-01-01",
+      684.92
+     ],
+     [
+      "2025-01-01",
+      684.92
+     ],
+     [
+      "2026-01-01",
+      684.92
+     ]
+    ],
+    "change_pct": 0.0
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "Price per unit: 2023 684.92, 2024 684.92, 2025 684.92, 2026 684.92 (+0.0% since 2023). Its price has not fallen."
+  },
+  {
+   "arg_id": "rival_quote:350020:cb8ac487",
+   "kind": "rival_quote",
+   "part": "part:350020",
+   "refs": [
+    "quote:7300003"
+   ],
+   "figures": {
+    "unit_price": 412.74,
+    "price_unit": 1,
+    "supplier": "sup:70530",
+    "date": "2026-09-05",
+    "vs_its_price_pct": -11.6
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "sup:70530 Selvbrunn Drive Systems GmbH quoted EUR 412.74 per unit on 2026-09-05 (DAP, 30 days, lead time 49 days, tooling 0); -11.6% against its own price (quote quote:7200003). Checkable only when the case lists this quote."
+  },
+  {
+   "arg_id": "rival_price:350020:a07cbd0e",
+   "kind": "rival_price",
+   "part": "part:350020",
+   "refs": [
+    "po:4500014465-10",
+    "po:4500014417-10",
+    "po:4500014351-10"
+   ],
+   "figures": {
+    "unit_price": 412.74,
+    "price_unit": 1,
+    "supplier": "sup:70530",
+    "vs_its_price_pct": -11.6
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "We also buy this part from sup:70530 at EUR 412.74 per unit (order of 2026-09-28); -11.6% against its own price. Its order lines are citable as order history (same part); citing them reveals the rival's price."
+  },
+  {
+   "arg_id": "rival_quote:350021:b300c57b",
+   "kind": "rival_quote",
+   "part": "part:350021",
+   "refs": [
+    "quote:7100053"
+   ],
+   "figures": {
+    "unit_price": 672.0,
+    "price_unit": 1,
+    "supplier": "sup:70530",
+    "date": "2024-02-15",
+    "vs_its_price_pct": -1.9
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "sup:70530 Selvbrunn Drive Systems GmbH quoted EUR 672.00 per unit on 2024-02-15 (DAP, 30 days, lead time 56 days, tooling 0); -1.9% against its own price (price from 2026-01-01). Checkable only when the case lists this quote."
+  },
+  {
+   "arg_id": "payment_behaviour:all:11829f07",
+   "kind": "payment_behaviour",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "avg_days_paid_after_due": 1.9,
+    "avg_days_paid_after_due_last_12m": 2.1,
+    "paid_late_pct": 84.9
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "75 invoices; we pay 2.1 days after due on average (last 12 months), 84.9% late, 0.0% over 10 days late, max 6; discounts taken 0 (0 after the period); short-paid 0. We pay reliably: a fair customer."
+  },
+  {
+   "arg_id": "supplier_health:all:be38ef8a",
+   "kind": "supplier_health",
+   "part": null,
+   "refs": [
+    "sup:70540"
+   ],
+   "figures": {
+    "credit_index": 178,
+    "credit_index_12m_ago": 178,
+    "equity_ratio_pct": 38.4,
+    "weak": false
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "GmbH, founded 1990, group owned, 800 staff, turnover 196000000; equity ratio 38.4%, credit index 178 (12 months ago 178; higher is worse); audit A. Sound: it can afford to walk away."
+  },
+  {
+   "arg_id": "dependency:all:f11abdaf",
+   "kind": "dependency",
+   "part": null,
+   "refs": [],
+   "figures": {
+    "fiscal_year": "FY2026",
+    "spend_eur": 1267102.0,
+    "turnover_eur": 196000000,
+    "share_pct": 0.6
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "Our spend FY2026: EUR 1,267,102, about 0.6% of its turnover. We are a small customer to it."
+  },
+  {
+   "arg_id": "market_news:all:5a37223b",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260910-27"
+   ],
+   "figures": {
+    "date": "2026-09-10"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-10 market: Copper notation at EUR 1,289 per 100 kg. The copper notation for cables averaged EUR 1,289/100 kg in September, +48 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:20eac6ee",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260912-30"
+   ],
+   "figures": {
+    "date": "2026-09-12"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_us",
+   "note": "2026-09-12 market: Industrial power prices -43 % on 2022. Producer prices for electric power stand -43 % against August 2022. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:6902032a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260914-31"
+   ],
+   "figures": {
+    "date": "2026-09-14"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-14 market: Iron castings +1.8 % year on year. Producer prices for iron castings rose +1.8 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f855aade",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260916-32"
+   ],
+   "figures": {
+    "date": "2026-09-16"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-16 market: Alloy surcharge 1.4404 at EUR 3,008 per tonne. The alloy surcharge for 1.4404 stands at EUR 3,008/t, +6 % on a year ago. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:0e3ce486",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260918-33"
+   ],
+   "figures": {
+    "date": "2026-09-18"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-18 market: Electronic boards +41 % year on year. Producer prices for assembled electronic boards rose +41 % in the twelve months to August. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:3071261a",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260920-34"
+   ],
+   "figures": {
+    "date": "2026-09-20"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-20 market: Labour costs in manufacturing +2.7 %. Labour costs in German manufacturing rose +2.7 % year on year in the second quarter. Do not cite it as about this supplier."
+  },
+  {
+   "arg_id": "market_news:all:f8eeb840",
+   "kind": "market_news",
+   "part": null,
+   "refs": [
+    "news:20260922-35"
+   ],
+   "figures": {
+    "date": "2026-09-22"
+   },
+   "sentence": "",
+   "checkable": false,
+   "side": "for_them",
+   "note": "2026-09-22 market: Steel prices +7.3 % since January. Producer prices for basic iron and steel are +7.3 % above January. Do not cite it as about this supplier."
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "where": "lead.writer_notes",
+    "value": "Open warmly, acknowledge the long partnership and their excellent quality. On 350021, take their own price-list statement at face value and propose stability: hold the current price, offered with a lo",
+    "why": "figure in e-mail text"
+   },
+   {
+    "where": "lead.questions",
+    "value": "Would a longer commitment with binding volumes on the 15 kW converter help your planning during the semiconductor shortage?",
+    "why": "figure in e-mail text"
+   },
+   {
+    "where": "lead.questions",
+    "value": "Would adding the 7.5 kW converter volume to our partnership change how you price that part?",
+    "why": "figure in e-mail text"
+   },
+   {
+    "where": "rebuttals.answer",
+    "value": "We fully respect your list policy and are not asking for an exception on the 15 kW price. That same policy means the current price holds for all customers until next summer. Your note invites talks on",
+    "why": "figure in e-mail text"
+   },
+   {
+    "where": "rebuttals.press",
+    "value": "On the 7.5 kW converter, your current quote sits well above the market level we see, and we would be glad to discuss how added volume could bring it to a competitive level.",
+    "why": "figure in e-mail text"
+   }
+  ]
+ }
+}

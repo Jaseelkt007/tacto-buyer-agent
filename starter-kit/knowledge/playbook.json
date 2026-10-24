@@ -1,0 +1,1945 @@
+{
+ "general": {
+  "lessons": [
+   {
+    "rule": "A declared final offer ('letztes Angebot', 'take it or leave it', 'absolute limit', usually valid 7 days) is final. Accept it, or switch to a better alternative sheet the supplier offered in the same message.",
+    "do": "Accept promptly, or pick the supplier's cheaper alternative sheet if it is in the same e-mail. Before accepting, compare it against the fallback cost. Make sure the acceptance mechanics cannot fail on a tiny gap.",
+    "dont": "Do not counter below a final offer, even by a small amount or when management approved more room. Do not repeat your last number after it. Do not walk away over a gap of 0.1-0.5 %.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "any"
+    ],
+    "traits": [],
+    "cases_seen": 10,
+    "confidence": "high"
+   },
+   {
+    "rule": "Suppliers move only after a real move from us. They mirror our step size, and their steps shrink each round. A zero or repeated step brings 'hold', then a final offer.",
+    "do": "Make a real, shrinking upward step every round (for example +1.5/+1/+0.5 points) and pair each step with a fresh argument or a term trade. Keep stepping while the supplier is still in counter mode. With 'in response to your movement' suppliers, a +0.1 step can still draw about -0.4.",
+    "dont": "Do not resend the same number. Do not make token steps of 0.1-0.2 every round, which led to higher finals. Do not jump to or near the supplier's number in a 'last call'; it is accepted at once and leaves 1-2 points on the table.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "any"
+    ],
+    "traits": [
+     "owner_writer",
+     "mirrors_steps"
+    ],
+    "cases_seen": 7,
+    "confidence": "high"
+   },
+   {
+    "rule": "Exception to the no-repeat rule: when a supplier says it must 'clarify internally' after giving about half a step, it may release the rest next round without a new move.",
+    "do": "If a counter lands well short of our anchor with 'we need to clarify this internally', hold our price for exactly one round and then accept a small closing move.",
+    "dont": "Do not raise our offer while the supplier's internal check is pending. Do not keep holding beyond one round.",
+    "goals": [
+     "leverage"
+    ],
+    "case_types": [
+     "rfq"
+    ],
+    "traits": [
+     "owner_writer",
+     "wants_work",
+     "internal_approval_gate"
+    ],
+    "cases_seen": 1,
+    "confidence": "low"
+   },
+   {
+    "rule": "Every term sheet is a binding offer, and the supplier picks the one best for itself. With several sheets it also cherry-picks terms from one package while still disputing price.",
+    "do": "Put only sheets we would sign at their stated price into any e-mail. Use 2-3 sheets in round 1 when the aim is to learn how the supplier prices terms; most suppliers then reveal their own alternative. Once the term mix is clear, send one clean sheet so the concession goes into price.",
+    "dont": "Never include a sheet above the supplier's opening or above our ceiling. Do not split a trade such as volume across two sheets with different payment terms; the credit went only to the sheet we did not take.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "any"
+    ],
+    "traits": [],
+    "cases_seen": 6,
+    "confidence": "high"
+   },
+   {
+    "rule": "Cash-need suppliers buy faster payment with price. They say so in nearly every message ('Faster payment is welcome; we can reflect it in the price').",
+    "do": "Where the supplier signals cash need and payment days are negotiable, offer 14 days as the trade for a price step. In competitive cases hold it back and give it in the last round, which turned the final step into the lowest price (about 1-2 extra points). If payment is not negotiable, still acknowledge the need in words, for example by committing to pay on time.",
+    "dont": "Do not ask a cash-need supplier for 60-90 days every round; it is refused and shows we are not listening. Do not give pay14 mid-negotiation, where it is absorbed into a normal step and the interest cost remains. Do not leave the request unanswered; silence was used to justify the final offer.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "any"
+    ],
+    "traits": [
+     "cash_need",
+     "small_shop",
+     "owner_writer"
+    ],
+    "cases_seen": 4,
+    "confidence": "high"
+   },
+   {
+    "rule": "Suppliers without cash need often grant long payment terms cheaply. Distributors and suppliers with an index clause gave pay60/pay90 at no extra price. Others price it explicitly (about 0.4-0.6 % per 30 days), so the best total cost may lie in the payment/term mix rather than in price.",
+    "do": "Read the supplier's alternative sheets to learn its price per 30 days of payment. Where long payment is free, take the longest. Where it is priced, compare interest against the price difference and also test pay30-60 sheets at lower prices.",
+    "dont": "Do not assume long payment is free. Asking pay90 on a short 12-month renewal raised the price above the opening. Do not ignore a supplier's offered short-payment alternative.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "renewal",
+     "price_increase",
+     "bundling",
+     "raw_material"
+    ],
+    "traits": [
+     "distributor",
+     "interest_priced_in"
+    ],
+    "cases_seen": 6,
+    "confidence": "medium"
+   },
+   {
+    "rule": "Verified, countable records buy concessions, but each record counts once per case and only if it is new. A fresh true record each round keeps suppliers moving.",
+    "do": "Open with a dense package of verifiable records (should-cost, index change, volume change, notice period). Hold back one fresh, true record for each later round. Attach or quote the actual figures.",
+    "dont": "Do not re-cite a record already counted, even to a second supplier in an RFQ; it brings 'already factored in' and a hold. Do not refer to minutes, forecasts or meetings without supplying the data; it brings repeated requests for proof and costs credibility.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "any"
+    ],
+    "traits": [],
+    "cases_seen": 9,
+    "confidence": "high"
+   },
+   {
+    "rule": "Which records move price depends on the supplier's situation. Volume and forecast changes, should-cost (except for capacity-constrained or price-freeze suppliers) and relevant rival quotes worked most often. Delivery record and price history usually had no effect beyond 'freshness'. A falling index is rejected if the supplier is hedged.",
+    "do": "Lead with volume change, should-cost and, in competitive cases, a verified rival quote for the same part. Use delivery record or price history as late 'fresh fact' fillers only.",
+    "dont": "Do not count on an index fall when the supplier says the material is bought at fixed prices. Do not use should-cost against a capacity-full supplier as a main lever; it was dismissed as 'theoretical'.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "any"
+    ],
+    "traits": [
+     "capacity_full",
+     "hedged_material"
+    ],
+    "cases_seen": 9,
+    "confidence": "medium"
+   },
+   {
+    "rule": "How deep to anchor depends on competition and supplier position.",
+    "do": "In leverage RFQs with eager small shops, anchor deep, about 15-20 % below their opening; lower anchors gave lower landings. In stabilise, routine, quality and raw-material cases, anchor moderately, about 7-9 % below, together with a term move toward them. Against capacity-constrained suppliers anchor at most about 7 % below and at their own lead time.",
+    "dont": "Do not open shallow (3-6 % below) in an RFQ; it brought a final offer in round 2. Do not combine an aggressive anchor with demands the supplier finds costly, such as short lead time or no clause; it brought an immediate final offer or a worse first counter. Anchoring below full cost on a firm renewal did not pull the counter down.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "any"
+    ],
+    "traits": [
+     "small_shop",
+     "capacity_full"
+    ],
+    "cases_seen": 7,
+    "confidence": "medium"
+   },
+   {
+    "rule": "A longer contract is worth something to suppliers, but 24 months captures it; 36 months added nothing in four cases.",
+    "do": "Offer 24 months in the first e-mail as an explicit trade for price. Accept 36 months only if it is free and useful as cover, for example during a supplier's price freeze.",
+    "dont": "Do not expect extra price for 36 months over 24. Do not request supplier-costly terms on a 12-month deal without giving length.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "price_increase",
+     "renewal",
+     "capacity",
+     "raw_material",
+     "bundling"
+    ],
+    "traits": [],
+    "cases_seen": 6,
+    "confidence": "high"
+   },
+   {
+    "rule": "Some suppliers make one move only. Under a price freeze or a firm renewal stance, the whole concession sits in the first counter, priced through terms; after 'hold' further price steps are useless.",
+    "do": "Put the best term package into round 1 (length, payment, current volume, strongest record). After the first hold, close quickly at their number, or pursue only the term alternatives they named (higher binding volume, shorter payment).",
+    "dont": "Do not spend 3-5 rounds on shrinking price raises after 'base prices remain frozen' or 'stuck here'. Do not ask for long payment plus a price cut under a freeze.",
+    "goals": [
+     "stabilise",
+     "routine",
+     "quality_first"
+    ],
+    "case_types": [
+     "renewal",
+     "quality",
+     "price_increase"
+    ],
+    "traits": [
+     "price_freeze",
+     "firm_list_price"
+    ],
+    "cases_seen": 4,
+    "confidence": "medium"
+   },
+   {
+    "rule": "When a supplier insists on an index clause for long contracts, accepting it early and consistently, with deadband 0, keeps it conceding. Price below its fixed-price full cost becomes possible. Clause risk must still be priced on our side.",
+    "do": "From round 2, put the supplier's own clause (its index, share, no deadband) in every sheet, together with pay90 and 24 months. Then keep stepping with fresh arguments. Before offering a clause, estimate the index trend and set the clause price well below the fixed price.",
+    "dont": "Do not keep sending fixed-price sheets after the supplier said it cannot fix prices for that term; it brings an earlier final. Do not ask for a 5 % deadband; it was priced at about +1.7-2 points and stalled a round. Do not offer a clause on a sharply rising index at a generous price; it was accepted instantly and raised our cost.",
+    "goals": [
+     "leverage",
+     "stabilise"
+    ],
+    "case_types": [
+     "raw_material",
+     "price_increase"
+    ],
+    "traits": [
+     "index_clause_demand",
+     "distributor"
+    ],
+    "cases_seen": 3,
+    "confidence": "medium"
+   },
+   {
+    "rule": "Nearly every supplier asks for binding volume, but rewards it unevenly: about 1-1.5 points when recognised as binding, sometimes nothing.",
+    "do": "If our fixed need allows, commit a specific volume figure in a single sheet and state it as binding. Combine it with another move. A volume above the minimum need plus a longer contract was the main lever with a capacity-constrained supplier.",
+    "dont": "Do not keep hinting at volume without committing; the supplier withholds credit and asks for documentation. Do not commit volume beyond our need just for a small step.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "any"
+    ],
+    "traits": [
+     "asks_binding_volume"
+    ],
+    "cases_seen": 7,
+    "confidence": "medium"
+   },
+   {
+    "rule": "Capacity-constrained suppliers price lead time steeply and defend their margin. Availability comes from fitting their schedule, not from cost arguments.",
+    "do": "Accept the supplier's own lead time when it meets our must-have. Offer higher binding volume and a longer contract. Present lead-time-versus-price alternatives and take the cheaper compliant one.",
+    "dont": "Do not ask for short lead times; they were priced 3-4 % above opening, and one supplier raised its price by 9 %. Do not rely on rival quotes or should-cost against them.",
+    "goals": [
+     "secure_supply",
+     "leverage"
+    ],
+    "case_types": [
+     "capacity",
+     "rfq"
+    ],
+    "traits": [
+     "capacity_full"
+    ],
+    "cases_seen": 2,
+    "confidence": "low"
+   },
+   {
+    "rule": "In quality cases a supplier keen to repair its standing accepts a tight ppm target at no price premium. That is the main value, so secure it first.",
+    "do": "Put the tight ppm target in round 1. Treat chargeback as a possible trade rather than defaulting it to zero. Then negotiate price with one clean sheet and counted records.",
+    "dont": "Do not offer looser-ppm sheets that let the supplier move on quality instead of price. Do not give away chargeback without testing it.",
+    "goals": [
+     "quality_first"
+    ],
+    "case_types": [
+     "quality"
+    ],
+    "traits": [
+     "wants_quality_standing",
+     "cash_need"
+    ],
+    "cases_seen": 1,
+    "confidence": "low"
+   },
+   {
+    "rule": "Silence is read as rejection. Timeouts harden open offers into finals, and after about 1-3 missed rounds suppliers walk.",
+    "do": "Answer every round with a sheet or a clear message. Keep secondary suppliers warm in RFQs.",
+    "dont": "Do not let rounds lapse. Do not send empty messages or hold with no sheet after a final offer; it irritates and gains nothing.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "rfq",
+     "any"
+    ],
+    "traits": [
+     "small_shop",
+     "time_sensitive"
+    ],
+    "cases_seen": 2,
+    "confidence": "medium"
+   },
+   {
+    "rule": "In RFQs, competition works through fresh, relevant, verified rival quotes and an honest absolute-cost comparison.",
+    "do": "Cite one new verified rival quote per round, for the same part, to the supplier you want to win. Compare bids on absolute cost including terms, not as a share of each supplier's opening. Use the second supplier as confirmation.",
+    "dont": "Do not cite rival data the supplier judges unrelated to this part; it costs trust. Do not repeat a rival claim; it adds nothing beyond our own price move. Do not raise our offer heavily to a price-sticky supplier for small gains.",
+    "goals": [
+     "leverage"
+    ],
+    "case_types": [
+     "rfq"
+    ],
+    "traits": [
+     "cash_need",
+     "capacity_full",
+     "export_manager"
+    ],
+    "cases_seen": 2,
+    "confidence": "medium"
+   },
+   {
+    "rule": "Questions about the supplier's cost structure, margin or energy share, asked without our own data, buy nothing. They are deflected ('our calculation stays internal') or routed to internal functions.",
+    "do": "Bring our own verified figures instead of questions. One option, untested, is to show with numbers that the supplier's stated driver (X % rise times share of cost) supports far less than its ask.",
+    "dont": "Do not ask open questions about its costs. Do not ask procedural questions that only trigger Legal or Credit Control.",
+    "goals": [
+     "any"
+    ],
+    "case_types": [
+     "any"
+    ],
+    "traits": [],
+    "cases_seen": 5,
+    "confidence": "medium"
+   },
+   {
+    "rule": "On stabilise parts, landing near the supplier's practical floor, around or slightly below full cost, is close to optimal; the margin charge caps further pressure.",
+    "do": "Accept once price is at or slightly below the supplier's full cost and it is still conceding only in small steps. If it is still in counter mode with a gap of about 0.5 %, one more small real step with a fresh argument can still pay.",
+    "dont": "Do not accept early on a 'half-percent' rule while the supplier is still matching steps. Do not push far below a healthy margin.",
+    "goals": [
+     "stabilise",
+     "secure_supply"
+    ],
+    "case_types": [
+     "price_increase",
+     "renewal"
+    ],
+    "traits": [
+     "family_foundry",
+     "owner_writer"
+    ],
+    "cases_seen": 3,
+    "confidence": "medium"
+   },
+   {
+    "rule": "The effective date of a new price is negotiable for some suppliers and protected by others. A later date at a slightly higher price can beat a lower price from an earlier date.",
+    "do": "Offer two otherwise equal sheets differing in effective date and price, and let the supplier choose. Compute the value of the months at the old price.",
+    "dont": "Do not ask for a later date at the same price; it was refused or priced up.",
+    "goals": [
+     "stabilise"
+    ],
+    "case_types": [
+     "price_increase"
+    ],
+    "traits": [],
+    "cases_seen": 3,
+    "confidence": "low"
+   }
+  ],
+  "reply_patterns": [
+   {
+    "pattern": "'This is our final offer (letztes Angebot). Please decide. Valid 7 days' / 'take it or leave it' / 'absolute limit'",
+    "meaning": "The negotiation is at its end. Another counter, or a repeated number, leads to withdrawal in most cases.",
+    "best_response": "Accept, or pick a cheaper compliant alternative from the same e-mail. Do not counter."
+   },
+   {
+    "pattern": "'We are withdrawing from this negotiation… we hope to work together again'",
+    "meaning": "A walk-away after we pushed past a final offer, or after silence. The deal is lost.",
+    "best_response": "Prevent it: never push past a final offer and never go silent."
+   },
+   {
+    "pattern": "'In response to your step / to reciprocate your movement, we are prepared to reduce…'",
+    "meaning": "A step-matching supplier in active counter mode, still giving shrinking steps.",
+    "best_response": "Continue with shrinking real steps, each with a fresh argument or trade. Save a closing trade for the last round."
+   },
+   {
+    "pattern": "'We did not know that - a fair point' / 'we checked the data; it holds and we took it into account'",
+    "meaning": "The record was counted and bought a concession. It is now used up.",
+    "best_response": "Bank the move. Bring a different fresh record next round. Never re-cite this one."
+   },
+   {
+    "pattern": "'…was already factored into our previous calculation' / 'no new facts… we must maintain our offer'",
+    "meaning": "A duplicate citation. The supplier has switched to hold.",
+    "best_response": "Switch to a new record or a term trade, such as volume or payment, plus a real step."
+   },
+   {
+    "pattern": "'Which figures is that based on? Please send us the data.'",
+    "meaning": "The claim was unverified or lacked attached figures. Trust is at risk.",
+    "best_response": "Supply concrete figures from the shared records, or drop the claim. Do not keep referencing it."
+   },
+   {
+    "pattern": "'A binding higher volume would help us and can improve the price. Which volume can you commit to?'",
+    "meaning": "Volume is a want. The reward ranges from about 1-1.5 points to nothing.",
+    "best_response": "If our need allows, commit a specific volume as binding in a single sheet. Otherwise acknowledge it, without hinting at volume we will not commit."
+   },
+   {
+    "pattern": "'Faster payment is welcome; we can reflect it in the price' / 'we really need faster payment'",
+    "meaning": "A cash-need supplier. Short payment is its main currency, and further price moves may sit behind it.",
+    "best_response": "Trade pay14 for a price step, ideally at the close. If payment is not tradeable, acknowledge the need and commit to punctual payment."
+   },
+   {
+    "pattern": "'[Index] rose N % and is M % of our cost. That remains.' / 'Our price follows our main cost drivers'",
+    "meaning": "A standard justification that is not open to debate. It does not stop them moving for facts or trades.",
+    "best_response": "Do not argue it in words. Bring verified counter-facts or trades. The arithmetic gap between driver and ask is worth testing."
+   },
+   {
+    "pattern": "'Our calculation stays internal / is our property'",
+    "meaning": "Cost questions will not be answered.",
+    "best_response": "Stop asking. Bring our own data, such as should-cost."
+   },
+   {
+    "pattern": "'Management has frozen all price reductions… we can talk about terms instead'",
+    "meaning": "The base price is fixed. Only term trades move the price.",
+    "best_response": "Front-load the best term package, take its stated term alternatives (volume, payment), and close quickly."
+   },
+   {
+    "pattern": "'We cannot offer a fixed price for this duration; we must include the [index] clause'",
+    "meaning": "The clause is a precondition for long terms. Acceptance is read as flexibility.",
+    "best_response": "Accept its clause with deadband 0 in every sheet, priced well below fixed. Otherwise test a 12-month fixed price."
+   },
+   {
+    "pattern": "'We need to clarify this internally' / counter far short of our anchor",
+    "meaning": "Half a step was given and the rest awaits an internal check.",
+    "best_response": "Hold our number for one round, then close."
+   },
+   {
+    "pattern": "'We note that your proposal remains unchanged' / 'Without movement from your side we cannot move either'",
+    "meaning": "A warning before a final offer.",
+    "best_response": "Make a real step with a new argument, or accept."
+   },
+   {
+    "pattern": "'A shorter lead time requires a substantial premium due to our capacity utilisation'",
+    "meaning": "A capacity-constrained supplier. Lead time is its main price driver.",
+    "best_response": "Accept its lead time if it is compliant. Trade volume and contract length instead."
+   },
+   {
+    "pattern": "'The rival quote data you cite does not concern this part' / 'please show me some proof'",
+    "meaning": "The rival claim was rejected and trust was lost.",
+    "best_response": "Cite only verified rival quotes for the same part, one fresh one per round."
+   },
+   {
+    "pattern": "'Building on your third package…' / 'we accept the 24-month contract and 14-day payment from your package'",
+    "meaning": "It picked our sheet that is best for it and banked terms while keeping the price gap open.",
+    "best_response": "Include only sheets we would sign. Move to a single sheet once terms are clear."
+   },
+   {
+    "pattern": "'Since I didn't hear back from you, I guess you found someone else'",
+    "meaning": "A walk-away triggered by silence.",
+    "best_response": "Never miss a round."
+   },
+   {
+    "pattern": "'Our agreed offer stands'",
+    "meaning": "The price is frozen after agreement.",
+    "best_response": "Do not reopen it."
+   }
+  ],
+  "concession_dynamics": "Across 12 cases suppliers concede only after a move from us, in shrinking steps. The first counter carries the largest move: 1.5-4 points on price cases, up to 11.5 points when an index clause is added, and 6-11 points for eager RFQ small shops. Later steps roughly halve, or match our step size. The first move is largest when it is tied to a term trade (24 months, payment the supplier values, its index clause, volume) or a dense package of counted records. After that, a fresh counted argument or trade each round keeps them moving. The pattern holds for 3-6 rounds; firm or price-freeze suppliers move once and then 'hold'. The trigger for a final offer is a zero or repeated step, a duplicate argument, silence, an aggressive demand in round 1, or simply round count (often the 4th-5th offer, validity cut to 7 days). Pushing past a final led to withdrawal in 6 of 7 cases where it was tried; in one multi-supplier RFQ a push drew only a refusal. Practical floors were often at or below the supplier's stated full cost when we gave cash, a clause or a longer commitment. Firmer suppliers held about 4-10 % above full cost, and a capacity-constrained one about 22 %. Typical term prices: 30 payment days are worth about 0.4-0.6 %; a 5 % deadband about 1.7-2 points; short lead time at a capacity-full supplier 3-9 %. 36 months is worth no more than 24. Tone stayed warm throughout, and firmness never caused hostility; only pushing past a final offer or going silent did.",
+  "open_questions": [
+   "Does a numeric rebuttal of the supplier's own cost-driver claim (driver % times share far below the ask) move price? It was never tried.",
+   "Is a declared final offer ever beatable with a genuinely new verified fact rather than a lower number? One back office showed approved extra room that was never released.",
+   "How should we reach the large gaps to the best possible deal (5-10 points in RFQ, raw-material, capacity and bundling cases)? Which lever was missing: term mix, clause pricing, chargeback, volume, or a 12-month fixed price?",
+   "What is the value of chargeback per complaint as a trade in quality cases, and do suppliers price it?",
+   "How should a clause sheet be priced against a fixed price on a sharply rising index, and how far below fixed would suppliers accept a clause?",
+   "Are final offers driven by round count or by our behaviour? Evidence is mixed across suppliers.",
+   "What form and size of volume commitment reliably earns credit? Some suppliers rewarded it, others did not.",
+   "How do non-owner writers (key account and export managers with approval bands) differ in how far approvals can be stretched?",
+   "Does multi-sheet versus single-sheet opening systematically change the first counter? Only weak, confounded comparisons exist.",
+   "Would threats, deadlines or an explicit alternative help in leverage cases? They were untested here; the context says they did not work.",
+   "In multi-supplier RFQs, is pushing below one supplier's final safe while others remain? There was one observation of a refusal without a walk-away.",
+   "How do suppliers behave in case types or goals seen only once (quality_first, secure_supply, bundling)? Evidence there is thin.",
+   "Is the effective date negotiable more generally, and when do suppliers protect it?"
+  ]
+ },
+ "cases": {
+  "case:D01": {
+   "what_worked": [
+    {
+     "text": "Opening at 0.919 together with a 24-month contract, a move toward them on one term. Their first counter fell to 0.970–0.975 from 1.000, the biggest single concession in every run. Their words: \"In recognition of the extended contract term, we are prepared to revise our offer\" (run 3) and \"We are prepared to commit to the 24-month contract you requested to ensure stability, but in return we ask to settle the payment terms at … days\" (runs 2, 4, 5, 6).",
+     "runs": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Asking for longer payment terms and settling on 45 days. The supplier priced payment terms itself: pay60 at 0.975 against pay45 at 0.972. At pay30 it later gave a final offer of 0.949 (run 3), the same price as its pay45 final in run 4, so the extra 15 days cost it nothing at the end. The pay45 deals at 0.947–0.949 scored 0.902–0.920, against 0.869 for the same price at pay30 (run 3).",
+     "runs": [
+      "2",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Small, shrinking steps from our side, each with a real move. From round 3 on, the supplier roughly matched our step size: +0.6 drew -0.5, +0.4 drew -0.4. One step of only +0.1 still drew -0.4 (run 4 r5: 0.953 to 0.949; run 5 r5: 0.951 to 0.947). Its replies were always tied to our step: \"In response to your step…\", \"We appreciate your continued movement\".",
+     "runs": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Pushing one round further instead of accepting a gap of 0.004. Run 5 had the lowest price path: 0.960 in r2, a round in which it also offered a second sheet (pay60 at 0.935). It made one more +0.1 step and got 0.947 without triggering a final offer. That was the best run, score 0.920.",
+     "runs": [
+      "5"
+     ]
+    },
+    {
+     "text": "Accepting the final offer at once. In runs 3 and 4 the final offer (0.949) was taken immediately and the deal held. This matches the rule that a final offer is final.",
+     "runs": [
+      "3",
+      "4"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "A high, narrow opening and later bidding up to the supplier's number. Run 1 opened with three sheets at 0.949–0.962 (the engine had failed with KeyError 'payment_days'). The supplier simply chose our dearest package: \"Building on your third package, we can reduce our price…\" to 0.975. In r4 we offered 0.970/0.972, matching its 0.972, and it accepted at once at 0.970. Score 0.649, the worst run.",
+     "runs": [
+      "1"
+     ]
+    },
+    {
+     "text": "Repeating the same number. In run 1, r3 we resent 0.962. The supplier answered \"We have reviewed your offer and hold our Angebot… We must maintain our offer\" (call hold). In run 3, r6 we repeated 0.942 and got a final offer at once: \"we cannot concede further\". A zero step stops its concessions.",
+     "runs": [
+      "1",
+      "3"
+     ]
+    },
+    {
+     "text": "Accepting early under the half-percent rule. Runs 2 and 6 accepted 0.951 while bidding 0.947, scoring 0.883. Runs 4 and 5 show at least 0.2–0.4 more was available.",
+     "runs": [
+      "2",
+      "6"
+     ]
+    },
+    {
+     "text": "Staying at 30-day payment terms. Run 3 reached about the same price (0.949) as the pay45 runs but carried the costlier payment term and scored 0.869.",
+     "runs": [
+      "3"
+     ]
+    },
+    {
+     "text": "Moving the effective date to 2027-01-01. The supplier refused each time and made its price conditional on the 1 December start: \"provided we maintain the 30-day payment terms and the December 1st effective date\".",
+     "runs": [
+      "1"
+     ]
+    },
+    {
+     "text": "Questions about its cost structure and energy share without our own data. It replied \"Which figures is that based on? Please send us the data… Our costs move with SCRAP-E3, WAGES-METAL, GAS-TTF; the figures stay with us\" and \"Our margin and our limits stay internal.\" None of these questions bought any movement.",
+     "runs": [
+      "1"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "Writer is the Owner of a family foundry. Every message is heavy with relationship language (\"twelve-year partnership\", \"family foundry\", \"craftsmanship\") but the tone is never hostile. It repeatedly thanked us for a \"respectful approach\" and \"polite, constructive dialogue\".",
+    "Opening justification: WAGES-METAL +3.1 % and 28 % of its cost. That supports only about +0.9 % against a +8.8 % ask. No run used this gap as an argument, so its effect is untested.",
+    "Concession path with a 24-month contract: 0.970–0.975, then 0.960–0.962, 0.955–0.957, 0.951–0.953, 0.947–0.949. Steps shrink to roughly halve each round. It moves only after we move, and late in the negotiation roughly matches our step size.",
+    "It prices terms on the table. It offered an alternative sheet in r1 (\"Alternatively, with Zahlungsziel … days net\"). It traded payment days for the 24-month commitment and protected the 1 December effective date.",
+    "Faced with several sheets, it picked the one best for itself (run 1: the third package at pay30; runs 2 and 5: the pay45 sheet) and ignored the pay60 sheet. A second sheet in run 5 coincided with a slightly lower counter (0.960 against 0.962), which is weak evidence.",
+    "Stopping signals: a repeated number from us brings \"hold\". A zero or 0.1 step after about 6 rounds brings a final offer (\"we have reached the absolute limit of our pricing flexibility\"). It agreed at once when we met its number (run 1).",
+    "No walk-away, no deadline pressure beyond the routine \"valid for 30 days\". No index-clause demand in this case."
+   ],
+   "real_limits": "Its full cost is 0.900 of the opening. Its practical floor on a 24-month contract was 0.947–0.949: it gave a final offer at 0.949 twice (pay30 in run 3, pay45 in run 4) and agreed 0.947 at pay45 in run 5 without a final offer. Payment term made no difference to that floor, so 45 days, and possibly 60, can be had at no extra price. The back office only showed its decisions (call counter, call hold, call final_offer, call accept) and \"Our margin and our limits stay internal\"; no internal figures leaked. The evidence is thin in several places: only one case type and contract length (24 months) were tried; 36 months, pay60 at the end and fact-based arguments were never tested; and C_best of 0.910 implies a somewhat better deal existed than any run reached, probably a lower price or longer payment. The stabilise goal also penalises pushing far below about 5 % margin, which caps how hard to press.",
+   "turning_points": [
+    "r1: offering a 24-month contract with a low anchor (0.919) brought the largest concession, from 1.000 to 0.970–0.975.",
+    "r2: accepting pay45 instead of pay60 brought a further 1.0 drop (to 0.960–0.962) and was explicitly welcomed: \"your agreement to the 45-day payment terms\".",
+    "Rounds 3–5: matched small steps kept it moving by 0.4–0.7 per round down to 0.947–0.951.",
+    "About round 6: a zero or minimal step from us triggered \"This is our final offer (letztes Angebot). Please decide.\" at 0.949.",
+    "Run 1, r3–r4: our repeated number brought a hold at 0.972, then our jump to 0.970/0.972 brought immediate agreement at 0.970. That jump was the costliest mistake across all runs.",
+    "Runs 2 and 6: accepting 0.951 at a gap of 0.004 ended the negotiation one round before the 0.947 that run 5 obtained."
+   ]
+  },
+  "case:D02": {
+   "what_worked": [
+    {
+     "text": "A deep opening anchor (about 0.80 of J1's opening, 0.83-0.84 of C1's) followed by steadily shrinking upward steps (about +1.5, +3.5, +2, +1 points). J1 matched each of our moves and went 0.947 → 0.930 → ~0.915 → ~0.903 → final 0.883-0.895, below its stated full cost of 0.900. Its own words: \"You moved a bit, so I'll take another step\", \"You came up a good bit, so I'll meet you at …\". Every v1.7 run ended at 0.49-0.53, against 0.23 for the shallow opening in run 1.",
+     "runs": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Holding payment terms back and offering faster payment (14 days) only in the last round, as a trade for price. J1 needs cash (\"as a small shop we really need to stick to … days payment to pay our guys\"). In the final round it gave an extra step: 0.901 → 0.883 in run 3 and 0.895 → 0.883 in run 5 (\"Thanks for dropping the payment terms to … days, that really helps us out\"). These were the top-scoring runs at 0.534.",
+     "runs": [
+      "3",
+      "5"
+     ]
+    },
+    {
+     "text": "Accepting J1's own 28-day lead time instead of asking for 35. Run 4 got 0.889 at 30-day payment, lead 28, DAP, which beats run 2's 0.895 at lead 35 on the same payment terms. Asking for terms the supplier finds cheap or neutral, rather than changing them, seems to leave more room on price. The evidence is one run.",
+     "runs": [
+      "4",
+      "2"
+     ]
+    },
+    {
+     "text": "Accepting J1's final offer promptly once the gap was about 1 point. No run that did this lost the deal, and J1 framed every last step as closing (\"let's meet in the middle and get this done so I can plan the machines\").",
+     "runs": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Keeping C1 in play with a credible competing quote gave a usable second track. C1's best offers were 0.956 [pay30 lead35 EXW] and 0.969 [pay30 lead42 DAP]. It never beat J1, but it confirmed that J1 was the right award.",
+     "runs": [
+      "4",
+      "6"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "A shallow opening of 0.94-0.97 with three loosely varied term sheets. J1 called a final offer as early as round 2 at 0.953 (\"this is our last price, take it or leave it\"). C1 even went up to 1.012 for the shorter lead time (\"expedited production requires additional resources\"). We accepted C1 at 1.000, its opening price, for a score of 0.229.",
+     "runs": [
+      "1"
+     ]
+    },
+    {
+     "text": "Citing a rival quote that the supplier judged not about this part. Both suppliers answered \"The rival quote data you cite does not concern this part or our company.\" This cost trust and moved nothing. J1 also asked for proof: \"please show me some proof so I know what we're dealing with.\"",
+     "runs": [
+      "1"
+     ]
+    },
+    {
+     "text": "Timeouts. A missed round made J1 walk away: \"Since I didn't hear back from you, I guess you found someone else. I am closing this offer now so we can plan our machines.\" The engine error (KeyError 'payment_days') came before this.",
+     "runs": [
+      "1"
+     ]
+    },
+    {
+     "text": "Asking J1 for 60-day payment every round. It was refused every time and bought nothing. It also signalled that we did not listen to the supplier's stated cash need.",
+     "runs": [
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Asking C1 for DAP plus 60-day payment. C1 priced this package at 1.04-1.06 and stayed there (\"DAP delivery and … days payment carry significant costs for us\"). It ended with a final offer of 1.012-1.025, far above its own EXW/30-day alternative of 0.956-0.975.",
+     "runs": [
+      "2",
+      "3",
+      "5"
+     ]
+    },
+    {
+     "text": "Giving the 14-day payment concession mid-negotiation in round 4 instead of saving it for the close. J1 folded it into a normal step (0.918 → 0.906) and still ended at 0.895. Because faster payment carries an interest cost, this was the weakest v1.7 result (C 0.868).",
+     "runs": [
+      "6"
+     ]
+    },
+    {
+     "text": "Citing the rival quote to J1 in mid-rounds. The steps it got (\"I can match their €…\", \"to beat the competition\") were the same size as steps without the claim. To J1 the claim added nothing beyond our own price move.",
+     "runs": [
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Lowering our bid in the 'last call' round. C1 did not walk, but the move triggered its final offer, which in runs 3 and 5 was higher than or equal to its previous package (1.025). The only gain was clarity.",
+     "runs": [
+      "2",
+      "3",
+      "5"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "J1 (small shop, Owner writing): it mirrors our moves step for step and gives about 1.7, 1.2-1.8, 1.1 and then about 0.6-1.2 points, always right after we move. It issues a final offer once the gap is about 1-1.5 points, in round 5 when we open deep or round 2 when we open shallow.",
+    "J1 holds 30-day payment as a principle (\"we absolutely have to stick to … days payment\"). It rewards faster payment: \"Faster payment is welcome; we can reflect it in the price.\"",
+    "J1 is time-sensitive and machine-planning driven. Every message pushes to close (\"so I can schedule the machines\"), and silence makes it walk.",
+    "C1 (Export Manager) is polite and partnership-framed. It repeatedly claims to have verified the competing quote and to 'match' it, but its steps are small (about 0.6-1.9 points per round). It defends its price with cost drivers (\"Our price follows our main cost drivers: BAR-14021, WAGES-METAL\").",
+    "C1 prices terms explicitly. DAP and long payment cost us about 5-7 points of price. It always counter-offers or steers back to EXW with 30-45 day payment, and once offered a 45-day lead time that breaks our must-have.",
+    "C1 stalls at a 'management approval' wall around round 3, then makes one more approved step, then a final offer valid for 7 days.",
+    "Neither supplier walked when we held firm or slowed our steps. J1 only walked after our silence."
+   ],
+   "real_limits": "J1 states its full cost at 0.900 of opening, but it agreed at 0.889 [pay30 lead28 DAP] and at 0.883 [pay14 lead35 DAP]. So its real floor is around 0.88, and short payment is worth about 0.5-1 point to it. Where the remaining gap to C_best (0.731 of C_open) lies is not shown by these runs; no run got J1 below 0.883, so evidence is thin. C1's back office (run 4) shows a negotiating band set by the Owner. The Export Manager asked \"The buyer wants more than my band allows. Approve a further step?\" and the Owner replied \"Approved: you may go further, within our rules.\" That bought about 2 points (0.994 → 0.975) and then a final offer of 0.969 described as \"our absolute limit\". C1's lowest offer anywhere was 0.956 [pay30 lead35 EXW], billed as matching the rival price. Its DAP/30-day floor appears to be about 0.97, and with DAP/60-day it never went below 1.012.",
+   "turning_points": [
+    "Run 1, r1-r2: a shallow 0.94-0.95 opening plus irrelevant rival data led J1 to call a 'take it or leave it' final at 0.953 in round 2. After our timeout it walked; we were left with C1 at 1.000.",
+    "Runs 2-6, r1: an opening near 0.80 drew J1 straight down to 0.947 and set up four more matched concessions.",
+    "Runs 3 and 5, r5: switching to 14-day payment in the last round converted J1's last step into its lowest price (0.883), the best result in the set.",
+    "Run 4, r3-r4: C1's Export Manager escalated to the Owner, and the approval produced one more step before its final offer at 0.969.",
+    "Run 6, r4: offering 14-day payment early was absorbed without extra value, and the run ended at 0.895 with the interest cost added on top."
+   ]
+  },
+  "case:P01": {
+   "what_worked": [
+    {
+     "text": "Opening with one dense package of verified, countable records (index_change, should_cost, notice_period; refs cost, ctr, doc, idx) at an anchor of 0.913 in round 1. The supplier moved from 1.000 to 0.962-0.967 in one step, about 3.5-4 points, the largest concession in any run. Its words: \"We did not know that - a fair point\" and \"In consideration of these points and the notice period, we are prepared to adjust our price\".",
+     "runs": [
+      "2",
+      "3",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Holding back one fresh, true record (the delivery scorecard, delivery_record) for round 2 and raising our offer only modestly (0.913 to 0.925-0.929). This bought a second step of about 1.5-2 points to 0.945-0.947. Its words: \"it is correct and we take our delivery performance very seriously ... we are prepared to lower our price\".",
+     "runs": [
+      "2",
+      "3",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Offering 14-day payment in every term sheet. The supplier signals cash_need and took it at once: \"We welcome your offer of … payment days, which we accept in exchange for a revised price\". Where we offered both 14 and 30 days, it chose pay14 (0.913 at pay14 against 0.916 at pay30).",
+     "runs": [
+      "2",
+      "3",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Accepting at about 0.945-0.947 rather than pushing further. C_deal was 0.953-0.956 against C_best 0.951, so these deals were essentially at the optimum. The price was already below the supplier's full cost (0.957), and on a stabilise part the relationship charge makes a deeper cut more expensive for us overall.",
+     "runs": [
+      "2",
+      "3",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Two round-2 term sheets that differed in effective date: 0.929 from 2027-01-01 and 0.926 from 2026-11-01. The supplier picked the later date at 0.947 (\"We can accept the effective date of … January … in exchange for a revised price\"). The two months at the old price made this the best run (score 0.963, C 0.953).",
+     "runs": [
+      "3"
+     ]
+    },
+    {
+     "text": "Offering a binding higher volume when the supplier asked for it (\"A binding higher volume would help us and can improve the price. Which volume can you commit to?\"). This restarted concessions after a hold: 0.986, then 0.973, then a final offer of 0.964. A later effective date (2027-04-01) partly made up for the higher price (C 0.953).",
+     "runs": [
+      "4"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "Including a term sheet above the supplier's own opening price: 1.023 from 2027-04-01, above even the engine's ceiling of 1.013. The supplier simply took the sheet that was best for it and answered \"We can accept your terms and await your order\". Every term sheet is a binding offer, so the worst one sets the outcome. Score 0.382.",
+     "runs": [
+      "1"
+     ]
+    },
+    {
+     "text": "Opening without data claims (the engine errored) and with longer payment terms (pay30 to pay60 at 0.935-0.944). The supplier only came down to 0.985 at pay30 and argued \"other operational costs require us\". Putting the data package in later bought almost nothing: 0.986 at pay14 from April.",
+     "runs": [
+      "4"
+     ]
+    },
+    {
+     "text": "Re-citing a record already counted (the delivery scorecard flagged as a duplicate). The back office switched from 'counter' to 'hold': \"this data was already fully taken into account ... Since there are no new facts ... we must maintain our offer\". It also asked us for data.",
+     "runs": [
+      "4"
+     ]
+    },
+    {
+     "text": "Moving the effective date from November to January with the same price. On its own this brought no price relief: the supplier priced the later date slightly higher (0.965 against 0.962 in round 1).",
+     "runs": [
+      "2",
+      "3"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "Owner-written, family-foundry tone throughout; it values the relationship and respectful, data-based argument.",
+    "It concedes only when given a counted (new, true) record or a trade. The first step after a full data package is about 3.5-4 points; the second, after one new record, is about 1.5-2 points (shrinking steps).",
+    "It never accepts our cost arguments on its own drivers. It repeats \"LCI-C rose … and is … of our cost. That remains\" and \"Our price reflects our costs; our calculation stays internal\", yet it still moves price in return for verified facts.",
+    "On energy: \"While we note your figures regarding electric power, our overall production costs necessitate this adjustment\". The index argument is acknowledged but it is not decisive.",
+    "It reacts strongly to faster payment (cash_need) and takes pay14 immediately. When we offered several payment terms it chose the shortest.",
+    "It asks unprompted for binding volume and pays for it: about 1.3 points, then about 0.9 points in run 4.",
+    "It treats a repeated record as \"no new facts\" and holds; it asks \"Which figures is that based on? Please send us the data.\"",
+    "It issues a final offer only after a long run of 6 rounds, shortening validity from 30 to 7 days (\"This is our final offer (letztes Angebot). Please decide.\"). In 3-round runs it never got to a final offer.",
+    "When several term sheets are open it picks the one most favourable to itself; in run 1 it agreed instantly to a sheet above its opening price.",
+    "It accepts a later effective date in exchange for a slightly higher price."
+   ],
+   "real_limits": "The back office only showed 'call counter' or 'call hold', so its internal limits were not revealed directly; the evidence is thin. What is observable: across four runs it repeatedly landed at 0.945-0.947 with pay14 from November or January after two data rounds, which suggests a practical floor near there. That is about 1 point below its should-cost full cost of 0.957, which it presumably tolerates because 14-day payment eases its cash need. With an April effective date and binding volume its final offer was 0.964. We never pushed below 0.945, so it is unknown whether it would walk or keep conceding. For a stabilise part, C_best of 0.951 against deals at 0.953-0.954 means further cuts would have hurt us through the margin charge anyway.",
+   "turning_points": [
+    "Run 1, round 1: a third term sheet at 1.023 (above the supplier's opening price) was accepted immediately, which locked in a poor deal (score 0.382).",
+    "Runs 2/3/5/6, round 1: three verified records plus a 0.913 anchor with pay14 moved the supplier from 1.000 to about 0.962-0.967.",
+    "Runs 2/3/5/6, round 2: the fresh delivery-scorecard record and a small raise to 0.925-0.929 brought it to 0.945-0.947; accepting there was near-optimal.",
+    "Run 3, round 2: offering a January-2027 sheet alongside a November sheet let the supplier choose January at 0.947, the best score (0.963).",
+    "Run 4, round 1: an engine error meant no data claims, a weak first move and a pay30 counter at 0.985.",
+    "Run 4, round 3: a duplicate record turned the back office to 'hold' with no movement.",
+    "Run 4, rounds 4-5: a volume_change record and a binding volume restarted concessions (0.973, then a final offer at 0.964, valid 7 days), which we accepted."
+   ]
+  },
+  "case:P02": {
+   "what_worked": [
+    {
+     "text": "Accepting the supplier's final offer instead of pushing again. Every run that took the 'letztes Angebot' closed at 1.002-1.004 [pay90, no clause] and scored about 0.47-0.51. The alternative cost 1.141 x C_open, so walking away was far worse.",
+     "runs": [
+      "RUN 2",
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Moderate, steady counter steps of about 1-2 points (0.939 -> 0.960 -> 0.973 -> 0.982) drew the supplier's lowest final price, 1.002. The supplier answered each step with a step of its own ('In response to your movement, we are prepared to reduce our price'). These runs scored highest: 0.507 and 0.504.",
+     "runs": [
+      "RUN 2",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "A verified volume_change claim, backed by the forecast record, was counted and acknowledged ('We acknowledge the positive development in your demand forecast'). It moved the supplier's pay30 price from 1.000 to 0.997. It was the only argument with a visible effect.",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3",
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Anchoring at 0.939 with pay90 did not provoke the supplier. It countered at 1.008 [pay90] and kept conceding. Opening well below its full cost (1.011) cost no trust.",
+     "runs": [
+      "RUN 2",
+      "RUN 4",
+      "RUN 6"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "Pushing after the final offer with an unchanged number: 0.982 repeated, under the engine's 'final push'. The supplier walked ('we must respectfully withdraw our offer'), leaving a score of 0.000. It had warned: 'Below this price we would need facts, not just a lower number.'",
+     "runs": [
+      "RUN 1"
+     ]
+    },
+    {
+     "text": "Tiny counter steps (0.939 -> 0.944 -> 0.946 -> 0.948) did not speed things up or protect our position. The supplier still issued its final offer at round 4, but higher (1.004), and called our move a 'slight price increase'. This was the lowest of the fixed-price deals, scoring 0.465.",
+     "runs": [
+      "RUN 5"
+     ]
+    },
+    {
+     "text": "The index-clause term sheet (0.952 [pay90, CU-NOTATION/0.2/db5]) was agreed instantly in round 2. Even so, it scored only 0.365, because clause risk on copper, which had risen 47.7 %, made C_deal 0.992. That is worse than the fixed 1.002 deals at 0.990. The instant agreement also shows the clause sheet was priced too generously; the supplier would probably have taken a lower price with the clause (evidence thin).",
+     "runs": [
+      "RUN 3"
+     ]
+    },
+    {
+     "text": "The price_history claim was verified but had no effect. Asking the supplier questions only triggered back-office calls to Credit Control and Legal, with no price movement.",
+     "runs": [
+      "RUN 5",
+      "RUN 6",
+      "RUN 3"
+     ]
+    },
+    {
+     "text": "Repeated volume asks went unanswered with anything binding. Volume is not a negotiable term in this case, so we could not turn it into a trade. The supplier kept asking 'Which volume can you commit to?' and 'Please provide formal documentation of this volume', and withheld further price credit for it.",
+     "runs": [
+      "RUN 3",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "No run beat a cost of 0.990 against C_best 0.979. Every run used pay90 with no clause, or a generous clause; no run explored a pay30/pay45 sheet at a lower price, or a lower-priced clause sheet.",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3",
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "It opens by asserting cost drivers: 'CU-NOTATION rose 47.7 % in twelve months and is 20 % of our cost'; LCI-C +2.7 % (20 % of cost); PPI-C241 +6.5 % (14 % of cost).",
+    "It prices payment terms explicitly. At round 1 it offered 1.008 at pay90 against 0.997 at pay30, about 1.1 points for 60 days. It repeatedly said 'A longer Zahlungsziel costs us interest; that is priced in' and 'extending them … would necessitate a price increase'.",
+    "It concedes in shrinking steps of about 0.003 per round (1.008 -> 1.005/1.006 -> 1.002-1.004) and only after a move from us. It mirrors the size of our step: small steps drew smaller cuts.",
+    "It issues a final offer at its 5th offer (round 4) in every 5-round run, regardless of how far apart we are, and cuts the validity to 7 days.",
+    "It keeps its calculation private ('Our price reflects our costs; our calculation stays internal') and asks for data behind our figures ('Which figures is that based on?').",
+    "It persistently asks for binding volume ('A binding higher volume would help us and can improve the price').",
+    "It agreed immediately to a copper index clause at 0.952 [pay90], conditional on the volume commitment and its documentation.",
+    "It walks away if we repeat our number after its final offer, even when management has approved more room."
+   ],
+   "real_limits": "The supplier's full cost is 1.011 of opening, so every fixed-price deal at 1.002-1.004 leaves it below cost. This matters for a stabilise part, where the margin charge applies. The Key Account Manager's band at pay90 ends at about 1.002; at that point it escalated: 'The buyer wants more than my band allows … Approve a further step?' In RUN 1 the Pricing Committee answered 'Approved: you may go further, within our rules'. Real room below 1.002 therefore existed, but the supplier released it only against facts or a trade, not a repeated number; it walked instead. The 60-day payment difference is worth about 0.011 to it. With a CU-NOTATION clause (weight 0.2, deadband 5 %) its floor lies at or below 0.952, since it accepted that at once; the exact floor is unknown. Evidence on the floors with a clause or with shorter payment is thin: one clause run, and no pay30/pay45 counters.",
+   "turning_points": [
+    "Round 1, all runs: the verified volume_change claim moved the supplier off 1.000 (to 0.997 at pay30). Its counter at pay90 of 1.008 revealed the interest price of long payment.",
+    "RUN 3, round 2: adding a second term sheet with a CU-NOTATION index clause at 0.952 produced instant agreement. This shows the clause is worth a lot to the supplier, but it raised our risk-adjusted cost (score 0.365).",
+    "Round 4, all 5-round runs: the 'letztes Angebot' at 1.002-1.004 with 7-day validity. The back office shows the Key Account Manager at the end of its band and asking management for approval.",
+    "RUN 1, round 5: we repeated 0.982 with no new argument after the final offer. Although management approved a further step, the supplier withdrew ('we are withdrawing from this negotiation'), producing a score of 0.",
+    "RUN 5: switching to very small steps after the anchor led the supplier to stall at 1.004 instead of 1.002."
+   ]
+  },
+  "case:P03": {
+   "what_worked": [
+    {
+     "text": "The opening package that mattered was a first-round counter at about 0.971 with pay90 and 24 or 36 months at the current volume of 4580, citing verified should-cost, volume forecast and delivery records. On the first reply this moved the supplier from 1.000 [pay30/12m] to 0.986 [pay90/24m or 36m]. That is the whole achievable concession and lands within 0.006 of C_best (C_deal 0.927 vs 0.921 x C_open).",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "The should-cost record (cost:350020) is the one citation with a measurable effect. It was 'counted' in runs 1-3. In run 4 the first round went out without it and the reply was 0.988 instead of 0.986. Once it was cited in run 4's second round the price went to 0.987 ('We have verified your should-cost model data and factored it into our calculation').",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3",
+      "RUN 4"
+     ]
+    },
+    {
+     "text": "After the first concession, the efficient move was one large step to 0.984 and then accepting the supplier's 0.986. Runs 3 and 5 closed in 3 rounds and about 54 s with the same score as the 6-round runs. Run 6 did the same with 36 months and closed in 4 rounds.",
+     "runs": [
+      "RUN 3",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Accepting 0.986 once the supplier was in 'call hold' secured 0.923. The rule 'within half a percent of our offer' was the right trigger here.",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Sending several term sheets in round 1 (pay90/24m, pay90/36m, pay60/24m) gave the supplier a package to anchor on ('Building on your third package...'). It returned its own alternative, which revealed its price for each term.",
+     "runs": [
+      "RUN 2",
+      "RUN 3",
+      "RUN 1"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "Shrinking price steps after the supplier froze (0.975 → 0.979 → 0.981 → 0.983) produced zero movement over four rounds. Each was met with 'base prices remain strictly frozen', and the extra rounds only cost time.",
+     "runs": [
+      "RUN 1",
+      "RUN 2"
+     ]
+    },
+    {
+     "text": "Run 4's first round was hit by an engine error. It opened lower (0.954 / 0.963 / 0.947) and did not cite should-cost, and the reply was a worse 0.988.",
+     "runs": [
+      "RUN 4"
+     ]
+    },
+    {
+     "text": "In run 4's second round, delivery record and volume change were re-cited. The supplier flagged them as duplicates: 'the delivery record and volume change data you cited were already accounted for in our previous offer.' Each record counts once per case.",
+     "runs": [
+      "RUN 4"
+     ]
+    },
+    {
+     "text": "Run 4 repeated an identical 0.985 for three rounds. The supplier answered 'We note that your proposal remains unchanged', then 'This is our final offer (letztes Angebot). Please decide. Valid 7 days' at 0.987.",
+     "runs": [
+      "RUN 4"
+     ]
+    },
+    {
+     "text": "Run 4 then walked away from 0.987. A broken ceiling (0.000 after the error) made the accept check fail on a 0.001 gap. No deal meant C_alt 1.020 x C_open against roughly 0.927 for a deal, so the score was 0.",
+     "runs": [
+      "RUN 4"
+     ]
+    },
+    {
+     "text": "Arguments without effect:\n- delivery_record ('no effect' in runs 1 and 4)\n- price_history PO data (verified, no effect)\n- a document reference to an 'annual review discussed in our meeting', which was passed to Legal with no price effect",
+     "runs": [
+      "RUN 1",
+      "RUN 4",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Asking for pay90 together with a further price cut was refused outright: 'your proposal maintains the 90-day payment period alongside a price reduction, which our frozen pricing does not allow.'",
+     "runs": [
+      "RUN 3",
+      "RUN 5"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "It opens with cost-driver claims: CU-NOTATION +47.7% (5% of cost), LCI-C +2.7% (16%), PPI-C2611 +13.5% (42%). No run rebutted them, and the supplier repeats 'Our price follows our main cost drivers' in every later round.",
+    "Its key trait is a price freeze: 'Our management has frozen all price reductions until December 2027. We can talk about the terms instead - payment, volume or contract length.' The list price is fixed and all movement comes through terms.",
+    "It concedes once, on the first counter, by pricing in the terms (pay90, 24/36 months) and the should-cost data. After that the back office switches from 'call counter' to 'call hold' and the price stays at 0.986 (0.987 in run 4).",
+    "Every alternative it offered traded a term, never a pure price cut:\n- pay60 at 0.983 (about 0.3% for 30 fewer days)\n- volume 5496 (+20%) at 0.974 (about 1.2% lower)",
+    "It asks for binding volume in nearly every round: 'A binding higher volume would help us and can improve the price. Which volume can you commit to?'",
+    "Contract length bought nothing extra. Run 4's alternatives were 0.987 at both 24 and 36 months, and run 6 got 0.986 at 36 months, the same as at 24. The supplier says 'The contract term is reflected in the price.'",
+    "It stays polite throughout and acknowledges our steps ('appreciate the step you have taken') while holding firm. It calls 0.986 'our absolute limit' for 4580 pcs at pay90 (EUR 432.15 per unit was quoted at 0.987 in run 4).",
+    "An unchanged counter for two rounds triggered a final offer with a 7-day validity: 'Without movement from your side we cannot move either.'",
+    "Questions we raised went to internal functions (Logistics, Credit Control, Application Engineering, Legal) without changing the price."
+   ],
+   "real_limits": "The supplier's full cost is 0.920 of its opening price (should-cost of its plant), so 0.986 leaves it about 6.6% above cost. That is a healthy margin for a stabilise part, with no margin charge. Under the freeze its effective floor at 4580 pcs and pay90 is 0.986, and nothing but a term trade moved it. The remaining levers it named itself are a higher binding volume (5496 pcs at 0.974) or shorter payment (pay60 at 0.983). Whether either beats the deal depends on whether our fixed need justifies more than 4580 pcs and on interest cost; the evidence on which one closes the 0.006 gap to C_best is thin. The freeze runs until December 2027, so a 36-month contract at the same price was free extra cover, though it did not improve the score in this scoring.",
+   "turning_points": [
+    "Round 1 counter in every run: the supplier jumps from 1.000 to 0.986-0.988 by pricing in pay90 and 24/36 months, then declares the freeze. This is the only concession in all runs.",
+    "Round 1 in run 4: the engine error drops the should-cost citation, and the supplier anchors at 0.988 instead of 0.986.",
+    "Round 2 onward: the back office flips to 'call hold'. All later price-only moves get 'must hold firm at EUR ...'.",
+    "Runs 3 and 5, round 2: a single step to 0.984 followed by acceptance of 0.986 closes in 3 rounds with the same score as the 6-round runs.",
+    "Run 4, rounds 3-5: an unchanged 0.985 leads to 'proposal remains unchanged', then a final offer at 0.987. Walking away, caused by the broken accept ceiling, turned a near-best deal into score 0."
+   ]
+  },
+  "case:P04": {
+   "what_worked": [
+    {
+     "text": "Offering a longer contract in the first e-mail was the only move that bought a lower price. With 24 or 36 months plus pay90, the supplier's first counter was 0.996, against 1.012 for pay90 on 12 months (run 1). It wrote that it priced 'the extended terms requested' and 'this package'. 36 months bought nothing more than 24 (both 0.996).",
+     "runs": [
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "text": "Accepting the 'final offer (letztes Angebot)' straight away locked in 0.996 [pay90, 24 or 36 months], C 0.990 x C_open, score 0.860. That is close to C_best of 0.988 and well below the alternative quote (C_alt 1.022).",
+     "runs": [
+      "3",
+      "4"
+     ]
+    },
+    {
+     "text": "Sending three term sheets with different payment and term mixes in round 1 made the supplier reveal its trade-offs in the same reply. It gave a main counter plus an alt: 0.996 pay90/24m vs 0.990 pay60/24m in runs 2-3, and 1.012 pay90/12m vs 0.998 pay14/12m in run 1. This shows roughly 0.6 % per 30 payment days in the 60-90 range, and about 1.4 % between pay14 and pay90.",
+     "runs": [
+      "1",
+      "2",
+      "3"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "Pushing after the final offer led to a walk-away. In round 3 we bid 0.976, the engine's 'final push', against their final 0.996. The supplier answered 'We are withdrawing from this negotiation... Since we cannot align on the pricing'. Result: no deal, score 0.000. Run 3 had identical rounds 1-2 and accepted instead, scoring 0.860.",
+     "runs": [
+      "2"
+     ]
+    },
+    {
+     "text": "Asking for pay90 on a 12-month renewal with no longer commitment made the supplier charge for the payment term. The price rose to 1.012, above its opening, and that became its final. Accepting it gave C 0.999 x C_open and score 0.056, nearly worthless. The supplier's own pay14 alt at 0.998 was also offered and not pursued.",
+     "runs": [
+      "1"
+     ]
+    },
+    {
+     "text": "Price steps after round 1 moved nothing. Our bids went 0.851 → 0.895/0.899 → 0.925/0.933 and the supplier did not move its price once ('we are unable to offer further concessions', 'we have reached our limit for these extended terms'). Its only concession came in its first counter, in exchange for terms.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "text": "Citing data had no effect. delivery_record, volume_change and price_history were all verified but answered 'that does not change our position' or 'no effect'. The account-review doc ref in run 4 round 2 was acknowledged but produced no movement. None of these cost trust, but none bought anything.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "text": "Our anchor of 0.851 and our round-2 bid of about 0.895 were below the supplier's full cost (0.899). They got a firm 'pricing structure remains firm due to our current operational constraints', and the supplier moved to a final offer within one to two rounds. Anchoring under cost did not pull the supplier's counter down.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "It opened at 1.000 [pay30, 12 months], valid 30 days, and justified the price with cost drivers: 'LCI-C rose 2.7 % in twelve months and is 10 % of our cost', with PPI-C2815 up 0.8 %. It later restated 'Our price follows our main cost drivers: PPI-C2815, LCI-C.'",
+    "It makes exactly one move, in its first counter, and that move is a re-pricing of the requested terms rather than a real price concession. Pay90 costs us; longer contract months earn us about 1.6 % at pay90.",
+    "It offers its own alternative term sheets that trade price for faster payment ('a slight adjustment... if you are able to accommodate 14-day payment terms'; 0.990 for pay60/24m).",
+    "After the first counter it holds the price ('call hold'), then issues a final offer valid 7 days, either one round after our first counter (runs 2-3) or two rounds after (runs 1 and 4). It gives no further concession regardless of our step size.",
+    "A final offer really is final. Bidding below it triggers an immediate polite walk-away, with the Angebot left valid 14 days.",
+    "Its tone stays warm and relationship-focused throughout ('We value our partnership... deeply'). It does not react to data citations and gives generic reasons ('operational constraints', 'capacity constraints').",
+    "It accepts the full ask on payment (pay90) and contract length (24/36 months) but prices these terms in; it never rejected a term outright."
+   ],
+   "real_limits": "The evidence is thin: the back office showed only call labels (counter, hold, final_offer, walk_away) and no internal discussion. Full cost is 0.899 of opening, so the supplier sits about 10 % above cost at its opening price. Its observed hard floors, all of which became finals, are: 0.996 for pay90 with 24 or 36 months; 0.990 for pay60 with 24 months (offered as an alt, never tested as a final); 0.998 for pay14 with 12 months; and 1.012 for pay90 with 12 months. It never went below 0.990 on any term sheet, so it keeps a margin of roughly 10 % over full cost. The whole negotiable range sat in its first counter, priced through the terms, and nothing was available on price afterwards. C_best of 0.988 suggests the best deal lay in the payment/term mix, perhaps the pay60/24m alt at 0.990, rather than in price pressure. We cannot confirm this because no run accepted or tested that alt.",
+   "turning_points": [
+    "Round 1, the term sheet choice set the outcome. Requesting 24 or 36 months together with pay90 produced 0.996; requesting 12 months with pay90 produced 1.012 (run 1). Everything after round 1 changed nothing on price.",
+    "Round 2 or 3, the supplier declared 'final offer (letztes Angebot)... valid for 7 days'. This was the decision point: accept, or lose the deal.",
+    "Run 2, round 3: the engine's 'final push' to 0.976 after the final offer led to 'We are withdrawing from this negotiation'. A score of 0.860 became 0.000, against an alternative costing 1.022 x C_open.",
+    "Run 1: we accepted a final above the opening price (1.012 at pay90/12m) without testing the supplier's cheaper pay14 alternative or offering contract length. That left score at 0.056."
+   ]
+  },
+  "case:P05": {
+   "what_worked": [
+    {
+     "text": "With Dralveck (70210, cash_need), the best run opened with one clean sheet: 0.763, pay14, lead35. It cited two different verified records, an index change and our delivery record. It then added one fresh verified rival quote per round with small own steps (0.776, then 0.787). The supplier conceded 0.889 → 0.833 → final 0.792, each time saying 'We did not know that - a fair point.' This was the lowest 70210 price in any run and the best score (0.762).",
+     "runs": [
+      "RUN 4"
+     ]
+    },
+    {
+     "text": "The same small-step, fresh-rival-quote pattern also worked when the steps were a little larger. Landing prices followed our step size: 0.782 got 0.806 (run 5), 0.797 got 0.819 (run 6). The bigger our step, the higher the landing.",
+     "runs": [
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Offering 14-day payment was the currency that bought every price move from the two German cash-need owners. Quotes: 'getting paid faster is important for us right now'; 'Since the 14-day payment really helps our cash flow right now, I'm willing to beat their price'; 'The … days payment helps us keep the shop running'. No supplier ever picked a pay30 sheet. Lead35 cost no more than lead28 at 70210 and was used in all later runs.",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3",
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "With Fuchsreiter (70250), repeating our own price unchanged collected the second half of a split concession. Back office: 'The buyer shows a much lower rival quote. I give half the step now and check the rest' → 'Checked: give the rest of the step.' Results: R4 0.745 held → 0.792 → final 0.753; R5 0.745 held → 0.766; R6 0.765 held → 0.779, then agreed at 0.769. A lower anchor (0.745) produced a lower floor (0.753–0.766) than 0.765 did (0.769).",
+     "runs": [
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Comparing suppliers on absolute cost rather than on share-of-own-opening. Fuchsreiter's opening is about 7 % higher in absolute terms. Its 0.769 (≈0.82 C_open) and 0.753 (≈0.81) lost to Dralveck's 0.792–0.806 (≈0.80–0.81). Picking 70210 in runs 2–6 was correct.",
+     "runs": [
+      "RUN 2",
+      "RUN 3",
+      "RUN 4",
+      "RUN 5"
+     ]
+    },
+    {
+     "text": "Citing a new verified rival quote to Hrvelec after a pause got its only real move. It went from 1.000 to 0.984 at pay14/lead42: 'This is a big step from our side, let's get this done!'",
+     "runs": [
+      "RUN 5"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "The 'last call' jump in runs 2 and 3. The buyer leapt from 0.776 to 0.812 / 0.804 while 70210 was still at 0.847 and conceding. The supplier simply agreed at our number. Run 4 shows it would have gone to 0.792, so the jump left 1–2 points on the table.",
+     "runs": [
+      "RUN 2",
+      "RUN 3"
+     ]
+    },
+    {
+     "text": "Run 1 (score 0.548) had two problems. It anchored high at 0.795 against everyone. It then closed with Fuchsreiter at 0.796 of its higher opening (C 0.853), although Dralveck was already at 0.861 and still moving. It also raised its Hrvelec offer by 9 points (0.793 → 0.884) for a 1.6-point move.",
+     "runs": [
+      "RUN 1"
+     ]
+    },
+    {
+     "text": "Timeouts and empty messages had several costs: Fuchsreiter (r1): 'Without movement from your side we cannot move either.' Open offers hardened into final offers after silence (70250 R5, 70210 R6, 70240 R6). Hrvelec walked away after three unanswered rounds in R4.",
+     "runs": [
+      "RUN 2",
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Holding with no term sheet after a final offer gained nothing and only built irritation. Over three rounds Dralveck stayed at 0.792 and wrote: 'as I wrote twice now, the offer is valid for … days. Please check my last emails.'",
+     "runs": [
+      "RUN 4"
+     ]
+    },
+    {
+     "text": "Pushing below a final offer or an agreement never moved the price. Below final: 'is the absolute bottom line for me. I've already beaten the other quotes'; 'I've already sharpened my pencil as much as I can'. Below an agreement: 'Our agreed offer stands. Which figures is that based on? Please send us the data.'",
+     "runs": [
+      "RUN 3",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Rival quotes did not work on Hrvelec: 'it doesn't change our math'; 'The other offer you mentioned is basically the same as our starting price anyway!'. A deep anchor (0.803) still only got 1.032 → 1.000. Asking for lead28 made it raise its price to 1.095: 'too tight for us and would cost more'.",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3",
+      "RUN 4",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Wasted claims. Index-change records re-cited to a second or third supplier were marked 'duplicate (already counted)', because each record counts once per case. The should-cost claim to Fuchsreiter had no effect in 5 of 6 runs.",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3",
+      "RUN 5"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "Dralveck (70210, owner, cash_need): moved only after a new argument from us, in shrinking steps (≈ -0.06 to -0.11 first, then -0.03, -0.01 to -0.04). Each newly counted rival quote was answered with 'a fair point' and a price that beat it ('I'll beat that other guy'). With no new argument (a timeout, or an offer without a claim) it issued a final offer and held it.",
+    "Fuchsreiter (70250, owner, cash_need + wants_work): the first counter landed 0.04–0.05 above our anchor, with 'We need to clarify this internally'. The rest of the step came in the next round. It agreed as soon as we moved even slightly toward it (0.765 → 0.769). After 'agreed' the price was frozen.",
+    "Hrvelec (70240, CZ export manager, capacity_full): friendly and verbose, but price-sticky. It traded terms rather than price, granting lead42/pay14 at 1.000 and offering lead52 at 0.984 (not compliant). It defended lead time as a cost driver. It chased us when we were silent, then walked. It asked for details of the rival offer ('so we can understand the gap') instead of conceding.",
+    "All three cited the same cost drivers (LCI-C, PPI-C2431, AS-14404, PPI-D351) and said material share is not disclosed beyond a figure. Faster payment was welcome to all of them and was 'reflected in the price'.",
+    "Final offers came either after we stopped supplying new arguments or after we went silent. Pushing once below a final offer drew a polite refusal, not a walk-out. Silence for three rounds led to a walk-out (Hrvelec)."
+   ],
+   "real_limits": "Dralveck's lowest price seen is 0.792 at pay14/lead35, declared final in run 4. Its log lists full cost at 1.024 of opening, so it is already deep below its stated cost; that figure is evidently not a floor, perhaps because of its cash need. C_best of 0.731 C_open implies about 0.73 was theoretically possible, but no run came close. Treat 0.79 as the practical floor on this evidence (thin: one run). Fuchsreiter's lowest is final 0.753 (≈0.81 C_open), against a listed full cost of 0.958. Its back office shows concessions are gated by an internal check that releases the second half of a step, not by a hard price floor. Hrvelec bottomed at 0.984 for compliant lead42/pay14 and never went below its full cost of 0.960. Its capacity_full status makes short lead times expensive, so it was never competitive. The evidence is a single case with six runs.",
+   "turning_points": [
+    "Opening claims: index change plus delivery record (run 4) got 70210 to 0.889, then 0.833. Three index-change claims (runs 2 and 3) got 0.875, then 0.847, a slower path.",
+    "Each fresh counted rival quote produced one 70210 concession. The first round without a new claim, or with a timeout, turned the next reply into a final offer.",
+    "Runs 2 and 3: the buyer's 'last call' jump to 0.812 / 0.804 was accepted at once, ending further 70210 movement.",
+    "Fuchsreiter's back office 'give half the step now and check the rest' → 'give the rest of the step': holding our price for one round paid off.",
+    "Run 1: accepting Fuchsreiter at 0.796 of its higher opening, instead of continuing with 70210, produced the worst score.",
+    "Run 4: three timeouts with Hrvelec ended in walked_away. Repeated empty messages to 70210 brought exasperation but no price change."
+   ]
+  },
+  "case:P07": {
+   "what_worked": [
+    {
+     "text": "Accepting the supplier's 'final offer (letztes Angebot)' straight away secured a deal in every run that did so. Deals landed at 0.937-0.944, with C_deal 0.826-0.832 against C_alt 0.972. The exact final price barely varied, so accepting in time mattered far more than a further nudge.",
+     "runs": [
+      "1",
+      "3",
+      "4",
+      "5"
+     ]
+    },
+    {
+     "text": "Run 5 had the best score (0.743) and the lowest price (0.937). It used a single clean term sheet [pay60 months36] from round 1. It cited each record once, with a document reference (doc, fc, sc) and no duplicate claims. The supplier explicitly confirmed: 'We also checked the volume change data you cited; it holds and we took it into account.' It also credited the longer term: 'This highly competitive price reflects the value of the 36-month contract and 60-day payment terms.'",
+     "runs": [
+      "5"
+     ]
+    },
+    {
+     "text": "Trading payment terms instead of only price paid off on total cost. Run 1 asked for pay90, which left the price higher (0.944), but it matched the best C (0.826) through lower interest cost. The supplier accepted pay90 without asking for a price premium beyond its normal step pattern. Long payment terms and a long contract were both cheap for this distributor to give.",
+     "runs": [
+      "1",
+      "5"
+     ]
+    },
+    {
+     "text": "A moderate opening anchor (0.845-0.850), followed by shrinking steps (+3.6 pts, then +2.1 pts), kept the supplier conceding every round. It gave about 3, then about 2, then about 1.3 pts, each time saying 'to reciprocate your movement' or 'in response to your movement'.",
+     "runs": [
+      "1",
+      "3",
+      "4",
+      "5"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "Pushing past the final offer caused a walkaway. Run 2 got 'final offer' at 0.939 and countered at 0.920 ('engine: final push'). The supplier replied 'We are withdrawing from this negotiation', and the back office switched to 'call hold'. The run scored 0.121 and fell back to the current contract (C_alt 0.972).",
+     "runs": [
+      "2"
+     ]
+    },
+    {
+     "text": "Re-citing the same volume_change record (flagged 'duplicate') each round added nothing. Each time the supplier answered 'the volume increase ... was already factored into our previous calculation.' Repeated references to 'fc' without attaching the figures also drew 'we cannot access the forecast data you referenced and kindly ask you to provide the underlying figures/proof'. This mildly undermined our credibility instead of moving price.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "text": "The delivery_record claim was verified but had no effect on price. The supplier only answered 'We take your feedback on our delivery performance seriously.'",
+     "runs": [
+      "1",
+      "5"
+     ]
+    },
+    {
+     "text": "Run 4 sent two term sheets per round (pay14 and pay60) and committed to a volume. The supplier gave the volume credit only on the pay14 option ('In recognition of your volume commitment, we can reduce our price ... for the 14-day payment term'). The pay60 sheet stayed at 0.944 versus 0.939 in otherwise identical runs. Run 4 then accepted pay60 at 0.944 and ended with the worst C among the deals (0.832, score 0.717). Splitting sheets diluted the concession, and the volume commitment was 'paid' with an option we did not take.",
+     "runs": [
+      "4"
+     ]
+    },
+    {
+     "text": "The three-sheet first email in runs 1-4 let the supplier choose. It 'accepted' contract and payment terms from one package while still rejecting the price ('We are pleased to accept the 24-month contract and 14-day payment terms from your third package'). That gave away term structure without getting price movement.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "Conceded in fixed, shrinking steps regardless of argument content: 1.000 → ~0.969/0.974 → ~0.950/0.955 → final 0.937-0.944. Steps were about 3, 2 and 1.3 pts.",
+    "Issued 'final offer (letztes Angebot) ... valid for 7 days. Please decide.' at its 4th offer (our round 3) in every run. This looks round-driven, not driven by our moves or our gap.",
+    "A final offer is truly final: one more counter led directly to a walkaway with a polite door-opener ('we remain keen to serve you ... for future needs').",
+    "Credits each record once. Repeated citations get 'already factored into our previous calculation'; references without attached data get 'Which figures is that based on? Please send us the data.'",
+    "Repeatedly asks 'Which volume can you commit to?' and says 'A binding higher volume would help us and can improve the price.' In practice it paid only about 1 pt for a commitment, and only on the short-payment option.",
+    "Prices faster payment at roughly 1-1.2 pts: pay14 vs pay60 was about 1 pt cheaper, and pay30 vs pay90 about 1.2 pts cheaper. It accepted pay60, pay90 and 36 months without resistance.",
+    "Its reasons named cost drivers PPI-C2594 and LCI-C once (run 1), but it never used them to resist.",
+    "Tone stays warm and partnership-oriented throughout ('We truly value our partnership'), even when walking away.",
+    "The back office was mostly 'call counter'. Our first email triggered an internal question to Logistics (capacity/delivery) that never surfaced as a substantive answer."
+   ],
+   "real_limits": "Full cost is 0.901 of opening, so final offers of 0.937-0.944 leave the distributor about 4-5% above cost. It would not go below about 0.937 within the round pattern seen; the lowest came with 36 months/pay60 and no duplicate claims. No run tested whether a fresh, verified argument in rounds 2-3 or a larger term trade (36 months + pay90 + binding volume in one sheet) could push the final below 0.937. The back office showed only 'call counter'/'call hold', not a floor. C_best of 0.765 implies a much better deal existed (likely near full cost, combined with favourable payment/contract terms), but the evidence does not show how to reach it. Evidence on the true floor is thin.",
+   "turning_points": [
+    "Round 1: the supplier's first move (~3 pts) came after verified volume data. That record was then 'used up', and later re-citations were dismissed as already factored in.",
+    "Round 1 multi-sheet emails let the supplier lock in our preferred terms while the price gap stayed open. Run 5's single sheet with 36 months got the term credited explicitly in the price reasoning.",
+    "Round 2 in run 4: committing volume across two sheets gave a concession only on pay14, and the pay60 path ended higher (0.944).",
+    "Round 3: the supplier declared its final offer at its 4th offer in all runs. That was the decision point.",
+    "Round 4 in run 2: the 'final push' to 0.920 after a final offer of 0.939 ended in a walkaway and no deal (score 0.121 vs about 0.736 for the identical run 3 that accepted)."
+   ]
+  },
+  "case:P08": {
+   "what_worked": [
+    {
+     "text": "Accepting a declared final offer secured a deal every time. Runs 2-6 all took the 'letztes Angebot' and closed at 0.873-0.906. The supplier's final offers came only 0.003-0.027 above our last offer.",
+     "runs": [
+      "RUN 2",
+      "RUN 3",
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "The best run combined five things: a moderate anchor (0.836), early acceptance of the AS-14404 index clause with no deadband, a 24-month term, 90-day payment, and small rising steps (0.830 -> 0.840 -> 0.846 on the clause sheet). The supplier opened its counter lower (0.888 vs 0.894 after a 0.807 anchor) and conceded every round to 0.873 (score 0.626).",
+     "runs": [
+      "RUN 3"
+     ]
+    },
+    {
+     "text": "A volume commitment the supplier could recognise as binding was rewarded explicitly: 'Thank you for confirming the volume commitment of … pieces per year. In return for this commitment, we are pleased to reduce our price'. In runs 5 and 6 the volume claim plus clause acceptance in r2 bought a step of 0.008: 'We appreciate your commitment to the volume … and your acceptance of the AS-14404 index clause. We are therefore pleased to reduce our offer'.",
+     "runs": [
+      "RUN 3",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "The verified PPI-C2431 decrease was the one index argument that counted: 'while the PPI-C2431 decrease allows us to adjust our offer'.",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3"
+     ]
+    },
+    {
+     "text": "Patience (more rounds with small steps of 0.005-0.015) kept the supplier moving in 0.005-0.009 steps for 5 rounds. Runs 5 and 6 reached 0.876 and 0.874 on a 36-month term.",
+     "runs": [
+      "RUN 5",
+      "RUN 6"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "Pushing after a final offer ended the negotiation. In run 1 we countered 0.866 after the 0.884 final and the supplier walked: 'We are withdrawing from this negotiation'. Score 0, and the alternative cost 1.019 x C_open.",
+     "runs": [
+      "RUN 1"
+     ]
+    },
+    {
+     "text": "A deep anchor (0.807) with three no-clause sheets got a worse first counter (0.894) than a 0.836 anchor (0.888). Our r2 clause sheet at 0.788 was below our own r1 anchor. The supplier then moved only 0.005 per round and declared final already at r3 (0.884), with the volume question still open: 'you have not yet specified a binding volume'.",
+     "runs": [
+      "RUN 1",
+      "RUN 2"
+     ]
+    },
+    {
+     "text": "Asking for a 5 % deadband on the index clause cost price. The supplier priced it at about +0.02 ('To accommodate the … deadband, which increases our risk, we can offer €…'; alternatives 0.921 vs 0.901 and 0.894 vs 0.874). Run 4 stayed on db5 and closed at 0.906, the worst deal (0.538).",
+     "runs": [
+      "RUN 4",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "The verified AS-14404 index fall was rejected every time: 'our AS-14404 is covered at fixed prices until March … so that fall does not reach our cost'. Delivery record and price history claims also had no effect.",
+     "runs": [
+      "RUN 1",
+      "RUN 2",
+      "RUN 3",
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Referring to call minutes we never attached ('refs doc') produced repeated requests ('We are still missing the minutes from our call') rather than concessions. It probably cost credibility.",
+     "runs": [
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Offering a 36-month term instead of 24 bought nothing. The first counter was 0.901 at 36 months vs 0.888-0.894 at 24 months, and the finals were similar (0.874-0.876 vs 0.873).",
+     "runs": [
+      "RUN 4",
+      "RUN 5",
+      "RUN 6"
+     ]
+    },
+    {
+     "text": "Alternative sheets with pay60 and db5 were always ignored. The supplier always priced the pay90/db0 clause package.",
+     "runs": [
+      "RUN 1",
+      "RUN 3"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "It insists on an AS-14404 index clause (45 % share) for any term of 24 months or more: 'for a 24-month duration, we must include an AS-14404 index clause'. Once a clause is in, it readily grants 90-day payment and 24- or 36-month terms.",
+    "It answers its own cost-driver claims with 'That remains'. It defends its price with hedged raw material ('fixed prices until March') and repeats 'Our price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C'.",
+    "It asks every round 'Which volume can you commit to?' and rewards a recognised commitment with a step.",
+    "It concedes only after a move from us, in steps of roughly 0.005-0.009 that shrink slowly. It also asks for a reciprocal step: 'We have moved closer to your target and expect a corresponding step from your side'.",
+    "Final offers come with 7-day validity after 3-5 offers, usually when our offer is within about 0.005-0.03.",
+    "Pushing past a final offer leads to a walk-away.",
+    "Its messages are padded with friendliness and cross-selling ('our whole range is at your disposal').",
+    "It asks for data behind claims: 'Which figures is that based on? Please send us the data'.",
+    "Its back office showed only 'call counter' and then 'call final_offer'. One internal ask went to Logistics; no margin floor was ever revealed in words."
+   ],
+   "real_limits": "The lowest price reached was 0.873 of opening, with an AS-14404 clause without deadband, 90-day payment, 24 months and a volume commitment (run 3). This is below the stated 'full cost 0.901 (quote less 10%)', so that figure is not a hard floor once the clause shifts material risk and volume is bound. A 36-month term with the same package floored at about 0.874-0.876. The deadband costs about 0.02 and pay60 with db5 about 0.013 more. The best possible deal was C_best 0.845 x C_open, which no run approached (best C_deal 0.903). It is unclear whether a lower price was available, because every run accepted the first final offer. The evidence is thin: it is one supplier, one case, and the back office was silent on actual margins.",
+   "turning_points": [
+    "r1, all runs: the supplier makes the index clause a condition for a long contract. Accepting it with no deadband early (runs 3, 5, 6) set the downward path.",
+    "Runs 1/2 r3: final offer at 0.884 after only three offers, likely because the volume question was still open and our clause sheet was inconsistent.",
+    "Run 1 r4: our counter below the final offer led the supplier to walk away (score 0).",
+    "Run 3 r3 and runs 5/6 r2: the volume commitment is acknowledged and rewarded with a price step.",
+    "Run 4 r2: switching to a 5 % deadband raised the price to 0.917 and locked in the worst deal.",
+    "Runs 5/6 r5: the final offer came after our 0.871. Accepting at 0.874-0.876 was the right call given that finals are final."
+   ]
+  },
+  "case:P10": {
+   "what_worked": [
+    {
+     "text": "A moderate opening anchor of 0.930 instead of 0.900 kept the supplier in normal bargaining mode. In Run 3 it answered with the same numbers as Run 1 (1.044 at lead 42, alt 0.985 at lead 54), but labelled them an ordinary offer ('This offer remains valid for 30 days') rather than a final one. That left room for a second round and a lower price.",
+     "runs": [
+      "3",
+      "4",
+      "5"
+     ]
+    },
+    {
+     "text": "Accepting the supplier's own lead time (about 56 days) instead of asking for faster delivery got the lowest prices: 0.975 to 0.981 against 1.044 for lead 42. On this capacity-constrained part, lead time was the main thing driving price. The supplier said: 'A reduction in lead time to … days or fewer necessitates a substantial price premium due to our high capacity utilisation.'",
+     "runs": [
+      "3",
+      "4",
+      "5"
+     ]
+    },
+    {
+     "text": "Offering two sheets in round 2 that priced lead time against price (0.946 at lead 56 / 0.968 at lead 42) drew the best final offer: 0.975 at lead 56, with an alternative of 1.031 at lead 42. The supplier responded to the trade-off itself: 'In response to your improved offer for a 42-day lead time, we adjust our price…'.",
+     "runs": [
+      "3"
+     ]
+    },
+    {
+     "text": "Committing to higher volume (23,400 against the must-have of 22,230) and a longer contract was the trade that moved the price off 1.000. In Runs 4 and 5 the supplier offered 0.985 straight away: 'your increased volume … and the 36-month contract term … allows us to revise our price'. It also kept asking 'Which volume can you commit to?'.",
+     "runs": [
+      "1",
+      "3",
+      "4",
+      "5"
+     ]
+    },
+    {
+     "text": "A larger step from us in round 2 bought a larger final concession. Moving 0.930→0.946 got 0.978; moving 0.930→0.936 got only 0.981. Each case also brought a fresh, true record (price history), which the supplier acknowledged before conceding a little: 'while accurate, past prices do not govern our current calculations… We are prepared to adjust our offer'.",
+     "runs": [
+      "4",
+      "5"
+     ]
+    },
+    {
+     "text": "Accepting a declared final offer secured a deal. Patience off (Run 5) gave essentially the same result as Run 4 in a quarter of the time.",
+     "runs": [
+      "1",
+      "3",
+      "4",
+      "5"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "An aggressive anchor of 0.900, combined with three sheets all asking for short lead times (35/42), triggered an immediate final offer in round 1 at 1.044. That is above the supplier's opening price, because the shorter lead time was priced at a premium. The negotiation closed after one exchange.",
+     "runs": [
+      "1",
+      "2"
+     ]
+    },
+    {
+     "text": "Accepting the lead-42 final offer at 1.044 when the same message offered an alternative at 0.985 for lead 54. Runs 3–5 show deals near 0.98 at the supplier's lead time scored about 0.67–0.69, against 0.570 here. For this part, the faster delivery was not worth a 6% premium.",
+     "runs": [
+      "1"
+     ]
+    },
+    {
+     "text": "Pushing after a declared final offer (counter at 1.023) made the supplier walk away: 'We are withdrawing from this negotiation.' Score 0, with no alternative supplier.",
+     "runs": [
+      "2"
+     ]
+    },
+    {
+     "text": "The verified should-cost record counted but did not move the price. The supplier dismissed it: 'Theoretical cost models do not reflect the specialized nature of our production and our current high capacity utilization' and 'Our calculation is our property'. The delivery-record and volume-change claims had no effect.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ]
+    },
+    {
+     "text": "Extending the contract from 24 to 36 months bought nothing measurable. Final prices were 0.981 and 0.978 at 36 months against 0.975 at 24 months.",
+     "runs": [
+      "4",
+      "5"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "The first price move always comes after our first counter and is tied to more volume and a longer term: 1.000 → 0.985 at its own lead time.",
+    "Short lead time is priced at a premium above opening: 1.044 for 42 days, dropping only to 1.031 after our move. It cites capacity utilisation every time.",
+    "Concessions are small and shrinking: about 1.5% and then 0.4–1.0%. After that comes a 'final offer (letztes Angebot)' valid 7 days, issued by round 2 at the latest, or in round 1 if our anchor is aggressive.",
+    "A final offer is truly final. A counter below it, even at 1.023 against 1.044, led straight to a walk-away.",
+    "It refuses to discuss its cost structure ('Our calculation is our property; we do not share a breakdown'). It acknowledges true records but says they do not drive its price.",
+    "It repeatedly asks for binding volume ('Which volume can you commit to?') and asks for the data behind our figures ('Which figures is that based on? Please send us the data.').",
+    "It offers alternative sheets on its own initiative, trading lead time against price. Our choice between them matters more than further haggling."
+   ],
+   "real_limits": "The back office showed nothing beyond 'call counter' in every round, so the supplier's real floor is not observed. The evidence here is thin. The lowest price it agreed was 0.975, for lead time about 56 days, 23,400 units a year and 24 months. Its plant full cost is 0.755 of opening, so it holds about 22% margin over full cost, which the scarce capacity lets it defend. It never went below 0.975 in any run. Each time, it declared a final offer before we could test lower. The best possible deal (C_best 0.688 against the best achieved C_deal 0.786) implies a lower price or better term mix existed, but no run found the lever. Cost arguments, price history and a longer contract all failed to break the 0.975–0.985 band. Short lead times cost 3–4% above opening. Volume above 22,230 was readily accepted and was the supplier's main want.",
+   "turning_points": [
+    "Round 1, Runs 1–2: an anchor of 0.900 plus short-lead-time sheets gave an immediate final offer at 1.044 (alt 0.985 at lead 54), ending the bargaining phase.",
+    "Round 2, Run 2: countering 1.023 after the final offer gave a walk-away and a score of 0.",
+    "Round 1, Run 3: an anchor of 0.930 drew the same numbers but not marked final, keeping the negotiation open for a second round.",
+    "Round 1, Runs 4–5: a single sheet at the supplier's lead time with 36 months and higher volume got an instant drop to 0.985.",
+    "Round 2, Runs 3–5: our second move (0.936–0.968) was answered with a final offer at 0.975–0.981. The size of our step set the size of its last concession.",
+    "Run 1 acceptance: choosing the lead-42 sheet at 1.044 over the 0.985 alternative cost about 0.1 in score compared with the lead-56 deals."
+   ]
+  },
+  "case:P11": {
+   "what_worked": [
+    {
+     "text": "Putting the tight quality target in our term sheets worked at once. Every run asked for ppm300 with zero chargeback, and the supplier accepted ppm300 in its first reply ('We are happy to go with the … ppm target from your third package to improve our quality standing'; 'we checked the volume increase and the scorecard and can agree to the … ppm target'). This moved ppm from 6400 to 300 at no price premium. In a quality_first case it is probably the largest source of value in all three deals.",
+     "runs": [
+      "1",
+      "2",
+      "3"
+     ]
+    },
+    {
+     "text": "A lower opening anchor (0.850 instead of 0.880) gave a lower final price. With the same two-step concession pattern, the supplier ended at 0.968 rather than 0.979, which raised the score from 0.626 to 0.710. Its steps were also larger: 1.000→0.979→0.968 in run 2 against 1.000→0.989→0.979 in run 1.",
+     "runs": [
+      "1",
+      "2",
+      "3"
+     ]
+    },
+    {
+     "text": "Cited records the supplier could check (index_change, quality_record, volume_change, all from fc/idx/sc) bought the early moves. In run 3 they produced an immediate first counter of 0.979: 'We also see the volume bump and the energy index drop, so we can bring the price down to €…'. A fresh true record in round 2 (price_history from po) bought the second step to 0.968 even though they replied 'they are correct, but our costs have changed'. This fits the pattern that a new argument each round keeps them moving, but only while their concession budget lasts.",
+     "runs": [
+      "3"
+     ]
+    },
+    {
+     "text": "Run 3 sent a single focused term sheet and reached the floor of 0.968 one round earlier (r2) than run 2 did with three sheets (r3). The supplier had no menu of ppm options to pick from, so it moved on price. The evidence is thin: there is one comparison, and the claims were also counted differently.",
+     "runs": [
+      "3",
+      "2"
+     ]
+    },
+    {
+     "text": "Confirming volume was acknowledged ('Thanks for confirming the … pieces volume, that helps us plan better') and came in the same round as a price step.",
+     "runs": [
+      "2"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "Small price concessions after the floor bought nothing. After the supplier stopped, we raised our offer four or five more times (run 1: 0.950→0.969; runs 2 and 3: about 0.93→0.957), shrinking each step. The supplier never moved again ('Thanks for the new number, but we are completely stuck here') and closed with a final offer at round 7. Those rounds only used up time and goodwill.",
+     "runs": [
+      "1",
+      "2",
+      "3"
+     ]
+    },
+    {
+     "text": "The supplier's one stated lever, faster payment, was never answered. It asked for it in every single reply. Payment days were not a negotiable term in this case, but we also never acknowledged the request in words, for example by committing to pay on time, which it asked for in run 2: 'we really need you to make sure your payments are on time from now on'. It then used our silence to justify its final offer: 'Since we haven't heard anything about faster payment terms, … EUR is our final offer'; 'We keep asking about faster payment, but we get no answer on this.'",
+     "runs": [
+      "1",
+      "2",
+      "3"
+     ]
+    },
+    {
+     "text": "Mentioning their liquidity without offering anything did not move them. In run 3, round 3, citing a document about their liquidity call drew 'We saw your note about the liquidity call; as discussed, faster payment is what we really need right now. Without better payment terms, we cannot move the price down', followed by the first 'hold'.",
+     "runs": [
+      "3"
+     ]
+    },
+    {
+     "text": "The higher anchor of 0.880 left value on the table. The supplier's two concession steps started from a higher reference and stopped at 0.979.",
+     "runs": [
+      "1"
+     ]
+    },
+    {
+     "text": "Chargeback was always offered at 0 and never used as a trade, so a possible lever was given away. Its value cannot be judged from these runs.",
+     "runs": [
+      "1",
+      "2",
+      "3"
+     ]
+    },
+    {
+     "text": "In run 2 one of the three sheets carried a volume claim that drew the generic deflection 'we cannot give up margin right now' instead of being counted. Its first counter stayed at 1.000, with the ppm1500 alternative at 0.989.",
+     "runs": [
+      "2"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "It conceded exactly two price steps, each after a move from us. The steps shrank (about 2.1 then 1.1 points with the 0.850 anchor; 1.1 then 1.0 with the 0.880 anchor). It then held at the same price for four or five rounds.",
+    "Its back office switched from 'call counter' to 'call hold' as soon as the second step was done (r4 in runs 1 and 2, r3 in run 3). The 'hold' replies always repeated one condition: 'we can't drop below … EUR without faster payment terms.'",
+    "After about four holds and our continued small raises it issued a final offer in round 7 ('This is our final offer (letztes Angebot). Please decide. Our offer stays valid for 7 days'; run 2: 'this is our last price, take it or leave it'). We accepted each time at the price it was already holding.",
+    "It is cash-driven (signal cash_need). Every reply ends 'Faster payment is welcome; we can reflect it in the price', and it said 'Faster payment would help us more than anything.'",
+    "It accepts true data but defends margin: 'We see your figures, but we cannot give up margin right now'; 'they are correct, but our costs have changed'. It points to cost drivers LCI-C, PPI-C241 and PPI-D351. In run 2 it asked 'Which figures is that based on? Please send us the data.'",
+    "It readily accepts quality commitments and attached an 8D report, so it wants to repair its quality standing. It also offered cheaper alternatives at looser ppm (0.989 at ppm1500; 0.968 at ppm2500, which breaks our must-have).",
+    "It asked for binding higher volume ('A binding higher volume would help us and can improve the price. Which volume can you commit to?'). Volume was not a negotiable term here.",
+    "Its tone stayed warm throughout ('We really want this business - let's make it happen!'). Holding firm did not turn it hostile; it only led to a final offer."
+   ],
+   "real_limits": "Its full cost is 0.900 of the opening, so the 0.968 deal leaves it about 7% above cost. Its effective price floor without a payment trade was 0.968 in both runs that anchored at 0.850. The floor appears to depend on two concession steps from its own opening and our anchor, not on a fixed cost line: run 1 stopped at 0.979 after the same two steps. The back office never named a number, only counter/hold/final_offer calls plus a Quality hand-off with an 8D report. That leaves the evidence on a hidden walk-away price thin. It repeatedly said it would go lower only for faster payment, and possibly for binding volume, so value below 0.968 most likely sits behind a payment concession. Payment days were not tradeable in this case, so we could not test that. The best possible deal (C_best 0.884 vs C_deal 0.917 x C_open) suggests a few more points were reachable. Likely routes are a lower anchor, more counted arguments in the first two rounds, or a chargeback or quality trade, but none of the runs shows this.",
+   "turning_points": [
+    "R1 (all runs): the supplier adopted ppm300 with zero chargeback straight away; the quality gain was secured in round 1.",
+    "Run 3 R1: a single sheet at 0.850 with three counted records produced an immediate counter of 0.979 ('we see the volume bump and the energy index drop'), against 1.000 for the three-sheet openings.",
+    "R2/R3: the last price step, to 0.968 (runs 2 and 3) or 0.979 (run 1). In run 3 this came from the price_history record, in run 2 from the volume confirmation.",
+    "First 'call hold' (run 3 R3, runs 1 and 2 R4): 'we are stuck here… if you want a lower price, we really need faster payment terms.' From here our raises were wasted.",
+    "R7 (all runs): the final offer was justified by our silence on payment ('Since we haven't heard anything about faster payment terms…'). We accepted it with the price unchanged."
+   ]
+  },
+  "case:P18": {
+   "what_worked": [
+    {
+     "text": "Accepting the supplier's required structure (AS-14404 index clause, 45 % share, deadband 0) in every term sheet from round 2 kept the supplier conceding for one round longer than in other runs. After our 0.813 sheet with clause db0, pay60 and 36 months, it dropped from 0.885 to 0.869: \"We appreciate your flexibility in accepting the index clause... In response to your step, we are pleased to offer a further reduction.\" It then moved again to 0.853 before its final offer. This was the best run: price 0.853, cost 0.861 of opening, score 0.564.",
+     "runs": [
+      "6"
+     ]
+    },
+    {
+     "text": "Citing a verified forecast/volume change in round 2 (claim 'counted') together with a clause-db0 sheet moved the supplier from 0.885 to 0.869.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "text": "A fresh argument in round 3 (the 'doc' reference to meeting points on the customer portfolio) plus a step of about 1.7 pp bought another 1.6 pp. In run 5 the supplier answered \"bringing up the points from our meeting regarding the customer portfolio... we are prepared to lower our price\". In run 6 it answered \"reviewing the points from our meeting... further reduction\".",
+     "runs": [
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Taking 90-day payment cost nothing in price. The supplier offered pay90 + clause db0 at the same 0.885 as pay60 + clause db5. The pay90/24-month deals (cost 0.872) beat the pay60/36-month deal at the same price (cost 0.878).",
+     "runs": [
+      "1",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "text": "Verified index-change claims in round 1 were counted. Together with the longer term and the index clause, the first counter fell from 1.000 to 0.885.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "Accepting the final offer secured a deal at 0.869 or 0.853. Every accepting run scored about 0.50–0.56.",
+     "runs": [
+      "1",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    }
+   ],
+   "what_failed": [
+    {
+     "text": "Pushing after the supplier's 'letztes Angebot' (0.851 against its final 0.869) ended the talks: \"We are withdrawing from this negotiation.\" Result: no deal and score 0, with the alternative costing 1.020 of opening.",
+     "runs": [
+      "2"
+     ]
+    },
+    {
+     "text": "Continuing to send fixed-price (no clause) sheets after the supplier said it \"cannot offer a fixed price for a 24-month contract\". The supplier ignored those sheets, answered only the clause sheet, and declared its final offer one round earlier (round 3) at 0.869.",
+     "runs": [
+      "1",
+      "2",
+      "3"
+     ]
+    },
+    {
+     "text": "Offering the clause with a 5 % deadband instead of their db0 clause. The supplier treated this as no real move and held at 0.885: \"our previous offer already reflects the best possible conditions.\" A round was lost, and the final came at 0.869 instead of 0.853.",
+     "runs": [
+      "5"
+     ]
+    },
+    {
+     "text": "Committing a volume did not move the price, although the supplier had asked for it: \"this specific quantity does not unlock further economies of scale beyond the significant concession we already made.\" It kept asking \"Which volume can you commit to?\", so the size or form of commitment it wants is unknown.",
+     "runs": [
+      "4"
+     ]
+    },
+    {
+     "text": "Some cited records had no effect. On the delivery record (all runs) the supplier said \"it holds, but it does not change our calculation\". Price history (runs 5 and 6) was verified but changed nothing.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "The pay60/36-month combination cost more interest than pay90/24-month at an equal price. Run 6 might have scored higher with pay90 at 0.853, but this was untested.",
+     "runs": [
+      "5",
+      "6"
+     ]
+    },
+    {
+     "text": "No run cited the alternative quote, although the goal was leverage. No run tested a 12-month fixed price or traded payment days for price. Every run stayed far from C_best of 0.754.",
+     "runs": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    }
+   ],
+   "supplier_behaviour": [
+    "Its concessions shrink: 1.000 → 0.885 (−11.5 pp, with the clause added) → 0.869 (−1.6) → 0.853 (−1.6), then final. Each step came only after a move by us of about 0.8–1.7 pp.",
+    "It insists on the index clause for any term over 12 months: \"we cannot fix prices for this duration\"; \"we must include the AS-14404 index clause\". It never offered a fixed price beyond the 12-month opening.",
+    "It keeps restating its cost drivers (\"AS-14404 rose 5.9 % ... is 45 % of our cost. That remains.\") whatever data we cite.",
+    "It rewards accepting its structure. It reads db0 clause acceptance as 'flexibility' and replies 'in response to your step'.",
+    "It treats a db5 deadband as a lesser clause. It priced db5 about 1.7 pp higher (alt 0.902 vs 0.885 in runs 5 and 6) and held when we offered db5.",
+    "It freely grants pay90 or pay60 and 24 or 36 months as long as the clause is in.",
+    "It repeatedly asks for binding volume and says 'a binding higher volume would help us', but did not reward the volume committed in run 4.",
+    "Its final offer comes after a hold, or by round 3–4, and is valid 7 days. Pushing past it ends in withdrawal with warm closing words: \"we hope to work together again on future opportunities.\"",
+    "Its tone stays friendly and service-oriented throughout; it presents itself as a distributor with a broad range."
+   ],
+   "real_limits": "Evidence is thin. The back office only shows 'call counter' or 'call hold' plus one routing note to Logistics, with no cost talk. The stated full cost is 0.900 of opening, yet it agreed at 0.869 and 0.853 with a db0 AS-14404 clause. So the clause, which moves 45 % of its cost risk to us, lets it go below its fixed-price full cost. The 0.869 'final' in runs 1–4 was not a true floor: run 6 reached 0.853 on similar terms by consistently accepting the clause and adding a fresh argument. Whether 0.853 is its true floor is unknown. Its last words were \"best possible price for this combination of terms\", which hints that other combinations might price lower: a different payment term, a firmer or larger volume, or the alternative quote. C_best of 0.754 suggests much more value existed than any run captured.",
+   "turning_points": [
+    "R1: our fixed-price sheets → the supplier's counter at 0.885, made conditional on the index clause. From here it sets the structure.",
+    "R2 (runs 1–4): a verified volume/forecast claim plus a clause-db0 sheet → 0.869. A further fixed-price sheet in round 3 led to a final offer at 0.869.",
+    "R2 (run 5): offering a db5 deadband → the supplier holds at 0.885, losing a concession round.",
+    "R2 (run 6): an only-db0 clause sheet → 0.869 with explicit praise for accepting the clause; R3 meeting/portfolio argument → 0.853; R4 final at 0.853, accepted (best run).",
+    "R4 (run 2): a push below the final offer → the supplier walks away, no deal."
+   ]
+  }
+ },
+ "meta": {
+  "model": "claude-opus-5-5",
+  "cases": {
+   "case:D01": {
+    "type": "price_increase",
+    "goal": "stabilise",
+    "runs": 18
+   },
+   "case:D02": {
+    "type": "rfq",
+    "goal": "leverage",
+    "runs": 19
+   },
+   "case:P01": {
+    "type": "price_increase",
+    "goal": "stabilise",
+    "runs": 12
+   },
+   "case:P05": {
+    "type": "rfq",
+    "goal": "leverage",
+    "runs": 13
+   },
+   "case:P04": {
+    "type": "renewal",
+    "goal": "routine",
+    "runs": 10
+   },
+   "case:P02": {
+    "type": "price_increase",
+    "goal": "stabilise",
+    "runs": 10
+   },
+   "case:P07": {
+    "type": "bundling",
+    "goal": "routine",
+    "runs": 10
+   },
+   "case:P10": {
+    "type": "capacity",
+    "goal": "secure_supply",
+    "runs": 10
+   },
+   "case:P08": {
+    "type": "raw_material",
+    "goal": "leverage",
+    "runs": 10
+   },
+   "case:P03": {
+    "type": "renewal",
+    "goal": "stabilise",
+    "runs": 10
+   },
+   "case:P18": {
+    "type": "raw_material",
+    "goal": "leverage",
+    "runs": 10
+   },
+   "case:P11": {
+    "type": "quality",
+    "goal": "quality_first",
+    "runs": 10
+   }
+  },
+  "usage": {
+   "debrief:case:P04": {
+    "calls": 1.0,
+    "input_tokens": 6286.0,
+    "output_tokens": 3224.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.0896,
+    "seconds": 35.6274
+   },
+   "debrief:case:P01": {
+    "calls": 1.0,
+    "input_tokens": 9289.0,
+    "output_tokens": 4019.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1175,
+    "seconds": 43.1153
+   },
+   "debrief:case:P03": {
+    "calls": 1.0,
+    "input_tokens": 11487.0,
+    "output_tokens": 4139.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1287,
+    "seconds": 43.4168
+   },
+   "debrief:case:P02": {
+    "calls": 1.0,
+    "input_tokens": 9960.0,
+    "output_tokens": 4173.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1233,
+    "seconds": 44.3139
+   },
+   "debrief:case:D02": {
+    "calls": 1.0,
+    "input_tokens": 15543.0,
+    "output_tokens": 5480.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1718,
+    "seconds": 57.8293
+   },
+   "debrief:case:D01": {
+    "calls": 1.0,
+    "input_tokens": 11976.0,
+    "output_tokens": 6116.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1702,
+    "seconds": 64.4435
+   },
+   "debrief:case:P10": {
+    "calls": 1.0,
+    "input_tokens": 6555.0,
+    "output_tokens": 3456.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.0953,
+    "seconds": 35.9936
+   },
+   "debrief:case:P07": {
+    "calls": 1.0,
+    "input_tokens": 8299.0,
+    "output_tokens": 3697.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1071,
+    "seconds": 38.5429
+   },
+   "debrief:case:P08": {
+    "calls": 1.0,
+    "input_tokens": 13728.0,
+    "output_tokens": 5044.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1558,
+    "seconds": 49.9578
+   },
+   "debrief:case:P05": {
+    "calls": 1.0,
+    "input_tokens": 15180.0,
+    "output_tokens": 6250.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1857,
+    "seconds": 61.4268
+   },
+   "debrief:case:P11": {
+    "calls": 1.0,
+    "input_tokens": 8299.0,
+    "output_tokens": 4452.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1222,
+    "seconds": 46.7562
+   },
+   "debrief:case:P18": {
+    "calls": 1.0,
+    "input_tokens": 12012.0,
+    "output_tokens": 4269.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.1334,
+    "seconds": 45.0711
+   },
+   "playbook": {
+    "calls": 1.0,
+    "input_tokens": 33554.0,
+    "output_tokens": 12008.0,
+    "cache_read_tokens": 0.0,
+    "usd": 0.3744,
+    "seconds": 122.1113
+   },
+   "total": {
+    "calls": 13.0,
+    "input_tokens": 162168.0,
+    "output_tokens": 66327.0,
+    "cache_read_tokens": 0.0,
+    "usd": 1.975,
+    "seconds": 688.6059
+   }
+  }
+ }
+}
