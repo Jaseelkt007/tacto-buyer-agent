@@ -86,3 +86,37 @@ security (a clause) instead of cash.
 
 **Result v1.5b:** mean **71.1** (best so far), 10/10 deals. P02 0.37 → 0.50, P03 back to 0.92,
 P01 0.96 → 0.91 (the health-price counter now also applies there; watch it).
+
+## v1.6: RFQ tactics (Phase 6)
+**Why:** in RFQs each bidder was negotiated almost on its own: rival offers were cited once,
+bidders that could not win kept getting rounds, a bidder's deep drop in a later round was met
+halfway, and we took the first agreement without giving the runner-up a chance. Rules react only to
+what happens in the session (gaps, drops, statuses), never to who the supplier is.
+
+**Changes (RFQ = two or more live bidders):**
+1. Bids are ranked by total cost C (with standard terms, must-haves, relationship estimate), not price.
+2. The rival claim cites the bid that is best in C, its price checked by the arena; when that bid
+   moves, the new offer is cited. If the leader's non-price terms are better, we say so in words
+   (no figures, so nothing to contradict).
+3. One extra sheet on the leader's term mix at equal cost to us: compete on the whole package.
+4. A drop of 6 % or more since its previous reply → hold (10 % of the gap) in any round.
+5. After two replies, a bidder whose C is more than 10 % above the leader's gets no more rounds
+   (revived if the others end).
+6. Last call: when the leader is ready (agreed / final offer / within 0.5 %), the runner-up gets one
+   message with the leader's offer cited and a sheet that beats the leader's C by 1 %; after its
+   reply we accept the best sheet in C. An agreed offer stands, so the leader is not at risk.
+
+**First test (sandbox only, no practice sessions):** D01 0.883, D02 0.461 (unchanged). The last call
+works (runner-up asked once, then the best C taken). Two gaps seen in the D02 trace:
+- the leader never got a rival claim, although the runner-up's *price* was lower;
+- our term plan asked for a 21-day lead time and EXW, which cost us nothing in C but the supplier
+  prices them in: on equal C the plan picked the first option instead of the supplier's own.
+
+## v1.6b
+1. The leader is shown the runner-up's offer when its price is lower than the leader's.
+2. Term plan tie-break: among mixes within EUR 1 of the cheapest C, prefer the one that changes the
+   fewest of the supplier's own terms. Don't ask for what does not save us money.
+
+**Result v1.6b (sandbox only):** D01 0.883, D02 0.461 → 0.482. The plan now keeps the supplier's own
+lead time and Incoterm; the last call ran (runner-up asked once at EUR 15.18, could not beat it; the
+leader's final offer EUR 15.40 taken). Hosted practice (P05 with three bidders) not yet run, to save sessions.

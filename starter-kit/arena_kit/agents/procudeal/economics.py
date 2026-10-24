@@ -131,7 +131,10 @@ def plan_terms(case, quote, standard, supplier, our_supplier=None, deal_ratio=1.
             continue
         at_deal = {**sheet, "unit_price": round(price * deal_ratio, 2)}
         out.append((total_cost(case, at_deal, standard, our_supplier or supplier), sheet))
-    out.sort(key=lambda x: x[0])
+    # On (nearly) equal C, ask for as little as possible: every change to its own terms gets priced in.
+    own = {**supplier.get("standard", {}), **{k: v for k, v in quote.items() if v is not None}}
+    changes = lambda sheet: sum(1 for k, v in sheet.items() if k != "unit_price" and k in own and own[k] != v)  # noqa: E731
+    out.sort(key=lambda x: (round(x[0]), changes(x[1])))
     return out
 
 

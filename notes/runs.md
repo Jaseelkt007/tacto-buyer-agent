@@ -80,3 +80,7 @@ One row per benchmark run (`scripts/bench.py`). Newest at the bottom.
 | 10-24 16:31 | case:P10 | procudeal | fe06386-dirty | True | 0.686 | 1,932,492 | 1,518,252 | 1,328,927 | 3 | 2 | [replay](https://arena.tacto.ai/replay/d4a5148d158f9ba1) | engine v1.5b |
 | 10-24 16:31 | case:P11 | procudeal | fe06386-dirty | True | 0.710 | 817,578 | 750,082 | 722,500 | 8 | 3 | [replay](https://arena.tacto.ai/replay/40adc59e732410c7) | engine v1.5b |
 | 10-24 16:31 | case:P18 | procudeal | fe06386-dirty | True | 0.520 | 295,173 | 257,459 | 222,651 | 4 | 2 | [replay](https://arena.tacto.ai/replay/e2c6ef25c6ad701a) | engine v1.5b |
+| 10-24 17:05 | case:D01 | procudeal | e9c9e4e-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 74 | [replay](https://arena.tacto.ai/replay/afa15b1840b52537) | engine v1.6 |
+| 10-24 17:08 | case:D02 | procudeal | e9c9e4e-dirty | True | 0.461 | 214,296 | 187,768 | 156,739 | 11 | 243 | [replay](https://arena.tacto.ai/replay/76dfbaad56efa7b6) | engine v1.6 |
+| 10-24 17:09 | case:D01 | procudeal | e9c9e4e-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 5 | [replay](https://arena.tacto.ai/replay/8c3ca29f375ee23f) | engine v1.6b |
+| 10-24 17:13 | case:D02 | procudeal | e9c9e4e-dirty | True | 0.482 | 214,296 | 186,560 | 156,739 | 11 | 246 | [replay](https://arena.tacto.ai/replay/fcaa96694c4fb15a) | engine v1.6b |

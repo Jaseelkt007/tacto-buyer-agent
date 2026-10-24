@@ -28,6 +28,8 @@ STEP, HOLD_STEP = 0.30, 0.10  # share of the gap we close per round; after a dee
 DEEP_DROP = 0.06  # a first counter this far down signals a deep floor
 CLOSE_GAP = 0.005  # accept when its price is within this of our last offer
 FIRST_CLAIMS, LATER_CLAIMS, DATA_CLAIMS = 3, 1, 2
+DROP_GAP = 0.10  # RFQ: a bidder this far above the leader in C gets no more rounds
+LAST_CALL_EDGE = 0.01  # RFQ: the runner-up's last call must beat the leader's C by this
 HEALTH_BAND = 0.98  # in strategic cases, a price this far below the health price is countered at it
 STUCK_STEP = 0.45  # it said it cannot move without a move from us
 PATIENT_SHIFT = 0.03  # anchor lower for slow, founder-run suppliers; higher for quick group replies
@@ -54,6 +56,7 @@ class Side:
     asks: set = field(default_factory=set)  # every ask so far
     last: sg.Reading = field(default_factory=sg.Reading)  # what its latest e-mail said
     rate_raised: bool = False
+    dropped: bool = False  # RFQ: cannot win, no more rounds
 
     def estimate(self):
         return self.dossier.estimate(self.reference)
@@ -66,6 +69,9 @@ class Negotiator:
         self.sides: dict[str, Side] = {}
         self.c_open = math.inf
         self.limit = math.inf
+        self.rfq = False
+        self.board = {}  # sid -> (C, sheet_id, terms) of each standing sheet that keeps the must-haves
+        self.last_call = None  # (runner-up sid, its replies when we called)
 
     # ---------- setup ----------
     def setup(self, threads):
@@ -164,6 +170,35 @@ class Negotiator:
         best = offers[0] if offers else None
 
         ready = {sid: self.ready(self.sides[sid], threads[sid]) for sid in live}
+        self.rfq = len(live) > 1
+        self.board = {}
+        for sid in live:
+            side = self.sides[sid]
+            sheet_id, terms = standing(threads[sid])
+            if sheet_id and terms.get("unit_price") is not None and must_haves_ok(self.case, terms, side.standard):
+                self.board[sid] = (total_cost(self.case, terms, side.standard, side.estimate()), sheet_id, terms)
+        leader = min(self.board, key=lambda s: self.board[s][0]) if self.board else None
+        if self.rfq:
+            move = self.rfq_close(threads, live, ready, best, leader)
+            if move:
+                return move
+            for sid in live:  # bidders that cannot catch the leader get no more rounds
+                side = self.sides[sid]
+                if (
+                    leader
+                    and sid != leader
+                    and sid in self.board
+                    and len(side.theirs) >= 2
+                    and self.board[sid][0] > self.board[leader][0] * (1 + DROP_GAP)
+                    and not side.dropped
+                ):
+                    side.dropped = True
+                    log.info(
+                        "%s: %.0f is >%d%% above the leader's C - no more rounds",
+                        sid,
+                        self.board[sid][0],
+                        DROP_GAP * 100,
+                    )
         # close on the best standing sheet once its supplier is ready, or every thread is
         if best and (ready[best[1]] or all(ready.values())):
             return self.accept(best, ready[best[1]])
@@ -174,13 +209,63 @@ class Negotiator:
             return self.walk(live[0], "no standing sheet passes the accept check")
 
         # otherwise negotiate with the supplier that has waited longest (oldest reply first)
-        talk = [s for s in live if not ready[s] and moves_left(self.case, threads[s]) > 0]
+        talk = [s for s in live if not ready[s] and not self.sides[s].dropped and moves_left(self.case, threads[s]) > 0]
+        if not talk:
+            talk = [s for s in live if not ready[s] and moves_left(self.case, threads[s]) > 0]
         if not talk:
             talk = [s for s in live if moves_left(self.case, threads[s]) > 0]
         if not talk:
             return self.accept(best, "no moves left") if best else self.walk(live[0], "no moves left")
         sid = min(talk, key=lambda s: self.sides[s].seen)
-        return self.offer(self.sides[sid], threads, offers)
+        return self.offer(self.sides[sid], threads, offers, leader)
+
+    def rfq_close(self, threads, live, ready, best, leader):
+        """Last call: the leader is ready, so the runner-up gets one chance to beat it; after its
+        reply we take the best sheet in C. An agreed offer stands, so the leader is not at risk."""
+        if not best or leader is None or not ready.get(leader) or best[1] != leader:
+            return None
+        if self.last_call:
+            runner, replies = self.last_call
+            if runner not in live or self.sides[runner].replies > replies:
+                return self.accept(best, f"best after the last call to {runner}")
+            return None
+        runners = [
+            s
+            for s in live
+            if s != leader and moves_left(self.case, threads[s]) > 0 and s in self.board and not self.sides[s].dropped
+        ]
+        if not runners:
+            return None
+        runner = min(runners, key=lambda s: self.board[s][0])
+        move = self.last_call_offer(self.sides[runner], threads, leader)
+        if move:
+            self.last_call = (runner, self.sides[runner].replies)
+        return move
+
+    def last_call_offer(self, side, threads, leader):
+        case, std = self.case, side.standard
+        target = self.board[leader][0] * (1 - LAST_CALL_EDGE)
+        price = eco.equal_cost_price(case, side.mix, target, std)
+        if not price or price == math.inf or price <= 0:
+            return None
+        if side.theirs:
+            price = min(price, side.theirs[-1] * 0.998)
+        price = round(price, 2)
+        main = complete_offer(case, {**side.mix, "unit_price": price})
+        if not must_haves_ok(case, main, std):
+            return None
+        claims = self.pick_claims(side, [], leader, rival_only=True)
+        side.ours.append(price)
+        return {
+            "supplier_id": side.sid,
+            "sheets": [main],
+            "claims": claims,
+            "answers": [
+                "Another supplier has agreed to terms that cost us less overall. If you can meet the package "
+                "below, please send it now; otherwise we will proceed with the other offer."
+            ],
+            "why": {"price": price, "last_call": True, "leader": leader, "leader_c": round(self.board[leader][0])},
+        }
 
     def observe(self, side, events):
         their = [m for m in events if m.get("from") != "buyer"]
@@ -290,7 +375,9 @@ class Negotiator:
             price = max(side.ours[-1] + STUCK_STEP * (theirs - side.ours[-1]), side.ours[-1])
         else:
             first_drop = (side.theirs[0] - side.theirs[1]) / side.theirs[0] if len(side.theirs) > 1 else 0
-            step = HOLD_STEP if len(side.ours) == 1 and first_drop >= DEEP_DROP else STEP
+            last_drop = (side.theirs[-2] - side.theirs[-1]) / side.theirs[-2] if len(side.theirs) > 1 else 0
+            deep = (len(side.ours) == 1 and first_drop >= DEEP_DROP) or (self.rfq and last_drop >= DEEP_DROP)
+            step = HOLD_STEP if deep else STEP
             price = side.ours[-1] + step * (theirs - side.ours[-1])
             price = max(price, side.ours[-1])
         if side.ceiling:
@@ -298,7 +385,7 @@ class Negotiator:
         price = min(price, theirs * 0.998)
         return round(max(price, 0.01), 2)
 
-    def offer(self, side, threads, offers):
+    def offer(self, side, threads, offers, leader=None):
         case, std = self.case, side.standard
         events = threads[side.sid]
         price = self.next_price(side)
@@ -327,6 +414,15 @@ class Negotiator:
                     sheet = complete_offer(case, {**mix, "unit_price": p})
                     if must_haves_ok(case, sheet, std):
                         sheets.append(sheet)
+        if self.rfq and leader and leader != side.sid and len(sheets) < 3:  # compete on the whole package
+            lead_mix = {k: v for k, v in complete_offer(case, self.board[leader][2]).items() if k != "unit_price"}
+            if not any(_same_mix(lead_mix, s) for s in sheets):
+                p = eco.equal_cost_price(case, lead_mix, c_main, std)
+                if p and p < math.inf and p > 0:
+                    sheet = complete_offer(case, {**lead_mix, "unit_price": p})
+                    if must_haves_ok(case, sheet, std):
+                        sheets.insert(1, sheet)
+                        sheets = sheets[:3]
         clause = self.clause_sheet(side, main, c_main)
         if clause and len(sheets) < 3:
             sheets.insert(1, clause)
@@ -334,13 +430,13 @@ class Negotiator:
             floor = side.best_for_us * 0.995
             sheets = [main] + [s for s in sheets[1:] if s["unit_price"] >= floor]
             clause = clause if clause in sheets else None
-        claims = self.pick_claims(side, offers)
+        claims = self.pick_claims(side, offers, leader)
         side.ours.append(price)
         return {
             "supplier_id": side.sid,
             "sheets": sheets,
             "claims": claims,
-            "answers": self.answers(side, main, sheets, clause),
+            "answers": self.answers(side, main, sheets, clause) + self.leader_terms_line(side, leader, claims),
             "why": {
                 "price": price,
                 "anchor": side.anchor,
@@ -373,6 +469,19 @@ class Negotiator:
         sheet = complete_offer(case, {**mix, "unit_price": p})
         return sheet if must_haves_ok(case, sheet, side.standard) else None
 
+    def leader_terms_line(self, side, leader, claims):
+        """The leader's better non-price terms, in words (no figures, so nothing to contradict)."""
+        if not leader or leader == side.sid or not any(c.kind == "rival_offer" for c in claims):
+            return []
+        lead = closing_terms(self.case, self.board[leader][2], self.sides[leader].standard)
+        own = closing_terms(self.case, standing_terms(self, side), side.standard)
+        better = []
+        if lead.get("lead_time_days") and own.get("lead_time_days") and lead["lead_time_days"] < own["lead_time_days"]:
+            better.append("a shorter lead time")
+        if lead.get("payment_days") and own.get("payment_days") and lead["payment_days"] > own["payment_days"]:
+            better.append("longer payment terms")
+        return [f"That offer also comes with {' and '.join(better)}."] if better else []
+
     def answers(self, side, main, sheets, clause):
         """Sentences that answer what it asked for, in words."""
         case, out = self.case, []
@@ -395,19 +504,25 @@ class Negotiator:
             out.append("We understand that your price is fixed for now, so we have looked at the terms instead.")
         return out
 
-    def pick_claims(self, side, offers):
+    def pick_claims(self, side, offers, leader=None, rival_only=False):
         n = FIRST_CLAIMS if not side.ours else (DATA_CLAIMS if "data" in side.last.asks else LATER_CLAIMS)
         out = []
-        # RFQ: the cheapest rival offer is the strongest argument
-        rivals = [(c, s, sh) for c, s, sh, _ in offers if s != side.sid]
-        if rivals:
-            _, rsid, rsheet = min(rivals)
+        # RFQ: the rival bid that is best in total cost is the strongest argument; cite each new offer
+        rival = leader if leader and leader != side.sid and leader in self.board else None
+        if rival is None and side.sid in self.board:  # the leader itself: the runner-up's lower price
+            own_price = self.board[side.sid][2].get("unit_price") or 0
+            cheaper = [
+                s for s in self.board if s != side.sid and (self.board[s][2].get("unit_price") or 1e18) < own_price
+            ]
+            rival = min(cheaper, key=lambda s: self.board[s][2]["unit_price"]) if cheaper else None
+        if rival:
+            _, rsheet, rterms = self.board[rival]
             key = f"{side.sid}|{rsheet}"
-            if key not in side.used:
-                price = self._sheet_price(rsid, rsheet)
-                if price:
-                    out.append(cl.rival_claim(rsheet, price))
-                    side.used.add(key)
+            if key not in side.used and rterms.get("unit_price") is not None:
+                out.append(cl.rival_claim(rsheet, rterms["unit_price"]))
+                side.used.add(key)
+        if rival_only:
+            return out
         for c in side.bank:
             if len(out) >= n:
                 break
@@ -433,6 +548,11 @@ class Negotiator:
 
     def walk(self, sid, why):
         return {"supplier_id": sid, "action": {"type": "walk_away"}, "why": why}
+
+
+def standing_terms(negotiator, side):
+    entry = negotiator.board.get(side.sid)
+    return entry[2] if entry else {}
 
 
 def eco_fill(case, terms):

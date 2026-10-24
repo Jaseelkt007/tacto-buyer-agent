@@ -79,7 +79,7 @@ EACH MOVE (policy.Negotiator.decide)
 | `cheapest_price(...)` | price minimising C; above the lowest only when a relationship charge applies (golden-section) |
 | `price_ceiling(case, terms, limit_c, ...)` | highest price with C < limit_c (bisection), or None |
 | `price_for_value(case, terms, supplier, value)` | price at which terms are worth `value` to the supplier (linear solve) |
-| `plan_terms(case, quote, std, supplier, deal_ratio)` | every allowed mix at equal supplier value, ranked by our C at `deal_ratio` x that price |
+| `plan_terms(case, quote, std, supplier, deal_ratio)` | every allowed mix at equal supplier value, ranked by our C at `deal_ratio` x that price; within EUR 1, the mix that changes fewest of the supplier's own terms first (v1.6b) |
 | `equal_cost_price(case, terms, c_target, ...)` | price at which other terms cost us the same: for alternative sheets |
 
 ### dossier.py
@@ -140,6 +140,16 @@ Reads each supplier e-mail (the bots' replies are templated across the arena):
 
 Alternative sheets in a reply (`offer:…-a`) are priced too; if one costs us less than its standing
 sheet, its term mix becomes ours.
+
+### RFQ tactics (v1.6, two or more live bidders)
+| Rule | Trigger | Action |
+|---|---|---|
+| leader | lowest C among standing sheets that keep the must-haves | cited to the others; its term mix offered to them |
+| rival claim | every new offer of the leader; to the leader itself, the runner-up's offer when its price is lower (v1.6b) | "Another supplier has offered EUR x per unit for this part (offer:…)", plus a figure-free line on better terms |
+| leader's terms sheet | leader's mix differs from ours | extra sheet on that mix at equal cost to us |
+| hold | its price fell ≥ `DEEP_DROP` since its previous reply | step `HOLD_STEP` instead of `STEP` |
+| drop | after 2 replies its C > leader × (1 + `DROP_GAP` = 0.10) | no more rounds unless the others end |
+| last call | leader ready and a live runner-up exists | one message to the runner-up beating the leader's C by `LAST_CALL_EDGE` = 1 %; then accept the best C |
 
 ### writer.py
 Template e-mail: thanks, claim sentences, one line on the packages, an offer of faster payment when

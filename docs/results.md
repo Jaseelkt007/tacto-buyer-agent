@@ -17,7 +17,10 @@ Regenerate this table after every benchmark pass.
 | P18 | raw material | | 0.520 | 0.520 | 0.520 | 0.520 | **0.520** |
 | **mean** | | 37.4 (2 cases) | 48.4 | 67.7 | 70.2 | 60.9 | **71.1** |
 
-v1.2 (31.5, pushed after final_offer) is in the decision log. Sandbox: v1.2 D01 0.909, D02 0.461.
+v1.2 (31.5, pushed after final_offer) is in the decision log.
+
+Sandbox (free): v1.2 D01 0.909, D02 0.461 · v1.6 D01 0.883, D02 0.461 · **v1.6b D01 0.883, D02 0.482**.
+v1.6/v1.6b (RFQ tactics) have not been run on the hosted practice cases yet.
 
 Practice budget: 200 sessions per rolling 24 h. After v1.5b on Sat 24 Oct: 136 left. A full hosted
 pass costs 10; the sandbox is free.
