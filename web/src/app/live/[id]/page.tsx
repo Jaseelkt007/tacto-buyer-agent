@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { LivePipeline } from "@/components/live/LivePipeline";
+import { LiveTabs } from "@/components/live/LiveTabs";
 import { buildLive, type NodeId } from "@/lib/live";
-import { runsData } from "@/lib/runs";
+import { contractData } from "@/lib/contracts";
+import { caseFile, runsData } from "@/lib/runs";
 import { storyRuns } from "@/lib/story";
+import { buildZone0 } from "@/lib/zone0";
 
 export function generateStaticParams() {
   return runsData.runs.map((r) => ({ id: r.session_id }));
@@ -14,6 +16,8 @@ export async function generateMetadata({ params }: PageProps<"/live/[id]">): Pro
   const run = runsData.runs.find((r) => r.session_id === id);
   return { title: run ? `Inside a run · ${run.case_id.replace("case:", "")} · ProcuDeal` : "Inside a run · ProcuDeal" };
 }
+
+const caseSuppliers = (caseId: string) => caseFile(caseId)?.suppliers.map((s) => s.id) ?? [];
 
 // Latest run of a released engine version (not a one-off experiment such as "v1.7 -patience").
 const latest = (caseId: string) =>
@@ -49,6 +53,24 @@ export default async function Page({ params }: PageProps<"/live/[id]">) {
     office: replay,
     score: anatomy,
   };
+  const sups = caseSuppliers(run.case_id);
+  const zone0 = buildZone0(sups);
+  const firstSup = sups[0] ?? "";
+  const ctr = firstSup ? contractData.contracts.find((c) => c.supplier_id === firstSup)?.id.replace("ctr:", "") : undefined;
+  const supNo = firstSup.replace("sup:", "");
+  const researchLinks: Partial<Record<string, string>> = {
+    r_tables: `/suppliers/${supNo}`,
+    r_letters: `/suppliers/${supNo}#timeline`,
+    r_contracts: ctr ? `/contracts/${ctr}` : "/contracts",
+    r_perf: ctr ? `/contracts/${ctr}#delivery` : "/contracts",
+    r_facts: "/facts",
+    library: "/arguments",
+    economics: run.case_id ? `/parts/${(caseFile(run.case_id)?.parts[0]?.id ?? "").replace("part:", "")}` : "/parts",
+    persona: `/suppliers/${supNo}`,
+    contract: ctr ? `/contracts/${ctr}` : "/contracts",
+    performance: ctr ? `/contracts/${ctr}#delivery` : "/contracts",
+    engine: `/live/${run.session_id}#negotiation`,
+  };
   const scenarios = [
     { label: "1", id: latest("case:P01") },
     { label: "2", id: latest("case:D02") },
@@ -62,9 +84,9 @@ export default async function Page({ params }: PageProps<"/live/[id]">) {
           <p className="text-[11.5px] font-semibold uppercase tracking-[0.12em] text-[var(--ink-2)]">Interactive replay</p>
           <h1 className="text-[28px] leading-tight font-semibold">Inside a run</h1>
           <p className="max-w-3xl text-[14px] text-[var(--ink-2)]">
-            Watch our agent work through a real negotiation: which data it reads, which part of our code computes each number, what the arena
-            checks, and what the supplier bot answers, in the order it happened. Press play, change the run, or click any box to see what it reads,
-            what it returns and how that is checked.
+            Watch our agent work, in the order it happens: first the offline research a language model does on each supplier before any session
+            opens (zone 0), then the negotiation itself, where code computes every number, the arena checks every argument and the supplier bot
+            answers. Press play, change the run, or click any box to see what it reads, what it returns and how that is checked.
           </p>
           <p className="text-[13px]">
             <strong>
@@ -73,7 +95,7 @@ export default async function Page({ params }: PageProps<"/live/[id]">) {
             <span className="text-[var(--ink-2)]">· {live.suppliers.join(", ")}</span>
           </p>
         </header>
-        <LivePipeline live={live} runs={storyRuns()} scenarios={scenarios} links={links} />
+        <LiveTabs live={live} zone0={zone0} runs={storyRuns()} scenarios={scenarios} links={links} researchLinks={researchLinks} />
       </div>
     </main>
   );

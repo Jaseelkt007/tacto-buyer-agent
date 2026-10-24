@@ -69,6 +69,7 @@ The app reads committed JSON snapshots, so it builds and deploys without keys.
 | `npm run sync:contracts` | `../data` (CSV, contract texts) | `src/data/contracts.json`, `src/data/qn-links.json` | none |
 | `npm run sync:demand` | `../data` (CSV, `facts.json`) | `src/data/demand.json`, `src/data/demand-links.json` | none |
 | `npm run sync:facts` | `../data/facts.json` | `public/facts.json` (loaded by the browser on `/facts` only) | none |
+| `npm run sync:zone0` | `../starter-kit/knowledge/` (zone 0 dossiers, playbook, build index) | `src/data/zone0.json` | none |
 
 After the **Sunday 08:00 data release**: `uv run arena data`, then `npm run sync:suppliers && npm run sync:parts && npm run sync:market && npm run sync:contracts && npm run sync:demand && npm run sync:facts`
 (and later phases' syncs). After new benchmark runs on main: `git fetch origin && npm run sync:runs`.

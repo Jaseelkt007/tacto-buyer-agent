@@ -1,4 +1,4 @@
-# Inside a run: live pipeline replay (phase 8)
+# Inside a run: live pipeline replay (phase 8, zone 0 tab added)
 
 **Routes:** `/live` (opens the latest released-engine run of P01), `/live/<session>` (any run).
 Linked from the rail ("Live run"), from Home, and from every replay ("Watch it live →").
@@ -6,7 +6,46 @@ Linked from the rail ("Live run"), from Home, and from every replay ("Watch it l
 computes each number, what does the arena check, and what does the supplier bot do, in what order and
 on what clock?
 
-## What you see
+## Two tabs
+
+- **1 · Before the session: zone 0, offline research.** How a language model (Claude Opus 5.5) builds a
+  dossier for each supplier of the case from all its data, with no time limit, before any session
+  opens. Replayed from the saved dossiers in `starter-kit/knowledge/`.
+- **2 · During the session: the negotiation.** The saved run itself: code decides every move inside
+  the 60-second window, the arena checks the arguments, the supplier bot answers.
+
+A banner on tab 1 says what matters most: **zone 0 is built but not wired in.** Engine v1.7c does not
+read `knowledge/`, so the negotiation in tab 2 was decided by code alone; zone 1 (a case strategist at
+wave start) is the planned bridge. The last zone-0 step ("Live engine v1.7c") says the same.
+
+## Zone 0 tab
+
+The pipeline per supplier, as built by `research/` on main:
+
+| Stage | Kind | Output shown |
+|---|---|---|
+| Data tables, letters and notes, contracts, performance, facts and practice runs | data | what is read |
+| Evidence pack (`research/evidence.py`) | code | characters of evidence, every row with its ID |
+| Argument library (`research/library.py`) | code | arguments for us and for them, kinds, example sentences with IDs; figures computed by code |
+| Economics, persona, contract, performance specialists | model, in parallel | leverage, top findings with evidence IDs, open questions |
+| Lead strategist | model | summary, decision maker, room on price and squeeze risk, needs, levers in order, tone |
+| Red team (plays the supplier) | model | the arguments it would bring, red lines |
+| Rebuttals | model | answers without figures, pointing to library arguments |
+| Validator (`research/dossier.py`) | code | every model output it dropped and why (unknown record ID, figure in e-mail text) |
+| Dossier | result | the saved file, levers, trades, traps |
+| Playbook | result | lessons mined from practice runs; flagged: it also keeps notes per practice case, which cannot transfer to the final's unseen cases |
+| Live engine v1.7c | live | not read yet |
+
+Stats: model calls for this case (7 per supplier), time offline, arguments in the library, model
+outputs dropped by the validator, the whole build (suppliers, calls, cost, wall time), and moves that
+use it (0). Timing: each model stage takes its **average seconds per call over the full build**
+(`index.json` usage); the four specialists run in parallel; an RFQ's suppliers are shown one after
+another, though the real build runs them in parallel.
+
+Data: `npm run sync:zone0` copies what the page needs from `starter-kit/knowledge/` (dossiers, playbook,
+build index) into `src/data/zone0.json` (server-side only); `src/lib/zone0.ts` builds the frames.
+
+## What you see (both tabs)
 
 1. **Stats strip**: moves decided by code (and how many by the LLM fallback), our total thinking time
    against the 60-second budget per message, the session's measured wall time, rounds and suppliers,
@@ -57,7 +96,9 @@ moves take milliseconds, so their bars are drawn at a minimum width.
 
 ## Files
 
-`src/lib/live.ts` (`buildLive`, frame and node types), `src/components/live/LivePipeline.tsx` (diagram,
-controls, detail panel, timeline, log), `src/app/live/page.tsx` (redirect), `src/app/live/[id]/page.tsx`;
+`src/lib/live.ts` (`buildLive`), `src/lib/zone0.ts` (`buildZone0`), `src/lib/pipeline.ts` (frame type),
+`src/components/live/PipelinePlayer.tsx` (generic player: diagram scaled to fit, controls, detail panel,
+timeline, log), `src/components/live/graphs.ts` (the two pipelines), `src/components/live/LiveTabs.tsx`,
+`scripts/sync-zone0.mjs`, `src/app/live/page.tsx` (redirect), `src/app/live/[id]/page.tsx`;
 `.flow` and `.pulse-ring` animations and the `--s-model` colour in `src/app/globals.css` (both
 animations stop under reduced motion).
