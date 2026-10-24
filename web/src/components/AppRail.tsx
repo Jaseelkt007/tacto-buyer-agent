@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { BoxesIcon, ChartIcon, CogIcon, ContractIcon, DatabaseIcon, FactoryIcon, HandshakeIcon, HomeIcon, InboxIcon, ScaleIcon } from "./icons";
+import { BoxesIcon, ChartIcon, CogIcon, ContractIcon, DatabaseIcon, FactoryIcon, HandshakeIcon, HomeIcon, InboxIcon, PulseIcon, ScaleIcon } from "./icons";
 
 // One entry per section of the site; add new pages here.
 const SECTIONS: { href: string; label: string; icon: ReactNode }[] = [
   { href: "/", label: "Home", icon: <HomeIcon width={20} height={20} /> },
+  { href: "/live", label: "Live run", icon: <PulseIcon width={20} height={20} /> },
   { href: "/mail", label: "Mail", icon: <InboxIcon width={20} height={20} /> },
   { href: "/suppliers", label: "Suppliers", icon: <FactoryIcon width={20} height={20} /> },
   { href: "/parts", label: "Parts", icon: <CogIcon width={20} height={20} /> },

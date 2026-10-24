@@ -32,6 +32,7 @@
   --bad: #c4314b;
   --bad-bg: #fdecee;
   --s-3: #1baf7a;
+  --s-model: #e87ba4;
   --cost-1: #184f95;
   --cost-2: #3987e5;
   --cost-3: #86b6ef;
@@ -70,6 +71,7 @@
     --bad: #f07a8c;
     --bad-bg: #3a161d;
     --s-3: #199e70;
+    --s-model: #d55181;
     --cost-1: #9ec5f4;
     --cost-2: #5598e7;
     --cost-3: #1c5cab;
@@ -80,4 +82,33 @@ body {
   background: var(--page);
   color: var(--ink);
   font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Inside a run: data moving along an active edge, and the active stage's pulse. */
+@keyframes flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+.flow {
+  stroke-dasharray: 6 6;
+  animation: flow 0.6s linear infinite;
+}
+@keyframes pulse-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent) 0%, transparent);
+  }
+}
+.pulse-ring {
+  animation: pulse-ring 1.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow,
+  .pulse-ring {
+    animation: none;
+  }
 }

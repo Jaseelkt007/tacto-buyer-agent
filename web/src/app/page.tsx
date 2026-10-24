@@ -8,6 +8,7 @@ import {
   ContractIcon,
   DatabaseIcon,
   FactoryIcon,
+  PulseIcon,
   HandshakeIcon,
   InboxIcon,
   ScaleIcon,
@@ -23,6 +24,7 @@ export const metadata: Metadata = { title: "ProcuDeal · Hollerau Pumpenwerke" }
 const FEATURED = "case:P01";
 
 const SECTIONS: { href: string; label: string; icon: ReactNode; text: string }[] = [
+  { href: "/live", label: "Inside a run", icon: <PulseIcon width={20} height={20} />, text: "Watch the pipeline work: data, our code, the arena and the supplier bot, step by step with a live timeline." },
   { href: "/mail", label: "Mail", icon: <InboxIcon width={20} height={20} />, text: "What the agent sees when a case opens: case file, supplier letter, opening quotes." },
   { href: "/suppliers", label: "Suppliers", icon: <FactoryIcon width={20} height={20} />, text: "Who we negotiate with: finances, terms, scorecards, letters, and what the agent reads into them." },
   { href: "/parts", label: "Parts & Cost", icon: <CogIcon width={20} height={20} />, text: "What each part should cost: should-cost, price history, cost drivers against the price asked." },
@@ -47,6 +49,9 @@ export default function Home() {
             signs the deal with the lowest total cost, or walks away. Every price, term sheet and argument is computed in code from the data, not
             by a language model. Step through one negotiation below, chapter by chapter, or pick any other run we played.
           </p>
+          <Link href="/live" className="inline-flex items-center gap-2 rounded-md bg-[var(--ink)] px-3 py-1.5 text-[13px] font-semibold text-[var(--page)] hover:opacity-90">
+            <PulseIcon width={16} height={16} /> Watch a run live: the pipeline, step by step →
+          </Link>
         </header>
 
         {run && <StoryPlayer steps={buildStory(run)} runs={storyRuns()} current={run.session_id} />}
