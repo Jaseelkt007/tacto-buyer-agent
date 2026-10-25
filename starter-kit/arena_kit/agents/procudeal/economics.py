@@ -133,6 +133,32 @@ def price_for_value(case, terms, supplier, target):
     return (target - v0) / (v1 - v0)
 
 
+def implied_rate(case, main, alt, standard, lo=0.0, hi=0.5, tol=1e-6):
+    """measured_rate (v1.8): the cost of money at which two of its own sheets that differ only in
+    payment days are worth the same to it (`supplier_value`) - its own price for time. None when
+    the sheets differ in anything else, or no rate in [lo, hi] makes them equal."""
+    fields = (set(main) | set(alt)) - {"unit_price"}
+    if main.get("unit_price") is None or alt.get("unit_price") is None:
+        return None
+    if {f for f in fields if main.get(f) != alt.get(f)} != {"payment_days"}:
+        return None
+
+    def gap(rate):
+        est = {"standard": standard, "interest_rate": rate}
+        return supplier_value(case, main, est) - supplier_value(case, alt, est)
+
+    a, b = lo, hi
+    if gap(a) * gap(b) > 0:
+        return None
+    while b - a > tol:
+        mid = (a + b) / 2
+        if gap(a) * gap(mid) <= 0:
+            b = mid
+        else:
+            a = mid
+    return round((a + b) / 2, 5)
+
+
 def term_mixes(case, base, options=None):
     """Every allowed mix of the negotiable non-price fields (from `term_options`), on top of `base`.
     `options` overrides the allowed values of some fields (e.g. one index clause)."""
@@ -141,6 +167,40 @@ def term_mixes(case, base, options=None):
     values = [allowed[f] for f in fields]
     for combo in itertools.islice(itertools.product(*values), MAX_COMBOS):
         yield {**base, **dict(zip(fields, combo, strict=True))}
+
+
+def menu(case, standing, standard, supplier, band=None):
+    """H1.3 (v1.8): every allowed term mix, priced - context for a judgment, no choice made here.
+    Per mix (`terms`):
+      equal_value_price  the price worth as much to the supplier as its standing sheet in cash
+                         (`supplier_value`; blind to what it sees in non-cash terms such as a clause)
+      c_at_equal         our C there
+      health_price       relationship goals: the price at which our C is lowest; `band` = (low, high)
+                         full cost adds `health_range`, the health price at both ends
+      c_at_health        our C there
+    Sorted by the lower of the two C. `supplier` is our estimate (`full_cost`, `interest_rate`)."""
+    target = value(case, standing, supplier)
+    relation = case["buyer"].get("category_goal") in RELATIONSHIP_GOALS and supplier.get("full_cost")
+    rows = []
+    for mix in term_mixes(case, complete_offer(case, standing)):
+        terms = {k: v for k, v in mix.items() if k != "unit_price"}
+        if not must_haves_ok(case, complete_offer(case, {**terms, "unit_price": 1.0}), standard):
+            continue
+        row = {"terms": terms, "equal_value_price": None, "c_at_equal": None}
+        price = price_for_value(case, terms, supplier, target)
+        if price and price > 0:
+            row["equal_value_price"] = round(price, 2)
+            row["c_at_equal"] = round(cost_at(case, terms, price, standard, supplier))
+        if relation:
+            health = cheapest_price(case, terms, standard, supplier)
+            row["health_price"], row["c_at_health"] = health, round(cost_at(case, terms, health, standard, supplier))
+            if band:
+                row["health_range"] = tuple(
+                    cheapest_price(case, terms, standard, {**supplier, "full_cost": fc}) for fc in band
+                )
+        rows.append(row)
+    rows.sort(key=lambda r: min(c for c in (r["c_at_equal"], r.get("c_at_health")) if c is not None))
+    return rows
 
 
 def friendly_key(case, sheet):

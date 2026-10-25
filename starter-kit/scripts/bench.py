@@ -39,8 +39,10 @@ def commit():
     return sha.stdout.strip() + ("-dirty" if dirty else "")
 
 
-def run_case(client, factory, agent_name, case_id, note, rev):
+def run_case(client, factory, agent_name, case_id, note, rev, case=None):
     table, agent, t0 = RemoteTable(client), factory(), time.monotonic()
+    if case is not None and hasattr(agent, "prepare"):  # zone 1: plan before the session opens
+        agent.prepare(case)
     try:
         result = play(table, case_id, agent)
     except ArenaError as e:
@@ -65,6 +67,8 @@ def run_case(client, factory, agent_name, case_id, note, rev):
         "session": state,
         "backoffice": backoffice,
         "decisions": getattr(agent, "trace", None),
+        "plan": getattr(agent, "plan", None),
+        "prepare_seconds": getattr(agent, "prepare_seconds", None),
     }
     out = RUNS / case_id.split(":")[-1] / f"{when:%Y%m%dT%H%M%S}_{agent_name}_{sid}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -113,8 +117,14 @@ def main():
         sys.exit("give case ids or --set")
     factory = agent_factory(args.agent, args.data or os.environ.get("ARENA_DATA"))
     rev = commit()
+    files = {}  # case files, so an agent can prepare before its session opens
+    for kind in ("practice", "sandbox"):
+        try:
+            files |= {c["case_id"]: c for c in client.cases(kind)}
+        except ArenaError:
+            pass
     with ThreadPoolExecutor(max_workers=min(args.parallel, 10)) as pool:
-        rows = list(pool.map(lambda c: run_case(client, factory, args.agent, c, args.note, rev), ids))
+        rows = list(pool.map(lambda c: run_case(client, factory, args.agent, c, args.note, rev, files.get(c)), ids))
     LOG.parent.mkdir(parents=True, exist_ok=True)
     if not LOG.exists():
         LOG.write_text(

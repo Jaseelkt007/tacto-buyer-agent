@@ -75,6 +75,7 @@ class Dossier:
     full_cost: float | None = None
     full_cost_source: str = "none"
     full_cost_floor: float = 0.0  # the estimate's error band: offers never push it below this
+    rate_measured: bool = False  # measured_rate: interest_rate comes from its own sheets
     notes: list[str] = field(default_factory=list)
 
     def estimate(self, standard, rich=False):
@@ -83,6 +84,18 @@ class Dossier:
         if rich and self.ppm is not None:
             est["ppm"] = self.ppm
         return est
+
+    def cap_by_quote(self, price, sustainable_pct=None):
+        """quote_cap (v1.8): its opening quote leaves it at least the sustainable margin, so the quote
+        caps the full cost. An assumption (it held in every practice case we could measure); later
+        prices do not cap it, because suppliers do close below their full cost (P02 v1.4, clause)."""
+        if not price:
+            return
+        share = 1 - (sustainable_pct if sustainable_pct is not None else 0.5) / 100
+        capped = max(round(price * share, 2), self.full_cost_floor)
+        if self.full_cost is None or capped < self.full_cost:
+            self.full_cost = capped
+            self.full_cost_source += "+quote cap"
 
     def bound_full_cost(self, price):
         """A supplier never sells below its floor, so every price it offers caps its full cost."""

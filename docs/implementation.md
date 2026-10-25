@@ -31,6 +31,9 @@ starter-kit/scripts/research.py   builds knowledge/ (supplier dossiers, playbook
 starter-kit/knowledge/            zone 0 output: suppliers/*.json, playbook.json, index.json
 starter-kit/scripts/bench.py      benchmark runner: plays cases, saves runs, logs a row
 starter-kit/scripts/compare.py    score table per agent or per run note
+starter-kit/scripts/analyse.py    per-case report of every run, round by round (notes/analysis/<case>.md)
+starter-kit/scripts/audit.py      rule audit vs what the arena revealed in runs/ (notes/analysis/audit.md; offline)
+starter-kit/scripts/replay.py     offline replay: the engine (per flag set) at every recorded state, scored with the true numbers; --menu
 starter-kit/tests/test_procudeal_economics.py   economics pinned to the brief's worked example
 starter-kit/tests/test_procudeal_signals.py     signals on real supplier sentences
 starter-kit/tests/test_procudeal_v17.py         flags, bug fixes and changes A-H on synthetic cases
@@ -206,6 +209,9 @@ flag off the engine behaves like v1.6c plus the bug fixes (sandbox D01 0.883, D0
 | `call_note_lever` (default **off**, v1.7c) | A | the figure-free call / meeting note claim in the lever schedule |
 | `rich_value` | H | supplier value with scorecard ppm, overtime, volume, skonto-implied cost of money |
 | `keepalive` | bug 6 | RFQ: a sheetless note to a ready, acceptable thread that has waited long enough (see RFQ tactics); its agreed / final status stays after a reply with the same terms (a new offer ID each reply) |
+| `quote_cap` (default **off**, v1.8) | audit | the full-cost estimate is capped once, by the opening quote: price x (1 − sustainable margin); later prices no longer cap it (suppliers do close below full cost) |
+| `measured_rate` (default **off**, v1.8) | audit | its cost of money from two of its own sheets in one message that differ only in payment days (`economics.implied_rate`, exact inverse of `supplier_value`); replaces the owner-type rule and blocks the cash premium; replans the term mix |
+| `health_refresh` (default **off**, v1.8) | audit | health price and price ceiling recomputed whenever the full-cost estimate or the rate changes (v1.7c kept the setup value) |
 
 **A. Lever schedule.** `pick_claims` takes, in the first message, up to 3 claims of different kinds;
 later exactly one claim of a kind this supplier has not heard (2 after a data ask). A rival offer is
@@ -318,3 +324,12 @@ in `agent.trace`.
 - The kit's `closing_move` (wave cap) still uses the kit's strict quote parser.
 - The e-mail is a template; an LLM-written paragraph (no digits, with a fallback) is planned.
 - Sunday release data is merged by `DataPackage` for facts and IDs; the dossier reads SQLite only.
+
+## Priced menu (v1.8, H1.3)
+
+`economics.menu(case, standing, standard, supplier, band)` prices every allowed term mix for a
+judgment (the hybrid's context, `docs/findings.md` section 9), without choosing. Per mix: the price
+worth as much to the supplier as its standing sheet in cash (`equal_value_price`; blind to non-cash
+terms such as a clause), our C there, and in relationship goals the health price (C lowest), our C
+there and, with a full-cost band, the health price at both ends. Not used by the fallback engine.
+Offline check: `uv run python scripts/replay.py P02 --menu`.

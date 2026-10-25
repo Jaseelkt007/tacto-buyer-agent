@@ -66,21 +66,24 @@ def _record(tag, model, usage, seconds):
     return usd
 
 
-def _stream(**kwargs):
-    """One streamed request; with the server-side refusal fallback where the API accepts it."""
+def _stream(timeout=None, **kwargs):
+    """One streamed request; with the server-side refusal fallback where the API accepts it.
+    `timeout` (seconds): a hard limit for a call made while a clock runs (one retry only)."""
+    c = client().with_options(timeout=timeout, max_retries=1) if timeout else client()
     try:
-        with client().beta.messages.stream(**kwargs, betas=[FALLBACK_BETA], fallbacks="default") as stream:
+        with c.beta.messages.stream(**kwargs, betas=[FALLBACK_BETA], fallbacks="default") as stream:
             return stream.get_final_message()
     except anthropic.BadRequestError as e:
         if "fallback" not in str(e).lower():
             raise
         log.warning("refusal fallback not accepted (%s) - plain request", e)
-    with client().messages.stream(**kwargs) as stream:
+    with c.messages.stream(**kwargs) as stream:
         return stream.get_final_message()
 
 
-def ask(system, user, schema, tag="", effort=None, model=None, cache=True):
-    """The model's answer as a dict that matches `schema` (JSON Schema, additionalProperties false)."""
+def ask(system, user, schema, tag="", effort=None, model=None, cache=True, timeout=None):
+    """The model's answer as a dict that matches `schema` (JSON Schema, additionalProperties false).
+    `timeout`: seconds for a call inside the final's wave (offline research has none)."""
     model, effort = model or MODEL, effort or EFFORT
     key = _key(model, effort, system, user, schema)
     path = CACHE / f"{key}.json"
@@ -90,6 +93,7 @@ def ask(system, user, schema, tag="", effort=None, model=None, cache=True):
         return json.loads(path.read_text(encoding="utf-8"))["answer"]
     t0 = time.monotonic()
     message = _stream(
+        timeout=timeout,
         model=model,
         max_tokens=MAX_TOKENS,
         system=system,

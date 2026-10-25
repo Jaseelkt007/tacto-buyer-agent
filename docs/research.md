@@ -111,3 +111,38 @@ It never runs inside a wave: in the final the dossiers are files read in millise
 - Transient API errors (overloaded / 500) are retried by the SDK; a supplier whose agent still failed
   keeps the error in `meta.errors` and is rebuilt with `--suppliers <id> --force` (answers that
   succeeded come from the cache).
+
+# Zone 1: the case strategist (in progress)
+
+At a wave's start the case files appear; no supplier clock runs until we open a session. Zone 1 uses
+that window: one model call per case turns the case file plus the zone 0 dossiers into a **bounded
+plan**, then the session opens and the v1.7c engine plays with the plan. Flag `case_plan` (off by
+default until a hosted A/B shows a gain; `PROCUDEAL_ON=case_plan` switches it on).
+
+```
+case file (briefing, goal, must-haves, alternative, case facts, trigger letter, negotiable terms)
+  + dossier of each supplier (strategy, levers and traps for the case's parts, red team, rebuttals)
+  + playbook lessons for this goal and case type
+     │  strategist.make_plan (one call, Opus 5.5 effort low while testing)
+     ▼
+plan per supplier: levers (library arg_ids, opening / later / if challenged), blocked arguments,
+  trades (a negotiable field and an option index from term_options, opening / closing / if asked),
+  stance (soft / normal / hard), opening paragraph (no figures), tone, what to watch for
+     │  code validates every ID, field, option and sentence
+     ▼
+engine (policy.new_side) with the plan:
+  claims   the plan's levers first, as the library's verified sentences; blocked ones removed
+  anchor   stance soft +0.03 / hard -0.01 on the opening anchor only, never the term mix (a deeper hard
+           anchor drew an earlier final offer in the sandbox RFQ)
+  mix      an opening trade replaces the planned option if it keeps the must-haves and costs us no more:
+           a contractual one (the contract already grants it) at the same price, any other one once the
+           supplier prices it in (our C at each mix's equal-value price, within the tie band)
+  e-mail 1 the opening paragraph after the greeting (dropped if it has a digit or a leak)
+```
+
+Nothing the model returns sets a price. A supplier without a dossier gets a case-only plan; no plan
+(model off, error, timeout) means the engine plays exactly as v1.7c.
+
+**Runner:** the kit's `play()` opens the session before the agent sees the case, so `bench.py` and
+our final runner call `agent.prepare(case)` first. In the final the preparation time counts against the
+wave's 8 minutes and is logged.

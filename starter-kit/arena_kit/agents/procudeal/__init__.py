@@ -13,8 +13,8 @@ import time
 
 from ...play import latest, standing
 from ..llm import LLMAgent
-from . import writer
-from .policy import Negotiator, flags_off
+from . import strategist, writer
+from .policy import Negotiator, flags_off, on
 
 log = logging.getLogger("arena")
 
@@ -27,11 +27,28 @@ class ProcuDealAgent:
         self.delegate = LLMAgent(complete, package)
         self.negotiator = None
         self.trace = []
+        self.plan, self.plan_case, self.prepare_seconds = None, None, None
+
+    def prepare(self, case):
+        """Zone 1, before the session opens (no supplier clock runs yet): the strategist's plan for
+        this case. Never raises: without a plan the engine plays as it always did."""
+        self.plan, self.plan_case = None, case.get("case_id")
+        if not on("case_plan"):
+            return None
+        t0 = time.monotonic()
+        try:
+            self.plan = strategist.make_plan(case, self.package)
+        except Exception:  # a failed plan must not cost the case
+            log.exception("case plan failed - the engine plays without one")
+        self.prepare_seconds = round(time.monotonic() - t0, 1)
+        log.info("%s: plan in %.1fs (%s)", case.get("case_id"), self.prepare_seconds, "ok" if self.plan else "none")
+        return self.plan
 
     def decide(self, case, threads):
         t0 = time.monotonic()
         if self.negotiator is None or self.negotiator.case["case_id"] != case["case_id"]:
-            self.negotiator = Negotiator(case, self.package)
+            plan = self.plan if self.plan_case == case["case_id"] else None
+            self.negotiator = Negotiator(case, self.package, plan)
         try:
             self.negotiator.remember_prices(threads)
             move = self.negotiator.decide(threads)
@@ -71,7 +88,8 @@ class ProcuDealAgent:
             "source": source,
             **why,
         }
-        if not self.trace:  # every run file shows which v1.7 features were switched off
+        if not self.trace:  # every run file shows which v1.7 features were switched off, and the plan
             entry["features_off"] = flags_off()
+            entry["plan"] = bool(self.negotiator and self.negotiator.plan)
         self.trace.append(entry)
         log.info("decision %s", entry)

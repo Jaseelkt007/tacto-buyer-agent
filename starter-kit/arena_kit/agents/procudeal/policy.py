@@ -43,6 +43,13 @@ FEATURES = {
     "rich_value": True,  # H: ppm, overtime, volume and skonto in the supplier value
     "keepalive": True,  # bug 6: RFQ keepalive for a ready thread
     "call_note_lever": False,  # A: the call / meeting note claim - off since v1.7c (it drew requests for proof)
+    "case_plan": False,  # zone 1: play with the case strategist's plan - contractual trades, levers, blocked traps
+    "plan_stance": False,  # zone 1: the plan's stance moves the opening anchor (hurt P03 / P11 / P10 when soft)
+    "plan_paragraph": False,  # zone 1: the plan's opening paragraph (promised terms code never sent: P02, P08)
+    "plan_priced_trades": False,  # zone 1: non-contractual opening trades from the plan (24 months hurt P03 / P08)
+    "quote_cap": False,  # v1.8: the opening quote caps the full cost; later prices do not
+    "measured_rate": False,  # v1.8: its cost of money from its own sheets that differ only in payment days
+    "health_refresh": False,  # v1.8: health price and ceiling recomputed whenever the estimate changes
 }
 
 
@@ -77,6 +84,7 @@ DEEP_DROP = 0.06  # a first counter this far down signals a deep floor
 CLOSE_GAP = 0.005  # accept when its price is within this of our last offer
 STRICT_MOVES = 2  # strict_accept: "within 0.5 %" closes with a lever left once this few moves remain
 FIRST_CLAIMS, LATER_CLAIMS, DATA_CLAIMS = 3, 1, 2
+RATE_RANGE = (0.001, 0.30)  # measured_rate: a plausible yearly cost of money, else the sheets mean something else
 DEAD_RESULTS = {"contradicted", "irrelevant"}  # lever_schedule: a kind that came back so is dropped for the case
 DROP_GAP = 0.10  # RFQ: a bidder this far above the leader in C gets no more rounds
 AUCTION_EDGE = 0.02  # RFQ reverse auction: a call asks the runner-up to beat the leader's C by this
@@ -86,6 +94,9 @@ HEALTH_BAND = 0.98  # in strategic cases, a price this far below the health pric
 STUCK_STEP = 0.45  # it said it cannot move without a move from us
 PATIENT_SHIFT = 0.03  # anchor lower for slow, founder-run suppliers; higher for quick group replies
 DONE = {"agreed", "final_offer"}  # final_offer is final: these suppliers walk if pushed again
+# case_plan: the opening anchor by the plan's stance (never the term mix). "hard" is only a nudge: the leverage
+# anchor is already at the deep end, and a deeper one drew an earlier final offer (sandbox D02)
+STANCE_SHIFT = {"soft": 0.03, "normal": 0.0, "hard": -0.01}
 TRADE_GAIN = 1.0  # single_sheet: a need-trade sheet must cost us at least this much less (EUR)
 KEEPALIVE_S = 35  # keepalive: a ready RFQ thread that has waited this long gets a sheetless note ...
 KEEPALIVE_MARGIN, KEEPALIVE_MAX = 10, 3  # ... or sooner, if the slowest reply so far would make it late
@@ -140,6 +151,7 @@ class Side:
     budget_share: float | None = None  # patience: share of the opening gap we may concede
     budget: float | None = None  # patience: EUR per unit we may concede in total
     holds: int = 0  # silence: holds in a row
+    paragraph: str = ""  # case_plan: the strategist's figure-free paragraph for the first e-mail
     keepalives: int = 0
     clause_adopted: bool = False  # proactive_clause: our clause is the one it demanded
     rival_cited: dict = field(default_factory=dict)  # lever_schedule: rival sid -> price we cited to it
@@ -152,8 +164,9 @@ class Side:
 
 
 class Negotiator:
-    def __init__(self, case, package=None):
+    def __init__(self, case, package=None, plan=None):
         self.case, self.package = case, package
+        self.plan = plan if on("case_plan") and plan else None  # zone 1: the strategist's plan
         self.goal = case["buyer"].get("category_goal", "leverage")
         self.sides: dict[str, Side] = {}
         self.c_open = math.inf
@@ -205,7 +218,11 @@ class Negotiator:
         std = qt.standard_terms(case, events)
         _, quote = standing(events[:1]) if events else (None, {})
         dossier = build(case, sid, self.package, quote.get("unit_price"), rich=on("rich_value"))
+        if on("quote_cap"):
+            dossier.cap_by_quote(quote.get("unit_price"), case["buyer"].get("sustainable_margin_pct"))
         side = Side(sid, dossier, std, _reference_terms(case, events), rich=on("rich_value"))
+        if on("measured_rate") and events:
+            self.measure_rate(side, events[0])  # a quote with sheets for other payment days
         first = sg.read(events[0]) if events else sg.Reading()
         if on("proactive_clause") and events and not quote.get("index_clause"):
             side.clause, side.driver = self.clause_trade(side, events[0], first, quote)
@@ -243,8 +260,12 @@ class Negotiator:
         mix = dict(side.plan[0][1]) if side.plan else complete_offer(case, quote)
         mix.pop("unit_price", None)
         side.mix = mix
+        sp = (self.plan or {}).get("suppliers", {}).get(sid)
+        if sp:
+            side.mix = mix = self.plan_mix(side, mix, sp, quote, est, ratio)
         q_eq = _their_price(case, quote, mix, est, std)
-        anchor = (q_eq or quote.get("unit_price") or 0) * anchor_ratio
+        stance = STANCE_SHIFT.get((self.plan or {}).get("stance"), 0.0) if on("plan_stance") else 0.0
+        anchor = (q_eq or quote.get("unit_price") or 0) * (anchor_ratio + stance)
         best = eco.cheapest_price(case, mix, std, est) if self.goal in RELATIONSHIP_GOALS else 0.0
         anchor = max(anchor, best)
         current = case["buyer"].get("current_unit_price")
@@ -262,6 +283,9 @@ class Negotiator:
             side.bank = [c for c in side.bank if c.kind not in cl.SCHEDULE_KINDS]
         if not on("call_note_lever"):  # a note cited without data drew requests for proof (v1.7c)
             side.bank = [c for c in side.bank if c.kind != "call_note"]
+        if sp:
+            side.bank = plan_bank(side.bank, sp)
+            side.paragraph = (sp.get("opening_paragraph") or "") if on("plan_paragraph") else ""
         log.info(
             "side %s: mix %s quote~%.2f anchor %.2f (shift %+.2f, delay %s, persona %s) ceiling %s best %.2f"
             " full_cost %s (%s) rate %.3f clause %s budget %s claims %d",
@@ -282,6 +306,38 @@ class Negotiator:
             len(side.bank),
         )
         return side
+
+    def plan_mix(self, side, mix, sp, quote, est, ratio):
+        """case_plan: an opening trade from the plan replaces our planned option when it keeps the
+        must-haves and (contractual: the contract already grants it) costs us no more at the same price,
+        or (any other trade) costs us no more once the supplier prices it in: our C at each mix's
+        equal-value price x the deal ratio, within the friendly tie band."""
+        case, std = self.case, side.standard
+
+        def at_value(m):
+            p = _their_price(case, quote, m, est, std) or quote.get("unit_price")
+            return complete_offer(case, {**m, "unit_price": round(p * ratio, 2)}) if p else None
+
+        for t in sp.get("trades") or []:
+            if t.get("when") != "opening" or mix.get(t["field"]) == t["value"]:
+                continue
+            if not t.get("contractual") and not on("plan_priced_trades"):
+                continue
+            new = {**mix, t["field"]: t["value"]}
+            before, after = at_value(mix), at_value(new)
+            if not before or not after or not must_haves_ok(case, after, std):
+                continue
+            if t.get("contractual"):  # no price needed: compare at the same price
+                after = complete_offer(case, {**new, "unit_price": before["unit_price"]})
+            c0, c1 = eco.cost(case, before, std, est), eco.cost(case, after, std, est)
+            if c1 <= c0 + max(eco.TIE_EUR, eco.TIE_SHARE * c0):
+                log.info("%s: plan trade %s=%s adopted (%s)", side.sid, t["field"], t["value"], t.get("why"))
+                mix = new
+            else:
+                log.info(
+                    "%s: plan trade %s=%s costs us %.0f more - not adopted", side.sid, t["field"], t["value"], c1 - c0
+                )
+        return mix
 
     def persona(self, side, quote):
         """patience: what kind of supplier this is, from the dossier (v1.7)."""
@@ -598,13 +654,38 @@ class Negotiator:
         sheet_id, terms = standing(events)
         if sheet_id and latest(events).get("status") in DONE:
             side.done = (sheet_id, latest(events)["status"], dict(terms))
-        if terms.get("unit_price") is not None:
+        before = (side.dossier.full_cost, side.dossier.interest_rate)
+        if terms.get("unit_price") is not None and not on("quote_cap"):
             side.dossier.bound_full_cost(terms["unit_price"])
+        if on("measured_rate") and self.measure_rate(side, latest(events)):
+            side.rate_raised = True  # its own price for time replaces any premium
+        if terms.get("unit_price") is not None:
             price = _their_price(self.case, terms, side.mix, side.estimate(), side.standard)
             side.theirs.append(price if price else terms["unit_price"])
         else:
             side.theirs.append(side.theirs[-1] if side.theirs else math.inf)
+        changed = (side.dossier.full_cost, side.dossier.interest_rate) != before
+        if changed and on("measured_rate") and side.dossier.rate_measured:
+            self.replan(side, events, "its own sheets show its cost of money")
         self.react(side, events)
+        if changed and on("health_refresh"):
+            self.set_mix(side, side.mix)  # health price and ceiling follow the new estimate
+
+    def measure_rate(self, side, message):
+        """measured_rate (v1.8): its cost of money from two of its own sheets in one message that differ
+        only in payment days. True when it changed the estimate."""
+        sheets = [ts.get("terms") or {} for ts in message.get("term_sheets") or []]
+        for alt in sheets[1:]:
+            rate = eco.implied_rate(self.case, sheets[0], alt, side.reference)
+            if rate is None or not RATE_RANGE[0] <= rate <= RATE_RANGE[1]:
+                continue
+            old = side.dossier.interest_rate
+            side.dossier.interest_rate, side.dossier.rate_measured = rate, True
+            if abs(rate - old) > 1e-5:
+                log.info("%s: its sheets put its rate at %.2f %% (was %.2f %%)", side.sid, 100 * rate, 100 * old)
+                return True
+            return False
+        return False
 
     def read_results(self, side, message):
         """lever_schedule: a claim kind the arena found contradicted or irrelevant is not used again."""
@@ -625,7 +706,7 @@ class Negotiator:
         case = self.case
         if "payment" in side.last.asks and not side.rate_raised and "payment_days" in case["negotiable"]:
             side.rate_raised = True
-            if not side.dossier.cash_need:
+            if not side.dossier.cash_need and not side.dossier.rate_measured:
                 side.dossier.interest_rate += CASH_PREMIUM
             self.replan(side, events, "it asked for faster payment")
         if "hedged" in side.last.traits:
@@ -792,6 +873,7 @@ class Negotiator:
     def offer(self, side, threads, offers, leader=None):
         case, std = self.case, side.standard
         events = threads[side.sid]
+        first = not side.ours
         if on("silence") and "clarify" in side.last.traits and side.last_main and side.ours and not side.holds:
             return self.hold(side)
         side.holds = 0
@@ -813,6 +895,7 @@ class Negotiator:
             "sheets": sheets,
             "claims": claims,
             "trade": trade["why"] if trade else None,
+            "paragraph": side.paragraph if first else "",
             # single_sheet: "open to faster payment, as shown" only when a sheet shows it
             "cash_line": not on("single_sheet")
             or any((s.get("payment_days") or 999) < (side.reference.get("payment_days") or 0) for s in sheets),
@@ -1138,6 +1221,22 @@ def _their_price(case, terms, mix, est, std):
     except Exception:
         log.exception("price conversion failed")
         return terms["unit_price"]
+
+
+def plan_bank(bank, sp):
+    """case_plan: the plan's levers first (the library's verified sentences, in the plan's order: opening,
+    later, then the rest of our bank, then those for a challenge); blocked arguments and repeats removed."""
+    blocked = {r for b in sp.get("blocked") or [] for r in b.get("refs") or []}
+    planned = {"opening": [], "later": [], "if_challenged": []}
+    for i, lv in enumerate(sp.get("levers") or []):
+        arg = lv.get("argument") or {}
+        if not arg.get("checkable") or arg.get("side") != "for_us" or not arg.get("sentence") or not arg.get("refs"):
+            continue
+        claim = cl.Claim(arg["kind"], arg["sentence"], list(arg["refs"]), 100 - i, dict(arg.get("figures") or {}))
+        planned.get(lv.get("when"), planned["later"]).append(claim)
+    used = {r for group in planned.values() for c in group for r in c.refs}
+    rest = [c for c in bank if not set(c.refs) & (used | blocked)]
+    return planned["opening"] + planned["later"] + rest + planned["if_challenged"]
 
 
 def _has_clause(terms, series):

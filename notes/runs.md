@@ -148,3 +148,32 @@ One row per benchmark run (`scripts/bench.py`). Newest at the bottom.
 | 10-24 19:54 | case:P18 | procudeal | 8ab7b67-dirty | True | 0.564 | 295,173 | 254,244 | 222,651 | 5 | 78 | [replay](https://arena.tacto.ai/replay/605b064ccdf599cd) | v1.7b -patience |
 | 10-24 22:48 | case:D01 | procudeal | 8809ac4-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 2 | [replay](https://arena.tacto.ai/replay/09445658e5493587) | engine v1.7c |
 | 10-24 22:48 | case:D02 | procudeal | 8809ac4-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/a837a22f6efed8bd) | engine v1.7c |
+| 10-24 23:03 | case:D01 | procudeal | 2168e02-dirty | True | 0.878 | 448,811 | 413,530 | 408,624 | 6 | 152 | [replay](https://arena.tacto.ai/replay/72b7b908475b001e) | v1.7c + case_plan |
+| 10-24 23:03 | case:D02 | procudeal | 2168e02-dirty | True | 0.482 | 214,296 | 186,560 | 156,739 | 9 | 154 | [replay](https://arena.tacto.ai/replay/16b6a6bf258fe620) | v1.7c + case_plan |
+| 10-24 23:06 | case:D01 | procudeal | 2168e02-dirty | True | 0.876 | 448,811 | 413,600 | 408,624 | 6 | 98 | [replay](https://arena.tacto.ai/replay/8054c0f564daffbb) | v1.7c + case_plan b |
+| 10-24 23:07 | case:D02 | procudeal | 2168e02-dirty | True | 0.513 | 214,296 | 184,793 | 156,739 | 11 | 188 | [replay](https://arena.tacto.ai/replay/b38781155ece5699) | v1.7c + case_plan b |
+| 10-24 23:09 | case:P01 | procudeal | 2168e02-dirty | True | 0.914 | 1,153,780 | 1,101,723 | 1,096,816 | 3 | 3 | [replay](https://arena.tacto.ai/replay/4cf45e66a22fc9cc) | engine v1.7c |
+| 10-24 23:10 | case:P02 | procudeal | 2168e02-dirty | True | 0.499 | 2,282,867 | 2,259,245 | 2,235,514 | 5 | 91 | [replay](https://arena.tacto.ai/replay/e325aac20ff8427c) | engine v1.7c |
+| 10-24 23:09 | case:P03 | procudeal | 2168e02-dirty | True | 0.923 | 4,246,314 | 3,935,069 | 3,909,043 | 3 | 3 | [replay](https://arena.tacto.ai/replay/be2c604f6bed8c1e) | engine v1.7c |
+| 10-24 23:09 | case:P04 | procudeal | 2168e02-dirty | True | 0.860 | 198,846 | 196,853 | 196,529 | 4 | 29 | [replay](https://arena.tacto.ai/replay/af5772c2e8fb2ce0) | engine v1.7c |
+| 10-24 23:10 | case:P05 | procudeal | 2168e02-dirty | True | 0.710 | 305,545 | 247,219 | 223,424 | 12 | 88 | [replay](https://arena.tacto.ai/replay/1ac1f69e2751a8b1) | engine v1.7c |
+| 10-24 23:10 | case:P07 | procudeal | 2168e02-dirty | True | 0.743 | 391,027 | 322,829 | 299,241 | 4 | 84 | [replay](https://arena.tacto.ai/replay/73da51ae37bb9342) | engine v1.7c |
+| 10-24 23:10 | case:P08 | procudeal | 2168e02-dirty | True | 0.604 | 1,135,887 | 1,029,835 | 960,309 | 6 | 69 | [replay](https://arena.tacto.ai/replay/0afcf9c78fc01586) | engine v1.7c |
+| 10-24 23:09 | case:P10 | procudeal | 2168e02-dirty | True | 0.679 | 1,932,492 | 1,522,963 | 1,328,927 | 3 | 1 | [replay](https://arena.tacto.ai/replay/217bbdb488e067cd) | engine v1.7c |
+| 10-24 23:11 | case:P11 | procudeal | 2168e02-dirty | True | 0.710 | 817,578 | 750,082 | 722,500 | 8 | 105 | [replay](https://arena.tacto.ai/replay/8c9ca20572818787) | engine v1.7c |
+| 10-24 23:11 | case:P18 | procudeal | 2168e02-dirty | True | 0.632 | 295,173 | 249,355 | 222,651 | 5 | 42 | [replay](https://arena.tacto.ai/replay/6921af34449edf29) | engine v1.7c |
+| 10-24 23:13 | case:P01 | procudeal | 2168e02-dirty | True | 0.949 | 1,153,780 | 1,099,704 | 1,096,816 | 3 | 50 | [replay](https://arena.tacto.ai/replay/a7985fb6b75a8caf) | v1.7c + case_plan |
+| 10-24 23:13 | case:P02 | procudeal | 2168e02-dirty | False | 0.000 | 2,282,867 |  | 2,235,514 | 4 | 84 | [replay](https://arena.tacto.ai/replay/72192e3ecf75812f) | v1.7c + case_plan |
+| 10-24 23:12 | case:P03 | procudeal | 2168e02-dirty | True | 0.901 | 4,246,314 | 3,942,569 | 3,909,043 | 2 | 36 | [replay](https://arena.tacto.ai/replay/d9ef908dc2ebdbdf) | v1.7c + case_plan |
+| 10-24 23:13 | case:P04 | procudeal | 2168e02-dirty | True | 0.860 | 198,846 | 196,853 | 196,529 | 4 | 75 | [replay](https://arena.tacto.ai/replay/4a10f8d7cc8feb56) | v1.7c + case_plan |
+| 10-24 23:15 | case:P05 | procudeal | 2168e02-dirty | True | 0.771 | 305,545 | 242,212 | 223,424 | 11 | 201 | [replay](https://arena.tacto.ai/replay/70e3eac23f2e19b2) | v1.7c + case_plan |
+| 10-24 23:13 | case:P07 | procudeal | 2168e02-dirty | True | 0.746 | 391,027 | 322,565 | 299,241 | 4 | 61 | [replay](https://arena.tacto.ai/replay/ad73a8a1c95ad1ea) | v1.7c + case_plan |
+| 10-24 23:14 | case:P08 | procudeal | 2168e02-dirty | True | 0.482 | 1,135,887 | 1,051,208 | 960,309 | 6 | 94 | [replay](https://arena.tacto.ai/replay/4f50195f5cacf577) | v1.7c + case_plan |
+| 10-24 23:14 | case:P10 | procudeal | 2168e02-dirty | True | 0.663 | 1,932,492 | 1,532,386 | 1,328,927 | 3 | 40 | [replay](https://arena.tacto.ai/replay/d2759daf93cdfaec) | v1.7c + case_plan |
+| 10-24 23:16 | case:P11 | procudeal | 2168e02-dirty | True | 0.626 | 817,578 | 758,032 | 722,500 | 7 | 155 | [replay](https://arena.tacto.ai/replay/576304ca42b16cd4) | v1.7c + case_plan |
+| 10-24 23:16 | case:P18 | procudeal | 2168e02-dirty | True | 0.632 | 295,173 | 249,355 | 222,651 | 5 | 132 | [replay](https://arena.tacto.ai/replay/5644294c52c1bc12) | v1.7c + case_plan |
+| 10-25 01:32 | case:P11 | procudeal | 2168e02-dirty | True | 0.710 | 817,578 | 750,082 | 722,500 | 8 | 2 | [replay](https://arena.tacto.ai/replay/4e050462133a56bd) | current pipeline P11 check |
+| 10-25 02:00 | case:D01 | procudeal | 2168e02-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 2 | [replay](https://arena.tacto.ai/replay/6aa4144deddb1596) | v1.8 flags on (sandbox) |
+| 10-25 02:00 | case:D02 | procudeal | 2168e02-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/a2ddaf44956f077a) | v1.8 flags on (sandbox) |
+| 10-25 02:06 | case:P02 | procudeal | 2168e02-dirty | True | 0.499 | 2,282,867 | 2,259,245 | 2,235,514 | 5 | 1 | [replay](https://arena.tacto.ai/replay/a6d66eaddaaf8114) | current pipeline P02 check |
+| 10-25 02:09 | case:P02 | procudeal | 2168e02-dirty | True | 0.499 | 2,282,867 | 2,259,245 | 2,235,514 | 5 | 1 | [replay](https://arena.tacto.ai/replay/bf74f15d4f975587) | current pipeline P02 check 2 |

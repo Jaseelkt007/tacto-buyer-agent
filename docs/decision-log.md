@@ -295,6 +295,50 @@ the baseline that the zone 1 A/B compares against.
 sandbox D01 0.883 (0.902 with patience; the hosted ablation favoured patience off on P02 and P10),
 D02 0.534 (unchanged). Hosted: not run yet (part of the zone 1 A/B).
 
+## v1.8 (flags off by default): rule-audit fixes as methods
+**Why:** the rule audit (`scripts/audit.py`, `docs/findings.md` section 10) checked every number and
+rule against what the arena revealed in 169 runs. Our cost maths matches to the cent. Three inputs
+were wrong:
+- **C_open in P02:** +€7,924 from an uncapped should-cost.
+- **The health price:** never refreshed. At setup it sat €2.8-7.3 above the true optimum in every
+  relationship case.
+- **Cost of money by owner type:** off by −1.8 to +2.9 pp against each supplier's own payment-days
+  pricing.
+
+The per-offer full-cost cap rests on a false premise: v1.4 closed P02 below the supplier's full cost.
+
+**Rule for every fix: a method, never a fitted value.** No practice supplier's measured number is in
+the code.
+
+**Changes:** three flags, all off by default:
+- `quote_cap`: cap the estimate once, by the opening quote, at the sustainable margin;
+- `measured_rate`: its rate from its own sheet pairs that differ only in payment days
+  (`economics.implied_rate`);
+- `health_refresh`: health price and ceiling follow the estimate.
+
+Also `economics.menu` (H1.3), every allowed mix priced for the hybrid, and `scripts/replay.py`, an
+offline replay of recorded states scored with the backed-out truth (evaluation only).
+
+**Free tests:** 14 new unit tests (`tests/test_procudeal_v18.py`).
+
+**Offline replay** of the latest v1.7c run of every single-supplier case: **v1.8 sends the same moves
+as v1.7c**, apart from €0.06 on P03's opening. Its numbers are closer to the truth:
+- **P02 health price:** €362.86, against €367.46 in v1.7c and a true €361.4.
+- **Rate:** measured 6.61 % (P02) and 9.27 % (D01), matching the audit.
+
+So the fixes are safe, but give no score gain alone. The P02 menu shows why:
+- **No clause, at the health price:** every option scores ">1" if accepted, i.e. a price below
+  anything this supplier would take.
+- **The 5 % deadband clause, 90-day payment, at the health price €361.82:** 0.734 if accepted. The
+  reference run closed that deal at once and scored 0.735.
+
+Choosing that option takes judgment about the supplier's need (copper protection, named in its
+quote). A "clause in stabilise cases" rule would be fitted to P02. That choice is the hybrid's job.
+Trade-off noted: in P01 the old per-offer cap happened to be closer to the true full cost (€130.54 vs
+€132.64; truth €130.04). We keep the cap whose premise held every time.
+Sandbox with the flags on (`PROCUDEAL_ON=quote_cap,measured_rate,health_refresh`): D01 0.883, D02 0.534,
+identical to v1.7c. Hosted: not run.
+
 ## v2.0 (in progress): an LLM layer on top of the rules - zone 0, offline research
 **Why:** the engine's opponent model (reading replies, levers, steps, wording) is rules fitted to the
 12 practice suppliers; the final brings "new suppliers and settings". Before a session opens we already
