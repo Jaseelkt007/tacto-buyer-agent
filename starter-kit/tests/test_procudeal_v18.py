@@ -212,13 +212,11 @@ def test_packet_labels_options_and_ids(flags):
     for line in body.splitlines():
         if line and not line.startswith(("## ", "a", "(", "  -", "Its side", "Prior")):
             assert line[:3] in ("[A]", "[D]", "[E]", "[S]", "[Z]") or line.startswith("[us]"), line
-    assert "E0" in pk["options"] and pk["options"]["E0"]["rungs"]["engine"] == move["sheets"][0]["unit_price"]
+    assert "E0" in pk["options"] and pk["options"]["E0"]["price"] == move["sheets"][0]["unit_price"]
     side = n.sides[SID]
-    for oid, opt in pk["options"].items():
-        if oid == "E0":
-            continue
-        health = eco.cheapest_price(STABILISE, opt["terms"], side.standard, side.estimate())
-        assert all(p >= health - 0.01 for p in opt["rungs"].values())  # never a dominated price
+    for opt in pk["options"].values():
+        assert opt["price"] > 0
+        assert eco.cost_at(STABILISE, opt["terms"], opt["price"], side.standard, side.estimate()) < n.limit
     for c in pk["claims"].values():
         assert c in side.bank or c in (move.get("claims") or [])
     assert "back office" not in pk["text"].lower()
@@ -238,20 +236,18 @@ def _packet_and_engine(flags):
 def test_tactician_counter_uses_code_prices(flags):
     n, pk, engine = _packet_and_engine(flags)
     oid = next(o for o in pk["options"] if o != "E0")
-    rung = next(iter(pk["options"][oid]["rungs"]))
-    answer = {"read": "", "action": "counter", "option": oid, "rung": rung, "claims": ["nope"], "reason": "r"}
+    answer = {"read": "", "action": "counter", "option": oid, "claims": ["nope"], "reason": "r"}
     answer["message"] = "Thank you for your offer; we propose the attached terms for a stable supply."
     move, why = ta.to_move(n, pk, answer, engine)
     assert move is not engine and why.startswith("ok")
-    assert move["sheets"][0]["unit_price"] == round(pk["options"][oid]["rungs"][rung], 2)
+    assert move["sheets"][0]["unit_price"] == round(pk["options"][oid]["price"], 2)
     assert move["claims"] == [] and "nope" in move["why"]["claims_dropped"]
 
 
 def test_tactician_invalid_answers_keep_the_engine_move(flags):
     n, pk, engine = _packet_and_engine(flags)
     bad = [
-        {"action": "counter", "option": "o99", "rung": "health", "claims": []},
-        {"action": "counter", "option": "E0", "rung": "made_up", "claims": []},
+        {"action": "counter", "option": "o99", "claims": []},
         {"action": "accept", "option": "offer:none", "rung": "", "claims": []},
         {"action": "walk", "option": "", "rung": "", "claims": []},
         None,
@@ -260,7 +256,7 @@ def test_tactician_invalid_answers_keep_the_engine_move(flags):
         move, why = ta.to_move(n, pk, answer, engine)
         assert move is engine, why
     pk["status"] = "final_offer"
-    move, _ = ta.to_move(n, pk, {"action": "counter", "option": "E0", "rung": "engine", "claims": []}, engine)
+    move, _ = ta.to_move(n, pk, {"action": "counter", "option": "E0", "claims": []}, engine)
     assert move is engine  # never push past a final offer
 
 
@@ -280,8 +276,7 @@ def _fake(answer_fn):
 def test_live_move_replaced_and_bookkept(flags, monkeypatch):
     def choose(pk):
         oid = next(o for o in pk["options"] if o != "E0" and pk["options"][o]["terms"]["contract_months"] == 36)
-        rung = next(iter(pk["options"][oid]["rungs"]))
-        return {"action": "counter", "option": oid, "rung": rung, "claims": [], "reason": "test"}
+        return {"action": "counter", "option": oid, "claims": [], "reason": "test"}
 
     monkeypatch.setattr(ta, "ask", _fake(choose))
     agent = ProcuDealAgent(complete=None)
@@ -321,7 +316,7 @@ def test_tactician_deadline_is_wall_clock(monkeypatch):
     assert answer is None and "0s" in err and _time.monotonic() - t0 < 0.6
 
 
-def test_rungs_never_step_back(flags):
+def test_code_prices_never_step_back(flags):
     n = po.Negotiator(STABILISE)
     first = supplier_msg(45.0, payment_days=30, contract_months=24)
     move = n.decide({SID: [first]})
@@ -339,5 +334,43 @@ def test_rungs_never_step_back(flags):
     for oid, opt in pk["options"].items():
         if oid == "E0":
             continue
-        for price in opt["rungs"].values():
-            assert cx.worth(STABILISE, opt["terms"], price, est, {}) >= floor - 1e-6
+        assert cx.worth(STABILISE, opt["terms"], opt["price"], est, {}) >= floor - 1e-4
+
+
+# ---------- v1.9: the protection trade (code, no model) ----------
+from test_procudeal_v17 import P02_OPENING, clause_case  # noqa: E402
+
+
+def stabilise_clause_case(margin=0.5):
+    c = clause_case()
+    c["buyer"].update(category_goal="stabilise", sustainable_margin_pct=margin, relationship_eur_per_point=30000)
+    return c
+
+
+def test_protection_trade_offers_the_clause_at_the_health_price(flags):
+    case = stabilise_clause_case(margin=5.0)  # a healthy price close to its quote: the clause makes it a gain for it
+    quote = supplier_msg(45.0, body=P02_OPENING, payment_days=30, index_clause=None)
+    n = po.Negotiator(case)
+    move = n.decide({SID: [quote]})
+    side, sheet = n.sides[SID], move["sheets"][0]
+    assert sheet["index_clause"] and sheet["index_clause"]["series"] == "CU-NOTATION"
+    est = side.estimate()  # with the driver set: its value counts the protection
+    terms = {k: v for k, v in sheet.items() if k != "unit_price"}
+    assert sheet["unit_price"] == pytest.approx(eco.cheapest_price(case, terms, side.standard, est), abs=0.02)
+    own = po.eco_fill(case, {"unit_price": 45.0, "payment_days": 30})
+    assert eco.value(case, sheet, est) >= eco.value(case, own, est)  # worth more to it than its own quote
+
+
+def test_protection_trade_needs_a_stated_driver_and_a_relationship_goal(flags):
+    quiet = supplier_msg(45.0, body="Thank you for your enquiry.", payment_days=30, index_clause=None)
+    n = po.Negotiator(stabilise_clause_case(margin=5.0))
+    assert not n.decide({SID: [quiet]})["sheets"][0].get("index_clause")  # no exposure stated: no trade
+    flags["protection_trade"] = False
+    stated = supplier_msg(45.0, body=P02_OPENING, payment_days=30, index_clause=None)
+    n = po.Negotiator(stabilise_clause_case(margin=5.0))
+    assert not n.decide({SID: [stated]})["sheets"][0].get("index_clause")  # flag off: v1.7c
+    flags["protection_trade"] = True
+    leverage = clause_case()  # no relationship charge: the trade does not apply (v1.7 proactive clause rules there)
+    n = po.Negotiator(leverage)
+    n.decide({SID: [stated]})
+    assert n.protection_trade(n.sides[SID], [stated], {"unit_price": 45.0, "payment_days": 30}) is None

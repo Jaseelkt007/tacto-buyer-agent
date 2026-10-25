@@ -314,7 +314,7 @@ def model_replay(run, package, stds, rates, fcs, spec, model, effort, zone0_arms
                 txt = f"{move['action']['type']} {brief(acc, case['negotiable']) if acc else ''} → {score_of(case, acc, std, truth, res) if acc else '-'}"
             else:
                 sh = move["sheets"][0]
-                txt = f"{(answer or {}).get('option')}/{(answer or {}).get('rung')} {brief(sh, case['negotiable'])} → {score_of(case, sh, std, truth, res)}"
+                txt = f"{(answer or {}).get('option')} {brief(sh, case['negotiable'])} → {score_of(case, sh, std, truth, res)}"
             if why.startswith("ok,"):
                 txt += f" [{why}]"
             elif why != "ok":

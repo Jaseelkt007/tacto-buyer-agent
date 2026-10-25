@@ -193,7 +193,7 @@ The `PATIENCE`, `ANCHOR_FLOOR` and `OVERTIME` values come from practice evidence
 Every v1.7 behaviour change can be switched off without a code edit, for ablation runs:
 `PROCUDEAL_OFF="single_sheet,rich_value" uv run python scripts/bench.py ...`, and a flag that is off by
 default switched on: `PROCUDEAL_ON="patience"`. Both are read once at import; unknown names are logged
-and ignored. Defaults since v1.7c: every flag on except `patience` and `call_note_lever`. The setup log line and the first entry of the
+and ignored. Defaults since v1.9: every flag on except `patience`, `call_note_lever`, the zone 1 plan flags and the v2.0 `tactician` / `tactician_text`. The setup log line and the first entry of the
 decision trace (`features_off`) show which flags were off. Bug fixes are never flagged. With every
 flag off the engine behaves like v1.6c plus the bug fixes (sandbox D01 0.883, D02 0.482: identical).
 
@@ -209,9 +209,10 @@ flag off the engine behaves like v1.6c plus the bug fixes (sandbox D01 0.883, D0
 | `call_note_lever` (default **off**, v1.7c) | A | the figure-free call / meeting note claim in the lever schedule |
 | `rich_value` | H | supplier value with scorecard ppm, overtime, volume, skonto-implied cost of money |
 | `keepalive` | bug 6 | RFQ: a sheetless note to a ready, acceptable thread that has waited long enough (see RFQ tactics); its agreed / final status stays after a reply with the same terms (a new offer ID each reply) |
-| `quote_cap` (default **off**, v1.8) | audit | the full-cost estimate is capped once, by the opening quote: price x (1 − sustainable margin); later prices no longer cap it (suppliers do close below full cost) |
-| `measured_rate` (default **off**, v1.8) | audit | its cost of money from two of its own sheets in one message that differ only in payment days (`economics.implied_rate`, exact inverse of `supplier_value`); replaces the owner-type rule and blocks the cash premium; replans the term mix |
-| `health_refresh` (default **off**, v1.8) | audit | health price and price ceiling recomputed whenever the full-cost estimate or the rate changes (v1.7c kept the setup value) |
+| `quote_cap` (default **on** since v1.9) | audit | the full-cost estimate is capped once, by the opening quote: price x (1 − sustainable margin); later prices no longer cap it (suppliers do close below full cost) |
+| `measured_rate` (default **on** since v1.9) | audit | its cost of money from two of its own sheets in one message that differ only in payment days (`economics.implied_rate`, exact inverse of `supplier_value`); replaces the owner-type rule and blocks the cash premium; replans the term mix |
+| `health_refresh` (default **on** since v1.9) | audit | health price and price ceiling recomputed whenever the full-cost estimate or the rate changes (v1.7c kept the setup value) |
+| `protection_trade` (default **on**, v1.9) | P02 analysis | relationship goals with a negotiable index clause on a cost driver the supplier states in its quote: open on the clause mix at our health price when that sheet is worth more to it than its own quote (cash value + protection beyond the deadband on its stated exposure, `clause_value_rate`); `next_price` never goes below the health price on such a sheet. The case's own numbers only |
 | `tactician` (default **off**, v2.0) | hybrid | single-supplier cases: after the engine decides, `context.build` + one model call (`tactician.ask`, 25 s wall-clock deadline) choose among the code-priced options; `to_move` checks it; `Negotiator.replace_move` keeps the engine's bookkeeping consistent; any failure sends the engine's move. Use with `quote_cap,measured_rate,health_refresh` |
 | `tactician_text` (default **off**, v2.0) | hybrid | the tactician's figure-free paragraph goes into the e-mail (off: the engine's template words) |
 
@@ -406,7 +407,13 @@ single-supplier cases, on offers and accepts. Walk-aways, notes and RFQs stay wi
   passes.
 - **Deadline:** wall-clock, retries included, on a 16-thread pool.
 - **Trace:** every decision records `hybrid` (seconds, check, choice, used).
-- **No step back:** every rung is worth at least as much to the supplier as our last offer. On the
-  terms we sent last, step rungs of 10 / 25 / 50 % of the gap to its level are added.
+- **v2.0b: the model picks the terms, code sets the price** (`context.code_price`):
+  - on the engine's own terms, the engine's price;
+  - in relationship goals, when the supplier gains at our health price against its own sheet, the
+    health price;
+  - otherwise, the price worth to the supplier what the engine's move is worth to it (its cash plus
+    the clause protection on the exposure it states), so the engine's anchor and steps carry over.
+  There are no rungs: in v2.0 the model moved the price worse than the engine.
+- **Agreed or final offer:** the engine decides; the model is not called.
 
 Run: `PROCUDEAL_ON="tactician,quote_cap,measured_rate,health_refresh" uv run python scripts/bench.py ...`

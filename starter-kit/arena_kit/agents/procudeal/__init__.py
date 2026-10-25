@@ -52,7 +52,7 @@ class ProcuDealAgent:
         try:
             self.negotiator.remember_prices(threads)
             move = self.negotiator.decide(threads)
-            if on("tactician") and self.hybrid_applies(move):
+            if on("tactician") and self.hybrid_applies(move, threads):
                 move = self.hybrid(threads, move)
             if move.get("action"):
                 decision = {"supplier_id": move["supplier_id"], "message": {"action": move["action"]}}
@@ -73,10 +73,13 @@ class ProcuDealAgent:
         self.record(case, threads, decision, time.monotonic() - t0, source, **why)
         return decision
 
-    def hybrid_applies(self, move):
+    def hybrid_applies(self, move, threads):
         """tactician: single-supplier cases, on offers and accepts (walk-aways and notes stay the engine's)."""
         neg = self.negotiator
         kind = (move.get("action") or {}).get("type")
+        events = threads.get(move.get("supplier_id")) or []
+        if events and latest(events).get("status") in ("agreed", "final_offer"):
+            return False  # it has agreed or called its final offer: the engine closes (phase 3, P18)
         return not neg.rfq and len(neg.sides) == 1 and not move.get("note") and (move.get("sheets") or kind == "accept")
 
     def hybrid(self, threads, move):
@@ -94,18 +97,10 @@ class ProcuDealAgent:
             "seconds": round(secs, 1),
             "check": check,
             "error": err,
-            "choice": {k: (answer or {}).get(k) for k in ("action", "option", "rung", "claims", "reason")},
+            "choice": {k: (answer or {}).get(k) for k in ("action", "option", "claims", "reason")},
         }
         choice = info["choice"]
-        log.info(
-            "%s: tactician %s %s/%s in %.1fs (%s)",
-            packet["sid"],
-            choice["action"],
-            choice["option"],
-            choice["rung"],
-            secs,
-            check,
-        )
+        log.info("%s: tactician %s %s in %.1fs (%s)", packet["sid"], choice["action"], choice["option"], secs, check)
         if new is move:
             why = move.get("why")
             if isinstance(why, dict):

@@ -19,19 +19,19 @@ Regenerate this table after every benchmark pass.
 
 Later passes (one hosted run each):
 
-| case | v1.7c | v2.0 tactician (rungs chosen by the model) |
-|---|---|---|
-| P01 | 0.914 | 0.817 |
-| P02 | 0.499 | **0.734** |
-| P03 | 0.923 | 0.923 |
-| P04 | 0.860 | 0.860 |
-| P05 | 0.710 | 0.710 |
-| P07 | 0.743 | 0.736 |
-| P08 | 0.604 | 0.560 |
-| P10 | 0.679 | 0.694 |
-| P11 | 0.710 | 0.710 |
-| P18 | 0.632 | 0.483 |
-| **mean** | **72.7** | 72.3 |
+| case | v1.7c | v2.0 tactician (rungs chosen by the model) | v2.0b (terms by model, price by code) |
+|---|---|---|---|
+| P01 | 0.914 | 0.817 | 0.780 |
+| P02 | 0.499 | **0.734** | **0.734** |
+| P03 | 0.923 | 0.923 | 0.923 |
+| P04 | 0.860 | 0.860 | 0.860 |
+| P05 | 0.710 | 0.710 | 0.710 |
+| P07 | 0.743 | 0.736 | 0.743 |
+| P08 | 0.604 | 0.560 | 0.517 |
+| P10 | 0.679 | 0.694 | 0.586 |
+| P11 | 0.710 | 0.710 | 0.710 |
+| P18 | 0.632 | 0.483 | 0.598 |
+| **mean** | **72.7** | 72.3 | 71.6 |
 
 v1.7c + case plan (zone 1): 66.3. Sandbox: v1.7c D01 0.883 / D02 0.534; v1.8 flags the same; v2.0
 tactician D01 0.772 (step-backs), then 0.863 with the no-step-back rungs.

@@ -40,24 +40,23 @@ How to read the packet. Every line has a source label:
 [Z] an offline model's reading of its records - an interpretation; weigh it against A, D and S. [us] our earlier messages.
 In its e-mail, lines marked ~ are stock lines every supplier writes; they say nothing about this one.
 
-Options. E0 is the rule engine's move: a default tuned on practice cases, not a recommendation. o1, o2, ... are other term mixes, each with prices ("rungs") set by code and our C at each. "health" = the price where our C is lowest on those terms (below it the relationship charge outgrows the saving). "its_level" = the price worth as much to the supplier in cash as its standing sheet; the cash model gives no value to terms a supplier may value (an index clause that protects it, a longer contract, a longer lead time), so it may accept less with such terms. "midway" lies between the lowest rung and its_level.
+Options. E0 is the rule engine's move: a default tuned on practice cases, not a recommendation. o1, o2, ... are other term mixes. You choose the terms; code sets the price shown for each option (the engine's price level carried over to those terms, or our health price where the supplier gains against its own sheet). Each option shows our C and how much more (+) or less (-) the sheet is worth to the supplier than its own standing sheet: a sheet worth more to it is likely accepted; one worth less invites a counter. "health" = the price where our C is lowest on those terms.
 
 Think about what this supplier needs and fears (S, Z and D lines), which option gives it that while keeping our C low, and how it will answer. Then decide:
-- action "counter": option id and rung name; "accept": option = a sheet id listed under ACCEPT, rung ""; "hold": resend our last sheet unchanged (option "", rung "").
+- action "counter": the option id; "accept": option = a sheet id listed under ACCEPT; "hold": resend our last sheet unchanged (option "").
 - claims: up to 3 argument ids from ARGUMENTS (each kind once per supplier), only ones that help us; [] for none.
 - message: 2-4 sentences of e-mail text in the buyer's voice that fit the chosen sheet. No digits or figures (code adds the argument sentences and the term sheet), no promise of any term that is not on our sheet, nothing about our alternative, budget or timing.
 - read: what this supplier needs and where it stands, citing packet lines.
-- reason: why this option and rung beat the others, including E0."""
+- reason: why this option beats the others, including E0."""
 
 SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["read", "action", "option", "rung", "claims", "message", "reason"],
+    "required": ["read", "action", "option", "claims", "message", "reason"],
     "properties": {
         "read": {"type": "string"},
         "action": {"type": "string", "enum": ["counter", "accept", "hold"]},
         "option": {"type": "string"},
-        "rung": {"type": "string"},
         "claims": {"type": "array", "items": {"type": "string"}},
         "message": {"type": "string"},
         "reason": {"type": "string"},
@@ -136,10 +135,9 @@ def to_move(neg, packet, answer, engine_move):
         }, "ok"
     elif action == "counter":
         opt = packet["options"].get(answer.get("option"))
-        rung = (opt or {}).get("rungs", {}).get(answer.get("rung"))
-        if opt is None or rung is None:
-            return engine_move, f"option {answer.get('option')!r} / rung {answer.get('rung')!r} is not in the packet"
-        sheet = complete_offer(case, {**opt["terms"], "unit_price": round(rung, 2)})
+        if opt is None:
+            return engine_move, f"option {answer.get('option')!r} is not in the packet"
+        sheet = complete_offer(case, {**opt["terms"], "unit_price": round(opt["price"], 2)})
     else:
         return engine_move, f"unknown action {action!r}"
     if sheet.get("unit_price") is None or sheet["unit_price"] <= 0 or not must_haves_ok(case, sheet, side.standard):
@@ -149,12 +147,7 @@ def to_move(neg, packet, answer, engine_move):
         "supplier_id": sid,
         "sheets": [sheet],
         "claims": claims,
-        "why": {
-            "tactician": answer.get("reason"),
-            "option": answer.get("option"),
-            "rung": answer.get("rung"),
-            "claims_dropped": dropped,
-        },
+        "why": {"tactician": answer.get("reason"), "option": answer.get("option"), "claims_dropped": dropped},
         "paragraph": message,
     }
     return move, "ok" if not dropped else f"ok, claims dropped {dropped}"

@@ -47,9 +47,10 @@ FEATURES = {
     "plan_stance": False,  # zone 1: the plan's stance moves the opening anchor (hurt P03 / P11 / P10 when soft)
     "plan_paragraph": False,  # zone 1: the plan's opening paragraph (promised terms code never sent: P02, P08)
     "plan_priced_trades": False,  # zone 1: non-contractual opening trades from the plan (24 months hurt P03 / P08)
-    "quote_cap": False,  # v1.8: the opening quote caps the full cost; later prices do not
-    "measured_rate": False,  # v1.8: its cost of money from its own sheets that differ only in payment days
-    "health_refresh": False,  # v1.8: health price and ceiling recomputed whenever the estimate changes
+    "quote_cap": True,  # v1.8: the opening quote caps the full cost; later prices do not
+    "measured_rate": True,  # v1.8: its cost of money from its own sheets that differ only in payment days
+    "health_refresh": True,  # v1.8: health price and ceiling recomputed whenever the estimate changes
+    "protection_trade": True,  # v1.9: clause at our health price when the supplier gains by it (relationship goals)
     "tactician": False,  # v2.0 hybrid: one model call per move picks among code-priced options (single supplier)
     "tactician_text": False,  # v2.0 hybrid: the tactician's figure-free paragraph goes into the e-mail
 }
@@ -156,6 +157,7 @@ class Side:
     paragraph: str = ""  # case_plan: the strategist's figure-free paragraph for the first e-mail
     keepalives: int = 0
     clause_adopted: bool = False  # proactive_clause: our clause is the one it demanded
+    protected: bool = False  # protection_trade: our sheet carries the clause it gains by, at our health price
     rival_cited: dict = field(default_factory=dict)  # lever_schedule: rival sid -> price we cited to it
 
     def estimate(self):
@@ -274,6 +276,11 @@ class Negotiator:
         if case.get("type") == "price_increase" and current:
             anchor = min(anchor, current)
         ceiling = eco.price_ceiling(case, mix, self.limit, std, est)
+        trade = self.protection_trade(side, events, quote) if on("protection_trade") else None
+        if trade:
+            mix, anchor, side.clause, side.driver = trade
+            side.mix, est, side.protected = mix, side.estimate(), True
+            best, ceiling = anchor, eco.price_ceiling(case, mix, self.limit, std, est)
         side.anchor, side.ceiling, side.best_for_us = round(anchor, 2), ceiling or 0.0, best
         if on("patience"):  # the budget itself is set from the first gap, after our first offer
             share = min([PATIENCE["normal"]] + [PATIENCE[p] for p in persona if p in PATIENCE])
@@ -382,6 +389,49 @@ class Negotiator:
             return None, None
         log.info("%s: index clause %s on its asserted driver (net %.3f of the price)", side.sid, best[1], best[0])
         return best[1], best[2]
+
+    def protection_trade(self, side, events, quote):
+        """protection_trade (v1.9): relationship goals, an index clause on a cost driver the supplier states
+        in its quote, at our health price - when that sheet is worth more to it than its own quote (its
+        cash value plus the protection beyond the deadband on the exposure it states, the method that
+        matched suppliers' own deadband pricing). A deal there is likely, and our C is lowest there.
+        The case's own numbers only, no fitted value. (mix, price, clause, driver) or None."""
+        case = self.case
+        if (
+            self.goal not in RELATIONSHIP_GOALS
+            or "index_clause" not in case["negotiable"]
+            or quote.get("index_clause")
+            or not quote.get("unit_price")
+            or side.dossier.hedged
+            or not events
+        ):
+            return None
+        drivers = {d.series: d for d in sg.drivers(events[0])}
+        allowed = case.get("term_options", {}).get("index_clause") or []
+        options = [o for o in allowed if o and o.get("series") in drivers]
+        std, own_sheet, best, saved = side.standard, eco_fill(case, quote), None, side.driver
+        try:
+            for clause in options:
+                side.driver = drivers[clause["series"]]
+                est = side.estimate()
+                own = eco.value(case, own_sheet, est)  # its quote carries no clause: no protection
+                for mix in eco.term_mixes(case, complete_offer(case, quote), {"index_clause": [clause]}):
+                    terms = {k: v for k, v in mix.items() if k != "unit_price"}
+                    if not must_haves_ok(case, complete_offer(case, {**terms, "unit_price": 1.0}), std):
+                        continue
+                    health = eco.cheapest_price(case, terms, std, est)
+                    if eco.value(case, {**terms, "unit_price": health}, est) < own:
+                        continue  # worth less to it than its own quote: no deal at our best price
+                    c = eco.cost_at(case, terms, health, std, est)
+                    if c < self.limit and (best is None or c < best[0]):
+                        best = (c, terms, health, clause, side.driver)
+        finally:
+            side.driver = saved
+        if best is None:
+            return None
+        c, terms, health, clause, driver = best
+        log.info("%s: protection trade - clause %s at our health price %.2f (C %.0f)", side.sid, clause, health, c)
+        return terms, health, clause, driver
 
     def extras_fn(self, side):
         """What a sheet costs or brings this supplier beyond the kit's items, EUR per unit."""
@@ -860,6 +910,10 @@ class Negotiator:
         price = min(price, theirs * 0.998)
         if on("strict_accept") and side.ours:  # never step back below our own last offer
             price = max(price, min(side.ours[-1], side.ceiling or math.inf))
+        if side.protected and side.best_for_us:
+            # protection_trade: with the clause it would take less than our health price, and below it
+            # the relationship charge outgrows the saving - our health price is the lowest we offer
+            price = max(price, min(side.best_for_us, side.ceiling or math.inf))
         return round(max(price, 0.01), 2)
 
     def patience_cap(self, side, price):

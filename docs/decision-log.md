@@ -339,6 +339,91 @@ Trade-off noted: in P01 the old per-offer cap happened to be closer to the true 
 Sandbox with the flags on (`PROCUDEAL_ON=quote_cap,measured_rate,health_refresh`): D01 0.883, D02 0.534,
 identical to v1.7c. Hosted: not run.
 
+## v1.9 (default): protection trade, plus the v1.8 fixes switched on
+**Why:**
+- The two hosted hybrid sets (72.3, 71.6) kept one robust result: P02 0.734, 3 of 3 runs. It comes
+  from information code computes, not from the model's broader judgment.
+- Wherever the model traded terms the packet cannot value (lead time, contract length), or closed
+  by itself, it lost.
+
+**Change:** `protection_trade` (`Negotiator.protection_trade`). It fires when:
+- the goal is stabilise or secure_supply;
+- an index clause is negotiable;
+- the supplier's quote carries no clause, but its quote states the cost driver.
+
+Code then prices every clause mix at our health price and keeps the ones worth more to the supplier
+than its own quote:
+- worth = cash value plus the protection beyond the deadband on the exposure it states;
+- this is the method that matched suppliers' own deadband pricing in P08 / P18.
+
+It opens on the cheapest such mix (our C) at our health price. `next_price` never goes below the
+health price on that sheet, because with the protection the supplier would take less, and below the
+health price our C rises (v1.4: €353 → 0.365). These are the case's own numbers, no fitted value. It
+needs `quote_cap`, so the v1.8 fixes are switched on as well.
+
+**Tests:**
+- 3 new unit tests (127 passed).
+- **Offline replay:** only P02 changes (round 0: clause, 5 % deadband, €361.82, 0.734 if accepted).
+  The 9 other single-supplier cases are unchanged (P03 −€0.06).
+- **Sandbox:** D01 0.883, D02 0.534 (= v1.7c).
+- **Hosted P02:** 0.734 in 2 rounds (the supplier agreed at once).
+
+**Expected set mean:** about 75.1 (72.7 + 2.35). The other teams' best P02 is 0.88, without a clause
+at about €367.8. So this supplier goes below the €371.95 it called final for us, and the clause is
+not the ceiling for P02: open question for later.
+
+## v2.0b: the model picks the terms, code sets the price
+**Why:** in the v2.0 set the model chose the right trades but moved the price worse than the engine
+(P01, P18, P08). **Change:**
+- The schema has no price choice any more: the model picks an option (term mix), arguments, accept
+  or hold.
+- `context.code_price` sets each option's price:
+  - the engine's price on its own terms;
+  - our health price in relationship goals when the supplier gains there against its own sheet (a
+    deal there is likely and our C is lowest);
+  - otherwise the price worth to the supplier what the engine's move is worth to it, so the engine's
+    anchor and steps carry over to the model's terms.
+- At "agreed" or "final_offer" the engine decides and the model is not called.
+
+**Offline replay (with Z):**
+- **P02:** round 0 offers the 5 % deadband clause at the €361.82 health price (0.734 if accepted).
+- **P01:** the engine's €126.53 opening on the model's 2027-01-01 terms, then the engine's step
+  (€129.22).
+- **P18:** the engine's prices, then its terms; accepts the agreed €5.10 (as v1.7c).
+- **P08:** engine prices, but it still switches terms between rounds (0 % deadband for 36 months vs
+  3 % for 24 / 12 months).
+
+**Sandbox D01:** 0.869 (v1.7c 0.883). Prices are steady; it still switches payment days and the
+effective date.
+
+**Hosted set: 71.6** (v2.0: 72.3; v1.7c: 72.7).
+
+| case | v1.7c | v2.0b |
+|---|---|---|
+| P02 | 0.499 | **0.734** |
+| P01 | 0.914 | 0.780 |
+| P10 | 0.679 | 0.586 |
+| P08 | 0.604 | 0.517 |
+| P18 | 0.632 | 0.598 |
+| others | | the same |
+
+Causes:
+- **P10:** the model chose 42-day delivery over the engine's 56 days. The packet's supplier value
+  ignores lead time, which suppliers price at about +4.5 % (audit type 3). The supplier quoted €33.60
+  and finalled at €33.40; v1.7c reached €31.50.
+- **P08:** it chose a 3 % deadband for 12 / 24 months over the 0 % deadband for 36 months that the
+  supplier wanted. Contract length is also invisible to the cash value.
+- **P01:** the deal closed at €133.80 in round 1, right after the 2027 date at the engine's opening.
+  The engine countered in v1.7c. The trace does not record whether the model or the engine accepted.
+
+**Lessons:**
+- The model's term choices are only as good as the supplier value the packet shows.
+- Lead time and contract length must be valued from the supplier's own sheets before the model may
+  trade them.
+- The trace must record every hybrid decision.
+
+P02's gain is stable: 0.734 in all 3 hosted runs.
+
 ## v2.0 phase 3: the tactician in the live loop (flag `tactician`, off by default)
 **Built:**
 - `ProcuDealAgent.hybrid`: the engine decides first; one model call over the packet; code checks the

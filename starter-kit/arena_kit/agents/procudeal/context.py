@@ -27,7 +27,6 @@ from . import signals as sg
 
 KNOWLEDGE = Path(__file__).resolve().parents[3] / "knowledge"
 TOP_OPTIONS = 6  # menu options shown besides the engine's mix and its own
-STEPS = (0.10, 0.25, 0.50)  # step rungs: shares of the gap between our last offer and its price (a choice grid)
 FEEDBACK = re.compile(r"[Ww]e checked the (.+?) you cited[;,:] (.+?)(?:\.|$)", re.M)
 VERDICT_KIND = {  # the arena's wording in a reply -> our claim kind
     "rival quote data": "rival_offer",
@@ -133,8 +132,10 @@ def protection(terms, drivers):
 
 
 def worth(case, terms, price, est, drivers):
-    """E: what a sheet is worth to it per unit: its cash value plus the clause's protection."""
-    return eco.value(case, {**terms, "unit_price": price}, est) * (1 + protection(terms, drivers))
+    """E: what a sheet is worth to it per unit: its cash value plus the clause's protection on the
+    exposure it states (the engine's other per-sheet extras are left out, so nothing counts twice)."""
+    plain = {k: v for k, v in est.items() if k != "extras"}
+    return eco.value(case, {**terms, "unit_price": price}, plain) * (1 + protection(terms, drivers))
 
 
 # ---------- sections ----------
@@ -317,52 +318,36 @@ def argument_lines(neg, side, move):
     return lines, claims
 
 
-def _rungs(neg, side, terms, engine_c, health, its_sheet, drivers):
-    """Prices on these terms, set by code. From the health price (relationship goals; below it our C only
-    rises) or the engine's C level, up to its level; on our current terms also steps of the gap between
-    our last offer and its price. A counter never steps back: every rung is worth at least as much to
-    the supplier as our last offer. Each: (price, our C, worth to it vs its own sheet)."""
-    case, std, est = neg.case, side.standard, side.estimate()
-    rungs = {}
-    if health:
-        rungs["health"] = health
-    elif engine_c is not None:
-        p = eco.equal_cost_price(case, terms, engine_c, std, est)
-        if p and p != float("inf"):
-            rungs["engine_level"] = round(p, 2)
+def code_price(neg, side, terms, main, its_sheet, drivers, health):
+    """The price code sets on these terms - the model picks the terms, not the price (phase 3: the
+    engine's anchor and steps beat the model's on price). (price, how) or (None, why):
+      - the engine's own terms: the engine's price;
+      - relationship goals, when the supplier gains at our health price against its own sheet: the
+        health price (a deal there is likely and our C is lowest there);
+      - otherwise: the price worth to the supplier what the engine's move is worth to it, so the
+        engine's anchor and concession steps carry over to these terms."""
+    case, est = neg.case, side.estimate()
+    if main and all(main.get(k) == v for k, v in terms.items()):
+        return main["unit_price"], "the engine's price"
     target = worth(case, its_sheet, its_sheet["unit_price"], est, drivers) if its_sheet else None
-    if target:
-        its = eco.price_for_value(case, terms, est, target / (1 + protection(terms, drivers)))
-        if its and its > 0:
-            rungs["its_level"] = round(its, 2)
-    lo = rungs.get("health") or rungs.get("engine_level")
-    if rungs.get("its_level") and lo and rungs["its_level"] > lo + 0.02:
-        rungs["midway"] = round((lo + rungs["its_level"]) / 2, 2)
-    last = side.last_main
-    floor = worth(case, last, last["unit_price"], est, drivers) if last else None
-    if last and rungs.get("its_level") and all(terms.get(k) == v for k, v in last.items() if k in terms):
-        ours = last["unit_price"]
-        for share in STEPS:
-            rungs[f"step_{round(share * 100)}"] = round(ours + share * (rungs["its_level"] - ours), 2)
-    out = {}
-    for name, price in sorted(rungs.items(), key=lambda x: x[1]):
-        if health and price < health - 0.005:
-            continue  # below the health price our C only rises: dominated
-        if floor is not None and worth(case, terms, price, est, drivers) < floor - 1e-6:
-            continue  # worth less to it than our last offer: a step back
-        c = eco.cost_at(case, terms, price, std, est)
-        if c >= neg.limit:
-            continue  # no better than C_open or the alternative
-        if all(abs(price - q) > 0.01 for q, _, _ in out.values()):
-            gain = worth(case, terms, price, est, drivers) / target - 1 if target else None
-            out[name] = (price, c, gain)
-    return out
+    if health and target and worth(case, terms, health, est, drivers) >= target - 1e-6:
+        return (
+            health,
+            "our health price: worth more to it than its own sheet, so likely accepted, and our C is lowest there",
+        )
+    if not main:
+        return None, "no engine move to match"
+    level = worth(case, main, main["unit_price"], est, drivers)
+    plain = {k: v for k, v in est.items() if k != "extras"}
+    price = eco.price_for_value(case, terms, plain, level / (1 + protection(terms, drivers)))
+    if not price or price <= 0:
+        return None, "no positive price"
+    return round(price, 2), "worth to it what the engine's move is worth to it (the engine's level, on these terms)"
 
 
 def option_lines(neg, side, move, its_sheet, drivers):
     case, std, est = neg.case, side.standard, side.estimate()
     main = (move.get("sheets") or [None])[0] if move else None
-    engine_c = eco.cost(case, main, std, est) if main else None
     standing_terms = complete_offer(case, its_sheet) if its_sheet else None
     band = (side.dossier.full_cost_floor, side.dossier.full_cost) if side.dossier.full_cost else None
     rows = eco.menu(case, standing_terms, std, est, band=band) if standing_terms else []
@@ -378,40 +363,47 @@ def option_lines(neg, side, move, its_sheet, drivers):
         row = next((r for r in rows if all(r["terms"].get(k) == v for k, v in want.items() if k in r["terms"])), None)
         if row and row not in keep:
             keep.append(row)
+    target = worth(case, its_sheet, its_sheet["unit_price"], est, drivers) if its_sheet else None
     options, lines = {}, []
-    if main:
-        options["E0"] = {
-            "terms": {k: v for k, v in main.items() if k != "unit_price"},
-            "rungs": {"engine": main["unit_price"]},
-        }
-        lines.append(
-            f"E0 the rule engine's move (rules tuned on practice cases - a default, not a fact): {eur(main['unit_price'])}, {terms_text(case, main)} → our C {big(engine_c)}"
-            f" ({big(neg.c_open - engine_c)} below C_open)."
+
+    def describe(terms, price, how):
+        c = eco.cost_at(case, terms, price, std, est)
+        gain = worth(case, terms, price, est, drivers) / target - 1 if target else None
+        return c, f"{eur(price)} ({how}) → our C {big(c)}" + (
+            f", to it {gain * 100:+.1f} % vs its own sheet" if gain is not None else ""
         )
+
+    if main:
+        terms = {k: v for k, v in main.items() if k != "unit_price"}
+        options["E0"] = {"terms": terms, "price": main["unit_price"]}
+        _, txt = describe(terms, main["unit_price"], "the rule engine's move: rules tuned on practice cases, a default")
+        lines.append(f"E0 {terms_text(case, main)}: {txt}")
     for i, r in enumerate(keep, 1):
         terms = r["terms"]
-        rungs = _rungs(neg, side, terms, engine_c, r.get("health_price"), its_sheet, drivers)
-        if not rungs:
+        if main and all(main.get(k) == v for k, v in terms.items()):
+            continue  # the same terms as E0
+        price, how = code_price(neg, side, terms, main, its_sheet, drivers, r.get("health_price"))
+        if price is None:
             continue
+        c, txt = describe(terms, price, how)
+        if c >= neg.limit:
+            continue  # no better than C_open or the alternative
         oid = f"o{i}"
-        options[oid] = {"terms": terms, "rungs": {k: p for k, (p, _, _) in rungs.items()}}
+        options[oid] = {"terms": terms, "price": price}
         extra = ""
         if terms.get("index_clause"):
-            bd = cost_breakdown(case, {**terms, "unit_price": next(iter(rungs.values()))[0]}, std, est)
+            bd = cost_breakdown(case, {**terms, "unit_price": price}, std, est)
             extra = f"; the clause costs us {big(bd['index_clause'] + bd['index_risk'])} over the horizon"
-        if r.get("health_range"):
-            lo, hi = r["health_range"]
-            extra += f"; health price range {eur(lo)}-{eur(hi)} over its full-cost range"
-        rung_txt = " | ".join(
-            f"{k} {eur(p)} → our C {big(c)}" + (f", to it {g * 100:+.1f} % vs its own sheet" if g is not None else "")
-            for k, (p, c, g) in rungs.items()
-        )
-        lines.append(f"{oid} {terms_text(case, terms)}: {rung_txt}{extra}")
+        if r.get("health_price"):
+            lo, hi = r.get("health_range") or (None, None)
+            extra += f"; health price {eur(r['health_price'])}" + (
+                f" (range {eur(lo)}-{eur(hi)} over its full-cost range)" if lo else ""
+            )
+        lines.append(f"{oid} {terms_text(case, terms)}: {txt}{extra}")
     lines.append(
-        "(Every rung is worth at least as much to it as our last offer: no step back. step_N = our last price plus N % of the gap to"
-        " its level, on the terms we sent last. health = where our C is lowest on those terms. its_level = the price worth as much to it as its standing sheet: its cash value"
-        " plus, for a clause, the protection on the exposure it states [E]. 'to it' = how much more (+) or less (-) a sheet is worth to it"
-        " than its own standing sheet [E]; contract length or lead time it may value are not counted.)"
+        "(You choose the terms; code sets the price shown. 'to it' = how much more (+) or less (-) the sheet is worth to it than its"
+        " own standing sheet [E: its cash value plus, for a clause, the protection on the exposure it states; contract length or lead"
+        " time it may value are not counted]. health = the price where our C is lowest on those terms [A formula on E inputs].)"
     )
     return lines, options
 
@@ -430,15 +422,11 @@ def pace_lines(neg, side, events, options):
     lines = [
         f"[S] Its price on our terms so far: {' → '.join(eur(p) for p in prices)}; recent pace {eur(pace)} per reply. Messages we may still send: {left}."
     ]
-    if pace > 0:
-        for oid, opt in options.items():
-            if oid == "E0" or opt["terms"] != {k: v for k, v in side.mix.items() if k in opt["terms"]}:
-                continue
-            low = min(opt["rungs"].values())
-            if low < prices[-1]:
-                lines.append(
-                    f"[E] At that pace, reaching {eur(low)} on these terms ({oid}) takes about {(prices[-1] - low) / pace:.0f} replies."
-                )
+    e0 = options.get("E0")
+    if pace > 0 and e0 and e0["price"] < prices[-1]:
+        lines.append(
+            f"[E] At that pace, reaching our current proposal {eur(e0['price'])} takes about {(prices[-1] - e0['price']) / pace:.0f} replies."
+        )
     return lines
 
 
