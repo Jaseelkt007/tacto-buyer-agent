@@ -7,6 +7,7 @@ import { BoxesIcon, ChartIcon, CogIcon, ContractIcon, DatabaseIcon, FactoryIcon,
 
 // One entry per section of the site; add new pages here.
 const SECTIONS: { href: string; label: string; icon: ReactNode }[] = [
+  { href: "/intro", label: "Intro", icon: <HandshakeIcon width={20} height={20} /> },
   { href: "/", label: "Home", icon: <HomeIcon width={20} height={20} /> },
   { href: "/demo", label: "Case story", icon: <FileIcon width={20} height={20} /> },
   { href: "/live", label: "Demo", icon: <PulseIcon width={20} height={20} /> },
