@@ -116,14 +116,14 @@ export default function Home() {
                 href="/live"
                 className="tacto-primary inline-flex items-center gap-3 rounded-md px-5 py-3 text-[12px]"
               >
-                <PulseIcon width={16} height={16} /> Play the v1.9 negotiation{" "}
+                <PulseIcon width={16} height={16} /> Watch a practice negotiation{" "}
                 <span>→</span>
               </Link>
               <Link
-                href="/negotiations"
+                href="#final-savings"
                 className="text-[12px] text-[var(--ink-2)] hover:underline"
               >
-                Explore run history ↗
+                See final-wave savings ↓
               </Link>
             </div>
             <p className="mt-4 text-[11px] leading-6 text-[var(--ink-2)]">
@@ -157,7 +157,7 @@ export default function Home() {
             </p>
           </div>
         </header>
-        <section className="border-b border-[var(--line)] py-9" aria-labelledby="savings-heading">
+        <section id="final-savings" className="border-b border-[var(--line)] py-9" aria-labelledby="savings-heading">
           <p className="font-mono text-[10px] tracking-[0.1em] text-[var(--muted)]">THE FINAL RUN, IN EUROS</p>
           <h2 id="savings-heading" className="mt-3 text-[24px] font-medium tracking-tight">What did we save?</h2>
           <p className="mt-3 max-w-3xl text-[13px] leading-7 text-[var(--ink-2)]">
