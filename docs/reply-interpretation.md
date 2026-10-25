@@ -18,8 +18,8 @@ Both advisory stages are now enabled by default: `gpt-6.1-sol` interprets suppli
 
 ```python
 from arena_kit.agents.procudeal import ProcuDealAgent
-buyer = ProcuDealAgent(complete, package)  # interpreter enabled by default
-baseline = ProcuDealAgent(complete, package, interpret_replies=False)
+buyer = ProcuDealAgent(complete, package)  # both advisory stages enabled
+baseline = ProcuDealAgent(complete, package, interpret_replies=False, review_decisions=False)
 ```
 
 The negotiator initializes/restores its existing state, collects the current reading, then processes replies and runs its usual policy. No historical model calls are made during restore. The reading lives on the corresponding supplier side and is included in the decision trace with comparisons to the proposed sheet. A different counterproposal is reported as a difference, not a violation.

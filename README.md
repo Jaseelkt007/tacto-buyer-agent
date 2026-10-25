@@ -14,7 +14,7 @@
 # ProcuDeal
 
 Our buyer agent negotiates procurement contracts for Hollerau Pumpenwerke in the Tacto Negotiation
-Arena. The default pipeline combines the **v1.9 deterministic negotiation engine** with an
+Arena. The default pipeline combines the **v1.9 deterministic negotiation engine** with
 **two advisory LLM stages**, enabled for practice and final waves: a reply interpreter and the
 earlier decision reviewer with exchange feedback.
 

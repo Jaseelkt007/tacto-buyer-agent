@@ -1,5 +1,39 @@
 # Implementation
 
+## Current submission pipeline
+
+The default `procudeal` agent uses the v1.9 deterministic policy with two advisory LLM stages.
+Both run through the same agent factory in practice and final waves.
+
+1. The deterministic dossier reads supplier data, correspondence, quality records, and cost estimates, including the Sunday release.
+2. The `gpt-6.1-sol` reply interpreter reads the latest supplier reply and earlier exchanges. Code validates source references and exact quotations in its structured observations.
+3. The deterministic policy calculates costs and selects the action, terms, and claims. The writer assembles the email.
+4. The `gpt-6-luna` decision reviewer checks that proposed action against accumulated exchanges and asks for supporting evidence when it flags an issue.
+5. The original policy action is dispatched. Both model readings are recorded for inspection.
+
+Neither advisory stage changes binding offers or acceptance. Source validation establishes provenance;
+it does not prove an interpretation is correct. The older hybrid and reconsideration experiments remain off by default.
+
+The interpreter has an eight-second deadline per supplier read. The reviewer has an eight-second
+total deadline, shortened or skipped according to the remaining 45-second decision budget.
+Model failures leave the policy action in control. These limits do not guarantee delivery within
+the arena's 60-second thread deadline; network delivery and scheduling also take time.
+
+Disable both stages for the deterministic baseline with `PROCUDEAL_REPLY_INTERPRETATION=off`
+and `PROCUDEAL_DECISION_REVIEW=off`. Both default to `on` and use `OPENAI_API_KEY`.
+See the [README](../README.md) for setup and the final-run command, and the
+[interpretation contract](reply-interpretation.md) for validation boundaries.
+
+The [combined-model verification report](../evaluations/reply-interpretation/runs/dual-default-report-r01/report.md)
+records hosted P08/P18 and ten concurrent synthetic cases. It documents timing, unchanged hosted
+scores, and test coverage. No score improvement from the advisory stages is established.
+
+## Historical experiments and implementation reference
+
+The sections below retain development history and optional experiments. Statements about an
+experiment leaving the default unchanged describe that experiment at the time; the current defaults
+are specified above. The final two sections describe the default advisory stages in more detail.
+
 ## Experimental supplier-package reconsideration
 
 `--reconsider deterministic|decision` on the wave and benchmark CLIs installs an optional adapter
@@ -116,8 +150,9 @@ supplier bots and closes the deal with the lowest total cost C, or walks away.
 
 **Core rule: code owns every binding number.** Prices, term sheets, claims and the accept/walk
 decision are computed in Python from the case file, the data package and the supplier's messages.
-A language model may only write wording; nothing it writes binds. The engine decides a move in
-about 1 ms, so the 60-second rule is never at risk on our side.
+In the original engine, model-generated wording had no binding authority. Current advisory
+interpretation and review also have no binding authority, but add latency before dispatch.
+Use the combined-model verification report above for measured full decision time.
 
 This page describes **engine v1.7**. Every v1.7 behaviour change sits behind a feature flag (see
 "Feature flags"); with all flags off the engine behaves like v1.6c plus the bug fixes.
