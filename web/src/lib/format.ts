@@ -43,7 +43,7 @@ export const count = (v: number | null | undefined) => (v === null || v === unde
 
 export function listDate(iso: string) {
   const d = new Date(iso);
-  return d.toLocaleDateString("en-GB", { weekday: "short", day: "2-digit", month: "2-digit" });
+  return d.toLocaleDateString("en-GB", { weekday: "short", day: "2-digit", month: "2-digit", timeZone: "UTC" });
 }
 
 export function fullDate(iso: string) {
@@ -54,11 +54,13 @@ export function fullDate(iso: string) {
     year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
+    timeZone: "UTC",
+    timeZoneName: "short",
   });
 }
 
 export function monthGroup(iso: string) {
-  return new Date(iso).toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+  return new Date(iso).toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
 }
 
 export function initials(name: string) {
