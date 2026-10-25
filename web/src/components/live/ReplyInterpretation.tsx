@@ -19,12 +19,11 @@ export function ReplyInterpretationNode({
     >
       <span className="monitor-node-top">
         <span className="monitor-node-icon"><BotIcon /></span>
-        <span className="monitor-node-tag">ADVISORY LLM</span>
+        <span className="monitor-node-tag">{replyInterpreterNode.model}</span>
         <span className="monitor-node-plus">+</span>
       </span>
       <strong>{replyInterpreterNode.title}</strong>
       <span className="monitor-node-description">{replyInterpreterNode.description}</span>
-      <span className="monitor-model-name">{replyInterpreterNode.model}</span>
     </button>
   );
 }

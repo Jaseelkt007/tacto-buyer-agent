@@ -26,11 +26,15 @@ quotation history, repeated nonprice terms, and current draft differences from t
 message prefix. It rebuilds this ledger for each snapshot. Prior reviewer judgments and later
 supplier replies are not feedback inputs.
 
-The map aligns three columns of compact cards. The prepared response goes from writer to
-reviewer to supplier conversation. A separate bottom feedback lane shows supplier conversation
-to reply interpreter to decision engine. Earlier public exchanges also feed the reviewer through
-a shared outside rail. The return to the policy uses the gutter beside the engine cards; arrows
-do not cross card interiors. There is no reviewer-verdict-to-policy edge.
+The presentation map uses seven cards. Supplier dossier and case goals feed the policy; a
+five-step loop then shows policy, email writer, decision review, supplier reply and reply
+interpreter. The interpreter returns context to the policy. Earlier public exchanges also feed
+the reviewer along the outside of the loop. There is no reviewer-verdict-to-policy edge.
+
+Detailed records, argument construction and package economics remain in the saved activity log
+and inspector. Their replay events highlight the dossier or policy card instead of adding boxes.
+The final agreement appears in a result strip below the loop. Benchmark details are collapsed
+by default so the negotiation story remains the focus.
 
 On narrow screens, the diagram stacks vertically and retains explicit feedback captions instead
 of drawing long arrows across the page. Clicking either model pauses replay and opens its own
@@ -95,8 +99,8 @@ The architecture map does not depict that adapter as an active buyer-policy loop
 - `src/components/live/ReviewExtension.tsx` owns the reviewer card and independent example selection.
 - `src/components/live/ReplyInterpretation.tsx` owns the reply-interpreter card and its inspector.
 - `RunMonitor.tsx` owns replay controls and the selected inspector pane.
-- `EngineConnections.tsx` measures all ten map nodes and routes eleven directed connections.
+- `EngineConnections.tsx` measures the seven cards and routes eight directed connections.
 
-The model cards share the compact sizing of the engine cards. The feedback lane separates the
-return path from the outgoing response, while the inspector carries the detailed explanation.
+The model cards share the compact sizing of the engine cards. Outgoing responses and returning
+replies occupy opposite rows of one loop, while the inspector carries the detailed explanation.
 The replay event union remains unchanged: display nodes do not imply recorded buyer stages.

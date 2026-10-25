@@ -28,6 +28,7 @@ import {
   SendIcon,
 } from "@/components/icons";
 import { EngineConnections } from "./EngineConnections";
+import { dealStage, type DealStage } from "@/lib/architecture";
 import { ReviewInspector, ReviewNode } from "./ReviewExtension";
 import { ReplyInterpretationInspector, ReplyInterpretationNode } from "./ReplyInterpretation";
 import "./monitor.css";
@@ -37,15 +38,15 @@ const STAGES: Record<
   { title: string; text: string; tag: string; icon: ReactNode }
 > = {
   records: {
-    title: "Company records",
-    text: "Case file, quotes, contracts and market data.",
-    tag: "SOURCE DATA",
+    title: "Case & goals",
+    text: "Targets, must-haves and room to negotiate.",
+    tag: "BUYING BRIEF",
     icon: <DatabaseIcon />,
   },
   dossier: {
     title: "Supplier dossier",
-    text: "Read the facts. Identify cash and capacity signals.",
-    tag: "SQL + PATTERNS",
+    text: "Each supplier’s costs, history and supporting evidence.",
+    tag: "SUPPLIER CONTEXT",
     icon: <FileIcon />,
   },
   claims: {
@@ -61,21 +62,21 @@ const STAGES: Record<
     icon: <ChartIcon />,
   },
   policy: {
-    title: "Decision engine",
-    text: "Set the next offer. Accept, counter or walk away.",
-    tag: "PYTHON POLICY",
+    title: "Decision policy",
+    text: "Price the options. Accept, counter or walk away.",
+    tag: "CODE-OWNED TERMS",
     icon: <ScaleIcon />,
   },
   writer: {
-    title: "Email template",
-    text: "Put code-owned prices and arguments into words.",
-    tag: "FIXED TEMPLATE",
+    title: "Email writer",
+    text: "Turn the selected terms and evidence into an email.",
+    tag: "PREPARED RESPONSE",
     icon: <SendIcon />,
   },
   supplier: {
-    title: "Supplier conversation",
-    text: "Send the offer. Read the reply. Negotiate again.",
-    tag: "TACTO ARENA",
+    title: "Supplier reply",
+    text: "Send the reviewed email. Receive the next offer.",
+    tag: "EMAIL FEEDBACK",
     icon: <InboxIcon />,
   },
   outcome: {
@@ -411,7 +412,7 @@ export function RunMonitor({
     (event) => event.kind === selectedStage,
   );
   const activeStage =
-    current && contextEvents.includes(current) ? current.kind : undefined;
+    current && contextEvents.includes(current) ? dealStage[current.kind] : undefined;
   const winner = session.dossiers.find(
     (d) => d.supplier_id === session.result.supplier_id,
   );
@@ -521,9 +522,9 @@ export function RunMonitor({
     }
   }
 
-  function nodeValue(stage: Stage) {
-    const event = contextEvents.findLast((e) => e.kind === stage);
-    if (!event) return "Waiting for playback";
+  function nodeValue(stage: DealStage) {
+    const event = contextEvents.findLast((e) => dealStage[e.kind] === stage);
+    if (!event) return null;
     switch (event.kind) {
       case "records":
         return `${session.negotiable.length} negotiable terms`;
@@ -552,10 +553,11 @@ export function RunMonitor({
     }
   }
 
-  function card(stage: Stage) {
+  function card(stage: DealStage) {
     const info = STAGES[stage];
-    const done = contextEvents.some((e) => e.kind === stage);
+    const done = contextEvents.some((e) => dealStage[e.kind] === stage);
     const active = activeStage === stage;
+    const value = nodeValue(stage);
     return (
       <button
         type="button"
@@ -572,10 +574,12 @@ export function RunMonitor({
         </span>
         <strong>{info.title}</strong>
         <span className="monitor-node-description">{info.text}</span>
-        <span className="monitor-node-value">
-          <i />
-          {nodeValue(stage)}
-        </span>
+        {value && (
+          <span className="monitor-node-value">
+            <i />
+            {value}
+          </span>
+        )}
       </button>
     );
   }
@@ -590,10 +594,10 @@ export function RunMonitor({
               ENGINE v1.9
             </p>
             <h1>
-              Every move. <span>A reason.</span>
+              How a deal <span>gets made.</span>
             </h1>
             <p>
-              The current architecture, alongside a recorded v1.9 negotiation.
+              Know the supplier. Choose the move. Learn from every reply.
             </p>
           </div>
           <div className="monitor-header-actions">
@@ -611,7 +615,14 @@ export function RunMonitor({
             </button>
           </div>
         </header>
-        <section
+        <details className="monitor-benchmark-details">
+          <summary>
+            <span>Recorded v1.9 benchmark</span>
+            <strong>{benchmark.mean.toFixed(2)} mean</strong>
+            <span>{benchmark.deals}/{benchmark.cases} valid deals</span>
+            <span className="monitor-benchmark-toggle">View details</span>
+          </summary>
+          <section
           className="monitor-benchmark"
           aria-label="v1.9 ten-case benchmark"
         >
@@ -639,6 +650,7 @@ export function RunMonitor({
             Explore run history <span>↗</span>
           </Link>
         </section>
+        </details>
         <div className="monitor-casebar">
           <div className="monitor-case-pick">
             <label htmlFor="monitor-case">PLAY A CASE</label>
@@ -697,7 +709,7 @@ export function RunMonitor({
             <div className="monitor-board-toolbar">
               <div className="monitor-tabs" aria-label="Replay views">
                 {[
-                  { id: "map", name: "Engine map" },
+                  { id: "map", name: "Deal flow" },
                   { id: "log", name: "Activity log" },
                 ].map((tab) => (
                   <button
@@ -720,83 +732,54 @@ export function RunMonitor({
               <div className="monitor-canvas">
                 <div className="monitor-runner">
                   <span>
-                    <span className="monitor-diamond" /> Current buyer pipeline
+                    <span className="monitor-diamond" /> From supplier context to an agreed deal
                   </span>
                   <small>
-                    Read the reply <b> / </b> Price the options <b> / </b>{" "}
-                    Choose the move
+                    Two LLMs <b> / </b> One negotiation loop
                   </small>
                   <code>v1.9 + advisory LLMs</code>
                 </div>
-                <div className="monitor-lanes" ref={lanes}>
+                <div className="monitor-deal-flow" ref={lanes}>
                   <EngineConnections
                     containerRef={lanes}
                     active={activeStage}
                   />
-                  <div className="monitor-lane">
-                    <header>
-                      <span>01</span>
-                      <div>
-                        <h2>Build the context</h2>
-                        <p>Facts and estimates from our data</p>
-                      </div>
-                    </header>
-                    {card("records")}
-                    {card("dossier")}
-                    {card("claims")}
+                  {card("dossier")}
+                  {card("records")}
+                  <div className="monitor-context-caption">
+                    <span className="monitor-eyebrow">01 / THE STARTING POINT</span>
+                    <p>Know who we’re buying from and what this deal needs.</p>
                   </div>
-                  <div className="monitor-lane monitor-engine-lane">
-                    <header>
-                      <span>02</span>
-                      <div>
-                        <h2>Make the move</h2>
-                        <p>Code owns every binding number</p>
-                      </div>
-                    </header>
-                    {card("economics")}
-                    {card("policy")}
-                    {card("writer")}
-                  </div>
-                  <div className="monitor-lane monitor-external-lane">
-                    <header>
-                      <span>03</span>
-                      <div>
-                        <h2>Review & exchange</h2>
-                        <p>Check, dispatch and record</p>
-                      </div>
-                    </header>
+                  {card("policy")}
+                  {card("writer")}
                     <ReviewNode
                       inspected={panel === "review"}
                       onInspect={inspectReviewer}
                     />
-                    {card("supplier")}
-                    {card("outcome")}
+                  {card("supplier")}
+                  <div className="monitor-loop-caption" aria-label="Negotiation feedback loop">
+                    <strong>Every reply closes the loop</strong>
+                    <span>Supplier email → interpreter → next decision</span>
+                    <small>Exchange history also feeds the decision review.</small>
                   </div>
-                  <div className="monitor-feedback-lane" aria-label="Supplier feedback loop">
-                    <header>
-                      <span aria-hidden="true">↶</span>
-                      <div>
-                        <h2>Negotiation feedback</h2>
-                        <p>Supplier reply → LLM → decision engine</p>
-                        <small>Validated context for the next round</small>
-                      </div>
-                    </header>
-                    <ReplyInterpretationNode
+                  <ReplyInterpretationNode
                       inspected={panel === "feedback"}
                       onInspect={() => inspectModel("feedback")}
-                    />
-                    <p className="monitor-feedback-source">
-                      Supplier replies + earlier public exchanges
-                      <span>History also feeds the decision reviewer.</span>
-                    </p>
+                  />
+                </div>
+                <div className={`monitor-deal-result ${complete ? "is-complete" : ""}`}>
+                  <span aria-hidden="true">{complete ? "✓" : "↻"}</span>
+                  <div>
+                    <strong>{complete ? "Deal agreed" : "Negotiate until the deal works"}</strong>
+                    <p>{complete ? `${money(session.result.unit_price)} / unit · ${session.result.score.toFixed(2)} / 100 · all must-haves passed` : "The policy chooses when to counter, accept or walk away."}</p>
                   </div>
+                  {complete && <Link href={`/negotiations/${session.id}/anatomy`}>See the deal ↗</Link>}
                 </div>
                 <div className="monitor-trust-note">
                   <span>✓</span>
                   <p>
-                    <strong>Current architecture, original v1.9 replay.</strong>{" "}
-                    Both LLMs are advisory. This saved suite used neither model;
-                    code chose every move and its scores are unchanged.
+                    Both LLMs advise; code owns the terms. The recorded v1.9 replay
+                    predates these two LLM stages.
                   </p>
                 </div>
                 <div className="monitor-map-legend">

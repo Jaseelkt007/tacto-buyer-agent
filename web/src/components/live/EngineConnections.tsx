@@ -18,44 +18,44 @@ type Layout = { width: number; height: number; nodes: Map<MapNode, Box> };
 type Connection = {
   from: MapNode;
   to: MapNode;
-  direction: "down" | "across" | "history" | "reply" | "return";
+  direction: "down" | "across" | "context" | "history" | "reply" | "up";
   kind: "policy" | "advisory" | "feedback";
 };
 
 const STAGES: MapNode[] = [
   "records",
   "dossier",
-  "claims",
-  "economics",
   "policy",
   "writer",
   "supplier",
-  "outcome",
   REVIEWER_NODE,
   INTERPRETER_NODE,
 ];
 const CONNECTIONS: Connection[] = [
-  { from: "records", to: "dossier", direction: "down", kind: "policy" },
-  { from: "dossier", to: "claims", direction: "down", kind: "policy" },
-  { from: "claims", to: "economics", direction: "across", kind: "policy" },
-  { from: "economics", to: "policy", direction: "down", kind: "policy" },
-  { from: "policy", to: "writer", direction: "down", kind: "policy" },
+  { from: "dossier", to: "policy", direction: "down", kind: "policy" },
+  { from: "records", to: "policy", direction: "context", kind: "policy" },
+  { from: "policy", to: "writer", direction: "across", kind: "policy" },
   { from: "writer", to: REVIEWER_NODE, direction: "across", kind: "advisory" },
   { from: REVIEWER_NODE, to: "supplier", direction: "down", kind: "advisory" },
-  { from: "supplier", to: "outcome", direction: "down", kind: "policy" },
   { from: "supplier", to: REVIEWER_NODE, direction: "history", kind: "feedback" },
   { from: "supplier", to: INTERPRETER_NODE, direction: "reply", kind: "feedback" },
-  { from: INTERPRETER_NODE, to: "policy", direction: "return", kind: "feedback" },
+  { from: INTERPRETER_NODE, to: "policy", direction: "up", kind: "feedback" },
 ];
 
 function pathFor(from: Box, to: Box, connection: Connection) {
-  if (connection.direction === "history" || connection.direction === "reply") {
+  if (connection.direction === "history") {
     const outside = Math.max(from.right, to.right) + 12;
     return `M ${from.right + 2} ${from.y} H ${outside} V ${to.y} H ${to.right + 4}`;
   }
-  if (connection.direction === "return") {
-    const rail = to.left - 8;
-    return `M ${from.left - 2} ${from.y} H ${rail} V ${to.y} H ${to.left - 4}`;
+  if (connection.direction === "reply") {
+    return `M ${from.left - 2} ${from.y} H ${to.right + 5}`;
+  }
+  if (connection.direction === "up") {
+    return `M ${from.x} ${from.top - 2} V ${to.bottom + 5}`;
+  }
+  if (connection.direction === "context") {
+    const middle = (from.bottom + to.top) / 2;
+    return `M ${from.x} ${from.bottom + 2} V ${middle} H ${to.x} V ${to.top - 5}`;
   }
   if (connection.direction === "down") {
     const middle = (from.bottom + to.top) / 2;

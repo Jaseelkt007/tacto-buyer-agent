@@ -7,10 +7,9 @@ export type ReviewExample = (typeof snapshot.examples)[ReviewExampleId];
 
 export const reviewerNode = {
   id: REVIEWER_NODE,
-  title: "Decision review model",
-  tag: "ADVISORY LLM",
+  title: "LLM decision review",
   description:
-    "Check the prepared response against earlier exchanges.",
+    "Review the proposed move against the exchange history.",
 };
 
 export const reviewExamples: { id: ReviewExampleId; label: string }[] = [

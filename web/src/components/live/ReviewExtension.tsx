@@ -29,14 +29,13 @@ export function ReviewNode({
           <span className="monitor-node-icon">
             <ScaleIcon />
           </span>
-          <span className="monitor-node-tag">{reviewerNode.tag}</span>
+          <span className="monitor-node-tag">{reviewer.model}</span>
           <span className="monitor-node-plus">+</span>
         </span>
         <strong>{reviewerNode.title}</strong>
         <span className="monitor-node-description">
           {reviewerNode.description}
         </span>
-        <span className="monitor-model-name">{reviewer.model}</span>
       </button>
   );
 }
