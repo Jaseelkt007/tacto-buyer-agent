@@ -1,0 +1,64 @@
+.page { height: 100%; overflow-y: auto; background: #f8f7f4; color: #222320; }
+.canvas { max-width: 1400px; margin: 0 auto; padding: 30px clamp(24px, 5vw, 76px) 22px; }
+.masthead { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.wordmark { font-size: 26px; font-weight: 650; letter-spacing: -1.2px; }
+.wordmark > span { color: #dc4c0a; }
+.edition, .eyebrow, .resultTop, .journeyLabel { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; }
+.edition { color: #6b6b64; text-align: right; }
+.edition > span { margin: 0 12px; color: #b0afa8; }
+.hero { display: grid; grid-template-columns: 1.12fr 1fr; align-items: center; gap: clamp(28px, 5vw, 76px); padding: clamp(40px, 7vh, 84px) 0 44px; }
+.eyebrow { display: flex; align-items: center; gap: 9px; color: #65665e; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: #dc4c0a; }
+.intro h1 { margin: 25px 0 20px; font-size: clamp(48px, 5.6vw, 82px); line-height: 1.03; font-weight: 500; letter-spacing: -.065em; }
+.intro h1 > span { color: #797b70; }
+.subtitle { max-width: 310px; color: #66685f; font-size: 16px; line-height: 1.65; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 30px; font-size: 13px; }
+.primary { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; background: #24251f; color: #fff; padding: 17px 22px; border-radius: 8px; transition: background .15s; }
+.primary:hover { background: #45473c; }
+.primary > span { font-size: 19px; }
+.secondary { color: #55584d; padding: 10px 0; }
+.secondary:hover { text-decoration: underline; text-underline-offset: 5px; }
+.result { background: #ff711f; border-radius: 22px; padding: clamp(25px, 3vw, 40px); box-shadow: 0 16px 36px -24px #b14b1460; }
+.resultTop { display: flex; justify-content: space-between; align-items: center; }
+.resultTop > span:last-child { font-size: 25px; }
+.amount { margin: 25px 0 0; font-size: clamp(60px, 6.3vw, 94px); line-height: 1.08; font-weight: 500; letter-spacing: -.07em; }
+.result h2 { font-size: 14px; font-weight: 400; margin: 7px 0 30px; }
+.comparison { border-top: 1px solid #502b1833; padding-top: 18px; }
+.barLabel { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 9px; font-size: 12px; }
+.barLabel strong { font-weight: 500; font-variant-numeric: tabular-nums; }
+.track { height: 9px; margin-bottom: 17px; border-radius: 3px; overflow: hidden; background: #7c320c18; }
+.openingBar { width: 100%; height: 100%; background: #ffe0c7; }
+.agreedBar { height: 100%; background: #25261f; border-radius: 0 3px 3px 0; }
+.resultNote { font-size: 10px; color: #4f301e; margin-top: 20px; }
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); padding: 28px 0 32px; border-top: 1px solid #ddddd4; border-bottom: 1px solid #ddddd4; }
+.metrics > div { padding-left: 32px; border-left: 1px solid #ddddd4; }
+.metrics > div:first-child { padding-left: 0; border-left: 0; }
+.metrics strong { font-size: clamp(30px, 3.4vw, 46px); line-height: 1.1; font-weight: 450; letter-spacing: -.05em; }
+.metrics strong > span { font-size: .58em; color: #828579; letter-spacing: -.02em; }
+.metrics p { font-size: 12px; color: #6b6e62; margin-top: 9px; }
+.journey { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 30px 0; }
+.journeyLabel { color: #77796e; font-size: 9px; }
+.journey ol { list-style: none; display: flex; flex-wrap: wrap; gap: 28px; margin: 0; padding: 0; }
+.journey li { font-size: 12px; }
+.journey li > span { font-family: var(--mono); color: #b14b16; font-size: 10px; margin-right: 9px; }
+.details { border: 1px solid #ddddd4; border-radius: 10px; background: #ffffff60; }
+.details summary { display: flex; align-items: center; gap: 20px; padding: 18px 20px; cursor: pointer; list-style: none; font-size: 12px; }
+.details summary::-webkit-details-marker { display: none; }
+.detailsHint { color: #76796e; font-size: 11px; }
+.plus { margin-left: auto; font-size: 20px; line-height: 1; }
+.details[open] .plus { transform: rotate(45deg); }
+.detailBody { padding: 0 20px 24px; }
+.equation { padding: 20px 0; border-top: 1px solid #ddddd4; font-size: 15px; line-height: 1.8; font-variant-numeric: tabular-nums; }
+.equation strong { color: #93400c; font-weight: 500; }
+.waves { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px; }
+.wave > div:first-child { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 11px; margin-bottom: 8px; }
+.wave strong { font-weight: 500; font-variant-numeric: tabular-nums; }
+.waveTrack { height: 5px; background: #e9e7de; border-radius: 3px; overflow: hidden; }
+.waveTrack > div { height: 100%; background: #e56727; border-radius: 3px; }
+.method { max-width: 850px; font-size: 11px; line-height: 1.8; color: #6c6f63; margin-top: 24px; }
+.footer { display: flex; justify-content: space-between; gap: 24px; padding-top: 20px; font-size: 10px; line-height: 1.7; color: #73766b; }
+.footer > span:last-child { text-align: right; max-width: 460px; }
+@media (min-width: 1500px) { .canvas { padding-top: 42px; } .hero { padding-top: 80px; padding-bottom: 60px; } }
+@media (max-width: 1100px) { .journey { align-items: flex-start; flex-direction: column; gap: 16px; } .hero { gap: 28px; } }
+@media (max-width: 760px) { .canvas { padding: 24px 22px; } .hero { grid-template-columns: 1fr; padding-top: 42px; gap: 34px; } .intro h1 { font-size: clamp(48px, 10vw, 72px); } .subtitle { max-width: none; } .result { padding: 28px; } .amount { font-size: 76px; } .metrics > div { padding-left: 18px; } .metrics p { font-size: 10px; line-height: 1.5; max-width: 110px; } .journey ol { flex-direction: column; gap: 14px; } .waves { grid-template-columns: 1fr; } .footer { flex-direction: column; gap: 6px; } .footer > span:last-child { text-align: left; } .edition { font-size: 8px; max-width: 145px; line-height: 1.8; } .edition > span { margin: 0 4px; } }
+@media (max-width: 380px) { .amount { font-size: 64px; } .detailsHint { display: none; } .metrics > div { padding-left: 12px; } .metrics strong { font-size: 29px; } }
