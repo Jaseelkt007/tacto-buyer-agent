@@ -9,7 +9,7 @@ export const reviewerNode = {
   id: REVIEWER_NODE,
   title: "LLM decision review",
   description:
-    "Review the proposed move against the exchange history.",
+    "Check the prepared response for overlooked conditions or conflicts.",
 };
 
 export const reviewExamples: { id: ReviewExampleId; label: string }[] = [

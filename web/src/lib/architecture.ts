@@ -20,5 +20,18 @@ export const replyInterpreterNode = {
   id: INTERPRETER_NODE,
   title: "LLM reply interpreter",
   model: "gpt-6.1-sol",
-  description: "Read the reply. Return validated context to the policy.",
+  description: "Extract supplier conditions and preferences, backed by exact quotes.",
 };
+
+export const feedbackRoutes = [
+  {
+    title: "Reply interpreter",
+    path: "Supplier reply → Reply interpreter → Decision policy",
+    description: "Extracts supplier conditions and preferences, backed by exact quotes, to inform the decision policy.",
+  },
+  {
+    title: "Decision reviewer",
+    path: "Supplier conversation → Decision reviewer ← Prepared response",
+    description: "Checks the prepared response for overlooked conditions or conflicts and flags supported concerns without changing the offer.",
+  },
+];

@@ -190,12 +190,22 @@ export function EngineConnections({
                   : "#b5bdc5"
             }
             strokeDasharray={connection.kind === "feedback" ? "4 4" : undefined}
-            strokeOpacity={connection.kind === "feedback" ? 0.65 : 1}
-            strokeWidth={highlighted ? 2.5 : active === connection.to ? 1.5 : 1.15}
+            strokeOpacity={1}
+            strokeWidth={highlighted ? 2.5 : connection.kind === "feedback" ? 1.8 : active === connection.to ? 1.5 : 1.15}
             strokeLinejoin="round"
             strokeLinecap="round"
             markerEnd={`url(#${markerId})`}
-          />
+          >
+            {connection.from === "supplier" && connection.to === REVIEWER_NODE && (
+              <title>Supplier conversation → Decision reviewer: check the prepared response for overlooked conditions or conflicts without changing the offer.</title>
+            )}
+            {connection.from === "supplier" && connection.to === INTERPRETER_NODE && (
+              <title>Supplier reply → Reply interpreter: extract conditions and preferences backed by exact quotes.</title>
+            )}
+            {connection.from === INTERPRETER_NODE && connection.to === "policy" && (
+              <title>Reply interpreter → Decision policy: return quoted supplier conditions and preferences.</title>
+            )}
+          </path>
         );
       })}
     </svg>

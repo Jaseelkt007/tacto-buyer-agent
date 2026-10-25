@@ -28,7 +28,7 @@ import {
   SendIcon,
 } from "@/components/icons";
 import { EngineConnections } from "./EngineConnections";
-import { dealStage, type DealStage } from "@/lib/architecture";
+import { dealStage, feedbackRoutes, type DealStage } from "@/lib/architecture";
 import { ReviewInspector, ReviewNode } from "./ReviewExtension";
 import { ReplyInterpretationInspector, ReplyInterpretationNode } from "./ReplyInterpretation";
 import "./monitor.css";
@@ -767,15 +767,24 @@ export function RunMonitor({
                     />
                   {card("supplier")}
                   <div className="monitor-loop-caption" aria-label="Negotiation feedback loop">
-                    <strong>Every reply closes the loop</strong>
-                    <span>Supplier email → interpreter → next decision</span>
-                    <small>Exchange history also feeds the decision review.</small>
+                    <strong>Supplier feedback feeds both LLMs</strong>
+                    <span>Reply interpreter → decision policy</span>
+                    <small>Decision reviewer → supported concerns</small>
                   </div>
                   <ReplyInterpretationNode
                       inspected={panel === "feedback"}
                       onInspect={() => inspectModel("feedback")}
                   />
                 </div>
+                <section className="monitor-feedback-routes" aria-label="Two supplier feedback paths">
+                  {feedbackRoutes.map((route) => (
+                    <div key={route.title}>
+                      <h3>{route.title}</h3>
+                      <span>{route.path}</span>
+                      <p>{route.description}</p>
+                    </div>
+                  ))}
+                </section>
                 <div className={`monitor-deal-result ${complete ? "is-complete" : ""}`}>
                   <span aria-hidden="true">{complete ? "✓" : "↻"}</span>
                   <div>
