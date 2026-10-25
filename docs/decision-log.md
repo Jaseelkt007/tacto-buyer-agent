@@ -339,6 +339,33 @@ Trade-off noted: in P01 the old per-offer cap happened to be closer to the true 
 Sandbox with the flags on (`PROCUDEAL_ON=quote_cap,measured_rate,health_refresh`): D01 0.883, D02 0.534,
 identical to v1.7c. Hosted: not run.
 
+## v2.1 test: ask for the cost breakdown (flag `ask_breakdown`, off)
+**Why:**
+- The brief says "a cost breakdown XLSX (ask; an open supplier sends one)"; none of our e-mails asked.
+- The hope was the supplier's own full cost, our most sensitive input.
+
+**Test (sandbox, free):**
+- The first e-mail gets the brief's own sentence: "Could you send us a cost breakdown for this part?"
+- The trace now keeps any breakdown a supplier sends.
+
+**Result:**
+- **D02 (DEMO-J1) sent one:**
+
+  | element | € per unit |
+  |---|---|
+  | material BAR-14021 | 5.56 |
+  | WAGES-METAL | 4.39 |
+  | conversion | 2.81 |
+  | **overhead and profit** (one line) | 3.44 |
+  | unit price | 16.20 |
+
+  Overhead and profit are lumped, so the sheet gives neither its full cost nor its margin, only a
+  lower bound (direct cost 79 % of the price) and the material share, which quotes already state.
+- **D01 (DEMO-F1)** sent nothing.
+- **Asking changed the outcomes:** D01 0.883 → 0.856, D02 0.534 → 0.524. The bots read our wording.
+
+**Decision:** the flag stays off; the trace capture stays.
+
 ## v1.9 (default): protection trade, plus the v1.8 fixes switched on
 **Why:**
 - The two hosted hybrid sets (72.3, 71.6) kept one robust result: P02 0.734, 3 of 3 runs. It comes

@@ -23,6 +23,8 @@ def offer_email(case, events, move, side):
         lines.append("Thank you for your reply and for the step you have taken.")
     if move.get("paragraph"):  # case_plan / tactician_text: model words for this sheet, no figures
         lines.append(move["paragraph"])
+    if first and move.get("ask_breakdown"):  # ask_breakdown: its cost elements, if it is open enough
+        lines.append("Could you send us a cost breakdown for this part?")
     if move.get("answers"):
         lines += move["answers"]
     if move["claims"]:

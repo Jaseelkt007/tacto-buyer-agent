@@ -130,6 +130,15 @@ class ProcuDealAgent:
             "source": source,
             **why,
         }
+        docs = [
+            {"name": a.get("name"), "text": (a.get("text") or "")[:4000]}
+            for m in events
+            if m.get("from") != "buyer"
+            for a in m.get("attachments") or []
+            if "breakdown" in (a.get("name") or "").lower()
+        ]
+        if docs and not any(e.get("breakdown") for e in self.trace if e.get("supplier_id") == sid):
+            entry["breakdown"] = docs  # its cost breakdown, once per thread, for analysis
         if not self.trace:  # every run file shows which v1.7 features were switched off, and the plan
             entry["features_off"] = flags_off()
             entry["plan"] = bool(self.negotiator and self.negotiator.plan)

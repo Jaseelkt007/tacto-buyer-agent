@@ -215,3 +215,5 @@ One row per benchmark run (`scripts/bench.py`). Newest at the bottom.
 | 10-25 03:26 | case:P10 | procudeal | 44dbff9 | True | 0.679 | 1,932,492 | 1,522,963 | 1,328,927 | 3 | 3 | [replay](https://arena.tacto.ai/replay/8c124efceeeeb1ff) | engine v1.9 (defaults) |
 | 10-25 03:27 | case:P11 | procudeal | 44dbff9 | True | 0.710 | 817,578 | 750,082 | 722,500 | 8 | 4 | [replay](https://arena.tacto.ai/replay/b5c13c51671453e1) | engine v1.9 (defaults) |
 | 10-25 03:27 | case:P18 | procudeal | 44dbff9 | True | 0.632 | 295,173 | 249,355 | 222,651 | 5 | 3 | [replay](https://arena.tacto.ai/replay/2853898063c8dbe5) | engine v1.9 (defaults) |
+| 10-25 03:32 | case:D01 | procudeal | 8a53534-dirty | True | 0.856 | 448,811 | 414,400 | 408,624 | 6 | 71 | [replay](https://arena.tacto.ai/replay/0179664cc8a01cc7) | v1.9 + ask_breakdown (sandbox, capture) |
+| 10-25 03:34 | case:D02 | procudeal | 8a53534-dirty | True | 0.524 | 214,296 | 184,144 | 156,739 | 11 | 166 | [replay](https://arena.tacto.ai/replay/f5f3b52d238207cf) | v1.9 + ask_breakdown (sandbox, capture) |

@@ -51,6 +51,7 @@ FEATURES = {
     "measured_rate": True,  # v1.8: its cost of money from its own sheets that differ only in payment days
     "health_refresh": True,  # v1.8: health price and ceiling recomputed whenever the estimate changes
     "protection_trade": True,  # v1.9: clause at our health price when the supplier gains by it (relationship goals)
+    "ask_breakdown": False,  # v2.1: the first e-mail asks for its cost breakdown (brief: an open supplier sends one)
     "tactician": False,  # v2.0 hybrid: one model call per move picks among code-priced options (single supplier)
     "tactician_text": False,  # v2.0 hybrid: the tactician's figure-free paragraph goes into the e-mail
 }
@@ -952,6 +953,7 @@ class Negotiator:
             "claims": claims,
             "trade": trade["why"] if trade else None,
             "paragraph": side.paragraph if first else "",
+            "ask_breakdown": first and on("ask_breakdown"),
             # single_sheet: "open to faster payment, as shown" only when a sheet shows it
             "cash_line": not on("single_sheet")
             or any((s.get("payment_days") or 999) < (side.reference.get("payment_days") or 0) for s in sheets),
