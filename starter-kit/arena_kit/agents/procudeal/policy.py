@@ -50,6 +50,7 @@ FEATURES = {
     "quote_cap": False,  # v1.8: the opening quote caps the full cost; later prices do not
     "measured_rate": False,  # v1.8: its cost of money from its own sheets that differ only in payment days
     "health_refresh": False,  # v1.8: health price and ceiling recomputed whenever the estimate changes
+    "hedge_aware": False,  # O: its own letter says its material is hedged: cite that, not index falls (P08)
     "stated_limit": True,  # N: a limit it states in an open reply is ready like a final offer (P02: it walked)
 }
 
@@ -284,6 +285,11 @@ class Negotiator:
             side.bank = [c for c in side.bank if c.kind not in cl.SCHEDULE_KINDS]
         if not on("call_note_lever"):  # a note cited without data drew requests for proof (v1.7c)
             side.bank = [c for c in side.bank if c.kind != "call_note"]
+        if not on("hedge_aware"):
+            side.bank = [c for c in side.bank if c.kind != "hedge"]
+        else:  # a fall on the hedged material would meet "not our reality"; other series stay
+            for hedge in [c for c in side.bank if c.kind == "hedge"]:
+                side.bank = [c for c in side.bank if not cl.hedged_index(c, hedge)]
         if sp:
             side.bank = plan_bank(side.bank, sp)
             side.paragraph = (sp.get("opening_paragraph") or "") if on("plan_paragraph") else ""

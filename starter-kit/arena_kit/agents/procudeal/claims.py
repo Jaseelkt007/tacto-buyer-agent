@@ -5,6 +5,7 @@ so a claim is never contradicted. The arena checks at most three per message; on
 """
 
 import logging
+import re
 import threading
 from dataclasses import dataclass, field
 
@@ -18,6 +19,9 @@ ORDER_LINES = 3  # order history: the most recent lines of this part from this s
 NOTE_KINDS = ("call_note", "meeting_note")
 SCHEDULE_KINDS = {"order_history", "call_note"}  # levers added with the v1.7 lever schedule
 _MONTHS, _MONTHS_LOCK = {}, threading.Lock()
+# Its own letter: "our nickel and alloys requirement is covered at fixed prices until March 2027."
+HEDGE_LETTER = re.compile(r"our ([\w ,-]{1,60}?) requirement is covered at fixed prices until (\w+ \d{4})", re.I)
+MONTHS = ("january february march april may june july august september october november december").split()
 
 
 @dataclass
@@ -38,7 +42,7 @@ def build_bank(case, dossier, package, our_price_ref=None):
     if package is None or package.db is None:
         return []
     bank = []
-    for make in (_notice, _index_falls, _should_cost, _scorecard, _forecast, _order_history, _call_note):
+    for make in (_notice, _hedge_letter, _index_falls, _should_cost, _scorecard, _forecast, _order_history, _call_note):
         try:
             bank += make(case, dossier, package, our_price_ref)
         except Exception:  # a broken claim must never cost the case
@@ -201,6 +205,42 @@ def _scorecard(case, d, package, _):
         text = f"Your rolling scorecard shows on-time delivery of {sc['otd_pct']:.1f}% ({ref})."
         return [Claim("delivery_record", text, [ref], 4, {"otd_pct": sc["otd_pct"]})]
     return []
+
+
+def _hedge_letter(case, d, package, _):
+    """Its own letter says its material is covered at fixed prices beyond the data month: the index
+    rises in its quote do not reach its cost before then. The letter's date is the checked figure;
+    the end of the cover sits in its own sentence without an ID."""
+    rows = query(
+        package,
+        "SELECT id, date FROM documents WHERE supplier_id = ? AND kind = 'letter' ORDER BY date DESC, id DESC",
+        (d.supplier_id,),
+    )
+    for row in rows:
+        try:
+            found = HEDGE_LETTER.search(" ".join(document(package, row["id"]).split()))
+        except (FileNotFoundError, ValueError, UnicodeDecodeError):
+            continue
+        if not found:
+            continue
+        material, until = found.group(1).strip(), found.group(2)
+        month, year = until.split()
+        if month.lower() not in MONTHS or f"{year}-{MONTHS.index(month.lower()) + 1:02d}" <= data_month(package):
+            continue  # the cover has run out: market moves reach its cost again
+        text = (
+            f"In your letter of {row['date']} ({row['id']}) you told us your {material} requirement is covered "
+            f"at fixed prices. That cover runs until {until}, so the index rises in your quote do not reach "
+            "your cost before then."
+        )
+        return [Claim("hedge", text, [row["id"]], 7, {"date": row["date"], "until": until, "material": material})]
+    return []
+
+
+def hedged_index(claim, hedge):
+    """Is this index claim about the material its letter says is hedged? ("alloys" ~ "Alloy surcharge
+    1.4404", "copper" ~ "Copper notation"): a word of the material, singular, in the claim."""
+    words = {w.rstrip("s") for w in re.findall(r"[a-z]{4,}", hedge.figures.get("material", "").lower())}
+    return claim.kind == "index_change" and any(w in claim.sentence.lower() for w in words)
 
 
 def _forecast(case, d, package, _):
