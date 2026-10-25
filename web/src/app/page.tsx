@@ -28,7 +28,7 @@ const SECTIONS: {
     href: "/live",
     label: "v1.9 demo",
     icon: <PulseIcon width={20} height={20} />,
-    text: "Follow real v1.9 decisions through the Python engine, with recorded offers and source evidence.",
+    text: "Follow real v1.9 decisions through the Python engine, then inspect the latest offline reviewer and exchange feedback.",
   },
   {
     href: "/mail",
@@ -121,6 +121,10 @@ export default function Home() {
                 Explore run history ↗
               </Link>
             </div>
+            <p className="mt-4 text-[11px] leading-6 text-[var(--ink-2)]">
+              New in the demo: a decision reviewer with exchange feedback.
+              Explore saved reviews alongside the original v1.9 replay.
+            </p>
           </div>
           <div className="rounded-xl border border-[var(--line)] bg-white p-7 sm:p-8">
             <p className="font-mono text-[9px] tracking-[0.1em] text-[var(--muted)]">

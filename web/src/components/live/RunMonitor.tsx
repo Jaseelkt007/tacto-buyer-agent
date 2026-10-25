@@ -28,6 +28,7 @@ import {
   SendIcon,
 } from "@/components/icons";
 import { EngineConnections } from "./EngineConnections";
+import { ReviewInspector, ReviewNode } from "./ReviewExtension";
 import "./monitor.css";
 
 const STAGES: Record<
@@ -381,7 +382,7 @@ export function RunMonitor({
   const [requestedPlay, setRequestedPlay] = useState(false);
   const [speed, setSpeed] = useState(1);
   const [view, setView] = useState<"map" | "log">("map");
-  const [panel, setPanel] = useState<"conversation" | "inspect">(
+  const [panel, setPanel] = useState<"conversation" | "inspect" | "review">(
     "conversation",
   );
   const [selected, setSelected] = useState<Stage | null>(null);
@@ -390,6 +391,7 @@ export function RunMonitor({
   const shell = useRef<HTMLDivElement>(null);
   const lanes = useRef<HTMLDivElement>(null);
   const conversation = useRef<HTMLDivElement>(null);
+  const inspectorPane = useRef<HTMLElement>(null);
   const complete = cursor === events.length;
   const playing = requestedPlay && !complete;
   const visible = events.slice(0, cursor);
@@ -462,7 +464,7 @@ export function RunMonitor({
         event.metaKey ||
         (event.target instanceof HTMLElement &&
           event.target.closest(
-            "input, select, textarea, button, a, [contenteditable]",
+            "input, select, textarea, button, a, summary, [contenteditable]",
           ))
       )
         return;
@@ -487,6 +489,22 @@ export function RunMonitor({
     setSelected(stage);
     setPanel("inspect");
     setRequestedPlay(false);
+  }
+
+  function inspectReviewer() {
+    setPanel("review");
+    setSelected(null);
+    setRequestedPlay(false);
+    if (window.matchMedia("(max-width: 1050px)").matches)
+      window.requestAnimationFrame(() =>
+        inspectorPane.current?.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+            .matches
+            ? "auto"
+            : "smooth",
+          block: "start",
+        }),
+      );
   }
 
   async function fullscreen() {
@@ -569,7 +587,10 @@ export function RunMonitor({
             <h1>
               Every move. <span>A reason.</span>
             </h1>
-            <p>A real negotiation, from the first quote to the final deal.</p>
+            <p>
+              A real v1.9 negotiation, with the latest reviewer extension
+              alongside.
+            </p>
           </div>
           <div className="monitor-header-actions">
             <span className="monitor-recorded">
@@ -667,7 +688,7 @@ export function RunMonitor({
         <div className="monitor-workspace">
           <section
             className="monitor-board"
-            aria-label="v1.9 engine architecture and activity"
+            aria-label="v1.9 engine architecture with offline decision reviewer"
           >
             <div className="monitor-board-toolbar">
               <div className="monitor-tabs" aria-label="Replay views">
@@ -748,13 +769,17 @@ export function RunMonitor({
                         <p>Each reply returns to the engine.</p>
                       </div>
                     </div>
+                    <ReviewNode
+                      inspected={panel === "review"}
+                      onInspect={inspectReviewer}
+                    />
                     {card("outcome")}
                     <div className="monitor-trust-note">
                       <span>✓</span>
                       <p>
-                        <strong>Source-backed, code-owned.</strong> Fixed
-                        templates write the email. No model decisions were used
-                        in this suite.
+                        <strong>Original v1.9 replay.</strong> Code chose every
+                        move in this suite. The offline reviewer is shown as a
+                        separate extension.
                       </p>
                     </div>
                   </div>
@@ -765,6 +790,9 @@ export function RunMonitor({
                   </span>
                   <span>
                     <i className="legend-active" /> Current stage
+                  </span>
+                  <span>
+                    <i className="legend-review" /> Offline review branch
                   </span>
                   <span>
                     Click a stage to inspect its evidence <span>↗</span>
@@ -825,48 +853,69 @@ export function RunMonitor({
           </section>
           <aside
             className="monitor-inspector"
+            ref={inspectorPane}
             aria-label="Run evidence and supplier conversation"
           >
-            <div className="monitor-inspector-top">
-              <div className="monitor-eyebrow">
-                {session.case_id} <span>/</span>{" "}
-                {session.dossiers.length > 1
-                  ? "MULTI-SUPPLIER RFQ"
-                  : "SUPPLIER NEGOTIATION"}
-              </div>
-              <h2>{session.title}</h2>
-              <p>
-                {session.need?.toLocaleString("en-GB")} units / year{" "}
-                <span>·</span> {session.result.rounds} recorded rounds
-              </p>
-              {session.dossiers.length > 1 && (
-                <div
-                  className="monitor-supplier-tabs"
-                  aria-label="Supplier threads"
-                >
-                  {session.dossiers.map((d) => (
-                    <button
-                      type="button"
-                      key={d.supplier_id}
-                      aria-pressed={supplierId === d.supplier_id}
-                      onClick={() => setSupplier(d.supplier_id)}
+            <div
+              className={`monitor-inspector-top ${panel === "review" ? "is-review" : ""}`}
+            >
+              {panel === "review" ? (
+                <>
+                  <div className="monitor-eyebrow">
+                    REVIEWER EXPLORER / EXPERIMENTAL
+                  </div>
+                  <h2>A second look at the decision.</h2>
+                  <p>
+                    Saved synthetic examples, separate from this{" "}
+                    {session.case_id} replay.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <div className="monitor-eyebrow">
+                    {session.case_id} <span>/</span>{" "}
+                    {session.dossiers.length > 1
+                      ? "MULTI-SUPPLIER RFQ"
+                      : "SUPPLIER NEGOTIATION"}
+                  </div>
+                  <h2>{session.title}</h2>
+                  <p>
+                    {session.need?.toLocaleString("en-GB")} units / year{" "}
+                    <span>·</span> {session.result.rounds} recorded rounds
+                  </p>
+                  {session.dossiers.length > 1 && (
+                    <div
+                      className="monitor-supplier-tabs"
+                      aria-label="Supplier threads"
                     >
-                      {d.name.split(" ").slice(0, 2).join(" ")}
-                    </button>
-                  ))}
-                  {supplier && (
-                    <button type="button" onClick={() => setSupplier(null)}>
-                      Follow playback
-                    </button>
+                      {session.dossiers.map((d) => (
+                        <button
+                          type="button"
+                          key={d.supplier_id}
+                          aria-pressed={supplierId === d.supplier_id}
+                          onClick={() => setSupplier(d.supplier_id)}
+                        >
+                          {d.name.split(" ").slice(0, 2).join(" ")}
+                        </button>
+                      ))}
+                      {supplier && (
+                        <button type="button" onClick={() => setSupplier(null)}>
+                          Follow playback
+                        </button>
+                      )}
+                    </div>
                   )}
-                </div>
+                  <h3>{dossier?.name}</h3>
+                  <div className="monitor-price-pair">
+                    <Metric
+                      title="Supplier offer"
+                      value={money(supplierPrice)}
+                    />
+                    <span>→</span>
+                    <Metric title="Our proposal" value={money(buyerPrice)} />
+                  </div>
+                </>
               )}
-              <h3>{dossier?.name}</h3>
-              <div className="monitor-price-pair">
-                <Metric title="Supplier offer" value={money(supplierPrice)} />
-                <span>→</span>
-                <Metric title="Our proposal" value={money(buyerPrice)} />
-              </div>
             </div>
             <div className="monitor-panel-tabs">
               <button
@@ -882,6 +931,13 @@ export function RunMonitor({
                 onClick={() => setPanel("inspect")}
               >
                 Inspector <span>↗</span>
+              </button>
+              <button
+                type="button"
+                aria-pressed={panel === "review"}
+                onClick={inspectReviewer}
+              >
+                Reviewer
               </button>
             </div>
             <div className="monitor-inspector-body" ref={conversation}>
@@ -937,6 +993,8 @@ export function RunMonitor({
                     </div>
                   )}
                 </>
+              ) : panel === "review" ? (
+                <ReviewInspector />
               ) : (
                 <div className="monitor-detail">
                   <div className="monitor-eyebrow">
@@ -956,10 +1014,21 @@ export function RunMonitor({
               )}
             </div>
             <footer>
-              <Link href={`/negotiations/${session.id}`}>
-                Open the full saved trace <span>↗</span>
-              </Link>
-              <small>Original v1.9 suite · {session.commit}</small>
+              {panel === "review" ? (
+                <>
+                  <span>
+                    Saved reviewer evidence · original buyer action unchanged
+                  </span>
+                  <small>Offline study · not a stage in this replay</small>
+                </>
+              ) : (
+                <>
+                  <Link href={`/negotiations/${session.id}`}>
+                    Open the full saved trace <span>↗</span>
+                  </Link>
+                  <small>Original v1.9 suite · {session.commit}</small>
+                </>
+              )}
             </footer>
           </aside>
         </div>

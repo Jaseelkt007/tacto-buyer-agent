@@ -510,6 +510,247 @@
   min-height: 64px;
   color: #6e7c84;
 }
+.monitor-review-branch {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: -7px;
+}
+.monitor-review-feedback {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 7px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.5;
+}
+.monitor-review-feedback > span {
+  color: var(--accent-ink);
+  font-size: 21px;
+}
+.monitor-review-feedback strong {
+  display: block;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.monitor-review-node {
+  min-height: 163px;
+  border: 1px dashed var(--accent-line);
+  background: var(--accent-wash);
+}
+.monitor-review-node .monitor-node-tag {
+  color: var(--accent-ink);
+}
+.monitor-review-input {
+  margin-top: 8px;
+  font-size: 9px;
+  color: var(--accent-ink);
+}
+.monitor-review-model {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 9px;
+}
+.monitor-review-model > span {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 8px;
+}
+.monitor-review-authority {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+}
+.monitor-map-legend .legend-review {
+  background: transparent;
+  border: 1px dashed var(--accent-ink);
+}
+.monitor-review-detail {
+  min-width: 0;
+}
+.monitor-review-detail h4 {
+  font-size: 11px;
+  font-weight: 600;
+}
+.monitor-review-detail code {
+  display: block;
+  font-size: 8.5px;
+  overflow-wrap: anywhere;
+  color: var(--muted);
+}
+.monitor-review-boundary {
+  margin-top: 15px;
+  border-left: 2px solid var(--accent);
+  padding: 3px 0 3px 10px;
+  font-size: 10px;
+  line-height: 1.7;
+}
+.monitor-review-boundary strong {
+  font-weight: 500;
+}
+.monitor-review-boundary p {
+  color: var(--ink-2);
+  margin-top: 3px;
+}
+.monitor-review-verdicts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 13px 0 6px;
+}
+.monitor-review-verdicts span {
+  background: var(--surface-3);
+  color: var(--ink-2);
+  padding: 4px 5px;
+  font-family: var(--mono);
+  font-size: 7px;
+  border-radius: 3px;
+}
+.monitor-review-examples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 19px;
+}
+.monitor-review-examples button {
+  border: 1px solid var(--line);
+  padding: 8px 3px;
+  border-radius: 4px;
+  font-size: 9px;
+  color: var(--ink-2);
+}
+.monitor-review-examples button[aria-pressed="true"] {
+  border-color: var(--accent-line);
+  background: var(--accent-wash);
+  color: var(--accent-ink);
+}
+.monitor-review-example-origin {
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 9px;
+}
+.monitor-review-finding {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 10px;
+  line-height: 1.7;
+}
+.monitor-review-finding strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+.monitor-review-finding p {
+  color: var(--ink-2);
+  margin-top: 5px;
+}
+.monitor-review-finding small {
+  display: block;
+  margin-top: 7px;
+  font-size: 8px;
+  color: var(--muted);
+}
+.monitor-review-finding.is-finding {
+  border-color: var(--accent-line);
+  background: var(--accent-wash);
+}
+.monitor-review-finding.is-finding strong {
+  color: var(--accent-ink);
+}
+.monitor-review-finding.is-no-issue {
+  background: var(--good-bg);
+}
+.monitor-review-finding.is-no-issue strong {
+  color: var(--good);
+}
+.monitor-review-finding.is-unavailable {
+  background: var(--surface-3);
+}
+.monitor-review-package {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+.monitor-review-package > p {
+  font-size: 11px;
+  margin: 5px 0;
+  color: var(--ink-2);
+}
+.monitor-review-package > code {
+  margin-top: 6px;
+}
+.monitor-review-terms {
+  margin-top: 9px;
+  font-size: 10px;
+}
+.monitor-review-terms > div {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 8px;
+  padding: 4px 0;
+}
+.monitor-review-terms dt {
+  color: var(--muted);
+}
+.monitor-review-terms dd {
+  overflow-wrap: anywhere;
+}
+.monitor-review-detail details {
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+  font-size: 10px;
+  line-height: 1.8;
+}
+.monitor-review-detail summary {
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.monitor-review-detail details > p {
+  color: var(--ink-2);
+  margin: 8px 0;
+}
+.monitor-review-repeat,
+.monitor-review-difference {
+  margin-top: 10px;
+  padding: 10px;
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+.monitor-review-repeat strong,
+.monitor-review-difference strong {
+  font-weight: 500;
+}
+.monitor-review-repeat p,
+.monitor-review-difference p {
+  margin: 5px 0;
+  color: var(--ink-2);
+}
+.monitor-review-difference > span {
+  display: block;
+  margin-top: 6px;
+  color: var(--accent-ink);
+}
+.monitor-review-exchange {
+  margin-top: 12px;
+}
+.monitor-review-exchange > code {
+  margin: 10px 0 5px;
+}
+.monitor-review-detail blockquote {
+  white-space: pre-wrap;
+  font-size: 10px;
+  line-height: 1.8;
+  margin-top: 10px;
+  color: var(--ink-2);
+}
 .monitor-loop > span {
   font-size: 30px;
   line-height: 1;
@@ -658,7 +899,7 @@
   display: flex;
   border-bottom: 1px solid var(--line);
   padding: 0 21px;
-  gap: 25px;
+  gap: 18px;
 }
 .monitor-panel-tabs button {
   display: flex;
@@ -676,7 +917,7 @@
 }
 .monitor-inspector-body {
   overflow-y: auto;
-  flex: 1;
+  flex: 1 1 350px;
   height: 350px;
   min-height: 260px;
   scrollbar-width: thin;
@@ -1467,4 +1708,13 @@
     animation: none;
     scroll-behavior: auto;
   }
+}
+
+.monitor-inspector-top.is-review {
+  display: block;
+}
+.monitor-inspector > footer > span {
+  font-size: 10px;
+  line-height: 1.7;
+  color: var(--ink-2);
 }

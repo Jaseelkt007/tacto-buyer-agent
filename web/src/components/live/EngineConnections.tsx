@@ -1,5 +1,10 @@
 import { useEffect, useId, useState, type RefObject } from "react";
 import type { Stage } from "@/lib/v19";
+import {
+  REVIEWER_NODE,
+  reviewerConnections,
+  type MapNode,
+} from "@/lib/reviewer";
 
 type Box = {
   left: number;
@@ -9,15 +14,16 @@ type Box = {
   x: number;
   y: number;
 };
-type Layout = { width: number; height: number; nodes: Map<Stage, Box> };
+type Layout = { width: number; height: number; nodes: Map<MapNode, Box> };
 type Connection = {
-  from: Stage;
-  to: Stage;
-  direction: "down" | "across";
+  from: MapNode;
+  to: MapNode;
+  direction: "down" | "across" | "feedback";
   offset?: number;
+  observation?: boolean;
 };
 
-const STAGES: Stage[] = [
+const STAGES: MapNode[] = [
   "records",
   "dossier",
   "claims",
@@ -26,6 +32,7 @@ const STAGES: Stage[] = [
   "writer",
   "supplier",
   "outcome",
+  REVIEWER_NODE,
 ];
 const CONNECTIONS: Connection[] = [
   { from: "records", to: "dossier", direction: "down" },
@@ -35,9 +42,17 @@ const CONNECTIONS: Connection[] = [
   { from: "policy", to: "writer", direction: "down" },
   { from: "writer", to: "supplier", direction: "across", offset: -3 },
   { from: "policy", to: "outcome", direction: "across", offset: 3 },
+  ...reviewerConnections.map((connection) => ({
+    ...connection,
+    observation: true,
+  })),
 ];
 
 function pathFor(from: Box, to: Box, connection: Connection) {
+  if (connection.direction === "feedback") {
+    const outside = Math.max(from.right, to.right) + 12;
+    return `M ${from.right + 2} ${from.y} H ${outside} V ${to.y} H ${to.right + 4}`;
+  }
   if (connection.direction === "down") {
     const middle = (from.bottom + to.top) / 2;
     return `M ${from.x} ${from.bottom + 2} V ${middle} H ${to.x} V ${to.top - 5}`;
@@ -68,7 +83,7 @@ export function EngineConnections({
         return;
       }
       const bounds = container.getBoundingClientRect();
-      const nodes = new Map<Stage, Box>();
+      const nodes = new Map<MapNode, Box>();
       for (const stage of STAGES) {
         const node = container.querySelector<HTMLElement>(
           `[data-stage="${stage}"]`,
@@ -154,9 +169,18 @@ export function EngineConnections({
         return (
           <path
             key={`${connection.from}-${connection.to}`}
+            data-connection={`${connection.from}-${connection.to}`}
+            data-observation={connection.observation || undefined}
             d={pathFor(from, to, connection)}
             fill="none"
-            stroke={active === connection.to ? "var(--accent)" : "var(--line)"}
+            stroke={
+              connection.observation
+                ? "var(--accent-line)"
+                : active === connection.to
+                  ? "var(--accent)"
+                  : "var(--line)"
+            }
+            strokeDasharray={connection.observation ? "4 4" : undefined}
             strokeWidth={active === connection.to ? 1.5 : 1.15}
             strokeLinejoin="round"
             strokeLinecap="round"

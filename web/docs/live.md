@@ -7,6 +7,10 @@ The monitor shows the actual buyer architecture: company records, a Python suppl
 source-backed claims, package economics, decision policy, fixed email templates, and the external
 supplier conversation. It contains no experimental research specialists or model writer.
 
+The map also shows the latest [decision reviewer and exchange feedback](reviewer.md) as a dashed
+offline branch. Its saved synthetic examples are separate from the original P-case replay.
+Review observations do not control buyer actions or change the original case scores.
+
 The benchmark strip covers the ten original hosted cases: 75.0863 mean points, ten valid deals,
 50 engine decisions, and zero LLM decisions. Five later baseline passes reproduced the same mean.
 The exception LLM fallback exists in the agent but was never triggered in this suite.
@@ -23,6 +27,9 @@ supplier and buyer messages recorded by the arena. P05 provides separate supplie
 control to follow the active playback thread. Map values and Inspector details stay scoped to the
 selected supplier. At completion, the winning thread shows its deal; other threads identify the
 winning supplier and link to it.
+
+The Reviewer tab is an independent evidence explorer. Its examples are explicitly labeled as
+separate synthetic snapshots and can be read before playing the original negotiation.
 
 Stage pacing is for presentation. Only total session runtime and the sum of recorded buyer decision
 times are measured. Preparation is reconstructed; individual function timings are not available.

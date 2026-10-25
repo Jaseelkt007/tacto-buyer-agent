@@ -1,0 +1,591 @@
+{
+  "mode": "offline_observation",
+  "model": "gpt-6-luna",
+  "status": "experimental",
+  "implementation_sources": {
+    "arena_kit/agents/procudeal/observation.py": "0d2402bec569848817684645a387ec065474bfc7bd2a154c8783fb091c29751e",
+    "arena_kit/agents/procudeal/feedback.py": "89843a81f66b627ef61259a91c7e66c5329ed0fa6efc3de340117176673c6081",
+    "scripts/observe_decisions.py": "9659fcff30316f51f6ae3d0b3429f002b86cf5bcdd213bacbdcae222c069f7c4"
+  },
+  "summary": {
+    "decisions": 50,
+    "no_issue": 24,
+    "unsupported": 26,
+    "retained_flags": 0,
+    "changed_actions": 0,
+    "source": {
+      "path": "evaluations/observation-feedback/reviews/practice-all10-r01/summary.json",
+      "sha256": "0201ce9d9f6ceb5e49c1c399bd924fce519c336893a4603cbc3e77af731557d5"
+    }
+  },
+  "examples": {
+    "counter": {
+      "case_id": "G06",
+      "decision_index": 2,
+      "model": "gpt-6-luna",
+      "supplier_status": "open",
+      "moves_left": 8,
+      "action": "send",
+      "action_target": null,
+      "draft_terms": [
+        [
+          {
+            "label": "unit price",
+            "value": "€14.34"
+          },
+          {
+            "label": "payment days",
+            "value": "90 days"
+          },
+          {
+            "label": "index clause",
+            "value": "None / fixed price"
+          }
+        ]
+      ],
+      "latest_source": "message:sup:70340:4",
+      "latest_terms": [
+        [
+          {
+            "label": "index clause",
+            "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241"
+          },
+          {
+            "label": "payment days",
+            "value": "90 days"
+          },
+          {
+            "label": "unit price",
+            "value": "€14.77"
+          }
+        ]
+      ],
+      "exchanges": [
+        {
+          "buyer_source": "message:sup:70340:1",
+          "buyer_terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "€13.95"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "index clause",
+                "value": "None / fixed price"
+              }
+            ]
+          ],
+          "reply_source": "message:sup:70340:2",
+          "status": "open",
+          "supplier_terms": [
+            [
+              {
+                "label": "index clause",
+                "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "unit price",
+                "value": "€15.97"
+              }
+            ]
+          ]
+        },
+        {
+          "buyer_source": "message:sup:70340:3",
+          "buyer_terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "€14.15"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "index clause",
+                "value": "None / fixed price"
+              }
+            ]
+          ],
+          "reply_source": "message:sup:70340:4",
+          "status": "open",
+          "supplier_terms": [
+            [
+              {
+                "label": "index clause",
+                "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "unit price",
+                "value": "€14.77"
+              }
+            ]
+          ]
+        }
+      ],
+      "repeated_terms": [
+        {
+          "field": "index clause",
+          "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241",
+          "count": 2,
+          "sources": [
+            "message:sup:70340:2",
+            "message:sup:70340:4"
+          ]
+        },
+        {
+          "field": "payment days",
+          "value": "90",
+          "count": 2,
+          "sources": [
+            "message:sup:70340:2",
+            "message:sup:70340:4"
+          ]
+        }
+      ],
+      "draft_differences": [
+        {
+          "field": "index clause",
+          "supplier": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241",
+          "draft": "None / fixed price",
+          "source": "message:sup:70340:4",
+          "violation": "not determined"
+        }
+      ],
+      "result": {
+        "available": true,
+        "verdict": "RECONSIDER",
+        "field": "index_clause",
+        "assessment": "RECONSIDER:index_clause",
+        "error": null,
+        "evidence": "message:sup:70340:4",
+        "source_excerpt": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+        "seconds": 0.441,
+        "calls": 2
+      },
+      "provenance": {
+        "packet_sha256": "de72544921c7e4a3dba4da9f008aa7f578c23185ccdb2304232ad70b25847f0e",
+        "reviewed_packet_sha256": "bde4fab4e36b25f62d52e00742638abe3c9ca141e69af6ad14baa21931c53ae7",
+        "request_sha256": "89b327d537fa928374e2d71ad13faa8513625b01ce78acda9c883a358ceee320",
+        "capture": {
+          "path": "evaluations/observation-feedback/runs/synthetic-r01/G06-observations.json",
+          "sha256": "1ae223448c7b8d771bd1f0a19250076cb491f5b1cc9c2948babc144ef508b63b"
+        },
+        "review": {
+          "path": "evaluations/observation-feedback/reviews/paired-r01/pass1-feedback/0006.json",
+          "sha256": "cc9bb1e06864dc6afb32a3ab59ec89329681ed59826a81124b5cac6693f307a8"
+        }
+      }
+    },
+    "accept": {
+      "case_id": "G06",
+      "decision_index": 4,
+      "model": "gpt-6-luna",
+      "supplier_status": "final_offer",
+      "moves_left": 6,
+      "action": "accept",
+      "action_target": "offer:70340-4",
+      "draft_terms": [],
+      "latest_source": "message:sup:70340:8",
+      "latest_terms": [
+        [
+          {
+            "label": "index clause",
+            "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241"
+          },
+          {
+            "label": "payment days",
+            "value": "90 days"
+          },
+          {
+            "label": "unit price",
+            "value": "€14.00"
+          }
+        ]
+      ],
+      "exchanges": [
+        {
+          "buyer_source": "message:sup:70340:1",
+          "buyer_terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "€13.95"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "index clause",
+                "value": "None / fixed price"
+              }
+            ]
+          ],
+          "reply_source": "message:sup:70340:2",
+          "status": "open",
+          "supplier_terms": [
+            [
+              {
+                "label": "index clause",
+                "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "unit price",
+                "value": "€15.97"
+              }
+            ]
+          ]
+        },
+        {
+          "buyer_source": "message:sup:70340:3",
+          "buyer_terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "€14.15"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "index clause",
+                "value": "None / fixed price"
+              }
+            ]
+          ],
+          "reply_source": "message:sup:70340:4",
+          "status": "open",
+          "supplier_terms": [
+            [
+              {
+                "label": "index clause",
+                "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "unit price",
+                "value": "€14.77"
+              }
+            ]
+          ]
+        },
+        {
+          "buyer_source": "message:sup:70340:5",
+          "buyer_terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "€14.34"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "index clause",
+                "value": "None / fixed price"
+              }
+            ]
+          ],
+          "reply_source": "message:sup:70340:6",
+          "status": "open",
+          "supplier_terms": [
+            [
+              {
+                "label": "index clause",
+                "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "unit price",
+                "value": "€14.51"
+              }
+            ]
+          ]
+        },
+        {
+          "buyer_source": "message:sup:70340:7",
+          "buyer_terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "€14.39"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "index clause",
+                "value": "None / fixed price"
+              }
+            ]
+          ],
+          "reply_source": "message:sup:70340:8",
+          "status": "final_offer",
+          "supplier_terms": [
+            [
+              {
+                "label": "index clause",
+                "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241"
+              },
+              {
+                "label": "payment days",
+                "value": "90 days"
+              },
+              {
+                "label": "unit price",
+                "value": "€14.00"
+              }
+            ]
+          ]
+        }
+      ],
+      "repeated_terms": [
+        {
+          "field": "index clause",
+          "value": "base month: 2026-09 · deadband pct: 3.0 · material share: 0.6 · series: PPI-C241",
+          "count": 4,
+          "sources": [
+            "message:sup:70340:2",
+            "message:sup:70340:4",
+            "message:sup:70340:6",
+            "message:sup:70340:8"
+          ]
+        },
+        {
+          "field": "payment days",
+          "value": "90",
+          "count": 4,
+          "sources": [
+            "message:sup:70340:2",
+            "message:sup:70340:4",
+            "message:sup:70340:6",
+            "message:sup:70340:8"
+          ]
+        }
+      ],
+      "draft_differences": [],
+      "result": {
+        "available": true,
+        "verdict": "NO_ISSUE",
+        "field": "NONE",
+        "assessment": "NO_ISSUE",
+        "error": null,
+        "evidence": "NONE",
+        "source_excerpt": "",
+        "seconds": 0.316,
+        "calls": 1
+      },
+      "provenance": {
+        "packet_sha256": "ec5a338c03e29e503320129e7a41b66ef07588c43fe1c8434ec21b9a2027b07a",
+        "reviewed_packet_sha256": "035fa4e1ccf818e3c6a50c5913783f0ef64d99d15b703d6839f70a2fb9a23c55",
+        "request_sha256": "4dc465ded8831a8490ce2eef49d71f8518fb235978437e36ef74dba2f02e67d4",
+        "capture": {
+          "path": "evaluations/observation-feedback/runs/synthetic-r01/G06-observations.json",
+          "sha256": "1ae223448c7b8d771bd1f0a19250076cb491f5b1cc9c2948babc144ef508b63b"
+        },
+        "review": {
+          "path": "evaluations/observation-feedback/reviews/paired-r01/pass1-feedback/0008.json",
+          "sha256": "8a39f144e4113a9e42a1400c2a559ba4b7f35e7e236355f6a4f30fdc59a6f21e"
+        }
+      }
+    },
+    "unsupported": {
+      "case_id": "G03",
+      "decision_index": 2,
+      "model": "gpt-6-luna",
+      "supplier_status": "open",
+      "moves_left": 8,
+      "action": "send",
+      "action_target": null,
+      "draft_terms": [
+        [
+          {
+            "label": "unit price",
+            "value": "€80.29"
+          },
+          {
+            "label": "payment days",
+            "value": "10 days"
+          },
+          {
+            "label": "contract months",
+            "value": "24"
+          }
+        ]
+      ],
+      "latest_source": "message:sup:70190:4",
+      "latest_terms": [
+        [
+          {
+            "label": "contract months",
+            "value": "12"
+          },
+          {
+            "label": "payment days",
+            "value": "10 days"
+          },
+          {
+            "label": "unit price",
+            "value": "€87.30"
+          }
+        ]
+      ],
+      "exchanges": [
+        {
+          "buyer_source": "message:sup:70190:1",
+          "buyer_terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "€76.00"
+              },
+              {
+                "label": "payment days",
+                "value": "10 days"
+              },
+              {
+                "label": "contract months",
+                "value": "24"
+              }
+            ]
+          ],
+          "reply_source": "message:sup:70190:2",
+          "status": "open",
+          "supplier_terms": [
+            [
+              {
+                "label": "contract months",
+                "value": "12"
+              },
+              {
+                "label": "payment days",
+                "value": "10 days"
+              },
+              {
+                "label": "unit price",
+                "value": "€88.88"
+              }
+            ]
+          ]
+        },
+        {
+          "buyer_source": "message:sup:70190:3",
+          "buyer_terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "€77.29"
+              },
+              {
+                "label": "payment days",
+                "value": "10 days"
+              },
+              {
+                "label": "contract months",
+                "value": "24"
+              }
+            ]
+          ],
+          "reply_source": "message:sup:70190:4",
+          "status": "open",
+          "supplier_terms": [
+            [
+              {
+                "label": "contract months",
+                "value": "12"
+              },
+              {
+                "label": "payment days",
+                "value": "10 days"
+              },
+              {
+                "label": "unit price",
+                "value": "€87.30"
+              }
+            ]
+          ]
+        }
+      ],
+      "repeated_terms": [
+        {
+          "field": "contract months",
+          "value": "12",
+          "count": 2,
+          "sources": [
+            "message:sup:70190:2",
+            "message:sup:70190:4"
+          ]
+        },
+        {
+          "field": "payment days",
+          "value": "10",
+          "count": 2,
+          "sources": [
+            "message:sup:70190:2",
+            "message:sup:70190:4"
+          ]
+        }
+      ],
+      "draft_differences": [
+        {
+          "field": "contract months",
+          "supplier": "12",
+          "draft": "24",
+          "source": "message:sup:70190:4",
+          "violation": "not determined"
+        }
+      ],
+      "result": {
+        "available": false,
+        "verdict": null,
+        "field": null,
+        "assessment": "RECONSIDER:contract_months",
+        "error": "unsupported_flag",
+        "evidence": null,
+        "source_excerpt": "",
+        "seconds": 0.528,
+        "calls": 2
+      },
+      "provenance": {
+        "packet_sha256": "2f0f02651ece8f7cf7d51304fb1af5034f97713136a4b6add8a30b6611ff960b",
+        "reviewed_packet_sha256": "6666a482c20318c2c7a688e90a203e848ff68f3b0e679852caf59015f89ebc6b",
+        "request_sha256": "96ef83fb4729b92d599e411a514b958c84af2397d36ca508199f9293925f50ae",
+        "capture": {
+          "path": "evaluations/observation-feedback/runs/synthetic-r01/G03-observations.json",
+          "sha256": "74edba71e21acb5c5053d9686c1718eecf30f37df0b34d1905d3f503637cf3c6"
+        },
+        "review": {
+          "path": "evaluations/observation-feedback/reviews/paired-r01/pass1-feedback/0002.json",
+          "sha256": "fd9ef03fba48a709b0f8cd813a36f4b12fe102b221c6cb11e9ecfcef0217f7f2"
+        }
+      }
+    }
+  }
+}

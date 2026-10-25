@@ -8,6 +8,9 @@ white/gray theme. **Deals** retains historical versions, while **Mail**, **Suppl
 Rebuild and validate the v1.9 snapshot with `npm run sync:v19` and `npm run check:v19`.
 See [demo documentation](docs/live.md) for provenance and replay behavior.
 
+The demo also exposes the latest offline decision-review model and public exchange feedback.
+See [reviewer documentation](docs/reviewer.md) for its saved examples, authority, and data export.
+
 ## Mail: what the buyer agent sees
 
 A mail-client view of every practice and sandbox case at the moment it opens: the case file, the

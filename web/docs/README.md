@@ -11,6 +11,7 @@ the negotiation. Update the page in the same commit as the code.
 |---|---|---|---|
 | v1.9 home and historical Story | `/`, `/story/<session>` | [home.md](home.md) | done (phase 7) |
 | v1.9 recorded engine demo | `/live`, `/live/<session>` | [live.md](live.md) | done (phase 8) |
+| Offline decision reviewer and feedback | Reviewer pane in `/live` | [reviewer.md](reviewer.md) | experimental |
 | Mail | `/mail` | [../README.md](../README.md) | done |
 | Deals (negotiation replay) | `/negotiations` | [deals.md](deals.md) | done |
 | Suppliers | `/suppliers` | [suppliers.md](suppliers.md) | done (phase 1) |
