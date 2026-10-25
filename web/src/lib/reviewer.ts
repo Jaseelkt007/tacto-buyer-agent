@@ -1,28 +1,17 @@
 import snapshot from "@/data/reviewer.json";
-import type { Stage } from "@/lib/v19";
+import { REVIEWER_NODE } from "@/lib/architecture";
 
 export const reviewer = snapshot;
-export const REVIEWER_NODE = "reviewer";
-export type MapNode = Stage | typeof REVIEWER_NODE;
 export type ReviewExampleId = keyof typeof snapshot.examples;
 export type ReviewExample = (typeof snapshot.examples)[ReviewExampleId];
 
 export const reviewerNode = {
   id: REVIEWER_NODE,
   title: "Decision review model",
-  tag: "OFFLINE REVIEW",
+  tag: "ADVISORY LLM",
   description:
-    "Review a proposed action against the evidence and earlier exchanges.",
+    "Check the prepared response against earlier exchanges.",
 };
-
-export const reviewerConnections: {
-  from: Stage;
-  to: typeof REVIEWER_NODE;
-  direction: "feedback" | "across";
-}[] = [
-  { from: "policy", to: REVIEWER_NODE, direction: "across" },
-  { from: "supplier", to: REVIEWER_NODE, direction: "feedback" },
-];
 
 export const reviewExamples: { id: ReviewExampleId; label: string }[] = [
   { id: "counter", label: "Counteroffer" },

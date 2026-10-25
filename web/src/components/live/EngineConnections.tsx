@@ -1,10 +1,10 @@
 import { useEffect, useId, useState, type RefObject } from "react";
 import type { Stage } from "@/lib/v19";
 import {
+  INTERPRETER_NODE,
   REVIEWER_NODE,
-  reviewerConnections,
   type MapNode,
-} from "@/lib/reviewer";
+} from "@/lib/architecture";
 
 type Box = {
   left: number;
@@ -18,9 +18,8 @@ type Layout = { width: number; height: number; nodes: Map<MapNode, Box> };
 type Connection = {
   from: MapNode;
   to: MapNode;
-  direction: "down" | "across" | "feedback";
-  offset?: number;
-  observation?: boolean;
+  direction: "down" | "across" | "history" | "reply" | "return";
+  kind: "policy" | "advisory" | "feedback";
 };
 
 const STAGES: MapNode[] = [
@@ -33,31 +32,36 @@ const STAGES: MapNode[] = [
   "supplier",
   "outcome",
   REVIEWER_NODE,
+  INTERPRETER_NODE,
 ];
 const CONNECTIONS: Connection[] = [
-  { from: "records", to: "dossier", direction: "down" },
-  { from: "dossier", to: "claims", direction: "down" },
-  { from: "claims", to: "economics", direction: "across" },
-  { from: "economics", to: "policy", direction: "down" },
-  { from: "policy", to: "writer", direction: "down" },
-  { from: "writer", to: "supplier", direction: "across", offset: -3 },
-  { from: "policy", to: "outcome", direction: "across", offset: 3 },
-  ...reviewerConnections.map((connection) => ({
-    ...connection,
-    observation: true,
-  })),
+  { from: "records", to: "dossier", direction: "down", kind: "policy" },
+  { from: "dossier", to: "claims", direction: "down", kind: "policy" },
+  { from: "claims", to: "economics", direction: "across", kind: "policy" },
+  { from: "economics", to: "policy", direction: "down", kind: "policy" },
+  { from: "policy", to: "writer", direction: "down", kind: "policy" },
+  { from: "writer", to: REVIEWER_NODE, direction: "across", kind: "advisory" },
+  { from: REVIEWER_NODE, to: "supplier", direction: "down", kind: "advisory" },
+  { from: "supplier", to: "outcome", direction: "down", kind: "policy" },
+  { from: "supplier", to: REVIEWER_NODE, direction: "history", kind: "feedback" },
+  { from: "supplier", to: INTERPRETER_NODE, direction: "reply", kind: "feedback" },
+  { from: INTERPRETER_NODE, to: "policy", direction: "return", kind: "feedback" },
 ];
 
 function pathFor(from: Box, to: Box, connection: Connection) {
-  if (connection.direction === "feedback") {
+  if (connection.direction === "history" || connection.direction === "reply") {
     const outside = Math.max(from.right, to.right) + 12;
     return `M ${from.right + 2} ${from.y} H ${outside} V ${to.y} H ${to.right + 4}`;
+  }
+  if (connection.direction === "return") {
+    const rail = to.left - 8;
+    return `M ${from.left - 2} ${from.y} H ${rail} V ${to.y} H ${to.left - 4}`;
   }
   if (connection.direction === "down") {
     const middle = (from.bottom + to.top) / 2;
     return `M ${from.x} ${from.bottom + 2} V ${middle} H ${to.x} V ${to.top - 5}`;
   }
-  const middle = (from.right + to.left) / 2 + (connection.offset ?? 0);
+  const middle = (from.right + to.left) / 2 - 4;
   return `M ${from.right + 2} ${from.y} H ${middle} V ${to.y} H ${to.left - 5}`;
 }
 
@@ -170,18 +174,18 @@ export function EngineConnections({
           <path
             key={`${connection.from}-${connection.to}`}
             data-connection={`${connection.from}-${connection.to}`}
-            data-observation={connection.observation || undefined}
+            data-kind={connection.kind}
             d={pathFor(from, to, connection)}
             fill="none"
             stroke={
-              connection.observation
-                ? "var(--accent-line)"
+              connection.kind !== "policy"
+                ? "var(--accent-ink)"
                 : active === connection.to
                   ? "var(--accent)"
-                  : "var(--line)"
+                  : "#b5bdc5"
             }
-            strokeDasharray={connection.observation ? "4 4" : undefined}
-            strokeWidth={active === connection.to ? 1.5 : 1.15}
+            strokeDasharray={connection.kind !== "policy" ? "4 4" : undefined}
+            strokeWidth={connection.kind === "feedback" || active === connection.to ? 1.5 : 1.15}
             strokeLinejoin="round"
             strokeLinecap="round"
             markerEnd={`url(#${markerId})`}

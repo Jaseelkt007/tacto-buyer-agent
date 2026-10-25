@@ -17,18 +17,10 @@ export function ReviewNode({
   onInspect: () => void;
 }) {
   return (
-    <div className="monitor-review-branch" id="decision-reviewer">
-      <div className="monitor-review-feedback">
-        <span aria-hidden="true">↶</span>
-        <p>
-          <strong>Public exchange feedback</strong>
-          Earlier offers, replies and repeated quoted terms.
-        </p>
-      </div>
       <button
         type="button"
         data-stage={reviewerNode.id}
-        className={`monitor-node monitor-review-node ${inspected ? "is-inspected" : ""}`}
+        className={`monitor-node monitor-model-node ${inspected ? "is-inspected" : ""}`}
         onClick={onInspect}
         aria-label={`Inspect ${reviewerNode.title}`}
         aria-pressed={inspected}
@@ -44,17 +36,8 @@ export function ReviewNode({
         <span className="monitor-node-description">
           {reviewerNode.description}
         </span>
-        <span className="monitor-review-input">
-          ← Proposed action + code checks
-        </span>
-        <span className="monitor-review-model">
-          {reviewer.model} <span>Experimental</span>
-        </span>
-        <span className="monitor-review-authority">
-          Saved review · buyer action unchanged
-        </span>
+        <span className="monitor-model-name">{reviewer.model}</span>
       </button>
-    </div>
   );
 }
 
@@ -77,7 +60,7 @@ export function ReviewInspector() {
   const finding = reviewFinding(example);
   return (
     <div className="monitor-detail monitor-review-detail">
-      <div className="monitor-eyebrow">LATEST EXTENSION · OFFLINE</div>
+      <div className="monitor-eyebrow">SAVED REVIEW EXAMPLE</div>
       <h3>Decision review model</h3>
       <p>
         Saved decisions, checked against earlier public exchanges. Buyer actions
@@ -120,9 +103,10 @@ export function ReviewInspector() {
           <strong>Reviewing, without taking control.</strong>
           <p>
             Proposed accept, continue and walk-away actions are captured before
-            sending. The model reviews those snapshots after the negotiation.
-            Public exchanges feed the reviewer; its verdict does not return to
-            the buyer policy.
+            sending. The current agent reviews the prepared response before
+            dispatch; these saved examples were reviewed offline. Earlier public
+            exchanges feed the reviewer. Its verdict does not change the buyer
+            action.
           </p>
         </div>
         <div

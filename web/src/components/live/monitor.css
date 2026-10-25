@@ -330,17 +330,19 @@
 .monitor-lanes {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1.08fr 1fr;
-  gap: 26px;
-  margin: 24px 0 17px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 36px repeat(3, minmax(98px, auto)) auto;
+  gap: 18px 32px;
+  margin: 18px 0 12px;
 }
 .monitor-lane {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-row: 1 / span 4;
+  grid-template-rows: subgrid;
   min-width: 0;
-  gap: 22px;
+  gap: 18px;
 }
 .monitor-lane > header {
   display: flex;
@@ -378,11 +380,11 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 13px;
+  padding: 9px 10px;
   border: 1px solid #d9dee3;
   border-radius: 7px;
   background: white;
-  min-height: 121px;
+  min-height: 98px;
   transition:
     border-color 0.15s,
     background 0.15s,
@@ -420,7 +422,7 @@
   align-items: center;
   gap: 7px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 .monitor-node-icon {
   display: flex;
@@ -431,7 +433,7 @@
   color: #7e8890;
   font-family: var(--mono);
   letter-spacing: 0.04em;
-  font-size: 8px;
+  font-size: 7px;
   white-space: nowrap;
 }
 .monitor-node-plus {
@@ -445,9 +447,9 @@
   letter-spacing: -0.15px;
 }
 .monitor-node-description {
-  font-size: 11px;
+  font-size: 10px;
   color: #717a83;
-  line-height: 1.6;
+  line-height: 1.4;
   margin-top: 4px;
 }
 .monitor-node-value {
@@ -455,7 +457,7 @@
   gap: 5px;
   align-items: center;
   margin-top: auto;
-  padding-top: 9px;
+  padding-top: 5px;
   font-size: 10px;
   color: #8d959d;
   line-height: 1.5;
@@ -502,70 +504,81 @@
   background: var(--accent-wash);
   border-color: var(--accent);
 }
-.monitor-loop {
-  display: flex;
+.monitor-feedback-lane {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
   align-items: center;
-  justify-content: center;
-  gap: 9px;
-  min-height: 64px;
-  color: #6e7c84;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
 }
-.monitor-review-branch {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  gap: 9px;
-  margin-top: -7px;
-}
-.monitor-review-feedback {
+.monitor-feedback-lane > header {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0 7px;
+  min-width: 0;
+}
+.monitor-feedback-lane > header > span {
+  color: var(--accent-ink);
+  font-size: 24px;
+}
+.monitor-feedback-lane h2 {
+  font-size: 11px;
+  font-weight: 600;
+}
+.monitor-feedback-lane header p,
+.monitor-feedback-lane header small {
+  display: block;
+  margin-top: 5px;
   color: var(--muted);
   font-size: 9px;
   line-height: 1.5;
 }
-.monitor-review-feedback > span {
-  color: var(--accent-ink);
-  font-size: 21px;
-}
-.monitor-review-feedback strong {
-  display: block;
+.monitor-feedback-source {
+  align-self: start;
+  padding: 4px 0 0;
+  max-width: 180px;
   color: var(--ink-2);
-  font-weight: 500;
+  font-size: 9px;
+  line-height: 1.5;
 }
-.monitor-review-node {
-  min-height: 163px;
+.monitor-feedback-source > span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+}
+.monitor-model-node {
+  z-index: 1;
   border: 1px dashed var(--accent-line);
   background: var(--accent-wash);
 }
-.monitor-review-node .monitor-node-tag {
+.monitor-model-node .monitor-node-tag {
   color: var(--accent-ink);
 }
-.monitor-review-input {
-  margin-top: 8px;
-  font-size: 9px;
-  color: var(--accent-ink);
-}
-.monitor-review-model {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  margin-top: 10px;
+.monitor-model-name {
+  margin-top: 7px;
   font-family: var(--mono);
   font-size: 9px;
 }
-.monitor-review-model > span {
-  color: var(--muted);
-  font-family: var(--sans);
-  font-size: 8px;
+.monitor-feedback-steps {
+  list-style: decimal;
+  padding-left: 17px;
+  margin: 16px 0;
 }
-.monitor-review-authority {
-  margin-top: 4px;
+.monitor-feedback-steps li {
+  padding-left: 4px;
+  margin-top: 14px;
+  font-size: 11px;
+}
+.monitor-feedback-steps strong,
+.monitor-feedback-detail h4 {
+  font-size: 11px;
+  font-weight: 600;
+}
+.monitor-feedback-steps p {
+  margin-top: 5px;
   color: var(--muted);
-  font-size: 9px;
+  line-height: 1.7;
 }
 .monitor-map-legend .legend-review {
   background: transparent;
@@ -751,18 +764,6 @@
   margin-top: 10px;
   color: var(--ink-2);
 }
-.monitor-loop > span {
-  font-size: 30px;
-  line-height: 1;
-}
-.monitor-loop strong {
-  font-size: 10px;
-  font-weight: 500;
-}
-.monitor-loop p {
-  font-size: 9px;
-  margin-top: 3px;
-}
 .monitor-trust-note {
   display: flex;
   gap: 8px;
@@ -775,7 +776,6 @@
   color: var(--monitor-green);
 }
 .monitor-trust-note strong {
-  display: block;
   color: var(--ink-2);
   font-weight: 500;
 }
@@ -1337,11 +1337,11 @@
 }
 @media (min-width: 1660px) {
   .monitor-node {
-    min-height: 150px;
-    padding: 16px;
+    min-height: 112px;
+    padding: 12px;
   }
   .monitor-node > strong {
-    font-size: 14px;
+    font-size: 13px;
   }
   .monitor-node-description {
     font-size: 11px;
@@ -1362,11 +1362,11 @@
     padding: 16px;
   }
   .monitor-lanes {
-    gap: 17px;
+    column-gap: 24px;
   }
   .monitor-node {
     padding: 10px;
-    min-height: 150px;
+    min-height: 104px;
   }
   .monitor-node-tag {
     font-size: 6px;
@@ -1465,7 +1465,7 @@
     font-size: 9px;
   }
   .monitor-lanes {
-    gap: 24px;
+    column-gap: 24px;
   }
   .monitor-node-tag {
     font-size: 7px;
@@ -1575,11 +1575,14 @@
     display: none;
   }
   .monitor-lanes {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 25px;
     margin-top: 18px;
   }
   .monitor-lane {
+    display: flex;
+    flex-direction: column;
     gap: 13px;
   }
   .monitor-lane > header {
@@ -1622,8 +1625,22 @@
   .node-policy::after {
     display: none;
   }
-  .monitor-loop {
-    min-height: 38px;
+  .monitor-feedback-lane {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+  }
+  .monitor-feedback-lane h2 {
+    font-size: 13px;
+  }
+  .monitor-feedback-lane header p,
+  .monitor-feedback-lane header small,
+  .monitor-feedback-source {
+    font-size: 10px;
+  }
+  .monitor-feedback-source {
+    max-width: none;
   }
   .monitor-trust-note {
     font-size: 10px;

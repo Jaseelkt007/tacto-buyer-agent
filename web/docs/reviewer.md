@@ -1,24 +1,41 @@
-# Decision reviewer and exchange feedback
+# Advisory models and supplier feedback
 
-The live demo includes a decision-review model beside the supplier conversation. It is an
-experimental offline branch. The original v1.9 replay, timeline, case scores, and ten-case mean
-come from their original saved runs.
+The live demo shows the current buyer architecture alongside the original recorded v1.9 replay.
+The current agent enables two advisory models by default: `gpt-6.1-sol` reads supplier replies
+before the policy, and `gpt-6-luna` reviews the prepared response before dispatch. Code owns
+binding prices, offers, acceptance and walk-away. Neither model changes those actions.
 
-The engine proposes a counteroffer, acceptance, or walk-away. With observation enabled,
-`observation.CaptureAgent` captures that action and its decision-time public context, then returns
-the original action unchanged. The separate review command runs after negotiation. The model
-does not approve, reject, or change the buyer's action.
+The original v1.9 replay used neither advisory stage. Its timeline, case scores and ten-case
+mean still come from the original saved runs. The model inspectors explain the current pipeline
+and show separate saved review examples; they never add invented events to that replay.
+
+The engine proposes a counteroffer, acceptance, or walk-away. The writer prepares the response,
+then `observation.LiveDecisionReviewer` captures it with its public context and reviews it before
+dispatch. The reviewer has one eight-second deadline, limited by the remaining 45-second decision
+budget. An unavailable review leaves the action unchanged. The offline review command remains
+available and produced the saved examples below.
+
+On a nonterminal supplier reply, `ReplyInterpreter.read` rebuilds the same thread's public history
+and returns structured conditions, preferences and source quotations. Code validates the schema,
+package scope, exact quotations and annotated fields. The policy receives these advisory readings
+before its next decision. No old model interpretations or future messages become feedback input.
+See [the reply interpretation contract](../../docs/reply-interpretation.md).
 
 With feedback enabled, `feedback.with_feedback` reconstructs earlier offers and replies,
 quotation history, repeated nonprice terms, and current draft differences from the same public
 message prefix. It rebuilds this ledger for each snapshot. Prior reviewer judgments and later
 supplier replies are not feedback inputs.
 
-The map shows two dashed input paths: engine decision snapshot to reviewer, and supplier
-exchange history to reviewer. The latter loops along the outside of the supplier lane. There is
-no reviewer-to-policy edge. On narrow screens, visible input captions retain the reading order.
-Clicking the reviewer pauses replay and opens its independent evidence pane. On mobile, the pane
-scrolls into view. Changing the review example never seeks the replay or selects a supplier.
+The map aligns three columns of compact cards. The prepared response goes from writer to
+reviewer to supplier conversation. A separate bottom feedback lane shows supplier conversation
+to reply interpreter to decision engine. Earlier public exchanges also feed the reviewer through
+a shared outside rail. The return to the policy uses the gutter beside the engine cards; arrows
+do not cross card interiors. There is no reviewer-verdict-to-policy edge.
+
+On narrow screens, the diagram stacks vertically and retains explicit feedback captions instead
+of drawing long arrows across the page. Clicking either model pauses replay and opens its own
+inspector. On mobile, that pane scrolls into view. Changing the saved review example never seeks
+the replay or selects a supplier.
 
 ## Saved examples
 
@@ -39,7 +56,7 @@ The counteroffer example compares a fixed-price €14.34 draft with the supplier
 quotation. The ledger records two quotations of the same index package. Its own discrepancy
 record says the existence of a violation is not determined. The review does not alter the draft.
 
-The latest hosted check covered 50 decisions: 24 NO_ISSUE, 26 unsupported observations, zero
+The saved offline check covered 50 decisions: 24 NO_ISSUE, 26 unsupported observations, zero
 retained flags, and zero changed buyer actions. The same v1.9 actions and case scores were
 reproduced. This does not measure negotiation benefit from the reviewer.
 
@@ -68,18 +85,18 @@ The optional `reconsideration.Reconsideration` adapter is a different experiment
 engine and writer, it can append one code-priced supplier package to an eligible counteroffer.
 The model chooses PROCEED or RECONSIDER; code validates the package and cost bound. It is off by
 default and does not change terminal actions, first proposals, or final/agreed exchanges.
-The observer map does not depict that adapter as an active buyer-policy loop.
+The architecture map does not depict that adapter as an active buyer-policy loop.
 
 ## Implementation and design
 
 - `scripts/sync-reviewer.py` owns the allowlisted export and integrity checks.
-- `src/lib/reviewer.ts` owns the reviewer node identity, input edges, and saved-result presentation.
+- `src/lib/architecture.ts` owns the display-node identities and reply-interpreter metadata.
+- `src/lib/reviewer.ts` owns reviewer metadata and saved-result presentation.
 - `src/components/live/ReviewExtension.tsx` owns the reviewer card and independent example selection.
+- `src/components/live/ReplyInterpretation.tsx` owns the reply-interpreter card and its inspector.
 - `RunMonitor.tsx` owns replay controls and the selected inspector pane.
-- `EngineConnections.tsx` measures map nodes and draws the original edges plus dashed review inputs.
+- `EngineConnections.tsx` measures all ten map nodes and routes eleven directed connections.
 
-The design keeps an observer branch in the existing map so the added model is immediately visible.
-A separate reviewer route was considered but added navigation and hid the requested extra box.
-The chosen shape retains semantic buttons, expandable evidence, and mobile reading order from
-that alternative. The replay event union remains unchanged: display nodes do not imply recorded
-buyer stages.
+The model cards share the compact sizing of the engine cards. The feedback lane separates the
+return path from the outgoing response, while the inspector carries the detailed explanation.
+The replay event union remains unchanged: display nodes do not imply recorded buyer stages.

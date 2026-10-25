@@ -29,6 +29,7 @@ import {
 } from "@/components/icons";
 import { EngineConnections } from "./EngineConnections";
 import { ReviewInspector, ReviewNode } from "./ReviewExtension";
+import { ReplyInterpretationInspector, ReplyInterpretationNode } from "./ReplyInterpretation";
 import "./monitor.css";
 
 const STAGES: Record<
@@ -382,7 +383,7 @@ export function RunMonitor({
   const [requestedPlay, setRequestedPlay] = useState(false);
   const [speed, setSpeed] = useState(1);
   const [view, setView] = useState<"map" | "log">("map");
-  const [panel, setPanel] = useState<"conversation" | "inspect" | "review">(
+  const [panel, setPanel] = useState<"conversation" | "inspect" | "review" | "feedback">(
     "conversation",
   );
   const [selected, setSelected] = useState<Stage | null>(null);
@@ -491,8 +492,8 @@ export function RunMonitor({
     setRequestedPlay(false);
   }
 
-  function inspectReviewer() {
-    setPanel("review");
+  function inspectModel(model: "review" | "feedback") {
+    setPanel(model);
     setSelected(null);
     setRequestedPlay(false);
     if (window.matchMedia("(max-width: 1050px)").matches)
@@ -505,6 +506,10 @@ export function RunMonitor({
           block: "start",
         }),
       );
+  }
+
+  function inspectReviewer() {
+    inspectModel("review");
   }
 
   async function fullscreen() {
@@ -588,8 +593,7 @@ export function RunMonitor({
               Every move. <span>A reason.</span>
             </h1>
             <p>
-              A real v1.9 negotiation, with the latest reviewer extension
-              alongside.
+              The current architecture, alongside a recorded v1.9 negotiation.
             </p>
           </div>
           <div className="monitor-header-actions">
@@ -688,7 +692,7 @@ export function RunMonitor({
         <div className="monitor-workspace">
           <section
             className="monitor-board"
-            aria-label="v1.9 engine architecture with offline decision reviewer"
+            aria-label="Current buyer architecture with supplier feedback and two advisory LLMs"
           >
             <div className="monitor-board-toolbar">
               <div className="monitor-tabs" aria-label="Replay views">
@@ -716,13 +720,13 @@ export function RunMonitor({
               <div className="monitor-canvas">
                 <div className="monitor-runner">
                   <span>
-                    <span className="monitor-diamond" /> Buyer orchestration
+                    <span className="monitor-diamond" /> Current buyer pipeline
                   </span>
                   <small>
                     Read the reply <b> / </b> Price the options <b> / </b>{" "}
                     Choose the move
                   </small>
-                  <code>Python</code>
+                  <code>v1.9 + advisory LLMs</code>
                 </div>
                 <div className="monitor-lanes" ref={lanes}>
                   <EngineConnections
@@ -757,32 +761,43 @@ export function RunMonitor({
                     <header>
                       <span>03</span>
                       <div>
-                        <h2>Negotiate & close</h2>
-                        <p>Recorded supplier responses</p>
+                        <h2>Review & exchange</h2>
+                        <p>Check, dispatch and record</p>
                       </div>
                     </header>
-                    {card("supplier")}
-                    <div className="monitor-loop">
-                      <span>↶</span>
-                      <div>
-                        <strong>Read. Reprice. Respond.</strong>
-                        <p>Each reply returns to the engine.</p>
-                      </div>
-                    </div>
                     <ReviewNode
                       inspected={panel === "review"}
                       onInspect={inspectReviewer}
                     />
+                    {card("supplier")}
                     {card("outcome")}
-                    <div className="monitor-trust-note">
-                      <span>✓</span>
-                      <p>
-                        <strong>Original v1.9 replay.</strong> Code chose every
-                        move in this suite. The offline reviewer is shown as a
-                        separate extension.
-                      </p>
-                    </div>
                   </div>
+                  <div className="monitor-feedback-lane" aria-label="Supplier feedback loop">
+                    <header>
+                      <span aria-hidden="true">↶</span>
+                      <div>
+                        <h2>Negotiation feedback</h2>
+                        <p>Supplier reply → LLM → decision engine</p>
+                        <small>Validated context for the next round</small>
+                      </div>
+                    </header>
+                    <ReplyInterpretationNode
+                      inspected={panel === "feedback"}
+                      onInspect={() => inspectModel("feedback")}
+                    />
+                    <p className="monitor-feedback-source">
+                      Supplier replies + earlier public exchanges
+                      <span>History also feeds the decision reviewer.</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="monitor-trust-note">
+                  <span>✓</span>
+                  <p>
+                    <strong>Current architecture, original v1.9 replay.</strong>{" "}
+                    Both LLMs are advisory. This saved suite used neither model;
+                    code chose every move and its scores are unchanged.
+                  </p>
                 </div>
                 <div className="monitor-map-legend">
                   <span>
@@ -792,7 +807,7 @@ export function RunMonitor({
                     <i className="legend-active" /> Current stage
                   </span>
                   <span>
-                    <i className="legend-review" /> Offline review branch
+                    <i className="legend-review" /> Advisory stages & feedback
                   </span>
                   <span>
                     Click a stage to inspect its evidence <span>↗</span>
@@ -857,18 +872,24 @@ export function RunMonitor({
             aria-label="Run evidence and supplier conversation"
           >
             <div
-              className={`monitor-inspector-top ${panel === "review" ? "is-review" : ""}`}
+              className={`monitor-inspector-top ${panel === "review" || panel === "feedback" ? "is-review" : ""}`}
             >
               {panel === "review" ? (
                 <>
                   <div className="monitor-eyebrow">
-                    REVIEWER EXPLORER / EXPERIMENTAL
+                    DECISION REVIEWER / SAVED EXAMPLES
                   </div>
                   <h2>A second look at the decision.</h2>
                   <p>
                     Saved synthetic examples, separate from this{" "}
                     {session.case_id} replay.
                   </p>
+                </>
+              ) : panel === "feedback" ? (
+                <>
+                  <div className="monitor-eyebrow">SUPPLIER FEEDBACK / CURRENT AGENT</div>
+                  <h2>Read the reply. Close the loop.</h2>
+                  <p>A structured supplier reading before the next policy decision.</p>
                 </>
               ) : (
                 <>
@@ -939,6 +960,13 @@ export function RunMonitor({
               >
                 Reviewer
               </button>
+              <button
+                type="button"
+                aria-pressed={panel === "feedback"}
+                onClick={() => inspectModel("feedback")}
+              >
+                Feedback
+              </button>
             </div>
             <div className="monitor-inspector-body" ref={conversation}>
               {panel === "conversation" ? (
@@ -995,6 +1023,8 @@ export function RunMonitor({
                 </>
               ) : panel === "review" ? (
                 <ReviewInspector />
+              ) : panel === "feedback" ? (
+                <ReplyInterpretationInspector />
               ) : (
                 <div className="monitor-detail">
                   <div className="monitor-eyebrow">
@@ -1020,6 +1050,11 @@ export function RunMonitor({
                     Saved reviewer evidence · original buyer action unchanged
                   </span>
                   <small>Offline study · not a stage in this replay</small>
+                </>
+              ) : panel === "feedback" ? (
+                <>
+                  <span>Validated observations · code owns the decision</span>
+                  <small>Current architecture · absent from the v1.9 recording</small>
                 </>
               ) : (
                 <>
