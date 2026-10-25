@@ -110,12 +110,30 @@ were unchanged. [Combined-model report](evaluations/reply-interpretation/runs/du
 
 ## Understand and test the pipeline
 
-```text
-Data package + Sunday release → deterministic supplier dossier
-Supplier reply + earlier exchanges → advisory JSON interpretation
-Existing policy → cost checks and binding decision → claims → email
-Prepared action + exchange feedback → advisory decision review → send
+```mermaid
+flowchart TD
+    Data["Data package + Sunday release"] --> Dossier["Deterministic supplier dossier"]
+    Supplier["Supplier agent"] --> History["Latest reply + earlier exchanges"]
+    History --> Interpreter["Reply interpreter · gpt-6.1-sol"]
+    Interpreter --> Validation["Validate JSON, source references and quotations"]
+    Validation -. "Advisory observations" .-> Policy
+    History --> Policy["v1.9 policy: costs, terms, claims, accept or walk away"]
+    Dossier --> Policy
+    Policy --> Action["Prepare action and email"]
+    Policy -. "Engine exception" .-> Fallback["Kit LLM fallback"]
+    Fallback --> Action
+    Action --> Reviewer["Decision reviewer · gpt-6-luna"]
+    History -. "Accumulated exchange feedback" .-> Reviewer
+    Reviewer -. "Assessment and evidence" .-> Trace["Audit trace"]
+    Validation -. "Reading or unavailable status" .-> Trace
+    Reviewer --> Dispatch["Dispatch prepared action unchanged"]
+    Dispatch --> Supplier
 ```
+
+Solid arrows show processing and message flow. Dotted arrows show advisory records or the
+engine-error fallback. Both advisory stages are enabled by default; neither can override an
+offer or acceptance. If either advisory model fails or times out, processing continues with
+the policy action. The separate kit LLM fallback attempts a move only if the engine raises an error.
 
 The model returns source references and interpretation categories. Code resolves quoted values
 from the supplier’s actual sheets. Source validation establishes provenance, not semantic truth;
