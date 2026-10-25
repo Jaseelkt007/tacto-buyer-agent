@@ -601,6 +601,9 @@ export function RunMonitor({
             </p>
           </div>
           <div className="monitor-header-actions">
+            <Link href="/demo" className="monitor-text-link">
+              Case story <span>↗</span>
+            </Link>
             <span className="monitor-recorded">
               <i /> Recorded arena replay
             </span>

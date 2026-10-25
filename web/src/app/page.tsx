@@ -113,10 +113,10 @@ export default function Home() {
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-5">
               <Link
-                href="/live"
+                href="/demo"
                 className="tacto-primary inline-flex items-center gap-3 rounded-md px-5 py-3 text-[12px]"
               >
-                <PulseIcon width={16} height={16} /> Watch a practice negotiation{" "}
+                <PulseIcon width={16} height={16} /> See a deal in action{" "}
                 <span>→</span>
               </Link>
               <Link
