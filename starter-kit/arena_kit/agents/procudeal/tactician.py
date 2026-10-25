@@ -9,11 +9,13 @@ rules again, tuned on practice suppliers).
 Env: TACTICIAN_MODEL (default claude-opus-5-5), TACTICIAN_EFFORT (low), TACTICIAN_TIMEOUT_S (25).
 """
 
+import concurrent.futures as cf
 import logging
 import os
 import time
 
 from ...cost import complete_offer, must_haves_ok
+from .policy import HOLD_TEXT
 from .research import llm
 from .strategist import clean_paragraph
 
@@ -63,23 +65,31 @@ SCHEMA = {
 }
 
 
+_POOL = cf.ThreadPoolExecutor(max_workers=16, thread_name_prefix="tactician")  # cases in parallel never queue
+
+
 def ask(packet, model=None, effort=None, timeout=None, cache=True):
-    """The model's raw answer and its latency; None and the error on failure (the caller keeps E0)."""
+    """The model's raw answer and its latency; None and the error when it fails or misses the deadline
+    (a wall-clock limit around the whole call, retries included: the caller then keeps E0)."""
+    limit = timeout or TIMEOUT_S
     t0 = time.monotonic()
+    job = _POOL.submit(
+        llm.ask,
+        SYSTEM,
+        packet["text"],
+        SCHEMA,
+        tag="tactician",
+        model=model or MODEL,
+        effort=effort or EFFORT,
+        timeout=limit,
+        cache=cache,
+        max_tokens=MAX_TOKENS,
+    )
     try:
-        answer = llm.ask(
-            SYSTEM,
-            packet["text"],
-            SCHEMA,
-            tag="tactician",
-            model=model or MODEL,
-            effort=effort or EFFORT,
-            timeout=timeout or TIMEOUT_S,
-            cache=cache,
-            max_tokens=MAX_TOKENS,
-        )
-        return answer, time.monotonic() - t0, None
-    except Exception as e:  # late, refused, invalid: the engine's move stands
+        return job.result(timeout=limit), time.monotonic() - t0, None
+    except cf.TimeoutError:
+        return None, time.monotonic() - t0, f"no answer within {limit:.0f}s"
+    except Exception as e:  # refused, invalid JSON, API error: the engine's move stands
         return None, time.monotonic() - t0, repr(e)
 
 
@@ -115,6 +125,15 @@ def to_move(neg, packet, answer, engine_move):
         if not side.last_main:
             return engine_move, "hold before any sheet of ours"
         sheet = dict(side.last_main)
+        why = {"tactician": answer.get("reason"), "option": "hold"}
+        return {
+            "supplier_id": sid,
+            "sheets": [sheet],
+            "claims": [],
+            "hold": True,
+            "answers": [HOLD_TEXT],
+            "why": why,
+        }, "ok"
     elif action == "counter":
         opt = packet["options"].get(answer.get("option"))
         rung = (opt or {}).get("rungs", {}).get(answer.get("rung"))
@@ -130,7 +149,12 @@ def to_move(neg, packet, answer, engine_move):
         "supplier_id": sid,
         "sheets": [sheet],
         "claims": claims,
-        "why": {"tactician": answer.get("reason"), "option": answer.get("option"), "rung": answer.get("rung"), "claims_dropped": dropped},
+        "why": {
+            "tactician": answer.get("reason"),
+            "option": answer.get("option"),
+            "rung": answer.get("rung"),
+            "claims_dropped": dropped,
+        },
         "paragraph": message,
     }
     return move, "ok" if not dropped else f"ok, claims dropped {dropped}"

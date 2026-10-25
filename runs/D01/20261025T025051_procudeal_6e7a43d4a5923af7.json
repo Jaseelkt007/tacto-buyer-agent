@@ -1,0 +1,835 @@
+{
+ "case_id": "case:D01",
+ "agent": "procudeal",
+ "commit": "a8c223a-dirty",
+ "note": "v2.0 tactician + no step back (sandbox)",
+ "when": "2026-10-25T02:50:51+00:00",
+ "seconds": 105.1,
+ "session_id": "6e7a43d4a5923af7",
+ "result": {
+  "ended": true,
+  "deal": true,
+  "supplier_id": "sup:DEMO-F1",
+  "offer_id": "offer:DEMO-F1-5",
+  "terms": {
+   "payment_days": 45,
+   "lead_time_days": 35,
+   "volume_per_year": 4000,
+   "contract_months": 24,
+   "effective_date": "2026-12-01",
+   "index_clause": null,
+   "incoterm": "FCA",
+   "tooling_eur": 0.0,
+   "ppm_commitment": 650,
+   "chargeback_eur_per_complaint": 0.0,
+   "unit_price": 50.4
+  },
+  "c_open": 448810.67,
+  "c_deal": 414144.0,
+  "c_alt": null,
+  "c_best": 408623.99,
+  "score": 0.8626408053613782,
+  "must_haves_ok": true,
+  "cost_breakdown": {
+   "price": 403200.0,
+   "uncovered_need": 0.0,
+   "fallback_risk": 0.0,
+   "payment_terms": 1344.0,
+   "freight": 9600.0,
+   "late_delivery": 0.0,
+   "quality": 0.0,
+   "tooling": 0.0,
+   "index_clause": 0.0,
+   "index_risk": 0.0,
+   "relationship": 0.0
+  }
+ },
+ "session": {
+  "session_id": "6e7a43d4a5923af7",
+  "case_id": "case:D01",
+  "status": "ended",
+  "end_reason": "accepted",
+  "rounds": 6,
+  "set": "sandbox",
+  "opening": {
+   "sup:DEMO-F1": {
+    "offer_id": "offer:DEMO-F1-0",
+    "round": 0,
+    "status": "open",
+    "terms": {
+     "unit_price": 52.9,
+     "payment_days": 30,
+     "contract_months": 12,
+     "effective_date": "2026-12-01"
+    },
+    "alternatives": [],
+    "missing_fields": [],
+    "claims": [
+     {
+      "type": "index_change",
+      "refs": [
+       "idx:WAGES-METAL@2025-09",
+       "idx:WAGES-METAL@2026-09"
+      ],
+      "asserted": {
+       "change_pct": 3.1
+      }
+     }
+    ],
+    "claim_results": [],
+    "signals": {
+     "reply_delay_days": 2,
+     "validity_days": 30
+    },
+    "text": "Guten Tag,\n\nThank you for your enquiry. Please find our Angebot below.\n\nIt is always a pleasure to work with your esteemed house, continuing the strong tradition of craftsmanship and trust between our companies. For this agreement, our offer stands at a price of €52.90 per unit, a Zahlungsziel 30 days net, a contract term of 12 months, valid from 1 December 2026. \n\nTo remain transparent about our situation, WAGES-METAL rose 3.1 % in twelve months and is 28 % of our cost. We take great pride in the dedication of our foundry workforce and the quality we deliver to our partners every day.\n\nPlease note that this offer remains valid for 30 days. We look forward to continuing our successful cooperation together.\n\nViele Grüße aus der Gießerei\nAndreas Moser\nOwner, Demo Gießerei GmbH"
+   }
+  },
+  "threads": {
+   "sup:DEMO-F1": {
+    "offer_id": "offer:DEMO-F1-5",
+    "status": "agreed",
+    "offers": 6,
+    "closed": null,
+    "seconds_left": null
+   }
+  },
+  "moves": [],
+  "result": {
+   "ended": true,
+   "deal": true,
+   "supplier_id": "sup:DEMO-F1",
+   "offer_id": "offer:DEMO-F1-5",
+   "terms": {
+    "payment_days": 45,
+    "lead_time_days": 35,
+    "volume_per_year": 4000,
+    "contract_months": 24,
+    "effective_date": "2026-12-01",
+    "index_clause": null,
+    "incoterm": "FCA",
+    "tooling_eur": 0.0,
+    "ppm_commitment": 650,
+    "chargeback_eur_per_complaint": 0.0,
+    "unit_price": 50.4
+   },
+   "c_open": 448810.67,
+   "c_deal": 414144.0,
+   "c_alt": null,
+   "c_best": 408623.99,
+   "score": 0.8626408053613782,
+   "must_haves_ok": true,
+   "cost_breakdown": {
+    "price": 403200.0,
+    "uncovered_need": 0.0,
+    "fallback_risk": 0.0,
+    "payment_terms": 1344.0,
+    "freight": 9600.0,
+    "late_delivery": 0.0,
+    "quality": 0.0,
+    "tooling": 0.0,
+    "index_clause": 0.0,
+    "index_risk": 0.0,
+    "relationship": 0.0
+   },
+   "trace": [
+    {
+     "round": 0,
+     "actor": "sup:DEMO-F1",
+     "move": {
+      "offer_id": "offer:DEMO-F1-0",
+      "round": 0,
+      "status": "open",
+      "terms": {
+       "unit_price": 52.9,
+       "payment_days": 30,
+       "contract_months": 12,
+       "effective_date": "2026-12-01"
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [
+       {
+        "type": "index_change",
+        "refs": [
+         "idx:WAGES-METAL@2025-09",
+         "idx:WAGES-METAL@2026-09"
+        ],
+        "asserted": {
+         "change_pct": 3.1
+        }
+       }
+      ],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Guten Tag,\n\nThank you for your enquiry. Please find our Angebot below.\n\nIt is always a pleasure to work with your esteemed house, continuing the strong tradition of craftsmanship and trust between our companies. For this agreement, our offer stands at a price of €52.90 per unit, a Zahlungsziel 30 days net, a contract term of 12 months, valid from 1 December 2026. \n\nTo remain transparent about our situation, WAGES-METAL rose 3.1 % in twelve months and is 28 % of our cost. We take great pride in the dedication of our foundry workforce and the quality we deliver to our partners every day.\n\nPlease note that this offer remains valid for 30 days. We look forward to continuing our successful cooperation together.\n\nViele Grüße aus der Gießerei\nAndreas Moser\nOwner, Demo Gießerei GmbH"
+     },
+     "reasons": [
+      "WAGES-METAL rose … in twelve months and is … of our cost."
+     ]
+    },
+    {
+     "round": 1,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Demo Gießerei GmbH: Pump housing PH-100: the foundry wants +8.8 %",
+      "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 48.89,
+         "payment_days": 60,
+         "contract_months": 24,
+         "effective_date": "2026-12-01"
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": []
+      },
+      "supplier_id": "sup:DEMO-F1"
+     },
+     "reasons": []
+    },
+    {
+     "round": 1,
+     "actor": "sup:DEMO-F1",
+     "move": {
+      "offer_id": "offer:DEMO-F1-1",
+      "round": 1,
+      "status": "open",
+      "terms": {
+       "unit_price": 51.6,
+       "payment_days": 60,
+       "contract_months": 24,
+       "effective_date": "2026-12-01"
+      },
+      "alternatives": [
+       {
+        "offer_id": "offer:DEMO-F1-1-a",
+        "terms": {
+         "unit_price": 51.4,
+         "payment_days": 45,
+         "contract_months": 24,
+         "effective_date": "2026-12-01"
+        }
+       }
+      ],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Guten Tag,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We highly value our 12-year partnership and are pleased to support your request for a 24-month contract to ensure mutual planning security. However, extending the payment terms to 60 days places an undue burden on our operations, so we propose a fair compromise of 45 days. \n\nReflecting this commitment and the extended contract duration, we can revise our offer to a price of €51.60 per unit. Our current offer stands at a price of €51.60 per unit, Zahlungsziel 60 days net, a contract term of 24 months, valid from 1 December 2026. Alternatively, with Zahlungsziel 45 days net: €51.40 per unit. As another option, we offer a price of €51.40 per unit, Zahlungsziel 45 days net, a contract term of 24 months, valid from 1 December 2026.\n\nThis offer is valid for 30 days.\n\nViele Grüße aus der Gießerei\nAndreas Moser\nOwner, Demo Gießerei GmbH"
+     },
+     "reasons": [
+      "We highly value our 12-year partnership and are pleased to support your request for a 24-month contract to ensure mutual planning security.",
+      "However, extending the payment terms to … days places an undue burden on our operations, so we propose a fair compromise of … days.",
+      "Reflecting this commitment and the extended contract duration, we can revise our offer to €… per unit.",
+      "Alternatively, with Zahlungsziel … days net: €… per unit."
+     ]
+    },
+    {
+     "round": 2,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Demo Gießerei GmbH: Pump housing PH-100: the foundry wants +8.8 %",
+      "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 49.82,
+         "payment_days": 45,
+         "contract_months": 24,
+         "effective_date": "2026-12-01"
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": []
+      },
+      "supplier_id": "sup:DEMO-F1"
+     },
+     "reasons": []
+    },
+    {
+     "round": 2,
+     "actor": "sup:DEMO-F1",
+     "move": {
+      "offer_id": "offer:DEMO-F1-2",
+      "round": 2,
+      "status": "open",
+      "terms": {
+       "unit_price": 50.8,
+       "payment_days": 45,
+       "contract_months": 24,
+       "effective_date": "2026-12-01"
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Guten Tag,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nWe appreciate your acceptance of the 45-day payment term, which supports our operational planning. In recognition of your movement, we are prepared to reduce our price to €50.80 per unit for this package. It is a pleasure to build upon the long relationship our companies share in our region, and we take great pride in continuing to supply you with quality work from our foundry floor. \n\nOur current Angebot stands at a price of €50.80 per unit, Zahlungsziel 45 days net, a contract term of 24 months, valid from 1 December 2026. This offer remains valid for 30 days. We trust this brings us closer to a mutually beneficial conclusion.\n\nViele Grüße aus der Gießerei\nAndreas Moser\nOwner, Demo Gießerei GmbH"
+     },
+     "reasons": [
+      "We appreciate your acceptance of the 45-day payment term, which supports our operational planning.",
+      "In recognition of your movement, we are prepared to reduce our price to €… per unit for this package.",
+      "We trust this brings us closer to a mutually beneficial conclusion."
+     ]
+    },
+    {
+     "round": 3,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Demo Gießerei GmbH: Pump housing PH-100: the foundry wants +8.8 %",
+      "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 50.18,
+         "payment_days": 45,
+         "contract_months": 24,
+         "effective_date": "2026-12-01"
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": []
+      },
+      "supplier_id": "sup:DEMO-F1"
+     },
+     "reasons": []
+    },
+    {
+     "round": 3,
+     "actor": "sup:DEMO-F1",
+     "move": {
+      "offer_id": "offer:DEMO-F1-3",
+      "round": 3,
+      "status": "open",
+      "terms": {
+       "unit_price": 50.5,
+       "payment_days": 45,
+       "contract_months": 24,
+       "effective_date": "2026-12-01"
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Guten Tag,\n\nWe have reviewed your offer and can adjust our Angebot as follows. In response to your movement, we are pleased to lower our price to €50.50 per unit for the 24-month contract with 45-day payment terms.\n\nTo set this out clearly, our offer stands at a price of €50.50 per unit, Zahlungsziel 45 days net, a contract term of 24 months, valid from 1 December 2026. Please note that this offer remains valid for 30 days.\n\nWe highly value our 12-year partnership and look forward to continuing to supply you with the high-quality castings you expect from our foundry. It is always a pleasure to work together with partners who appreciate traditional craftsmanship as much as we do.\n\nViele Grüße aus der Gießerei\nAndreas Moser\nOwner, Demo Gießerei GmbH"
+     },
+     "reasons": [
+      "In response to your movement, we are pleased to lower our price to €… per unit for the 24-month contract with 45-day payment terms.",
+      "We highly value our 12-year partnership and look forward to continuing to supply you with the high-quality castings you expect from our foundry."
+     ]
+    },
+    {
+     "round": 4,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Demo Gießerei GmbH: Pump housing PH-100: the foundry wants +8.8 %",
+      "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 50.3,
+         "payment_days": 45,
+         "contract_months": 24,
+         "effective_date": "2026-12-01"
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": []
+      },
+      "supplier_id": "sup:DEMO-F1"
+     },
+     "reasons": []
+    },
+    {
+     "round": 4,
+     "actor": "sup:DEMO-F1",
+     "move": {
+      "offer_id": "offer:DEMO-F1-4",
+      "round": 4,
+      "status": "open",
+      "terms": {
+       "unit_price": 50.4,
+       "payment_days": 45,
+       "contract_months": 24,
+       "effective_date": "2026-12-01"
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Guten Tag,\n\nThank you for your continued movement and your latest proposal. We have reviewed your offer and can adjust our Angebot as follows. In response to your step, we are prepared to reduce our price to €50.40 per unit for the 24-month contract with 45-day payment terms. \n\nFor our family foundry, maintaining the deep trust built between our companies over many years in this region remains deeply important. To be completely precise, our current Angebot stands at a price of €50.40 per unit, Zahlungsziel 45 days net, a contract term of 24 months, valid from 1 December 2026. Please note that this offer stays valid for 30 days. We trust this brings us very close to a final agreement that reflects the value of our long-standing partnership.\n\nViele Grüße aus der Gießerei\nAndreas Moser\nOwner, Demo Gießerei GmbH"
+     },
+     "reasons": [
+      "Thank you for your continued movement and your latest proposal.",
+      "In response to your step, we are prepared to reduce our price to €… per unit for the 24-month contract with 45-day payment terms.",
+      "We trust this brings us very close to a final agreement that reflects the value of our long-standing partnership."
+     ]
+    },
+    {
+     "round": 5,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Demo Gießerei GmbH: Pump housing PH-100: the foundry wants +8.8 %",
+      "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 50.31,
+         "payment_days": 45,
+         "contract_months": 24,
+         "effective_date": "2026-12-01"
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": []
+      },
+      "supplier_id": "sup:DEMO-F1"
+     },
+     "reasons": []
+    },
+    {
+     "round": 5,
+     "actor": "sup:DEMO-F1",
+     "move": {
+      "offer_id": "offer:DEMO-F1-5",
+      "round": 5,
+      "status": "final_offer",
+      "terms": {
+       "unit_price": 50.4,
+       "payment_days": 45,
+       "contract_months": 24,
+       "effective_date": "2026-12-01"
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 3,
+       "validity_days": 7
+      },
+      "text": "Guten Tag,\n\nWe have received your latest proposal, but we have reached the absolute limit of what we can offer for this package. Our family foundry takes great pride in the quality of our craft and the long-standing partnership we have built with Hollerau Pumpenwerke GmbH over the years in our region. Our price of €50.40 per unit is calculated with the utmost precision to support our long-standing partnership. \n\nThis is our final offer (letztes Angebot). Please decide. We must therefore maintain our offer of €50.40 per unit for the 24-month contract with 45-day payment terms. Specifically, our offer comprises a price of €50.40 per unit, Zahlungsziel 45 days net, a contract term of 24 months, valid from 1 December 2026. Please note that this offer remains valid for 7 days.\n\nViele Grüße aus der Gießerei\nAndreas Moser\nOwner, Demo Gießerei GmbH"
+     },
+     "reasons": [
+      "We have received your latest proposal, but we have reached the absolute limit of what we can offer for this package.",
+      "Our price of €… per unit is calculated with the utmost precision to support our long-standing partnership.",
+      "We must therefore maintain our offer of €… per unit for the 24-month contract with 45-day payment terms."
+     ]
+    },
+    {
+     "round": 5,
+     "actor": "buyer",
+     "move": {
+      "type": "accept",
+      "offer_id": "offer:DEMO-F1-5",
+      "supplier_id": "sup:DEMO-F1"
+     },
+     "reasons": []
+    }
+   ]
+  },
+  "replay_url": "/replay/6e7a43d4a5923af7"
+ },
+ "backoffice": [
+  {
+   "round": 0,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "quote attached (quote-offer-DEMO-F1-0.pdf)"
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet; we answer with our offer."
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet; we answer with our offer."
+  },
+  {
+   "round": 3,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 3,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet; we answer with our offer."
+  },
+  {
+   "round": 4,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 4,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet; we answer with our offer."
+  },
+  {
+   "round": 5,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "My call: hold."
+  },
+  {
+   "round": 5,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet; we answer with our final offer."
+  },
+  {
+   "round": 5,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "quote attached (quote-offer-DEMO-F1-5.pdf)"
+  },
+  {
+   "round": 5,
+   "supplier_id": "sup:DEMO-F1",
+   "supplier": "Demo Gießerei GmbH",
+   "from": "Owner",
+   "to": "team",
+   "text": "order confirmation attached (order-confirmation-offer-DEMO-F1-5.pdf)"
+  }
+ ],
+ "decisions": [
+  {
+   "round": 0,
+   "supplier_id": "sup:DEMO-F1",
+   "their_status": "open",
+   "their_offer": "offer:DEMO-F1-0",
+   "their_terms": {
+    "unit_price": 52.9,
+    "payment_days": 30,
+    "contract_months": 12,
+    "effective_date": "2026-12-01"
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 48.89,
+     "payment_days": 60,
+     "contract_months": 24,
+     "effective_date": "2026-12-01"
+    }
+   ],
+   "seconds": 7.783,
+   "source": "engine",
+   "tactician": "o1 at health gives the lowest C of any rung (€404,697), slightly below E0's €405,052. E0's €48.60 sits under health, so the extra relationship charge outweighs the price saving. Pay 60 d is cheapest for us, and the effective-date variants (o2-o4) have the same C. The 24-month term offers value the cash model does not count, which makes acceptance more likely. Opening at health leaves room to concede later through the step rungs. Its wage argument only supports a small increase, which our message points out without quoting figures.",
+   "option": "o1",
+   "rung": "health",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 7.6,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "o1",
+     "rung": "health",
+     "claims": [],
+     "reason": "o1 at health gives the lowest C of any rung (€404,697), slightly below E0's €405,052. E0's €48.60 sits under health, so the extra relationship charge outweighs the price saving. Pay 60 d is cheapest for us, and the effective-date variants (o2-o4) have the same C. The 24-month term offers value the cash model does not count, which makes acceptance more likely. Opening at health leaves room to concede later through the step rungs. Its wage argument only supports a small increase, which our message points out without quoting figures."
+    },
+    "used": true,
+    "packet_seconds": 0.09
+   },
+   "features_off": [
+    "call_note_lever",
+    "case_plan",
+    "patience",
+    "plan_paragraph",
+    "plan_priced_trades",
+    "plan_stance",
+    "tactician_text"
+   ],
+   "plan": false
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:DEMO-F1",
+   "their_status": "open",
+   "their_offer": "offer:DEMO-F1-1",
+   "their_terms": {
+    "unit_price": 51.6,
+    "payment_days": 60,
+    "contract_months": 24,
+    "effective_date": "2026-12-01"
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 49.82,
+     "payment_days": 45,
+     "contract_months": 24,
+     "effective_date": "2026-12-01"
+    }
+   ],
+   "seconds": 9.849,
+   "source": "engine",
+   "tactician": "o5 takes the supplier's own preferred terms (pay 45 d, 24 months, December start), so we concede the point it cares about and it has a reason to move on price. The step_10 rung gives our lowest C on the table (€409,489), apart from E0's €49.64. That E0 price sits barely above our last offer and only a fraction of its rung's value. Since its last move was about €1.83, it would likely gain us little and could stall the thread. step_10 stays above the health price, so the relationship charge stays limited. Its status is open with many messages left, so accepting now at €422k would leave clear value unclaimed. The pay-30 or later-start options cost us more C for the same give.",
+   "option": "o5",
+   "rung": "step_10",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 9.8,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "o5",
+     "rung": "step_10",
+     "claims": [],
+     "reason": "o5 takes the supplier's own preferred terms (pay 45 d, 24 months, December start), so we concede the point it cares about and it has a reason to move on price. The step_10 rung gives our lowest C on the table (€409,489), apart from E0's €49.64. That E0 price sits barely above our last offer and only a fraction of its rung's value. Since its last move was about €1.83, it would likely gain us little and could stall the thread. step_10 stays above the health price, so the relationship charge stays limited. Its status is open with many messages left, so accepting now at €422k would leave clear value unclaimed. The pay-30 or later-start options cost us more C for the same give."
+    },
+    "used": true,
+    "packet_seconds": 0.06
+   }
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:DEMO-F1",
+   "their_status": "open",
+   "their_offer": "offer:DEMO-F1-2",
+   "their_terms": {
+    "unit_price": 50.8,
+    "payment_days": 45,
+    "contract_months": 24,
+    "effective_date": "2026-12-01"
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 50.18,
+     "payment_days": 45,
+     "contract_months": 24,
+     "effective_date": "2026-12-01"
+    }
+   ],
+   "seconds": 8.401,
+   "source": "engine",
+   "tactician": "o5 keeps the terms it already accepted, so it can answer on price alone. At its recent pace of about 1.22 per reply, step_10 (C 412,378) is reachable in roughly one reply. It is far below accepting 417,355 now and well below the 30-day options (o1–o4, around 417k at its_level). E0 at 50.11 is slightly cheaper for us, but it sits below our own step ladder and risks stalling or provoking a final offer. Step_10 is a firm but credible move. We still have plenty of messages, and the health price (48.77) is far below, so there is no relationship-charge risk at this level.",
+   "option": "o5",
+   "rung": "step_10",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 8.3,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "o5",
+     "rung": "step_10",
+     "claims": [],
+     "reason": "o5 keeps the terms it already accepted, so it can answer on price alone. At its recent pace of about 1.22 per reply, step_10 (C 412,378) is reachable in roughly one reply. It is far below accepting 417,355 now and well below the 30-day options (o1–o4, around 417k at its_level). E0 at 50.11 is slightly cheaper for us, but it sits below our own step ladder and risks stalling or provoking a final offer. Step_10 is a firm but credible move. We still have plenty of messages, and the health price (48.77) is far below, so there is no relationship-charge risk at this level."
+    },
+    "used": true,
+    "packet_seconds": 0.07
+   }
+  },
+  {
+   "round": 3,
+   "supplier_id": "sup:DEMO-F1",
+   "their_status": "open",
+   "their_offer": "offer:DEMO-F1-3",
+   "their_terms": {
+    "unit_price": 50.5,
+    "payment_days": 45,
+    "contract_months": 24,
+    "effective_date": "2026-12-01"
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 50.3,
+     "payment_days": 45,
+     "contract_months": 24,
+     "effective_date": "2026-12-01"
+    }
+   ],
+   "seconds": 7.594,
+   "source": "engine",
+   "tactician": "The supplier is still open and moving, so accepting €50.50 now would leave value on the table, and seven messages remain. o5 step_10 (€50.30, our C €413,341) keeps the terms it already offered and is only marginally above E0 (€50.28, C €413,181). E0 sits essentially at our last ask, so it is a weaker signal of movement and risks a stall. step_10 is a credible small step that it is likely to accept at about its recent pace. The pay-30 options (o1-o4) and pay-60 (o7) cost us more C at its level, and o8 (12 months) is far worse. No arguments remain to cite.",
+   "option": "o5",
+   "rung": "step_10",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 7.5,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "o5",
+     "rung": "step_10",
+     "claims": [],
+     "reason": "The supplier is still open and moving, so accepting €50.50 now would leave value on the table, and seven messages remain. o5 step_10 (€50.30, our C €413,341) keeps the terms it already offered and is only marginally above E0 (€50.28, C €413,181). E0 sits essentially at our last ask, so it is a weaker signal of movement and risks a stall. step_10 is a credible small step that it is likely to accept at about its recent pace. The pay-30 options (o1-o4) and pay-60 (o7) cost us more C at its level, and o8 (12 months) is far worse. No arguments remain to cite."
+    },
+    "used": true,
+    "packet_seconds": 0.08
+   }
+  },
+  {
+   "round": 4,
+   "supplier_id": "sup:DEMO-F1",
+   "their_status": "open",
+   "their_offer": "offer:DEMO-F1-4",
+   "their_terms": {
+    "unit_price": 50.4,
+    "payment_days": 45,
+    "contract_months": 24,
+    "effective_date": "2026-12-01"
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 50.31,
+     "payment_days": 45,
+     "contract_months": 24,
+     "effective_date": "2026-12-01"
+    }
+   ],
+   "seconds": 8.131,
+   "source": "engine",
+   "tactician": "The gap is only about €0.09. step_10 (€50.31, C €413,422) is the lowest C among the listed rungs, about €720 better than accepting DEMO-F1-4. The pay-30 options (o1-o4) give C around €413,900, which is worse. Its last concession was €0.10 and it is still open rather than at final_offer, so a small step at the same terms is likely to be met or accepted, and the margin stays above the 4 % relationship threshold. E0-style larger pushes or holding would risk prompting a final_offer for little gain. Accepting now leaves a likely concession on the table.",
+   "option": "o5",
+   "rung": "step_10",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 8.1,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "o5",
+     "rung": "step_10",
+     "claims": [],
+     "reason": "The gap is only about €0.09. step_10 (€50.31, C €413,422) is the lowest C among the listed rungs, about €720 better than accepting DEMO-F1-4. The pay-30 options (o1-o4) give C around €413,900, which is worse. Its last concession was €0.10 and it is still open rather than at final_offer, so a small step at the same terms is likely to be met or accepted, and the margin stays above the 4 % relationship threshold. E0-style larger pushes or holding would risk prompting a final_offer for little gain. Accepting now leaves a likely concession on the table."
+    },
+    "used": true,
+    "packet_seconds": 0.07
+   }
+  },
+  {
+   "round": 5,
+   "supplier_id": "sup:DEMO-F1",
+   "their_status": "final_offer",
+   "their_offer": "offer:DEMO-F1-5",
+   "their_terms": {
+    "unit_price": 50.4,
+    "payment_days": 45,
+    "contract_months": 24,
+    "effective_date": "2026-12-01"
+   },
+   "action": "accept",
+   "our_sheets": [],
+   "seconds": 7.256,
+   "source": "engine",
+   "why": {
+    "tactician": "Accepting DEMO-F1-5 locks in C €414,144, about €34.7k below the opening quote. The remaining upside is small. The o5 step rungs would save at most about €640, and the payment-term reshuffles o1–o4 save at most about €256. Any of these would push below a sheet it has declared final, and the cash model counts them as neutral or slightly negative for the supplier. E0 or any counter therefore risks losing the whole deal, and a walk-away scores 0, for a gain of well under 1 % of the savings already secured. Accepting the binding final sheet is the dominant move.",
+    "hybrid": {
+     "seconds": 7.2,
+     "check": "ok",
+     "error": null,
+     "choice": {
+      "action": "accept",
+      "option": "offer:DEMO-F1-5",
+      "rung": "",
+      "claims": [],
+      "reason": "Accepting DEMO-F1-5 locks in C €414,144, about €34.7k below the opening quote. The remaining upside is small. The o5 step rungs would save at most about €640, and the payment-term reshuffles o1–o4 save at most about €256. Any of these would push below a sheet it has declared final, and the cash model counts them as neutral or slightly negative for the supplier. E0 or any counter therefore risks losing the whole deal, and a walk-away scores 0, for a gain of well under 1 % of the savings already secured. Accepting the binding final sheet is the dominant move."
+     },
+     "used": true,
+     "packet_seconds": 0.08
+    }
+   }
+  }
+ ],
+ "plan": null,
+ "prepare_seconds": null
+}

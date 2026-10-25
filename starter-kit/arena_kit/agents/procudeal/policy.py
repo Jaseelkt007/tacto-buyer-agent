@@ -50,6 +50,8 @@ FEATURES = {
     "quote_cap": False,  # v1.8: the opening quote caps the full cost; later prices do not
     "measured_rate": False,  # v1.8: its cost of money from its own sheets that differ only in payment days
     "health_refresh": False,  # v1.8: health price and ceiling recomputed whenever the estimate changes
+    "tactician": False,  # v2.0 hybrid: one model call per move picks among code-priced options (single supplier)
+    "tactician_text": False,  # v2.0 hybrid: the tactician's figure-free paragraph goes into the e-mail
 }
 
 
@@ -1020,6 +1022,38 @@ class Negotiator:
             "answers": [HOLD_TEXT],
             "why": {"price": main["unit_price"], "hold": "it clarifies internally - our proposal stands"},
         }
+
+    def replace_move(self, side, move):
+        """tactician (v2.0): its move goes out instead of the engine's. Undo the engine's pending record
+        and record this one, so prices, claims, the term mix and a later rollback match what was sent."""
+        p, side.pending = side.pending, None
+        if p:
+            if p["price"] is not None and side.ours and side.ours[-1] == p["price"]:
+                side.ours.pop()
+            side.used -= set(p["keys"])
+            side.kinds_used -= set(p["kinds"])
+            self.used_refs -= set(p["refs"])
+            side.trades -= set(p["trades"])
+            side.last_main = p["main"]
+            side.holds, side.clause_said, side.rival_cited = p["holds"], p["clause_said"], p["rival_cited"]
+        if move.get("action"):
+            return  # an accept ends the case: nothing pending
+        claims = move.get("claims") or []
+        own = [c for c in claims if c.kind != "rival_offer"]
+        keys = tuple(c.key for c in claims)
+        kinds = frozenset(c.kind for c in own) - side.kinds_used
+        refs = frozenset(r for c in own for r in c.refs) - self.used_refs
+        side.used |= set(keys)
+        side.kinds_used |= kinds
+        self.used_refs |= refs
+        side.claim_log, side.sent_claims = (keys, kinds, refs), list(claims)
+        main = move["sheets"][0]
+        mix = {k: v for k, v in main.items() if k != "unit_price"}
+        if mix != side.mix:
+            self.set_mix(side, mix)  # the engine's next move (the fallback) continues on these terms
+        if move.get("hold"):
+            side.holds += 1
+        self.sent(side, main["unit_price"], main)
 
     def sent(self, side, price, main=None, trades=()):
         """Record a move as pending until the supplier answers (see `settle`)."""

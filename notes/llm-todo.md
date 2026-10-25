@@ -47,10 +47,10 @@ Plan and design: `docs/research.md` (zone 0) - zones 1-3 follow. Status: `[ ]` o
 | H2.3 | `tactician.py`: prompt + schema + code check; clause value (its stated exposure) and its pace added to the packet | [x] |
 | H2.4 | Offline replay: P02 with Z picks the clause at health from round 1 (0.723 if accepted), without Z never; 9 other cases no regression visible | [x] |
 | H2.5 | Latency: Opus 5.5 low median 8 s, p95 9.6 s, max 11.9 s (71 calls, $2.25); Sonnet / Haiku not tried | [x] |
-| H3.1 | Live loop behind flag `tactician`; v1.7c move computed first, sent on invalid / late; single-supplier first | [ ] |
-| H3.2 | Free end-to-end: D01, D02, arena-sim | [ ] |
+| H3.1 | Live loop behind flag `tactician` (ProcuDealAgent.hybrid, replace_move, 25 s wall clock); no-step-back rungs after the D01 regression | [x] |
+| H3.2 | Sandbox: D01 0.772 -> fix -> 0.863 (v1.7c 0.883); D02 0.534 (RFQ, engine) | [x] |
 | H3.3 | RFQ scheduler: per-thread deadlines, parallel calls, send order | [ ] |
-| H3.4 | Hosted only after H2.4 + H3.2 pass: P02 once -> touched cases -> full set | [ ] |
+| H3.4 | Hosted: P02 0.734 (v1.7c 0.499); full set 72.3 vs 72.7 - model prices worse than the engine (P01, P18, P08) | [x] |
 | H4 | 08:00 data release; final runner; rehearsal; commit by 12:45 | [ ] |
 
 ## Log

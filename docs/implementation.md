@@ -212,6 +212,8 @@ flag off the engine behaves like v1.6c plus the bug fixes (sandbox D01 0.883, D0
 | `quote_cap` (default **off**, v1.8) | audit | the full-cost estimate is capped once, by the opening quote: price x (1 − sustainable margin); later prices no longer cap it (suppliers do close below full cost) |
 | `measured_rate` (default **off**, v1.8) | audit | its cost of money from two of its own sheets in one message that differ only in payment days (`economics.implied_rate`, exact inverse of `supplier_value`); replaces the owner-type rule and blocks the cash premium; replans the term mix |
 | `health_refresh` (default **off**, v1.8) | audit | health price and price ceiling recomputed whenever the full-cost estimate or the rate changes (v1.7c kept the setup value) |
+| `tactician` (default **off**, v2.0) | hybrid | single-supplier cases: after the engine decides, `context.build` + one model call (`tactician.ask`, 25 s wall-clock deadline) choose among the code-priced options; `to_move` checks it; `Negotiator.replace_move` keeps the engine's bookkeeping consistent; any failure sends the engine's move. Use with `quote_cap,measured_rate,health_refresh` |
+| `tactician_text` (default **off**, v2.0) | hybrid | the tactician's figure-free paragraph goes into the e-mail (off: the engine's template words) |
 
 **A. Lever schedule.** `pick_claims` takes, in the first message, up to 3 claims of different kinds;
 later exactly one claim of a kind this supplier has not heard (2 after a data ask). A rival offer is
@@ -396,5 +398,15 @@ Env: `TACTICIAN_MODEL` (claude-opus-5-5), `TACTICIAN_EFFORT` (low), `TACTICIAN_T
 Measured offline at Opus 5.5 low over 71 calls: median 8.0 s, p95 9.6 s, max 11.9 s; $0.032 per call.
 
 Offline test: `uv run python scripts/replay.py P02 --model claude-opus-5-5 --effort low`
-(`--with-z-only` skips the arm without [Z] lines). Not yet in the live loop (phase 3, flag
-`tactician`).
+(`--with-z-only` skips the arm without [Z] lines).
+
+**Live (phase 3):** `ProcuDealAgent.hybrid` runs after `Negotiator.decide` when `tactician` is on, in
+single-supplier cases, on offers and accepts. Walk-aways, notes and RFQs stay with the engine.
+- **Order:** the engine's move is computed first. The model's move replaces it only when every check
+  passes.
+- **Deadline:** wall-clock, retries included, on a 16-thread pool.
+- **Trace:** every decision records `hybrid` (seconds, check, choice, used).
+- **No step back:** every rung is worth at least as much to the supplier as our last offer. On the
+  terms we sent last, step rungs of 10 / 25 / 50 % of the gap to its level are added.
+
+Run: `PROCUDEAL_ON="tactician,quote_cap,measured_rate,health_refresh" uv run python scripts/bench.py ...`

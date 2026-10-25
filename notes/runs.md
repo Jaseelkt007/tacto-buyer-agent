@@ -177,3 +177,17 @@ One row per benchmark run (`scripts/bench.py`). Newest at the bottom.
 | 10-25 02:00 | case:D02 | procudeal | 2168e02-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/a2ddaf44956f077a) | v1.8 flags on (sandbox) |
 | 10-25 02:06 | case:P02 | procudeal | 2168e02-dirty | True | 0.499 | 2,282,867 | 2,259,245 | 2,235,514 | 5 | 1 | [replay](https://arena.tacto.ai/replay/a6d66eaddaaf8114) | current pipeline P02 check |
 | 10-25 02:09 | case:P02 | procudeal | 2168e02-dirty | True | 0.499 | 2,282,867 | 2,259,245 | 2,235,514 | 5 | 1 | [replay](https://arena.tacto.ai/replay/bf74f15d4f975587) | current pipeline P02 check 2 |
+| 10-25 02:47 | case:D01 | procudeal | a8c223a-dirty | True | 0.772 | 448,811 | 417,788 | 408,624 | 6 | 135 | [replay](https://arena.tacto.ai/replay/50dd0dca3c77568b) | v2.0 tactician (sandbox) |
+| 10-25 02:45 | case:D02 | procudeal | a8c223a-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 2 | [replay](https://arena.tacto.ai/replay/dfc9b00235ee86d1) | v2.0 tactician (sandbox) |
+| 10-25 02:50 | case:D01 | procudeal | a8c223a-dirty | True | 0.863 | 448,811 | 414,144 | 408,624 | 6 | 105 | [replay](https://arena.tacto.ai/replay/6e7a43d4a5923af7) | v2.0 tactician + no step back (sandbox) |
+| 10-25 02:51 | case:P02 | procudeal | a8c223a-dirty | True | 0.734 | 2,282,867 | 2,248,109 | 2,235,514 | 2 | 49 | [replay](https://arena.tacto.ai/replay/f4e436ce80d84227) | v2.0 tactician (hosted) |
+| 10-25 02:53 | case:P01 | procudeal | a8c223a-dirty | True | 0.817 | 1,153,780 | 1,107,221 | 1,096,816 | 3 | 78 | [replay](https://arena.tacto.ai/replay/551faa4c03dbe9ad) | v2.0 tactician (hosted set) |
+| 10-25 02:52 | case:P02 | procudeal | a8c223a-dirty | True | 0.734 | 2,282,867 | 2,248,109 | 2,235,514 | 2 | 2 | [replay](https://arena.tacto.ai/replay/520fec27a73292f3) | v2.0 tactician (hosted set) |
+| 10-25 02:54 | case:P03 | procudeal | a8c223a-dirty | True | 0.923 | 4,246,314 | 3,935,069 | 3,909,043 | 4 | 120 | [replay](https://arena.tacto.ai/replay/c6b7729b557e1fb8) | v2.0 tactician (hosted set) |
+| 10-25 02:53 | case:P04 | procudeal | a8c223a-dirty | True | 0.860 | 198,846 | 196,853 | 196,529 | 4 | 83 | [replay](https://arena.tacto.ai/replay/1f8d4cb71ed59702) | v2.0 tactician (hosted set) |
+| 10-25 02:52 | case:P05 | procudeal | a8c223a-dirty | True | 0.710 | 305,545 | 247,219 | 223,424 | 12 | 4 | [replay](https://arena.tacto.ai/replay/58805ccc8be7dccb) | v2.0 tactician (hosted set) |
+| 10-25 02:54 | case:P07 | procudeal | a8c223a-dirty | True | 0.736 | 391,027 | 323,429 | 299,241 | 5 | 101 | [replay](https://arena.tacto.ai/replay/5f183d1a39e785c5) | v2.0 tactician (hosted set) |
+| 10-25 02:55 | case:P08 | procudeal | a8c223a-dirty | True | 0.560 | 1,135,887 | 1,037,607 | 960,309 | 6 | 156 | [replay](https://arena.tacto.ai/replay/86029853961dcc0a) | v2.0 tactician (hosted set) |
+| 10-25 02:54 | case:P10 | procudeal | a8c223a-dirty | True | 0.694 | 1,932,492 | 1,513,541 | 1,328,927 | 3 | 70 | [replay](https://arena.tacto.ai/replay/3af7b0e1b1d908b5) | v2.0 tactician (hosted set) |
+| 10-25 02:56 | case:P11 | procudeal | a8c223a-dirty | True | 0.710 | 817,578 | 750,082 | 722,500 | 7 | 165 | [replay](https://arena.tacto.ai/replay/fc83d2db018f12f7) | v2.0 tactician (hosted set) |
+| 10-25 02:55 | case:P18 | procudeal | a8c223a-dirty | True | 0.483 | 295,173 | 260,111 | 222,651 | 6 | 97 | [replay](https://arena.tacto.ai/replay/21ea5313f9c6fa39) | v2.0 tactician (hosted set) |

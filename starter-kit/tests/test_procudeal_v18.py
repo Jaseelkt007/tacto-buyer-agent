@@ -262,3 +262,82 @@ def test_tactician_invalid_answers_keep_the_engine_move(flags):
     pk["status"] = "final_offer"
     move, _ = ta.to_move(n, pk, {"action": "counter", "option": "E0", "rung": "engine", "claims": []}, engine)
     assert move is engine  # never push past a final offer
+
+
+# ---------- phase 3: the tactician in the live loop (a fake model, no API) ----------
+import time as _time  # noqa: E402
+
+from arena_kit.agents.procudeal import ProcuDealAgent  # noqa: E402
+
+
+def _fake(answer_fn):
+    def ask(packet, **_):
+        return answer_fn(packet), 0.01, None
+
+    return ask
+
+
+def test_live_move_replaced_and_bookkept(flags, monkeypatch):
+    def choose(pk):
+        oid = next(o for o in pk["options"] if o != "E0" and pk["options"][o]["terms"]["contract_months"] == 36)
+        rung = next(iter(pk["options"][oid]["rungs"]))
+        return {"action": "counter", "option": oid, "rung": rung, "claims": [], "reason": "test"}
+
+    monkeypatch.setattr(ta, "ask", _fake(choose))
+    agent = ProcuDealAgent(complete=None)
+    first = supplier_msg(45.0, payment_days=30, contract_months=24)
+    decision = agent.decide(STABILISE, {SID: [first]})
+    sheet = decision["message"]["term_sheets"][0]["terms"]
+    side = agent.negotiator.sides[SID]
+    assert sheet["contract_months"] == 36  # the model's option went out
+    assert side.ours[-1] == sheet["unit_price"] and side.last_main == sheet
+    assert side.mix["contract_months"] == 36  # the fallback continues on the terms we sent
+    assert side.pending["price"] == sheet["unit_price"] and side.pending["keys"] == ()
+    assert not side.kinds_used  # the engine's claims were undone, the model sent none
+    entry = agent.trace[-1]
+    assert entry["hybrid"]["used"] is True and entry["source"] == "engine"
+
+
+def test_live_failure_sends_the_engine_move(flags, monkeypatch):
+    first = supplier_msg(45.0, payment_days=30, contract_months=24)
+    flags["tactician"] = False
+    plain = ProcuDealAgent(complete=None).decide(STABILISE, {SID: [first]})
+    flags["tactician"] = True
+    monkeypatch.setattr(ta, "ask", lambda packet, **_: (None, 25.0, "no answer within 25s"))
+    agent = ProcuDealAgent(complete=None)
+    decision = agent.decide(STABILISE, {SID: [first]})
+    assert decision["message"]["term_sheets"] == plain["message"]["term_sheets"]
+    assert agent.trace[-1]["hybrid"]["used"] is False
+
+
+def test_tactician_deadline_is_wall_clock(monkeypatch):
+    def slow(*a, **k):
+        _time.sleep(1.0)
+        return {}
+
+    monkeypatch.setattr(ta.llm, "ask", slow)
+    t0 = _time.monotonic()
+    answer, secs, err = ta.ask({"text": "x"}, timeout=0.2)
+    assert answer is None and "0s" in err and _time.monotonic() - t0 < 0.6
+
+
+def test_rungs_never_step_back(flags):
+    n = po.Negotiator(STABILISE)
+    first = supplier_msg(45.0, payment_days=30, contract_months=24)
+    move = n.decide({SID: [first]})
+    ours = move["sheets"][0]
+    events = [
+        first,
+        {"from": "buyer", "term_sheets": [{"terms": ours}], "body": ""},
+        supplier_msg(44.0, n=1, **{k: v for k, v in ours.items() if k != "unit_price"}),
+    ]
+    move = n.decide({SID: events})
+    pk = cx.build(n, {SID: events}, move)
+    side, est = n.sides[SID], n.sides[SID].estimate()
+    last = side.pending["main"] if side.pending else ours  # our previous sheet (before this move)
+    floor = cx.worth(STABILISE, last, last["unit_price"], est, {})
+    for oid, opt in pk["options"].items():
+        if oid == "E0":
+            continue
+        for price in opt["rungs"].values():
+            assert cx.worth(STABILISE, opt["terms"], price, est, {}) >= floor - 1e-6

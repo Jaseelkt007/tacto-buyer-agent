@@ -13,7 +13,7 @@ import time
 
 from ...play import latest, standing
 from ..llm import LLMAgent
-from . import strategist, writer
+from . import context, strategist, tactician, writer
 from .policy import Negotiator, flags_off, on
 
 log = logging.getLogger("arena")
@@ -52,6 +52,8 @@ class ProcuDealAgent:
         try:
             self.negotiator.remember_prices(threads)
             move = self.negotiator.decide(threads)
+            if on("tactician") and self.hybrid_applies(move):
+                move = self.hybrid(threads, move)
             if move.get("action"):
                 decision = {"supplier_id": move["supplier_id"], "message": {"action": move["action"]}}
                 why = {"why": move["why"]}
@@ -70,6 +72,51 @@ class ProcuDealAgent:
             decision, why, source = self.delegate.decide(case, threads), {"error": repr(e)}, "kit-llm"
         self.record(case, threads, decision, time.monotonic() - t0, source, **why)
         return decision
+
+    def hybrid_applies(self, move):
+        """tactician: single-supplier cases, on offers and accepts (walk-aways and notes stay the engine's)."""
+        neg = self.negotiator
+        kind = (move.get("action") or {}).get("type")
+        return not neg.rfq and len(neg.sides) == 1 and not move.get("note") and (move.get("sheets") or kind == "accept")
+
+    def hybrid(self, threads, move):
+        """v2.0: the tactician picks among the options code priced; the engine's move is the fallback and
+        goes out on any invalid, refused or late answer. Never raises."""
+        neg, t0 = self.negotiator, time.monotonic()
+        try:
+            packet = context.build(neg, threads, move)
+        except Exception:
+            log.exception("hybrid packet failed - the engine's move goes out")
+            return move
+        answer, secs, err = tactician.ask(packet)
+        new, check = tactician.to_move(neg, packet, answer, move)
+        info = {
+            "seconds": round(secs, 1),
+            "check": check,
+            "error": err,
+            "choice": {k: (answer or {}).get(k) for k in ("action", "option", "rung", "claims", "reason")},
+        }
+        choice = info["choice"]
+        log.info(
+            "%s: tactician %s %s/%s in %.1fs (%s)",
+            packet["sid"],
+            choice["action"],
+            choice["option"],
+            choice["rung"],
+            secs,
+            check,
+        )
+        if new is move:
+            why = move.get("why")
+            if isinstance(why, dict):
+                why["hybrid"] = {**info, "used": False}
+            return move
+        neg.replace_move(neg.sides[packet["sid"]], new)
+        if not on("tactician_text"):
+            new.pop("paragraph", None)
+        why = new.get("why") if isinstance(new.get("why"), dict) else {}
+        new["why"] = {**why, "hybrid": {**info, "used": True, "packet_seconds": round(time.monotonic() - t0 - secs, 2)}}
+        return new
 
     def record(self, case, threads, decision, seconds, source, **why):
         """One trace entry per decision: what we sent, what we answered, how long it took, why."""

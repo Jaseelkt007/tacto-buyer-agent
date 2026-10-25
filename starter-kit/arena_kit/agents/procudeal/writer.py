@@ -19,10 +19,10 @@ def offer_email(case, events, move, side):
         return _email(case, events, lines + move["answers"] + ["", SIGN_OFF], move["sheets"], [])
     if first:
         lines.append("Thank you for your offer and for explaining your position.")
-        if move.get("paragraph"):  # case_plan: the strategist's words for this supplier, no figures
-            lines.append(move["paragraph"])
     else:
         lines.append("Thank you for your reply and for the step you have taken.")
+    if move.get("paragraph"):  # case_plan / tactician_text: model words for this sheet, no figures
+        lines.append(move["paragraph"])
     if move.get("answers"):
         lines += move["answers"]
     if move["claims"]:

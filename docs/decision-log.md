@@ -339,6 +339,71 @@ Trade-off noted: in P01 the old per-offer cap happened to be closer to the true 
 Sandbox with the flags on (`PROCUDEAL_ON=quote_cap,measured_rate,health_refresh`): D01 0.883, D02 0.534,
 identical to v1.7c. Hosted: not run.
 
+## v2.0 phase 3: the tactician in the live loop (flag `tactician`, off by default)
+**Built:**
+- `ProcuDealAgent.hybrid`: the engine decides first; one model call over the packet; code checks the
+  answer; `Negotiator.replace_move` undoes the engine's pending record and records the model's move
+  (price, claims, term mix);
+- a wall-clock deadline of 25 s;
+- on any failure the engine's move goes out;
+- single-supplier cases only;
+- the model's text sits behind its own flag (`tactician_text`, off), so the first test measures only
+  its choice of sheet and arguments.
+
+**Sandbox D01, first run: 0.772, against 0.883 for v1.7c.**
+- The model stepped back in price (€48.89 → €48.77, later €50.09 → €49.84). Each option's lowest
+  rung was its health price, so switching options lowered our offer.
+- It also hopped terms (payment 60 → 45 → 30, effective date → 2027-04).
+- The supplier answered "we must see a genuine concession from your side to proceed", stopped at
+  €51.10 and called it final.
+
+**Fix (a method, no tuned value):**
+- No step back: every rung must be worth at least as much to the supplier as our last offer.
+- Step rungs on the terms we sent last: 10 / 25 / 50 % of the gap to its level. This is a choice grid;
+  the model picks.
+
+**Sandbox D01 rerun: 0.863.** Steady steps (48.89 → 49.82 → 50.18 → 50.30 → 50.31), closing at its
+final €50.40 (v1.7c closed at €50.30). Roughly even with v1.7c.
+
+**Hosted P02 (1 session): 0.734, against 0.499 for v1.7c.**
+- Round 1: the model offered the 5 % deadband clause at the €361.82 health price, worth +5 % to the
+  supplier against its own quote.
+- The supplier answered "agreed" and we accepted: two rounds.
+- Breakdown: price €2,210,720, index risk €17,686, relationship €33,250, payment −€14,738.
+- The reference run had 0.735.
+- Model latency 7.5-9.8 s per move.
+
+**Full hosted set (10 sessions): 72.3, against 72.7 for v1.7c.**
+
+| case | v1.7c | tactician | change |
+|---|---|---|---|
+| P01 | 0.914 | 0.817 | −0.097 |
+| P02 | 0.499 | 0.734 | +0.235 |
+| P03 | 0.923 | 0.923 | 0 |
+| P04 | 0.860 | 0.860 | 0 |
+| P05 (RFQ, engine) | 0.710 | 0.710 | 0 |
+| P07 | 0.743 | 0.736 | −0.007 |
+| P08 | 0.604 | 0.560 | −0.044 |
+| P10 | 0.679 | 0.694 | +0.015 |
+| P11 | 0.710 | 0.710 | 0 |
+| P18 | 0.632 | 0.483 | −0.149 |
+
+**Why:** the model chooses *what to trade* well:
+- the P02 clause;
+- the P01 effective-date trade;
+- the P08 / P18 clause the supplier asks for.
+
+It moves the *price* worse than the engine:
+- **P01:** it opened at our health price (€132.23, which is itself 2 % high because should-cost runs
+  high), against the engine's anchor at today's €126.53. The supplier agreed at €133.40; v1.7c
+  reached €131.20.
+- **P18:** fast steps (€5.22 → €5.32, agreed). It then did not accept the agreed sheet and pushed a
+  no-clause sheet three times ("our agreed offer stands"). v1.7c reached €5.10.
+- **P08:** bigger steps and a mid-way switch to 24 months without a clause.
+
+The engine's anchors and steps are tuned constants, but they carry how the arena's bots answer our
+concessions. The packet cannot show that to the model. This is the same lesson as zone 1.
+
 ## v2.0 phase 2 (offline): labelled packet + one judgment call per move
 **Why:** the v1.8 fixes made the numbers right but changed no move; P02's gain needs a judgment no rule
 should make (offer the clause). **Built:** `context.py` (labelled packet A / D / E / S / Z, no tuned

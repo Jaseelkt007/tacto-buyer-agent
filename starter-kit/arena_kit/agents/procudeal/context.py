@@ -27,6 +27,7 @@ from . import signals as sg
 
 KNOWLEDGE = Path(__file__).resolve().parents[3] / "knowledge"
 TOP_OPTIONS = 6  # menu options shown besides the engine's mix and its own
+STEPS = (0.10, 0.25, 0.50)  # step rungs: shares of the gap between our last offer and its price (a choice grid)
 FEEDBACK = re.compile(r"[Ww]e checked the (.+?) you cited[;,:] (.+?)(?:\.|$)", re.M)
 VERDICT_KIND = {  # the arena's wording in a reply -> our claim kind
     "rival quote data": "rival_offer",
@@ -317,8 +318,10 @@ def argument_lines(neg, side, move):
 
 
 def _rungs(neg, side, terms, engine_c, health, its_sheet, drivers):
-    """Prices on these terms, set by code: from the health price (relationship goals; below it our C only
-    rises) or the engine's C level, up to its level. Each: (price, our C, worth to it vs its own sheet)."""
+    """Prices on these terms, set by code. From the health price (relationship goals; below it our C only
+    rises) or the engine's C level, up to its level; on our current terms also steps of the gap between
+    our last offer and its price. A counter never steps back: every rung is worth at least as much to
+    the supplier as our last offer. Each: (price, our C, worth to it vs its own sheet)."""
     case, std, est = neg.case, side.standard, side.estimate()
     rungs = {}
     if health:
@@ -335,10 +338,18 @@ def _rungs(neg, side, terms, engine_c, health, its_sheet, drivers):
     lo = rungs.get("health") or rungs.get("engine_level")
     if rungs.get("its_level") and lo and rungs["its_level"] > lo + 0.02:
         rungs["midway"] = round((lo + rungs["its_level"]) / 2, 2)
+    last = side.last_main
+    floor = worth(case, last, last["unit_price"], est, drivers) if last else None
+    if last and rungs.get("its_level") and all(terms.get(k) == v for k, v in last.items() if k in terms):
+        ours = last["unit_price"]
+        for share in STEPS:
+            rungs[f"step_{round(share * 100)}"] = round(ours + share * (rungs["its_level"] - ours), 2)
     out = {}
     for name, price in sorted(rungs.items(), key=lambda x: x[1]):
         if health and price < health - 0.005:
             continue  # below the health price our C only rises: dominated
+        if floor is not None and worth(case, terms, price, est, drivers) < floor - 1e-6:
+            continue  # worth less to it than our last offer: a step back
         c = eco.cost_at(case, terms, price, std, est)
         if c >= neg.limit:
             continue  # no better than C_open or the alternative
@@ -397,7 +408,8 @@ def option_lines(neg, side, move, its_sheet, drivers):
         )
         lines.append(f"{oid} {terms_text(case, terms)}: {rung_txt}{extra}")
     lines.append(
-        "(health = where our C is lowest on those terms. its_level = the price worth as much to it as its standing sheet: its cash value"
+        "(Every rung is worth at least as much to it as our last offer: no step back. step_N = our last price plus N % of the gap to"
+        " its level, on the terms we sent last. health = where our C is lowest on those terms. its_level = the price worth as much to it as its standing sheet: its cash value"
         " plus, for a clause, the protection on the exposure it states [E]. 'to it' = how much more (+) or less (-) a sheet is worth to it"
         " than its own standing sheet [E]; contract length or lead time it may value are not counted.)"
     )
