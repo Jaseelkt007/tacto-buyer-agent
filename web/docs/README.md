@@ -9,7 +9,8 @@ the negotiation. Update the page in the same commit as the code.
 
 | Section | Route | Page | Status |
 |---|---|---|---|
-| Home and Story (step-through player) | `/`, `/story/<session>` | [home.md](home.md) | done (phase 7) |
+| v1.9 home and historical Story | `/`, `/story/<session>` | [home.md](home.md) | done (phase 7) |
+| v1.9 recorded engine demo | `/live`, `/live/<session>` | [live.md](live.md) | done (phase 8) |
 | Mail | `/mail` | [../README.md](../README.md) | done |
 | Deals (negotiation replay) | `/negotiations` | [deals.md](deals.md) | done |
 | Suppliers | `/suppliers` | [suppliers.md](suppliers.md) | done (phase 1) |
@@ -20,7 +21,7 @@ the negotiation. Update the page in the same commit as the code.
 | Deal anatomy | `/negotiations/<session>/anatomy` | [anatomy.md](anatomy.md) | done (phase 6) |
 | Arguments (ledger) | `/arguments` | [arguments.md](arguments.md) | done (phase 6) |
 | Facts | `/facts` | [facts.md](facts.md) | done (phase 6) |
-| Pipeline demo (deck) | `/demo` | [demo.md](demo.md) | done |
+| Demo alias | `/demo` → `/live` | [demo.md](demo.md) | done |
 
 ## Phase plan
 
@@ -33,6 +34,7 @@ the negotiation. Update the page in the same commit as the code.
    coverage, supplier health, index clause, tooling), the argument ledger, and a fact search over
    `data/facts.json`.
 7. **Home and Story**: a step-through player for any run (case opens → supplier → cost and market → demand → plan → each round → score), with Previous / Play / Next and links into every tab.
+8. **Inside a run**: a live replay of the pipeline (data → our code → arena → supplier bot) with a timeline, event log and click-for-detail boxes.
 
 ## Traceability: every data ID is a link
 
@@ -67,6 +69,7 @@ The app reads committed JSON snapshots, so it builds and deploys without keys.
 | `npm run sync:contracts` | `../data` (CSV, contract texts) | `src/data/contracts.json`, `src/data/qn-links.json` | none |
 | `npm run sync:demand` | `../data` (CSV, `facts.json`) | `src/data/demand.json`, `src/data/demand-links.json` | none |
 | `npm run sync:facts` | `../data/facts.json` | `public/facts.json` (loaded by the browser on `/facts` only) | none |
+| `npm run sync:zone0` | `../starter-kit/knowledge/` (zone 0 dossiers, playbook, build index) | `src/data/zone0.json` | none |
 
 After the **Sunday 08:00 data release**: `uv run arena data`, then `npm run sync:suppliers && npm run sync:parts && npm run sync:market && npm run sync:contracts && npm run sync:demand && npm run sync:facts`
 (and later phases' syncs). After new benchmark runs on main: `git fetch origin && npm run sync:runs`.
@@ -97,10 +100,10 @@ web/
     sync-demand.mjs        Demand & Sourcing snapshot + fc:/rfq:/quote: link index
     sync-facts.mjs         facts.json for the Facts page
   src/
-    app/                   one folder per section (home, story, mail, negotiations + anatomy, suppliers, parts, market, contracts, demand, arguments, facts)
-    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/, market/, contracts/, demand/, arguments/, facts/, story/
+    app/                   one folder per section (home, story, live, mail, negotiations + anatomy, suppliers, parts, market, contracts, demand, arguments, facts)
+    components/            AppRail (section list), MailBody/DataId, charts/, negotiation/, suppliers/, parts/, market/, contracts/, demand/, arguments/, facts/, story/, live/
     data/                  committed snapshots
-    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, market.ts, indexRules.ts, contracts.ts, demand.ts, anatomy.ts, arguments.ts, story.ts, links.ts, format.ts
+    lib/                   typed loaders: inbox.ts, runs.ts, suppliers.ts, parts.ts, market.ts, indexRules.ts, contracts.ts, demand.ts, anatomy.ts, arguments.ts, story.ts, live.ts, links.ts, format.ts
 ```
 
 Add a section: a route under `src/app/`, one entry in `SECTIONS` in `src/components/AppRail.tsx`,

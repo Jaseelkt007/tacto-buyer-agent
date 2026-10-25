@@ -157,6 +157,7 @@ export type Stats = {
     kit_llm_runs: { file: string; case_id: string; note: string; kit_llm_moves: number; engine_moves: number; cause: string }[];
     avg_seconds: number;
     max_seconds: number;
+    seconds_by_source: { engine_median: number; engine_max: number; engine_first_move_median: number; kit_llm_median: number; kit_llm_max: number };
   };
   claims: { by_type: Record<string, Record<string, number>>; results: Record<string, number>; engine_labels: Record<string, number> };
   supplier_reading: { asks: Record<string, number>; traits: Record<string, number>; runs_with_asks: number };

@@ -16,10 +16,10 @@ import { Suppliers } from "./Suppliers";
 const CHAPTERS: Chapter[] = [
   {
     id: "pipeline",
-    tab: "Pipeline",
-    short: "The whole pipeline",
-    title: "How ProcuDeal runs a case",
-    lede: "Fourteen steps take a case from the opening quote to accept or walk away. Code decides every number. A language model is only the safety net when the code fails.",
+    tab: "Overview",
+    short: "How it works",
+    title: "How ProcuDeal works",
+    lede: "In plain words: what decides each move, whether an AI model is involved, and what runs in parallel when we play many cases at once.",
     render: () => <Pipeline />,
   },
   {

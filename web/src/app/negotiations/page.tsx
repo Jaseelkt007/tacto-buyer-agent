@@ -20,9 +20,9 @@ function Cell({ run }: { run: Run | undefined }) {
         // Sequential: one hue, more saturated where the score is higher.
         style={{ background: `color-mix(in oklab, var(--accent) ${Math.round(score * 55)}%, var(--surface))` }}
       >
-        <span className={`text-[14px] font-semibold ${score > 0.6 ? "text-white" : "text-[var(--ink)]"}`}>{pct(score)}</span>
+        <span className="text-[14px] font-semibold text-[var(--ink)]">{pct(score)}</span>
         {!deal && (
-          <span className={`block text-[10px] ${score > 0.6 ? "text-white" : "text-[var(--ink-2)]"}`}>
+          <span className="block text-[10px] text-[var(--ink-2)]">
             {(run.end_reason ?? "no deal").replace("_", " ")}
           </span>
         )}
@@ -52,12 +52,13 @@ export default function Page() {
     <main className="h-full overflow-auto bg-[var(--page)]">
       <div className="mx-auto max-w-6xl space-y-5 p-4 sm:p-6">
         <header className="space-y-1">
-          <h1 className="text-[22px] font-semibold">Negotiations</h1>
+          <h1 className="text-[22px] font-semibold">Negotiation history</h1>
           <p className="max-w-3xl text-[14px] text-[var(--ink-2)]">
-            Every session our benchmark played, by case and agent version. Score is the share of the possible saving
+            Saved sessions across engine versions and experiments. The current showcase uses v1.9; this archive preserves earlier results. Score is the share of the possible saving
             the deal captured (0–100). Open a cell to replay the negotiation: what each supplier said, what happened
             inside the supplier, what our agent decided and why, and what it wrote back.
           </p>
+          <Link href="/live" className="inline-flex rounded-md border border-[var(--line)] bg-white px-3 py-2 text-[12px] font-medium">Play the v1.9 demo →</Link>
           <p className="text-[12px] text-[var(--muted)]">
             {runs.length} runs from <code className="font-mono">{runsData.source}</code> · synced {fullDate(runsData.synced_at)}
           </p>

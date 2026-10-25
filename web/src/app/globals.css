@@ -1,83 +1,239 @@
 @import "tailwindcss";
 
-:root {
-  color-scheme: light;
-  --page: #f5f5f4;
-  --surface: #ffffff;
-  --surface-2: #f7f7f5;
-  --surface-3: #ebebe8;
-  --rail: #efefec;
-  --hover: #f0f0ee;
-  --select: #e3edfb;
-  --line: #e1e0d9;
-  --line-soft: #eeeeea;
-  --ink: #0b0b0b;
-  --ink-2: #52514e;
-  --muted: #898781;
-  --bar: #1c4f8f;
-  --accent: #2a78d6;
-  --accent-ink: #1c5cab;
-  --accent-line: #b7d3f6;
-  --accent-wash: #f1f6fd;
-  --tag-bg: #dcebfb;
-  --tag-fg: #184f95;
-  --id-bg: #eeeeea;
-  --id-fg: #33322f;
-  --warn-bg: #fff6e0;
-  --warn-border: #f2cf7a;
-  --s-ours: #2a78d6;
-  --s-supplier: #eb6834;
-  --good: #0a7a3d;
-  --good-bg: #e6f4ea;
-  --bad: #c4314b;
-  --bad-bg: #fdecee;
-  --s-3: #1baf7a;
-  --cost-1: #184f95;
-  --cost-2: #3987e5;
-  --cost-3: #86b6ef;
+@theme inline {
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --page: #0d0d0d;
-    --surface: #1a1a19;
-    --surface-2: #151514;
-    --surface-3: #2c2c2a;
-    --rail: #121211;
-    --hover: #242423;
-    --select: #1f3555;
-    --line: #2c2c2a;
-    --line-soft: #242423;
-    --ink: #f0efec;
-    --ink-2: #c3c2b7;
-    --muted: #898781;
-    --bar: #14365f;
-    --accent: #3987e5;
-    --accent-ink: #86b6ef;
-    --accent-line: #1c5cab;
-    --accent-wash: #16243a;
-    --tag-bg: #1c3a62;
-    --tag-fg: #b7d3f6;
-    --id-bg: #2c2c2a;
-    --id-fg: #e1e0d9;
-    --warn-bg: #3a2f12;
-    --warn-border: #8a6a1c;
-    --s-ours: #3987e5;
-    --s-supplier: #d95926;
-    --good: #5cc98a;
-    --good-bg: #13301f;
-    --bad: #f07a8c;
-    --bad-bg: #3a161d;
-    --s-3: #199e70;
-    --cost-1: #9ec5f4;
-    --cost-2: #5598e7;
-    --cost-3: #1c5cab;
-  }
+:root {
+  color-scheme: light;
+  --sans: var(--font-geist), system-ui, sans-serif;
+  --mono: var(--font-geist-mono), ui-monospace, monospace;
+  --page: #f5f5f5;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --surface-3: #f0efed;
+  --rail: #ffffff;
+  --hover: #f3f3f3;
+  --select: #fff4ed;
+  --line: #e4e2df;
+  --line-soft: #f0efed;
+  --ink: #000000;
+  --ink-2: #525252;
+  --muted: #6b6b6b;
+  --bar: #ffffff;
+  --accent: #ff6414;
+  --accent-hover: #ed5708;
+  --accent-ink: #9a3412;
+  --accent-line: #f5c2a6;
+  --accent-wash: #fff4ed;
+  --tag-bg: #fff1e8;
+  --tag-fg: #9a3412;
+  --id-bg: #f0efed;
+  --id-fg: #383838;
+  --warn-bg: #faf6eb;
+  --warn-border: #e4d9b9;
+  --s-ours: #cf4b08;
+  --s-supplier: #737373;
+  --good: #357050;
+  --good-bg: #edf5ef;
+  --bad: #a64748;
+  --bad-bg: #faefef;
+  --s-3: #758e80;
+  --s-model: #8b829c;
+  --cost-1: #cf4b08;
+  --cost-2: #f4a171;
+  --cost-3: #f8d6c1;
 }
 
 body {
   background: var(--page);
   color: var(--ink);
-  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--sans);
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--mono);
+}
+
+.tacto-primary {
+  background: var(--accent);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: background-color 150ms;
+}
+
+.tacto-primary:hover {
+  background: var(--accent-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #ffe0cc;
+  color: var(--ink);
+}
+
+button:not(:disabled),
+select {
+  cursor: pointer;
+}
+
+.app-rail {
+  display: flex;
+  width: 76px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  border-right: 1px solid var(--line);
+  background: var(--rail);
+  padding: 20px 7px 14px;
+}
+
+.app-rail-brand {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--accent);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
+}
+
+.app-rail-brand:hover {
+  background: var(--accent-hover);
+}
+
+.app-rail-links {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.app-rail-link {
+  position: relative;
+  display: flex;
+  min-height: 51px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--ink-2);
+  font-size: 10px;
+  line-height: 1.2;
+  transition:
+    background 150ms,
+    border-color 150ms;
+}
+
+.app-rail-link:hover {
+  background: var(--hover);
+  color: var(--ink);
+}
+
+.app-rail-link[aria-current="page"] {
+  border-color: var(--accent-line);
+  background: var(--accent-wash);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.app-rail-version {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.app-rail-version strong {
+  color: var(--ink-2);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (width < 640px) {
+  .app-rail {
+    width: 100%;
+    flex-direction: row;
+    gap: 10px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 10px;
+  }
+
+  .app-rail-links {
+    width: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 3px;
+  }
+
+  .app-rail-link {
+    width: 57px;
+    min-height: 44px;
+    gap: 3px;
+  }
+
+  .app-rail-version {
+    display: none;
+  }
+}
+
+/* Inside a run: data moving along an active edge, and the active stage's pulse. */
+@keyframes flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+.flow {
+  stroke-dasharray: 6 6;
+  animation: flow 0.6s linear infinite;
+}
+@keyframes pulse-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent) 0%, transparent);
+  }
+}
+.pulse-ring {
+  animation: pulse-ring 1.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow,
+  .pulse-ring {
+    animation: none;
+  }
 }

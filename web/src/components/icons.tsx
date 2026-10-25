@@ -81,6 +81,12 @@ export const DatabaseIcon = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const PulseIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base} {...p}>
+    <path d="M3 12h4l3-8 4 16 3-8h4" />
+  </svg>
+);
+
 export const SendIcon =(p: SVGProps<SVGSVGElement>) => (
   <svg {...base} {...p}>
     <path d="m22 2-7 20-4-9-9-4Z" />
