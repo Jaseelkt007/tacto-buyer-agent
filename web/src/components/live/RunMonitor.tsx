@@ -745,7 +745,7 @@ export function RunMonitor({
                 <p className="monitor-dispatch-path" aria-label="Reviewed email delivery path">
                   <span>Decision policy</span><i aria-hidden="true">→</i>
                   <span>Email writer</span><i aria-hidden="true">→</i>
-                  <strong>LLM decision review</strong><i aria-hidden="true">→</i>
+                  <strong>LLM Decision model</strong><i aria-hidden="true">→</i>
                   <span>Send to supplier</span>
                 </p>
                 <div className="monitor-deal-flow" ref={lanes}>

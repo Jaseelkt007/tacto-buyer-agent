@@ -7,7 +7,7 @@ export type ReviewExample = (typeof snapshot.examples)[ReviewExampleId];
 
 export const reviewerNode = {
   id: REVIEWER_NODE,
-  title: "LLM decision review",
+  title: "LLM Decision model",
   description:
     "Check the prepared response for overlooked conditions or conflicts.",
 };
