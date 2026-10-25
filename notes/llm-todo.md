@@ -55,6 +55,8 @@ Plan and design: `docs/research.md` (zone 0) - zones 1-3 follow. Status: `[ ]` o
 
 ## Log
 
+- Sun 05:30: v1.9 hosted set 75.1 (v1.7c 72.7): P02 0.734, the other 9 cases identical. Pushed as default.
+
 - Sun 05:20: v1.9 default = v1.8 fixes + protection_trade (code, no model). Hosted P02 0.734, sandbox D01 0.883 / D02 0.534, replay: only P02 changes. Hybrid tactician stays behind its flag (72.3 / 71.6 hosted sets).
 
 - Sun 03:40: phase 2 done offline. P02 packet + tactician pick the clause at the health price from round 1 (with Z); other cases same end states. Next: phase 3 live loop behind flag `tactician`.

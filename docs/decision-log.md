@@ -368,7 +368,8 @@ needs `quote_cap`, so the v1.8 fixes are switched on as well.
 - **Sandbox:** D01 0.883, D02 0.534 (= v1.7c).
 - **Hosted P02:** 0.734 in 2 rounds (the supplier agreed at once).
 
-**Expected set mean:** about 75.1 (72.7 + 2.35). The other teams' best P02 is 0.88, without a clause
+**Hosted set: 75.1** (v1.7c 72.7), exactly as expected. P02 is 0.734; the other 9 cases are
+identical to v1.7c. The other teams' best P02 is 0.88, without a clause
 at about €367.8. So this supplier goes below the €371.95 it called final for us, and the clause is
 not the ceiling for P02: open question for later.
 

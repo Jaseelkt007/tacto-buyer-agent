@@ -205,3 +205,13 @@ One row per benchmark run (`scripts/bench.py`). Newest at the bottom.
 | 10-25 03:24 | case:D01 | procudeal | 63d56e0-dirty | True | 0.883 | 448,811 | 413,341 | 408,624 | 5 | 2 | [replay](https://arena.tacto.ai/replay/6da1e4562169a0e1) | v1.9: protection trade + v1.8 fixes |
 | 10-25 03:24 | case:D02 | procudeal | 63d56e0-dirty | True | 0.534 | 214,296 | 183,580 | 156,739 | 11 | 3 | [replay](https://arena.tacto.ai/replay/8be13450040d6992) | v1.9: protection trade + v1.8 fixes |
 | 10-25 03:24 | case:P02 | procudeal | 63d56e0-dirty | True | 0.734 | 2,282,867 | 2,248,109 | 2,235,514 | 2 | 27 | [replay](https://arena.tacto.ai/replay/a1da387693922c8d) | v1.9: protection trade + v1.8 fixes |
+| 10-25 03:26 | case:P01 | procudeal | 44dbff9 | True | 0.914 | 1,153,780 | 1,101,723 | 1,096,816 | 3 | 3 | [replay](https://arena.tacto.ai/replay/fcf8fb00383ddc35) | engine v1.9 (defaults) |
+| 10-25 03:26 | case:P02 | procudeal | 44dbff9 | True | 0.734 | 2,282,867 | 2,248,109 | 2,235,514 | 2 | 2 | [replay](https://arena.tacto.ai/replay/098ff1a8ee022c6d) | engine v1.9 (defaults) |
+| 10-25 03:27 | case:P03 | procudeal | 44dbff9 | True | 0.923 | 4,246,314 | 3,935,069 | 3,909,043 | 3 | 49 | [replay](https://arena.tacto.ai/replay/b8851e350b4f7aae) | engine v1.9 (defaults) |
+| 10-25 03:26 | case:P04 | procudeal | 44dbff9 | True | 0.860 | 198,846 | 196,853 | 196,529 | 4 | 3 | [replay](https://arena.tacto.ai/replay/c7e46530afccc59b) | engine v1.9 (defaults) |
+| 10-25 03:26 | case:P05 | procudeal | 44dbff9 | True | 0.710 | 305,545 | 247,219 | 223,424 | 12 | 9 | [replay](https://arena.tacto.ai/replay/664aa169f73412d2) | engine v1.9 (defaults) |
+| 10-25 03:26 | case:P07 | procudeal | 44dbff9 | True | 0.743 | 391,027 | 322,829 | 299,241 | 4 | 4 | [replay](https://arena.tacto.ai/replay/868276c3ae9da2f0) | engine v1.9 (defaults) |
+| 10-25 03:26 | case:P08 | procudeal | 44dbff9 | True | 0.604 | 1,135,887 | 1,029,835 | 960,309 | 6 | 4 | [replay](https://arena.tacto.ai/replay/06e91492ada81c19) | engine v1.9 (defaults) |
+| 10-25 03:26 | case:P10 | procudeal | 44dbff9 | True | 0.679 | 1,932,492 | 1,522,963 | 1,328,927 | 3 | 3 | [replay](https://arena.tacto.ai/replay/8c124efceeeeb1ff) | engine v1.9 (defaults) |
+| 10-25 03:27 | case:P11 | procudeal | 44dbff9 | True | 0.710 | 817,578 | 750,082 | 722,500 | 8 | 4 | [replay](https://arena.tacto.ai/replay/b5c13c51671453e1) | engine v1.9 (defaults) |
+| 10-25 03:27 | case:P18 | procudeal | 44dbff9 | True | 0.632 | 295,173 | 249,355 | 222,651 | 5 | 3 | [replay](https://arena.tacto.ai/replay/2853898063c8dbe5) | engine v1.9 (defaults) |

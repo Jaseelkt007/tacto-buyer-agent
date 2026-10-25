@@ -607,3 +607,42 @@ moved it ("it holds and we took it into account" vs "it does not change our calc
 - **The audit's rates now use the exact inverse of the kit formula** (360-day basis): P02 6.61 %,
   P01 9.61 %, P03 4.07 %. True full costs: P01 €130.04 (identical in all 12 runs), P02 €367.59,
   P03 €396.65. The identical P01 values support that the arena prices by the published formula.
+
+---
+
+## 11. Outcome of the hybrid work (Sun 25 Oct, 05:30)
+
+**Shipped: engine v1.9, hosted 75.1 (v1.7c 72.7).** It adds the protection trade, computed by code
+from the case's own numbers, and switches the three v1.8 fixes on.
+
+**The hybrid model (v2.0 / v2.0b) stays behind its flag:**
+
+| version | hosted set |
+|---|---|
+| v2.0 (the model chose prices) | 72.3 |
+| v2.0b (the model chose terms, code set prices) | 71.6 |
+
+**What it taught:**
+1. The P02 win needed **information**, not a model: the supplier's value of a clause (from the
+   exposure it states) and a correct health price. Once code computed both, a general rule could act
+   on them.
+2. The model decides from the packet, so **every blind spot in the packet becomes a wrong decision**:
+   - lead time and contract length were valued at zero (P10, P08);
+   - the cash-only value hid the clause, until the clause value was added.
+3. On **price dynamics** the engine's tuned anchors and steps beat the model (P01, P18; the zone 1
+   stance did the same).
+
+**Before a model may trade a term,** its value to the supplier must come from the supplier's own
+sheets in the session.
+
+**Open, by gap to the best practice scores of other teams** (leaderboard seen by a human, not by the
+agent):
+
+| case | ours | best |
+|---|---|---|
+| P11 | 0.71 | 0.88 |
+| P08 | 0.60-0.63 | 0.85 |
+| P05 | 0.71-0.76 | 0.92 |
+| P02 | 0.734 | 0.88, without a clause at about €367.8 |
+
+So the P02 supplier goes below the €371.95 it called final for us.
