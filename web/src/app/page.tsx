@@ -4,7 +4,7 @@ import finalRun from "@/data/final-run.json";
 import "./home.css";
 
 export const metadata: Metadata = {
-  title: "ProcuDeal · Better deals. Less effort.",
+  title: "ProcuDeal · Every Move, A Reason",
   description: "Meet your procurement agent. €2.21M in modeled savings across 28 agreements in the final negotiation arena run.",
 };
 
@@ -26,7 +26,7 @@ export default function Home() {
         <section className="home-hero" aria-labelledby="intro-heading">
           <div className="home-intro">
             <p className="home-eyebrow"><span className="home-dot" /> YOUR PROCUREMENT AGENT</p>
-            <h1 id="intro-heading">Better deals.<br /><span>Less effort.</span></h1>
+            <h1 id="intro-heading">Every Move,<br /><span>A Reason.</span></h1>
             <p className="home-subtitle">From supplier insights to negotiated agreements.</p>
             <div className="home-actions">
               <Link href="/demo" className="home-primary">Start the demo <span aria-hidden="true">↗</span></Link>
