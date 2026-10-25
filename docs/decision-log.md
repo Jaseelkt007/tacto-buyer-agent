@@ -339,6 +339,46 @@ Trade-off noted: in P01 the old per-offer cap happened to be closer to the true 
 Sandbox with the flags on (`PROCUDEAL_ON=quote_cap,measured_rate,health_refresh`): D01 0.883, D02 0.534,
 identical to v1.7c. Hosted: not run.
 
+## v2.0 phase 2 (offline): labelled packet + one judgment call per move
+**Why:** the v1.8 fixes made the numbers right but changed no move; P02's gain needs a judgment no rule
+should make (offer the clause). **Built:** `context.py` (labelled packet A / D / E / S / Z, no tuned
+constants, no back office; E0 = the engine's move as a default option) and `tactician.py` (Opus 5.5 low,
+code checks every field, E0 on any invalid or late answer).
+
+**What the first P02 replays taught (and changed):**
+1. **Packet with cash values only:** the model never chose the clause ("the clause options add
+   €17-40k of cost to us"). It could not see that the supplier values the clause.
+2. **Added the supplier's value of a clause:** the protection beyond the deadband on the exposure it
+   states itself (`clause_value_rate`). The method was checked first against the suppliers' own
+   deadband pricing in P08 and P18, cases it was not built from:
+   - P08: +2.20 % real vs +2.24 % predicted;
+   - P18: +1.85 % real vs +2.24 % predicted.
+
+   Every rung now says what it is worth to the supplier against its own sheet. For P02 at the health
+   price: the 5 % deadband clause is +5.0 % to it; no clause is −3.3 %.
+3. **Added its pace (S/E):** for example "€0.49 per reply; reaching €362.86 takes about 19 replies, 7
+   messages left".
+
+**Result (P02, recorded states):**
+- **With the [Z] lines:** from round 1 on the model picks the 5 % deadband clause at the health price
+  (€362.77), 0.723 if accepted. This supplier took clause sheets at once in the recordings. At round 0
+  it probes the health price without a clause.
+- **Without the [Z] lines:** it never picks the clause. So the zone-0 reading ("material risk
+  protection: strong") is what decides it, and it helps.
+
+**Other cases (with Z):** 8 single-supplier cases plus D01, no regression visible offline:
+- It accepts at the same end states as v1.7c (P04, P07, P08, P10, P11, P18) and takes the clause the
+  supplier proposes (P08, P18).
+- It picks P01's contractual date trade by itself.
+- Two invalid answers fell back to E0. They now drop only the bad argument.
+
+**Limits:**
+- Offline replay cannot show how suppliers answer *new* counters.
+- Opening at our health price is only as good as the full-cost estimate. In P01 that would cap us
+  near 0.908, against v1.7c's 0.914.
+
+**Latency:** median 8 s, max 12 s over 71 calls; $2.25 in total. Hosted: not run.
+
 ## v2.0 (in progress): an LLM layer on top of the rules - zone 0, offline research
 **Why:** the engine's opponent model (reading replies, levers, steps, wording) is rules fitted to the
 12 practice suppliers; the final brings "new suppliers and settings". Before a session opens we already

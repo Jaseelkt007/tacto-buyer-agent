@@ -260,6 +260,83 @@ def replay_run(run, arms, package, stds, rates, fcs, with_menu=False):
     return "\n".join(parts)
 
 
+def packet_text(run, state_no, spec, package, stds):
+    """The hybrid's packet (context.build) at the `state_no`-th supplier e-mail of a run, flags `spec`."""
+    from arena_kit.agents.procudeal import context
+    from arena_kit.agents.procudeal.policy import Negotiator
+
+    case = audit.CASES[run["case_id"]]
+    sid = next(iter(run["session"]["opening"]))
+    std = {k: v for k, v in stds[(run["case_id"], sid)].items() if not k.startswith("_")}
+    events = to_events(run, sid, std, case)
+    ends = [i for i, m in enumerate(events) if m["from"] != "buyer" and m.get("status") not in ENDED]
+    state = events[: ends[min(state_no, len(ends) - 1)] + 1]
+    set_flags(spec)
+    neg = Negotiator(case, package)
+    move = neg.decide({sid: state})
+    pk = context.build(neg, {sid: state}, move)
+    return pk
+
+
+def model_replay(run, package, stds, rates, fcs, spec, model, effort, zone0_arms=(True, False)):
+    """The tactician at every recorded state of a run: its choice, checked by code, scored with the truth."""
+    from arena_kit.agents.procudeal import context, tactician
+    from arena_kit.agents.procudeal.policy import Negotiator
+
+    case = audit.CASES[run["case_id"]]
+    sid = next(iter(run["session"]["opening"]))
+    key = (run["case_id"], sid)
+    std = {k: v for k, v in stds[key].items() if not k.startswith("_")}
+    res = run["result"]
+    truth = {
+        "standard": std,
+        "interest_rate": st.median(rates[key]) if rates.get(key) else 0.08,
+        "full_cost": st.median(fcs[key]) if fcs.get(key) else None,
+    }
+    truth = truth if truth["full_cost"] else None
+    events = to_events(run, sid, std, case)
+    rows, notes = [], []
+    for i, m in enumerate(events):
+        if m["from"] == "buyer" or m.get("status") in ENDED:
+            continue
+        state = events[: i + 1]
+        rnd = sum(1 for x in state if x["from"] == "buyer")
+        cells = [str(rnd), f"{m['term_sheets'][0]['terms'].get('unit_price')} [{m.get('status')}]"]
+        for zone0 in zone0_arms:
+            set_flags(spec)
+            neg = Negotiator(case, package)
+            engine = neg.decide({sid: state})
+            pk = context.build(neg, {sid: state}, engine, zone0=zone0)
+            answer, secs, err = tactician.ask(pk, model=model, effort=effort, timeout=120)
+            move, why = tactician.to_move(neg, pk, answer, engine)
+            if move.get("action"):
+                acc = sheet_by_id(state, move["action"].get("term_sheet_id"))
+                txt = f"{move['action']['type']} {brief(acc, case['negotiable']) if acc else ''} → {score_of(case, acc, std, truth, res) if acc else '-'}"
+            else:
+                sh = move["sheets"][0]
+                txt = f"{(answer or {}).get('option')}/{(answer or {}).get('rung')} {brief(sh, case['negotiable'])} → {score_of(case, sh, std, truth, res)}"
+            if why.startswith("ok,"):
+                txt += f" [{why}]"
+            elif why != "ok":
+                txt += f" [E0 kept: {why}]"
+            cells.append(f"{txt} ({secs:.0f}s)")
+            if answer:
+                notes.append(
+                    f"- r{rnd} {'with' if zone0 else 'without'} Z: **{answer.get('action')} {answer.get('option')} {answer.get('rung')}** claims {answer.get('claims')}. Read: {answer.get('read')} Reason: {answer.get('reason')} Message: {answer.get('message')}"
+                )
+            elif err:
+                notes.append(f"- r{rnd} {'with' if zone0 else 'without'} Z: error {err}")
+        rows.append("| " + " | ".join(cells) + " |")
+    head = f"### {run['case_id'][5:]} · {run.get('note')} · arena score {res.get('score', 0):.3f} · model {model} ({effort})"
+    cols = (
+        "| round | its sheet | "
+        + " | ".join(f"{'with' if z else 'without'} Z: choice → score if accepted" for z in zone0_arms)
+        + " |"
+    )
+    sep = "|---|---|" + "---|" * len(zone0_arms)
+    return "\n".join([head, "", cols, sep, *rows, "", "Answers:", "", *notes])
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("cases", nargs="+")
@@ -267,6 +344,10 @@ def main():
     ap.add_argument("--arm", action="append", default=[], help="name=flag,flag (on top of the defaults)")
     ap.add_argument("--note", default="v1.7c", help="only runs whose note contains this (default v1.7c; '' = any)")
     ap.add_argument("--menu", action="store_true", help="also the priced menu at the opening state (last arm)")
+    ap.add_argument("--packet", type=int, help="print the hybrid packet at this supplier e-mail (0 = its quote)")
+    ap.add_argument("--model", help="run the tactician with this model at every state (e.g. claude-opus-5-5)")
+    ap.add_argument("--effort", default="low")
+    ap.add_argument("--with-z-only", action="store_true", help="tactician replay: only the arm with the [Z] lines")
     ap.add_argument("--print", action="store_true")
     args = ap.parse_args()
     logging.basicConfig(level=logging.WARNING)
@@ -277,6 +358,51 @@ def main():
     rates = audit.true_rates(runs, stds)
     fcs = audit.true_full_costs(runs, rates, stds)
     out = []
+    if args.model:
+        for c in args.cases:
+            cid = c if c.startswith("case:") else f"case:{c}"
+            run = [
+                r
+                for r in runs
+                if r["case_id"] == cid
+                and r.get("agent") == "procudeal"
+                and args.note in (r.get("note") or "")
+                and "plan" not in (r.get("note") or "")
+            ][-1]
+            z_arms = (True,) if args.with_z_only else (True, False)
+            out.append(model_replay(run, package, stds, rates, fcs, arms[-1][1], args.model, args.effort, z_arms))
+        set_flags("")
+        name = f"tactician-{'-'.join(c.replace('case:', '') for c in args.cases)}-{args.model.split('-')[1]}-{args.effort}.md"
+        path = audit.ROOT / "notes" / "analysis" / name
+        path.write_text("# Tactician replay\n\n" + "\n\n".join(out) + "\n", encoding="utf-8")
+        print(f"{path.relative_to(audit.ROOT)}")
+        if args.print:
+            print("\n\n".join(out))
+        return
+    if args.packet is not None:
+        for c in args.cases:
+            cid = c if c.startswith("case:") else f"case:{c}"
+            run = [
+                r
+                for r in runs
+                if r["case_id"] == cid
+                and r.get("agent") == "procudeal"
+                and args.note in (r.get("note") or "")
+                and "plan" not in (r.get("note") or "")
+            ][-1]
+            pk = packet_text(run, args.packet, arms[-1][1], package, stds)
+            path = audit.ROOT / "notes" / "analysis" / f"packet-{cid[5:]}-{args.packet}.md"
+            path.write_text(
+                f"# Packet: {cid[5:]}, supplier e-mail {args.packet} ({run.get('note')})\n\n{pk['text']}\n",
+                encoding="utf-8",
+            )
+            print(
+                f"{path.relative_to(audit.ROOT)}: {len(pk['text']):,} chars, about {len(pk['text']) // 4:,} tokens; options {list(pk['options'])}, claims {list(pk['claims'])}"
+            )
+            if args.print:
+                print(pk["text"])
+        set_flags("")
+        return
     for c in args.cases:
         cid = c if c.startswith("case:") else f"case:{c}"
         mine = [

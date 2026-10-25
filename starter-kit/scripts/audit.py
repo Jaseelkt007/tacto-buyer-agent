@@ -422,6 +422,35 @@ def section_claims(runs):
     return "\n".join(rows)
 
 
+def write_knowledge(runs):
+    """Two offline lookups for the hybrid's packet (properties of the arena's bots, not of one supplier):
+    stock lines (written by 4+ different suppliers) and how often each claim kind moved a supplier."""
+    who = defaultdict(set)
+    for r in runs:
+        for e in supplier_moves(r):
+            for s in set(sentences((e.get("move") or {}).get("text"))):
+                who[s].add(e["actor"])
+    stock = sorted((s for s, sids in who.items() if len(sids) >= 4), key=lambda s: -len(who[s]))
+    verdict = defaultdict(Counter)
+    for r in runs:
+        for e in supplier_moves(r):
+            for kind, said in FEEDBACK.findall((e.get("move") or {}).get("text") or ""):
+                kind = kind.strip()
+                if kind.endswith("data") and len(kind) < 40:
+                    verdict[kind]["moved" if "took it into account" in said else "no_change"] += 1
+    suppliers = len({e["actor"] for r in runs for e in supplier_moves(r)})
+    out = KIT / "knowledge"
+    (out / "stock_lines.json").write_text(
+        json.dumps({"min_suppliers": 4, "lines": stock}, indent=1, ensure_ascii=False)
+    )
+    (out / "claim_prior.json").write_text(
+        json.dumps(
+            {"suppliers": suppliers, "runs": len(runs), "kinds": {k: dict(v) for k, v in verdict.items()}}, indent=1
+        )
+    )
+    return len(stock), len(verdict)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--print", action="store_true")
@@ -474,6 +503,8 @@ def main():
         "",
     ]
     text = "\n".join(parts)
+    n_stock, n_kinds = write_knowledge(runs)
+    print(f"knowledge/stock_lines.json + claim_prior.json: {n_stock} stock lines, {n_kinds} claim kinds")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(text, encoding="utf-8")
     print(f"{OUT.relative_to(ROOT)} ({len(text):,} chars)")

@@ -81,7 +81,7 @@ def _stream(timeout=None, **kwargs):
         return stream.get_final_message()
 
 
-def ask(system, user, schema, tag="", effort=None, model=None, cache=True, timeout=None):
+def ask(system, user, schema, tag="", effort=None, model=None, cache=True, timeout=None, max_tokens=None):
     """The model's answer as a dict that matches `schema` (JSON Schema, additionalProperties false).
     `timeout`: seconds for a call inside the final's wave (offline research has none)."""
     model, effort = model or MODEL, effort or EFFORT
@@ -95,7 +95,7 @@ def ask(system, user, schema, tag="", effort=None, model=None, cache=True, timeo
     message = _stream(
         timeout=timeout,
         model=model,
-        max_tokens=MAX_TOKENS,
+        max_tokens=max_tokens or MAX_TOKENS,
         system=system,
         messages=[{"role": "user", "content": user}],
         output_config={"effort": effort, "format": {"type": "json_schema", "schema": schema}},

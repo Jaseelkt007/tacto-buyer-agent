@@ -343,6 +343,10 @@ The judgment moves to the model. The modules stay code: they are the model's eye
    | E estimate | our estimate, from the data or from the supplier's behaviour | value + range + how we got it |
    | S supplier | what the supplier said in this thread | its claim, not a fact |
    | R rule | our tuned constant or heuristic (anchors, steps, regex signals) | **nothing**: R items stay in the fallback engine |
+   | Z zone 0 | the offline model's reading of its records, each line with its IDs | an interpretation; never about its cost, which code estimates (E) |
+
+   The rule engine's own move goes in as one option (E0), labelled a default tuned on practice cases.
+   The model keeps it or picks another code-priced option, so the hybrid starts from v1.7c.
 3. **Numbers come from code.** The LLM picks among options that code has priced and validated.
 4. **Every step sits behind a flag. v1.7c (72.7) is the floor.** A step goes on by default only if it
    beats v1.7c on its target cases without hurting the full set.

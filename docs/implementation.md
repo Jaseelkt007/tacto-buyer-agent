@@ -333,3 +333,68 @@ worth as much to the supplier as its standing sheet in cash (`equal_value_price`
 terms such as a clause), our C there, and in relationship goals the health price (C lowest), our C
 there and, with a full-cost band, the health price at both ends. Not used by the fallback engine.
 Offline check: `uv run python scripts/replay.py P02 --menu`.
+
+## Hybrid packet (v2.0 phase 2, `context.py`)
+
+`context.build(neg, threads, move)` turns the engine's state after its own move into one labelled
+packet for the judgment call. Labels:
+
+| label | source |
+|---|---|
+| A | case file, published formula |
+| D | data record with an ID |
+| E | our estimate, with its range and method |
+| S | what the supplier sent in this session |
+| Z | the zone-0 dossier's reading, with IDs |
+
+Sections:
+- **case:** the score, C_open, the alternative, the relationship charge, what a clause costs us;
+- **supplier:** full cost and cost of money (E), needs and constraints (Z, minus any line about its
+  cost: code owns that estimate);
+- **thread:** every sheet with our C, its stated cost drivers, its verdict per claim kind, the arena's
+  claim results, its latest e-mail with the bots' stock lines marked `~`;
+- **arguments:** what we may cite before the engine's pick, and its side of the facts (the
+  practice prior per kind was left out: the live verdict per claim covers it without practice data);
+- **options:** E0 is the rule engine's move, labelled a default. Then every allowed value of every
+  field at least once, from `economics.menu`, each with code-set rungs: the health price (relationship
+  goals) or the engine's C level, midway, and its cash level. Rungs never go below the health price
+  or above the limit;
+- **accept:** the standing sheets that pass the accept check;
+- **state.**
+
+Never in a packet: tuned constants, the claim ranking, regex signals, back office or reasons.
+
+Returns the text plus the ids code validates (options and rungs, claims, acceptable sheets). Size:
+about 1.9k tokens for P02's opening. Render one with `scripts/replay.py P02 --packet 0`.
+Lookups written by `scripts/audit.py`: `knowledge/stock_lines.json` (used) and `knowledge/claim_prior.json`
+(not used in the packet). `build(..., zone0=False)` leaves out the [Z] lines, for the with / without test.
+
+## Tactician (v2.0 phases 2-3, `tactician.py`)
+
+One model call per move over the packet: `ask(packet)` → answer, latency; `to_move(neg, packet,
+answer, engine_move)` → the checked move.
+
+**The prompt** holds the arena's rules (from the brief), how to read the labels, and the meaning of
+the rungs. It holds no tactics of ours.
+
+**The answer** (JSON schema):
+- read and reason;
+- action: counter / accept / hold;
+- option and rung;
+- up to 3 argument ids;
+- a figure-free message, filtered by `strategist.clean_paragraph`.
+
+**What code checks.** The engine's move (E0) is kept when any of these fails:
+- the option and rung exist in the packet;
+- an accepted sheet is listed under ACCEPT;
+- no counter to a final offer (CLAUDE.md);
+- must-haves are kept.
+
+An argument id the packet does not hold is dropped and the rest of the move stands.
+
+Env: `TACTICIAN_MODEL` (claude-opus-5-5), `TACTICIAN_EFFORT` (low), `TACTICIAN_TIMEOUT_S` (25).
+Measured offline at Opus 5.5 low over 71 calls: median 8.0 s, p95 9.6 s, max 11.9 s; $0.032 per call.
+
+Offline test: `uv run python scripts/replay.py P02 --model claude-opus-5-5 --effort low`
+(`--with-z-only` skips the arm without [Z] lines). Not yet in the live loop (phase 3, flag
+`tactician`).

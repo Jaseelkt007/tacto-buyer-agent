@@ -42,11 +42,11 @@ Plan and design: `docs/research.md` (zone 0) - zones 1-3 follow. Status: `[ ]` o
 | H1.2 | Rule audit vs the arena (`scripts/audit.py`): maths, rate, full cost, pricing of other terms, signals, hidden options, arguments; verdicts in findings.md section 10 | [x] |
 | H1.4 | Verdicts as methods: `measured_rate`, `quote_cap` (fixes C_open); per-claim verdict + stock lines go to the packet (H2.1); duplicates already gone since v1.7 | [x] |
 | H1.3 | `economics.menu`: every allowed mix priced (cash-equal, health + range); P02 menu holds clause db5 @ 361.82 -> 0.734 if accepted | [x] |
-| H2.1 | `context.py`: labelled packet per thread from every module (A / D / E / S, no R) | [ ] |
-| H2.2 | Review the P02 packet with the user | [ ] |
-| H2.3 | `tactician.py`: prompt + schema of the one judgment call (action, option + rung, claim IDs, body, reason); code validates | [ ] |
-| H2.4 | Offline replay: P02 recorded states, then P08, P18, P10, P01, P03; local score vs v1.7c | [ ] |
-| H2.5 | Latency per model on the same packets (p95 < 25 s) | [ ] |
+| H2.1 | `context.py`: labelled packet per thread (A / D / E / S / Z, no R; E0 = engine move); P02 packet ~1.9k tokens (`replay.py P02 --packet 0`) | [x] |
+| H2.2 | Review the P02 packet with the user: kept E0, Z, its side; dropped the practice prior; reworded the rate line | [x] |
+| H2.3 | `tactician.py`: prompt + schema + code check; clause value (its stated exposure) and its pace added to the packet | [x] |
+| H2.4 | Offline replay: P02 with Z picks the clause at health from round 1 (0.723 if accepted), without Z never; 9 other cases no regression visible | [x] |
+| H2.5 | Latency: Opus 5.5 low median 8 s, p95 9.6 s, max 11.9 s (71 calls, $2.25); Sonnet / Haiku not tried | [x] |
 | H3.1 | Live loop behind flag `tactician`; v1.7c move computed first, sent on invalid / late; single-supplier first | [ ] |
 | H3.2 | Free end-to-end: D01, D02, arena-sim | [ ] |
 | H3.3 | RFQ scheduler: per-thread deadlines, parallel calls, send order | [ ] |
@@ -54,6 +54,8 @@ Plan and design: `docs/research.md` (zone 0) - zones 1-3 follow. Status: `[ ]` o
 | H4 | 08:00 data release; final runner; rehearsal; commit by 12:45 | [ ] |
 
 ## Log
+
+- Sun 03:40: phase 2 done offline. P02 packet + tactician pick the clause at the health price from round 1 (with Z); other cases same end states. Next: phase 3 live loop behind flag `tactician`.
 
 - Sun 02:59: v1.8 fixes (flags off) + menu + scripts/replay.py. Replay: same moves as v1.7c in 10 cases; P02 menu holds the winning clause option; choosing it is phase 2's job.
 

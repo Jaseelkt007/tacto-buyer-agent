@@ -185,3 +185,80 @@ def test_menu_without_relationship_goal_has_no_health_price():
     assert rows and all("health_price" not in r for r in rows)
     same = next(r for r in rows if r["terms"] == {"payment_days": 30, "contract_months": 24})
     assert same["equal_value_price"] == pytest.approx(45.0, abs=0.01)  # its own terms: its own price
+
+
+# ---------- phase 2: the labelled packet ----------
+from arena_kit.agents.procudeal import context as cx  # noqa: E402
+
+
+def test_verdicts_and_stock_lines_from_its_email():
+    body = (
+        "We checked the price history data you cited; it holds, but it does not change our calculation. "
+        "We checked the volume change data you cited; it holds and we took it into account."
+    )
+    assert cx.verdicts(body) == {"order_history": "no change", "volume_change": "moved"}
+    stock = next(iter(cx.STOCK), None)
+    if stock:  # knowledge/stock_lines.json present
+        line = stock.replace("#", "30")
+        assert cx.marked_text(f"{line} Our copper cost is real.").startswith("~ ")
+
+
+def test_packet_labels_options_and_ids(flags):
+    n = po.Negotiator(STABILISE)
+    first = supplier_msg(45.0, payment_days=30, contract_months=24)
+    move = n.decide({SID: [first]})
+    pk = cx.build(n, {SID: [first]}, move)
+    body = pk["text"].split("## OPTIONS")[0]
+    for line in body.splitlines():
+        if line and not line.startswith(("## ", "a", "(", "  -", "Its side", "Prior")):
+            assert line[:3] in ("[A]", "[D]", "[E]", "[S]", "[Z]") or line.startswith("[us]"), line
+    assert "E0" in pk["options"] and pk["options"]["E0"]["rungs"]["engine"] == move["sheets"][0]["unit_price"]
+    side = n.sides[SID]
+    for oid, opt in pk["options"].items():
+        if oid == "E0":
+            continue
+        health = eco.cheapest_price(STABILISE, opt["terms"], side.standard, side.estimate())
+        assert all(p >= health - 0.01 for p in opt["rungs"].values())  # never a dominated price
+    for c in pk["claims"].values():
+        assert c in side.bank or c in (move.get("claims") or [])
+    assert "back office" not in pk["text"].lower()
+
+
+# ---------- phase 2: the tactician's answer, checked by code ----------
+from arena_kit.agents.procudeal import tactician as ta  # noqa: E402
+
+
+def _packet_and_engine(flags):
+    n = po.Negotiator(STABILISE)
+    first = supplier_msg(45.0, payment_days=30, contract_months=24)
+    move = n.decide({SID: [first]})
+    return n, cx.build(n, {SID: [first]}, move), move
+
+
+def test_tactician_counter_uses_code_prices(flags):
+    n, pk, engine = _packet_and_engine(flags)
+    oid = next(o for o in pk["options"] if o != "E0")
+    rung = next(iter(pk["options"][oid]["rungs"]))
+    answer = {"read": "", "action": "counter", "option": oid, "rung": rung, "claims": ["nope"], "reason": "r"}
+    answer["message"] = "Thank you for your offer; we propose the attached terms for a stable supply."
+    move, why = ta.to_move(n, pk, answer, engine)
+    assert move is not engine and why.startswith("ok")
+    assert move["sheets"][0]["unit_price"] == round(pk["options"][oid]["rungs"][rung], 2)
+    assert move["claims"] == [] and "nope" in move["why"]["claims_dropped"]
+
+
+def test_tactician_invalid_answers_keep_the_engine_move(flags):
+    n, pk, engine = _packet_and_engine(flags)
+    bad = [
+        {"action": "counter", "option": "o99", "rung": "health", "claims": []},
+        {"action": "counter", "option": "E0", "rung": "made_up", "claims": []},
+        {"action": "accept", "option": "offer:none", "rung": "", "claims": []},
+        {"action": "walk", "option": "", "rung": "", "claims": []},
+        None,
+    ]
+    for answer in bad:
+        move, why = ta.to_move(n, pk, answer, engine)
+        assert move is engine, why
+    pk["status"] = "final_offer"
+    move, _ = ta.to_move(n, pk, {"action": "counter", "option": "E0", "rung": "engine", "claims": []}, engine)
+    assert move is engine  # never push past a final offer
