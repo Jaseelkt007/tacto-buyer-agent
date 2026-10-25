@@ -70,7 +70,8 @@ def buyer_msg(price, body="", **terms):
 @pytest.fixture
 def flags(monkeypatch):
     """All v1.7 flags on (whatever PROCUDEAL_OFF says); a test may switch some off."""
-    monkeypatch.setattr(po, "FLAGS", dict.fromkeys(po.FEATURES, True))
+    monkeypatch.setattr(po, "FLAGS", {**dict.fromkeys(po.FEATURES, True),
+                                    "grounded_dossier": False, "measured_trades": False})
     return po.FLAGS
 
 
@@ -109,7 +110,8 @@ def test_trace_records_flags(flags):
     flags["patience"] = False
     agent = ProcuDealAgent(complete=None)
     agent.decide(CASE, {SID: [supplier_msg(44.0, payment_days=30, contract_months=12)]})
-    assert agent.trace[0]["features_off"] == ["patience"] and agent.trace[0]["source"] == "engine"
+    assert agent.trace[0]["features_off"] == sorted(k for k, enabled in flags.items() if not enabled)
+    assert agent.trace[0]["source"] == "engine"
 
 
 # ---------- bug fixes ----------

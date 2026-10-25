@@ -1,0 +1,792 @@
+{
+  "evaluation": {
+    "case_id": "case:G05",
+    "status": "completed",
+    "error": null,
+    "supplier_model_calls": 5,
+    "supplier_fallbacks": 0,
+    "buyer_fallbacks": 0,
+    "supplier_threads_contacted": [
+      "sup:99051"
+    ],
+    "finished_seconds": 23.521,
+    "end_reason": "accepted",
+    "result": {
+      "ended": true,
+      "deal": true,
+      "supplier_id": "sup:99051",
+      "offer_id": "offer:99051-5",
+      "terms": {
+        "volume_per_year": 3500,
+        "contract_months": 12,
+        "payment_days": 75,
+        "lead_time_days": 35,
+        "incoterm": "DAP",
+        "index_clause": null,
+        "tooling_eur": 0,
+        "effective_date": "2027-01-01",
+        "unit_price": 19.49
+      },
+      "c_open": 78239.93,
+      "c_deal": 67987.62,
+      "c_alt": 83160.0,
+      "c_best": 63594.65,
+      "score": 0.7000419247703017,
+      "must_haves_ok": true,
+      "cost_breakdown": {
+        "price": 68215.0,
+        "uncovered_need": 0.0,
+        "fallback_risk": 0.0,
+        "payment_terms": -227.38333333333333,
+        "freight": 0.0,
+        "late_delivery": 0,
+        "quality": 0.0,
+        "tooling": 0.0,
+        "index_clause": 0.0,
+        "index_risk": 0.0,
+        "relationship": 0.0
+      },
+      "evaluation": "synthetic economics; not a leaderboard estimate"
+    },
+    "missed_savings_eur": 4392.97
+  },
+  "profiles": {
+    "sup:99051": {
+      "standard": {
+        "payment_days": 45,
+        "contract_months": 12,
+        "volume_per_year": 3500,
+        "index_clause": null
+      },
+      "economics": {
+        "unit_cost": 16.8,
+        "annual_fixed_cost": 0,
+        "finance_rate": 0.18,
+        "minimum_margin": 0.04,
+        "opening_markup": 0.22,
+        "capacity": 12000,
+        "normal_capacity": 9000,
+        "overtime_per_unit": 3.024,
+        "commitment_credit": 0,
+        "hedge_until": "2026-12-31",
+        "material_share": 0.5,
+        "unhedged_reserve": 0.04,
+        "hedged_index_reserve": 0.04,
+        "final_round": 5,
+        "priorities": "Seek a profitable order. Earlier settlement has a real but finite financing benefit.",
+        "opening_email": "Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.",
+        "final_markup": 0.05,
+        "concession_power": 0.8,
+        "commitment_penalty": 0
+      }
+    }
+  },
+  "choices": [
+    {
+      "supplier_id": "sup:99051",
+      "round": 1,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "hold",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 22.28
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a1",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 15,
+            "unit_price": 20.17
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 15,
+            "unit_price": 21.45
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 20.48
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 21.77
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 20.79
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 22.11
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a5",
+      "summary": "Counter at €20.79 with 75-day payment, accommodating the buyer’s requested settlement period while preserving profitable pricing. The cited index decline and forecast increase do not establish equivalent cost savings or a higher contractual volume.",
+      "usage": {
+        "input_tokens": 1224,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1221
+        },
+        "output_tokens": 61,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1285
+      },
+      "response_id": "resp_0bab24412c93a468016addd087201887d187a871dfecf0a391",
+      "seconds": 3.32
+    },
+    {
+      "supplier_id": "sup:99051",
+      "round": 2,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "hold",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 20.79
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a1",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 15,
+            "unit_price": 19.91
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 15,
+            "unit_price": 20.93
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 20.21
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 21.24
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 20.52
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 21.57
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a5",
+      "summary": "Offer €20.52 per unit at 75 days, preserving the buyer’s requested settlement terms while making a measured further price concession. This maintains profitability and negotiation momentum; the cited index movement and forecast do not establish equivalent savings or committed additional volume.",
+      "usage": {
+        "input_tokens": 1393,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1390
+        },
+        "output_tokens": 101,
+        "output_tokens_details": {
+          "reasoning_tokens": 31
+        },
+        "total_tokens": 1494
+      },
+      "response_id": "resp_02922872290e3555016addd08adec887d1833033054cd28bd9",
+      "seconds": 4.232
+    },
+    {
+      "supplier_id": "sup:99051",
+      "round": 3,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "agree",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 18.92
+          },
+          "reason": "We can agree to this package. Please confirm your order."
+        },
+        {
+          "id": "a1",
+          "kind": "hold",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 20.52
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 15,
+            "unit_price": 19.63
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 15,
+            "unit_price": 20.36
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 19.92
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 20.67
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 20.23
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 20.99
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a6",
+      "summary": "Counter at €20.23 with 75-day payment, preserving the buyer’s consistently requested settlement terms while making a further price concession. The buyer’s improving offers suggest room to close; cited index changes and forecast growth do not establish equivalent cost savings or additional committed volume.",
+      "usage": {
+        "input_tokens": 1614,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1611
+        },
+        "output_tokens": 113,
+        "output_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "total_tokens": 1727
+      },
+      "response_id": "resp_08dac0f0d21ba810016addd08f95b487d19baec51fc5241167",
+      "seconds": 3.335
+    },
+    {
+      "supplier_id": "sup:99051",
+      "round": 4,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "agree",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 19.31
+          },
+          "reason": "We can agree to this package. Please confirm your order."
+        },
+        {
+          "id": "a1",
+          "kind": "hold",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 20.23
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 15,
+            "unit_price": 19.32
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 15,
+            "unit_price": 19.74
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 19.61
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 20.03
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 19.91
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "counter",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 20.34
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a6",
+      "summary": "Counter at €19.91 with 75-day payment, preserving the buyer’s preferred settlement terms while making a further price concession. The buyer’s improving offers support another measured step toward agreement; the cited index movement and forecast do not establish equivalent savings or committed additional volume.",
+      "usage": {
+        "input_tokens": 1783,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1780
+        },
+        "output_tokens": 107,
+        "output_tokens_details": {
+          "reasoning_tokens": 33
+        },
+        "total_tokens": 1890
+      },
+      "response_id": "resp_0a4cd491a07faf65016addd092e26487d1a2d87c23b531b424",
+      "seconds": 3.444
+    },
+    {
+      "supplier_id": "sup:99051",
+      "round": 5,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "agree",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 19.49
+          },
+          "reason": "We can agree to this package. Please confirm your order."
+        },
+        {
+          "id": "a2",
+          "kind": "final",
+          "terms": {
+            "payment_days": 15,
+            "unit_price": 18.89
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "final",
+          "terms": {
+            "payment_days": 45,
+            "unit_price": 19.18
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "final",
+          "terms": {
+            "payment_days": 75,
+            "unit_price": 19.47
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a0",
+      "summary": "Accept €19.49 at 75 days: the buyer’s improved offer preserves a profitable order and exceeds our available final offer on identical payment terms. Faster-payment alternatives offer limited financing benefit while risking closure by reopening the package.",
+      "usage": {
+        "input_tokens": 1741,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 1738
+        },
+        "output_tokens": 63,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1804
+      },
+      "response_id": "resp_0d34e7c6094a852f016addd096706887d1a0e792d8d4f49b7c",
+      "seconds": 3.101
+    }
+  ],
+  "buyer_trace": [
+    {
+      "round": 0,
+      "supplier_id": "sup:99051",
+      "their_status": "open",
+      "their_offer": "offer:99051-0",
+      "their_terms": {
+        "unit_price": 22.28
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 17.94,
+          "payment_days": 75
+        }
+      ],
+      "seconds": 0.026,
+      "source": "engine",
+      "price": 17.94,
+      "anchor": 17.94,
+      "ceiling": 22.42,
+      "their_price_on_our_terms": 22.42,
+      "c_main": 62581,
+      "limit": 78240,
+      "sheets": 1,
+      "claims": [
+        "index_change",
+        "volume_change"
+      ],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 75
+      },
+      "budget": null,
+      "trade": null,
+      "reconsideration": {
+        "mode": "deterministic",
+        "used": false,
+        "eligible": false,
+        "model_called": false,
+        "error": null,
+        "seconds": 0.0
+      },
+      "features_off": [
+        "ask_breakdown",
+        "call_note_lever",
+        "case_plan",
+        "grounded_dossier",
+        "measured_trades",
+        "patience",
+        "plan_paragraph",
+        "plan_priced_trades",
+        "plan_stance",
+        "tactician",
+        "tactician_text"
+      ],
+      "plan": false
+    },
+    {
+      "round": 1,
+      "supplier_id": "sup:99051",
+      "their_status": "open",
+      "their_offer": "offer:99051-1",
+      "their_terms": {
+        "payment_days": 75,
+        "unit_price": 20.79
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 18.23,
+          "payment_days": 75
+        }
+      ],
+      "seconds": 0.001,
+      "source": "engine",
+      "price": 18.23,
+      "anchor": 17.94,
+      "ceiling": 22.42,
+      "their_price_on_our_terms": 20.79,
+      "c_main": 63592,
+      "limit": 78240,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 75
+      },
+      "budget": null,
+      "trade": null,
+      "reconsideration": {
+        "mode": "deterministic",
+        "used": false,
+        "eligible": false,
+        "model_called": false,
+        "error": null,
+        "seconds": 0.0002
+      }
+    },
+    {
+      "round": 2,
+      "supplier_id": "sup:99051",
+      "their_status": "open",
+      "their_offer": "offer:99051-2",
+      "their_terms": {
+        "payment_days": 75,
+        "unit_price": 20.52
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 18.92,
+          "payment_days": 75
+        }
+      ],
+      "seconds": 0.0,
+      "source": "engine",
+      "price": 18.92,
+      "anchor": 17.94,
+      "ceiling": 22.42,
+      "their_price_on_our_terms": 20.52,
+      "c_main": 65999,
+      "limit": 78240,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 75
+      },
+      "budget": null,
+      "trade": null,
+      "reconsideration": {
+        "mode": "deterministic",
+        "used": false,
+        "eligible": false,
+        "model_called": false,
+        "error": null,
+        "seconds": 0.0
+      }
+    },
+    {
+      "round": 3,
+      "supplier_id": "sup:99051",
+      "their_status": "open",
+      "their_offer": "offer:99051-3",
+      "their_terms": {
+        "payment_days": 75,
+        "unit_price": 20.23
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 19.31,
+          "payment_days": 75
+        }
+      ],
+      "seconds": 0.0,
+      "source": "engine",
+      "price": 19.31,
+      "anchor": 17.94,
+      "ceiling": 22.42,
+      "their_price_on_our_terms": 20.23,
+      "c_main": 67360,
+      "limit": 78240,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 75
+      },
+      "budget": null,
+      "trade": null,
+      "reconsideration": {
+        "mode": "deterministic",
+        "used": false,
+        "eligible": false,
+        "model_called": false,
+        "error": null,
+        "seconds": 0.0
+      }
+    },
+    {
+      "round": 4,
+      "supplier_id": "sup:99051",
+      "their_status": "open",
+      "their_offer": "offer:99051-4",
+      "their_terms": {
+        "payment_days": 75,
+        "unit_price": 19.91
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 19.49,
+          "payment_days": 75
+        }
+      ],
+      "seconds": 0.0,
+      "source": "engine",
+      "price": 19.49,
+      "anchor": 17.94,
+      "ceiling": 22.42,
+      "their_price_on_our_terms": 19.91,
+      "c_main": 67988,
+      "limit": 78240,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 75
+      },
+      "budget": null,
+      "trade": null,
+      "reconsideration": {
+        "mode": "deterministic",
+        "used": false,
+        "eligible": false,
+        "model_called": false,
+        "error": null,
+        "seconds": 0.0
+      }
+    },
+    {
+      "round": 5,
+      "supplier_id": "sup:99051",
+      "their_status": "agreed",
+      "their_offer": "offer:99051-5",
+      "their_terms": {
+        "payment_days": 75,
+        "unit_price": 19.49
+      },
+      "action": "accept",
+      "our_sheets": [],
+      "seconds": 0.0,
+      "source": "engine",
+      "original_reason": "agreed; C 67,988 below the limit 78,240",
+      "reconsideration": {
+        "mode": "deterministic",
+        "used": false,
+        "eligible": false,
+        "model_called": false,
+        "error": null,
+        "seconds": 0.0
+      }
+    }
+  ],
+  "dossiers": {
+    "sup:99051": {
+      "supplier_id": "sup:99051",
+      "name": "",
+      "country": "",
+      "owner_type": "",
+      "contract_id": "",
+      "interest_rate": 0.075,
+      "cash_need": false,
+      "wants_work": false,
+      "capacity_full": false,
+      "hedged": false,
+      "ppm": null,
+      "skonto_rate": 0.0,
+      "full_cost": null,
+      "full_cost_source": "none",
+      "full_cost_floor": 0.0,
+      "rate_measured": false,
+      "notes": [],
+      "source_ids": []
+    }
+  },
+  "case_sha256": "02051974b85f6144c8ce06bd8c6c8e7308687a115f919114ef83fe2b17389011",
+  "profile_sha256": "2b910960daf261f9ba6cecfebe0bd7d3305545e7cbb7ef9ac13aff6f0c1b2be6"
+}

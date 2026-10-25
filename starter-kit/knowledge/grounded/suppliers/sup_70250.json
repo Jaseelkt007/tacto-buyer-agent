@@ -1,0 +1,862 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70250",
+ "name": "Drehteile Fuchsreiter GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "e9428de209c45f3d9416bf5576752609936f34aa873aba28c7c74cdc38705c82",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:18:59.927394+00:00",
+  "seconds": 45.6,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:f70d8da1e7b9da9f",
+   "text": "Supplier asks for payment within 10 days, offering a cash discount in return (amount unstated).",
+   "kind": "supplier_statement",
+   "source": "doc:20260904-70250-M4",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-09-04",
+   "valid_until": null,
+   "review": {
+    "id": "obs:f70d8da1e7b9da9f",
+    "verdict": "supported",
+    "reason": "Matches the email; the discount amount is indeed unstated."
+   }
+  },
+  {
+   "id": "obs:ab6b18ed4d163131",
+   "text": "The supplier objected that several of its invoices are overdue again. It asked Hollerau to keep to the agreed payment terms, otherwise it will review its conditions.",
+   "kind": "supplier_statement",
+   "source": "doc:20260818-70250-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-08-18",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ab6b18ed4d163131",
+    "verdict": "supported",
+    "reason": "Matches the 2026-08-18 email."
+   }
+  },
+  {
+   "id": "obs:ebaa5d5143e7f8a9",
+   "text": "Invoice records show 89.9% of the supplier's invoices were paid late, with 2 still unpaid.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"paid_late_pct\": 89.9, \"paid_over_10_days_late_pct\": 50.7, \"short_paid_without_discount\": 0, \"unpaid\": 2",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:ebaa5d5143e7f8a9",
+    "verdict": "supported",
+    "reason": "Matches the invoice record: 89.9% paid late, 2 unpaid."
+   }
+  },
+  {
+   "id": "obs:b182f757bb144b78",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070250#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b182f757bb144b78",
+    "verdict": "supported",
+    "reason": "Matches clause 4.1."
+   }
+  },
+  {
+   "id": "obs:fce2a6997058b993",
+   "text": "Supplier master terms: 30 payment days, EXW, no skonto recorded, standard lead time 28 days.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"EXW\", \"name\": \"Drehteile Fuchsreiter GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 28",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:fce2a6997058b993",
+    "verdict": "supported",
+    "reason": "Matches the master record."
+   }
+  },
+  {
+   "id": "obs:eb6555f9a8f4d7f0",
+   "text": "Prices are fixed per calendar year; changes need written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070250#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:eb6555f9a8f4d7f0",
+    "verdict": "supported",
+    "reason": "Matches clause 3.1."
+   }
+  },
+  {
+   "id": "obs:cc48b41c75a0a311",
+   "text": "Framework agreement 4600070250 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070250#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:cc48b41c75a0a311",
+    "verdict": "supported",
+    "reason": "Matches clause 8.1."
+   }
+  },
+  {
+   "id": "obs:3822ae3d2a3b9bfc",
+   "text": "Supplier's 2026 renewal price for part 320090 is EUR 4.64, down 2.1%.",
+   "kind": "fact",
+   "source": "EV-2026-70250-320090",
+   "quote": "\"basis\": \"renewal\", \"change_pct\": -2.1, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70250-320090\", \"price\": 4.64",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3822ae3d2a3b9bfc",
+    "verdict": "supported",
+    "reason": "Matches the 2026 renewal event."
+   }
+  },
+  {
+   "id": "obs:1d3adb9f33098a67",
+   "text": "Supplier quoted EUR 17.87 for part 320060 (EXW, 30 days payment, 28 days lead time, 90 days validity), not awarded.",
+   "kind": "fact",
+   "source": "quote:7200013",
+   "quote": "\"awarded\": 0, \"currency\": \"EUR\", \"id\": \"quote:7200013\", \"incoterm\": \"EXW\", \"lead_time_days\": 28, \"missing_fields\": \"\", \"name\": \"Drehteile Fuchsreiter GmbH\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-14\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000213\", \"supplier_id\": \"sup:70250\", \"tooling_eur\": 0, \"unit_price\": 17.87, \"validity_days\": 90",
+   "parts": [
+    "part:320060"
+   ],
+   "observed_at": "2026-09-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1d3adb9f33098a67",
+    "verdict": "supported",
+    "reason": "Matches quote:7200013."
+   }
+  },
+  {
+   "id": "obs:0e0c22bbf1a2551b",
+   "text": "Purchasing call notes on 2026-06-20 and 2026-07-23 record the same report from supplier sales: it could take additional parts at short notice, and its second shift has been on hold since spring.",
+   "kind": "supplier_statement",
+   "source": "doc:20260723-70250-M1",
+   "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+   "parts": [],
+   "observed_at": "2026-07-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0e0c22bbf1a2551b",
+    "verdict": "supported",
+    "reason": "Both call notes, 2026-06-20 and 2026-07-23, contain identical text."
+   }
+  },
+  {
+   "id": "obs:838561261f0f72ff",
+   "text": "Trade press reported that the supplier is advertising free machine capacity and has paused hiring.",
+   "kind": "supplier_statement",
+   "source": "news:20260309-03",
+   "quote": "Drehteile Fuchsreiter GmbH is advertising free machine capacity and has paused hiring",
+   "parts": [],
+   "observed_at": "2026-03-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:838561261f0f72ff",
+    "verdict": "supported",
+    "reason": "Matches the news item, which reports the company's own statement."
+   }
+  },
+  {
+   "id": "obs:0e280a351d63fc24",
+   "text": "At Hollerau's supplier day, the supplier said Hollerau is an important reference customer for it.",
+   "kind": "supplier_statement",
+   "source": "doc:20260811-70250-M2",
+   "quote": "Drehteile Fuchsreiter GmbH said Hollerau is an important reference customer for them.",
+   "parts": [],
+   "observed_at": "2026-08-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0e280a351d63fc24",
+    "verdict": "supported",
+    "reason": "Matches the 2026-08-11 meeting note."
+   }
+  },
+  {
+   "id": "obs:a7c4285a42432797",
+   "text": "Supplier is small: 18 staff, turnover band 0-2 M EUR, equity ratio 19.6%, ISO 9001, VDA 6.3 grade A.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"certifications\": \"ISO 9001\", \"credit_index\": 228, \"credit_index_12m_ago\": 228, \"equity_ratio_pct\": 19.6, \"filed_fy\": 2024, \"founded\": 1996, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 18, \"supplier_id\": \"sup:70250\", \"turnover_band\": \"0-2 M EUR\", \"turnover_eur\": null, \"vda63_grade\": \"A\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a7c4285a42432797",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:0a29fba87fcc799f",
+   "text": "Rolling 12-month scorecard to 2026-09-30: OTD vs requested 88.0%, vs confirmed 92.0%, ppm 318, score 92.4, class A green.",
+   "kind": "fact",
+   "source": "sc:70250@2026Q3",
+   "quote": "\"otd_confirmed_pct\": 92.0, \"otd_pct\": 88.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 318, \"qn_count\": 4, \"quarter\": \"2026Q3\", \"received_qty\": 12572, \"score\": 92.4",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0a29fba87fcc799f",
+    "verdict": "supported",
+    "reason": "Matches the 2026Q3 scorecard."
+   }
+  },
+  {
+   "id": "obs:fad45bdd50ae2fff",
+   "text": "Part 320090 with this supplier: 14 QNs, 12 supplier-caused, ppm last 12m 318, EUR 1500 recharged; second source sup:70295 has ppm 797.",
+   "kind": "fact",
+   "source": "evidence:part:320090:part_quality",
+   "quote": "\"ppm_last_12m\": 318, \"qns\": 14, \"received_last_12m\": 12572, \"recharged_eur\": 1500, \"supplier_caused\": 12, \"supplier_id\": \"sup:70250\"}, {\"complaint_qty\": 29, \"last_qn\": \"2026-09-04\", \"latest_qns\": [\"qn:20005014\", \"qn:20004994\", \"qn:20004993\"], \"ppm_last_12m\": 797",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:fad45bdd50ae2fff",
+    "verdict": "supported",
+    "reason": "Matches the part quality records."
+   }
+  },
+  {
+   "id": "obs:180ebc07f5a4b815",
+   "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070250#6.1",
+   "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:180ebc07f5a4b815",
+    "verdict": "supported",
+    "reason": "Matches clause 6.1."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:9686c801472ffe78",
+   "text": "Drehteile Fuchsreiter asked Hollerau to pay its invoices within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260904-70250-M4",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-09-04",
+   "valid_until": null,
+   "review": {
+    "id": "obs:9686c801472ffe78",
+    "verdict": "supported",
+    "reason": "Matches the 2026-09-04 email."
+   }
+  },
+  {
+   "id": "obs:1202a824f095e31b",
+   "text": "Supplier complained that several invoices are overdue again and said it would review its conditions if the agreed payment terms are not kept.",
+   "kind": "supplier_statement",
+   "source": "doc:20260818-70250-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-08-18",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1202a824f095e31b",
+    "verdict": "supported",
+    "reason": "Matches the 2026-08-18 email."
+   }
+  },
+  {
+   "id": "obs:dc1b6bb96313b227",
+   "text": "Supplier sales said they could take additional parts at short notice; the second shift has been on hold since spring.",
+   "kind": "supplier_statement",
+   "source": "doc:20260723-70250-M1",
+   "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+   "parts": [],
+   "observed_at": "2026-07-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:dc1b6bb96313b227",
+    "verdict": "supported",
+    "reason": "The 2026-07-23 call note records this statement."
+   }
+  },
+  {
+   "id": "obs:c2deea530e5637fb",
+   "text": "Supplier is a small founder-owned firm: 18 staff, turnover band 0-2 M EUR, equity ratio 19.6%.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 19.6, \"filed_fy\": 2024, \"founded\": 1996, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 18, \"supplier_id\": \"sup:70250\", \"turnover_band\": \"0-2 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:c2deea530e5637fb",
+    "verdict": "supported",
+    "reason": "Matches the intel record: founder-owned, 18 staff, 0-2 M EUR turnover, 19.6% equity."
+   }
+  },
+  {
+   "id": "obs:d5ff47531f6f9a49",
+   "text": "The supplier asked for payment within 10 days and offered a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260904-70250-M4",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-09-04",
+   "valid_until": null,
+   "review": {
+    "id": "obs:d5ff47531f6f9a49",
+    "verdict": "supported",
+    "reason": "Matches the 2026-09-04 email."
+   }
+  },
+  {
+   "id": "obs:7faf0330ad99f166",
+   "text": "The supplier is a small, founder-owned company with 18 staff, a 19.6% equity ratio and turnover in the 0-2 M EUR band.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 19.6, \"filed_fy\": 2024, \"founded\": 1996, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 18, \"supplier_id\": \"sup:70250\", \"turnover_band\": \"0-2 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7faf0330ad99f166",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:e5a663f6c8b3a87f",
+   "text": "The supplier was invited to the RFQ for the HX pump shaft (part:320070).",
+   "kind": "fact",
+   "source": "doc:20260923-70210-P05",
+   "quote": "Invited: Zerspanung Dralveck GmbH, Strojírna Hrvelec s.r.o., Drehteile Fuchsreiter GmbH",
+   "parts": [
+    "part:320070"
+   ],
+   "observed_at": "2026-09-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e5a663f6c8b3a87f",
+    "verdict": "supported",
+    "reason": "The RFQ document lists the supplier as invited."
+   }
+  },
+  {
+   "id": "obs:76570e85c6b75e49",
+   "text": "Delivery EXW with a standard lead time of 28 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070250#5.1",
+   "quote": "Delivery EXW; standard lead time 28 days from order.",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:76570e85c6b75e49",
+    "verdict": "supported",
+    "reason": "Matches clause 5.1."
+   }
+  },
+  {
+   "id": "obs:56e90baf7ae4af21",
+   "text": "Supplier complains invoices are overdue again and threatens to review its conditions if payment terms are not kept.",
+   "kind": "supplier_statement",
+   "source": "doc:20260818-70250-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-08-18",
+   "valid_until": null,
+   "review": {
+    "id": "obs:56e90baf7ae4af21",
+    "verdict": "supported",
+    "reason": "A fair paraphrase of the 2026-08-18 email."
+   }
+  },
+  {
+   "id": "obs:44ab6dc12b210800",
+   "text": "Supplier sales said they could take additional parts at short notice; second shift on hold since spring.",
+   "kind": "supplier_statement",
+   "source": "doc:20260723-70250-M1",
+   "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+   "parts": [],
+   "observed_at": "2026-07-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:44ab6dc12b210800",
+    "verdict": "supported",
+    "reason": "Matches the call note."
+   }
+  },
+  {
+   "id": "obs:6c39481581d248c9",
+   "text": "OTD vs requested date peaked at 100.0% in the rolling 12 months to 2025-09-30.",
+   "kind": "fact",
+   "source": "sc:70250@2025Q3",
+   "quote": "\"otd_confirmed_pct\": 100.0, \"otd_pct\": 100.0, \"period_end\": \"2025-09-30\"",
+   "parts": [],
+   "observed_at": "2025-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:6c39481581d248c9",
+    "verdict": "supported",
+    "reason": "100.0% is the maximum otd_pct across the scorecards."
+   }
+  },
+  {
+   "id": "obs:52c2fd2e9d5d58ca",
+   "text": "Highest recent rolling ppm was 496 (6 QNs) in the 12 months to 2026-03-31.",
+   "kind": "fact",
+   "source": "sc:70250@2026Q1",
+   "quote": "\"complaint_qty\": 6, \"gr_lines\": 24, \"id\": \"sc:70250@2026Q1\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 95.8, \"otd_pct\": 95.8, \"period_end\": \"2026-03-31\", \"period_start\": \"2025-04-01\", \"ppm\": 496",
+   "parts": [],
+   "observed_at": "2026-03-31",
+   "valid_until": null,
+   "review": {
+    "id": "obs:52c2fd2e9d5d58ca",
+    "verdict": "supported",
+    "reason": "496 ppm with 6 QNs in 2026Q1 is the highest ppm among the scorecards."
+   }
+  },
+  {
+   "id": "obs:c9183186d22e65c7",
+   "text": "Last 12 months deliveries: 25 receipts, 12.0% late, avg 11.0 days late when late, max 14 days.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 11.0, \"early_pct\": 0.0, \"late_pct\": 12.0, \"max_days_late\": 14, \"on_time_confirmed_pct\": 92.0, \"on_time_requested_pct\": 88.0, \"receipts\": 25}",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:c9183186d22e65c7",
+    "verdict": "supported",
+    "reason": "Matches the last-12-month delivery stats, which cover only part 320090."
+   }
+  },
+  {
+   "id": "obs:60ea410cb64bc131",
+   "text": "Most recent QN (2026-06-19): supplier-caused dimension out of tolerance on part 320090; 8D closed 2026-09-21, about 94 days after QN.",
+   "kind": "fact",
+   "source": "qn:20004953",
+   "quote": "\"d8_date\": \"2026-09-21\", \"defect\": \"dimension out of tolerance\", \"gr_id\": \"gr:5000105024\", \"id\": \"qn:20004953\", \"part_id\": \"part:320090\", \"ppm\": 1961, \"qn_date\": \"2026-06-19\", \"returned_qty\": 0, \"supplier_caused\": 1",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": "2026-06-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:60ea410cb64bc131",
+    "verdict": "supported",
+    "reason": "QN dates match; the gap is 94 days, and it is the latest QN for this supplier."
+   }
+  },
+  {
+   "id": "obs:08c43e73df9dce9b",
+   "text": "Part 320090 from this supplier: 14 rush lines of 72; latest price 4.64 EUR, down 7.2% from first price 5.00.",
+   "kind": "fact",
+   "source": "evidence:part:320090:orders",
+   "quote": "\"latest_price\": 4.64, \"lines\": 72, \"price_change_pct\": -7.2, \"price_unit\": 1, \"qty\": 37560, \"qty_last_12m\": 12500, \"rush_lines\": 14, \"stale_lines\": 0, \"supplier_id\": \"sup:70250\"",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:08c43e73df9dce9b",
+    "verdict": "supported",
+    "reason": "Matches the order summary; the first price was 5.0."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Drehteile Fuchsreiter asked Hollerau to pay its invoices within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260904-70250-M4",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-09-04",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier complained that several invoices are overdue again and said it would review its conditions if the agreed payment terms are not kept.",
+     "kind": "supplier_statement",
+     "source": "doc:20260818-70250-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-08-18",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier sales said they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "kind": "supplier_statement",
+     "source": "doc:20260723-70250-M1",
+     "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "parts": [],
+     "observed_at": "2026-07-23",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is a small founder-owned firm: 18 staff, turnover band 0-2 M EUR, equity ratio 19.6%.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 19.6, \"filed_fy\": 2024, \"founded\": 1996, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 18, \"supplier_id\": \"sup:70250\", \"turnover_band\": \"0-2 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master terms: 30 payment days, EXW, no skonto recorded, standard lead time 28 days.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"EXW\", \"name\": \"Drehteile Fuchsreiter GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 28",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier quoted EUR 17.87 for part 320060 (EXW, 30 days payment, 28 days lead time, 90 days validity), not awarded.",
+     "kind": "fact",
+     "source": "quote:7200013",
+     "quote": "\"awarded\": 0, \"currency\": \"EUR\", \"id\": \"quote:7200013\", \"incoterm\": \"EXW\", \"lead_time_days\": 28, \"missing_fields\": \"\", \"name\": \"Drehteile Fuchsreiter GmbH\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-14\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000213\", \"supplier_id\": \"sup:70250\", \"tooling_eur\": 0, \"unit_price\": 17.87, \"validity_days\": 90",
+     "parts": [
+      "part:320060"
+     ],
+     "observed_at": "2026-09-14",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's 2026 renewal price for part 320090 is EUR 4.64, down 2.1%.",
+     "kind": "fact",
+     "source": "EV-2026-70250-320090",
+     "quote": "\"basis\": \"renewal\", \"change_pct\": -2.1, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70250-320090\", \"price\": 4.64",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "German-base should-cost for part 320070 is EUR 36.87 per unit without margin, at 10% confidence.",
+     "kind": "fact",
+     "source": "cost:320070",
+     "quote": "\"confidence_pct\": 10, \"conversion_eur\": 16.78, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320070\", \"material_eur\": 12.91, \"method\": \"bottom-up estimate, German cost base, no margin included\", \"overhead_eur\": 7.19, \"part_id\": \"part:320070\", \"price_unit\": 1, \"supplier_id\": null, \"unit_cost\": 36.87",
+     "parts": [
+      "part:320070"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Purchasing call notes on 2026-06-20 and 2026-07-23 record the same report from supplier sales: it could take additional parts at short notice, and its second shift has been on hold since spring.",
+     "kind": "supplier_statement",
+     "source": "doc:20260723-70250-M1",
+     "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "parts": [],
+     "observed_at": "2026-07-23",
+     "valid_until": null
+    },
+    {
+     "text": "Trade press reported that the supplier is advertising free machine capacity and has paused hiring.",
+     "kind": "supplier_statement",
+     "source": "news:20260309-03",
+     "quote": "Drehteile Fuchsreiter GmbH is advertising free machine capacity and has paused hiring",
+     "parts": [],
+     "observed_at": "2026-03-09",
+     "valid_until": null
+    },
+    {
+     "text": "The supplier objected that several of its invoices are overdue again. It asked Hollerau to keep to the agreed payment terms, otherwise it will review its conditions.",
+     "kind": "supplier_statement",
+     "source": "doc:20260818-70250-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-08-18",
+     "valid_until": null
+    },
+    {
+     "text": "The supplier asked for payment within 10 days and offered a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260904-70250-M4",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-09-04",
+     "valid_until": null
+    },
+    {
+     "text": "Invoice records show 89.9% of the supplier's invoices were paid late, with 2 still unpaid.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"paid_late_pct\": 89.9, \"paid_over_10_days_late_pct\": 50.7, \"short_paid_without_discount\": 0, \"unpaid\": 2",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "At Hollerau's supplier day, the supplier said Hollerau is an important reference customer for it.",
+     "kind": "supplier_statement",
+     "source": "doc:20260811-70250-M2",
+     "quote": "Drehteile Fuchsreiter GmbH said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-08-11",
+     "valid_until": null
+    },
+    {
+     "text": "The supplier is a small, founder-owned company with 18 staff, a 19.6% equity ratio and turnover in the 0-2 M EUR band.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 19.6, \"filed_fy\": 2024, \"founded\": 1996, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 18, \"supplier_id\": \"sup:70250\", \"turnover_band\": \"0-2 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "The supplier was invited to the RFQ for the HX pump shaft (part:320070).",
+     "kind": "fact",
+     "source": "doc:20260923-70210-P05",
+     "quote": "Invited: Zerspanung Dralveck GmbH, Strojírna Hrvelec s.r.o., Drehteile Fuchsreiter GmbH",
+     "parts": [
+      "part:320070"
+     ],
+     "observed_at": "2026-09-23",
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement 4600070250 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070250#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes need written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070250#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070250#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Delivery EXW with a standard lead time of 28 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070250#5.1",
+     "quote": "Delivery EXW; standard lead time 28 days from order.",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070250#6.1",
+     "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier complains invoices are overdue again and threatens to review its conditions if payment terms are not kept.",
+     "kind": "supplier_statement",
+     "source": "doc:20260818-70250-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-08-18",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier asks for payment within 10 days, offering a cash discount in return (amount unstated).",
+     "kind": "supplier_statement",
+     "source": "doc:20260904-70250-M4",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-09-04",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier sales said they could take additional parts at short notice; second shift on hold since spring.",
+     "kind": "supplier_statement",
+     "source": "doc:20260723-70250-M1",
+     "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "parts": [],
+     "observed_at": "2026-07-23",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month scorecard to 2026-09-30: OTD vs requested 88.0%, vs confirmed 92.0%, ppm 318, score 92.4, class A green.",
+     "kind": "fact",
+     "source": "sc:70250@2026Q3",
+     "quote": "\"otd_confirmed_pct\": 92.0, \"otd_pct\": 88.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 318, \"qn_count\": 4, \"quarter\": \"2026Q3\", \"received_qty\": 12572, \"score\": 92.4",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "OTD vs requested date peaked at 100.0% in the rolling 12 months to 2025-09-30.",
+     "kind": "fact",
+     "source": "sc:70250@2025Q3",
+     "quote": "\"otd_confirmed_pct\": 100.0, \"otd_pct\": 100.0, \"period_end\": \"2025-09-30\"",
+     "parts": [],
+     "observed_at": "2025-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Highest recent rolling ppm was 496 (6 QNs) in the 12 months to 2026-03-31.",
+     "kind": "fact",
+     "source": "sc:70250@2026Q1",
+     "quote": "\"complaint_qty\": 6, \"gr_lines\": 24, \"id\": \"sc:70250@2026Q1\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 95.8, \"otd_pct\": 95.8, \"period_end\": \"2026-03-31\", \"period_start\": \"2025-04-01\", \"ppm\": 496",
+     "parts": [],
+     "observed_at": "2026-03-31",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months deliveries: 25 receipts, 12.0% late, avg 11.0 days late when late, max 14 days.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 11.0, \"early_pct\": 0.0, \"late_pct\": 12.0, \"max_days_late\": 14, \"on_time_confirmed_pct\": 92.0, \"on_time_requested_pct\": 88.0, \"receipts\": 25}",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 320090 with this supplier: 14 QNs, 12 supplier-caused, ppm last 12m 318, EUR 1500 recharged; second source sup:70295 has ppm 797.",
+     "kind": "fact",
+     "source": "evidence:part:320090:part_quality",
+     "quote": "\"ppm_last_12m\": 318, \"qns\": 14, \"received_last_12m\": 12572, \"recharged_eur\": 1500, \"supplier_caused\": 12, \"supplier_id\": \"sup:70250\"}, {\"complaint_qty\": 29, \"last_qn\": \"2026-09-04\", \"latest_qns\": [\"qn:20005014\", \"qn:20004994\", \"qn:20004993\"], \"ppm_last_12m\": 797",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Most recent QN (2026-06-19): supplier-caused dimension out of tolerance on part 320090; 8D closed 2026-09-21, about 94 days after QN.",
+     "kind": "fact",
+     "source": "qn:20004953",
+     "quote": "\"d8_date\": \"2026-09-21\", \"defect\": \"dimension out of tolerance\", \"gr_id\": \"gr:5000105024\", \"id\": \"qn:20004953\", \"part_id\": \"part:320090\", \"ppm\": 1961, \"qn_date\": \"2026-06-19\", \"returned_qty\": 0, \"supplier_caused\": 1",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": "2026-06-19",
+     "valid_until": null
+    },
+    {
+     "text": "Part 320090 from this supplier: 14 rush lines of 72; latest price 4.64 EUR, down 7.2% from first price 5.00.",
+     "kind": "fact",
+     "source": "evidence:part:320090:orders",
+     "quote": "\"latest_price\": 4.64, \"lines\": 72, \"price_change_pct\": -7.2, \"price_unit\": 1, \"qty\": 37560, \"qty_last_12m\": 12500, \"rush_lines\": 14, \"stale_lines\": 0, \"supplier_id\": \"sup:70250\"",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is small: 18 staff, turnover band 0-2 M EUR, equity ratio 19.6%, ISO 9001, VDA 6.3 grade A.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"certifications\": \"ISO 9001\", \"credit_index\": 228, \"credit_index_12m_ago\": 228, \"equity_ratio_pct\": 19.6, \"filed_fy\": 2024, \"founded\": 1996, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 18, \"supplier_id\": \"sup:70250\", \"turnover_band\": \"0-2 M EUR\", \"turnover_eur\": null, \"vda63_grade\": \"A\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [
+  {
+   "id": "obs:50a57d8abb7086e1",
+   "text": "German-base should-cost for part 320070 is EUR 36.87 per unit without margin, at 10% confidence.",
+   "kind": "fact",
+   "source": "cost:320070",
+   "quote": "\"confidence_pct\": 10, \"conversion_eur\": 16.78, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320070\", \"material_eur\": 12.91, \"method\": \"bottom-up estimate, German cost base, no margin included\", \"overhead_eur\": 7.19, \"part_id\": \"part:320070\", \"price_unit\": 1, \"supplier_id\": null, \"unit_cost\": 36.87",
+   "parts": [
+    "part:320070"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:50a57d8abb7086e1",
+    "verdict": "reject",
+    "reason": "'At 10% confidence' misreads confidence_pct, which per the package indicates an estimate error band (5-15%), not a confidence level."
+   }
+  }
+ ],
+ "validation": {
+  "dropped": []
+ }
+}

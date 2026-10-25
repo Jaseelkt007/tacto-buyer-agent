@@ -1,0 +1,79 @@
+{
+  "case_id": "case:G05",
+  "set": "practice",
+  "type": "renewal",
+  "title": "Supply enquiry",
+  "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+  "trigger_doc": null,
+  "parts": [
+    "part:320050"
+  ],
+  "suppliers": [
+    "sup:99051"
+  ],
+  "negotiable": [
+    "unit_price",
+    "payment_days"
+  ],
+  "fixed_terms": {
+    "lead_time_days": 35,
+    "volume_per_year": 3500,
+    "contract_months": 12,
+    "index_clause": null,
+    "incoterm": "DAP",
+    "tooling_eur": 0,
+    "effective_date": "2027-01-01"
+  },
+  "term_options": {
+    "payment_days": [
+      15,
+      45,
+      75
+    ]
+  },
+  "buyer": {
+    "need_per_year": 3500,
+    "horizon_years": 1.0,
+    "current_unit_price": 22,
+    "fallback_unit_price": 24.64,
+    "interest_rate": 0.08,
+    "reference_payment_days": 60,
+    "need_lead_time_days": 35,
+    "category_goal": "leverage",
+    "fallback_risk_pct": 3,
+    "index_risk_pct": 1,
+    "late_cost_per_day": 200,
+    "cost_per_defect": 50,
+    "freight_eur_per_unit": {
+      "EXW": 0.6,
+      "FCA": 0.35,
+      "DAP": 0
+    },
+    "index_paths": {},
+    "must_haves": [
+      {
+        "field": "lead_time_days",
+        "op": "<=",
+        "value": 60
+      }
+    ],
+    "alternative": {
+      "kind": "other_supplier",
+      "ref": null,
+      "terms": {
+        "lead_time_days": 35,
+        "volume_per_year": 3500,
+        "contract_months": 12,
+        "index_clause": null,
+        "incoterm": "DAP",
+        "tooling_eur": 0,
+        "effective_date": "2027-01-01",
+        "unit_price": 23.76,
+        "payment_days": 60
+      }
+    }
+  },
+  "round_limit": 10,
+  "refs": [],
+  "facts": {}
+}

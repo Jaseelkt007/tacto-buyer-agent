@@ -1,0 +1,208 @@
+{
+  "packet_sha256": "8d4b946e7f165c733685b6a12e36ce88b3de0913bed0363f95ae3f81acb5334e",
+  "request_sha256": "0e359629dd8acd9a163a0206499943244959cb366dc53cb409bb06c8e6d07c6d",
+  "case_id": "case:D02",
+  "decision_index": 3,
+  "action": "send",
+  "model": "gpt-6-luna",
+  "available": true,
+  "error": null,
+  "calls": [
+    {
+      "request_sha256": "0e359629dd8acd9a163a0206499943244959cb366dc53cb409bb06c8e6d07c6d",
+      "stage": "assessment",
+      "answers": [
+        {
+          "type": "choice",
+          "name": "assessment",
+          "choice": "RECONSIDER:unit_price",
+          "probabilities": [
+            {
+              "value": "NO_ISSUE",
+              "probability": 0.26
+            },
+            {
+              "value": "RECONSIDER:claims",
+              "probability": 0.05
+            },
+            {
+              "value": "RECONSIDER:contract_months",
+              "probability": 0.01
+            },
+            {
+              "value": "RECONSIDER:coverage",
+              "probability": 0.02
+            },
+            {
+              "value": "RECONSIDER:incoterm",
+              "probability": 0.11
+            },
+            {
+              "value": "RECONSIDER:lead_time_days",
+              "probability": 0.06
+            },
+            {
+              "value": "RECONSIDER:negotiation_status",
+              "probability": 0.01
+            },
+            {
+              "value": "RECONSIDER:offer_id",
+              "probability": 0.02
+            },
+            {
+              "value": "RECONSIDER:other",
+              "probability": 0.03
+            },
+            {
+              "value": "RECONSIDER:payment_days",
+              "probability": 0.13
+            },
+            {
+              "value": "RECONSIDER:unit_price",
+              "probability": 0.27
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:claims",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:contract_months",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:coverage",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:incoterm",
+              "probability": 0.01
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:lead_time_days",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:negotiation_status",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:offer_id",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:other",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:payment_days",
+              "probability": 0.01
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:unit_price",
+              "probability": 0.01
+            }
+          ],
+          "confidence": 0.23
+        }
+      ],
+      "usage": {
+        "input_tokens": 8341,
+        "input_tokens_details": {
+          "cached_tokens": 7266,
+          "cache_write_tokens": 0,
+          "cache_write_tokens_details": {
+            "ttl_30m_tokens": 0,
+            "ttl_12h_tokens": 0
+          }
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 8341
+      },
+      "response_id": null
+    },
+    {
+      "request_sha256": "103a915d98033968591ca1d9b42ce056c6746399192f309171351a54b4a3241b",
+      "stage": "evidence",
+      "answers": [
+        {
+          "type": "choice",
+          "name": "evidence",
+          "choice": "message:sup:DEMO-C1:2",
+          "probabilities": [
+            {
+              "value": "NONE",
+              "probability": 0.1
+            },
+            {
+              "value": "case",
+              "probability": 0.01
+            },
+            {
+              "value": "message:sup:DEMO-J1:0",
+              "probability": 0.01
+            },
+            {
+              "value": "message:sup:DEMO-J1:1",
+              "probability": 0.0
+            },
+            {
+              "value": "message:sup:DEMO-J1:2",
+              "probability": 0.02
+            },
+            {
+              "value": "message:sup:DEMO-J1:3",
+              "probability": 0.0
+            },
+            {
+              "value": "message:sup:DEMO-J1:4",
+              "probability": 0.06
+            },
+            {
+              "value": "message:sup:DEMO-C1:0",
+              "probability": 0.01
+            },
+            {
+              "value": "message:sup:DEMO-C1:1",
+              "probability": 0.04
+            },
+            {
+              "value": "message:sup:DEMO-C1:2",
+              "probability": 0.75
+            }
+          ],
+          "confidence": 0.72
+        }
+      ],
+      "usage": {
+        "input_tokens": 7925,
+        "input_tokens_details": {
+          "cached_tokens": 7266,
+          "cache_write_tokens": 0,
+          "cache_write_tokens_details": {
+            "ttl_30m_tokens": 0,
+            "ttl_12h_tokens": 0
+          }
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 7925
+      },
+      "response_id": null
+    }
+  ],
+  "assessment": "RECONSIDER:unit_price",
+  "verdict": "RECONSIDER",
+  "field": "unit_price",
+  "evidence": "message:sup:DEMO-C1:2",
+  "supporting_source": {
+    "id": "message:sup:DEMO-C1:2",
+    "kind": "conversation",
+    "text": "{\"message_id\": \"msg:DEMO-C1-1-2\", \"from\": \"sales@DEMO-C1\", \"subject\": \"Re: Quote from Demo Machining Sp. z o.o.: New stainless pump shaft SH-220: award one of two suppliers\", \"body\": \"Dear partner,\\n\\nWe have reviewed your offer and can adjust our Angebot as follows. We appreciate your transparency regarding the competing offer. We checked the rival quote data you cited; it holds and we took it into account. \\n\\nPlease note that your requested terms for DAP delivery and 60 days payment significantly increase the overall cost. Our current Angebot stands at a price of €17.00 per unit, Zahlungsziel 60 days net, Lieferzeit 35 days, delivery DAP. \\n\\nTo offer you the best possible value, we propose maintaining EXW and 45 days payment, which allows us to lower our price to EUR 15.30 per unit. As an alternative at standard terms, we offer a price of €15.30 per unit, Zahlungsziel 45 days net, Lieferzeit 45 days, delivery EXW. Our offer remains valid for 30 days.\\n\\nBest regards\\nJoanna Kaczmarek\\nExport Manager, Demo Machining Sp. z o.o.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:DEMO-C1-1\", \"terms\": {\"unit_price\": 17.0, \"payment_days\": 60, \"lead_time_days\": 35, \"incoterm\": \"DAP\"}}, {\"term_sheet_id\": \"offer:DEMO-C1-1-a\", \"terms\": {\"unit_price\": 15.3, \"payment_days\": 45, \"lead_time_days\": 45, \"incoterm\": \"EXW\"}}], \"status\": \"open\", \"claim_results\": [{\"index\": 0, \"result\": \"verified\"}], \"missing_fields\": [], \"attachments\": []}"
+  },
+  "seconds": 0.582
+}

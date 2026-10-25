@@ -1,0 +1,850 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70295",
+ "name": "Drehzentrum Ilzauer GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "104199fcc11b2b71fe174851425f05eecf6dbddea5ee3679138e85645e665e10",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:19:42.301455+00:00",
+  "seconds": 32.8,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:5790e91e05e47616",
+   "text": "Supplier asked whether Hollerau could pay its invoices within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260505-70295-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-05-05",
+   "valid_until": null,
+   "review": {
+    "id": "obs:5790e91e05e47616",
+    "verdict": "supported",
+    "reason": "Matches the email text and its date."
+   }
+  },
+  {
+   "id": "obs:2b43fe2d69eac717",
+   "text": "Supplier complained that several invoices are overdue again and said it would have to review its conditions if agreed payment terms are not kept.",
+   "kind": "supplier_statement",
+   "source": "doc:20260515-70295-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-05-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2b43fe2d69eac717",
+    "verdict": "supported",
+    "reason": "Matches the email text and its date."
+   }
+  },
+  {
+   "id": "obs:ec1b9be9905b3c7f",
+   "text": "Invoices to this supplier are paid late 96.8% of the time, on average 10.4 days after due; 7 unpaid.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due\": 10.4, \"avg_days_paid_after_due_last_12m\": 10.3, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 227, \"max_days_late\": 28, \"paid_late_pct\": 96.8, \"paid_over_10_days_late_pct\": 45.0, \"short_paid_without_discount\": 0, \"unpaid\": 7",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:ec1b9be9905b3c7f",
+    "verdict": "supported",
+    "reason": "Figures match the invoice record."
+   }
+  },
+  {
+   "id": "obs:0c1a1f00b1ed079f",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070295#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:320020",
+    "part:320040",
+    "part:320090"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0c1a1f00b1ed079f",
+    "verdict": "supported",
+    "reason": "Matches clause 4.1."
+   }
+  },
+  {
+   "id": "obs:508adb3c48d6b8bd",
+   "text": "Supplier master records 30 payment days, EXW incoterm, 28 days standard lead time, and no cash discount (skonto) terms.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"EXW\", \"name\": \"Drehzentrum Ilzauer GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 28",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:508adb3c48d6b8bd",
+    "verdict": "supported",
+    "reason": "Master record shows payment_days 30, EXW, lead time 28 and null skonto."
+   }
+  },
+  {
+   "id": "obs:42d0b48dd45870b1",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070295#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:320020",
+    "part:320040",
+    "part:320090"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:42d0b48dd45870b1",
+    "verdict": "supported",
+    "reason": "Matches clause 3.1."
+   }
+  },
+  {
+   "id": "obs:15e279ec7aeb6f18",
+   "text": "Framework agreement runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070295#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:320020",
+    "part:320040",
+    "part:320090"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:15e279ec7aeb6f18",
+    "verdict": "supported",
+    "reason": "Matches clause 8.1."
+   }
+  },
+  {
+   "id": "obs:95b12004b35dec84",
+   "text": "Delivery EXW with standard lead time of 28 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070295#5.1",
+   "quote": "Delivery EXW; standard lead time 28 days from order.",
+   "parts": [
+    "part:320020",
+    "part:320040",
+    "part:320090"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:95b12004b35dec84",
+    "verdict": "supported",
+    "reason": "Matches clause 5.1."
+   }
+  },
+  {
+   "id": "obs:dfb3fcd9b76c2a53",
+   "text": "The renewal price for part 320040 rose 3.1 % to EUR 13.59 from 2026-01-01.",
+   "kind": "fact",
+   "source": "EV-2026-70295-320040",
+   "quote": "\"change_pct\": 3.1, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70295-320040\", \"price\": 13.59, \"price_unit\": 1, \"supplier_id\": \"sup:70295\", \"valid_from\": \"2026-01-01\"",
+   "parts": [
+    "part:320040"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:dfb3fcd9b76c2a53",
+    "verdict": "supported",
+    "reason": "Price event shows +3.1 % to EUR 13.59 valid from 2026-01-01."
+   }
+  },
+  {
+   "id": "obs:68db0c0576ff631d",
+   "text": "Supplier quoted EUR 4.60 for part 320090 with a 28-day lead time and 30 payment days.",
+   "kind": "fact",
+   "source": "quote:7300080",
+   "quote": "\"lead_time_days\": 28, \"missing_fields\": \"validity_days;incoterm\", \"name\": \"Drehzentrum Ilzauer GmbH\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-07\", \"remarks\": \"\", \"rfq_id\": null, \"supplier_id\": \"sup:70295\", \"tooling_eur\": 0, \"unit_price\": 4.6",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": "2026-09-07",
+   "valid_until": null,
+   "review": {
+    "id": "obs:68db0c0576ff631d",
+    "verdict": "supported",
+    "reason": "Quote record matches: EUR 4.60, 28-day lead time, 30 payment days, dated 2026-09-07; stated as a quote."
+   }
+  },
+  {
+   "id": "obs:1d8ee3cec226985e",
+   "text": "Supplier sales said they could take additional parts at short notice; the second shift has been on hold since spring.",
+   "kind": "supplier_statement",
+   "source": "doc:20260419-70295-M5",
+   "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+   "parts": [],
+   "observed_at": "2026-04-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1d8ee3cec226985e",
+    "verdict": "supported",
+    "reason": "Matches the call note text and its date."
+   }
+  },
+  {
+   "id": "obs:7ac4b3a3a4c302de",
+   "text": "Supplier publicly advertised free machine capacity and paused hiring.",
+   "kind": "supplier_statement",
+   "source": "news:20260514-12",
+   "quote": "Drehzentrum Ilzauer GmbH is advertising free machine capacity and has paused hiring, the company said at a regional supplier day.",
+   "parts": [],
+   "observed_at": "2026-05-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7ac4b3a3a4c302de",
+    "verdict": "supported",
+    "reason": "News item reports the company's own statement at a supplier day, dated 2026-05-14."
+   }
+  },
+  {
+   "id": "obs:4b4ad4621a924782",
+   "text": "Owner admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "kind": "supplier_statement",
+   "source": "doc:20260909-70295-M4",
+   "quote": "The owner of Drehzentrum Ilzauer GmbH admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "parts": [],
+   "observed_at": "2026-09-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:4b4ad4621a924782",
+    "verdict": "supported",
+    "reason": "Matches the meeting note text and its date."
+   }
+  },
+  {
+   "id": "obs:6d05afa8a239485b",
+   "text": "Supplier said Hollerau is an important reference customer for them.",
+   "kind": "supplier_statement",
+   "source": "doc:20260828-70295-M3",
+   "quote": "Drehzentrum Ilzauer GmbH said Hollerau is an important reference customer for them.",
+   "parts": [],
+   "observed_at": "2026-08-28",
+   "valid_until": null,
+   "review": {
+    "id": "obs:6d05afa8a239485b",
+    "verdict": "supported",
+    "reason": "Matches the 2026-08-28 meeting note."
+   }
+  },
+  {
+   "id": "obs:e49ebf71faf8a5ec",
+   "text": "Rolling 12-month scorecard to 2026-09-30: OTD 84.4% vs requested date, 85.7% vs first confirmed date, ppm 1000, score 77.2, class B amber, 2 overdue open 8Ds.",
+   "kind": "fact",
+   "source": "sc:70295@2026Q3",
+   "quote": "\"open_8d_overdue\": 2, \"otd_confirmed_pct\": 85.7, \"otd_pct\": 84.4, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 1000, \"qn_count\": 20, \"quarter\": \"2026Q3\", \"received_qty\": 51996, \"score\": 77.2",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e49ebf71faf8a5ec",
+    "verdict": "supported",
+    "reason": "Matches the 2026Q3 scorecard row."
+   }
+  },
+  {
+   "id": "obs:188b72e8d5af0dc1",
+   "text": "On part 320090 this supplier's ppm (797) exceeds the alternative supplier sup:70250 (318) over last 12 months.",
+   "kind": "fact",
+   "source": "evidence:part:320090:part_quality",
+   "quote": "\"ppm_last_12m\": 318, \"qns\": 14, \"received_last_12m\": 12572, \"recharged_eur\": 1500, \"supplier_caused\": 12, \"supplier_id\": \"sup:70250\"}, {\"complaint_qty\": 29, \"last_qn\": \"2026-09-04\", \"latest_qns\": [\"qn:20005014\", \"qn:20004994\", \"qn:20004993\"], \"ppm_last_12m\": 797",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:188b72e8d5af0dc1",
+    "verdict": "supported",
+    "reason": "Part 320090 quality record shows ppm 797 for this supplier versus 318 for sup:70250."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:c88d6760a2cbfe49",
+   "text": "Supplier is a founder-owned GmbH with 20 staff, a turnover band of 2-5 M EUR, an equity ratio of 40.8 % and a credit index of 249, unchanged from 12 months earlier.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 249, \"credit_index_12m_ago\": 249, \"equity_ratio_pct\": 40.8, \"filed_fy\": 2024, \"founded\": 2001, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 20, \"supplier_id\": \"sup:70295\", \"turnover_band\": \"2-5 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:c88d6760a2cbfe49",
+    "verdict": "supported",
+    "reason": "All figures match the intel record."
+   }
+  },
+  {
+   "id": "obs:d17e8902fb8dc47e",
+   "text": "Supplier asked Hollerau to pay invoices within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260505-70295-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-05-05",
+   "valid_until": null,
+   "review": {
+    "id": "obs:d17e8902fb8dc47e",
+    "verdict": "supported",
+    "reason": "Matches the email; the record phrases it as a question, and 'asked' fits that."
+   }
+  },
+  {
+   "id": "obs:12aa243a13ee650a",
+   "text": "Supplier complained several invoices are overdue again and said it would review its conditions if agreed payment terms are not kept.",
+   "kind": "supplier_statement",
+   "source": "doc:20260515-70295-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-05-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:12aa243a13ee650a",
+    "verdict": "supported",
+    "reason": "Matches the email."
+   }
+  },
+  {
+   "id": "obs:5804732b5c093556",
+   "text": "Supplier sales said they could take additional parts at short notice; second shift on hold since spring.",
+   "kind": "supplier_statement",
+   "source": "doc:20260419-70295-M5",
+   "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+   "parts": [],
+   "observed_at": "2026-04-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:5804732b5c093556",
+    "verdict": "supported",
+    "reason": "Matches the call note."
+   }
+  },
+  {
+   "id": "obs:1699463a719abad6",
+   "text": "Owner admitted not following material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "kind": "supplier_statement",
+   "source": "doc:20260909-70295-M4",
+   "quote": "The owner of Drehzentrum Ilzauer GmbH admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "parts": [],
+   "observed_at": "2026-09-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1699463a719abad6",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:418d2f0e1de6ed91",
+   "text": "Founder-owned GmbH with 20 staff, turnover band 2-5 M EUR, equity ratio 40.8%.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 40.8, \"filed_fy\": 2024, \"founded\": 2001, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 20, \"supplier_id\": \"sup:70295\", \"turnover_band\": \"2-5 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:418d2f0e1de6ed91",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:ea3a8aa05e284fef",
+   "text": "Supplier asked whether invoices could be paid within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260505-70295-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-05-05",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ea3a8aa05e284fef",
+    "verdict": "supported",
+    "reason": "Matches the email."
+   }
+  },
+  {
+   "id": "obs:3cb03684137bdfb5",
+   "text": "Supplier complained several invoices are overdue again and said it would otherwise review its conditions.",
+   "kind": "supplier_statement",
+   "source": "doc:20260515-70295-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-05-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3cb03684137bdfb5",
+    "verdict": "supported",
+    "reason": "Matches the email."
+   }
+  },
+  {
+   "id": "obs:6c634c7c43e732d8",
+   "text": "Owner said he had not followed material and energy prices closely since the 2022 peak; office manager does costing.",
+   "kind": "supplier_statement",
+   "source": "doc:20260909-70295-M4",
+   "quote": "The owner of Drehzentrum Ilzauer GmbH admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "parts": [],
+   "observed_at": "2026-09-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:6c634c7c43e732d8",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:ccee73dade61ad03",
+   "text": "Scorecard ppm rose from 565 (to 2024Q3) to a peak of 1227 (to 2026Q1).",
+   "kind": "fact",
+   "source": "evidence:scorecards",
+   "quote": "\"ppm\": 565, \"qn_count\": 12, \"quarter\": \"2024Q3\"",
+   "parts": [],
+   "observed_at": "2024-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ccee73dade61ad03",
+    "verdict": "supported",
+    "reason": "Scorecards show ppm 565 in 2024Q3 and a maximum of 1227 in 2026Q1."
+   }
+  },
+  {
+   "id": "obs:2cbf5ec46fc0734d",
+   "text": "Scorecard to 2026Q1 showed ppm 1227 with 24 QNs, class B amber.",
+   "kind": "fact",
+   "source": "sc:70295@2026Q1",
+   "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 65, \"gr_lines\": 78, \"id\": \"sc:70295@2026Q1\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 83.3, \"otd_pct\": 82.1, \"period_end\": \"2026-03-31\", \"period_start\": \"2025-04-01\", \"ppm\": 1227, \"qn_count\": 24",
+   "parts": [],
+   "observed_at": "2026-03-31",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2cbf5ec46fc0734d",
+    "verdict": "supported",
+    "reason": "Matches the 2026Q1 scorecard row."
+   }
+  },
+  {
+   "id": "obs:cb7f1a45a05d7a97",
+   "text": "Last 12 months deliveries: 15.6% late, averaging 21.1 days late when late, max 41 days, over 77 receipts.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 21.1, \"early_pct\": 0.0, \"late_pct\": 15.6, \"max_days_late\": 41, \"on_time_confirmed_pct\": 85.7, \"on_time_requested_pct\": 84.4, \"receipts\": 77}",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:cb7f1a45a05d7a97",
+    "verdict": "supported",
+    "reason": "Matches the delivery last-12-months figures."
+   }
+  },
+  {
+   "id": "obs:93ad69bfbd1dbcdb",
+   "text": "Part 320090 has the weakest delivery: 76.9% on time, 23.1% late, max 41 days late in last 12 months.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "{\"avg_days_late_when_late\": 23.5, \"early_pct\": 0.0, \"late_pct\": 23.1, \"max_days_late\": 41, \"on_time_confirmed_pct\": 76.9, \"on_time_requested_pct\": 76.9, \"part_id\": \"part:320090\", \"receipts\": 26}",
+   "parts": [
+    "part:320090"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:93ad69bfbd1dbcdb",
+    "verdict": "supported",
+    "reason": "Figures match, and 320090 has the lowest on-time rate of the three parts."
+   }
+  },
+  {
+   "id": "obs:34533ee585618f39",
+   "text": "Part 320040 from this supplier: 1288 ppm last 12 months, 27 QNs (25 supplier-caused), 98 complaint pieces.",
+   "kind": "fact",
+   "source": "evidence:part:320040:part_quality",
+   "quote": "\"complaint_qty\": 98, \"last_qn\": \"2026-07-23\", \"latest_qns\": [\"qn:20004985\", \"qn:20004977\", \"qn:20004947\"], \"ppm_last_12m\": 1288, \"qns\": 27, \"received_last_12m\": 27940, \"recharged_eur\": 2700, \"supplier_caused\": 25",
+   "parts": [
+    "part:320040"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:34533ee585618f39",
+    "verdict": "supported",
+    "reason": "Matches the part 320040 quality record."
+   }
+  },
+  {
+   "id": "obs:3cca6dc63dab5747",
+   "text": "On part 320020 this supplier's ppm (521) exceeds sup:70230 (391) over last 12 months.",
+   "kind": "fact",
+   "source": "evidence:part:320020:part_quality",
+   "quote": "\"ppm_last_12m\": 391, \"qns\": 12, \"received_last_12m\": 7669, \"recharged_eur\": 900, \"supplier_caused\": 11, \"supplier_id\": \"sup:70230\"}, {\"complaint_qty\": 20, \"last_qn\": \"2026-06-07\", \"latest_qns\": [\"qn:20004944\", \"qn:20004886\", \"qn:20004842\"], \"ppm_last_12m\": 521",
+   "parts": [
+    "part:320020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:3cca6dc63dab5747",
+    "verdict": "supported",
+    "reason": "Part 320020 quality record shows ppm 521 for this supplier versus 391 for sup:70230."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier asked whether Hollerau could pay its invoices within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260505-70295-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-05-05",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier complained that several invoices are overdue again and said it would have to review its conditions if agreed payment terms are not kept.",
+     "kind": "supplier_statement",
+     "source": "doc:20260515-70295-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-05-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier sales said they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "kind": "supplier_statement",
+     "source": "doc:20260419-70295-M5",
+     "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "parts": [],
+     "observed_at": "2026-04-19",
+     "valid_until": null
+    },
+    {
+     "text": "Owner admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "kind": "supplier_statement",
+     "source": "doc:20260909-70295-M4",
+     "quote": "The owner of Drehzentrum Ilzauer GmbH admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "parts": [],
+     "observed_at": "2026-09-09",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master records 30 payment days, EXW incoterm, 28 days standard lead time, and no cash discount (skonto) terms.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"EXW\", \"name\": \"Drehzentrum Ilzauer GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 28",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is a founder-owned GmbH with 20 staff, a turnover band of 2-5 M EUR, an equity ratio of 40.8 % and a credit index of 249, unchanged from 12 months earlier.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 249, \"credit_index_12m_ago\": 249, \"equity_ratio_pct\": 40.8, \"filed_fy\": 2024, \"founded\": 2001, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 20, \"supplier_id\": \"sup:70295\", \"turnover_band\": \"2-5 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "The renewal price for part 320040 rose 3.1 % to EUR 13.59 from 2026-01-01.",
+     "kind": "fact",
+     "source": "EV-2026-70295-320040",
+     "quote": "\"change_pct\": 3.1, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70295-320040\", \"price\": 13.59, \"price_unit\": 1, \"supplier_id\": \"sup:70295\", \"valid_from\": \"2026-01-01\"",
+     "parts": [
+      "part:320040"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier quoted EUR 4.60 for part 320090 with a 28-day lead time and 30 payment days.",
+     "kind": "fact",
+     "source": "quote:7300080",
+     "quote": "\"lead_time_days\": 28, \"missing_fields\": \"validity_days;incoterm\", \"name\": \"Drehzentrum Ilzauer GmbH\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-07\", \"remarks\": \"\", \"rfq_id\": null, \"supplier_id\": \"sup:70295\", \"tooling_eur\": 0, \"unit_price\": 4.6",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": "2026-09-07",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier asked Hollerau to pay invoices within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260505-70295-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-05-05",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier complained several invoices are overdue again and said it would review its conditions if agreed payment terms are not kept.",
+     "kind": "supplier_statement",
+     "source": "doc:20260515-70295-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-05-15",
+     "valid_until": null
+    },
+    {
+     "text": "Invoices to this supplier are paid late 96.8% of the time, on average 10.4 days after due; 7 unpaid.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due\": 10.4, \"avg_days_paid_after_due_last_12m\": 10.3, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 227, \"max_days_late\": 28, \"paid_late_pct\": 96.8, \"paid_over_10_days_late_pct\": 45.0, \"short_paid_without_discount\": 0, \"unpaid\": 7",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier sales said they could take additional parts at short notice; second shift on hold since spring.",
+     "kind": "supplier_statement",
+     "source": "doc:20260419-70295-M5",
+     "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "parts": [],
+     "observed_at": "2026-04-19",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier publicly advertised free machine capacity and paused hiring.",
+     "kind": "supplier_statement",
+     "source": "news:20260514-12",
+     "quote": "Drehzentrum Ilzauer GmbH is advertising free machine capacity and has paused hiring, the company said at a regional supplier day.",
+     "parts": [],
+     "observed_at": "2026-05-14",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260828-70295-M3",
+     "quote": "Drehzentrum Ilzauer GmbH said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-08-28",
+     "valid_until": null
+    },
+    {
+     "text": "Owner admitted not following material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "kind": "supplier_statement",
+     "source": "doc:20260909-70295-M4",
+     "quote": "The owner of Drehzentrum Ilzauer GmbH admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "parts": [],
+     "observed_at": "2026-09-09",
+     "valid_until": null
+    },
+    {
+     "text": "Founder-owned GmbH with 20 staff, turnover band 2-5 M EUR, equity ratio 40.8%.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 40.8, \"filed_fy\": 2024, \"founded\": 2001, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 20, \"supplier_id\": \"sup:70295\", \"turnover_band\": \"2-5 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070295#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:320020",
+      "part:320040",
+      "part:320090"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070295#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:320020",
+      "part:320040",
+      "part:320090"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070295#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:320020",
+      "part:320040",
+      "part:320090"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Delivery EXW with standard lead time of 28 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070295#5.1",
+     "quote": "Delivery EXW; standard lead time 28 days from order.",
+     "parts": [
+      "part:320020",
+      "part:320040",
+      "part:320090"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier asked whether invoices could be paid within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260505-70295-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-05-05",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier complained several invoices are overdue again and said it would otherwise review its conditions.",
+     "kind": "supplier_statement",
+     "source": "doc:20260515-70295-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-05-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier sales said they could take additional parts at short notice; second shift on hold since spring.",
+     "kind": "supplier_statement",
+     "source": "doc:20260419-70295-M5",
+     "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "parts": [],
+     "observed_at": "2026-04-19",
+     "valid_until": null
+    },
+    {
+     "text": "Owner said he had not followed material and energy prices closely since the 2022 peak; office manager does costing.",
+     "kind": "supplier_statement",
+     "source": "doc:20260909-70295-M4",
+     "quote": "The owner of Drehzentrum Ilzauer GmbH admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "parts": [],
+     "observed_at": "2026-09-09",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month scorecard to 2026-09-30: OTD 84.4% vs requested date, 85.7% vs first confirmed date, ppm 1000, score 77.2, class B amber, 2 overdue open 8Ds.",
+     "kind": "fact",
+     "source": "sc:70295@2026Q3",
+     "quote": "\"open_8d_overdue\": 2, \"otd_confirmed_pct\": 85.7, \"otd_pct\": 84.4, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 1000, \"qn_count\": 20, \"quarter\": \"2026Q3\", \"received_qty\": 51996, \"score\": 77.2",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Scorecard ppm rose from 565 (to 2024Q3) to a peak of 1227 (to 2026Q1).",
+     "kind": "fact",
+     "source": "evidence:scorecards",
+     "quote": "\"ppm\": 565, \"qn_count\": 12, \"quarter\": \"2024Q3\"",
+     "parts": [],
+     "observed_at": "2024-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Scorecard to 2026Q1 showed ppm 1227 with 24 QNs, class B amber.",
+     "kind": "fact",
+     "source": "sc:70295@2026Q1",
+     "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 65, \"gr_lines\": 78, \"id\": \"sc:70295@2026Q1\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 83.3, \"otd_pct\": 82.1, \"period_end\": \"2026-03-31\", \"period_start\": \"2025-04-01\", \"ppm\": 1227, \"qn_count\": 24",
+     "parts": [],
+     "observed_at": "2026-03-31",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months deliveries: 15.6% late, averaging 21.1 days late when late, max 41 days, over 77 receipts.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 21.1, \"early_pct\": 0.0, \"late_pct\": 15.6, \"max_days_late\": 41, \"on_time_confirmed_pct\": 85.7, \"on_time_requested_pct\": 84.4, \"receipts\": 77}",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 320090 has the weakest delivery: 76.9% on time, 23.1% late, max 41 days late in last 12 months.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "{\"avg_days_late_when_late\": 23.5, \"early_pct\": 0.0, \"late_pct\": 23.1, \"max_days_late\": 41, \"on_time_confirmed_pct\": 76.9, \"on_time_requested_pct\": 76.9, \"part_id\": \"part:320090\", \"receipts\": 26}",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 320040 from this supplier: 1288 ppm last 12 months, 27 QNs (25 supplier-caused), 98 complaint pieces.",
+     "kind": "fact",
+     "source": "evidence:part:320040:part_quality",
+     "quote": "\"complaint_qty\": 98, \"last_qn\": \"2026-07-23\", \"latest_qns\": [\"qn:20004985\", \"qn:20004977\", \"qn:20004947\"], \"ppm_last_12m\": 1288, \"qns\": 27, \"received_last_12m\": 27940, \"recharged_eur\": 2700, \"supplier_caused\": 25",
+     "parts": [
+      "part:320040"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "On part 320090 this supplier's ppm (797) exceeds the alternative supplier sup:70250 (318) over last 12 months.",
+     "kind": "fact",
+     "source": "evidence:part:320090:part_quality",
+     "quote": "\"ppm_last_12m\": 318, \"qns\": 14, \"received_last_12m\": 12572, \"recharged_eur\": 1500, \"supplier_caused\": 12, \"supplier_id\": \"sup:70250\"}, {\"complaint_qty\": 29, \"last_qn\": \"2026-09-04\", \"latest_qns\": [\"qn:20005014\", \"qn:20004994\", \"qn:20004993\"], \"ppm_last_12m\": 797",
+     "parts": [
+      "part:320090"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "On part 320020 this supplier's ppm (521) exceeds sup:70230 (391) over last 12 months.",
+     "kind": "fact",
+     "source": "evidence:part:320020:part_quality",
+     "quote": "\"ppm_last_12m\": 391, \"qns\": 12, \"received_last_12m\": 7669, \"recharged_eur\": 900, \"supplier_caused\": 11, \"supplier_id\": \"sup:70230\"}, {\"complaint_qty\": 20, \"last_qn\": \"2026-06-07\", \"latest_qns\": [\"qn:20004944\", \"qn:20004886\", \"qn:20004842\"], \"ppm_last_12m\": 521",
+     "parts": [
+      "part:320020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": []
+ }
+}

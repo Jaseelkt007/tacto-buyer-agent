@@ -1,0 +1,1622 @@
+{
+  "observation_packets": [
+    {
+      "packet": {
+        "case_id": "case:G04",
+        "decision_index": 0,
+        "case": {
+          "case_id": "case:G04",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:320050"
+          ],
+          "suppliers": [
+            "sup:99041"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 3500,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              15,
+              45,
+              75
+            ]
+          },
+          "buyer": {
+            "need_per_year": 3500,
+            "horizon_years": 1.0,
+            "current_unit_price": 22,
+            "fallback_unit_price": 24.64,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 3500,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 23.76,
+                "payment_days": 60
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [],
+          "facts": {}
+        },
+        "threads": {
+          "sup:99041": [
+            {
+              "message_id": "msg:99041-0-1",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-0",
+                  "terms": {
+                    "unit_price": 22.28
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 22.28\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:99041",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 17.94,
+                  "payment_days": 75
+                }
+              }
+            ],
+            "refs": [
+              "fc:320050@2026-09",
+              "idx:PPI-C2431@2026-06",
+              "idx:PPI-C2431@2026-08"
+            ]
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 10,
+        "standing_offer_id": "offer:99041-0",
+        "engine_estimates": {
+          "sup:99041": {
+            "standard": {
+              "payment_days": 45,
+              "contract_months": 12,
+              "volume_per_year": 3500,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:99041",
+              "name": "",
+              "country": "",
+              "owner_type": "",
+              "contract_id": "",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": null,
+              "skonto_rate": 0.0,
+              "full_cost": 20.05,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": []
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "unit_price": 22.28
+            },
+            "estimated_total_cost": 78239.93,
+            "passes_accept_check": false,
+            "accept_check_reason": "C 78,240 does not beat the limit 78,240"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 17.94,
+              "payment_days": 75
+            },
+            "estimated_total_cost": 62580.7,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 62,581 below the limit 78,240"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G04\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:320050\"], \"suppliers\": [\"sup:99041\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [15, 45, 75]}, \"buyer\": {\"need_per_year\": 3500, \"horizon_years\": 1.0, \"current_unit_price\": 22, \"fallback_unit_price\": 24.64, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 23.76, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [], \"facts\": {}}"
+          },
+          {
+            "id": "message:sup:99041:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-0-1\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-0\", \"terms\": {\"unit_price\": 22.28}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:99041-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 22.28\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "fc:320050@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:320050@2026-09\", \"part_id\": \"part:320050\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 6650, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-06",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-06\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-06\", \"value\": 132.1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-08\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-08\", \"value\": 129.1}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "99b6884f3d941e7d9ad02454d85010e95640aa8657a14a9a06132d0bfbf6aef7",
+      "capture_seconds": 0.000475
+    },
+    {
+      "packet": {
+        "case_id": "case:G04",
+        "decision_index": 1,
+        "case": {
+          "case_id": "case:G04",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:320050"
+          ],
+          "suppliers": [
+            "sup:99041"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 3500,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              15,
+              45,
+              75
+            ]
+          },
+          "buyer": {
+            "need_per_year": 3500,
+            "horizon_years": 1.0,
+            "current_unit_price": 22,
+            "fallback_unit_price": 24.64,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 3500,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 23.76,
+                "payment_days": 60
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [],
+          "facts": {}
+        },
+        "threads": {
+          "sup:99041": [
+            {
+              "message_id": "msg:99041-0-1",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-0",
+                  "terms": {
+                    "unit_price": 22.28
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 22.28\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:320050@2026-09",
+                "idx:PPI-C2431@2026-06",
+                "idx:PPI-C2431@2026-08"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 17.94,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-1-2",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-1",
+                  "terms": {
+                    "payment_days": 75,
+                    "unit_price": 20.79
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 75\nUnit price (EUR) 20.79\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:99041",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 18.23,
+                  "payment_days": 75
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 9,
+        "standing_offer_id": "offer:99041-1",
+        "engine_estimates": {
+          "sup:99041": {
+            "standard": {
+              "payment_days": 45,
+              "contract_months": 12,
+              "volume_per_year": 3500,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:99041",
+              "name": "",
+              "country": "",
+              "owner_type": "",
+              "contract_id": "",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": null,
+              "skonto_rate": 0.0,
+              "full_cost": 20.05,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": []
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 75,
+              "unit_price": 20.79
+            },
+            "estimated_total_cost": 72522.45,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 72,522 below the limit 78,240"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 18.23,
+              "payment_days": 75
+            },
+            "estimated_total_cost": 63592.32,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 63,592 below the limit 78,240"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G04\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:320050\"], \"suppliers\": [\"sup:99041\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [15, 45, 75]}, \"buyer\": {\"need_per_year\": 3500, \"horizon_years\": 1.0, \"current_unit_price\": 22, \"fallback_unit_price\": 24.64, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 23.76, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [], \"facts\": {}}"
+          },
+          {
+            "id": "message:sup:99041:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-0-1\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-0\", \"terms\": {\"unit_price\": 22.28}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:99041-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 22.28\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:320050@2026-09\", \"idx:PPI-C2431@2026-06\", \"idx:PPI-C2431@2026-08\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 17.94, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-1-2\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-1\", \"terms\": {\"payment_days\": 75, \"unit_price\": 20.79}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 75\\nUnit price (EUR) 20.79\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "fc:320050@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:320050@2026-09\", \"part_id\": \"part:320050\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 6650, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-06",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-06\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-06\", \"value\": 132.1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-08\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-08\", \"value\": 129.1}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "e07d1cb47becb040224443a4de1e1d77d2d2a7483f6f806e91a2496826e0fe9e",
+      "capture_seconds": 0.000442
+    },
+    {
+      "packet": {
+        "case_id": "case:G04",
+        "decision_index": 2,
+        "case": {
+          "case_id": "case:G04",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:320050"
+          ],
+          "suppliers": [
+            "sup:99041"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 3500,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              15,
+              45,
+              75
+            ]
+          },
+          "buyer": {
+            "need_per_year": 3500,
+            "horizon_years": 1.0,
+            "current_unit_price": 22,
+            "fallback_unit_price": 24.64,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 3500,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 23.76,
+                "payment_days": 60
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [],
+          "facts": {}
+        },
+        "threads": {
+          "sup:99041": [
+            {
+              "message_id": "msg:99041-0-1",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-0",
+                  "terms": {
+                    "unit_price": 22.28
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 22.28\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:320050@2026-09",
+                "idx:PPI-C2431@2026-06",
+                "idx:PPI-C2431@2026-08"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 17.94,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-1-2",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-1",
+                  "terms": {
+                    "payment_days": 75,
+                    "unit_price": 20.79
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 75\nUnit price (EUR) 20.79\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 18.23,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-2-3",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-2",
+                  "terms": {
+                    "payment_days": 75,
+                    "unit_price": 20.52
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 75\nUnit price (EUR) 20.52\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:99041",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 18.92,
+                  "payment_days": 75
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 8,
+        "standing_offer_id": "offer:99041-2",
+        "engine_estimates": {
+          "sup:99041": {
+            "standard": {
+              "payment_days": 45,
+              "contract_months": 12,
+              "volume_per_year": 3500,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:99041",
+              "name": "",
+              "country": "",
+              "owner_type": "",
+              "contract_id": "",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": null,
+              "skonto_rate": 0.0,
+              "full_cost": 20.05,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": []
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 75,
+              "unit_price": 20.52
+            },
+            "estimated_total_cost": 71580.6,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 71,581 below the limit 78,240"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 18.92,
+              "payment_days": 75
+            },
+            "estimated_total_cost": 65999.27,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 65,999 below the limit 78,240"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G04\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:320050\"], \"suppliers\": [\"sup:99041\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [15, 45, 75]}, \"buyer\": {\"need_per_year\": 3500, \"horizon_years\": 1.0, \"current_unit_price\": 22, \"fallback_unit_price\": 24.64, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 23.76, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [], \"facts\": {}}"
+          },
+          {
+            "id": "message:sup:99041:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-0-1\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-0\", \"terms\": {\"unit_price\": 22.28}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:99041-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 22.28\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:320050@2026-09\", \"idx:PPI-C2431@2026-06\", \"idx:PPI-C2431@2026-08\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 17.94, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-1-2\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-1\", \"terms\": {\"payment_days\": 75, \"unit_price\": 20.79}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 75\\nUnit price (EUR) 20.79\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 18.23, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-2-3\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-2\", \"terms\": {\"payment_days\": 75, \"unit_price\": 20.52}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 75\\nUnit price (EUR) 20.52\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "fc:320050@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:320050@2026-09\", \"part_id\": \"part:320050\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 6650, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-06",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-06\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-06\", \"value\": 132.1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-08\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-08\", \"value\": 129.1}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "683cb1873a193e4af2418023497d79169b3b9d0c4f7575a4e4aa6b5bb53e9a4e",
+      "capture_seconds": 0.000529
+    },
+    {
+      "packet": {
+        "case_id": "case:G04",
+        "decision_index": 3,
+        "case": {
+          "case_id": "case:G04",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:320050"
+          ],
+          "suppliers": [
+            "sup:99041"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 3500,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              15,
+              45,
+              75
+            ]
+          },
+          "buyer": {
+            "need_per_year": 3500,
+            "horizon_years": 1.0,
+            "current_unit_price": 22,
+            "fallback_unit_price": 24.64,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 3500,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 23.76,
+                "payment_days": 60
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [],
+          "facts": {}
+        },
+        "threads": {
+          "sup:99041": [
+            {
+              "message_id": "msg:99041-0-1",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-0",
+                  "terms": {
+                    "unit_price": 22.28
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 22.28\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:320050@2026-09",
+                "idx:PPI-C2431@2026-06",
+                "idx:PPI-C2431@2026-08"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 17.94,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-1-2",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-1",
+                  "terms": {
+                    "payment_days": 75,
+                    "unit_price": 20.79
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 75\nUnit price (EUR) 20.79\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 18.23,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-2-3",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-2",
+                  "terms": {
+                    "payment_days": 75,
+                    "unit_price": 20.52
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 75\nUnit price (EUR) 20.52\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 18.92,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-3-4",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-3",
+                  "terms": {
+                    "payment_days": 45,
+                    "unit_price": 19.92
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-3-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 45\nUnit price (EUR) 19.92\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:99041",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 19.26,
+                  "payment_days": 75
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 7,
+        "standing_offer_id": "offer:99041-3",
+        "engine_estimates": {
+          "sup:99041": {
+            "standard": {
+              "payment_days": 45,
+              "contract_months": 12,
+              "volume_per_year": 3500,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:99041",
+              "name": "",
+              "country": "",
+              "owner_type": "",
+              "contract_id": "",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": null,
+              "skonto_rate": 0.0,
+              "full_cost": 20.05,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": []
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 45,
+              "unit_price": 19.92
+            },
+            "estimated_total_cost": 69952.4,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 69,952 below the limit 78,240"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 19.26,
+              "payment_days": 75
+            },
+            "estimated_total_cost": 67185.3,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 67,185 below the limit 78,240"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G04\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:320050\"], \"suppliers\": [\"sup:99041\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [15, 45, 75]}, \"buyer\": {\"need_per_year\": 3500, \"horizon_years\": 1.0, \"current_unit_price\": 22, \"fallback_unit_price\": 24.64, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 23.76, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [], \"facts\": {}}"
+          },
+          {
+            "id": "message:sup:99041:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-0-1\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-0\", \"terms\": {\"unit_price\": 22.28}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:99041-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 22.28\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:320050@2026-09\", \"idx:PPI-C2431@2026-06\", \"idx:PPI-C2431@2026-08\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 17.94, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-1-2\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-1\", \"terms\": {\"payment_days\": 75, \"unit_price\": 20.79}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 75\\nUnit price (EUR) 20.79\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 18.23, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-2-3\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-2\", \"terms\": {\"payment_days\": 75, \"unit_price\": 20.52}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 75\\nUnit price (EUR) 20.52\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:5",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 18.92, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:6",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-3-4\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-3\", \"terms\": {\"payment_days\": 45, \"unit_price\": 19.92}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-3-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 45\\nUnit price (EUR) 19.92\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "fc:320050@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:320050@2026-09\", \"part_id\": \"part:320050\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 6650, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-06",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-06\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-06\", \"value\": 132.1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-08\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-08\", \"value\": 129.1}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "3205321bd8780e50f7bfa8b2f5705004a441dcafbfdcdccfb6c5be50fdf0906b",
+      "capture_seconds": 0.000571
+    },
+    {
+      "packet": {
+        "case_id": "case:G04",
+        "decision_index": 4,
+        "case": {
+          "case_id": "case:G04",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:320050"
+          ],
+          "suppliers": [
+            "sup:99041"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 3500,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              15,
+              45,
+              75
+            ]
+          },
+          "buyer": {
+            "need_per_year": 3500,
+            "horizon_years": 1.0,
+            "current_unit_price": 22,
+            "fallback_unit_price": 24.64,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 3500,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 23.76,
+                "payment_days": 60
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [],
+          "facts": {}
+        },
+        "threads": {
+          "sup:99041": [
+            {
+              "message_id": "msg:99041-0-1",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-0",
+                  "terms": {
+                    "unit_price": 22.28
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 22.28\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:320050@2026-09",
+                "idx:PPI-C2431@2026-06",
+                "idx:PPI-C2431@2026-08"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 17.94,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-1-2",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-1",
+                  "terms": {
+                    "payment_days": 75,
+                    "unit_price": 20.79
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 75\nUnit price (EUR) 20.79\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 18.23,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-2-3",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-2",
+                  "terms": {
+                    "payment_days": 75,
+                    "unit_price": 20.52
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 75\nUnit price (EUR) 20.52\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 18.92,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-3-4",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-3",
+                  "terms": {
+                    "payment_days": 45,
+                    "unit_price": 19.92
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-3-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 45\nUnit price (EUR) 19.92\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 19.26,
+                    "payment_days": 75
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:99041-4-5",
+              "from": "sales@99041",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can agree to this package. Please confirm your order.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:99041-4",
+                  "terms": {
+                    "payment_days": 75,
+                    "unit_price": 19.26
+                  }
+                }
+              ],
+              "status": "agreed",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:99041-4-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 75\nUnit price (EUR) 19.26\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 45\nContract term (months) 12\nVolume per year (pcs) 3500\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 3500\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:99041",
+          "message": {
+            "action": {
+              "type": "accept",
+              "term_sheet_id": "offer:99041-4"
+            }
+          }
+        },
+        "supplier_status": "agreed",
+        "moves_left": 6,
+        "standing_offer_id": "offer:99041-4",
+        "engine_estimates": {
+          "sup:99041": {
+            "standard": {
+              "payment_days": 45,
+              "contract_months": 12,
+              "volume_per_year": 3500,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:99041",
+              "name": "",
+              "country": "",
+              "owner_type": "",
+              "contract_id": "",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": null,
+              "skonto_rate": 0.0,
+              "full_cost": 20.05,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": []
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 75,
+              "unit_price": 19.26
+            },
+            "estimated_total_cost": 67185.3,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 67,185 below the limit 78,240"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G04\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:320050\"], \"suppliers\": [\"sup:99041\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [15, 45, 75]}, \"buyer\": {\"need_per_year\": 3500, \"horizon_years\": 1.0, \"current_unit_price\": 22, \"fallback_unit_price\": 24.64, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 3500, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 23.76, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [], \"facts\": {}}"
+          },
+          {
+            "id": "message:sup:99041:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-0-1\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. We can discuss complete packages; settlement timing affects price.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-0\", \"terms\": {\"unit_price\": 22.28}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:99041-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 22.28\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:320050@2026-09\", \"idx:PPI-C2431@2026-06\", \"idx:PPI-C2431@2026-08\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 17.94, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-1-2\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-1\", \"terms\": {\"payment_days\": 75, \"unit_price\": 20.79}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 75\\nUnit price (EUR) 20.79\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 18.23, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-2-3\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-2\", \"terms\": {\"payment_days\": 75, \"unit_price\": 20.52}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 75\\nUnit price (EUR) 20.52\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:5",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 18.92, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:6",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-3-4\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-3\", \"terms\": {\"payment_days\": 45, \"unit_price\": 19.92}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-3-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 45\\nUnit price (EUR) 19.92\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:99041:7",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 19.26, \"payment_days\": 75}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:99041:8",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:99041-4-5\", \"from\": \"sales@99041\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can agree to this package. Please confirm your order.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:99041-4\", \"terms\": {\"payment_days\": 75, \"unit_price\": 19.26}}], \"status\": \"agreed\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:99041-4-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 75\\nUnit price (EUR) 19.26\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 45\\nContract term (months) 12\\nVolume per year (pcs) 3500\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 3500\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "fc:320050@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:320050@2026-09\", \"part_id\": \"part:320050\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 6650, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-06",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-06\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-06\", \"value\": 132.1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-08\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-08\", \"value\": 129.1}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "b4ec2bbe9f899cac88f7a9801139abb3403be6c155f496557a487011ce2a2fd7",
+      "capture_seconds": 0.000777
+    }
+  ],
+  "observation_errors": []
+}

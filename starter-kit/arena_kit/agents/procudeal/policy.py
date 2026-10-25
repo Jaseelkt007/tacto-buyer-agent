@@ -18,6 +18,7 @@ import os
 import re
 import time
 from dataclasses import dataclass, field
+from typing import TYPE_CHECKING
 
 from ...cost import RELATIONSHIP_GOALS, closing_terms, complete_offer, must_haves_ok, total_cost
 from ...play import latest, live_threads, moves_left, standing
@@ -25,6 +26,9 @@ from . import claims as cl
 from . import economics as eco
 from . import quote as qt
 from . import signals as sg
+
+if TYPE_CHECKING:
+    from .reply_interpretation import ReplyView
 from .dossier import CASH_PREMIUM, Dossier, build
 
 log = logging.getLogger("arena")
@@ -54,6 +58,8 @@ FEATURES = {
     "ask_breakdown": False,  # v2.1: the first e-mail asks for its cost breakdown (brief: an open supplier sends one)
     "tactician": False,  # v2.0 hybrid: one model call per move picks among code-priced options (single supplier)
     "tactician_text": False,  # v2.0 hybrid: the tactician's figure-free paragraph goes into the e-mail
+    "grounded_dossier": False,  # source-checked, scoped observations; no legacy strategy prose
+    "measured_trades": False,  # hybrid term changes need observed prices or explicit clause exposure
 }
 
 
@@ -160,6 +166,7 @@ class Side:
     clause_adopted: bool = False  # proactive_clause: our clause is the one it demanded
     protected: bool = False  # protection_trade: our sheet carries the clause it gains by, at our health price
     rival_cited: dict = field(default_factory=dict)  # lever_schedule: rival sid -> price we cited to it
+    reply_reading: "ReplyView | None" = None
 
     def estimate(self):
         est = self.dossier.estimate(self.reference, rich=self.rich)
@@ -169,8 +176,9 @@ class Side:
 
 
 class Negotiator:
-    def __init__(self, case, package=None, plan=None):
+    def __init__(self, case, package=None, plan=None, reply_interpreter=None):
         self.case, self.package = case, package
+        self.reply_interpreter = reply_interpreter
         self.plan = plan if on("case_plan") and plan else None  # zone 1: the strategist's plan
         self.goal = case["buyer"].get("category_goal", "leverage")
         self.sides: dict[str, Side] = {}
@@ -491,6 +499,13 @@ class Negotiator:
         live = live_threads(threads)
         for sid in live:
             self.settle(self.sides[sid], threads[sid])
+        if self.reply_interpreter is not None:
+            for sid in live:
+                try:
+                    self.sides[sid].reply_reading = self.reply_interpreter.read(self.case, sid, threads[sid])
+                except Exception:
+                    self.sides[sid].reply_reading = None
+                    log.exception("%s: reply interpretation unavailable; policy continues", sid)
         for sid in live:
             self.observe(self.sides[sid], threads[sid])
 

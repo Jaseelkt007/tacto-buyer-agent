@@ -312,7 +312,7 @@ def _should_cost(pkg, sid, e):
                 note += f"; x {factor} for {country} = EUR {cost_pp * cu:.2f}"
             if margin is not None:
                 note += f"; its price EUR {price:.2f}{_per(unit)} ({source}) is {margin:+.1f}% against it"
-                note += " - it sells below this cost." if margin < 0 else "."
+                note += " This is an uncertain estimate, not proof of actual margin or a price floor."
             else:
                 note += "; no current price of this supplier found."
             sentence = (
@@ -496,7 +496,7 @@ def _forecast(pkg, sid, e):
             f"Snapshot {s.get('snapshot_month')}: {f.get('volume_per_year') or s.get('qty_next_12m')} for the next "
             f"12 months against {ordered} ordered in the last 12 months (requested dates); shared with suppliers: "
             f"{bool(s.get('shared_with_suppliers'))}. "
-            + ("More volume is worth more to it." if change > 0 else "Less volume: an argument for a higher price.")
+            + "Supplier willingness to trade for volume is unknown; the forecast alone does not establish it."
         )
         figures = {
             "change_pct": change,

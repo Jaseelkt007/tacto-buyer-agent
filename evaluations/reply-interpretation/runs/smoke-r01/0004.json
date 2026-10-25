@@ -1,0 +1,290 @@
+{
+  "context": {
+    "schema_version": 1,
+    "case_id": "case:G03",
+    "supplier_id": "sup:70190",
+    "case_terms": {
+      "negotiable": [
+        "unit_price",
+        "payment_days",
+        "contract_months"
+      ],
+      "fixed_terms": {
+        "lead_time_days": 35,
+        "volume_per_year": 4200,
+        "index_clause": null,
+        "incoterm": "DAP",
+        "tooling_eur": 0,
+        "effective_date": "2027-01-01"
+      },
+      "term_options": {
+        "payment_days": [
+          10,
+          30,
+          60,
+          90
+        ],
+        "contract_months": [
+          6,
+          12,
+          24
+        ]
+      }
+    },
+    "latest_message_ref": "message:sup:70190:2",
+    "latest_sender": "sales@70190",
+    "latest_status": "open",
+    "history": [
+      {
+        "from": "sales@70190",
+        "message_id": "msg:70190-0-1",
+        "subject": "Re: Supply enquiry",
+        "body": "Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.",
+        "term_sheets": [
+          {
+            "term_sheet_id": "offer:70190-0",
+            "terms": {
+              "unit_price": 96.65
+            }
+          }
+        ],
+        "status": "open",
+        "claim_results": [],
+        "missing_fields": [
+          "contract_months",
+          "payment_days"
+        ],
+        "source_ref": "message:sup:70190:0",
+        "attachments": [
+          {
+            "attachment_id": "att:70190-0-quote",
+            "name": "quote.pdf",
+            "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 96.65\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+          }
+        ]
+      },
+      {
+        "from": "buyer",
+        "subject": "Re: Supply enquiry",
+        "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+        "term_sheets": [
+          {
+            "terms": {
+              "unit_price": 76.0,
+              "payment_days": 10,
+              "contract_months": 24
+            }
+          }
+        ],
+        "source_ref": "message:sup:70190:1",
+        "attachments": []
+      },
+      {
+        "from": "sales@70190",
+        "message_id": "msg:70190-1-2",
+        "subject": "Re: Supply enquiry",
+        "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+        "term_sheets": [
+          {
+            "term_sheet_id": "offer:70190-1",
+            "terms": {
+              "contract_months": 12,
+              "payment_days": 10,
+              "unit_price": 88.88
+            }
+          }
+        ],
+        "status": "open",
+        "claim_results": [],
+        "missing_fields": [],
+        "source_ref": "message:sup:70190:2",
+        "attachments": [
+          {
+            "attachment_id": "att:70190-1-quote",
+            "name": "quote.pdf",
+            "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 88.88\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+          }
+        ]
+      }
+    ],
+    "packages": {
+      "package:0": {
+        "message_ref": "message:sup:70190:2",
+        "term_sheet_id": "offer:70190-1",
+        "terms": {
+          "contract_months": 12,
+          "payment_days": 10,
+          "unit_price": 88.88
+        }
+      }
+    },
+    "sources": {
+      "message:sup:70190:0:subject": "Re: Supply enquiry",
+      "message:sup:70190:0:body": "Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.",
+      "message:sup:70190:0:attachment:0": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 96.65\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01",
+      "message:sup:70190:2:subject": "Re: Supply enquiry",
+      "message:sup:70190:2:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+      "message:sup:70190:2:attachment:0": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 88.88\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+    }
+  },
+  "model": "gpt-6.1-sol",
+  "model_called": true,
+  "request_sha256": "9b0fcd3cef98198530db7f4afd91e63699c9f673fb4ec919577d10904d682c18",
+  "answer": {
+    "observations": [
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "other",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70190:2:body",
+            "quote": "We can offer the attached package as a whole; its terms are linked."
+          }
+        ]
+      }
+    ]
+  },
+  "response_id": "resp_016c30a35e857675016adde5cb8a6c87d1b3b3ec8e3dffb007",
+  "usage": {
+    "input_tokens": 2044,
+    "input_tokens_details": {
+      "cache_write_tokens": 2041,
+      "cached_tokens": 0
+    },
+    "output_tokens": 66,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 2110
+  },
+  "reading": {
+    "schema_version": 1,
+    "case_id": "case:G03",
+    "supplier_id": "sup:70190",
+    "as_of": "message:sup:70190:2",
+    "context_sha256": "2808c1e311f40ff829599d0046a6d574a6fadb176cade586a4442e6522e2303c",
+    "status": "available",
+    "error": null,
+    "packages": {
+      "package:0": {
+        "message_ref": "message:sup:70190:2",
+        "term_sheet_id": "offer:70190-1",
+        "terms": {
+          "contract_months": 12,
+          "payment_days": 10,
+          "unit_price": 88.88
+        }
+      }
+    },
+    "observations": [
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "other",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70190:2:body",
+            "quote": "We can offer the attached package as a whole; its terms are linked."
+          }
+        ],
+        "quoted_value": null,
+        "value_source": null,
+        "policy_effect": "advisory_only"
+      }
+    ],
+    "validation": "provenance_checked_not_semantically_proven",
+    "changes_binding_decisions": false
+  },
+  "seconds": 2.499,
+  "source_snapshot_sha256": "617a6bd6c27689351c356881f6f5c6da5600f6be6bad95190ecd06d3a321b16c",
+  "decision_index": 1,
+  "response_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "observations"
+    ],
+    "properties": {
+      "observations": {
+        "type": "array",
+        "maxItems": 12,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "package_ref",
+            "kind",
+            "field",
+            "evidence"
+          ],
+          "properties": {
+            "package_ref": {
+              "type": "string",
+              "enum": [
+                "unscoped",
+                "package:0"
+              ]
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "condition",
+                "preference",
+                "withdrawal_statement",
+                "conflict",
+                "unclear"
+              ]
+            },
+            "field": {
+              "type": "string",
+              "enum": [
+                "contract_months",
+                "effective_date",
+                "incoterm",
+                "index_clause",
+                "lead_time_days",
+                "other",
+                "payment_days",
+                "tooling_eur",
+                "unit_price",
+                "volume_per_year"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source_ref",
+                  "quote"
+                ],
+                "properties": {
+                  "source_ref": {
+                    "type": "string",
+                    "enum": [
+                      "message:sup:70190:0:subject",
+                      "message:sup:70190:0:body",
+                      "message:sup:70190:0:attachment:0",
+                      "message:sup:70190:2:subject",
+                      "message:sup:70190:2:body",
+                      "message:sup:70190:2:attachment:0"
+                    ]
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 600
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

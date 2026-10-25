@@ -1,0 +1,378 @@
+{
+  "case": {
+    "case_id": "case:L08",
+    "set": "practice",
+    "type": "renewal",
+    "title": "Bearing distribution renewal",
+    "briefing": "Fictional local practice: obtain an acceptable supply agreement for the stated need.",
+    "trigger_doc": null,
+    "parts": [
+      "part:360020"
+    ],
+    "suppliers": [
+      "sup:70640"
+    ],
+    "negotiable": [
+      "unit_price",
+      "payment_days",
+      "contract_months"
+    ],
+    "fixed_terms": {
+      "lead_time_days": 42,
+      "volume_per_year": 6000,
+      "index_clause": null,
+      "incoterm": "DAP",
+      "tooling_eur": 0,
+      "effective_date": "2027-01-01"
+    },
+    "term_options": {
+      "payment_days": [
+        10,
+        30,
+        60,
+        90
+      ],
+      "contract_months": [
+        12,
+        24
+      ]
+    },
+    "buyer": {
+      "need_per_year": 6000,
+      "horizon_years": 2,
+      "current_unit_price": 10,
+      "fallback_unit_price": 12.0,
+      "interest_rate": 0.08,
+      "reference_payment_days": 60,
+      "need_lead_time_days": 42,
+      "category_goal": "leverage",
+      "fallback_risk_pct": 3,
+      "index_risk_pct": 1,
+      "late_cost_per_day": 200,
+      "cost_per_defect": 50,
+      "freight_eur_per_unit": {
+        "EXW": 0.5,
+        "FCA": 0.3,
+        "DAP": 0
+      },
+      "index_paths": {},
+      "must_haves": [
+        {
+          "field": "lead_time_days",
+          "op": "<=",
+          "value": 42
+        }
+      ],
+      "alternative": {
+        "kind": "other_supplier",
+        "ref": null,
+        "terms": {
+          "lead_time_days": 42,
+          "volume_per_year": 6000,
+          "index_clause": null,
+          "incoterm": "DAP",
+          "tooling_eur": 0,
+          "effective_date": "2027-01-01",
+          "unit_price": 11.8,
+          "payment_days": 60,
+          "contract_months": 24
+        }
+      }
+    },
+    "round_limit": 10,
+    "refs": [
+      "news:20261017-S19"
+    ],
+    "facts": {
+      "news:20261017-S19": {
+        "date": "2026-10-17",
+        "headline": "Kugellager-Vertrieb Inntal GmbH loses a large distribution contract",
+        "supplier": "sup:70640",
+        "topic": "free_capacity"
+      }
+    }
+  },
+  "transcript": {
+    "sim70001": {
+      "sup:70640": [
+        {
+          "thread_id": "thread:L08:70640",
+          "message_id": "msg:70640-0-1",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Simulated supplier. Fictional practice enquiry. Our opening quote is attached; we welcome a package proposal.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-0",
+              "terms": {
+                "unit_price": 9.38
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [
+            "contract_months",
+            "payment_days"
+          ],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-0-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows on-time delivery of 86.5% (sc:70640@2026Q3).\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\nOur last 3 orders for this part were at EUR 4.20 per unit (po:4500014447-10, po:4500014370-10, po:4500014304-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 7.5,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          ],
+          "refs": [
+            "fc:360020@2026-09",
+            "po:4500014304-10",
+            "po:4500014370-10",
+            "po:4500014447-10",
+            "sc:70640@2026Q3"
+          ],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L08:70640",
+          "message_id": "msg:70640-1-2",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-1",
+              "terms": {
+                "contract_months": 24,
+                "payment_days": 60,
+                "unit_price": 8.76
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-1-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 7.63,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L08:70640",
+          "message_id": "msg:70640-2-3",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-2",
+              "terms": {
+                "contract_months": 24,
+                "payment_days": 60,
+                "unit_price": 8.51
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-2-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 7.89,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L08:70640",
+          "message_id": "msg:70640-3-4",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-3",
+              "terms": {
+                "contract_months": 24,
+                "payment_days": 60,
+                "unit_price": 8.26
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-3-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 8.0,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L08:70640",
+          "message_id": "msg:70640-4-5",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Simulated supplier. We can agree to this package. Please confirm your order.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-4",
+              "terms": {
+                "contract_months": 24,
+                "payment_days": 60,
+                "unit_price": 8.0
+              }
+            }
+          ],
+          "status": "agreed",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-4-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "thread_id": "thread:L08:70640",
+          "message_id": "msg:70640-4-6",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Bearing distribution renewal",
+          "body": "Simulated supplier. Thank you for your order.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-4",
+              "terms": {
+                "contract_months": 24,
+                "payment_days": 60,
+                "unit_price": 8.0
+              }
+            }
+          ],
+          "status": "agreed",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-4-order-confirmation",
+              "name": "order-confirmation.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

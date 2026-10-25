@@ -1,0 +1,1423 @@
+{
+  "observation_packets": [
+    {
+      "packet": {
+        "case_id": "control:quality-valid",
+        "decision_index": 0,
+        "case": {
+          "case_id": "case:P11",
+          "set": "practice",
+          "type": "quality",
+          "title": "Kalwisz: bearing brackets in red",
+          "briefing": "You negotiate for Hollerau Pumpenwerke with Odlewnia Kalwisz Sp. z o.o.. Kalwisz: bearing brackets in red. Need: 15900 pc a year. Category goal: quality first: defects and late deliveries cost more than a few cents of price. Score: the lowest total cost C as defined in the rules, valued with this case's rates (need lead time 58 days). Fallback if you walk away: the second-source quote quote:7200011. Must-haves: ppm_commitment <= 1500. Prepare from the data package.",
+          "trigger_doc": "doc:20260921-70140-P11",
+          "parts": [
+            "part:310020"
+          ],
+          "suppliers": [
+            "sup:70140"
+          ],
+          "negotiable": [
+            "ppm_commitment",
+            "chargeback_eur_per_complaint",
+            "unit_price"
+          ],
+          "fixed_terms": {
+            "payment_days": 60,
+            "lead_time_days": 56,
+            "volume_per_year": 15900,
+            "contract_months": 12,
+            "effective_date": "2027-01-01",
+            "index_clause": null,
+            "incoterm": "FCA",
+            "tooling_eur": 0
+          },
+          "term_options": {
+            "ppm_commitment": [
+              300,
+              800,
+              1500,
+              2500
+            ],
+            "chargeback_eur_per_complaint": [
+              0,
+              150,
+              300,
+              500
+            ]
+          },
+          "buyer": {
+            "need_per_year": 15900,
+            "horizon_years": 1.0,
+            "current_unit_price": 45.15,
+            "fallback_unit_price": 47.86,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 58,
+            "category_goal": "quality_first",
+            "fallback_risk_pct": 8,
+            "index_risk_pct": 2,
+            "late_cost_per_day": 300,
+            "cost_per_defect": 450,
+            "freight_eur_per_unit": {
+              "EXW": 1.77,
+              "FCA": 1.54,
+              "DAP": 0.0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "ppm_commitment",
+                "op": "<=",
+                "value": 1500
+              }
+            ],
+            "alternative": {
+              "kind": "quote",
+              "ref": "quote:7200011",
+              "terms": {
+                "unit_price": 53.56,
+                "payment_days": 30,
+                "lead_time_days": 56,
+                "volume_per_year": 15900,
+                "contract_months": 12,
+                "effective_date": "2027-01-01",
+                "index_clause": null,
+                "incoterm": "FCA",
+                "tooling_eur": 7500,
+                "ppm_commitment": 715
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20260921-70140-P11",
+            "ctr:4600070140",
+            "sc:70140@2026Q3",
+            "quote:7200011"
+          ]
+        },
+        "threads": {
+          "sup:70140": [
+            {
+              "message_id": "msg:70140-0-0",
+              "from": "sales@70140",
+              "subject": "Quote from Odlewnia Kalwisz Sp. z o.o.: Kalwisz: bearing brackets in red",
+              "body": "Hello,\n\nThank you for your enquiry. Please find our Angebot below. We are very eager to work with you and to prove ourselves as a great long-term partner for your business!\n\nWe are happy to present our offer for a price of \u20ac47.00 per unit, along with a quality commitment of 6400 ppm. \n\nPlease note that this offer stays valid for 30 days. We remain flexible and look forward to hearing from you soon so we can start building a strong partnership together.\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70140-0",
+                  "terms": {
+                    "unit_price": 47.0,
+                    "ppm_commitment": 6400
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "chargeback_eur_per_complaint"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70140-0-quote",
+                  "name": "quote-offer-70140-0.pdf",
+                  "text": "Odlewnia Kalwisz Sp. z o.o.\nTo: Hollerau Pumpenwerke GmbH\nAngebot / Quote offer:70140-0\nOffered terms\nUnit price (EUR) 47.00\nQuality commitment (ppm) 6400\nOur standard terms (apply to everything not stated above)\nChargeback per complaint (EUR) 0.00\nTerms fixed by your enquiry\nPayment terms (days net) 60\nLead time (days) 56\nVolume per year (pcs) 15900\nContract term (months) 12\nPrice valid from 2027-01-01\nIndex clause none\nIncoterm FCA\nTooling (EUR) 0.00\nPart(s): part:310020. Enquiry: Kalwisz: bearing brackets in red.\nValidity: 30 days."
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70140",
+          "message": {
+            "subject": "Re: Quote from Odlewnia Kalwisz Sp. z o.o.: Kalwisz: bearing brackets in red",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows 2376 ppm defects (sc:70140@2026Q3).\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nOur demand forecast for this part has risen 20.0% (fc:310020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "ppm_commitment": 300,
+                  "chargeback_eur_per_complaint": 0,
+                  "unit_price": 39.95
+                }
+              }
+            ],
+            "refs": [
+              "fc:310020@2026-09",
+              "idx:PPI-D351@2025-11",
+              "idx:PPI-D351@2026-08",
+              "sc:70140@2026Q3"
+            ]
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 10,
+        "standing_offer_id": "offer:70140-0",
+        "engine_estimates": {
+          "sup:70140": {
+            "standard": {
+              "chargeback_eur_per_complaint": 0.0
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70140",
+              "name": "Odlewnia Kalwisz Sp. z o.o.",
+              "country": "PL",
+              "owner_type": "private",
+              "contract_id": "ctr:4600070140",
+              "interest_rate": 0.12000000000000001,
+              "cash_need": true,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 2376,
+              "skonto_rate": 0.0,
+              "full_cost": 42.3,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "asks for faster payment / cash"
+              ],
+              "source_ids": [
+                "doc:20251026-70140-N",
+                "doc:20260710-70140-M2",
+                "doc:20260715-70140-M1",
+                "doc:20260921-70140-P11",
+                "news:20260911-28"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "unit_price": 47.0,
+              "ppm_commitment": 6400
+            },
+            "estimated_total_cost": 817578.0,
+            "passes_accept_check": false,
+            "accept_check_reason": "breaks a must-have"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "ppm_commitment": 300,
+              "chargeback_eur_per_complaint": 0,
+              "unit_price": 39.95
+            },
+            "estimated_total_cost": 661837.5,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 661,838 below the limit 894,383"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:P11\", \"set\": \"practice\", \"type\": \"quality\", \"title\": \"Kalwisz: bearing brackets in red\", \"briefing\": \"You negotiate for Hollerau Pumpenwerke with Odlewnia Kalwisz Sp. z o.o.. Kalwisz: bearing brackets in red. Need: 15900 pc a year. Category goal: quality first: defects and late deliveries cost more than a few cents of price. Score: the lowest total cost C as defined in the rules, valued with this case's rates (need lead time 58 days). Fallback if you walk away: the second-source quote quote:7200011. Must-haves: ppm_commitment <= 1500. Prepare from the data package.\", \"trigger_doc\": \"doc:20260921-70140-P11\", \"parts\": [\"part:310020\"], \"suppliers\": [\"sup:70140\"], \"negotiable\": [\"ppm_commitment\", \"chargeback_eur_per_complaint\", \"unit_price\"], \"fixed_terms\": {\"payment_days\": 60, \"lead_time_days\": 56, \"volume_per_year\": 15900, \"contract_months\": 12, \"effective_date\": \"2027-01-01\", \"index_clause\": null, \"incoterm\": \"FCA\", \"tooling_eur\": 0}, \"term_options\": {\"ppm_commitment\": [300, 800, 1500, 2500], \"chargeback_eur_per_complaint\": [0, 150, 300, 500]}, \"buyer\": {\"need_per_year\": 15900, \"horizon_years\": 1.0, \"current_unit_price\": 45.15, \"fallback_unit_price\": 47.86, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 58, \"category_goal\": \"quality_first\", \"fallback_risk_pct\": 8, \"index_risk_pct\": 2, \"late_cost_per_day\": 300, \"cost_per_defect\": 450, \"freight_eur_per_unit\": {\"EXW\": 1.77, \"FCA\": 1.54, \"DAP\": 0.0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"ppm_commitment\", \"op\": \"<=\", \"value\": 1500}], \"alternative\": {\"kind\": \"quote\", \"ref\": \"quote:7200011\", \"terms\": {\"unit_price\": 53.56, \"payment_days\": 30, \"lead_time_days\": 56, \"volume_per_year\": 15900, \"contract_months\": 12, \"effective_date\": \"2027-01-01\", \"index_clause\": null, \"incoterm\": \"FCA\", \"tooling_eur\": 7500, \"ppm_commitment\": 715}}}, \"round_limit\": 10, \"refs\": [\"doc:20260921-70140-P11\", \"ctr:4600070140\", \"sc:70140@2026Q3\", \"quote:7200011\"]}"
+          },
+          {
+            "id": "message:sup:70140:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70140-0-0\", \"from\": \"sales@70140\", \"subject\": \"Quote from Odlewnia Kalwisz Sp. z o.o.: Kalwisz: bearing brackets in red\", \"body\": \"Hello,\\n\\nThank you for your enquiry. Please find our Angebot below. We are very eager to work with you and to prove ourselves as a great long-term partner for your business!\\n\\nWe are happy to present our offer for a price of \u20ac47.00 per unit, along with a quality commitment of 6400 ppm. \\n\\nPlease note that this offer stays valid for 30 days. We remain flexible and look forward to hearing from you soon so we can start building a strong partnership together.\\n\\nKind regards\\nMarek Lis\\nExport Manager, Odlewnia Kalwisz Sp. z o.o.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70140-0\", \"terms\": {\"unit_price\": 47.0, \"ppm_commitment\": 6400}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"chargeback_eur_per_complaint\"], \"attachments\": [{\"attachment_id\": \"att:70140-0-quote\", \"name\": \"quote-offer-70140-0.pdf\", \"text\": \"Odlewnia Kalwisz Sp. z o.o.\\nTo: Hollerau Pumpenwerke GmbH\\nAngebot / Quote offer:70140-0\\nOffered terms\\nUnit price (EUR) 47.00\\nQuality commitment (ppm) 6400\\nOur standard terms (apply to everything not stated above)\\nChargeback per complaint (EUR) 0.00\\nTerms fixed by your enquiry\\nPayment terms (days net) 60\\nLead time (days) 56\\nVolume per year (pcs) 15900\\nContract term (months) 12\\nPrice valid from 2027-01-01\\nIndex clause none\\nIncoterm FCA\\nTooling (EUR) 0.00\\nPart(s): part:310020. Enquiry: Kalwisz: bearing brackets in red.\\nValidity: 30 days.\"}]}"
+          },
+          {
+            "id": "ctr:4600070140",
+            "kind": "public_source",
+            "text": "# Framework agreement 4600070140\n\nBetween Hollerau Pumpenwerke GmbH and Odlewnia Kalwisz Sp. z o.o..\n\n**\u00a7 2.1** Subject: supply of Bearing bracket HN, Impeller HN 200.\n\n**\u00a7 3.1** Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.\n\n**\u00a7 4.1** Payment: 60 days net.\n\n**\u00a7 5.1** Delivery FCA; standard lead time 56 days from order.\n\n**\u00a7 6.1** The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.\n\n**\u00a7 8.1** Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.\n\nParts: part:310020, part:310030\n"
+          },
+          {
+            "id": "doc:20251026-70140-N",
+            "kind": "public_source",
+            "text": "# Holiday shutdown\n\nemail - 2025-10-26 - Odlewnia Kalwisz Sp. z o.o.\n\nOur plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December.\n"
+          },
+          {
+            "id": "doc:20260710-70140-M2",
+            "kind": "public_source",
+            "text": "# Payment of invoices\n\nemail - 2026-07-10 - Odlewnia Kalwisz Sp. z o.o.\n\nCould you pay our invoices within 10 days? In return we would grant a cash discount.\n"
+          },
+          {
+            "id": "doc:20260715-70140-M1",
+            "kind": "public_source",
+            "text": "# Liquidity\n\ncall note - 2026-07-15 - Hollerau Pumpenwerke, Purchasing\n\nCall with the managing director of Odlewnia Kalwisz Sp. z o.o.: he asked twice whether we could pay earlier and said the bank is watching every month. 'I cannot sign anything that lowers our margin now.'\n"
+          },
+          {
+            "id": "doc:20260921-70140-P11",
+            "kind": "public_source",
+            "text": "# Escalation: delivery and quality performance\n\nletter - 2026-09-21 - Hollerau Pumpenwerke, Supplier Quality\n\nTo Odlewnia Kalwisz Sp. z o.o.\n\nyour rolling 12-month scorecard (sc:70140@2026Q3) is **red**: on-time delivery 63.5 %, 2376 ppm, 0 overdue 8D reports. We expect a binding improvement plan for Bearing bracket HN (part:310020) and will discuss quality commitments and cost recovery.\n\nHollerau Pumpenwerke, Supplier Quality\n"
+          },
+          {
+            "id": "fc:310020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:310020@2026-09\", \"part_id\": \"part:310020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 15930, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "news:20260911-28",
+            "kind": "public_source",
+            "text": "Odlewnia Kalwisz Sp. z o.o. has started a restructuring programme with its banks after two loss-making years; management says customers will not be affected."
+          },
+          {
+            "id": "quote:7200011",
+            "kind": "public_source",
+            "text": "{\"table\": \"quotes\", \"id\": \"quote:7200011\", \"rfq_id\": \"rfq:6000000211\", \"supplier_id\": \"sup:70190\", \"part_id\": \"part:310020\", \"quote_date\": \"2026-09-12\", \"unit_price\": 53.56, \"price_unit\": 1, \"currency\": \"EUR\", \"lead_time_days\": 42, \"incoterm\": \"FCA\", \"payment_days\": 30, \"validity_days\": 90, \"tooling_eur\": 0, \"awarded\": 0, \"missing_fields\": \"\", \"remarks\": \"\"}"
+          },
+          {
+            "id": "sc:70140@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70140@2026Q3\", \"supplier_id\": \"sup:70140\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 63.5, \"otd_confirmed_pct\": 73.1, \"received_qty\": 15570, \"complaint_qty\": 37, \"ppm\": 2376, \"qn_count\": 12, \"open_8d_overdue\": 0, \"score\": 69.9, \"class\": \"C\", \"colour\": \"red\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "322b237ac7dd863d0759250fb382c7d8f3065359935a2bf11300b009aecca49f",
+      "capture_seconds": 0
+    },
+    {
+      "packet": {
+        "case_id": "control:quality-invalid",
+        "decision_index": 0,
+        "case": {
+          "case_id": "case:P11",
+          "set": "practice",
+          "type": "quality",
+          "title": "Kalwisz: bearing brackets in red",
+          "briefing": "You negotiate for Hollerau Pumpenwerke with Odlewnia Kalwisz Sp. z o.o.. Kalwisz: bearing brackets in red. Need: 15900 pc a year. Category goal: quality first: defects and late deliveries cost more than a few cents of price. Score: the lowest total cost C as defined in the rules, valued with this case's rates (need lead time 58 days). Fallback if you walk away: the second-source quote quote:7200011. Must-haves: ppm_commitment <= 1500. Prepare from the data package.",
+          "trigger_doc": "doc:20260921-70140-P11",
+          "parts": [
+            "part:310020"
+          ],
+          "suppliers": [
+            "sup:70140"
+          ],
+          "negotiable": [
+            "ppm_commitment",
+            "chargeback_eur_per_complaint",
+            "unit_price"
+          ],
+          "fixed_terms": {
+            "payment_days": 60,
+            "lead_time_days": 56,
+            "volume_per_year": 15900,
+            "contract_months": 12,
+            "effective_date": "2027-01-01",
+            "index_clause": null,
+            "incoterm": "FCA",
+            "tooling_eur": 0
+          },
+          "term_options": {
+            "ppm_commitment": [
+              300,
+              800,
+              1500,
+              2500
+            ],
+            "chargeback_eur_per_complaint": [
+              0,
+              150,
+              300,
+              500
+            ]
+          },
+          "buyer": {
+            "need_per_year": 15900,
+            "horizon_years": 1.0,
+            "current_unit_price": 45.15,
+            "fallback_unit_price": 47.86,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 58,
+            "category_goal": "quality_first",
+            "fallback_risk_pct": 8,
+            "index_risk_pct": 2,
+            "late_cost_per_day": 300,
+            "cost_per_defect": 450,
+            "freight_eur_per_unit": {
+              "EXW": 1.77,
+              "FCA": 1.54,
+              "DAP": 0.0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "ppm_commitment",
+                "op": "<=",
+                "value": 1500
+              }
+            ],
+            "alternative": {
+              "kind": "quote",
+              "ref": "quote:7200011",
+              "terms": {
+                "unit_price": 53.56,
+                "payment_days": 30,
+                "lead_time_days": 56,
+                "volume_per_year": 15900,
+                "contract_months": 12,
+                "effective_date": "2027-01-01",
+                "index_clause": null,
+                "incoterm": "FCA",
+                "tooling_eur": 7500,
+                "ppm_commitment": 715
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20260921-70140-P11",
+            "ctr:4600070140",
+            "sc:70140@2026Q3",
+            "quote:7200011"
+          ]
+        },
+        "threads": {
+          "sup:70140": [
+            {
+              "message_id": "msg:70140-0-0",
+              "from": "sales@70140",
+              "subject": "Quote from Odlewnia Kalwisz Sp. z o.o.: Kalwisz: bearing brackets in red",
+              "body": "Hello,\n\nThank you for your enquiry. Please find our Angebot below. We are very eager to work with you and to prove ourselves as a great long-term partner for your business!\n\nWe are happy to present our offer for a price of \u20ac47.00 per unit, along with a quality commitment of 6400 ppm. \n\nPlease note that this offer stays valid for 30 days. We remain flexible and look forward to hearing from you soon so we can start building a strong partnership together.\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70140-0",
+                  "terms": {
+                    "unit_price": 47.0,
+                    "ppm_commitment": 6400
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "chargeback_eur_per_complaint"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70140-0-quote",
+                  "name": "quote-offer-70140-0.pdf",
+                  "text": "Odlewnia Kalwisz Sp. z o.o.\nTo: Hollerau Pumpenwerke GmbH\nAngebot / Quote offer:70140-0\nOffered terms\nUnit price (EUR) 47.00\nQuality commitment (ppm) 6400\nOur standard terms (apply to everything not stated above)\nChargeback per complaint (EUR) 0.00\nTerms fixed by your enquiry\nPayment terms (days net) 60\nLead time (days) 56\nVolume per year (pcs) 15900\nContract term (months) 12\nPrice valid from 2027-01-01\nIndex clause none\nIncoterm FCA\nTooling (EUR) 0.00\nPart(s): part:310020. Enquiry: Kalwisz: bearing brackets in red.\nValidity: 30 days."
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70140",
+          "message": {
+            "action": {
+              "type": "accept",
+              "term_sheet_id": "offer:70140-0"
+            }
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 10,
+        "standing_offer_id": "offer:70140-0",
+        "engine_estimates": {
+          "sup:70140": {
+            "standard": {
+              "chargeback_eur_per_complaint": 0.0
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70140",
+              "name": "Odlewnia Kalwisz Sp. z o.o.",
+              "country": "PL",
+              "owner_type": "private",
+              "contract_id": "ctr:4600070140",
+              "interest_rate": 0.12000000000000001,
+              "cash_need": true,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 2376,
+              "skonto_rate": 0.0,
+              "full_cost": 42.3,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "asks for faster payment / cash"
+              ],
+              "source_ids": [
+                "doc:20251026-70140-N",
+                "doc:20260710-70140-M2",
+                "doc:20260715-70140-M1",
+                "doc:20260921-70140-P11",
+                "news:20260911-28"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "unit_price": 47.0,
+              "ppm_commitment": 6400
+            },
+            "estimated_total_cost": 817578.0,
+            "passes_accept_check": false,
+            "accept_check_reason": "breaks a must-have"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:P11\", \"set\": \"practice\", \"type\": \"quality\", \"title\": \"Kalwisz: bearing brackets in red\", \"briefing\": \"You negotiate for Hollerau Pumpenwerke with Odlewnia Kalwisz Sp. z o.o.. Kalwisz: bearing brackets in red. Need: 15900 pc a year. Category goal: quality first: defects and late deliveries cost more than a few cents of price. Score: the lowest total cost C as defined in the rules, valued with this case's rates (need lead time 58 days). Fallback if you walk away: the second-source quote quote:7200011. Must-haves: ppm_commitment <= 1500. Prepare from the data package.\", \"trigger_doc\": \"doc:20260921-70140-P11\", \"parts\": [\"part:310020\"], \"suppliers\": [\"sup:70140\"], \"negotiable\": [\"ppm_commitment\", \"chargeback_eur_per_complaint\", \"unit_price\"], \"fixed_terms\": {\"payment_days\": 60, \"lead_time_days\": 56, \"volume_per_year\": 15900, \"contract_months\": 12, \"effective_date\": \"2027-01-01\", \"index_clause\": null, \"incoterm\": \"FCA\", \"tooling_eur\": 0}, \"term_options\": {\"ppm_commitment\": [300, 800, 1500, 2500], \"chargeback_eur_per_complaint\": [0, 150, 300, 500]}, \"buyer\": {\"need_per_year\": 15900, \"horizon_years\": 1.0, \"current_unit_price\": 45.15, \"fallback_unit_price\": 47.86, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 58, \"category_goal\": \"quality_first\", \"fallback_risk_pct\": 8, \"index_risk_pct\": 2, \"late_cost_per_day\": 300, \"cost_per_defect\": 450, \"freight_eur_per_unit\": {\"EXW\": 1.77, \"FCA\": 1.54, \"DAP\": 0.0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"ppm_commitment\", \"op\": \"<=\", \"value\": 1500}], \"alternative\": {\"kind\": \"quote\", \"ref\": \"quote:7200011\", \"terms\": {\"unit_price\": 53.56, \"payment_days\": 30, \"lead_time_days\": 56, \"volume_per_year\": 15900, \"contract_months\": 12, \"effective_date\": \"2027-01-01\", \"index_clause\": null, \"incoterm\": \"FCA\", \"tooling_eur\": 7500, \"ppm_commitment\": 715}}}, \"round_limit\": 10, \"refs\": [\"doc:20260921-70140-P11\", \"ctr:4600070140\", \"sc:70140@2026Q3\", \"quote:7200011\"]}"
+          },
+          {
+            "id": "message:sup:70140:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70140-0-0\", \"from\": \"sales@70140\", \"subject\": \"Quote from Odlewnia Kalwisz Sp. z o.o.: Kalwisz: bearing brackets in red\", \"body\": \"Hello,\\n\\nThank you for your enquiry. Please find our Angebot below. We are very eager to work with you and to prove ourselves as a great long-term partner for your business!\\n\\nWe are happy to present our offer for a price of \u20ac47.00 per unit, along with a quality commitment of 6400 ppm. \\n\\nPlease note that this offer stays valid for 30 days. We remain flexible and look forward to hearing from you soon so we can start building a strong partnership together.\\n\\nKind regards\\nMarek Lis\\nExport Manager, Odlewnia Kalwisz Sp. z o.o.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70140-0\", \"terms\": {\"unit_price\": 47.0, \"ppm_commitment\": 6400}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"chargeback_eur_per_complaint\"], \"attachments\": [{\"attachment_id\": \"att:70140-0-quote\", \"name\": \"quote-offer-70140-0.pdf\", \"text\": \"Odlewnia Kalwisz Sp. z o.o.\\nTo: Hollerau Pumpenwerke GmbH\\nAngebot / Quote offer:70140-0\\nOffered terms\\nUnit price (EUR) 47.00\\nQuality commitment (ppm) 6400\\nOur standard terms (apply to everything not stated above)\\nChargeback per complaint (EUR) 0.00\\nTerms fixed by your enquiry\\nPayment terms (days net) 60\\nLead time (days) 56\\nVolume per year (pcs) 15900\\nContract term (months) 12\\nPrice valid from 2027-01-01\\nIndex clause none\\nIncoterm FCA\\nTooling (EUR) 0.00\\nPart(s): part:310020. Enquiry: Kalwisz: bearing brackets in red.\\nValidity: 30 days.\"}]}"
+          },
+          {
+            "id": "ctr:4600070140",
+            "kind": "public_source",
+            "text": "# Framework agreement 4600070140\n\nBetween Hollerau Pumpenwerke GmbH and Odlewnia Kalwisz Sp. z o.o..\n\n**\u00a7 2.1** Subject: supply of Bearing bracket HN, Impeller HN 200.\n\n**\u00a7 3.1** Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.\n\n**\u00a7 4.1** Payment: 60 days net.\n\n**\u00a7 5.1** Delivery FCA; standard lead time 56 days from order.\n\n**\u00a7 6.1** The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.\n\n**\u00a7 8.1** Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.\n\nParts: part:310020, part:310030\n"
+          },
+          {
+            "id": "doc:20251026-70140-N",
+            "kind": "public_source",
+            "text": "# Holiday shutdown\n\nemail - 2025-10-26 - Odlewnia Kalwisz Sp. z o.o.\n\nOur plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December.\n"
+          },
+          {
+            "id": "doc:20260710-70140-M2",
+            "kind": "public_source",
+            "text": "# Payment of invoices\n\nemail - 2026-07-10 - Odlewnia Kalwisz Sp. z o.o.\n\nCould you pay our invoices within 10 days? In return we would grant a cash discount.\n"
+          },
+          {
+            "id": "doc:20260715-70140-M1",
+            "kind": "public_source",
+            "text": "# Liquidity\n\ncall note - 2026-07-15 - Hollerau Pumpenwerke, Purchasing\n\nCall with the managing director of Odlewnia Kalwisz Sp. z o.o.: he asked twice whether we could pay earlier and said the bank is watching every month. 'I cannot sign anything that lowers our margin now.'\n"
+          },
+          {
+            "id": "doc:20260921-70140-P11",
+            "kind": "public_source",
+            "text": "# Escalation: delivery and quality performance\n\nletter - 2026-09-21 - Hollerau Pumpenwerke, Supplier Quality\n\nTo Odlewnia Kalwisz Sp. z o.o.\n\nyour rolling 12-month scorecard (sc:70140@2026Q3) is **red**: on-time delivery 63.5 %, 2376 ppm, 0 overdue 8D reports. We expect a binding improvement plan for Bearing bracket HN (part:310020) and will discuss quality commitments and cost recovery.\n\nHollerau Pumpenwerke, Supplier Quality\n"
+          },
+          {
+            "id": "fc:310020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:310020@2026-09\", \"part_id\": \"part:310020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 15930, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "news:20260911-28",
+            "kind": "public_source",
+            "text": "Odlewnia Kalwisz Sp. z o.o. has started a restructuring programme with its banks after two loss-making years; management says customers will not be affected."
+          },
+          {
+            "id": "quote:7200011",
+            "kind": "public_source",
+            "text": "{\"table\": \"quotes\", \"id\": \"quote:7200011\", \"rfq_id\": \"rfq:6000000211\", \"supplier_id\": \"sup:70190\", \"part_id\": \"part:310020\", \"quote_date\": \"2026-09-12\", \"unit_price\": 53.56, \"price_unit\": 1, \"currency\": \"EUR\", \"lead_time_days\": 42, \"incoterm\": \"FCA\", \"payment_days\": 30, \"validity_days\": 90, \"tooling_eur\": 0, \"awarded\": 0, \"missing_fields\": \"\", \"remarks\": \"\"}"
+          },
+          {
+            "id": "sc:70140@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70140@2026Q3\", \"supplier_id\": \"sup:70140\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 63.5, \"otd_confirmed_pct\": 73.1, \"received_qty\": 15570, \"complaint_qty\": 37, \"ppm\": 2376, \"qn_count\": 12, \"open_8d_overdue\": 0, \"score\": 69.9, \"class\": \"C\", \"colour\": \"red\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "1394136538bfcd670c2374325ab683a8e097181f5a7cf4c21aa95ea061a853c0",
+      "capture_seconds": 0
+    },
+    {
+      "packet": {
+        "case_id": "control:standing-valid",
+        "decision_index": 3,
+        "case": {
+          "case_id": "case:G03",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:310011"
+          ],
+          "suppliers": [
+            "sup:70190"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "contract_months"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4200,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "contract_months": [
+              6,
+              12,
+              24
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4200,
+            "horizon_years": 2.0,
+            "current_unit_price": 88,
+            "fallback_unit_price": 98.56,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4200,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 95.04,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261019-70190-S13",
+            "news:20261015-S14"
+          ],
+          "facts": {
+            "doc:20261019-70190-S13": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-19",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70190",
+              "title": "Our liquidity and your call-offs",
+              "type": "letter"
+            },
+            "news:20261015-S14": {
+              "date": "2026-10-15",
+              "headline": "Heating maker cancels foundry orders at Gie\u00dferei Pfaffenreuth GmbH",
+              "supplier": "sup:70190",
+              "topic": "customer_loss"
+            }
+          }
+        },
+        "threads": {
+          "sup:70190": [
+            {
+              "message_id": "msg:70190-0-1",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-0",
+                  "terms": {
+                    "unit_price": 96.65
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "contract_months",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 96.65\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:310011@2026-09",
+                "idx:PPI-D351@2025-11",
+                "idx:PPI-D351@2026-08",
+                "sc:70190@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 76.0,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-1-2",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-1",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 88.88
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 88.88\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 77.29,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-2-3",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-2",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 87.3
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 87.30\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 80.29,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-3-4",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-3",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 84.25
+                  }
+                }
+              ],
+              "status": "final_offer",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-3-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 84.25\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70190",
+          "message": {
+            "action": {
+              "type": "accept",
+              "term_sheet_id": "offer:70190-3"
+            }
+          }
+        },
+        "supplier_status": "final_offer",
+        "moves_left": 7,
+        "standing_offer_id": "offer:70190-3",
+        "engine_estimates": {
+          "sup:70190": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4200,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70190",
+              "name": "Gie\u00dferei Pfaffenreuth GmbH",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070190",
+              "interest_rate": 0.125,
+              "cash_need": true,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 715,
+              "skonto_rate": 0.0,
+              "full_cost": 86.99,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "asks for faster payment / cash"
+              ],
+              "source_ids": [
+                "doc:20251014-70190-N",
+                "doc:20260623-70190-M1",
+                "doc:20261019-70190-S13",
+                "news:20260426-10",
+                "news:20261015-S14"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "contract_months": 12,
+              "payment_days": 10,
+              "unit_price": 84.25
+            },
+            "estimated_total_cost": 784152.23,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 784,152 below the limit 798,336"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G03\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:310011\"], \"suppliers\": [\"sup:70190\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"contract_months\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"contract_months\": [6, 12, 24]}, \"buyer\": {\"need_per_year\": 4200, \"horizon_years\": 2.0, \"current_unit_price\": 88, \"fallback_unit_price\": 98.56, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 95.04, \"payment_days\": 60, \"contract_months\": 24}}}, \"round_limit\": 10, \"refs\": [\"doc:20261019-70190-S13\", \"news:20261015-S14\"], \"facts\": {\"doc:20261019-70190-S13\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-19\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70190\", \"title\": \"Our liquidity and your call-offs\", \"type\": \"letter\"}, \"news:20261015-S14\": {\"date\": \"2026-10-15\", \"headline\": \"Heating maker cancels foundry orders at Gie\u00dferei Pfaffenreuth GmbH\", \"supplier\": \"sup:70190\", \"topic\": \"customer_loss\"}}}"
+          },
+          {
+            "id": "message:sup:70190:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-0-1\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-0\", \"terms\": {\"unit_price\": 96.65}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"contract_months\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70190-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 96.65\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:310011@2026-09\", \"idx:PPI-D351@2025-11\", \"idx:PPI-D351@2026-08\", \"sc:70190@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 76.0, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-1-2\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-1\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 88.88}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 88.88\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 77.29, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-2-3\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-2\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 87.3}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 87.30\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:5",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 80.29, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:6",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-3-4\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-3\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 84.25}}], \"status\": \"final_offer\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-3-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 84.25\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251014-70190-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-14 - Gie\u00dferei Pfaffenreuth GmbH\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260623-70190-M1",
+            "kind": "public_source",
+            "text": "# Material purchasing\n\ncall note - 2026-06-23 - Hollerau Pumpenwerke, Purchasing\n\nCall with Gie\u00dferei Pfaffenreuth GmbH: they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.\n"
+          },
+          {
+            "id": "doc:20261019-70190-S13",
+            "kind": "public_source",
+            "text": "# Our liquidity and your call-offs\n\nletter - 2026-10-19 - Gie\u00dferei Pfaffenreuth GmbH\n\nDear Sir or Madam,\n\na large customer from the heating industry has cancelled its orders for 2027, and our bank is watching our liquidity closely. We would be very grateful if you could pay our invoices within 10 days from November and confirm firm call-offs for the first quarter.\n\nYours faithfully,\nGie\u00dferei Pfaffenreuth GmbH\n"
+          },
+          {
+            "id": "fc:310011@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:310011@2026-09\", \"part_id\": \"part:310011\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 5220, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "news:20260426-10",
+            "kind": "public_source",
+            "text": "Gie\u00dferei Pfaffenreuth GmbH has fixed its electricity supply for 2026-2028 under a long-term contract, the company said."
+          },
+          {
+            "id": "news:20261015-S14",
+            "kind": "public_source",
+            "text": "A heating manufacturer has moved its cast housings to an Eastern European foundry; Gie\u00dferei Pfaffenreuth GmbH loses about a fifth of its turnover from January."
+          },
+          {
+            "id": "sc:70190@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70190@2026Q3\", \"supplier_id\": \"sup:70190\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 47, \"otd_pct\": 85.1, \"otd_confirmed_pct\": 85.1, \"received_qty\": 27973, \"complaint_qty\": 20, \"ppm\": 715, \"qn_count\": 13, \"open_8d_overdue\": 1, \"score\": 84.0, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "208fe17f9ec4837a20714e310867feb754f65d956cbab01ead5c10ea8a0c62e9",
+      "capture_seconds": 0
+    },
+    {
+      "packet": {
+        "case_id": "control:standing-invalid",
+        "decision_index": 3,
+        "case": {
+          "case_id": "case:G03",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:310011"
+          ],
+          "suppliers": [
+            "sup:70190"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "contract_months"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4200,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "contract_months": [
+              6,
+              12,
+              24
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4200,
+            "horizon_years": 2.0,
+            "current_unit_price": 88,
+            "fallback_unit_price": 98.56,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4200,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 95.04,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261019-70190-S13",
+            "news:20261015-S14"
+          ],
+          "facts": {
+            "doc:20261019-70190-S13": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-19",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70190",
+              "title": "Our liquidity and your call-offs",
+              "type": "letter"
+            },
+            "news:20261015-S14": {
+              "date": "2026-10-15",
+              "headline": "Heating maker cancels foundry orders at Gie\u00dferei Pfaffenreuth GmbH",
+              "supplier": "sup:70190",
+              "topic": "customer_loss"
+            }
+          }
+        },
+        "threads": {
+          "sup:70190": [
+            {
+              "message_id": "msg:70190-0-1",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-0",
+                  "terms": {
+                    "unit_price": 96.65
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "contract_months",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 96.65\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:310011@2026-09",
+                "idx:PPI-D351@2025-11",
+                "idx:PPI-D351@2026-08",
+                "sc:70190@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 76.0,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-1-2",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-1",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 88.88
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 88.88\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 77.29,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-2-3",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-2",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 87.3
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 87.30\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 80.29,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-3-4",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-3",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 84.25
+                  }
+                }
+              ],
+              "status": "final_offer",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-3-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 84.25\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70190",
+          "message": {
+            "action": {
+              "type": "accept",
+              "term_sheet_id": "offer:expired-not-standing"
+            }
+          }
+        },
+        "supplier_status": "final_offer",
+        "moves_left": 7,
+        "standing_offer_id": "offer:70190-3",
+        "engine_estimates": {
+          "sup:70190": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4200,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70190",
+              "name": "Gie\u00dferei Pfaffenreuth GmbH",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070190",
+              "interest_rate": 0.125,
+              "cash_need": true,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 715,
+              "skonto_rate": 0.0,
+              "full_cost": 86.99,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "asks for faster payment / cash"
+              ],
+              "source_ids": [
+                "doc:20251014-70190-N",
+                "doc:20260623-70190-M1",
+                "doc:20261019-70190-S13",
+                "news:20260426-10",
+                "news:20261015-S14"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "contract_months": 12,
+              "payment_days": 10,
+              "unit_price": 84.25
+            },
+            "estimated_total_cost": 784152.23,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 784,152 below the limit 798,336"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G03\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:310011\"], \"suppliers\": [\"sup:70190\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"contract_months\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"contract_months\": [6, 12, 24]}, \"buyer\": {\"need_per_year\": 4200, \"horizon_years\": 2.0, \"current_unit_price\": 88, \"fallback_unit_price\": 98.56, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 95.04, \"payment_days\": 60, \"contract_months\": 24}}}, \"round_limit\": 10, \"refs\": [\"doc:20261019-70190-S13\", \"news:20261015-S14\"], \"facts\": {\"doc:20261019-70190-S13\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-19\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70190\", \"title\": \"Our liquidity and your call-offs\", \"type\": \"letter\"}, \"news:20261015-S14\": {\"date\": \"2026-10-15\", \"headline\": \"Heating maker cancels foundry orders at Gie\u00dferei Pfaffenreuth GmbH\", \"supplier\": \"sup:70190\", \"topic\": \"customer_loss\"}}}"
+          },
+          {
+            "id": "message:sup:70190:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-0-1\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-0\", \"terms\": {\"unit_price\": 96.65}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"contract_months\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70190-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 96.65\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:310011@2026-09\", \"idx:PPI-D351@2025-11\", \"idx:PPI-D351@2026-08\", \"sc:70190@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 76.0, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-1-2\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-1\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 88.88}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 88.88\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 77.29, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-2-3\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-2\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 87.3}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 87.30\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:5",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 80.29, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:6",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-3-4\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-3\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 84.25}}], \"status\": \"final_offer\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-3-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 84.25\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251014-70190-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-14 - Gie\u00dferei Pfaffenreuth GmbH\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260623-70190-M1",
+            "kind": "public_source",
+            "text": "# Material purchasing\n\ncall note - 2026-06-23 - Hollerau Pumpenwerke, Purchasing\n\nCall with Gie\u00dferei Pfaffenreuth GmbH: they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.\n"
+          },
+          {
+            "id": "doc:20261019-70190-S13",
+            "kind": "public_source",
+            "text": "# Our liquidity and your call-offs\n\nletter - 2026-10-19 - Gie\u00dferei Pfaffenreuth GmbH\n\nDear Sir or Madam,\n\na large customer from the heating industry has cancelled its orders for 2027, and our bank is watching our liquidity closely. We would be very grateful if you could pay our invoices within 10 days from November and confirm firm call-offs for the first quarter.\n\nYours faithfully,\nGie\u00dferei Pfaffenreuth GmbH\n"
+          },
+          {
+            "id": "fc:310011@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:310011@2026-09\", \"part_id\": \"part:310011\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 5220, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "news:20260426-10",
+            "kind": "public_source",
+            "text": "Gie\u00dferei Pfaffenreuth GmbH has fixed its electricity supply for 2026-2028 under a long-term contract, the company said."
+          },
+          {
+            "id": "news:20261015-S14",
+            "kind": "public_source",
+            "text": "A heating manufacturer has moved its cast housings to an Eastern European foundry; Gie\u00dferei Pfaffenreuth GmbH loses about a fifth of its turnover from January."
+          },
+          {
+            "id": "sc:70190@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70190@2026Q3\", \"supplier_id\": \"sup:70190\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 47, \"otd_pct\": 85.1, \"otd_confirmed_pct\": 85.1, \"received_qty\": 27973, \"complaint_qty\": 20, \"ppm\": 715, \"qn_count\": 13, \"open_8d_overdue\": 1, \"score\": 84.0, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "1fb1c28cef14f9e33504a3f3a222873c3d8faac81fbcd0f189be6e99b41b2bc8",
+      "capture_seconds": 0
+    }
+  ],
+  "observation_errors": []
+}

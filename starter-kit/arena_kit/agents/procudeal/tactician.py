@@ -74,7 +74,11 @@ def ask(packet, model=None, effort=None, timeout=None, cache=True):
     t0 = time.monotonic()
     job = _POOL.submit(
         llm.ask,
-        SYSTEM,
+        SYSTEM + ("\nFor this packet, unknown term values are NOT zero. Only quoted single-term trades or "
+                  "explicit-driver clause estimates can replace E0, and each must cost us no more than E0. "
+                  "These override the earlier generic supplier-value description. Do not infer discounts "
+                  "from qualitative needs. Accept/closing timing stays with the engine; choose a counter "
+                  "or hold while its status is open. E0 is a valid choice." if packet.get("measured_trades") else ""),
         packet["text"],
         SCHEMA,
         tag="tactician",
@@ -102,6 +106,9 @@ def to_move(neg, packet, answer, engine_move):
     side = neg.sides[sid]
     action = answer.get("action")
     if action == "accept":
+        if (packet.get("measured_trades") and packet.get("status") not in ("agreed", "final_offer")
+                and (engine_move.get("action") or {}).get("type") != "accept"):
+            return engine_move, "unmeasured acceptance forecast: retain the engine's closing decision"
         sheet_id = answer.get("option")
         if sheet_id not in packet["accept"]:
             return engine_move, f"accept of {sheet_id!r}, which is not an acceptable standing sheet"

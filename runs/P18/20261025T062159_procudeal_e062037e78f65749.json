@@ -1,0 +1,933 @@
+{
+ "case_id": "case:P18",
+ "agent": "procudeal",
+ "commit": "99159a4-dirty",
+ "note": "zone0-v3-corrected-r1",
+ "experiment": {
+  "code_hash": "44430375a3fb508397fa6564f73a4665787eb2b238c2118571853f44c9662d51",
+  "extra_flags": "tactician,grounded_dossier,measured_trades",
+  "model_cache": false
+ },
+ "when": "2026-10-25T06:21:59+00:00",
+ "seconds": 87.8,
+ "session_id": "e062037e78f65749",
+ "result": {
+  "ended": true,
+  "deal": true,
+  "supplier_id": "sup:70740",
+  "offer_id": "offer:70740-4",
+  "terms": {
+   "payment_days": 60,
+   "lead_time_days": 14,
+   "volume_per_year": 23700,
+   "contract_months": 36,
+   "effective_date": "2027-01-01",
+   "index_clause": {
+    "series": "AS-14404",
+    "material_share": 0.45,
+    "deadband_pct": 0.0,
+    "base_month": "2026-08"
+   },
+   "incoterm": "DAP",
+   "tooling_eur": 0.0,
+   "ppm_commitment": 70,
+   "chargeback_eur_per_complaint": 0.0,
+   "unit_price": 5.2
+  },
+  "c_open": 295173.23,
+  "c_deal": 254244.12,
+  "c_alt": 301087.96,
+  "c_best": 222651.27,
+  "score": 0.5643685030024008,
+  "must_haves_ok": true,
+  "cost_breakdown": {
+   "price": 246480.0,
+   "uncovered_need": 0.0,
+   "fallback_risk": 0.0,
+   "payment_terms": 0.0,
+   "freight": 0.0,
+   "late_delivery": 0.0,
+   "quality": 0.0,
+   "tooling": 0.0,
+   "index_clause": 6654.96,
+   "index_risk": 1109.16,
+   "relationship": 0.0
+  }
+ },
+ "session": {
+  "session_id": "e062037e78f65749",
+  "case_id": "case:P18",
+  "status": "ended",
+  "end_reason": "accepted",
+  "rounds": 5,
+  "set": "practice",
+  "opening": {
+   "sup:70740": {
+    "offer_id": "offer:70740-0",
+    "round": 0,
+    "status": "open",
+    "terms": {
+     "unit_price": 6.1,
+     "payment_days": 30,
+     "index_clause": null,
+     "contract_months": 12
+    },
+    "alternatives": [],
+    "missing_fields": [],
+    "claims": [
+     {
+      "type": "index_change",
+      "refs": [
+       "idx:AS-14404@2025-09",
+       "idx:AS-14404@2026-09"
+      ],
+      "asserted": {
+       "change_pct": 5.9
+      }
+     },
+     {
+      "type": "index_change",
+      "refs": [
+       "idx:LCI-C@2025-06",
+       "idx:LCI-C@2026-06"
+      ],
+      "asserted": {
+       "change_pct": 2.7
+      }
+     },
+     {
+      "type": "index_change",
+      "refs": [
+       "idx:PPI-C2431@2025-08",
+       "idx:PPI-C2431@2026-08"
+      ],
+      "asserted": {
+       "change_pct": 12.3
+      }
+     }
+    ],
+    "claim_results": [],
+    "signals": {
+     "reply_delay_days": 2,
+     "validity_days": 30
+    },
+    "text": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe are delighted to present our competitive quote for your requirements. Our price is €6.10 per unit, with a Zahlungsziel of 30 days net, a contract term of 12 months, and no Preisgleitklausel. Please note that AS-14404 rose 5.9 % in twelve months and is 45 % of our cost. Furthermore, LCI-C rose 2.7 % in twelve months and is 5 % of our cost, while PPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. This offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH"
+   }
+  },
+  "threads": {
+   "sup:70740": {
+    "offer_id": "offer:70740-4",
+    "status": "agreed",
+    "offers": 5,
+    "closed": null,
+    "seconds_left": null
+   }
+  },
+  "moves": [],
+  "result": {
+   "ended": true,
+   "deal": true,
+   "supplier_id": "sup:70740",
+   "offer_id": "offer:70740-4",
+   "terms": {
+    "payment_days": 60,
+    "lead_time_days": 14,
+    "volume_per_year": 23700,
+    "contract_months": 36,
+    "effective_date": "2027-01-01",
+    "index_clause": {
+     "series": "AS-14404",
+     "material_share": 0.45,
+     "deadband_pct": 0.0,
+     "base_month": "2026-08"
+    },
+    "incoterm": "DAP",
+    "tooling_eur": 0.0,
+    "ppm_commitment": 70,
+    "chargeback_eur_per_complaint": 0.0,
+    "unit_price": 5.2
+   },
+   "c_open": 295173.23,
+   "c_deal": 254244.12,
+   "c_alt": 301087.96,
+   "c_best": 222651.27,
+   "score": 0.5643685030024008,
+   "must_haves_ok": true,
+   "cost_breakdown": {
+    "price": 246480.0,
+    "uncovered_need": 0.0,
+    "fallback_risk": 0.0,
+    "payment_terms": 0.0,
+    "freight": 0.0,
+    "late_delivery": 0.0,
+    "quality": 0.0,
+    "tooling": 0.0,
+    "index_clause": 6654.96,
+    "index_risk": 1109.16,
+    "relationship": 0.0
+   },
+   "trace": [
+    {
+     "round": 0,
+     "actor": "sup:70740",
+     "move": {
+      "offer_id": "offer:70740-0",
+      "round": 0,
+      "status": "open",
+      "terms": {
+       "unit_price": 6.1,
+       "payment_days": 30,
+       "index_clause": null,
+       "contract_months": 12
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [
+       {
+        "type": "index_change",
+        "refs": [
+         "idx:AS-14404@2025-09",
+         "idx:AS-14404@2026-09"
+        ],
+        "asserted": {
+         "change_pct": 5.9
+        }
+       },
+       {
+        "type": "index_change",
+        "refs": [
+         "idx:LCI-C@2025-06",
+         "idx:LCI-C@2026-06"
+        ],
+        "asserted": {
+         "change_pct": 2.7
+        }
+       },
+       {
+        "type": "index_change",
+        "refs": [
+         "idx:PPI-C2431@2025-08",
+         "idx:PPI-C2431@2026-08"
+        ],
+        "asserted": {
+         "change_pct": 12.3
+        }
+       }
+      ],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe are delighted to present our competitive quote for your requirements. Our price is €6.10 per unit, with a Zahlungsziel of 30 days net, a contract term of 12 months, and no Preisgleitklausel. Please note that AS-14404 rose 5.9 % in twelve months and is 45 % of our cost. Furthermore, LCI-C rose 2.7 % in twelve months and is 5 % of our cost, while PPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. This offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH"
+     },
+     "reasons": [
+      "AS-14404 rose … in twelve months and is … of our cost.",
+      "LCI-C rose … in twelve months and is … of our cost.",
+      "PPI-C2431 rose … in twelve months and is … of our cost."
+     ]
+    },
+    {
+     "round": 1,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Blankstahl Werdenfels GmbH: Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+      "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nAlloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived) changed -5.5% from 2026-06 to 2026-09 (idx:AS-14404@2026-06, idx:AS-14404@2026-09).\nYour rolling scorecard shows on-time delivery of 81.0% (sc:70740@2026Q3).\nOur demand forecast for this part has risen 1.9% (fc:370010@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [
+       "fc:370010@2026-09",
+       "idx:AS-14404@2026-06",
+       "idx:AS-14404@2026-09",
+       "sc:70740@2026Q3"
+      ],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 4.91,
+         "index_clause": null,
+         "payment_days": 60,
+         "contract_months": 36
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": [
+        {
+         "type": "index_change",
+         "refs": [
+          "idx:AS-14404@2026-06",
+          "idx:AS-14404@2026-09"
+         ],
+         "asserted": {
+          "change_pct": -5.5
+         }
+        },
+        {
+         "type": "delivery_record",
+         "refs": [
+          "sc:70740@2026Q3"
+         ],
+         "asserted": {
+          "otd_pct": 81.0
+         }
+        },
+        {
+         "type": "volume_change",
+         "refs": [
+          "fc:370010@2026-09"
+         ],
+         "asserted": {
+          "change_pct": 1.9
+         }
+        }
+       ]
+      },
+      "supplier_id": "sup:70740"
+     },
+     "reasons": []
+    },
+    {
+     "round": 1,
+     "actor": "sup:70740",
+     "move": {
+      "offer_id": "offer:70740-1",
+      "round": 1,
+      "status": "open",
+      "terms": {
+       "unit_price": 5.4,
+       "payment_days": 60,
+       "index_clause": {
+        "series": "AS-14404",
+        "material_share": 0.45,
+        "deadband_pct": 0.0,
+        "base_month": "2026-08"
+       },
+       "contract_months": 36
+      },
+      "alternatives": [
+       {
+        "offer_id": "offer:70740-1-a",
+        "terms": {
+         "unit_price": 5.5,
+         "payment_days": 60,
+         "index_clause": {
+          "series": "AS-14404",
+          "material_share": 0.45,
+          "deadband_pct": 5.0,
+          "base_month": "2026-08"
+         },
+         "contract_months": 36
+        }
+       }
+      ],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [
+       {
+        "index": 0,
+        "result": "verified"
+       },
+       {
+        "index": 1,
+        "result": "verified"
+       },
+       {
+        "index": 2,
+        "result": "verified"
+       }
+      ],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Dear customer,\nMany thanks for your e-mail, and great to hear from you; I went through it right away with our team.\nWe have reviewed your offer and can adjust our Angebot as follows.\nOur terms: a price of €5.40 per unit, Zahlungsziel 60 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404.\nA few words on this from our side.\nWe checked the volume change data you cited; it holds and we took it into account.\nAS-14404 rose 5.9 % in twelve months and is 45 % of our cost. That remains.\nLCI-C rose 2.7 % in twelve months and is 5 % of our cost. That remains.\nPPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. That remains.\nWe acknowledge your data regarding the AS-14404 index decrease, the increased demand forecast, and our recent delivery performance.\nWe can agree to your requested 36-month contract and 60-day payment terms, but we must include an AS-14404 index clause as we cannot fix prices for this duration.\nWith these terms, we propose a revised unit price of €5.50.\nAlternatively, with a Preisgleitklausel on AS-14404: €5.50 per unit.\nOur price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C.\nWe can offer a Preisgleitklausel on AS-14404, AS-14404, AS-14404.\nWe look forward to doing good business together, and our team is always there for you.\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH"
+     },
+     "reasons": [
+      "We checked the volume change data you cited; it holds and we took it into account.",
+      "AS-14404 rose … in twelve months and is … of our cost. That remains.",
+      "LCI-C rose … in twelve months and is … of our cost. That remains.",
+      "PPI-C2431 rose … in twelve months and is … of our cost. That remains.",
+      "We acknowledge your data regarding the AS-14404 index decrease, the increased demand forecast, and our recent delivery performance.",
+      "We can agree to your requested 36-month contract and 60-day payment terms, but we must include an AS-14404 index clause as we cannot fix prices for this duration.",
+      "With these terms, we propose a revised unit price of €….",
+      "Alternatively, with a Preisgleitklausel on AS-14404: €… per unit.",
+      "Our price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C.",
+      "We can offer a Preisgleitklausel on AS-14404, AS-14404, AS-14404."
+     ]
+    },
+    {
+     "round": 2,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Blankstahl Werdenfels GmbH: Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+      "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 5.84 per unit (po:4500014427-10, po:4500014355-10, po:4500014292-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [
+       "po:4500014292-10",
+       "po:4500014355-10",
+       "po:4500014427-10"
+      ],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 4.96,
+         "index_clause": {
+          "series": "AS-14404",
+          "material_share": 0.45,
+          "deadband_pct": 0.0,
+          "base_month": "2026-08"
+         },
+         "payment_days": 60,
+         "contract_months": 36
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": [
+        {
+         "type": "price_history",
+         "refs": [
+          "po:4500014292-10",
+          "po:4500014355-10",
+          "po:4500014427-10"
+         ],
+         "asserted": {
+          "prices": [
+           5.84,
+           5.84,
+           5.84
+          ]
+         }
+        }
+       ]
+      },
+      "supplier_id": "sup:70740"
+     },
+     "reasons": []
+    },
+    {
+     "round": 2,
+     "actor": "sup:70740",
+     "move": {
+      "offer_id": "offer:70740-2",
+      "round": 2,
+      "status": "open",
+      "terms": {
+       "unit_price": 5.3,
+       "payment_days": 60,
+       "index_clause": {
+        "series": "AS-14404",
+        "material_share": 0.45,
+        "deadband_pct": 0.0,
+        "base_month": "2026-08"
+       },
+       "contract_months": 36
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [
+       {
+        "index": 0,
+        "result": "verified"
+       }
+      ],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Dear customer,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We checked the price history data you cited; it holds, but it does not change our calculation. Our price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C. In response to your adjustment, we can lower our price to €5.30 per unit. We are pleased to maintain the 36-month contract, 60-day payment terms, and the AS-14404 index clause as requested. \n\nSo, our Angebot stands at a price of €5.30 per unit, Zahlungsziel 60 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404. Our standard terms apply to everything the quote does not state; see attached. This offer stays valid for 30 days. As your distributor, we value our relationship and are always glad to work together on your supply needs!\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH"
+     },
+     "reasons": [
+      "We checked the price history data you cited; it holds, but it does not change our calculation.",
+      "We are pleased to maintain the 36-month contract, 60-day payment terms, and the AS-14404 index clause as requested.",
+      "In response to your adjustment, we can lower our price to €… per unit.",
+      "Our price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C.",
+      "Our standard terms apply to everything the quote does not state; see attached."
+     ]
+    },
+    {
+     "round": 3,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Blankstahl Werdenfels GmbH: Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+      "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 5.06,
+         "index_clause": {
+          "series": "AS-14404",
+          "material_share": 0.45,
+          "deadband_pct": 0.0,
+          "base_month": "2026-08"
+         },
+         "payment_days": 60,
+         "contract_months": 36
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": []
+      },
+      "supplier_id": "sup:70740"
+     },
+     "reasons": []
+    },
+    {
+     "round": 3,
+     "actor": "sup:70740",
+     "move": {
+      "offer_id": "offer:70740-3",
+      "round": 3,
+      "status": "open",
+      "terms": {
+       "unit_price": 5.2,
+       "payment_days": 60,
+       "index_clause": {
+        "series": "AS-14404",
+        "material_share": 0.45,
+        "deadband_pct": 0.0,
+        "base_month": "2026-08"
+       },
+       "contract_months": 36
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Dear customer,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We appreciate your continued flexibility and the step you have taken in your latest proposal.\n\nIn response, we are pleased to offer a further concession to €5.20 per unit, while maintaining the 36-month contract, 60-day payment terms, and the AS-14404 index clause. This price reflects our commitment to our relationship and is highly competitive given our current cost drivers.\n\nTo set out the full details clearly, our Angebot features a price of €5.20 per unit, Zahlungsziel 60 days net, a contract term of 36 months, and a Preisgleitklausel on AS-14404. Please note that this offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH"
+     },
+     "reasons": [
+      "We appreciate your continued flexibility and the step you have taken in your latest proposal.",
+      "In response, we are pleased to offer a further concession to €… per unit, while maintaining the 36-month contract, 60-day payment terms, and the AS-14404 index clause.",
+      "This price reflects our commitment to our relationship and is highly competitive given our current cost drivers."
+     ]
+    },
+    {
+     "round": 4,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Blankstahl Werdenfels GmbH: Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+      "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 5.24,
+         "index_clause": null,
+         "payment_days": 60,
+         "contract_months": 36
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": []
+      },
+      "supplier_id": "sup:70740"
+     },
+     "reasons": []
+    },
+    {
+     "round": 4,
+     "actor": "sup:70740",
+     "move": {
+      "offer_id": "offer:70740-4",
+      "round": 4,
+      "status": "final_offer",
+      "terms": {
+       "unit_price": 5.2,
+       "payment_days": 60,
+       "index_clause": {
+        "series": "AS-14404",
+        "material_share": 0.45,
+        "deadband_pct": 0.0,
+        "base_month": "2026-08"
+       },
+       "contract_months": 36
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 3,
+       "validity_days": 7
+      },
+      "text": "Dear customer,\n\nThank you for your ongoing partnership with Blankstahl Werdenfels GmbH. We always value our business relationship and are keen to keep supporting your requirements with our reliable service and broad product range.\n\nPlease consider this our final offer (letztes Angebot). Please decide based on these terms: a price of €5.20 per unit, Zahlungsziel 60 days net, a contract term of 36 months, and a Preisgleitklausel on AS-14404. We must maintain the AS-14404 index clause to manage material cost risks over this extended period. Therefore, our offer remains at €5.20 per unit with the index clause included. \n\nOur price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C. As part of our options, we can offer a Preisgleitklausel on AS-14404, AS-14404, AS-14404. \n\nPlease note that this offer stays valid for 7 days.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH"
+     },
+     "reasons": [
+      "We must maintain the AS-14404 index clause to manage material cost risks over this extended period.",
+      "Therefore, our offer remains at €… per unit with the index clause included.",
+      "We can offer a Preisgleitklausel on AS-14404, AS-14404, AS-14404.",
+      "Our price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C."
+     ]
+    },
+    {
+     "round": 4,
+     "actor": "buyer",
+     "move": {
+      "type": "accept",
+      "offer_id": "offer:70740-4",
+      "supplier_id": "sup:70740"
+     },
+     "reasons": []
+    }
+   ]
+  },
+  "replay_url": "/replay/e062037e78f65749"
+ },
+ "backoffice": [
+  {
+   "round": 0,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "quote attached (quote-offer-70740-0.pdf)"
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet and … cited facts to check; we answer with our offer."
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "Logistics",
+   "text": "The buyer asks something for Logistics; please answer."
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "delivery schedule attached (delivery-schedule.xlsx)"
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet and … cited fact to check; we answer with our offer."
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "quote attached (quote-offer-70740-2.pdf)"
+  },
+  {
+   "round": 3,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 3,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet; we answer with our offer."
+  },
+  {
+   "round": 4,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "My call: hold."
+  },
+  {
+   "round": 4,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet; we answer with our final offer."
+  },
+  {
+   "round": 4,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "quote attached (quote-offer-70740-4.pdf)"
+  },
+  {
+   "round": 4,
+   "supplier_id": "sup:70740",
+   "supplier": "Blankstahl Werdenfels GmbH",
+   "from": "Inside Sales",
+   "to": "team",
+   "text": "order confirmation attached (order-confirmation-offer-70740-4.pdf)"
+  }
+ ],
+ "decisions": [
+  {
+   "round": 0,
+   "supplier_id": "sup:70740",
+   "their_status": "open",
+   "their_offer": "offer:70740-0",
+   "their_terms": {
+    "unit_price": 6.1,
+    "payment_days": 30,
+    "index_clause": null,
+    "contract_months": 12
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 4.91,
+     "index_clause": null,
+     "payment_days": 60,
+     "contract_months": 36
+    }
+   ],
+   "seconds": 7.259,
+   "source": "engine",
+   "tactician": "E0 is the only selectable option; every other term mix has an unknown trade value and is not selectable. A longer term combined with volume growth speaks to its stated focus on volume accounts. The falling index (a1) undercuts its case for a clause. Weak delivery (a2) and rising demand (a3) are our strongest levers. a4 overlaps a1 as an index_change argument, so only one index point is cited.",
+   "option": "E0",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 7.2,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "E0",
+     "claims": [
+      "a1",
+      "a2",
+      "a3"
+     ],
+     "reason": "E0 is the only selectable option; every other term mix has an unknown trade value and is not selectable. A longer term combined with volume growth speaks to its stated focus on volume accounts. The falling index (a1) undercuts its case for a clause. Weak delivery (a2) and rising demand (a3) are our strongest levers. a4 overlaps a1 as an index_change argument, so only one index point is cited."
+    },
+    "used": true,
+    "packet_seconds": 0.01
+   },
+   "features_off": [
+    "ask_breakdown",
+    "call_note_lever",
+    "case_plan",
+    "patience",
+    "plan_paragraph",
+    "plan_priced_trades",
+    "plan_stance",
+    "tactician_text"
+   ],
+   "plan": false
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70740",
+   "their_status": "open",
+   "their_offer": "offer:70740-1",
+   "their_terms": {
+    "unit_price": 5.4,
+    "payment_days": 60,
+    "index_clause": {
+     "series": "AS-14404",
+     "material_share": 0.45,
+     "deadband_pct": 0.0,
+     "base_month": "2026-08"
+    },
+    "contract_months": 36
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 4.96,
+     "index_clause": {
+      "series": "AS-14404",
+      "material_share": 0.45,
+      "deadband_pct": 0.0,
+      "base_month": "2026-08"
+     },
+     "payment_days": 60,
+     "contract_months": 36
+    }
+   ],
+   "seconds": 7.729,
+   "source": "engine",
+   "tactician": "o4 has a slightly lower C (€1,244 below E0), but it drops the clause the supplier explicitly says it must have, so it is likely to be rejected or countered. E0 keeps the supplier's own required structure (clause db 0 %, 60 d, 36 months) at a price well below its current sheets: C €242,510 versus €263k–264k. At its recent pace it could reach this in about one reply. The order-history argument (a1) anchors the price at the €5.84 we have been paying. Accepting now would leave money on the table.",
+   "option": "E0",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 7.7,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "E0",
+     "claims": [
+      "a1"
+     ],
+     "reason": "o4 has a slightly lower C (€1,244 below E0), but it drops the clause the supplier explicitly says it must have, so it is likely to be rejected or countered. E0 keeps the supplier's own required structure (clause db 0 %, 60 d, 36 months) at a price well below its current sheets: C €242,510 versus €263k–264k. At its recent pace it could reach this in about one reply. The order-history argument (a1) anchors the price at the €5.84 we have been paying. Accepting now would leave money on the table."
+    },
+    "used": true,
+    "packet_seconds": 0.01
+   }
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70740",
+   "their_status": "open",
+   "their_offer": "offer:70740-2",
+   "their_terms": {
+    "unit_price": 5.3,
+    "payment_days": 60,
+    "index_clause": {
+     "series": "AS-14404",
+     "material_share": 0.45,
+     "deadband_pct": 0.0,
+     "base_month": "2026-08"
+    },
+    "contract_months": 36
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 5.06,
+     "index_clause": {
+      "series": "AS-14404",
+      "material_share": 0.45,
+      "deadband_pct": 0.0,
+      "base_month": "2026-08"
+     },
+     "payment_days": 60,
+     "contract_months": 36
+    }
+   ],
+   "seconds": 8.439,
+   "source": "engine",
+   "tactician": "E0 keeps the clause the supplier itself asked for, so it meets the supplier's stated need. Its C of €247,399 is well below offer:70740-2 at €259,133, and at the supplier's recent pace about one reply should get there. o4 saves only about €1.4k on paper but drops the clause the supplier requested. That would likely draw a counter or stall. Its value also rests on a clause estimate that leaves other supplier values unmeasured. Accepting now would leave value on the table while the supplier's status is still open.",
+   "option": "E0",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 8.4,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "E0",
+     "claims": [],
+     "reason": "E0 keeps the clause the supplier itself asked for, so it meets the supplier's stated need. Its C of €247,399 is well below offer:70740-2 at €259,133, and at the supplier's recent pace about one reply should get there. o4 saves only about €1.4k on paper but drops the clause the supplier requested. That would likely draw a counter or stall. Its value also rests on a clause estimate that leaves other supplier values unmeasured. Accepting now would leave value on the table while the supplier's status is still open."
+    },
+    "used": true,
+    "packet_seconds": 0.01
+   }
+  },
+  {
+   "round": 3,
+   "supplier_id": "sup:70740",
+   "their_status": "open",
+   "their_offer": "offer:70740-3",
+   "their_terms": {
+    "unit_price": 5.2,
+    "payment_days": 60,
+    "index_clause": {
+     "series": "AS-14404",
+     "material_share": 0.45,
+     "deadband_pct": 0.0,
+     "base_month": "2026-08"
+    },
+    "contract_months": 36
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 5.24,
+     "index_clause": null,
+     "payment_days": 60,
+     "contract_months": 36
+    }
+   ],
+   "seconds": 6.628,
+   "source": "engine",
+   "tactician": "o4 costs us about €979 less than E0 and is the only selectable alternative. Its price is an explicit-driver estimate based on the supplier's stated AS-14404 exposure. Compared with offer 70740-3, both E0 and o4 continue a concession pace that has held for three replies. Removing the clause also removes our index risk on its material share. Acceptance is uncertain either way, and the supplier can still counter. No arguments remain unheard, so no claims are cited.",
+   "option": "o4",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 6.6,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "o4",
+     "claims": [],
+     "reason": "o4 costs us about €979 less than E0 and is the only selectable alternative. Its price is an explicit-driver estimate based on the supplier's stated AS-14404 exposure. Compared with offer 70740-3, both E0 and o4 continue a concession pace that has held for three replies. Removing the clause also removes our index risk on its material share. Acceptance is uncertain either way, and the supplier can still counter. No arguments remain unheard, so no claims are cited."
+    },
+    "used": true,
+    "packet_seconds": 0.01
+   }
+  },
+  {
+   "round": 4,
+   "supplier_id": "sup:70740",
+   "their_status": "final_offer",
+   "their_offer": "offer:70740-4",
+   "their_terms": {
+    "unit_price": 5.2,
+    "payment_days": 60,
+    "index_clause": {
+     "series": "AS-14404",
+     "material_share": 0.45,
+     "deadband_pct": 0.0,
+     "base_month": "2026-08"
+    },
+    "contract_months": 36
+   },
+   "action": "accept",
+   "our_sheets": [],
+   "seconds": 0.001,
+   "source": "engine",
+   "why": "final_offer; C 254,244 below the limit 295,173"
+  }
+ ],
+ "plan": null,
+ "prepare_seconds": null
+}

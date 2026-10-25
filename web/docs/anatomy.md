@@ -17,8 +17,8 @@ to itself. The page takes that one figure from the run and inverts it:
 soft(g) = g²/10 for g ≤ 5, g − 2.5 beyond, so g = √(10·s) or s + 2.5 with s = charge ÷ (€ per point ×
 years). That gives how many margin points below a sustainable margin the deal left the supplier.
 
-**Check:** for all 39 runs that ended in a deal, every recomputed term matches the arena's breakdown
-within €1. The page flags any term that does not.
+**Check:** for all 134 runs that ended in a deal (142 runs synced on 2026-10-24, engine v1 to v1.7b),
+every recomputed term matches the arena's breakdown within €1. The page flags any term that does not.
 
 ## Page
 

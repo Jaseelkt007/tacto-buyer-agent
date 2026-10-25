@@ -1,0 +1,855 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70110",
+ "name": "Gießerei Brandlhuber GmbH & Co. KG",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "3461dff38ca27c3c78b46e74af2728adfe6cbb701b1e0123710914487062f017",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:03:46.551246+00:00",
+  "seconds": 36.4,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:751baec4ab886b2c",
+   "text": "Supplier requests a 9.5% price increase on part 310010 from EUR 126.53 to EUR 138.55 effective 1 November 2026, citing energy, raw material and wage costs.",
+   "kind": "supplier_statement",
+   "source": "doc:20260911-70110-P01",
+   "quote": "Owing to sustained increases in energy, raw material and wage costs, we are forced to adjust our prices for Volute casing HN 50-200 (part:310010) by **9.5 %** with effect from **01 November 2026**: from EUR 126.53 to EUR 138.55 per  pc.",
+   "parts": [
+    "part:310010"
+   ],
+   "observed_at": "2026-09-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:751baec4ab886b2c",
+    "verdict": "supported",
+    "reason": "The price letter matches."
+   }
+  },
+  {
+   "id": "obs:0d95d22ba055f24b",
+   "text": "Contract prices are fixed per calendar year; changes require written notice at least 90 days before the end of the calendar year.",
+   "kind": "fact",
+   "source": "ctr:4600070110#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:310010",
+    "part:310012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:0d95d22ba055f24b",
+    "verdict": "supported",
+    "reason": "Contract clause 3.1 matches."
+   }
+  },
+  {
+   "id": "obs:d513cb0f097743f1",
+   "text": "Framework agreement runs 2024-01-01 to 2026-12-31 and auto-extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070110#8.1",
+   "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:310010",
+    "part:310012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:d513cb0f097743f1",
+    "verdict": "supported",
+    "reason": "Contract clause 8.1 matches."
+   }
+  },
+  {
+   "id": "obs:3ff12e9b414c557f",
+   "text": "Should-cost for part:310010 at this supplier's plant is EUR 132.64 per unit, no margin included, error about 5%.",
+   "kind": "fact",
+   "source": "cost:310010",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 62.21, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:310010\", \"material_eur\": 43.77, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 26.66, \"part_id\": \"part:310010\", \"price_unit\": 1, \"supplier_id\": \"sup:70110\", \"unit_cost\": 132.64",
+   "parts": [
+    "part:310010"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3ff12e9b414c557f",
+    "verdict": "supported",
+    "reason": "This is the recorded should-cost estimate with about 5% error."
+   }
+  },
+  {
+   "id": "obs:ed8df49393629f7d",
+   "text": "Second-source quote from Odlewnia Kalwisz for part:310010: EUR 143.22, 60 payment days, 90 days validity.",
+   "kind": "fact",
+   "source": "quote:7200001",
+   "quote": "\"payment_days\": 60, \"price_unit\": 1, \"quote_date\": \"2026-09-02\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000201\", \"supplier_id\": \"sup:70140\", \"tooling_eur\": 0, \"unit_price\": 143.22, \"validity_days\": 90",
+   "parts": [
+    "part:310010"
+   ],
+   "observed_at": "2026-09-02",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ed8df49393629f7d",
+    "verdict": "supported",
+    "reason": "The quote record matches."
+   }
+  },
+  {
+   "id": "obs:e44e0b583d9d78fd",
+   "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260902-70110-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-09-02",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e44e0b583d9d78fd",
+    "verdict": "supported",
+    "reason": "The supplier's email matches."
+   }
+  },
+  {
+   "id": "obs:8f332123a653dec2",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070110#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:310010",
+    "part:310012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8f332123a653dec2",
+    "verdict": "supported",
+    "reason": "Contract clause 4.1 matches."
+   }
+  },
+  {
+   "id": "obs:32c301e8f3bd14b3",
+   "text": "Supplier master shows payment terms of 30 days with no cash discount recorded.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:32c301e8f3bd14b3",
+    "verdict": "supported",
+    "reason": "The supplier master matches."
+   }
+  },
+  {
+   "id": "obs:18125fc824207f5f",
+   "text": "Owner reminded buyer that in 2022 the supplier kept supplying at the old price for a quarter and said he expects partnership in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260917-70110-M3",
+   "quote": "He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.",
+   "parts": [],
+   "observed_at": "2026-09-17",
+   "valid_until": null,
+   "review": {
+    "id": "obs:18125fc824207f5f",
+    "verdict": "supported",
+    "reason": "The meeting note matches."
+   }
+  },
+  {
+   "id": "obs:91f01877f3373655",
+   "text": "Negotiation history records part 310010 initial price accepted below full cost to keep volume.",
+   "kind": "fact",
+   "source": "EV-2023-70110-310010",
+   "quote": "accepted below full cost to keep the volume",
+   "parts": [
+    "part:310010"
+   ],
+   "observed_at": "2022-12-05",
+   "valid_until": null,
+   "review": {
+    "id": "obs:91f01877f3373655",
+    "verdict": "supported",
+    "reason": "The negotiation history note and date match."
+   }
+  },
+  {
+   "id": "obs:329b61fa07fe3275",
+   "text": "Owner admitted he had not followed material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "kind": "supplier_statement",
+   "source": "doc:20260909-70110-M4",
+   "quote": "admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "parts": [],
+   "observed_at": "2026-09-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:329b61fa07fe3275",
+    "verdict": "supported",
+    "reason": "The meeting note matches."
+   }
+  },
+  {
+   "id": "obs:280192fc4bd0643b",
+   "text": "Owner works from his own index spreadsheet last updated two years ago.",
+   "kind": "supplier_statement",
+   "source": "doc:20260824-70110-M1",
+   "quote": "he works from his own spreadsheet, last updated two years ago.",
+   "parts": [],
+   "observed_at": "2026-08-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:280192fc4bd0643b",
+    "verdict": "supported",
+    "reason": "The call note matches."
+   }
+  },
+  {
+   "id": "obs:c775146edcb029ff",
+   "text": "Latest rolling-12-month scorecard (to 2026-09-30) dropped to class B amber, score 84.0, with otd_pct 85.2 and one overdue open 8D.",
+   "kind": "fact",
+   "source": "sc:70110@2026Q3",
+   "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 6, \"gr_lines\": 54, \"id\": \"sc:70110@2026Q3\", \"open_8d_overdue\": 1, \"otd_confirmed_pct\": 88.9, \"otd_pct\": 85.2",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c775146edcb029ff",
+    "verdict": "supported",
+    "reason": "The 2026Q3 scorecard matches."
+   }
+  },
+  {
+   "id": "obs:1361ea3a4e1327ef",
+   "text": "Part 310010 last 12 months: 28 receipts, 78.6% on time vs requested, 17.9% late, max 25 days late.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "{\"avg_days_late_when_late\": 14.8, \"early_pct\": 3.6, \"late_pct\": 17.9, \"max_days_late\": 25, \"on_time_confirmed_pct\": 85.7, \"on_time_requested_pct\": 78.6, \"part_id\": \"part:310010\", \"receipts\": 28}",
+   "parts": [
+    "part:310010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:1361ea3a4e1327ef",
+    "verdict": "supported",
+    "reason": "The delivery data matches."
+   }
+  },
+  {
+   "id": "obs:2d355b2d3d0855e3",
+   "text": "Part 310010 has 15 QNs in total, 12 supplier-caused, ppm last 12 months 777, EUR 1,350 recharged.",
+   "kind": "fact",
+   "source": "evidence:part:310010:part_quality",
+   "quote": "\"complaint_qty\": 15, \"last_qn\": \"2026-08-20\", \"latest_qns\": [\"qn:20004995\", \"qn:20004978\", \"qn:20004934\"], \"ppm_last_12m\": 777, \"qns\": 15, \"received_last_12m\": 7720, \"recharged_eur\": 1350, \"supplier_caused\": 12",
+   "parts": [
+    "part:310010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:2d355b2d3d0855e3",
+    "verdict": "supported",
+    "reason": "The part quality summary matches."
+   }
+  },
+  {
+   "id": "obs:0a596e9142456a98",
+   "text": "Supplier-caused QN 20004978 (missing marking, part 310010) from 2026-07-18 has no 8D closure date.",
+   "kind": "fact",
+   "source": "qn:20004978",
+   "quote": "\"d8_date\": null, \"defect\": \"missing marking\", \"gr_id\": \"gr:5000105198\", \"id\": \"qn:20004978\", \"part_id\": \"part:310010\", \"ppm\": 2632, \"qn_date\": \"2026-07-18\", \"returned_qty\": 1, \"supplier_caused\": 1",
+   "parts": [
+    "part:310010"
+   ],
+   "observed_at": "2026-07-18",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0a596e9142456a98",
+    "verdict": "supported",
+    "reason": "The QN record shows a null d8_date."
+   }
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "obs:9daafc2191081135",
+   "text": "Owner's stale cost tracking may mean the price request is not based on current index data.",
+   "kind": "hypothesis",
+   "source": "doc:20260824-70110-M1",
+   "quote": "he works from his own spreadsheet, last updated two years ago.",
+   "parts": [],
+   "observed_at": "2026-08-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:9daafc2191081135",
+    "verdict": "hypothesis",
+    "reason": "This is a plausible inference from the stale spreadsheet."
+   }
+  },
+  {
+   "id": "obs:ef1ce8452657fbbe",
+   "text": "The increase letter dated 2026-09-11 with effect 2026-11-01 appears not to meet the contract's fixed-calendar-year pricing and 90-day notice requirement.",
+   "kind": "hypothesis",
+   "source": "doc:20260911-70110-P01",
+   "quote": "we are forced to adjust our prices for Volute casing HN 50-200 (part:310010) by **9.5 %** with effect from **01 November 2026**",
+   "parts": [
+    "part:310010"
+   ],
+   "observed_at": "2026-09-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ef1ce8452657fbbe",
+    "verdict": "hypothesis",
+    "reason": "This is a plausible contractual inference: a mid-year change against prices fixed per calendar year."
+   }
+  }
+ ],
+ "verified_unselected": [
+  {
+   "id": "obs:a3fe5b709bc6f8a7",
+   "text": "Supplier announced a 9.5% price increase for part:310010 from EUR 126.53 to EUR 138.55 per pc effective 01 November 2026, citing energy, raw material and wage costs.",
+   "kind": "supplier_statement",
+   "source": "doc:20260911-70110-P01",
+   "quote": "Owing to sustained increases in energy, raw material and wage costs, we are forced to adjust our prices for Volute casing HN 50-200 (part:310010) by **9.5 %** with effect from **01 November 2026**: from EUR 126.53 to EUR 138.55 per  pc.",
+   "parts": [
+    "part:310010"
+   ],
+   "observed_at": "2026-09-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a3fe5b709bc6f8a7",
+    "verdict": "supported",
+    "reason": "The price letter states this increase and its effective date."
+   }
+  },
+  {
+   "id": "obs:a986ea30a218dfa0",
+   "text": "Should-cost for part:310012 at this supplier's plant is EUR 347.27 per unit, no margin, error about 5%.",
+   "kind": "fact",
+   "source": "cost:310012-70110",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 162.87, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:310012-70110\", \"material_eur\": 114.6, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 69.8, \"part_id\": \"part:310012\", \"price_unit\": 1, \"supplier_id\": \"sup:70110\", \"unit_cost\": 347.27",
+   "parts": [
+    "part:310012"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a986ea30a218dfa0",
+    "verdict": "supported",
+    "reason": "This is the recorded estimate for the 70110 plant."
+   }
+  },
+  {
+   "id": "obs:6ea9e84c26b32f15",
+   "text": "Owner admitted not closely following material and energy prices since the 2022 peak; office manager does costing.",
+   "kind": "supplier_statement",
+   "source": "doc:20260909-70110-M4",
+   "quote": "admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "parts": [],
+   "observed_at": "2026-09-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:6ea9e84c26b32f15",
+    "verdict": "supported",
+    "reason": "The meeting note records the owner's admission."
+   }
+  },
+  {
+   "id": "obs:f61cb6e2351a4868",
+   "text": "Owner cited supplying at the old price for a quarter in 2022 and expects partnership in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260917-70110-M3",
+   "quote": "He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.",
+   "parts": [],
+   "observed_at": "2026-09-17",
+   "valid_until": null,
+   "review": {
+    "id": "obs:f61cb6e2351a4868",
+    "verdict": "supported",
+    "reason": "The meeting note matches."
+   }
+  },
+  {
+   "id": "obs:e213cf30a1c6d0e4",
+   "text": "Supplier is family-owned, founded 1921, with 185 staff.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"founded\": 1921, \"group_parent\": null, \"legal_form\": \"GmbH & Co. KG\", \"owner_type\": \"family\", \"staff\": 185",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:e213cf30a1c6d0e4",
+    "verdict": "supported",
+    "reason": "The supplier intel record matches."
+   }
+  },
+  {
+   "id": "obs:9cb78ecbaa7cbc88",
+   "text": "Delivery FCA with standard lead time of 42 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070110#5.1",
+   "quote": "Delivery FCA; standard lead time 42 days from order.",
+   "parts": [
+    "part:310010",
+    "part:310012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:9cb78ecbaa7cbc88",
+    "verdict": "supported",
+    "reason": "Contract clause 5.1 matches."
+   }
+  },
+  {
+   "id": "obs:e0a89f05b921c1c8",
+   "text": "Supplier asked for payment within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260902-70110-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-09-02",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e0a89f05b921c1c8",
+    "verdict": "supported",
+    "reason": "The supplier's email matches."
+   }
+  },
+  {
+   "id": "obs:04273f68ff277b5f",
+   "text": "Scorecard ppm for rolling 12 months to 2026-09-30 was 712.",
+   "kind": "fact",
+   "source": "sc:70110@2026Q3",
+   "quote": "\"ppm\": 712, \"qn_count\": 6, \"quarter\": \"2026Q3\"",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:04273f68ff277b5f",
+    "verdict": "supported",
+    "reason": "The 2026Q3 scorecard matches."
+   }
+  },
+  {
+   "id": "obs:f819c985dadb4ecf",
+   "text": "Peak scorecard was 2025Q1: score 94.0, otd_pct 94.0.",
+   "kind": "fact",
+   "source": "sc:70110@2025Q1",
+   "quote": "\"otd_confirmed_pct\": 98.0, \"otd_pct\": 94.0, \"period_end\": \"2025-03-31\", \"period_start\": \"2024-04-01\", \"ppm\": 605, \"qn_count\": 5, \"quarter\": \"2025Q1\", \"received_qty\": 8268, \"score\": 94.0",
+   "parts": [],
+   "observed_at": "2025-03-31",
+   "valid_until": null,
+   "review": {
+    "id": "obs:f819c985dadb4ecf",
+    "verdict": "supported",
+    "reason": "2025Q1 has the highest score and OTD among the listed scorecards."
+   }
+  },
+  {
+   "id": "obs:ba4752c6cb28cd87",
+   "text": "Part 310012 last 12 months: 26 receipts, 92.3% on time vs requested, 7.7% late.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "{\"avg_days_late_when_late\": 8.5, \"early_pct\": 0.0, \"late_pct\": 7.7, \"max_days_late\": 10, \"on_time_confirmed_pct\": 92.3, \"on_time_requested_pct\": 92.3, \"part_id\": \"part:310012\", \"receipts\": 26}",
+   "parts": [
+    "part:310012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:ba4752c6cb28cd87",
+    "verdict": "supported",
+    "reason": "The delivery data matches."
+   }
+  },
+  {
+   "id": "obs:469cea0bc23416d5",
+   "text": "Part 310012 from this supplier had zero QNs and 0 ppm in the last 12 months.",
+   "kind": "fact",
+   "source": "evidence:part:310012:part_quality",
+   "quote": "{\"latest_qns\": [], \"ppm_last_12m\": 0, \"qns\": 0, \"received_last_12m\": 712, \"supplier_id\": \"sup:70110\"}",
+   "parts": [
+    "part:310012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:469cea0bc23416d5",
+    "verdict": "supported",
+    "reason": "The part quality data for sup:70110 matches."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier announced a 9.5% price increase for part:310010 from EUR 126.53 to EUR 138.55 per pc effective 01 November 2026, citing energy, raw material and wage costs.",
+     "kind": "supplier_statement",
+     "source": "doc:20260911-70110-P01",
+     "quote": "Owing to sustained increases in energy, raw material and wage costs, we are forced to adjust our prices for Volute casing HN 50-200 (part:310010) by **9.5 %** with effect from **01 November 2026**: from EUR 126.53 to EUR 138.55 per  pc.",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": "2026-09-11",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for part:310010 at this supplier's plant is EUR 132.64 per unit, no margin included, error about 5%.",
+     "kind": "fact",
+     "source": "cost:310010",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 62.21, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:310010\", \"material_eur\": 43.77, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 26.66, \"part_id\": \"part:310010\", \"price_unit\": 1, \"supplier_id\": \"sup:70110\", \"unit_cost\": 132.64",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for part:310012 at this supplier's plant is EUR 347.27 per unit, no margin, error about 5%.",
+     "kind": "fact",
+     "source": "cost:310012-70110",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 162.87, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:310012-70110\", \"material_eur\": 114.6, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 69.8, \"part_id\": \"part:310012\", \"price_unit\": 1, \"supplier_id\": \"sup:70110\", \"unit_cost\": 347.27",
+     "parts": [
+      "part:310012"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260902-70110-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-09-02",
+     "valid_until": null
+    },
+    {
+     "text": "Owner admitted not closely following material and energy prices since the 2022 peak; office manager does costing.",
+     "kind": "supplier_statement",
+     "source": "doc:20260909-70110-M4",
+     "quote": "admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "parts": [],
+     "observed_at": "2026-09-09",
+     "valid_until": null
+    },
+    {
+     "text": "Owner works from his own index spreadsheet last updated two years ago.",
+     "kind": "supplier_statement",
+     "source": "doc:20260824-70110-M1",
+     "quote": "he works from his own spreadsheet, last updated two years ago.",
+     "parts": [],
+     "observed_at": "2026-08-24",
+     "valid_until": null
+    },
+    {
+     "text": "Owner cited supplying at the old price for a quarter in 2022 and expects partnership in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260917-70110-M3",
+     "quote": "He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.",
+     "parts": [],
+     "observed_at": "2026-09-17",
+     "valid_until": null
+    },
+    {
+     "text": "Second-source quote from Odlewnia Kalwisz for part:310010: EUR 143.22, 60 payment days, 90 days validity.",
+     "kind": "fact",
+     "source": "quote:7200001",
+     "quote": "\"payment_days\": 60, \"price_unit\": 1, \"quote_date\": \"2026-09-02\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000201\", \"supplier_id\": \"sup:70140\", \"tooling_eur\": 0, \"unit_price\": 143.22, \"validity_days\": 90",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": "2026-09-02",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Owner reminded buyer that in 2022 the supplier kept supplying at the old price for a quarter and said he expects partnership in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260917-70110-M3",
+     "quote": "He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.",
+     "parts": [],
+     "observed_at": "2026-09-17",
+     "valid_until": null
+    },
+    {
+     "text": "Owner asked where the buyer gets its index figures; he works from his own spreadsheet last updated two years ago.",
+     "kind": "fact",
+     "source": "doc:20260824-70110-M1",
+     "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.",
+     "parts": [],
+     "observed_at": "2026-08-24",
+     "valid_until": null
+    },
+    {
+     "text": "Owner admitted he had not followed material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "kind": "supplier_statement",
+     "source": "doc:20260909-70110-M4",
+     "quote": "admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "parts": [],
+     "observed_at": "2026-09-09",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260902-70110-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-09-02",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier announced a 9.5% price increase for part:310010 from EUR 126.53 to EUR 138.55 per pc effective 01 November 2026, citing energy, raw material and wage costs.",
+     "kind": "supplier_statement",
+     "source": "doc:20260911-70110-P01",
+     "quote": "Owing to sustained increases in energy, raw material and wage costs, we are forced to adjust our prices for Volute casing HN 50-200 (part:310010) by **9.5 %** with effect from **01 November 2026**: from EUR 126.53 to EUR 138.55 per  pc.",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": "2026-09-11",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is family-owned, founded 1921, with 185 staff.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"founded\": 1921, \"group_parent\": null, \"legal_form\": \"GmbH & Co. KG\", \"owner_type\": \"family\", \"staff\": 185",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Owner's stale cost tracking may mean the price request is not based on current index data.",
+     "kind": "hypothesis",
+     "source": "doc:20260824-70110-M1",
+     "quote": "he works from his own spreadsheet, last updated two years ago.",
+     "parts": [],
+     "observed_at": "2026-08-24",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master shows payment terms of 30 days with no cash discount recorded.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Contract prices are fixed per calendar year; changes require written notice at least 90 days before the end of the calendar year.",
+     "kind": "fact",
+     "source": "ctr:4600070110#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:310010",
+      "part:310012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Framework agreement runs 2024-01-01 to 2026-12-31 and auto-extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070110#8.1",
+     "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:310010",
+      "part:310012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070110#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:310010",
+      "part:310012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery FCA with standard lead time of 42 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070110#5.1",
+     "quote": "Delivery FCA; standard lead time 42 days from order.",
+     "parts": [
+      "part:310010",
+      "part:310012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requests a 9.5% price increase on part 310010 from EUR 126.53 to EUR 138.55 effective 1 November 2026, citing energy, raw material and wage costs.",
+     "kind": "supplier_statement",
+     "source": "doc:20260911-70110-P01",
+     "quote": "Owing to sustained increases in energy, raw material and wage costs, we are forced to adjust our prices for Volute casing HN 50-200 (part:310010) by **9.5 %** with effect from **01 November 2026**: from EUR 126.53 to EUR 138.55 per  pc.",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": "2026-09-11",
+     "valid_until": null
+    },
+    {
+     "text": "The increase letter dated 2026-09-11 with effect 2026-11-01 appears not to meet the contract's fixed-calendar-year pricing and 90-day notice requirement.",
+     "kind": "hypothesis",
+     "source": "doc:20260911-70110-P01",
+     "quote": "we are forced to adjust our prices for Volute casing HN 50-200 (part:310010) by **9.5 %** with effect from **01 November 2026**",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": "2026-09-11",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier asked for payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260902-70110-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-09-02",
+     "valid_until": null
+    },
+    {
+     "text": "Negotiation history records part 310010 initial price accepted below full cost to keep volume.",
+     "kind": "fact",
+     "source": "EV-2023-70110-310010",
+     "quote": "accepted below full cost to keep the volume",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": "2022-12-05",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Latest rolling-12-month scorecard (to 2026-09-30) dropped to class B amber, score 84.0, with otd_pct 85.2 and one overdue open 8D.",
+     "kind": "fact",
+     "source": "sc:70110@2026Q3",
+     "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 6, \"gr_lines\": 54, \"id\": \"sc:70110@2026Q3\", \"open_8d_overdue\": 1, \"otd_confirmed_pct\": 88.9, \"otd_pct\": 85.2",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Scorecard ppm for rolling 12 months to 2026-09-30 was 712.",
+     "kind": "fact",
+     "source": "sc:70110@2026Q3",
+     "quote": "\"ppm\": 712, \"qn_count\": 6, \"quarter\": \"2026Q3\"",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Peak scorecard was 2025Q1: score 94.0, otd_pct 94.0.",
+     "kind": "fact",
+     "source": "sc:70110@2025Q1",
+     "quote": "\"otd_confirmed_pct\": 98.0, \"otd_pct\": 94.0, \"period_end\": \"2025-03-31\", \"period_start\": \"2024-04-01\", \"ppm\": 605, \"qn_count\": 5, \"quarter\": \"2025Q1\", \"received_qty\": 8268, \"score\": 94.0",
+     "parts": [],
+     "observed_at": "2025-03-31",
+     "valid_until": null
+    },
+    {
+     "text": "Part 310010 last 12 months: 28 receipts, 78.6% on time vs requested, 17.9% late, max 25 days late.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "{\"avg_days_late_when_late\": 14.8, \"early_pct\": 3.6, \"late_pct\": 17.9, \"max_days_late\": 25, \"on_time_confirmed_pct\": 85.7, \"on_time_requested_pct\": 78.6, \"part_id\": \"part:310010\", \"receipts\": 28}",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 310012 last 12 months: 26 receipts, 92.3% on time vs requested, 7.7% late.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "{\"avg_days_late_when_late\": 8.5, \"early_pct\": 0.0, \"late_pct\": 7.7, \"max_days_late\": 10, \"on_time_confirmed_pct\": 92.3, \"on_time_requested_pct\": 92.3, \"part_id\": \"part:310012\", \"receipts\": 26}",
+     "parts": [
+      "part:310012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 310010 has 15 QNs in total, 12 supplier-caused, ppm last 12 months 777, EUR 1,350 recharged.",
+     "kind": "fact",
+     "source": "evidence:part:310010:part_quality",
+     "quote": "\"complaint_qty\": 15, \"last_qn\": \"2026-08-20\", \"latest_qns\": [\"qn:20004995\", \"qn:20004978\", \"qn:20004934\"], \"ppm_last_12m\": 777, \"qns\": 15, \"received_last_12m\": 7720, \"recharged_eur\": 1350, \"supplier_caused\": 12",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier-caused QN 20004978 (missing marking, part 310010) from 2026-07-18 has no 8D closure date.",
+     "kind": "fact",
+     "source": "qn:20004978",
+     "quote": "\"d8_date\": null, \"defect\": \"missing marking\", \"gr_id\": \"gr:5000105198\", \"id\": \"qn:20004978\", \"part_id\": \"part:310010\", \"ppm\": 2632, \"qn_date\": \"2026-07-18\", \"returned_qty\": 1, \"supplier_caused\": 1",
+     "parts": [
+      "part:310010"
+     ],
+     "observed_at": "2026-07-18",
+     "valid_until": null
+    },
+    {
+     "text": "Part 310012 from this supplier had zero QNs and 0 ppm in the last 12 months.",
+     "kind": "fact",
+     "source": "evidence:part:310012:part_quality",
+     "quote": "{\"latest_qns\": [], \"ppm_last_12m\": 0, \"qns\": 0, \"received_last_12m\": 712, \"supplier_id\": \"sup:70110\"}",
+     "parts": [
+      "part:310012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [
+  {
+   "id": "obs:74c8fb437a4d0c3d",
+   "text": "Owner asked where the buyer gets its index figures; he works from his own spreadsheet last updated two years ago.",
+   "kind": "fact",
+   "source": "doc:20260824-70110-M1",
+   "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.",
+   "parts": [],
+   "observed_at": "2026-08-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:74c8fb437a4d0c3d",
+    "verdict": "reject",
+    "reason": "The kind is wrong: the owner's statement is labelled as an independent fact rather than a supplier statement."
+   }
+  }
+ ],
+ "validation": {
+  "dropped": []
+ }
+}

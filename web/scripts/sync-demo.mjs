@@ -51,6 +51,11 @@ const count = (list, f) => {
   return Object.fromEntries(Object.entries(out).sort((a, b) => b[1] - a[1]));
 };
 const mean = (xs) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null);
+const median = (xs) => {
+  if (!xs.length) return null;
+  const s = [...xs].sort((a, b) => a - b);
+  return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2;
+};
 const last = (xs) => xs[xs.length - 1];
 // Floats to 4 decimals on output (costs keep their cents, scores 4 places).
 const round = (_k, v) => (typeof v === "number" && !Number.isInteger(v) ? Math.round(v * 1e4) / 1e4 : v);
@@ -392,6 +397,18 @@ const stats = {
     kit_llm_runs: kitLlmRuns,
     avg_seconds: mean(allDecs.map((d) => d.seconds).filter((x) => typeof x === "number")),
     max_seconds: Math.max(...allDecs.map((d) => d.seconds).filter((x) => typeof x === "number")),
+    // How long a decision takes, by who made it; the first engine move of a run also builds the dossiers.
+    seconds_by_source: (() => {
+      const secs = (ds) => ds.map((d) => d.seconds).filter((x) => typeof x === "number");
+      const engine = secs(allDecs.filter((d) => d.source === "engine"));
+      const llm = secs(allDecs.filter((d) => d.source === "kit-llm"));
+      const first = secs(ours.map((r) => (r.decisions ?? [])[0]).filter((d) => d && d.source === "engine"));
+      return {
+        engine_median: median(engine), engine_max: engine.length ? Math.max(...engine) : null,
+        engine_first_move_median: median(first),
+        kit_llm_median: median(llm), kit_llm_max: llm.length ? Math.max(...llm) : null,
+      };
+    })(),
   },
   claims: {
     // What the arena made of each argument we wrote (one per sentence, max 3 checked per message).

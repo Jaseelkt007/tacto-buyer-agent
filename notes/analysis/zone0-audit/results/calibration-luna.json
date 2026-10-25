@@ -1,0 +1,308 @@
+{
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "meta": {
+    "seconds": 9.53,
+    "usage": {
+      "input_tokens": 2168,
+      "input_tokens_details": {
+        "cache_write_tokens": 2165,
+        "cached_tokens": 0
+      },
+      "output_tokens": 1217,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 3385
+    }
+  },
+  "audit": {
+    "findings": [
+      {
+        "claim_id": "payment_request",
+        "verdict": "supported",
+        "reason": "The 2026-09-02 email directly records the supplier asking for payment within 10 days and offering a cash discount in return.",
+        "excerpts": [
+          {
+            "ref": "doc:20260902-70110-M2",
+            "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "payment_reverse",
+        "verdict": "contradicted",
+        "reason": "The email makes the opposite request: it asks for payment within 10 days and offers a cash discount.",
+        "excerpts": [
+          {
+            "ref": "doc:20260902-70110-M2",
+            "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "cash_insolvency",
+        "verdict": "unsupported",
+        "reason": "The email records a request and proposed discount, not evidence of insolvency or financial condition.",
+        "excerpts": [
+          {
+            "ref": "doc:20260902-70110-M2",
+            "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "cash_free",
+        "verdict": "requires_case",
+        "reason": "The supplier's offer does not establish that faster payment is free to the buyer. Valuing the payment change requires the applicable case economics; the company record gives a standard 60-day term and an 8% annual cost of capital, but not the discount amount or case options.",
+        "excerpts": [
+          {
+            "ref": "doc:20260902-70110-M2",
+            "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount."
+          },
+          {
+            "ref": "package:company.md",
+            "quote": "Standard payment terms: 60 days net. Cost of capital for valuing payment terms:\n  8% a year."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "approval",
+        "verdict": "supported",
+        "reason": "The 2026-02-27 meeting note attributes to the supplier's key account manager the statement that price changes above 2% need pricing-committee approval. This supports what the manager explained, not independent proof of the approval process.",
+        "excerpts": [
+          {
+            "ref": "doc:20260227-70510-M2",
+            "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "approval_reverse",
+        "verdict": "contradicted",
+        "reason": "The note says changes above 2% need pricing-committee approval, contrary to the claim that the account manager can approve any change without review.",
+        "excerpts": [
+          {
+            "ref": "doc:20260227-70510-M2",
+            "quote": "price changes above 2 % need the approval of their pricing committee"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "renewal",
+        "verdict": "supported",
+        "reason": "The contract clause states it is valid through 2026-12-31 and extends by 12 months unless terminated with 90 days' notice.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070510#8.1",
+            "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "renewal_discount",
+        "verdict": "unsupported",
+        "reason": "The clause records an automatic 12-month extension unless notice is given; it says nothing about a 36-month term or a discount for longer commitment.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070510#8.1",
+            "quote": "extends by 12 months unless terminated with 90 days' notice."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "cost_estimate",
+        "verdict": "supported",
+        "reason": "The should-cost record dated 2026-07-15 identifies part:350011, supplier sup:70510, and gives unit cost 374.95 with 5% confidence/uncertainty. It is an estimate of this supplier's plant cost without margin, not an actual price or cost.",
+        "excerpts": [
+          {
+            "ref": "cost:350011",
+            "quote": "\"estimate_date\": \"2026-07-15\", \"cost_base\": \"DE\", \"supplier_id\": \"sup:70510\", \"unit_cost\": 374.95, \"price_unit\": 1"
+          },
+          {
+            "ref": "cost:350011",
+            "quote": "\"confidence_pct\": 5, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "cost_exact",
+        "verdict": "contradicted",
+        "reason": "The record is a should-cost estimate with 5% confidence, not an exact actual-cost figure. It therefore does not establish that the supplier cannot accept a lower price.",
+        "excerpts": [
+          {
+            "ref": "cost:350011",
+            "quote": "\"confidence_pct\": 5, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "old_shutdown",
+        "verdict": "supported",
+        "reason": "The 2025-10-19 email announced a shutdown from 23 December to 6 January; the record does not specify a year for those dates.",
+        "excerpts": [
+          {
+            "ref": "doc:20251019-70510-N",
+            "quote": "Our plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "current_shutdown",
+        "verdict": "unsupported",
+        "reason": "The email is dated 2025-10-19 and gives no year for the shutdown dates. It does not confirm a December 2026 closure and is stale for that asserted date.",
+        "excerpts": [
+          {
+            "ref": "doc:20251019-70510-N",
+            "quote": "email - 2025-10-19 - Antriebstechnik Nordmark AG"
+          },
+          {
+            "ref": "doc:20251019-70510-N",
+            "quote": "Our plant is closed from 23 December to 6 January."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      }
+    ],
+    "errors": [],
+    "complete": true,
+    "verdict_counts": {
+      "supported": 5,
+      "contradicted": 3,
+      "unsupported": 3,
+      "requires_case": 1
+    }
+  },
+  "comparisons": [
+    {
+      "claim_id": "payment_request",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "pass": true
+    },
+    {
+      "claim_id": "payment_reverse",
+      "expected": [
+        "contradicted"
+      ],
+      "actual": "contradicted",
+      "pass": true
+    },
+    {
+      "claim_id": "cash_insolvency",
+      "expected": [
+        "unsupported",
+        "inference"
+      ],
+      "actual": "unsupported",
+      "pass": true
+    },
+    {
+      "claim_id": "cash_free",
+      "expected": [
+        "requires_case",
+        "unsupported",
+        "contradicted"
+      ],
+      "actual": "requires_case",
+      "pass": true
+    },
+    {
+      "claim_id": "approval",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "pass": true
+    },
+    {
+      "claim_id": "approval_reverse",
+      "expected": [
+        "contradicted"
+      ],
+      "actual": "contradicted",
+      "pass": true
+    },
+    {
+      "claim_id": "renewal",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "pass": true
+    },
+    {
+      "claim_id": "renewal_discount",
+      "expected": [
+        "inference",
+        "unsupported",
+        "requires_case"
+      ],
+      "actual": "unsupported",
+      "pass": true
+    },
+    {
+      "claim_id": "cost_estimate",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "pass": true
+    },
+    {
+      "claim_id": "cost_exact",
+      "expected": [
+        "unsupported",
+        "inference",
+        "contradicted"
+      ],
+      "actual": "contradicted",
+      "pass": true
+    },
+    {
+      "claim_id": "old_shutdown",
+      "expected": [
+        "supported"
+      ],
+      "actual": "supported",
+      "pass": true
+    },
+    {
+      "claim_id": "current_shutdown",
+      "expected": [
+        "unsupported",
+        "inference"
+      ],
+      "actual": "unsupported",
+      "pass": true
+    }
+  ],
+  "passed": 12,
+  "total": 12,
+  "fixture_hash": "689af45e9c371902f8271657d5a9c95cc75c83875f153761f5ad35c34ed4ac6a"
+}

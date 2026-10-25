@@ -1,0 +1,134 @@
+{
+  "packet_sha256": "1a27a90d485a03106eb892ac2d30b91d521708e000e1698b352bdbb19ad5b14b",
+  "request_sha256": "b4a2450e6c5665adc98deff323cb51306df3d681dfc168a9055499b4c3fd8942",
+  "case_id": "case:D01",
+  "decision_index": 0,
+  "action": "send",
+  "model": "gpt-6-luna",
+  "available": true,
+  "error": null,
+  "answers": [
+    {
+      "type": "choice",
+      "name": "verdict",
+      "choice": "RECONSIDER",
+      "probabilities": [
+        {
+          "value": "NO_ISSUE",
+          "probability": 0.12
+        },
+        {
+          "value": "RECONSIDER",
+          "probability": 0.86
+        },
+        {
+          "value": "CONSTRAINT_CONFLICT",
+          "probability": 0.02
+        }
+      ],
+      "confidence": 0.79
+    },
+    {
+      "type": "choice",
+      "name": "field",
+      "choice": "unit_price",
+      "probabilities": [
+        {
+          "value": "NONE",
+          "probability": 0.13
+        },
+        {
+          "value": "claims",
+          "probability": 0.02
+        },
+        {
+          "value": "contract_months",
+          "probability": 0.08
+        },
+        {
+          "value": "coverage",
+          "probability": 0.04
+        },
+        {
+          "value": "effective_date",
+          "probability": 0.06
+        },
+        {
+          "value": "incoterm",
+          "probability": 0.01
+        },
+        {
+          "value": "lead_time_days",
+          "probability": 0.01
+        },
+        {
+          "value": "negotiation_status",
+          "probability": 0.04
+        },
+        {
+          "value": "offer_id",
+          "probability": 0.02
+        },
+        {
+          "value": "other",
+          "probability": 0.06
+        },
+        {
+          "value": "payment_days",
+          "probability": 0.13
+        },
+        {
+          "value": "unit_price",
+          "probability": 0.4
+        }
+      ],
+      "confidence": 0.35
+    },
+    {
+      "type": "choice",
+      "name": "evidence",
+      "choice": "case",
+      "probabilities": [
+        {
+          "value": "NONE",
+          "probability": 0.32
+        },
+        {
+          "value": "case",
+          "probability": 0.51
+        },
+        {
+          "value": "message:sup:DEMO-F1:0",
+          "probability": 0.17
+        }
+      ],
+      "confidence": 0.27
+    }
+  ],
+  "usage": {
+    "input_tokens": 4691,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 3105,
+      "cache_write_tokens_details": {
+        "ttl_30m_tokens": 3105,
+        "ttl_12h_tokens": 0
+      }
+    },
+    "output_tokens": 0,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4691
+  },
+  "response_id": null,
+  "verdict": "RECONSIDER",
+  "field": "unit_price",
+  "evidence": "case",
+  "supporting_source": {
+    "id": "case",
+    "kind": "buyer_requirements",
+    "text": "{\"case_id\": \"case:D01\", \"set\": \"demo\", \"type\": \"price_increase\", \"title\": \"Pump housing PH-100: the foundry wants +8.8 %\", \"briefing\": \"Demo Gießerei GmbH, our single source for the grey-iron pump housing PH-100 for 12 years, announces +8.8 % from 1 December citing energy and wages. Castings are a strategic category: the goal is to stabilise supply with a healthy partner, so squeezing the foundry below a 4 % margin costs us (from EUR 5,000 per margin point and year). We need 4,000 housings a year for the next two years; anything not covered by this deal costs EUR 55.00 per unit (spot buys and a second source). Price, payment terms, contract length and the date the new price applies are open; lead time and Incoterm are fixed.\", \"trigger_doc\": \"doc:D01-LETTER\", \"parts\": [\"part:PH-100\"], \"suppliers\": [\"sup:DEMO-F1\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"contract_months\", \"effective_date\"], \"fixed_terms\": {\"lead_time_days\": 35, \"incoterm\": \"FCA\"}, \"term_options\": {\"payment_days\": [30, 45, 60], \"contract_months\": [12, 24], \"effective_date\": [\"2026-12-01\", \"2027-01-01\", \"2027-02-01\", \"2027-04-01\"]}, \"buyer\": {\"category_goal\": \"stabilise\", \"need_per_year\": 4000, \"horizon_years\": 2, \"current_unit_price\": 48.6, \"fallback_unit_price\": 55.0, \"fallback_risk_pct\": 5, \"sustainable_margin_pct\": 4, \"relationship_eur_per_point\": 5000, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"late_cost_per_day\": 0, \"cost_per_defect\": 0, \"freight_eur_per_unit\": {\"EXW\": 1.9, \"FCA\": 1.2, \"DAP\": 0.0}, \"index_paths\": {}, \"must_haves\": [], \"alternative\": {\"kind\": \"none\"}}, \"round_limit\": 10, \"refs\": [\"doc:D01-LETTER\", \"ctr:D01-FRAMEWORK\", \"sc:DEMO-F1@2026Q2\", \"sc:DEMO-F1@2026Q3\", \"po:4500001201\", \"po:4500001288\", \"po:4500001342\", \"cost:part:PH-100\"]}"
+  },
+  "seconds": 2.027
+}

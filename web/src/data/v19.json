@@ -1,0 +1,5026 @@
+{
+  "version": "v1.9",
+  "dossier_commit": "44dbff9",
+  "dossier_scope": "Data-package estimate after opening-quote cap; before observed quote-rate updates.",
+  "benchmark": {
+    "mean": 75.08633070732972,
+    "cases": 10,
+    "deals": 10,
+    "engine_decisions": 50,
+    "llm_decisions": 0,
+    "repeats": [
+      {
+        "name": "zone0-v3-baseline-r1",
+        "mean": 75.08633070732971
+      },
+      {
+        "name": "zone0-v3-baseline-r2",
+        "mean": 75.08633070732971
+      },
+      {
+        "name": "zone0-v3-baseline-r3",
+        "mean": 75.08633070732971
+      },
+      {
+        "name": "zone0-v3-baseline-r4",
+        "mean": 75.08633070732971
+      },
+      {
+        "name": "zone0-v3-baseline-r5",
+        "mean": 75.08633070732971
+      }
+    ]
+  },
+  "sessions": [
+    {
+      "id": "fcf8fb00383ddc35",
+      "case_id": "P01",
+      "title": "Brandlhuber announces +9.5 % on HN volute casings",
+      "type": "price_increase",
+      "goal": "stabilise",
+      "need": 8150,
+      "round_limit": 10,
+      "negotiable": [
+        "unit_price",
+        "effective_date",
+        "payment_days"
+      ],
+      "source_file": "runs/P01/20261025T032653_procudeal_fcf8fb00383ddc35.json",
+      "source_sha256": "44b4c06ee67af5c942e64e054e5e30e2daa880dfc5690ff71102a6bebff595a0",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:26:53+00:00",
+      "seconds": 2.8,
+      "engine_seconds": 0.091,
+      "decision_count": 3,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70110",
+          "name": "Gießerei Brandlhuber GmbH & Co. KG",
+          "country": "DE",
+          "owner_type": "family",
+          "contract_id": "ctr:4600070110",
+          "interest_rate": 0.125,
+          "cash_need": true,
+          "wants_work": false,
+          "capacity_full": false,
+          "hedged": false,
+          "ppm": 712,
+          "skonto_rate": 0.0,
+          "full_cost": 132.64,
+          "full_cost_source": "should-cost of its plant (cost:310010)",
+          "full_cost_floor": 126.01,
+          "rate_measured": false,
+          "notes": [
+            "asks for faster payment / cash"
+          ],
+          "documents": [
+            {
+              "id": "doc:20251217-70110-N",
+              "subject": "Holiday shutdown"
+            },
+            {
+              "id": "doc:20260715-70110-M5",
+              "subject": "Visit by the owner"
+            },
+            {
+              "id": "doc:20260824-70110-M1",
+              "subject": "Price discussion"
+            },
+            {
+              "id": "doc:20260902-70110-M2",
+              "subject": "Payment of invoices"
+            },
+            {
+              "id": "doc:20260909-70110-M4",
+              "subject": "Visit by the owner"
+            },
+            {
+              "id": "doc:20260911-70110-P01",
+              "subject": "Price adjustment from 01 November 2026"
+            },
+            {
+              "id": "doc:20260917-70110-M3",
+              "subject": "Visit by the owner"
+            }
+          ],
+          "opening_price": 138.55
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70110",
+          "round": 0,
+          "status": "open",
+          "body": "Guten Tag,\n\nThank you for your enquiry. Please find our Angebot below. For many years, our family foundry has taken great pride in supplying your respected company with high-quality castings from our region, and we value our long standing relationship very much.\n\nOur team has prepared our offer carefully. We can offer you a price of €138.55 per unit, valid from 1 November 2026. This Angebot remains valid for 30 days.\n\nTo remain transparent about our situation, LCI-C rose 2.7 % in twelve months and is 30 % of our cost. Furthermore, PPI-C241 rose 6.5 % in twelve months and is 24 % of our cost. We trust that you understand the necessity of these figures for our ongoing operation and quality standards.\n\nViele Grüße aus der Gießerei\nThomas Brandlhuber\nOwner, Gießerei Brandlhuber GmbH & Co. KG",
+          "price": 138.55,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "138.55"
+              },
+              {
+                "label": "effective date",
+                "value": "2026-11-01"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70110",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour letter gives 51 days' notice (doc:20260911-70110-P01), while our framework agreement requires 90 days (ctr:4600070110#3.1).\nOur bottom-up cost model puts the full cost of this part at EUR 132.64 per unit (cost:310010).\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 126.53,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "126.53"
+              },
+              {
+                "label": "effective date",
+                "value": "2026-11-01"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              }
+            ]
+          ],
+          "refs": [
+            "cost:310010",
+            "ctr:4600070110#3.1",
+            "doc:20260911-70110-P01",
+            "idx:PPI-D351@2025-11",
+            "idx:PPI-D351@2026-08"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 126.53,
+            "anchor": 126.53,
+            "ceiling": 138.05,
+            "cost": 1058830,
+            "limit": 1153780,
+            "claims": [
+              "notice_period",
+              "should_cost",
+              "index_change"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.089
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70110",
+          "round": 1,
+          "status": "open",
+          "body": "Guten Tag,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nOur family foundry values the long relationship between our companies, and we appreciate your thoroughness. We checked the should cost data you cited; it holds and we took it into account. We checked the notice period data you cited; it holds and we took it into account. As to the index change and should cost and notice period data you cited, we did not know that - a fair point. We have carefully reviewed your data regarding the energy index and your cost model, and we respect your thoroughness. We appreciate your offer of 14-day payment terms, which we have incorporated into our revised proposal.\n\nLCI-C rose 2.7 % in twelve months and is 30 % of our cost. That remains. PPI-C241 rose 6.5 % in twelve months and is 24 % of our cost. That remains. Our price reflects our costs; our calculation stays internal. Our costs move with LCI-C, PPI-C241, PPI-D351; the figures stay with us. Our standard Zahlungsziel is 30 days net. Our general terms and conditions apply; the quote lists our standard terms.\n\nIn consideration of these points and the notice period, we are prepared to adjust our price to €134.00 per unit for an implementation on 2026-11-01. Our offer presents a price of €134.00 per unit, Zahlungsziel 14 days net, valid from 1 November 2026. This Angebot stays valid for 30 days.\n\nViele Grüße aus der Gießerei\nThomas Brandlhuber\nOwner, Gießerei Brandlhuber GmbH & Co. KG",
+          "price": 134.0,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "134.0"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "effective date",
+                "value": "2026-11-01"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            },
+            {
+              "result": "verified",
+              "index": 2
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70110",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nYour rolling scorecard shows on-time delivery of 85.2% (sc:70110@2026Q3).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 128.77,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "128.77"
+              },
+              {
+                "label": "effective date",
+                "value": "2026-11-01"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              }
+            ]
+          ],
+          "refs": [
+            "sc:70110@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 128.77,
+            "anchor": 126.53,
+            "ceiling": 138.05,
+            "cost": 1077273,
+            "limit": 1153780,
+            "claims": [
+              "delivery_record"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70110",
+          "round": 2,
+          "status": "open",
+          "body": "Guten Tag,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nAs to the delivery record data you cited, we did not know that - a fair point. We have reviewed the delivery scorecard data you provided; as a family foundry that prides itself on reliability, we take this seriously and are addressing it. \n\nWe appreciate your continued offer of 14-day payment terms. In light of your verified data, we are prepared to adjust our price to €131.20 per unit. \n\nOur current Angebot consists of a price of €131.20 per unit, Zahlungsziel 14 days net, valid from 1 November 2026. Our Lieferzeit is 42 days. Please note that this offer remains valid for 30 days.\n\nWe value the long relationship between our companies and look forward to continuing our work together.\n\nViele Grüße aus der Gießerei\nThomas Brandlhuber\nOwner, Gießerei Brandlhuber GmbH & Co. KG",
+          "price": 131.2,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "131.2"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "effective date",
+                "value": "2026-11-01"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70110",
+          "round": 2,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "at the price that is cheapest for us with the relationship charge; C 1,116,655 below the limit 1,153,780",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        }
+      ],
+      "result": {
+        "score": 91.38527237221562,
+        "opening_cost": 1153779.74,
+        "deal_cost": 1101723.07,
+        "unit_price": 131.2,
+        "supplier_id": "sup:70110",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "14"
+          },
+          {
+            "label": "lead time days",
+            "value": "42"
+          },
+          {
+            "label": "volume per year",
+            "value": "8150"
+          },
+          {
+            "label": "contract months",
+            "value": "12"
+          },
+          {
+            "label": "effective date",
+            "value": "2026-11-01"
+          },
+          {
+            "label": "incoterm",
+            "value": "FCA"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "900"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "131.2"
+          }
+        ],
+        "rounds": 3
+      }
+    },
+    {
+      "id": "098ff1a8ee022c6d",
+      "case_id": "P02",
+      "title": "Nordmark passes on copper for the 7.5 kW motor",
+      "type": "price_increase",
+      "goal": "stabilise",
+      "need": 6110,
+      "round_limit": 10,
+      "negotiable": [
+        "unit_price",
+        "payment_days",
+        "index_clause"
+      ],
+      "source_file": "runs/P02/20261025T032653_procudeal_098ff1a8ee022c6d.json",
+      "source_sha256": "43e0ea4295b832c483993a918394213f817a43dc9f144af2db33d62a59249d1e",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:26:53+00:00",
+      "seconds": 2.4,
+      "engine_seconds": 0.077,
+      "decision_count": 2,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70510",
+          "name": "Antriebstechnik Nordmark AG",
+          "country": "DE",
+          "owner_type": "group",
+          "contract_id": "ctr:4600070510",
+          "interest_rate": 0.05,
+          "cash_need": false,
+          "wants_work": false,
+          "capacity_full": false,
+          "hedged": false,
+          "ppm": 273,
+          "skonto_rate": 0.0,
+          "full_cost": 369.11,
+          "full_cost_source": "should-cost of its plant (cost:350011)+quote cap",
+          "full_cost_floor": 356.2,
+          "rate_measured": false,
+          "notes": [],
+          "documents": [
+            {
+              "id": "doc:20251019-70510-N",
+              "subject": "Holiday shutdown"
+            },
+            {
+              "id": "doc:20260227-70510-M2",
+              "subject": "Annual review"
+            },
+            {
+              "id": "doc:20260410-70510-M1",
+              "subject": "Annual review"
+            },
+            {
+              "id": "doc:20260914-70510-P02",
+              "subject": "Price adjustment from 01 January 2027"
+            }
+          ],
+          "opening_price": 370.96
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70510",
+          "round": 0,
+          "status": "open",
+          "body": "Dear Sir or Madam,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe offer a price of €370.96 per unit, Zahlungsziel 30 days net, no Preisgleitklausel. \n\nRegarding our cost structure, CU-NOTATION rose 47.7 % in twelve months and is 20 % of our cost. Furthermore, LCI-C rose 2.7 % in twelve months and is 20 % of our cost. Additionally, PPI-C241 rose 6.5 % in twelve months and is 14 % of our cost.\n\nPlease note that this offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nPetra Lechner\nKey Account Manager, Antriebstechnik Nordmark AG",
+          "price": 370.96,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "370.96"
+              },
+              {
+                "label": "payment days",
+                "value": "30"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70510",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\nOur proposal includes a price adjustment clause on the cost driver you named.\n\nOur data shows a different picture on some points:\nOur demand forecast for this part has risen 11.9% (fc:350011@2026-09).\nOur last 3 orders for this part were at EUR 348.32 per unit (po:4500014474-10, po:4500014413-10, po:4500014350-20).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 361.82,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "361.82"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"CU-NOTATION\", \"material_share\": 0.2, \"deadband_pct\": 5, \"base_month\": \"2026-08\"}"
+              }
+            ]
+          ],
+          "refs": [
+            "fc:350011@2026-09",
+            "po:4500014350-20",
+            "po:4500014413-10",
+            "po:4500014474-10"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 361.82,
+            "anchor": 361.82,
+            "ceiling": 372.88,
+            "cost": 2214859,
+            "limit": 2282867,
+            "claims": [
+              "volume_change",
+              "order_history"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.076
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70510",
+          "round": 1,
+          "status": "agreed",
+          "body": "Dear Sir or Madam,\n\nWe checked the price history data you cited; it holds, but it does not change our calculation. Our price reflects our costs; our calculation stays internal. We checked the volume change data you cited; it holds and we took it into account. A binding higher volume would help us and can improve the price. Which volume can you commit to?\n\nWe agree to the implementation of a price adjustment clause for copper, which allows us to remove the material risk premium from our base price. We can accept your terms and await your order.\n\nOur Angebot is valid for 30 days. We offer a price of €361.82 per unit, Zahlungsziel 90 days net, and a Preisgleitklausel on CU-NOTATION.\n\nMit freundlichen Grüßen\nPetra Lechner\nKey Account Manager, Antriebstechnik Nordmark AG",
+          "price": 361.82,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "361.82"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"CU-NOTATION\", \"material_share\": 0.2, \"deadband_pct\": 5.0, \"base_month\": \"2026-08\"}"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70510",
+          "round": 1,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "agreed; C 2,251,155 below the limit 2,282,867",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        }
+      ],
+      "result": {
+        "score": 73.40184789109297,
+        "opening_cost": 2282867.49,
+        "deal_cost": 2248109.19,
+        "unit_price": 361.82,
+        "supplier_id": "sup:70510",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "90"
+          },
+          {
+            "label": "lead time days",
+            "value": "35"
+          },
+          {
+            "label": "volume per year",
+            "value": "6110"
+          },
+          {
+            "label": "contract months",
+            "value": "12"
+          },
+          {
+            "label": "effective date",
+            "value": "2027-01-01"
+          },
+          {
+            "label": "index clause",
+            "value": "{\"series\": \"CU-NOTATION\", \"material_share\": 0.2, \"deadband_pct\": 5.0, \"base_month\": \"2026-08\"}"
+          },
+          {
+            "label": "incoterm",
+            "value": "DAP"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "250"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "361.82"
+          }
+        ],
+        "rounds": 2
+      }
+    },
+    {
+      "id": "b8851e350b4f7aae",
+      "case_id": "P03",
+      "title": "Frame agreement renewal for the 7.5 kW frequency converter",
+      "type": "renewal",
+      "goal": "stabilise",
+      "need": 4580,
+      "round_limit": 10,
+      "negotiable": [
+        "unit_price",
+        "payment_days",
+        "contract_months",
+        "volume_per_year"
+      ],
+      "source_file": "runs/P03/20261025T032738_procudeal_b8851e350b4f7aae.json",
+      "source_sha256": "95222b6bedff7bcfd89ce40548cbe742a490d0e57ded19c2a2a16aa255536fa8",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:27:38+00:00",
+      "seconds": 48.9,
+      "engine_seconds": 0.027000000000000003,
+      "decision_count": 3,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70530",
+          "name": "Selvbrunn Drive Systems GmbH",
+          "country": "DE",
+          "owner_type": "group",
+          "contract_id": "ctr:4600070530",
+          "interest_rate": 0.05,
+          "cash_need": false,
+          "wants_work": false,
+          "capacity_full": false,
+          "hedged": false,
+          "ppm": 0,
+          "skonto_rate": 0.0,
+          "full_cost": 403.15,
+          "full_cost_source": "should-cost of its plant (cost:350020)+quote cap",
+          "full_cost_floor": 383.05,
+          "rate_measured": false,
+          "notes": [],
+          "documents": [
+            {
+              "id": "doc:20251201-70530-N",
+              "subject": "Holiday shutdown"
+            },
+            {
+              "id": "doc:20260826-70530-M1",
+              "subject": "Annual review"
+            },
+            {
+              "id": "doc:20260909-70530-M2",
+              "subject": "Annual review"
+            },
+            {
+              "id": "doc:20260917-70530-P03",
+              "subject": "Renewal of framework agreement 4600070530"
+            }
+          ],
+          "opening_price": 438.21
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70530",
+          "round": 0,
+          "status": "open",
+          "body": "Dear Sir or Madam,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe offer a price of €438.21 per unit, a volume of 4580 pcs per year, a contract term of 12 months, and a Zahlungsziel 30 days net. This offer remains valid for 30 days.\n\nRegarding our cost structure, CU-NOTATION rose 47.7 % in twelve months and is 5 % of our cost. LCI-C rose 2.7 % in twelve months and is 16 % of our cost. Furthermore, PPI-C2611 rose 13.5 % in twelve months and is 42 % of our cost.\n\nMit freundlichen Grüßen\nBirgit Mayrhofer\nKey Account Manager, Selvbrunn Drive Systems GmbH",
+          "price": 438.21,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "438.21"
+              },
+              {
+                "label": "payment days",
+                "value": "30"
+              },
+              {
+                "label": "contract months",
+                "value": "12"
+              },
+              {
+                "label": "volume per year",
+                "value": "4580"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70530",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nOur bottom-up cost model puts the full cost of this part at EUR 403.21 per unit (cost:350020).\nYour rolling scorecard shows on-time delivery of 84.6% (sc:70530@2026Q3).\nOur demand forecast for this part has risen 10.3% (fc:350020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 425.38,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "425.38"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              },
+              {
+                "label": "volume per year",
+                "value": "4580"
+              }
+            ]
+          ],
+          "refs": [
+            "cost:350020",
+            "fc:350020@2026-09",
+            "sc:70530@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 425.38,
+            "anchor": 425.38,
+            "ceiling": 466.46,
+            "cost": 3872505,
+            "limit": 4246314,
+            "claims": [
+              "should_cost",
+              "delivery_record",
+              "volume_change"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.025
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70530",
+          "round": 1,
+          "status": "open",
+          "body": "Dear Sir or Madam,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We checked the volume change data you cited; it holds and we took it into account. We checked the should cost data you cited; it holds and we took it into account. As to the delivery record and volume change and should cost data you cited, our management has frozen all price reductions until December 2027. We can talk about the terms instead - payment, volume or contract length. We have reviewed your data regarding the cost model, delivery performance, and demand forecast. While company policy currently restricts base price reductions, we can offer a price adjustment to €432.15 based on the extended 36-month contract term and 90-day payment period you proposed. \n\nOur current Angebot comprises a price of €432.15 per unit, Zahlungsziel 90 days net, a volume of 4580 pcs per year, and a contract term of 36 months. Which volume can you commit to? Material accounts for about 42 % of our cost; more detail we do not share. A binding higher volume would help us and can improve the price. This offer stays valid for 30 days.\n\nMit freundlichen Grüßen\nBirgit Mayrhofer\nKey Account Manager, Selvbrunn Drive Systems GmbH",
+          "price": 432.15,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "432.15"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              },
+              {
+                "label": "volume per year",
+                "value": "4580"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            },
+            {
+              "result": "verified",
+              "index": 2
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70530",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nWe can commit to 4,580 pieces per year over 36 months, as set out in our proposal below.\nWe understand that your price is fixed for now, so we have looked at the terms instead.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 412.74 per unit (po:4500014465-10, po:4500014417-10, po:4500014351-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 431.29,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "431.29"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              },
+              {
+                "label": "volume per year",
+                "value": "4580"
+              }
+            ]
+          ],
+          "refs": [
+            "po:4500014351-10",
+            "po:4500014417-10",
+            "po:4500014465-10"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 431.29,
+            "anchor": 425.38,
+            "ceiling": 466.46,
+            "cost": 3926280,
+            "limit": 4246314,
+            "claims": [
+              "order_history"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70530",
+          "round": 2,
+          "status": "open",
+          "body": "Dear Sir or Madam,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nWe checked the price history data you cited; it holds, but it does not change our calculation. We have verified the historical purchase order data you provided. However, as previously communicated, our management has frozen all price reductions until December 2027. We can talk about the terms instead - payment, volume or contract length. \n\nOur price follows our main cost drivers: PPI-C2611, LCI-C, CU-NOTATION. We have already factored the 36-month contract term and 90-day payment period into our offer of €432.15, which we must maintain. Our current offer comprises a price of €432.15 per unit, Zahlungsziel 90 days net, a volume of 4580 pcs per year, and a contract term of 36 months. This offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nBirgit Mayrhofer\nKey Account Manager, Selvbrunn Drive Systems GmbH",
+          "price": 432.15,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "432.15"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              },
+              {
+                "label": "volume per year",
+                "value": "4580"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70530",
+          "round": 2,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "within half a percent of our offer; C 3,958,486 below the limit 4,246,314",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        }
+      ],
+      "result": {
+        "score": 92.28331929713947,
+        "opening_cost": 4246314.02,
+        "deal_cost": 3935069.22,
+        "unit_price": 432.15,
+        "supplier_id": "sup:70530",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "90"
+          },
+          {
+            "label": "lead time days",
+            "value": "49"
+          },
+          {
+            "label": "volume per year",
+            "value": "4580"
+          },
+          {
+            "label": "contract months",
+            "value": "36"
+          },
+          {
+            "label": "effective date",
+            "value": "2027-01-01"
+          },
+          {
+            "label": "incoterm",
+            "value": "DAP"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "350"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "432.15"
+          }
+        ],
+        "rounds": 3
+      }
+    },
+    {
+      "id": "c7e46530afccc59b",
+      "case_id": "P04",
+      "title": "Renewal of the ball bearing 6306 agreement",
+      "type": "renewal",
+      "goal": "routine",
+      "need": 20000,
+      "round_limit": 10,
+      "negotiable": [
+        "unit_price",
+        "payment_days",
+        "contract_months"
+      ],
+      "source_file": "runs/P04/20261025T032654_procudeal_c7e46530afccc59b.json",
+      "source_sha256": "3144e3f0cb2429ca8bbf9ed9d3d0814dfc14308100c57fa1211096f0d7447831",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:26:54+00:00",
+      "seconds": 3.4,
+      "engine_seconds": 0.017,
+      "decision_count": 4,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70620",
+          "name": "Wälzlager-Zentrum Süd GmbH",
+          "country": "DE",
+          "owner_type": "family",
+          "contract_id": "ctr:4600070620",
+          "interest_rate": 0.075,
+          "cash_need": false,
+          "wants_work": false,
+          "capacity_full": false,
+          "hedged": false,
+          "ppm": 302,
+          "skonto_rate": 0.0,
+          "full_cost": 4.46,
+          "full_cost_source": "quote less 10%",
+          "full_cost_floor": 0.0,
+          "rate_measured": false,
+          "notes": [],
+          "documents": [
+            {
+              "id": "doc:20251216-70620-N",
+              "subject": "Trade fair invitation"
+            },
+            {
+              "id": "doc:20260427-70620-M5",
+              "subject": "Customer portfolio"
+            },
+            {
+              "id": "doc:20260501-70620-M3",
+              "subject": "Customer portfolio"
+            },
+            {
+              "id": "doc:20260616-70620-M6",
+              "subject": "Price discussion"
+            },
+            {
+              "id": "doc:20260627-70620-M2",
+              "subject": "Commercial terms"
+            },
+            {
+              "id": "doc:20260706-70620-M1",
+              "subject": "Range changes"
+            },
+            {
+              "id": "doc:20260917-70620-M4",
+              "subject": "Account review"
+            },
+            {
+              "id": "doc:20260920-70620-P04",
+              "subject": "Renewal of framework agreement 4600070620"
+            }
+          ],
+          "opening_price": 4.96
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70620",
+          "round": 0,
+          "status": "open",
+          "body": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below. We are pleased to present our current offer for your requirements, maintaining our commitment to supporting your business with top-quality service and our extensive product range.\n\nFor this offer, we quote a price of €4.96 per unit, with a Zahlungsziel 30 days net and a contract term of 12 months. Please note that this offer remains valid for 30 days.\n\nTo provide some background on our pricing calculations, LCI-C rose 2.7 % in twelve months and is 10 % of our cost. Furthermore, PPI-C2815 rose 0.8 % in twelve months and is 65 % of our cost.\n\nMit freundlichen Grüßen\nFlorian Gruber\nInside Sales, Wälzlager-Zentrum Süd GmbH",
+          "price": 4.96,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.96"
+              },
+              {
+                "label": "payment days",
+                "value": "30"
+              },
+              {
+                "label": "contract months",
+                "value": "12"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70620",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows on-time delivery of 85.0% (sc:70620@2026Q3).\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\nOur last 3 orders for this part were at EUR 4.39 per unit (po:4500014467-10, po:4500014389-10, po:4500014329-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 4.22,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.22"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [
+            "fc:360020@2026-09",
+            "po:4500014329-10",
+            "po:4500014389-10",
+            "po:4500014467-10",
+            "sc:70620@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 4.22,
+            "anchor": 4.22,
+            "ceiling": 4.98,
+            "cost": 168245,
+            "limit": 198846,
+            "claims": [
+              "delivery_record",
+              "volume_change",
+              "order_history"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.015
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70620",
+          "round": 1,
+          "status": "open",
+          "body": "Dear customer,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We have reviewed your proposal for a 36-month contract and 90-day payment terms. We checked the delivery record data you cited; it holds, but it does not change our calculation. We checked the price history data you cited; it holds, but it does not change our calculation. We checked the volume change data you cited; it holds, but it does not change our calculation. That does not change our position. \n\nWhile we note your comments on past orders and delivery performance, our pricing must reflect current costs and the extended terms requested. We can offer €4.94 per unit for this package.\n\nOur current Angebot consists of a price of €4.94 per unit, Zahlungsziel 90 days net, a contract term of 36 months. Please note that this offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nFlorian Gruber\nInside Sales, Wälzlager-Zentrum Süd GmbH",
+          "price": 4.94,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.94"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            },
+            {
+              "result": "verified",
+              "index": 2
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70620",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 4.44,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.44"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 4.44,
+            "anchor": 4.22,
+            "ceiling": 4.98,
+            "cost": 176986,
+            "limit": 198846,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70620",
+          "round": 2,
+          "status": "open",
+          "body": "Dear customer,\n\nThank you for your revised proposal. We have reviewed your offer and can adjust our Angebot as follows. We are always keen to support your operations with our extensive inventory and reliable service, so we are pleased to present our updated conditions for you.\n\nOur price of €4.94 remains firm for this package. Specifically, our offer includes a price of €4.94 per unit, Zahlungsziel 90 days net, a contract term of 36 months. \n\nPlease note that this offer remains valid for 30 days. We look forward to continuing our great working relationship and supplying your needs.\n\nMit freundlichen Grüßen\nFlorian Gruber\nInside Sales, Wälzlager-Zentrum Süd GmbH",
+          "price": 4.94,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.94"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70620",
+          "round": 3,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 4.59,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.59"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "send",
+            "price": 4.59,
+            "anchor": 4.22,
+            "ceiling": 4.98,
+            "cost": 182946,
+            "limit": 198846,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70620",
+          "round": 3,
+          "status": "final_offer",
+          "body": "Dear customer,\n\nThank you for your ongoing partnership with Wälzlager-Zentrum Süd GmbH. We have carefully reviewed your offer, but we cannot accommodate further price reductions for the requested 90-day payment terms and 36-month contract. We take pride in supporting your business with our dedicated service and comprehensive range, and we are keen to keep you as a valued customer.\n\nThis is our final offer (letztes Angebot). Please decide. Our price of €4.94 remains firm for this package.\n\nOur current Angebot consists of a price of €4.94 per unit, Zahlungsziel 90 days net, a contract term of 36 months. Please note that our price follows our main cost drivers: PPI-C2815, LCI-C.\n\nThis offer is valid for 7 days.\n\nMit freundlichen Grüßen\nFlorian Gruber\nInside Sales, Wälzlager-Zentrum Süd GmbH",
+          "price": 4.94,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.94"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70620",
+          "round": 3,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 3,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "final_offer; C 196,853 below the limit 198,846",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.0
+          }
+        }
+      ],
+      "result": {
+        "score": 86.04451426623068,
+        "opening_cost": 198846.33,
+        "deal_cost": 196852.67,
+        "unit_price": 4.94,
+        "supplier_id": "sup:70620",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "90"
+          },
+          {
+            "label": "lead time days",
+            "value": "7"
+          },
+          {
+            "label": "volume per year",
+            "value": "20000"
+          },
+          {
+            "label": "contract months",
+            "value": "36"
+          },
+          {
+            "label": "effective date",
+            "value": "2027-01-01"
+          },
+          {
+            "label": "incoterm",
+            "value": "DAP"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "150"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "4.94"
+          }
+        ],
+        "rounds": 4
+      }
+    },
+    {
+      "id": "664aa169f73412d2",
+      "case_id": "P05",
+      "title": "RFQ: pump shaft for the new HX series",
+      "type": "rfq",
+      "goal": "leverage",
+      "need": 4200,
+      "round_limit": 10,
+      "negotiable": [
+        "unit_price",
+        "payment_days",
+        "lead_time_days"
+      ],
+      "source_file": "runs/P05/20261025T032659_procudeal_664aa169f73412d2.json",
+      "source_sha256": "97c319a6a18575c08bc59cb6b62e1d246fafa5f55607df26de9175d928f251e5",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:26:59+00:00",
+      "seconds": 9.4,
+      "engine_seconds": 0.060000000000000005,
+      "decision_count": 12,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70210",
+          "name": "Zerspanung Dralveck GmbH",
+          "country": "DE",
+          "owner_type": "founder",
+          "contract_id": "ctr:4600070210",
+          "interest_rate": 0.2,
+          "cash_need": true,
+          "wants_work": false,
+          "capacity_full": false,
+          "hedged": false,
+          "ppm": 1863,
+          "skonto_rate": 0.2,
+          "full_cost": 35.82,
+          "full_cost_source": "should-cost DE x 1.0 (cost:320070)+quote cap",
+          "full_cost_floor": 31.34,
+          "rate_measured": false,
+          "notes": [
+            "asks for faster payment / cash",
+            "cash discount implies 20% cost of money"
+          ],
+          "documents": [
+            {
+              "id": "doc:20251123-70210-N",
+              "subject": "ISO 9001 certificate"
+            },
+            {
+              "id": "doc:20260504-70210-P",
+              "subject": "Overdue invoices"
+            },
+            {
+              "id": "doc:20260722-70210-M2",
+              "subject": "Capacity"
+            },
+            {
+              "id": "doc:20260908-70210-M1",
+              "subject": "Visit by the owner"
+            },
+            {
+              "id": "doc:20260910-70210-M3",
+              "subject": "Supplier day"
+            },
+            {
+              "id": "doc:20260923-70210-P05",
+              "subject": "Request for quotation: Pump shaft HX"
+            }
+          ],
+          "opening_price": 36.0
+        },
+        {
+          "supplier_id": "sup:70240",
+          "name": "Strojírna Hrvelec s.r.o.",
+          "country": "CZ",
+          "owner_type": "founder",
+          "contract_id": "ctr:4600070240",
+          "interest_rate": 0.1,
+          "cash_need": false,
+          "wants_work": false,
+          "capacity_full": true,
+          "hedged": false,
+          "ppm": 980,
+          "skonto_rate": 0.0,
+          "full_cost": 30.23,
+          "full_cost_source": "should-cost DE x 0.82 (cost:320070)",
+          "full_cost_floor": 25.7,
+          "rate_measured": false,
+          "notes": [
+            "capacity full"
+          ],
+          "documents": [
+            {
+              "id": "doc:20251203-70240-N",
+              "subject": "Trade fair invitation"
+            },
+            {
+              "id": "doc:20260924-70240-M1",
+              "subject": "New volumes"
+            }
+          ],
+          "opening_price": 31.5
+        },
+        {
+          "supplier_id": "sup:70250",
+          "name": "Drehteile Fuchsreiter GmbH",
+          "country": "DE",
+          "owner_type": "founder",
+          "contract_id": "ctr:4600070250",
+          "interest_rate": 0.15000000000000002,
+          "cash_need": true,
+          "wants_work": true,
+          "capacity_full": false,
+          "hedged": false,
+          "ppm": 318,
+          "skonto_rate": 0.0,
+          "full_cost": 36.87,
+          "full_cost_source": "should-cost DE x 1.0 (cost:320070)",
+          "full_cost_floor": 31.34,
+          "rate_measured": false,
+          "notes": [
+            "asks for faster payment / cash",
+            "looks for work"
+          ],
+          "documents": [
+            {
+              "id": "doc:20251016-70250-N",
+              "subject": "Holiday shutdown"
+            },
+            {
+              "id": "doc:20260620-70250-M3",
+              "subject": "Capacity"
+            },
+            {
+              "id": "doc:20260723-70250-M1",
+              "subject": "Capacity"
+            },
+            {
+              "id": "doc:20260811-70250-M2",
+              "subject": "Supplier day"
+            },
+            {
+              "id": "doc:20260818-70250-P",
+              "subject": "Overdue invoices"
+            },
+            {
+              "id": "doc:20260904-70250-M4",
+              "subject": "Payment of invoices"
+            }
+          ],
+          "opening_price": 38.5
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70210",
+          "round": 0,
+          "status": "open",
+          "body": "Hallo,\n\nThank you for your enquiry. Please find our Angebot below.\n\nIt is good to hear from you again. For this work, we can offer a price of €36.00 per unit. We have our CNC machines ready and look forward to putting this job onto the shop floor for you. \n\nLet me know if this works for you so we can get started soon.\n\nGruß\nAndreas Dralveck\nOwner, Zerspanung Dralveck GmbH",
+          "price": 36.0,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "36.0"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70240",
+          "round": 0,
+          "status": "open",
+          "body": "Hello,\n\nThank you for your enquiry. Please find our Angebot below. We are very eager to work together with you and to prove ourselves as a reliable, long-term partner for your business!\n\nWe are happy to offer you a price of €31.50 per unit, Lieferzeit 52 days. \n\nPlease note that this offer stays valid for 30 days. We really look forward to hearing from you soon and hope we can start a great cooperation!\n\nKind regards\nJana Procházková\nExport Manager, Strojírna Hrvelec s.r.o.",
+          "price": 31.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "31.5"
+              },
+              {
+                "label": "lead time days",
+                "value": "52"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70250",
+          "round": 0,
+          "status": "open",
+          "body": "Hallo,\nhere is our price.\nOur terms: a price of €38.50 per unit.\nJust write if something is unclear.\nGruß\nClaudia Fuchsreiter\nOwner, Drehteile Fuchsreiter GmbH",
+          "price": 38.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "38.5"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70210",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nYour rolling scorecard shows on-time delivery of 80.8% (sc:70210@2026Q3).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 27.48,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "27.48"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [
+            "idx:PPI-C2431@2026-06",
+            "idx:PPI-C2431@2026-08",
+            "sc:70210@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 27.48,
+            "anchor": 27.48,
+            "ceiling": 35.87,
+            "cost": 234321,
+            "limit": 305545,
+            "claims": [
+              "index_change",
+              "delivery_record"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.05
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70210",
+          "round": 1,
+          "status": "open",
+          "body": "Hallo,\n\nWe have reviewed your offer and can adjust our Angebot as follows. Hallo, you did your homework with the material index and our delivery score, I'll give you that. We checked the index change data you cited; it holds and we took it into account. We checked the delivery record data you cited; it holds and we took it into account. We did not know that - a fair point. Getting paid in 14 days really helps us out right now, so I can come down on the price.\n\nWe now offer a price of €32.00 per unit, Zahlungsziel 14 days net, Lieferzeit 35 days.\n\nGruß\nAndreas Dralveck\nOwner, Zerspanung Dralveck GmbH",
+          "price": 32.0,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "32.0"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70240",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nAnother supplier has offered EUR 32.00 per unit for this part (offer:70210-1).\nAlloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived) changed -5.5% from 2026-06 to 2026-09 (idx:AS-14404@2026-06, idx:AS-14404@2026-09).\nYour rolling scorecard shows on-time delivery of 62.5% (sc:70240@2026Q3).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 25.3,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "25.3"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "42"
+              }
+            ]
+          ],
+          "refs": [
+            "idx:AS-14404@2026-06",
+            "idx:AS-14404@2026-09",
+            "offer:70210-1",
+            "sc:70240@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 25.3,
+            "anchor": 25.3,
+            "ceiling": 35.68,
+            "cost": 217410,
+            "limit": 305545,
+            "claims": [
+              "rival_offer",
+              "index_change",
+              "delivery_record"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70240",
+          "round": 1,
+          "status": "open",
+          "body": "Hello,\n\nWe have reviewed your offer and can adjust our Angebot as follows. Hi, thanks for the email. We looked at the alloy surcharge and the delivery stats, so we can drop the price a bit.\n\nWe checked the index change data you cited; it holds and we took it into account. We checked the rival quote data you cited; it holds, but it does not change our calculation. We checked the delivery record data you cited; it holds and we took it into account. Our price follows our main cost drivers: LCI-C, PPI-C2431, AS-14404, PPI-D351.\n\nOur current offer is a price of €32.50 per unit, Zahlungsziel 14 days net, Lieferzeit 42 days. This offer stays valid for 30 days.\n\nAs an alternative, we can do EUR 31.00 per unit if we stick to 52 days lead time and 45 days payment. This option at our standard terms is a price of €31.00 per unit, Zahlungsziel 45 days net, Lieferzeit 52 days.\n\nKind regards\nJana Procházková\nExport Manager, Strojírna Hrvelec s.r.o.",
+          "price": 32.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "32.5"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "42"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            },
+            {
+              "result": "verified",
+              "index": 2
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70250",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nAnother supplier has offered EUR 32.00 per unit for this part (offer:70210-1).\nOur bottom-up cost model puts the full cost of this part at EUR 36.87 per unit (cost:320070).\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 29.45,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "29.45"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [
+            "cost:320070",
+            "idx:PPI-D351@2025-11",
+            "idx:PPI-D351@2026-08",
+            "offer:70210-1"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 29.45,
+            "anchor": 29.45,
+            "ceiling": 35.93,
+            "cost": 250473,
+            "limit": 305545,
+            "claims": [
+              "rival_offer",
+              "should_cost",
+              "index_change"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70250",
+          "round": 1,
+          "status": "open",
+          "body": "Hallo,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nWe checked the index change data you cited; it holds and we took it into account. We checked the rival quote data you cited; it holds and we took it into account. We checked the should cost data you cited; it holds and we took it into account. We checked the energy prices and your cost model, and we can drop our price to €31.00 per unit. \n\nHallo, thanks for the data. The 14-day payment term helps us a lot, so we can work with that. We need to clarify this internally - we will come back to you on price. Material accounts for about 34 % of our cost; more detail we do not share. Our price follows our main cost drivers: LCI-C, PPI-C2431, AS-14404, PPI-D351. \n\nSo our offer is a price of €31.00 per unit, Zahlungsziel 14 days net, Lieferzeit 35 days. Let's get this done.\n\nGruß\nClaudia Fuchsreiter\nOwner, Drehteile Fuchsreiter GmbH",
+          "price": 31.0,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "31.0"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            },
+            {
+              "result": "verified",
+              "index": 2
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70210",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nAnother supplier has offered EUR 31.00 per unit for this part (offer:70250-1).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 27.93,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "27.93"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [
+            "offer:70250-1"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 27.93,
+            "anchor": 27.48,
+            "ceiling": 35.87,
+            "cost": 238139,
+            "limit": 305545,
+            "claims": [
+              "rival_offer"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70210",
+          "round": 2,
+          "status": "open",
+          "body": "Hallo,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nWe checked the rival quote data you cited; it holds and we took it into account. We did not know that - a fair point. We want to keep the machines running for you and the 14-day payment really helps us out. I'll beat that other offer and give you 30.50 per unit.\n\nSo our offer is a price of €30.50 per unit, Zahlungsziel 14 days net, Lieferzeit 35 days.\n\nGruß\nAndreas Dralveck\nOwner, Zerspanung Dralveck GmbH",
+          "price": 30.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "30.5"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70240",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nThat offer also comes with a shorter lead time.\n\nOne more point from our side:\nAnother supplier has offered EUR 30.50 per unit for this part (offer:70210-2).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 27.46,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "27.46"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "42"
+              }
+            ]
+          ],
+          "refs": [
+            "offer:70210-2"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 27.46,
+            "anchor": 25.3,
+            "ceiling": 35.68,
+            "cost": 235739,
+            "limit": 305545,
+            "claims": [
+              "rival_offer"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70240",
+          "round": 2,
+          "status": "open",
+          "body": "Hello,\n\nHi, thanks for the email, we checked the other quote you mentioned and we can drop our price a bit. We have reviewed your offer and can adjust our Angebot as follows. We really want to make this work, so let's get this sorted! \n\nFor our Angebot, we can offer a price of €32.00 per unit, Zahlungsziel 14 days net, Lieferzeit 42 days. Please note that our offer stays valid for 30 days. Also, our price follows our main cost drivers: LCI-C, PPI-C2431, AS-14404, PPI-D351.\n\nKind regards\nJana Procházková\nExport Manager, Strojírna Hrvelec s.r.o.",
+          "price": 32.0,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "32.0"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "42"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70250",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you. We look forward to your answer; our proposal below stands.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 29.45,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "29.45"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 29.45,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70250",
+          "round": 2,
+          "status": "open",
+          "body": "Hallo,\n\nWe have reviewed your offer and can adjust our Angebot as follows. Hallo, we checked this internally as promised. We have clarified this internally and can move further on the price. \n\nWith the 14 days payment, we can do €30.00 per unit. So our updated offer is a price of €30.00 per unit, Zahlungsziel 14 days net, Lieferzeit 35 days.\n\nLet's lock this in so we can get started.\n\nGruß\nClaudia Fuchsreiter\nOwner, Drehteile Fuchsreiter GmbH",
+          "price": 30.0,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "30.0"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70210",
+          "round": 3,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nAnother supplier has offered EUR 30.00 per unit for this part (offer:70250-2).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 28.7,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "28.7"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [
+            "offer:70250-2"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "send",
+            "price": 28.7,
+            "anchor": 27.48,
+            "ceiling": 35.87,
+            "cost": 244673,
+            "limit": 305545,
+            "claims": [
+              "rival_offer"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70210",
+          "round": 3,
+          "status": "open",
+          "body": "Hallo,\n\nHallo, you really keep me on my toes with these rival quotes. We checked the rival quote data you cited; it holds and we took it into account. We did not know that - a fair point. We have reviewed your offer and can adjust our Angebot as follows.\n\nI can offer you 29.50 per unit, keeping the 14-day payment that helps us out. Our price follows our main cost drivers: LCI-C, PPI-C2431, AS-14404, PPI-D351. So our proposal is a price of €29.50 per unit, Zahlungsziel 14 days net, Lieferzeit 35 days.\n\nGruß\nAndreas Dralveck\nOwner, Zerspanung Dralveck GmbH",
+          "price": 29.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "29.5"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70240",
+          "round": 3,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nThat offer also comes with a shorter lead time.\n\nOne more point from our side:\nAnother supplier has offered EUR 29.50 per unit for this part (offer:70210-3).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 28.82,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "28.82"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "42"
+              }
+            ]
+          ],
+          "refs": [
+            "offer:70210-3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "send",
+            "price": 28.82,
+            "anchor": 25.3,
+            "ceiling": 35.68,
+            "cost": 247280,
+            "limit": 305545,
+            "claims": [
+              "rival_offer"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70240",
+          "round": 3,
+          "status": "open",
+          "body": "Hello,\n\nHi, thanks for the email, we checked the other quote you mentioned and we can drop our price a bit. We have reviewed your offer and can adjust our Angebot as follows.\n\nWe can offer a price of €31.50 per unit, Zahlungsziel 14 days net, Lieferzeit 42 days. We can do EUR 31.50 per unit for 14 days payment and 42 days lead time. This offer stays valid for 30 days.\n\nWe are so excited to work together and build a great partnership with Hollerau Pumpenwerke GmbH. Let's get this sorted!\n\nKind regards\nJana Procházková\nExport Manager, Strojírna Hrvelec s.r.o.",
+          "price": 31.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "31.5"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "42"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70250",
+          "round": 3,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nAnother supplier has offered EUR 29.50 per unit for this part (offer:70210-3).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 29.61,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "29.61"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [
+            "offer:70210-3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "send",
+            "price": 29.61,
+            "anchor": 29.45,
+            "ceiling": 35.93,
+            "cost": 251831,
+            "limit": 305545,
+            "claims": [
+              "rival_offer"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70250",
+          "round": 3,
+          "status": "agreed",
+          "body": "Hallo,\n\nwe checked the other quote you mentioned and it checks out. We can work with your offer of 29.61 EUR with 14 days payment. I am accepting this so we can finally get started. We can accept your terms and await your order. Ourangebot stands at a price of €29.61 per unit, Zahlungsziel 14 days net, Lieferzeit 35 days.\n\nGruß\nClaudia Fuchsreiter\nOwner, Drehteile Fuchsreiter GmbH",
+          "price": 29.61,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "29.61"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70210",
+          "round": 4,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 28.94,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "28.94"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 3,
+            "action": "send",
+            "price": 28.94,
+            "anchor": 27.48,
+            "ceiling": 35.87,
+            "cost": 246710,
+            "limit": 305545,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70210",
+          "round": 4,
+          "status": "final_offer",
+          "body": "Hallo,\n\nHallo, you didn't give me any new data this time, but I see you moved your price up a bit. I want to get this job on the machines, so I will come down to 29.00 per unit with the 14-day payment. This is a very tight price for us, let's wrap this up.\n\nSo here is our proposal: a price of €29.00 per unit, Zahlungsziel 14 days net, Lieferzeit 35 days. This is our final offer (letztes Angebot). Please decide.\n\nGruß\nAndreas Dralveck\nOwner, Zerspanung Dralveck GmbH",
+          "price": 29.0,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "29.0"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70250",
+          "round": 4,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nAnother supplier has agreed to terms that cost us less overall. If you can meet the package below, please send it now; otherwise we will proceed with the other offer.\n\nOne more point from our side:\nAnother supplier has offered EUR 29.00 per unit for this part (offer:70210-4).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 28.48,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "28.48"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [
+            "offer:70210-4"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 3,
+            "action": "send",
+            "price": 28.48,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70250",
+          "round": 4,
+          "status": "agreed",
+          "body": "Hallo,\n\nWe checked the rival quote data you cited; it holds and we took it into account. We can accept your terms and await your order. Our agreed offer stands at a price of €29.61 per unit, Zahlungsziel 14 days net, Lieferzeit 35 days.\n\nGruß\nClaudia Fuchsreiter\nOwner, Drehteile Fuchsreiter GmbH",
+          "price": 29.61,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "29.61"
+              },
+              {
+                "label": "payment days",
+                "value": "14"
+              },
+              {
+                "label": "lead time days",
+                "value": "35"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70210",
+          "round": 4,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 4,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "best after 1 auction call(s); C 247,219 below the limit 305,545",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.0
+          }
+        }
+      ],
+      "result": {
+        "score": 71.02448722181073,
+        "opening_cost": 305544.96,
+        "deal_cost": 247219.09,
+        "unit_price": 29.0,
+        "supplier_id": "sup:70210",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "14"
+          },
+          {
+            "label": "lead time days",
+            "value": "35"
+          },
+          {
+            "label": "volume per year",
+            "value": "4200"
+          },
+          {
+            "label": "contract months",
+            "value": "24"
+          },
+          {
+            "label": "effective date",
+            "value": "2027-01-01"
+          },
+          {
+            "label": "incoterm",
+            "value": "DAP"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "1200"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "29.0"
+          }
+        ],
+        "rounds": 12
+      }
+    },
+    {
+      "id": "868276c3ae9da2f0",
+      "case_id": "P07",
+      "title": "Bundle the fastener kit with one distributor",
+      "type": "bundling",
+      "goal": "routine",
+      "need": 30000,
+      "round_limit": 10,
+      "negotiable": [
+        "unit_price",
+        "payment_days",
+        "contract_months"
+      ],
+      "source_file": "runs/P07/20261025T032657_procudeal_868276c3ae9da2f0.json",
+      "source_sha256": "50f30822fba2e30aa23dd541c546fcc384fcbee4640f89365c465b643a29d6fa",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:26:57+00:00",
+      "seconds": 3.6,
+      "engine_seconds": 0.044000000000000004,
+      "decision_count": 4,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70610",
+          "name": "Schraubenhandel Leitner & Sohn GmbH",
+          "country": "DE",
+          "owner_type": "family",
+          "contract_id": "ctr:4600070610",
+          "interest_rate": 0.075,
+          "cash_need": false,
+          "wants_work": false,
+          "capacity_full": false,
+          "hedged": false,
+          "ppm": 68,
+          "skonto_rate": 0.0,
+          "full_cost": 5.17,
+          "full_cost_source": "quote less 10%",
+          "full_cost_floor": 0.0,
+          "rate_measured": false,
+          "notes": [],
+          "documents": [
+            {
+              "id": "doc:20251224-70610-N",
+              "subject": "Trade fair invitation"
+            },
+            {
+              "id": "doc:20260401-70610-M2",
+              "subject": "Capacity"
+            },
+            {
+              "id": "doc:20260513-70610-M1",
+              "subject": "Annual review"
+            },
+            {
+              "id": "doc:20260514-70610-M3",
+              "subject": "Capacity"
+            },
+            {
+              "id": "doc:20260909-70610-P07",
+              "subject": "One supplier for the kit"
+            }
+          ],
+          "opening_price": 5.74
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70610",
+          "round": 0,
+          "status": "open",
+          "body": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe are delighted to submit our offer for your consideration. We can offer you a price of €5.74 per unit, with a Zahlungsziel 30 days net, and a contract term of 12 months.\n\nAs a valued partner, we always strive to support your operations with our extensive inventory and reliable delivery service. Please note that this offer remains valid for 30 days.\n\nWe look forward to continuing our successful business relationship and standing by as your trusted partner for all your supply needs.\n\nMit freundlichen Grüßen\nFranz Stadler\nInside Sales, Schraubenhandel Leitner & Sohn GmbH",
+          "price": 5.74,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.74"
+              },
+              {
+                "label": "payment days",
+                "value": "30"
+              },
+              {
+                "label": "contract months",
+                "value": "12"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70610",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows on-time delivery of 88.6% (sc:70610@2026Q3).\nOur demand forecast for this part has risen 6.0% (fc:360010@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 4.85,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.85"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [
+            "fc:360010@2026-09",
+            "sc:70610@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 4.85,
+            "anchor": 4.85,
+            "ceiling": 6.33,
+            "cost": 291029,
+            "limit": 379916,
+            "claims": [
+              "delivery_record",
+              "volume_change"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.041
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70610",
+          "round": 1,
+          "status": "open",
+          "body": "Dear customer,\n\nWe have reviewed your offer and can adjust our Angebot as follows.\n\nWe checked the delivery record data you cited; it holds, but it does not change our calculation. We checked the volume change data you cited; it holds and we took it into account. We appreciate the increased volume forecast and your willingness to commit to a 36-month contract. While we acknowledge the delivery metric and are actively optimizing our logistics, your target price is significantly below our capabilities.\n\nWe can offer €5.56 per unit under your proposed terms of 60 days payment and a 36-month contract. Thus, our current Angebot stands at a price of €5.56 per unit, Zahlungsziel 60 days net, a contract term of 36 months. A binding higher volume would help us and can improve the price. Which volume can you commit to? Please note that our offer stays valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Stadler\nInside Sales, Schraubenhandel Leitner & Sohn GmbH",
+          "price": 5.56,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.56"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70610",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nWe can commit to 30,000 pieces per year over 36 months, as set out in our proposal below.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 5.06,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.06"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 5.06,
+            "anchor": 4.85,
+            "ceiling": 6.33,
+            "cost": 303629,
+            "limit": 379916,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70610",
+          "round": 2,
+          "status": "open",
+          "body": "Dear customer,\n\nThank you for confirming the annual volume of 30,000 pieces over the 36-month contract term. We have reviewed your offer and can adjust our Angebot as follows. \n\nBased on this firm commitment, we are able to adjust our price to a price of €5.44 per unit, Zahlungsziel 60 days net, a contract term of 36 months. We believe this is a fair compromise that reflects the value of our partnership while accommodating your requested 60-day payment terms. Our Angebot stays valid for 30 days.\n\nWhich figures is that based on? Please send us the data. A binding higher volume would help us and can improve the price. Which volume can you commit to?\n\nMit freundlichen Grüßen\nFranz Stadler\nInside Sales, Schraubenhandel Leitner & Sohn GmbH",
+          "price": 5.44,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.44"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70610",
+          "round": 3,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nWe can commit to 30,000 pieces per year over 36 months, as set out in our proposal below.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 5.17,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.17"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "send",
+            "price": 5.17,
+            "anchor": 4.85,
+            "ceiling": 6.33,
+            "cost": 310229,
+            "limit": 379916,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70610",
+          "round": 3,
+          "status": "final_offer",
+          "body": "Dear customer,\n\nWe appreciate your continued movement on the price. It is always a pleasure working with Hollerau Pumpenwerke GmbH, and we are keen to keep supporting your requirements with our reliable service and extensive product range.\n\nRegarding our terms, we can offer a price of €5.38 per unit, Zahlungsziel 60 days net, a contract term of 36 months. We can offer €5.38 per unit under the same terms of 60 days payment and a 36-month contract. This is a highly competitive price for the committed volume. Please note that our price follows our main cost drivers: PPI-C2594, LCI-C.\n\nThis is our final offer (letztes Angebot). Please decide. This offer remains valid for 7 days.\n\nMit freundlichen Grüßen\nFranz Stadler\nInside Sales, Schraubenhandel Leitner & Sohn GmbH",
+          "price": 5.38,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.38"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70610",
+          "round": 3,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 3,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "final_offer; C 322,829 below the limit 379,916",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        }
+      ],
+      "result": {
+        "score": 74.30181822024754,
+        "opening_cost": 391027.4,
+        "deal_cost": 322828.8,
+        "unit_price": 5.38,
+        "supplier_id": "sup:70610",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "60"
+          },
+          {
+            "label": "lead time days",
+            "value": "5"
+          },
+          {
+            "label": "volume per year",
+            "value": "30000"
+          },
+          {
+            "label": "contract months",
+            "value": "36"
+          },
+          {
+            "label": "effective date",
+            "value": "2027-01-01"
+          },
+          {
+            "label": "incoterm",
+            "value": "DAP"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "80"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "5.38"
+          }
+        ],
+        "rounds": 4
+      }
+    },
+    {
+      "id": "06e91492ada81c19",
+      "case_id": "P08",
+      "title": "Alloy surcharge and base price for 1.4404 bar",
+      "type": "raw_material",
+      "goal": "leverage",
+      "need": 94800,
+      "round_limit": 10,
+      "negotiable": [
+        "unit_price",
+        "index_clause",
+        "payment_days",
+        "contract_months"
+      ],
+      "source_file": "runs/P08/20261025T032658_procudeal_06e91492ada81c19.json",
+      "source_sha256": "a5ec2b095a093decb1bc06e42b48fd0b8ccfaafd7fb8c6437a05ef79601ccf8b",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:26:58+00:00",
+      "seconds": 4.5,
+      "engine_seconds": 0.025,
+      "decision_count": 6,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70710",
+          "name": "Edelstahl-Service Donautal GmbH",
+          "country": "DE",
+          "owner_type": "group",
+          "contract_id": "ctr:4600070710",
+          "interest_rate": 0.05,
+          "cash_need": false,
+          "wants_work": false,
+          "capacity_full": false,
+          "hedged": true,
+          "ppm": 75,
+          "skonto_rate": 0.0,
+          "full_cost": 5.45,
+          "full_cost_source": "quote less 10%",
+          "full_cost_floor": 0.0,
+          "rate_measured": false,
+          "notes": [],
+          "documents": [
+            {
+              "id": "doc:20251225-70710-N",
+              "subject": "Holiday shutdown"
+            },
+            {
+              "id": "doc:20260421-70710-M2",
+              "subject": "Price discussion"
+            },
+            {
+              "id": "doc:20260706-70710-M1",
+              "subject": "Material costs"
+            },
+            {
+              "id": "doc:20260912-70710-P08",
+              "subject": "Price basis and surcharge clause for the coming period"
+            }
+          ],
+          "opening_price": 6.05
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70710",
+          "round": 0,
+          "status": "open",
+          "body": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe are pleased to submit our offer at a price of €6.05 per unit, with a Zahlungsziel 30 days net, a contract term of 12 months, and no Preisgleitklausel. Please note that this offer remains valid for 30 days.\n\nTo give you some insight into our cost environment: AS-14404 rose 5.9 % in twelve months and is 45 % of our cost. Furthermore, LCI-C rose 2.7 % in twelve months and is 5 % of our cost, while PPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost.\n\nMit freundlichen Grüßen\nGeorg Aigner\nInside Sales, Edelstahl-Service Donautal GmbH",
+          "price": 6.05,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "6.05"
+              },
+              {
+                "label": "payment days",
+                "value": "30"
+              },
+              {
+                "label": "contract months",
+                "value": "12"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70710",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nAlloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived) changed -5.5% from 2026-06 to 2026-09 (idx:AS-14404@2026-06, idx:AS-14404@2026-09).\nYour rolling scorecard shows on-time delivery of 88.0% (sc:70710@2026Q3).\nOur demand forecast for this part has risen 1.9% (fc:370010@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 5.06,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.06"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [
+            "fc:370010@2026-09",
+            "idx:AS-14404@2026-06",
+            "idx:AS-14404@2026-09",
+            "sc:70710@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 5.06,
+            "anchor": 5.06,
+            "ceiling": 6.02,
+            "cost": 952980,
+            "limit": 1135887,
+            "claims": [
+              "index_change",
+              "delivery_record",
+              "volume_change"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.021
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70710",
+          "round": 1,
+          "status": "open",
+          "body": "Dear customer,\nThank you very much for your message - it is always a pleasure to hear from you, and we are glad to help wherever we can.\nWe have reviewed your offer and can adjust our Angebot as follows.\nOur terms: a price of €5.45 per unit, Zahlungsziel 90 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404.\nHere is the background.\nWe checked the index change data you cited; it holds, but it does not change our calculation.\nWe checked the delivery record data you cited; it holds, but it does not change our calculation.\nWe checked the volume change data you cited; it holds and we took it into account.\nThat is not our reality: our AS-14404 is covered at fixed prices until March 2027, so that fall does not reach our cost.\nAS-14404 rose 5.9 % in twelve months and is 45 % of our cost. That remains.\nLCI-C rose 2.7 % in twelve months and is 5 % of our cost. That remains.\nPPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. That remains.\nWe acknowledge the recent decrease in the AS-14404 index; however, our raw material is secured at fixed prices until March 2027, limiting our ability to pass on this short-term reduction.\nWe can accommodate your request for a 36-month contract and 90-day payment terms, provided we include an AS-14404 index clause to manage long-term volatility.\nTaking your increased volume forecast and delivery feedback into account, we propose a revised base price of €5.57.\nAlternatively, with a Preisgleitklausel on AS-14404: €5.57 per unit.\nOur price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C.\nA binding higher volume would help us and can improve the price.\nWhich volume can you commit to?\nAnd while we are at it: our whole range is at your disposal, so if there is anything else on your list, just send it over - we are happy to quote.\nMit freundlichen Grüßen\nGeorg Aigner\nInside Sales, Edelstahl-Service Donautal GmbH",
+          "price": 5.45,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.45"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            },
+            {
+              "result": "verified",
+              "index": 2
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70710",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nWe can commit to 94,800 pieces per year over 36 months, as set out in our proposal below.\nOur proposal includes the price adjustment clause you asked for.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 5.45 per unit (po:4500014455-10, po:4500014391-10, po:4500014305-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 5.1,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.1"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [
+            "po:4500014305-10",
+            "po:4500014391-10",
+            "po:4500014455-10"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 5.1,
+            "anchor": 5.06,
+            "ceiling": 5.84,
+            "cost": 990973,
+            "limit": 1135887,
+            "claims": [
+              "order_history"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70710",
+          "round": 2,
+          "status": "open",
+          "body": "Dear customer,\n\nThank you for your response. We have reviewed your offer and can adjust our Angebot as follows. We checked the price history data you cited; it holds, but it does not change our calculation. However, we appreciate your commitment to the volume of 94,800 pieces per year and your acceptance of the AS-14404 index clause. \n\nWe are therefore pleased to reduce our offer to a price of €5.40 per unit, Zahlungsziel 90 days net, a contract term of 36 months, and a Preisgleitklausel on AS-14404. Our price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C.\n\nA binding higher volume would help us and can improve the price. Which volume can you commit to? Please note that this offer stays valid for 30 days.\n\nMit freundlichen Grüßen\nGeorg Aigner\nInside Sales, Edelstahl-Service Donautal GmbH",
+          "price": 5.4,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.4"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70710",
+          "round": 3,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nWe can commit to 94,800 pieces per year over 36 months, as set out in our proposal below.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 5.19,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.19"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "send",
+            "price": 5.19,
+            "anchor": 5.06,
+            "ceiling": 5.84,
+            "cost": 1008461,
+            "limit": 1135887,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70710",
+          "round": 3,
+          "status": "open",
+          "body": "Dear customer,\n\nWe have reviewed your offer and can adjust our Angebot as follows. Our offer is a price of €5.36 per unit, Zahlungsziel 90 days net, a contract term of 36 months, and a Preisgleitklausel on AS-14404. Please note that this offer stays valid for 30 days.\n\nWe note that the volume remains at 94,800 pieces per year, which restricts our ability to offer larger volume-based discounts. Our fixed raw material costs until March 2027 remain the primary constraint on further price flexibility. Our price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C. Which figures is that based on? Please send us the data. \n\nA binding higher volume would help us and can improve the price. Which volume can you commit to?\n\nMit freundlichen Grüßen\nGeorg Aigner\nInside Sales, Edelstahl-Service Donautal GmbH",
+          "price": 5.36,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.36"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70710",
+          "round": 4,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nWe can commit to 94,800 pieces per year over 36 months, as set out in our proposal below.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 5.24,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.24"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 3,
+            "action": "send",
+            "price": 5.24,
+            "anchor": 5.06,
+            "ceiling": 5.84,
+            "cost": 1018176,
+            "limit": 1135887,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70710",
+          "round": 4,
+          "status": "open",
+          "body": "Dear customer,\n\nThank you for your revised offer and for moving closer to our position. We have reviewed your offer and can adjust our Angebot as follows.\n\nWe can adjust our price to €5.33 per unit, which reflects the limit of our flexibility given our fixed raw material costs until March 2027. We note that the volume remains at 94,800 pieces per year, which restricts our ability to offer larger volume-based discounts. Which volume can you commit to? A binding higher volume would help us and can improve the price. Our price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C.\n\nOur complete Angebot comprises a price of €5.33 per unit, Zahlungsziel 90 days net, a contract term of 36 months, and a Preisgleitklausel on AS-14404. This offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nGeorg Aigner\nInside Sales, Edelstahl-Service Donautal GmbH",
+          "price": 5.33,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.33"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70710",
+          "round": 5,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nWe can commit to 94,800 pieces per year over 36 months, as set out in our proposal below.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 5.27,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.27"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 4,
+            "action": "send",
+            "price": 5.27,
+            "anchor": 5.06,
+            "ceiling": 5.84,
+            "cost": 1024005,
+            "limit": 1135887,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70710",
+          "round": 5,
+          "status": "final_offer",
+          "body": "Dear customer,\n\nThank you for your revised offer and for moving closer to an agreement. We are always glad to work together and support your requirements with our reliable service and broad product portfolio. \n\nWe can adjust our price to €5.30 per unit, which represents a further concession from our side. As the volume remains at 94,800 pieces per year, this restricts our ability to offer larger volume-based discounts. Which volume can you commit to?\n\nPlease note that our offer comprises a price of €5.30 per unit, Zahlungsziel 90 days net, a contract term of 36 months, and a Preisgleitklausel on AS-14404. This is our final offer (letztes Angebot). Please decide. This offer stays valid for 7 days.\n\nMit freundlichen Grüßen\nGeorg Aigner\nInside Sales, Edelstahl-Service Donautal GmbH",
+          "price": 5.3,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.3"
+              },
+              {
+                "label": "payment days",
+                "value": "90"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70710",
+          "round": 5,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 5,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "final_offer; C 1,029,835 below the limit 1,135,887",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.0
+          }
+        }
+      ],
+      "result": {
+        "score": 60.402094909981564,
+        "opening_cost": 1135887.28,
+        "deal_cost": 1029834.52,
+        "unit_price": 5.3,
+        "supplier_id": "sup:70710",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "90"
+          },
+          {
+            "label": "lead time days",
+            "value": "10"
+          },
+          {
+            "label": "volume per year",
+            "value": "94800"
+          },
+          {
+            "label": "contract months",
+            "value": "36"
+          },
+          {
+            "label": "effective date",
+            "value": "2027-01-01"
+          },
+          {
+            "label": "index clause",
+            "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+          },
+          {
+            "label": "incoterm",
+            "value": "DAP"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "50"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "5.3"
+          }
+        ],
+        "rounds": 6
+      }
+    },
+    {
+      "id": "8c124efceeeeb1ff",
+      "case_id": "P10",
+      "title": "Ravensteiner cuts the seal allocation",
+      "type": "capacity",
+      "goal": "secure_supply",
+      "need": 23400,
+      "round_limit": 10,
+      "negotiable": [
+        "unit_price",
+        "volume_per_year",
+        "contract_months",
+        "lead_time_days"
+      ],
+      "source_file": "runs/P10/20261025T032658_procudeal_8c124efceeeeb1ff.json",
+      "source_sha256": "aed5acb1053e98b4441fdb7cb81aa115716c328fe5eabf4cd5ee1625f63333ab",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:26:58+00:00",
+      "seconds": 3.2,
+      "engine_seconds": 0.022,
+      "decision_count": 3,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70410",
+          "name": "Dichtungswerk Ravensteiner GmbH",
+          "country": "DE",
+          "owner_type": "group",
+          "contract_id": "ctr:4600070410",
+          "interest_rate": 0.05,
+          "cash_need": false,
+          "wants_work": false,
+          "capacity_full": true,
+          "hedged": false,
+          "ppm": 270,
+          "skonto_rate": 0.0,
+          "full_cost": 24.31,
+          "full_cost_source": "should-cost of its plant (cost:340010)",
+          "full_cost_floor": 23.09,
+          "rate_measured": false,
+          "notes": [
+            "capacity full"
+          ],
+          "documents": [
+            {
+              "id": "doc:20251108-70410-N",
+              "subject": "New contact person"
+            },
+            {
+              "id": "doc:20260310-70410-M1",
+              "subject": "Annual review"
+            },
+            {
+              "id": "doc:20260327-70410-M2",
+              "subject": "New volumes"
+            },
+            {
+              "id": "doc:20260918-70410-P10",
+              "subject": "Capacity situation and delivery dates"
+            }
+          ],
+          "opening_price": 32.2
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70410",
+          "round": 0,
+          "status": "open",
+          "body": "Dear Sir or Madam,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe offer a price of €32.20 per unit for a volume of 19890 pcs per year. Our Lieferzeit is 54 days, and the contract term is 12 months. \n\nPlease note that this offer remains valid for 30 days. All deliveries and services are strictly subject to our standard procedure and standard conditions.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH",
+          "price": 32.2,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "32.2"
+              },
+              {
+                "label": "lead time days",
+                "value": "54"
+              },
+              {
+                "label": "volume per year",
+                "value": "19890"
+              },
+              {
+                "label": "contract months",
+                "value": "12"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70410",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nOur bottom-up cost model puts the full cost of this part at EUR 24.31 per unit (cost:340010).\nYour rolling scorecard shows on-time delivery of 79.5% (sc:70410@2026Q3).\nOur demand forecast for this part has risen 10.1% (fc:340010@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 29.95,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "29.95"
+              },
+              {
+                "label": "volume per year",
+                "value": "23400"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              },
+              {
+                "label": "lead time days",
+                "value": "56"
+              }
+            ]
+          ],
+          "refs": [
+            "cost:340010",
+            "fc:340010@2026-09",
+            "sc:70410@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 29.95,
+            "anchor": 29.95,
+            "ceiling": null,
+            "cost": 1449940,
+            "limit": null,
+            "claims": [
+              "should_cost",
+              "delivery_record",
+              "volume_change"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.02
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70410",
+          "round": 1,
+          "status": "open",
+          "body": "Dear Sir or Madam,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We acknowledge your increased volume of 23,400 units and the 36-month contract term, which allows us to revise our price to €31.70. We checked the volume change data you cited; it holds, but it does not change our calculation. We checked the should cost data you cited; it holds and we took it into account. Theoretical cost models do not reflect the specialized nature of our production and our current high capacity utilization. Our calculation is our property; we do not share a breakdown. We note your delivery data and maintain our focus on supply chain stability. Our Lieferzeit is 56 days. Our proposal covers a volume of 23400 pcs per year, a contract term of 36 months, Lieferzeit 56 days, and a price of €31.70 per unit. This offer stays valid for 30 days.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH",
+          "price": 31.7,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "31.7"
+              },
+              {
+                "label": "lead time days",
+                "value": "56"
+              },
+              {
+                "label": "volume per year",
+                "value": "23400"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            },
+            {
+              "result": "verified",
+              "index": 2
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70410",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 29.89 per unit (po:4500014436-10, po:4500014383-10, po:4500014337-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 30.47,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "30.47"
+              },
+              {
+                "label": "volume per year",
+                "value": "23400"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              },
+              {
+                "label": "lead time days",
+                "value": "56"
+              }
+            ]
+          ],
+          "refs": [
+            "po:4500014337-10",
+            "po:4500014383-10",
+            "po:4500014436-10"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 30.47,
+            "anchor": 29.95,
+            "ceiling": null,
+            "cost": 1474438,
+            "limit": null,
+            "claims": [
+              "order_history"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70410",
+          "round": 2,
+          "status": "final_offer",
+          "body": "Dear Sir or Madam,\n\nWe have reviewed the historical order data you cited; while accurate, past prices do not govern our current calculations. Furthermore, our price reflects our costs; our calculation stays internal.\n\nWe are prepared to adjust our offer to a price of €31.50 per unit. This proposal incorporates your requested volume of 23400 pcs per year, a contract term of 36 months, and a Lieferzeit 56 days.\n\nThis is our letztes Angebot. Please decide. This offer stays valid for 7 days.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH",
+          "price": 31.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "31.5"
+              },
+              {
+                "label": "lead time days",
+                "value": "56"
+              },
+              {
+                "label": "volume per year",
+                "value": "23400"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70410",
+          "round": 2,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "final_offer; C 1,522,963 below the limit inf",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        }
+      ],
+      "result": {
+        "score": 67.85164534560958,
+        "opening_cost": 1932492.18,
+        "deal_cost": 1522963.2,
+        "unit_price": 31.5,
+        "supplier_id": "sup:70410",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "30"
+          },
+          {
+            "label": "lead time days",
+            "value": "56"
+          },
+          {
+            "label": "volume per year",
+            "value": "23400"
+          },
+          {
+            "label": "contract months",
+            "value": "36"
+          },
+          {
+            "label": "effective date",
+            "value": "2027-01-01"
+          },
+          {
+            "label": "incoterm",
+            "value": "DAP"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "300"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "31.5"
+          }
+        ],
+        "rounds": 3
+      }
+    },
+    {
+      "id": "b5c13c51671453e1",
+      "case_id": "P11",
+      "title": "Kalwisz: bearing brackets in red",
+      "type": "quality",
+      "goal": "quality_first",
+      "need": 15900,
+      "round_limit": 10,
+      "negotiable": [
+        "ppm_commitment",
+        "chargeback_eur_per_complaint",
+        "unit_price"
+      ],
+      "source_file": "runs/P11/20261025T032701_procudeal_b5c13c51671453e1.json",
+      "source_sha256": "dbb373f3c4017014a9c1444e194561e6b2ec2a155aaee9f5e03c2b6cae0ad9c2",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:27:01+00:00",
+      "seconds": 3.7,
+      "engine_seconds": 0.024,
+      "decision_count": 8,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70140",
+          "name": "Odlewnia Kalwisz Sp. z o.o.",
+          "country": "PL",
+          "owner_type": "private",
+          "contract_id": "ctr:4600070140",
+          "interest_rate": 0.12000000000000001,
+          "cash_need": true,
+          "wants_work": false,
+          "capacity_full": false,
+          "hedged": false,
+          "ppm": 2376,
+          "skonto_rate": 0.0,
+          "full_cost": 42.3,
+          "full_cost_source": "quote less 10%",
+          "full_cost_floor": 0.0,
+          "rate_measured": false,
+          "notes": [
+            "asks for faster payment / cash"
+          ],
+          "documents": [
+            {
+              "id": "doc:20251026-70140-N",
+              "subject": "Holiday shutdown"
+            },
+            {
+              "id": "doc:20260710-70140-M2",
+              "subject": "Payment of invoices"
+            },
+            {
+              "id": "doc:20260715-70140-M1",
+              "subject": "Liquidity"
+            },
+            {
+              "id": "doc:20260921-70140-P11",
+              "subject": "Escalation: delivery and quality performance"
+            }
+          ],
+          "opening_price": 47.0
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70140",
+          "round": 0,
+          "status": "open",
+          "body": "Hello,\n\nThank you for your enquiry. Please find our Angebot below. We are very eager to work with you and to prove ourselves as a great long-term partner for your business!\n\nWe are happy to present our offer for a price of €47.00 per unit, along with a quality commitment of 6400 ppm. \n\nPlease note that this offer stays valid for 30 days. We remain flexible and look forward to hearing from you soon so we can start building a strong partnership together.\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+          "price": 47.0,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "47.0"
+              },
+              {
+                "label": "ppm commitment",
+                "value": "6400"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70140",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows 2376 ppm defects (sc:70140@2026Q3).\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nOur demand forecast for this part has risen 20.0% (fc:310020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 39.95,
+          "terms": [
+            [
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0"
+              },
+              {
+                "label": "unit price",
+                "value": "39.95"
+              }
+            ]
+          ],
+          "refs": [
+            "fc:310020@2026-09",
+            "idx:PPI-D351@2025-11",
+            "idx:PPI-D351@2026-08",
+            "sc:70140@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 39.95,
+            "anchor": 39.95,
+            "ceiling": 54.57,
+            "cost": 661838,
+            "limit": 894383,
+            "claims": [
+              "quality_record",
+              "index_change",
+              "volume_change"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.018
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70140",
+          "round": 1,
+          "status": "open",
+          "body": "Hello,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We checked the index change data you cited; it holds and we took it into account. We checked the quality record data you cited; it holds and we took it into account. We checked the volume change data you cited; it holds and we took it into account. \n\nWe see your figures, but we cannot give up margin right now. Faster payment would help us more than anything. Our standard Zahlungsziel is 60 days net. Faster payment is very important to us, so if we can improve the payment terms, we can be more flexible on other points. Faster payment is welcome; we can reflect it in the price. \n\nWe also see the volume bump and the energy index drop, so we can bring the price down to €45.50. Our price follows our main cost drivers: LCI-C, PPI-C241, PPI-D351.\n\nOur current Angebot is a price of €46.00 per unit, a quality commitment of 300 ppm, a chargeback of €0.00 per complaint. Alternatively, with a quality commitment of 2500 ppm: €45.50 per unit, a chargeback of €0.00 per complaint. This offer is valid for 30 days.\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+          "price": 46.0,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "46.0"
+              },
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0.0"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            },
+            {
+              "result": "verified",
+              "index": 2
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70140",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 45.15 per unit (po:4500014429-10, po:4500014373-10, po:4500014306-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 41.77,
+          "terms": [
+            [
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0"
+              },
+              {
+                "label": "unit price",
+                "value": "41.77"
+              }
+            ]
+          ],
+          "refs": [
+            "po:4500014306-10",
+            "po:4500014373-10",
+            "po:4500014429-10"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 41.77,
+            "anchor": 39.95,
+            "ceiling": 54.57,
+            "cost": 690776,
+            "limit": 894383,
+            "claims": [
+              "order_history"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70140",
+          "round": 2,
+          "status": "open",
+          "body": "Hello,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We checked the past orders you mentioned; they are correct, but our costs have changed. As to the price history data you cited, we see your figures, but we cannot give up margin right now. Faster payment would help us more than anything. \n\nOur price follows our main cost drivers: LCI-C, PPI-C241, PPI-D351. Our standard Zahlungsziel is 60 days net. Faster payment is welcome; we can reflect it in the price. If you can pay us faster, we can be more flexible. \n\nWe can drop the price to €45.50 for the 300 ppm. Our current Angebot is a price of €45.50 per unit, a quality commitment of 300 ppm, a chargeback of €0.00 per complaint. This offer is valid for 30 days.\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+          "price": 45.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "45.5"
+              },
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0.0"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70140",
+          "round": 3,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 42.89,
+          "terms": [
+            [
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0"
+              },
+              {
+                "label": "unit price",
+                "value": "42.89"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "send",
+            "price": 42.89,
+            "anchor": 39.95,
+            "ceiling": 54.57,
+            "cost": 708584,
+            "limit": 894383,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70140",
+          "round": 3,
+          "status": "open",
+          "body": "Hello,\n\nWe have reviewed your offer and can adjust our Angebot as follows. Thanks for the new offer, but we really can't go below €45.50 for these terms. Our current offer stands at a price of €45.50 per unit, a quality commitment of 300 ppm, and a chargeback of €0.00 per complaint. This Angebot remains valid for 30 days.\n\nLike I said before, getting paid faster is what we need most right now. Our standard Zahlungsziel is 60 days net. If you can give us better payment terms, we might be able to work something out. Faster payment is welcome; we can reflect it in the price. We really want to make this partnership work for both of us!\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+          "price": 45.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "45.5"
+              },
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0.0"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70140",
+          "round": 4,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 43.67,
+          "terms": [
+            [
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0"
+              },
+              {
+                "label": "unit price",
+                "value": "43.67"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 3,
+            "action": "send",
+            "price": 43.67,
+            "anchor": 39.95,
+            "ceiling": 54.57,
+            "cost": 720986,
+            "limit": 894383,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70140",
+          "round": 4,
+          "status": "open",
+          "body": "Hello,\n\nWe have reviewed your offer and can adjust our Angebot as follows. Thanks for the bump, but we really can't go below €45.50 for these terms. Our current offer includes a price of €45.50 per unit, a quality commitment of 300 ppm, a chargeback of €0.00 per complaint.\n\nLike I've been saying, getting paid faster is what we need most right now. Our standard Zahlungsziel is 60 days net. Unless we can agree on quicker payment, my hands are tied at €45.50. Faster payment is welcome; we can reflect it in the price.\n\nThis offer stays valid for 30 days.\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+          "price": 45.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "45.5"
+              },
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0.0"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70140",
+          "round": 5,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 44.22,
+          "terms": [
+            [
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0"
+              },
+              {
+                "label": "unit price",
+                "value": "44.22"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 4,
+            "action": "send",
+            "price": 44.22,
+            "anchor": 39.95,
+            "ceiling": 54.57,
+            "cost": 729730,
+            "limit": 894383,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70140",
+          "round": 5,
+          "status": "open",
+          "body": "Hello,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nLike I've been saying, getting paid faster is what we need most right now, and without it my hands are tied. Faster payment is welcome; we can reflect it in the price. Our standard Zahlungsziel is 60 days net. \n\nLet's just agree on €45.50 so we can get this moving. So, our offer stands at a price of €45.50 per unit, a quality commitment of 300 ppm, a chargeback of €0.00 per complaint. Please note that this offer stays valid for 30 days. We really want to make this work together and build a great partnership!\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+          "price": 45.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "45.5"
+              },
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0.0"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70140",
+          "round": 6,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 44.6,
+          "terms": [
+            [
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0"
+              },
+              {
+                "label": "unit price",
+                "value": "44.6"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 5,
+            "action": "send",
+            "price": 44.6,
+            "anchor": 39.95,
+            "ceiling": 54.57,
+            "cost": 735772,
+            "limit": 894383,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70140",
+          "round": 6,
+          "status": "open",
+          "body": "Hello,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nOur current Angebot is a price of €45.50 per unit, a quality commitment of 300 ppm, a chargeback of €0.00 per complaint. Please note that this offer stays valid for 30 days.\n\nI've been saying this for a while now: we need faster payment to drop the price. Our standard Zahlungsziel is 60 days net. Since you haven't offered quicker payment, my hands are tied at €45.50. Faster payment is welcome; we can reflect it in the price. We really want to work together and build a great partnership!\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+          "price": 45.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "45.5"
+              },
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0.0"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70140",
+          "round": 7,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 44.87,
+          "terms": [
+            [
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0"
+              },
+              {
+                "label": "unit price",
+                "value": "44.87"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 6,
+            "action": "send",
+            "price": 44.87,
+            "anchor": 39.95,
+            "ceiling": 54.57,
+            "cost": 740066,
+            "limit": 894383,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70140",
+          "round": 7,
+          "status": "final_offer",
+          "body": "Hello,\n\nThank you for the ongoing discussions. Since we haven't been able to agree on faster payment, my hands are tied. This is our final offer (letztes Angebot). Please decide. \n\nOur terms for this offer are a price of €45.50 per unit, a quality commitment of 300 ppm, a chargeback of €0.00 per complaint. \n\nOur standard Zahlungsziel is 60 days net. Faster payment is welcome; we can reflect it in the price. We really want to build a great partnership with you, so please note that this offer stays valid for 7 days.\n\nKind regards\nMarek Lis\nExport Manager, Odlewnia Kalwisz Sp. z o.o.",
+          "price": 45.5,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "45.5"
+              },
+              {
+                "label": "ppm commitment",
+                "value": "300"
+              },
+              {
+                "label": "chargeback eur per complaint",
+                "value": "0.0"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70140",
+          "round": 7,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 7,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "final_offer; C 750,082 below the limit 894,383",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.0
+          }
+        }
+      ],
+      "result": {
+        "score": 70.98962346486537,
+        "opening_cost": 817578.0,
+        "deal_cost": 750082.5,
+        "unit_price": 45.5,
+        "supplier_id": "sup:70140",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "60"
+          },
+          {
+            "label": "lead time days",
+            "value": "56"
+          },
+          {
+            "label": "volume per year",
+            "value": "15900"
+          },
+          {
+            "label": "contract months",
+            "value": "12"
+          },
+          {
+            "label": "effective date",
+            "value": "2027-01-01"
+          },
+          {
+            "label": "incoterm",
+            "value": "FCA"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "300"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "45.5"
+          }
+        ],
+        "rounds": 8
+      }
+    },
+    {
+      "id": "2853898063c8dbe5",
+      "case_id": "P18",
+      "title": "Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+      "type": "raw_material",
+      "goal": "leverage",
+      "need": 23700,
+      "round_limit": 10,
+      "negotiable": [
+        "unit_price",
+        "index_clause",
+        "payment_days",
+        "contract_months"
+      ],
+      "source_file": "runs/P18/20261025T032701_procudeal_2853898063c8dbe5.json",
+      "source_sha256": "eb9a07003f1ca0010dcb8ccbb361d7079b4a8c0672e0d564cd4d49113332a223",
+      "commit": "44dbff9",
+      "when": "2026-10-25T03:27:01+00:00",
+      "seconds": 2.9,
+      "engine_seconds": 0.023,
+      "decision_count": 5,
+      "dossiers": [
+        {
+          "supplier_id": "sup:70740",
+          "name": "Blankstahl Werdenfels GmbH",
+          "country": "DE",
+          "owner_type": "family",
+          "contract_id": "ctr:4600070740",
+          "interest_rate": 0.075,
+          "cash_need": false,
+          "wants_work": false,
+          "capacity_full": false,
+          "hedged": false,
+          "ppm": 32,
+          "skonto_rate": 0.0,
+          "full_cost": 5.49,
+          "full_cost_source": "quote less 10%",
+          "full_cost_floor": 0.0,
+          "rate_measured": false,
+          "notes": [],
+          "documents": [
+            {
+              "id": "doc:20251009-70740-N",
+              "subject": "New contact person"
+            },
+            {
+              "id": "doc:20260514-70740-M6",
+              "subject": "Price discussion"
+            },
+            {
+              "id": "doc:20260601-70740-M4",
+              "subject": "Customer portfolio"
+            },
+            {
+              "id": "doc:20260812-70740-M3",
+              "subject": "Annual review"
+            },
+            {
+              "id": "doc:20260813-70740-M2",
+              "subject": "Customer portfolio"
+            },
+            {
+              "id": "doc:20260904-70740-M1",
+              "subject": "Price discussion"
+            },
+            {
+              "id": "doc:20260916-70740-M5",
+              "subject": "Customer portfolio"
+            },
+            {
+              "id": "doc:20260922-70740-P18",
+              "subject": "Price basis and surcharge clause for the coming period"
+            }
+          ],
+          "opening_price": 6.1
+        }
+      ],
+      "messages": [
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70740",
+          "round": 0,
+          "status": "open",
+          "body": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe are delighted to present our competitive quote for your requirements. Our price is €6.10 per unit, with a Zahlungsziel of 30 days net, a contract term of 12 months, and no Preisgleitklausel. Please note that AS-14404 rose 5.9 % in twelve months and is 45 % of our cost. Furthermore, LCI-C rose 2.7 % in twelve months and is 5 % of our cost, while PPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. This offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH",
+          "price": 6.1,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "6.1"
+              },
+              {
+                "label": "payment days",
+                "value": "30"
+              },
+              {
+                "label": "contract months",
+                "value": "12"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70740",
+          "round": 1,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nAlloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived) changed -5.5% from 2026-06 to 2026-09 (idx:AS-14404@2026-06, idx:AS-14404@2026-09).\nYour rolling scorecard shows on-time delivery of 81.0% (sc:70740@2026Q3).\nOur demand forecast for this part has risen 1.9% (fc:370010@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 4.91,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.91"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [
+            "fc:370010@2026-09",
+            "idx:AS-14404@2026-06",
+            "idx:AS-14404@2026-09",
+            "sc:70740@2026Q3"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 0,
+            "action": "send",
+            "price": 4.91,
+            "anchor": 4.91,
+            "ceiling": 6.22,
+            "cost": 232734,
+            "limit": 295173,
+            "claims": [
+              "index_change",
+              "delivery_record",
+              "volume_change"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.02
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70740",
+          "round": 1,
+          "status": "open",
+          "body": "Dear customer,\nMany thanks for your e-mail, and great to hear from you; I went through it right away with our team.\nWe have reviewed your offer and can adjust our Angebot as follows.\nOur terms: a price of €5.40 per unit, Zahlungsziel 60 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404.\nA few words on this from our side.\nWe checked the volume change data you cited; it holds and we took it into account.\nAS-14404 rose 5.9 % in twelve months and is 45 % of our cost. That remains.\nLCI-C rose 2.7 % in twelve months and is 5 % of our cost. That remains.\nPPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. That remains.\nWe acknowledge your data regarding the AS-14404 index decrease, the increased demand forecast, and our recent delivery performance.\nWe can agree to your requested 36-month contract and 60-day payment terms, but we must include an AS-14404 index clause as we cannot fix prices for this duration.\nWith these terms, we propose a revised unit price of €5.50.\nAlternatively, with a Preisgleitklausel on AS-14404: €5.50 per unit.\nOur price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C.\nWe can offer a Preisgleitklausel on AS-14404, AS-14404, AS-14404.\nWe look forward to doing good business together, and our team is always there for you.\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH",
+          "price": 5.4,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.4"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            },
+            {
+              "result": "verified",
+              "index": 1
+            },
+            {
+              "result": "verified",
+              "index": 2
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70740",
+          "round": 2,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\nOur proposal includes the price adjustment clause you asked for.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 5.84 per unit (po:4500014427-10, po:4500014355-10, po:4500014292-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 4.96,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "4.96"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [
+            "po:4500014292-10",
+            "po:4500014355-10",
+            "po:4500014427-10"
+          ],
+          "checks": [],
+          "decision": {
+            "round": 1,
+            "action": "send",
+            "price": 4.96,
+            "anchor": 4.91,
+            "ceiling": 6.03,
+            "cost": 242510,
+            "limit": 295173,
+            "claims": [
+              "order_history"
+            ],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70740",
+          "round": 2,
+          "status": "open",
+          "body": "Dear customer,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nWe checked the price history data you cited; it holds, but it does not change our calculation. Our price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C. We appreciate your flexibility in accepting the index clause and your continued trust in our partnership. In response to your step, we are pleased to offer a further reduction to €5.30 per unit under these terms.\n\nOur updated Angebot provides a price of €5.30 per unit, Zahlungsziel 60 days net, a contract term of 36 months, and a Preisgleitklausel on AS-14404. \n\nThis offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH",
+          "price": 5.3,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.3"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [
+            {
+              "result": "verified",
+              "index": 0
+            }
+          ],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70740",
+          "round": 3,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 5.06,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.06"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 2,
+            "action": "send",
+            "price": 5.06,
+            "anchor": 4.91,
+            "ceiling": 6.03,
+            "cost": 247399,
+            "limit": 295173,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70740",
+          "round": 3,
+          "status": "open",
+          "body": "Dear customer,\n\nWe appreciate your revised offer and the constructive dialogue. We have reviewed your offer and can adjust our Angebot as follows. It is always a pleasure working with your team to find solutions that support your supply chain requirements across our broad range of products.\n\nIn response to your movement, we are prepared to offer a further reduction to a price of €5.20 per unit. Our current Angebot includes a price of €5.20 per unit, Zahlungsziel 60 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404. This represents our best possible price for the requested 36-month contract and 60-day payment terms.\n\nAlternatively, with a Preisgleitklausel on AS-14404: €5.30 per unit, accompanied by a price of €5.30 per unit, Zahlungsziel 60 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404.\n\nPlease note that this offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH",
+          "price": 5.2,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.2"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70740",
+          "round": 4,
+          "status": "message",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "price": 5.1,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.1"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 3,
+            "action": "send",
+            "price": 5.1,
+            "anchor": 4.91,
+            "ceiling": 6.03,
+            "cost": 249355,
+            "limit": 295173,
+            "claims": [],
+            "why": "",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.001
+          }
+        },
+        {
+          "actor": "supplier",
+          "supplier_id": "sup:70740",
+          "round": 4,
+          "status": "agreed",
+          "body": "Dear customer,\n\nThank you for your revised offer and the continued constructive dialogue. We are pleased to accept your proposal of €5.10 per unit under the agreed terms.\n\nOur Angebot stands at a price of €5.10 per unit, Zahlungsziel 60 days net, a contract term of 36 months, and a Preisgleitklausel on AS-14404. Our offer remains valid for 30 days.\n\nWe can accept your terms and await your order. We look forward to fulfilling your upcoming orders and continuing our successful partnership.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH",
+          "price": 5.1,
+          "terms": [
+            [
+              {
+                "label": "unit price",
+                "value": "5.1"
+              },
+              {
+                "label": "payment days",
+                "value": "60"
+              },
+              {
+                "label": "index clause",
+                "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+              },
+              {
+                "label": "contract months",
+                "value": "36"
+              }
+            ]
+          ],
+          "refs": [],
+          "checks": [],
+          "decision": null
+        },
+        {
+          "actor": "buyer",
+          "supplier_id": "sup:70740",
+          "round": 4,
+          "status": "accept",
+          "body": "",
+          "price": null,
+          "terms": [],
+          "refs": [],
+          "checks": [],
+          "decision": {
+            "round": 4,
+            "action": "accept",
+            "price": null,
+            "anchor": null,
+            "ceiling": null,
+            "cost": null,
+            "limit": null,
+            "claims": [],
+            "why": "agreed; C 249,355 below the limit 295,173",
+            "trade": null,
+            "source": "engine",
+            "seconds": 0.0
+          }
+        }
+      ],
+      "result": {
+        "score": 63.17868408410361,
+        "opening_cost": 295173.23,
+        "deal_cost": 249354.81,
+        "unit_price": 5.1,
+        "supplier_id": "sup:70740",
+        "must_haves_ok": true,
+        "terms": [
+          {
+            "label": "payment days",
+            "value": "60"
+          },
+          {
+            "label": "lead time days",
+            "value": "14"
+          },
+          {
+            "label": "volume per year",
+            "value": "23700"
+          },
+          {
+            "label": "contract months",
+            "value": "36"
+          },
+          {
+            "label": "effective date",
+            "value": "2027-01-01"
+          },
+          {
+            "label": "index clause",
+            "value": "{\"series\": \"AS-14404\", \"material_share\": 0.45, \"deadband_pct\": 0.0, \"base_month\": \"2026-08\"}"
+          },
+          {
+            "label": "incoterm",
+            "value": "DAP"
+          },
+          {
+            "label": "tooling eur",
+            "value": "0.0"
+          },
+          {
+            "label": "ppm commitment",
+            "value": "70"
+          },
+          {
+            "label": "chargeback eur per complaint",
+            "value": "0.0"
+          },
+          {
+            "label": "unit price",
+            "value": "5.1"
+          }
+        ],
+        "rounds": 5
+      }
+    }
+  ]
+}

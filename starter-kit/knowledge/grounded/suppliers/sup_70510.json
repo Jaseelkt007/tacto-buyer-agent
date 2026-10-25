@@ -1,0 +1,900 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70510",
+ "name": "Antriebstechnik Nordmark AG",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "668c3f7a7feccec16d4b5fd826fe8caf1c017bbc8b3ccc14ea2c49b719e9aaba",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:03:39.142141+00:00",
+  "seconds": 29.0,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:a04c2ee06731ef09",
+   "text": "Supplier announced a 6.5 % price increase for part:350011 from EUR 348.32 to EUR 370.96 per pc, effective 01 January 2027, citing copper and electronic component price rises.",
+   "kind": "supplier_statement",
+   "source": "doc:20260914-70510-P02",
+   "quote": "Owing to the strong rise in copper and electronic component prices, we are forced to adjust our prices for Motor IE3 7.5 kW, 4-pole (part:350011) by **6.5 %** with effect from **01 January 2027**: from EUR 348.32 to EUR 370.96 per  pc.",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2026-09-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a04c2ee06731ef09",
+    "verdict": "supported",
+    "reason": "Letter states the requested increase, the prices, the effective date and the stated reasons."
+   }
+  },
+  {
+   "id": "obs:dde565839197d100",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070510#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:350010",
+    "part:350011"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:dde565839197d100",
+    "verdict": "supported",
+    "reason": "Matches clause 3.1."
+   }
+  },
+  {
+   "id": "obs:9203b66c97738a16",
+   "text": "Per their key account manager, price changes above 2 % require approval of the supplier's pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260410-70510-M1",
+   "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-04-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:9203b66c97738a16",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:ea8e9ebfbc174a30",
+   "text": "Current 2026 price for part:350011 is EUR 348.32 (renewal, +1.2 %).",
+   "kind": "fact",
+   "source": "EV-2026-70510-350011",
+   "quote": "\"basis\": \"renewal\", \"change_pct\": 1.2, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70510-350011\", \"price\": 348.32",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ea8e9ebfbc174a30",
+    "verdict": "supported",
+    "reason": "The 2026 renewal price with open validity matches the price history and POs."
+   }
+  },
+  {
+   "id": "obs:3fbccef6fb47f9ad",
+   "text": "Current 2026 price for part:350010 is EUR 239.21 (renewal, +1.2 %).",
+   "kind": "fact",
+   "source": "EV-2026-70510-350010",
+   "quote": "\"basis\": \"renewal\", \"change_pct\": 1.2, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70510-350010\", \"price\": 239.21",
+   "parts": [
+    "part:350010"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3fbccef6fb47f9ad",
+    "verdict": "supported",
+    "reason": "Matches EV-2026-70510-350010."
+   }
+  },
+  {
+   "id": "obs:a2c4b5205cbfce58",
+   "text": "Should-cost for part:350011 at this supplier's plant is EUR 374.95 per unit (no margin, error about 5 %), estimated 2026-07-15.",
+   "kind": "fact",
+   "source": "cost:350011",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 173.23, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350011\", \"material_eur\": 127.48, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 74.24, \"part_id\": \"part:350011\", \"price_unit\": 1, \"supplier_id\": \"sup:70510\", \"unit_cost\": 374.95",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a2c4b5205cbfce58",
+    "verdict": "supported",
+    "reason": "Recorded should-cost estimate with its stated error; the wording does not claim true cost."
+   }
+  },
+  {
+   "id": "obs:9d14dfdddb612d6d",
+   "text": "Should-cost for part:350010 at this supplier's plant is EUR 244.39 per unit (no margin, error about 5 %).",
+   "kind": "fact",
+   "source": "cost:350010",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 112.91, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350010\", \"material_eur\": 83.09, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 48.39, \"part_id\": \"part:350010\", \"price_unit\": 1, \"supplier_id\": \"sup:70510\", \"unit_cost\": 244.39",
+   "parts": [
+    "part:350010"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:9d14dfdddb612d6d",
+    "verdict": "supported",
+    "reason": "Recorded estimate qualified with method and error."
+   }
+  },
+  {
+   "id": "obs:73e5ba5785673cb6",
+   "text": "For the 2026 renewal of part 350011 the supplier asked +4.7 % and settled at +1.2 %.",
+   "kind": "fact",
+   "source": "EV-2026-70510-350011",
+   "quote": "\"asked_pct\": 4.7, \"date\": \"2025-11-12\", \"event_id\": \"EV-2026-70510-350011\", \"note\": \"\", \"part_id\": \"part:350011\", \"settled_pct\": 1.2",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2025-11-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:73e5ba5785673cb6",
+    "verdict": "supported",
+    "reason": "Matches the negotiation history."
+   }
+  },
+  {
+   "id": "obs:3b03693dfdfb51af",
+   "text": "Second source Motorenwerk Saalach quoted EUR 421.06 for part:350011 with 90-day validity.",
+   "kind": "fact",
+   "source": "quote:7200002",
+   "quote": "\"name\": \"Motorenwerk Saalach GmbH\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-03\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000202\", \"supplier_id\": \"sup:70580\", \"tooling_eur\": 0, \"unit_price\": 421.06, \"validity_days\": 90",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2026-09-03",
+   "valid_until": "2026-12-02",
+   "review": {
+    "id": "obs:3b03693dfdfb51af",
+    "verdict": "supported",
+    "reason": "Recorded quote: price, 90-day validity and expiry 2026-12-02 are correct."
+   }
+  },
+  {
+   "id": "obs:81c296b7f6009862",
+   "text": "Copper notation for cables averaged EUR 1,289/100 kg in September 2026, +48 % year on year.",
+   "kind": "fact",
+   "source": "news:20260910-27",
+   "quote": "The copper notation for cables averaged EUR 1,289/100 kg in September, +48 % on a year ago.",
+   "parts": [],
+   "observed_at": "2026-09-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:81c296b7f6009862",
+    "verdict": "supported",
+    "reason": "Matches the news body; the month is September 2026 per the article date."
+   }
+  },
+  {
+   "id": "obs:8dae0e64923fbcff",
+   "text": "Supplier emphasises its long, reliable supply relationship and asks for understanding.",
+   "kind": "supplier_statement",
+   "source": "doc:20260914-70510-P02",
+   "quote": "we have supplied Hollerau Pumpenwerke reliably for many years.",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2026-09-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:8dae0e64923fbcff",
+    "verdict": "supported",
+    "reason": "The letter states both the reliable-supply claim and the request for understanding."
+   }
+  },
+  {
+   "id": "obs:3985fb8f6ab09c74",
+   "text": "Supplier sup:70510 rolling 12-month OTD (vs requested date) was 90.4% in 2026Q3 scorecard, below the 95% quality agreement target.",
+   "kind": "fact",
+   "source": "sc:70510@2026Q3",
+   "quote": "\"otd_pct\": 90.4, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\"",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3985fb8f6ab09c74",
+    "verdict": "supported",
+    "reason": "Scorecard shows 90.4 %; the contract target is 95 %."
+   }
+  },
+  {
+   "id": "obs:19b93524da004624",
+   "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070510#6.1",
+   "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:350010",
+    "part:350011"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:19b93524da004624",
+    "verdict": "supported",
+    "reason": "Matches clause 6.1."
+   }
+  },
+  {
+   "id": "obs:84967686900b2fb8",
+   "text": "Wrong material certificate recurred: QN 20004918 on part 350010 (2026-05-09), with 8D closed 2026-06-19 and no recharge.",
+   "kind": "fact",
+   "source": "qn:20004918",
+   "quote": "\"cost_recharged_eur\": 0, \"d3_date\": \"2026-05-10\", \"d8_date\": \"2026-06-19\", \"defect\": \"wrong material certificate\"",
+   "parts": [
+    "part:350010"
+   ],
+   "observed_at": "2026-05-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:84967686900b2fb8",
+    "verdict": "supported",
+    "reason": "QN fields match, and earlier wrong-certificate QNs confirm the recurrence."
+   }
+  },
+  {
+   "id": "obs:b105af7255c46a7b",
+   "text": "Part 350011 last-12m supplier-caused ppm was 366 with 2 QNs.",
+   "kind": "fact",
+   "source": "evidence:part:350011:part_quality",
+   "quote": "\"ppm_last_12m\": 366, \"qns\": 2",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:b105af7255c46a7b",
+    "verdict": "supported",
+    "reason": "Matches the part quality record."
+   }
+  },
+  {
+   "id": "obs:580d955598578ef2",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070510#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:350010",
+    "part:350011"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:580d955598578ef2",
+    "verdict": "supported",
+    "reason": "Matches clause 4.1."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:7abf2e1d43dcd6d4",
+   "text": "Supplier's key account manager said price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260410-70510-M1",
+   "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-04-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7abf2e1d43dcd6d4",
+    "verdict": "supported",
+    "reason": "Meeting note records the statement."
+   }
+  },
+  {
+   "id": "obs:39844251d4a779a3",
+   "text": "Supplier announced a 6.5 % price increase for part:350011 from EUR 348.32 to EUR 370.96 per pc, effective 01 January 2027.",
+   "kind": "supplier_statement",
+   "source": "doc:20260914-70510-P02",
+   "quote": "we are forced to adjust our prices for Motor IE3 7.5 kW, 4-pole (part:350011) by **6.5 %** with effect from **01 January 2027**: from EUR 348.32 to EUR 370.96 per  pc.",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2026-09-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:39844251d4a779a3",
+    "verdict": "supported",
+    "reason": "Matches the letter."
+   }
+  },
+  {
+   "id": "obs:1d0dfaf48cb24332",
+   "text": "Supplier attributes the increase to rising copper and electronic component prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260914-70510-P02",
+   "quote": "Owing to the strong rise in copper and electronic component prices",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2026-09-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1d0dfaf48cb24332",
+    "verdict": "supported",
+    "reason": "Matches the letter's stated reason."
+   }
+  },
+  {
+   "id": "obs:76b1b4cd4d1830b0",
+   "text": "Supplier is part of the Nordmark Gruppe, with 4800 staff and turnover of EUR 1.38 bn.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"group_parent\": \"Nordmark Gruppe\", \"legal_form\": \"AG\", \"owner_type\": \"group\", \"staff\": 4800, \"supplier_id\": \"sup:70510\", \"turnover_band\": \">1000 M EUR\", \"turnover_eur\": 1380000000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:76b1b4cd4d1830b0",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:e5d0e7dc632aebdd",
+   "text": "Credit index is 147, unchanged from 12 months ago; equity ratio 29.1 %.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 147, \"credit_index_12m_ago\": 147, \"equity_ratio_pct\": 29.1",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:e5d0e7dc632aebdd",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:f06d85075b0e78ec",
+   "text": "Supplier master: A-class electrical supplier, DAP, 30 payment days, 35-day standard lead time.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"abc_class\": \"A\", \"blocked\": 0, \"category\": \"electrical\", \"contract_id\": \"ctr:4600070510\", \"country\": \"DE\", \"created\": \"1996-01-01\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70510\", \"incoterm\": \"DAP\", \"name\": \"Antriebstechnik Nordmark AG\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:f06d85075b0e78ec",
+    "verdict": "supported",
+    "reason": "Matches the supplier master."
+   }
+  },
+  {
+   "id": "obs:a2707a4c291dbc42",
+   "text": "Invoices: 62.2 % paid late, averaging 1.1 days after due in the last 12 months, none over 10 days late.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due_last_12m\": 1.1, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 149, \"max_days_late\": 5, \"paid_late_pct\": 62.2, \"paid_over_10_days_late_pct\": 0.0",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a2707a4c291dbc42",
+    "verdict": "supported",
+    "reason": "Matches the invoice evidence."
+   }
+  },
+  {
+   "id": "obs:1b92da3517282a40",
+   "text": "Delivery DAP with standard lead time 35 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070510#5.1",
+   "quote": "Delivery DAP; standard lead time 35 days from order.",
+   "parts": [
+    "part:350010",
+    "part:350011"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:1b92da3517282a40",
+    "verdict": "supported",
+    "reason": "Matches clause 5.1."
+   }
+  },
+  {
+   "id": "obs:e3b7ccae778ee322",
+   "text": "Supplier requests a 6.5 % increase for part 350011 from EUR 348.32 to EUR 370.96 effective 2027-01-01, citing copper and electronic component prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260914-70510-P02",
+   "quote": "Owing to the strong rise in copper and electronic component prices, we are forced to adjust our prices for Motor IE3 7.5 kW, 4-pole (part:350011) by **6.5 %** with effect from **01 January 2027**: from EUR 348.32 to EUR 370.96 per  pc.",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2026-09-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e3b7ccae778ee322",
+    "verdict": "supported",
+    "reason": "Matches the letter."
+   }
+  },
+  {
+   "id": "obs:9fb472aff89bc022",
+   "text": "Supplier's key account manager stated price changes above 2 % need pricing committee approval, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260410-70510-M1",
+   "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-04-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:9fb472aff89bc022",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:7d825a9c01fd00a5",
+   "text": "2026Q3 scorecard: ppm 273, score 93.8, class A green, no overdue 8D reports.",
+   "kind": "fact",
+   "source": "sc:70510@2026Q3",
+   "quote": "\"open_8d_overdue\": 0, \"otd_confirmed_pct\": 90.4, \"otd_pct\": 90.4, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 273, \"qn_count\": 3, \"quarter\": \"2026Q3\", \"received_qty\": 11006, \"score\": 93.8",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7d825a9c01fd00a5",
+    "verdict": "supported",
+    "reason": "Matches the scorecard; class A green is consistent with the score of 93.8."
+   }
+  },
+  {
+   "id": "obs:e895eee5b97c15ae",
+   "text": "OTD dipped to 80.8% (vs requested) in the 2025Q2 rolling scorecard.",
+   "kind": "fact",
+   "source": "sc:70510@2025Q2",
+   "quote": "\"otd_confirmed_pct\": 82.7, \"otd_pct\": 80.8",
+   "parts": [],
+   "observed_at": "2025-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e895eee5b97c15ae",
+    "verdict": "supported",
+    "reason": "Matches sc 2025Q2."
+   }
+  },
+  {
+   "id": "obs:d52f9352a005fff4",
+   "text": "Last 12 months deliveries: 7.7% late, average 10.2 days late when late, max 23 days, over 52 receipts.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 10.2, \"early_pct\": 1.9, \"late_pct\": 7.7, \"max_days_late\": 23, \"on_time_confirmed_pct\": 90.4, \"on_time_requested_pct\": 90.4, \"receipts\": 52}",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:d52f9352a005fff4",
+    "verdict": "supported",
+    "reason": "Matches the delivery evidence."
+   }
+  },
+  {
+   "id": "obs:38e90c8c4935ae4d",
+   "text": "Part 350010 last-12m delivery: 88.0% on time to requested date, 8.0% late, max 23 days late.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"late_pct\": 8.0, \"max_days_late\": 23, \"on_time_confirmed_pct\": 88.0, \"on_time_requested_pct\": 88.0, \"part_id\": \"part:350010\"",
+   "parts": [
+    "part:350010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:38e90c8c4935ae4d",
+    "verdict": "supported",
+    "reason": "Matches the per-part delivery evidence."
+   }
+  },
+  {
+   "id": "obs:31a9d89d14d03860",
+   "text": "PO line 4500014350-10 (part 350010) was first confirmed 2026-10-23 against a requested 2026-10-05.",
+   "kind": "fact",
+   "source": "po:4500014350-10",
+   "quote": "\"first_confirmed_date\": \"2026-10-23\", \"id\": \"po:4500014350-10\", \"order_date\": \"2026-08-31\", \"price\": 239.21, \"price_note\": \"\", \"price_unit\": 1, \"qty\": 270, \"requested_date\": \"2026-10-05\"",
+   "parts": [
+    "part:350010"
+   ],
+   "observed_at": "2026-08-31",
+   "valid_until": null,
+   "review": {
+    "id": "obs:31a9d89d14d03860",
+    "verdict": "supported",
+    "reason": "Matches the PO line."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier announced a 6.5 % price increase for part:350011 from EUR 348.32 to EUR 370.96 per pc, effective 01 January 2027, citing copper and electronic component price rises.",
+     "kind": "supplier_statement",
+     "source": "doc:20260914-70510-P02",
+     "quote": "Owing to the strong rise in copper and electronic component prices, we are forced to adjust our prices for Motor IE3 7.5 kW, 4-pole (part:350011) by **6.5 %** with effect from **01 January 2027**: from EUR 348.32 to EUR 370.96 per  pc.",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2026-09-14",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's key account manager said price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260410-70510-M1",
+     "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-04-10",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for part:350011 at this supplier's plant is EUR 374.95 per unit (no margin, error about 5 %), estimated 2026-07-15.",
+     "kind": "fact",
+     "source": "cost:350011",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 173.23, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350011\", \"material_eur\": 127.48, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 74.24, \"part_id\": \"part:350011\", \"price_unit\": 1, \"supplier_id\": \"sup:70510\", \"unit_cost\": 374.95",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for part:350010 at this supplier's plant is EUR 244.39 per unit (no margin, error about 5 %).",
+     "kind": "fact",
+     "source": "cost:350010",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 112.91, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350010\", \"material_eur\": 83.09, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 48.39, \"part_id\": \"part:350010\", \"price_unit\": 1, \"supplier_id\": \"sup:70510\", \"unit_cost\": 244.39",
+     "parts": [
+      "part:350010"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Current 2026 price for part:350011 is EUR 348.32 (renewal, +1.2 %).",
+     "kind": "fact",
+     "source": "EV-2026-70510-350011",
+     "quote": "\"basis\": \"renewal\", \"change_pct\": 1.2, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70510-350011\", \"price\": 348.32",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Current 2026 price for part:350010 is EUR 239.21 (renewal, +1.2 %).",
+     "kind": "fact",
+     "source": "EV-2026-70510-350010",
+     "quote": "\"basis\": \"renewal\", \"change_pct\": 1.2, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70510-350010\", \"price\": 239.21",
+     "parts": [
+      "part:350010"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Second source Motorenwerk Saalach quoted EUR 421.06 for part:350011 with 90-day validity.",
+     "kind": "fact",
+     "source": "quote:7200002",
+     "quote": "\"name\": \"Motorenwerk Saalach GmbH\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-03\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000202\", \"supplier_id\": \"sup:70580\", \"tooling_eur\": 0, \"unit_price\": 421.06, \"validity_days\": 90",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2026-09-03",
+     "valid_until": "2026-12-02"
+    },
+    {
+     "text": "Copper notation for cables averaged EUR 1,289/100 kg in September 2026, +48 % year on year.",
+     "kind": "fact",
+     "source": "news:20260910-27",
+     "quote": "The copper notation for cables averaged EUR 1,289/100 kg in September, +48 % on a year ago.",
+     "parts": [],
+     "observed_at": "2026-09-10",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier announced a 6.5 % price increase for part:350011 from EUR 348.32 to EUR 370.96 per pc, effective 01 January 2027.",
+     "kind": "supplier_statement",
+     "source": "doc:20260914-70510-P02",
+     "quote": "we are forced to adjust our prices for Motor IE3 7.5 kW, 4-pole (part:350011) by **6.5 %** with effect from **01 January 2027**: from EUR 348.32 to EUR 370.96 per  pc.",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2026-09-14",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier attributes the increase to rising copper and electronic component prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260914-70510-P02",
+     "quote": "Owing to the strong rise in copper and electronic component prices",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2026-09-14",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier emphasises its long, reliable supply relationship and asks for understanding.",
+     "kind": "supplier_statement",
+     "source": "doc:20260914-70510-P02",
+     "quote": "we have supplied Hollerau Pumpenwerke reliably for many years.",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2026-09-14",
+     "valid_until": null
+    },
+    {
+     "text": "Per their key account manager, price changes above 2 % require approval of the supplier's pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260410-70510-M1",
+     "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-04-10",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is part of the Nordmark Gruppe, with 4800 staff and turnover of EUR 1.38 bn.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"group_parent\": \"Nordmark Gruppe\", \"legal_form\": \"AG\", \"owner_type\": \"group\", \"staff\": 4800, \"supplier_id\": \"sup:70510\", \"turnover_band\": \">1000 M EUR\", \"turnover_eur\": 1380000000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Credit index is 147, unchanged from 12 months ago; equity ratio 29.1 %.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 147, \"credit_index_12m_ago\": 147, \"equity_ratio_pct\": 29.1",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master: A-class electrical supplier, DAP, 30 payment days, 35-day standard lead time.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"abc_class\": \"A\", \"blocked\": 0, \"category\": \"electrical\", \"contract_id\": \"ctr:4600070510\", \"country\": \"DE\", \"created\": \"1996-01-01\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70510\", \"incoterm\": \"DAP\", \"name\": \"Antriebstechnik Nordmark AG\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Invoices: 62.2 % paid late, averaging 1.1 days after due in the last 12 months, none over 10 days late.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due_last_12m\": 1.1, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 149, \"max_days_late\": 5, \"paid_late_pct\": 62.2, \"paid_over_10_days_late_pct\": 0.0",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement covers Motor IE3 4 kW and 7.5 kW motors; valid 2024-01-01 to 2026-12-31, extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070510#8.1",
+     "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:350010",
+      "part:350011"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070510#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:350010",
+      "part:350011"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070510#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:350010",
+      "part:350011"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery DAP with standard lead time 35 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070510#5.1",
+     "quote": "Delivery DAP; standard lead time 35 days from order.",
+     "parts": [
+      "part:350010",
+      "part:350011"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070510#6.1",
+     "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:350010",
+      "part:350011"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requests a 6.5 % increase for part 350011 from EUR 348.32 to EUR 370.96 effective 2027-01-01, citing copper and electronic component prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260914-70510-P02",
+     "quote": "Owing to the strong rise in copper and electronic component prices, we are forced to adjust our prices for Motor IE3 7.5 kW, 4-pole (part:350011) by **6.5 %** with effect from **01 January 2027**: from EUR 348.32 to EUR 370.96 per  pc.",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2026-09-14",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's key account manager stated price changes above 2 % need pricing committee approval, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260410-70510-M1",
+     "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-04-10",
+     "valid_until": null
+    },
+    {
+     "text": "For the 2026 renewal of part 350011 the supplier asked +4.7 % and settled at +1.2 %.",
+     "kind": "fact",
+     "source": "EV-2026-70510-350011",
+     "quote": "\"asked_pct\": 4.7, \"date\": \"2025-11-12\", \"event_id\": \"EV-2026-70510-350011\", \"note\": \"\", \"part_id\": \"part:350011\", \"settled_pct\": 1.2",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2025-11-12",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Supplier sup:70510 rolling 12-month OTD (vs requested date) was 90.4% in 2026Q3 scorecard, below the 95% quality agreement target.",
+     "kind": "fact",
+     "source": "sc:70510@2026Q3",
+     "quote": "\"otd_pct\": 90.4, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\"",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "2026Q3 scorecard: ppm 273, score 93.8, class A green, no overdue 8D reports.",
+     "kind": "fact",
+     "source": "sc:70510@2026Q3",
+     "quote": "\"open_8d_overdue\": 0, \"otd_confirmed_pct\": 90.4, \"otd_pct\": 90.4, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 273, \"qn_count\": 3, \"quarter\": \"2026Q3\", \"received_qty\": 11006, \"score\": 93.8",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "OTD dipped to 80.8% (vs requested) in the 2025Q2 rolling scorecard.",
+     "kind": "fact",
+     "source": "sc:70510@2025Q2",
+     "quote": "\"otd_confirmed_pct\": 82.7, \"otd_pct\": 80.8",
+     "parts": [],
+     "observed_at": "2025-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months deliveries: 7.7% late, average 10.2 days late when late, max 23 days, over 52 receipts.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 10.2, \"early_pct\": 1.9, \"late_pct\": 7.7, \"max_days_late\": 23, \"on_time_confirmed_pct\": 90.4, \"on_time_requested_pct\": 90.4, \"receipts\": 52}",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 350010 last-12m delivery: 88.0% on time to requested date, 8.0% late, max 23 days late.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"late_pct\": 8.0, \"max_days_late\": 23, \"on_time_confirmed_pct\": 88.0, \"on_time_requested_pct\": 88.0, \"part_id\": \"part:350010\"",
+     "parts": [
+      "part:350010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 350011 last-12m supplier-caused ppm was 366 with 2 QNs.",
+     "kind": "fact",
+     "source": "evidence:part:350011:part_quality",
+     "quote": "\"ppm_last_12m\": 366, \"qns\": 2",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Wrong material certificate recurred: QN 20004918 on part 350010 (2026-05-09), with 8D closed 2026-06-19 and no recharge.",
+     "kind": "fact",
+     "source": "qn:20004918",
+     "quote": "\"cost_recharged_eur\": 0, \"d3_date\": \"2026-05-10\", \"d8_date\": \"2026-06-19\", \"defect\": \"wrong material certificate\"",
+     "parts": [
+      "part:350010"
+     ],
+     "observed_at": "2026-05-09",
+     "valid_until": null
+    },
+    {
+     "text": "PO line 4500014350-10 (part 350010) was first confirmed 2026-10-23 against a requested 2026-10-05.",
+     "kind": "fact",
+     "source": "po:4500014350-10",
+     "quote": "\"first_confirmed_date\": \"2026-10-23\", \"id\": \"po:4500014350-10\", \"order_date\": \"2026-08-31\", \"price\": 239.21, \"price_note\": \"\", \"price_unit\": 1, \"qty\": 270, \"requested_date\": \"2026-10-05\"",
+     "parts": [
+      "part:350010"
+     ],
+     "observed_at": "2026-08-31",
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [
+  {
+   "id": "obs:1034a706755f8706",
+   "text": "Framework agreement covers Motor IE3 4 kW and 7.5 kW motors; valid 2024-01-01 to 2026-12-31, extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070510#8.1",
+   "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:350010",
+    "part:350011"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:1034a706755f8706",
+    "verdict": "reject",
+    "reason": "The scope claim is not in the cited clause 8.1; it comes from clause 2.1."
+   }
+  }
+ ],
+ "validation": {
+  "dropped": []
+ }
+}

@@ -1,7 +1,47 @@
 # Zone 0: offline research (LLM knowledge base)
 
-Status: **in progress** (engine v2.0 work). Nothing here changes a live move yet: zone 0 only writes
-JSON files that later zones read.
+## Source-grounded pipeline (experimental)
+
+`research.py --pipeline grounded` writes to `knowledge/grounded/`, leaving the legacy dossiers
+available for comparison. Four specialists extract atomic observations from original records,
+including company definitions and relevant letters. Each observation carries a literal excerpt,
+part scope, source date, expiry (if known), and a fact/statement/hypothesis label. An independent
+verifier checks each observation against the complete records. The lead can select observation
+IDs but cannot invent new conclusions or choose terms before the case exists. Missing or rejected
+support is retained in the build report, not silently promoted into the live packet.
+
+`grounded_dossier` makes both hybrid consumers read only these artifacts, check their source
+fingerprint, and filter part and expiry scope. Old strategy prose and rehearsals cannot enter this
+path. Missing/stale artifacts yield no Z observations. The argument library retains exact claim
+sentences but removes unconditional volume-value and below-cost assertions.
+
+`measured_trades` bounds the hybrid's menu: a term change needs a matching supplier offer pair,
+or the existing explicit-driver clause estimate. Unknown values are stated as unknown and are
+not used to reduce prices. The packet includes delta C versus E0. Early acceptance remains with
+the engine unless the supplier has agreed or declared its final offer. These flags remain off:
+five paired hosted passes averaged 73.434 versus v1.9's 75.086. See the
+[full comparison](../notes/analysis/zone0-v3/results.md). v1.9 remains the default.
+
+All 46 supplier artifacts have been rebuilt and passed the loader checks: 1,237 supported
+observations, 27 separate hypotheses, 81 verifier rejections and 68 source-validation drops.
+These are model-assisted support judgments, not a guarantee that every interpretation is correct.
+Both selected and unselected supported observations are available when their part/date scope matches.
+
+From `starter-kit/`:
+
+```bash
+.venv/bin/python scripts/research.py --pipeline grounded --all --effort low --parallel 4
+.venv/bin/python scripts/bench.py --agent procudeal --set practice --on tactician,grounded_dossier,measured_trades --no-model-cache
+.venv/bin/python scripts/analyse_grounded_hybrid.py
+```
+
+Rebuild after downloading a new data release; source-content or prompt changes invalidate existing
+artifacts. A failed build exits unsuccessfully and leaves the previous artifact intact; a stale
+artifact is never silently reused by the grounded reader. A second build on the current snapshot
+verified all 46 and made zero model calls. No data refresh is performed mid-experiment.
+
+The sections below describe the **original pipeline**, retained behind `--pipeline legacy` for
+comparison. Its playbook, lead prose and role-play are not inputs to the grounded pipeline.
 
 ## Why
 

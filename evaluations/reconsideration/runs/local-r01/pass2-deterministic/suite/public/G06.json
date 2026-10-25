@@ -1,0 +1,104 @@
+{
+  "case_id": "case:G06",
+  "set": "practice",
+  "type": "renewal",
+  "title": "Supply enquiry",
+  "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+  "trigger_doc": null,
+  "parts": [
+    "part:330020"
+  ],
+  "suppliers": [
+    "sup:70340"
+  ],
+  "negotiable": [
+    "unit_price",
+    "payment_days",
+    "index_clause"
+  ],
+  "fixed_terms": {
+    "lead_time_days": 35,
+    "volume_per_year": 7400,
+    "contract_months": 24,
+    "incoterm": "DAP",
+    "tooling_eur": 0,
+    "effective_date": "2027-07-01"
+  },
+  "term_options": {
+    "payment_days": [
+      10,
+      30,
+      60,
+      90
+    ],
+    "index_clause": [
+      null,
+      {
+        "series": "PPI-C241",
+        "material_share": 0.6,
+        "deadband_pct": 3.0,
+        "base_month": "2026-09"
+      }
+    ]
+  },
+  "buyer": {
+    "need_per_year": 7400,
+    "horizon_years": 2.0,
+    "current_unit_price": 17.5,
+    "fallback_unit_price": 19.6,
+    "interest_rate": 0.08,
+    "reference_payment_days": 60,
+    "need_lead_time_days": 35,
+    "category_goal": "leverage",
+    "fallback_risk_pct": 3,
+    "index_risk_pct": 1,
+    "late_cost_per_day": 200,
+    "cost_per_defect": 50,
+    "freight_eur_per_unit": {
+      "EXW": 0.6,
+      "FCA": 0.35,
+      "DAP": 0
+    },
+    "index_paths": {
+      "PPI-C241": 0.02
+    },
+    "must_haves": [
+      {
+        "field": "lead_time_days",
+        "op": "<=",
+        "value": 60
+      }
+    ],
+    "alternative": {
+      "kind": "other_supplier",
+      "ref": null,
+      "terms": {
+        "lead_time_days": 35,
+        "volume_per_year": 7400,
+        "contract_months": 24,
+        "incoterm": "DAP",
+        "tooling_eur": 0,
+        "effective_date": "2027-07-01",
+        "unit_price": 18.9,
+        "payment_days": 60,
+        "index_clause": null
+      }
+    }
+  },
+  "round_limit": 10,
+  "refs": [
+    "doc:20261013-70340-S15"
+  ],
+  "facts": {
+    "doc:20261013-70340-S15": {
+      "asked_pct": null,
+      "asked_price": null,
+      "date": "2026-10-13",
+      "days": null,
+      "effective_date": null,
+      "supplier": "sup:70340",
+      "title": "Steel for 2027",
+      "type": "letter"
+    }
+  }
+}

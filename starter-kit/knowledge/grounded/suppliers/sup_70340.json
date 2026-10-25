@@ -1,0 +1,829 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70340",
+ "name": "Metallbau Steinfelder KG",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "ae2df1d11216f8c14ce3dd93b66bfc93de823ba7c4c1655e380ed1268c33ae04",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:20:28.131356+00:00",
+  "seconds": 45.8,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:438917d4fb20843e",
+   "text": "Current 2026 renewal price for part 330020 is EUR 18.16 (change -1.3%), valid from 2026-01-01 with no end date recorded.",
+   "kind": "fact",
+   "source": "EV-2026-70340-330020",
+   "quote": "\"change_pct\": -1.3, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70340-330020\", \"price\": 18.16",
+   "parts": [
+    "part:330020"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:438917d4fb20843e",
+    "verdict": "supported",
+    "reason": "EV-2026 record: price 18.16, change -1.3%, valid from 2026-01-01, valid_to null."
+   }
+  },
+  {
+   "id": "obs:3b7db9b6518854c4",
+   "text": "Supplier quoted EUR 18.16 for part 330020 on 2026-09-26 with 21 days lead time and 30 payment days.",
+   "kind": "fact",
+   "source": "quote:7300074",
+   "quote": "\"lead_time_days\": 21, \"missing_fields\": \"validity_days;incoterm\", \"name\": \"Metallbau Steinfelder KG\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-26\"",
+   "parts": [
+    "part:330020"
+   ],
+   "observed_at": "2026-09-26",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3b7db9b6518854c4",
+    "verdict": "supported",
+    "reason": "quote:7300074 records unit_price 18.16, a 2026-09-26 quote date, 21-day lead time and 30 payment days. This is a recorded quote only."
+   }
+  },
+  {
+   "id": "obs:04d5ce5d47d7e17a",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before calendar year end.",
+   "kind": "fact",
+   "source": "ctr:4600070340#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:330020",
+    "part:330030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:04d5ce5d47d7e17a",
+    "verdict": "supported",
+    "reason": "Clause 3.1 states this verbatim."
+   }
+  },
+  {
+   "id": "obs:2e91f15cbc2acdd1",
+   "text": "Framework agreement 4600070340 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070340#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:330020",
+    "part:330030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:2e91f15cbc2acdd1",
+    "verdict": "supported",
+    "reason": "Clause 8.1 states this verbatim. The contract covers both parts."
+   }
+  },
+  {
+   "id": "obs:dc7cab8ebdcb1731",
+   "text": "Contract payment term is 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070340#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:330020",
+    "part:330030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:dc7cab8ebdcb1731",
+    "verdict": "supported",
+    "reason": "Clause 4.1."
+   }
+  },
+  {
+   "id": "obs:e7b0e4ab607a1bbe",
+   "text": "Hollerau paid 95.7% of this supplier's invoices late, averaging 9.6 days after due in the last 12 months.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due_last_12m\": 9.6, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 148, \"max_days_late\": 23, \"paid_late_pct\": 95.7",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:e7b0e4ab607a1bbe",
+    "verdict": "supported",
+    "reason": "Invoice record: paid_late_pct 95.7 and avg_days_paid_after_due_last_12m 9.6."
+   }
+  },
+  {
+   "id": "obs:886ab32e1540b526",
+   "text": "Delivery DAP with standard lead time 21 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070340#5.1",
+   "quote": "Delivery DAP; standard lead time 21 days from order.",
+   "parts": [
+    "part:330020",
+    "part:330030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:886ab32e1540b526",
+    "verdict": "supported",
+    "reason": "Clause 5.1."
+   }
+  },
+  {
+   "id": "obs:94a0d87dac8996ef",
+   "text": "Quality agreement: 95% on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070340#6.1",
+   "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:330020",
+    "part:330030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:94a0d87dac8996ef",
+    "verdict": "supported",
+    "reason": "Clause 6.1."
+   }
+  },
+  {
+   "id": "obs:e7f2382b52b545b9",
+   "text": "Owner offered to walk the buyer through their calculation (hourly rates and material) to settle prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260721-70340-M2",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+   "parts": [],
+   "observed_at": "2026-07-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e7f2382b52b545b9",
+    "verdict": "supported",
+    "reason": "The call note records this offer."
+   }
+  },
+  {
+   "id": "obs:73e72edbd4fb5b51",
+   "text": "Owner asked where the buyer's index figures come from; he uses his own spreadsheet last updated two years ago.",
+   "kind": "supplier_statement",
+   "source": "doc:20260728-70340-M1",
+   "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.",
+   "parts": [],
+   "observed_at": "2026-07-28",
+   "valid_until": null,
+   "review": {
+    "id": "obs:73e72edbd4fb5b51",
+    "verdict": "supported",
+    "reason": "The call note records this question and spreadsheet."
+   }
+  },
+  {
+   "id": "obs:dcc9b95fd608ff1b",
+   "text": "Supplier said Hollerau is an important reference customer for them.",
+   "kind": "supplier_statement",
+   "source": "doc:20260418-70340-M3",
+   "quote": "Metallbau Steinfelder KG said Hollerau is an important reference customer for them.",
+   "parts": [],
+   "observed_at": "2026-04-18",
+   "valid_until": null,
+   "review": {
+    "id": "obs:dcc9b95fd608ff1b",
+    "verdict": "supported",
+    "reason": "The meeting note records this statement."
+   }
+  },
+  {
+   "id": "obs:38516805598953f3",
+   "text": "Latest scorecard (rolling 12 months to 2026-09-30): OTD 88.5% vs requested, 90.4% vs confirmed, ppm 489, score 91.8, class A green.",
+   "kind": "fact",
+   "source": "sc:70340@2026Q3",
+   "quote": "\"otd_confirmed_pct\": 90.4, \"otd_pct\": 88.5, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 489, \"qn_count\": 10, \"quarter\": \"2026Q3\", \"received_qty\": 22512, \"score\": 91.8",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:38516805598953f3",
+    "verdict": "supported",
+    "reason": "The sc 2026Q3 record matches all values, including class A green."
+   }
+  },
+  {
+   "id": "obs:082037b76c7e15f3",
+   "text": "Supplier was class B amber with score 80.0 and 2 overdue open 8Ds in the 2026Q1 scorecard.",
+   "kind": "fact",
+   "source": "sc:70340@2026Q1",
+   "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 12, \"gr_lines\": 49, \"id\": \"sc:70340@2026Q1\", \"open_8d_overdue\": 2",
+   "parts": [],
+   "observed_at": "2026-03-31",
+   "valid_until": null,
+   "review": {
+    "id": "obs:082037b76c7e15f3",
+    "verdict": "supported",
+    "reason": "The sc 2026Q1 record shows class B amber, score 80.0 and open_8d_overdue 2."
+   }
+  },
+  {
+   "id": "obs:72ee369fd78275f2",
+   "text": "Part 330030 at this supplier: ppm last 12 months 870, 19 QNs of which 18 supplier-caused.",
+   "kind": "fact",
+   "source": "evidence:part:330030:part_quality",
+   "quote": "\"complaint_qty\": 19, \"last_qn\": \"2026-09-17\", \"latest_qns\": [\"qn:20005027\", \"qn:20004970\", \"qn:20004954\"], \"ppm_last_12m\": 870, \"qns\": 19, \"received_last_12m\": 9194, \"recharged_eur\": 1950, \"supplier_caused\": 18, \"supplier_id\": \"sup:70340\"",
+   "parts": [
+    "part:330030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:72ee369fd78275f2",
+    "verdict": "supported",
+    "reason": "The part quality record for sup:70340 matches."
+   }
+  },
+  {
+   "id": "obs:5efedb77761b65e9",
+   "text": "Part 330020: ppm last 12 months 225, 15 QNs, 12 supplier-caused.",
+   "kind": "fact",
+   "source": "evidence:part:330020:part_quality",
+   "quote": "\"ppm_last_12m\": 225, \"qns\": 15, \"received_last_12m\": 13318, \"recharged_eur\": 1200, \"supplier_caused\": 12",
+   "parts": [
+    "part:330020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:5efedb77761b65e9",
+    "verdict": "supported",
+    "reason": "The part quality record matches."
+   }
+  },
+  {
+   "id": "obs:973db99d87e6ed56",
+   "text": "Small family KG: 40 staff, turnover band 2-5 M EUR, equity ratio 33%, credit index 230 unchanged over 12 months.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 230, \"credit_index_12m_ago\": 230, \"equity_ratio_pct\": 33.0, \"filed_fy\": 2024, \"founded\": 1977, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 40, \"supplier_id\": \"sup:70340\", \"turnover_band\": \"2-5 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:973db99d87e6ed56",
+    "verdict": "supported",
+    "reason": "The intel record matches all figures."
+   }
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "obs:4169ea3e1a3a33ea",
+   "text": "Part 330030 price has been EUR 15.63 since 2024 with 0.0% change at the 2026 renewal.",
+   "kind": "hypothesis",
+   "source": "EV-2026-70340-330030",
+   "quote": "\"change_pct\": 0.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70340-330030\", \"price\": 15.63",
+   "parts": [
+    "part:330030"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:14631360bbf90843",
+    "verdict": "hypothesis",
+    "reason": "The 2026 event supports 15.63 and 0.0%. 'Since 2024' comes from other events that are not cited."
+   }
+  },
+  {
+   "id": "obs:57d62f855b36512b",
+   "text": "Owner-led contact: the hypothesis is that the owner values transparency over sophisticated index data, given his offer to share calculations and outdated own spreadsheet.",
+   "kind": "hypothesis",
+   "source": "doc:20260728-70340-M1",
+   "quote": "he works from his own spreadsheet, last updated two years ago",
+   "parts": [],
+   "observed_at": "2026-07-28",
+   "valid_until": null,
+   "review": {
+    "id": "obs:57d62f855b36512b",
+    "verdict": "hypothesis",
+    "reason": "A plausible inference from the call notes, not a recorded fact."
+   }
+  },
+  {
+   "id": "obs:5abcc14b85a69882",
+   "text": "Recurring 'wrong material certificate' supplier-caused complaint on part 330030 in June 2026.",
+   "kind": "hypothesis",
+   "source": "qn:20004954",
+   "quote": "\"defect\": \"wrong material certificate\", \"gr_id\": \"gr:5000105038\", \"id\": \"qn:20004954\", \"part_id\": \"part:330030\"",
+   "parts": [
+    "part:330030"
+   ],
+   "observed_at": "2026-06-20",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2ac4fb436c722744",
+    "verdict": "hypothesis",
+    "reason": "The single cited QN supports a June 2026 wrong-certificate complaint. 'Recurring' is not warranted by that one record."
+   }
+  }
+ ],
+ "verified_unselected": [
+  {
+   "id": "obs:5ff1785fcaacb4f5",
+   "text": "In the 2025 benchmark RFQ for part 330030 the supplier quoted EUR 16.7 and was not awarded.",
+   "kind": "fact",
+   "source": "quote:7100035",
+   "quote": "\"awarded\": 0, \"currency\": \"EUR\", \"id\": \"quote:7100035\", \"incoterm\": null, \"lead_time_days\": 24, \"missing_fields\": \"validity_days;incoterm;payment_days\", \"name\": \"Metallbau Steinfelder KG\", \"payment_days\": null, \"price_unit\": 1, \"quote_date\": \"2025-07-06\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000116\", \"supplier_id\": \"sup:70340\", \"tooling_eur\": 0, \"unit_price\": 16.7",
+   "parts": [
+    "part:330030"
+   ],
+   "observed_at": "2025-07-06",
+   "valid_until": null,
+   "review": {
+    "id": "obs:5ff1785fcaacb4f5",
+    "verdict": "supported",
+    "reason": "quote:7100035: 16.7, awarded 0, RFQ 6000000116 for part 330030, dated 2025-07-06."
+   }
+  },
+  {
+   "id": "obs:24c04c6ecaf45bcc",
+   "text": "Owner of Metallbau Steinfelder KG offered to walk Hollerau through their calculation (hourly rates and material) to help settle prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260721-70340-M2",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices",
+   "parts": [],
+   "observed_at": "2026-07-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:24c04c6ecaf45bcc",
+    "verdict": "supported",
+    "reason": "The call note records this offer."
+   }
+  },
+  {
+   "id": "obs:d33add24cce3f6ae",
+   "text": "Owner asked where Hollerau gets its index figures from; he works from his own spreadsheet, last updated two years ago.",
+   "kind": "supplier_statement",
+   "source": "doc:20260728-70340-M1",
+   "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago",
+   "parts": [],
+   "observed_at": "2026-07-28",
+   "valid_until": null,
+   "review": {
+    "id": "obs:d33add24cce3f6ae",
+    "verdict": "supported",
+    "reason": "The call note records this."
+   }
+  },
+  {
+   "id": "obs:2d68b34c68ad8373",
+   "text": "Supplier said Hollerau is an important reference customer for them.",
+   "kind": "supplier_statement",
+   "source": "doc:20260418-70340-M3",
+   "quote": "Metallbau Steinfelder KG said Hollerau is an important reference customer for them",
+   "parts": [],
+   "observed_at": "2026-04-18",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2d68b34c68ad8373",
+    "verdict": "supported",
+    "reason": "The meeting note records this statement."
+   }
+  },
+  {
+   "id": "obs:222d58d6d0560293",
+   "text": "From 1 October the sales contact is a new colleague in inside sales; other contacts unchanged.",
+   "kind": "supplier_statement",
+   "source": "doc:20251009-70340-N",
+   "quote": "From 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.",
+   "parts": [],
+   "observed_at": "2025-10-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:222d58d6d0560293",
+    "verdict": "supported",
+    "reason": "The supplier email states this."
+   }
+  },
+  {
+   "id": "obs:76573b1a38cf391f",
+   "text": "Family-owned KG founded 1977 with 40 staff, turnover band 2-5 M EUR.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"founded\": 1977, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 40, \"supplier_id\": \"sup:70340\", \"turnover_band\": \"2-5 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:76573b1a38cf391f",
+    "verdict": "supported",
+    "reason": "The intel record matches."
+   }
+  },
+  {
+   "id": "obs:364afe1db74fae35",
+   "text": "Supplier's owner offered to walk buyer through their calculation (hourly rates and material) to help settle prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260721-70340-M2",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+   "parts": [],
+   "observed_at": "2026-07-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:364afe1db74fae35",
+    "verdict": "supported",
+    "reason": "The call note records this offer."
+   }
+  },
+  {
+   "id": "obs:55036d7328d17414",
+   "text": "Owner asked where buyer's index figures come from; he uses his own spreadsheet last updated two years ago.",
+   "kind": "supplier_statement",
+   "source": "doc:20260728-70340-M1",
+   "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.",
+   "parts": [],
+   "observed_at": "2026-07-28",
+   "valid_until": null,
+   "review": {
+    "id": "obs:55036d7328d17414",
+    "verdict": "supported",
+    "reason": "The call note records this."
+   }
+  },
+  {
+   "id": "obs:f200352d66b08971",
+   "text": "Supplier was class B amber with score 83.6 and ppm 849 in the 2025Q3 scorecard.",
+   "kind": "fact",
+   "source": "sc:70340@2025Q3",
+   "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 19, \"gr_lines\": 49, \"id\": \"sc:70340@2025Q3\", \"open_8d_overdue\": 1, \"otd_confirmed_pct\": 89.8, \"otd_pct\": 85.7, \"period_end\": \"2025-09-30\", \"period_start\": \"2024-10-01\", \"ppm\": 849",
+   "parts": [],
+   "observed_at": "2025-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:f200352d66b08971",
+    "verdict": "supported",
+    "reason": "The sc 2025Q3 record shows class B amber, score 83.6 and ppm 849."
+   }
+  },
+  {
+   "id": "obs:28c8563507db9672",
+   "text": "Last 12 months deliveries: 52 receipts, 11.5% late, max 11 days late, on-time 88.5% vs requested.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 7.7, \"early_pct\": 0.0, \"late_pct\": 11.5, \"max_days_late\": 11, \"on_time_confirmed_pct\": 90.4, \"on_time_requested_pct\": 88.5, \"receipts\": 52}",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:28c8563507db9672",
+    "verdict": "supported",
+    "reason": "The deliveries last_12m figures match."
+   }
+  },
+  {
+   "id": "obs:7c9c3122427ab75b",
+   "text": "Supplier is ISO 9001 certified with VDA 6.3 grade A; 40 staff, family-owned.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"certifications\": \"ISO 9001\", \"credit_index\": 230, \"credit_index_12m_ago\": 230, \"equity_ratio_pct\": 33.0, \"filed_fy\": 2024, \"founded\": 1977, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 40, \"supplier_id\": \"sup:70340\", \"turnover_band\": \"2-5 M EUR\", \"turnover_eur\": null, \"vda63_grade\": \"A\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7c9c3122427ab75b",
+    "verdict": "supported",
+    "reason": "The intel record shows ISO 9001, VDA 6.3 grade A, 40 staff and family ownership."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Current 2026 renewal price for part 330020 is EUR 18.16 (change -1.3%), valid from 2026-01-01 with no end date recorded.",
+     "kind": "fact",
+     "source": "EV-2026-70340-330020",
+     "quote": "\"change_pct\": -1.3, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70340-330020\", \"price\": 18.16",
+     "parts": [
+      "part:330020"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Part 330030 price has been EUR 15.63 since 2024 with 0.0% change at the 2026 renewal.",
+     "kind": "fact",
+     "source": "EV-2026-70340-330030",
+     "quote": "\"change_pct\": 0.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70340-330030\", \"price\": 15.63",
+     "parts": [
+      "part:330030"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier quoted EUR 18.16 for part 330020 on 2026-09-26 with 21 days lead time and 30 payment days.",
+     "kind": "fact",
+     "source": "quote:7300074",
+     "quote": "\"lead_time_days\": 21, \"missing_fields\": \"validity_days;incoterm\", \"name\": \"Metallbau Steinfelder KG\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-26\"",
+     "parts": [
+      "part:330020"
+     ],
+     "observed_at": "2026-09-26",
+     "valid_until": null
+    },
+    {
+     "text": "In the 2025 benchmark RFQ for part 330030 the supplier quoted EUR 16.7 and was not awarded.",
+     "kind": "fact",
+     "source": "quote:7100035",
+     "quote": "\"awarded\": 0, \"currency\": \"EUR\", \"id\": \"quote:7100035\", \"incoterm\": null, \"lead_time_days\": 24, \"missing_fields\": \"validity_days;incoterm;payment_days\", \"name\": \"Metallbau Steinfelder KG\", \"payment_days\": null, \"price_unit\": 1, \"quote_date\": \"2025-07-06\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000116\", \"supplier_id\": \"sup:70340\", \"tooling_eur\": 0, \"unit_price\": 16.7",
+     "parts": [
+      "part:330030"
+     ],
+     "observed_at": "2025-07-06",
+     "valid_until": null
+    },
+    {
+     "text": "Owner offered to walk the buyer through their calculation (hourly rates and material) to settle prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260721-70340-M2",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+     "parts": [],
+     "observed_at": "2026-07-21",
+     "valid_until": null
+    },
+    {
+     "text": "Owner asked where the buyer's index figures come from; he uses his own spreadsheet last updated two years ago.",
+     "kind": "supplier_statement",
+     "source": "doc:20260728-70340-M1",
+     "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.",
+     "parts": [],
+     "observed_at": "2026-07-28",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260418-70340-M3",
+     "quote": "Metallbau Steinfelder KG said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-04-18",
+     "valid_until": null
+    },
+    {
+     "text": "Small family KG: 40 staff, turnover band 2-5 M EUR, equity ratio 33%, credit index 230 unchanged over 12 months.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 230, \"credit_index_12m_ago\": 230, \"equity_ratio_pct\": 33.0, \"filed_fy\": 2024, \"founded\": 1977, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 40, \"supplier_id\": \"sup:70340\", \"turnover_band\": \"2-5 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Owner of Metallbau Steinfelder KG offered to walk Hollerau through their calculation (hourly rates and material) to help settle prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260721-70340-M2",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices",
+     "parts": [],
+     "observed_at": "2026-07-21",
+     "valid_until": null
+    },
+    {
+     "text": "Owner asked where Hollerau gets its index figures from; he works from his own spreadsheet, last updated two years ago.",
+     "kind": "supplier_statement",
+     "source": "doc:20260728-70340-M1",
+     "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago",
+     "parts": [],
+     "observed_at": "2026-07-28",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260418-70340-M3",
+     "quote": "Metallbau Steinfelder KG said Hollerau is an important reference customer for them",
+     "parts": [],
+     "observed_at": "2026-04-18",
+     "valid_until": null
+    },
+    {
+     "text": "From 1 October the sales contact is a new colleague in inside sales; other contacts unchanged.",
+     "kind": "supplier_statement",
+     "source": "doc:20251009-70340-N",
+     "quote": "From 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.",
+     "parts": [],
+     "observed_at": "2025-10-09",
+     "valid_until": null
+    },
+    {
+     "text": "Family-owned KG founded 1977 with 40 staff, turnover band 2-5 M EUR.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"founded\": 1977, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 40, \"supplier_id\": \"sup:70340\", \"turnover_band\": \"2-5 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Hollerau paid 95.7% of this supplier's invoices late, averaging 9.6 days after due in the last 12 months.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due_last_12m\": 9.6, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 148, \"max_days_late\": 23, \"paid_late_pct\": 95.7",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Owner-led contact: the hypothesis is that the owner values transparency over sophisticated index data, given his offer to share calculations and outdated own spreadsheet.",
+     "kind": "hypothesis",
+     "source": "doc:20260728-70340-M1",
+     "quote": "he works from his own spreadsheet, last updated two years ago",
+     "parts": [],
+     "observed_at": "2026-07-28",
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement 4600070340 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070340#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:330020",
+      "part:330030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before calendar year end.",
+     "kind": "fact",
+     "source": "ctr:4600070340#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:330020",
+      "part:330030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment term is 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070340#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:330020",
+      "part:330030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery DAP with standard lead time 21 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070340#5.1",
+     "quote": "Delivery DAP; standard lead time 21 days from order.",
+     "parts": [
+      "part:330020",
+      "part:330030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: 95% on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070340#6.1",
+     "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:330020",
+      "part:330030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's owner offered to walk buyer through their calculation (hourly rates and material) to help settle prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260721-70340-M2",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+     "parts": [],
+     "observed_at": "2026-07-21",
+     "valid_until": null
+    },
+    {
+     "text": "Owner asked where buyer's index figures come from; he uses his own spreadsheet last updated two years ago.",
+     "kind": "supplier_statement",
+     "source": "doc:20260728-70340-M1",
+     "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.",
+     "parts": [],
+     "observed_at": "2026-07-28",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260418-70340-M3",
+     "quote": "Metallbau Steinfelder KG said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-04-18",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Latest scorecard (rolling 12 months to 2026-09-30): OTD 88.5% vs requested, 90.4% vs confirmed, ppm 489, score 91.8, class A green.",
+     "kind": "fact",
+     "source": "sc:70340@2026Q3",
+     "quote": "\"otd_confirmed_pct\": 90.4, \"otd_pct\": 88.5, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 489, \"qn_count\": 10, \"quarter\": \"2026Q3\", \"received_qty\": 22512, \"score\": 91.8",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier was class B amber with score 80.0 and 2 overdue open 8Ds in the 2026Q1 scorecard.",
+     "kind": "fact",
+     "source": "sc:70340@2026Q1",
+     "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 12, \"gr_lines\": 49, \"id\": \"sc:70340@2026Q1\", \"open_8d_overdue\": 2",
+     "parts": [],
+     "observed_at": "2026-03-31",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier was class B amber with score 83.6 and ppm 849 in the 2025Q3 scorecard.",
+     "kind": "fact",
+     "source": "sc:70340@2025Q3",
+     "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 19, \"gr_lines\": 49, \"id\": \"sc:70340@2025Q3\", \"open_8d_overdue\": 1, \"otd_confirmed_pct\": 89.8, \"otd_pct\": 85.7, \"period_end\": \"2025-09-30\", \"period_start\": \"2024-10-01\", \"ppm\": 849",
+     "parts": [],
+     "observed_at": "2025-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months deliveries: 52 receipts, 11.5% late, max 11 days late, on-time 88.5% vs requested.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 7.7, \"early_pct\": 0.0, \"late_pct\": 11.5, \"max_days_late\": 11, \"on_time_confirmed_pct\": 90.4, \"on_time_requested_pct\": 88.5, \"receipts\": 52}",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 330030 at this supplier: ppm last 12 months 870, 19 QNs of which 18 supplier-caused.",
+     "kind": "fact",
+     "source": "evidence:part:330030:part_quality",
+     "quote": "\"complaint_qty\": 19, \"last_qn\": \"2026-09-17\", \"latest_qns\": [\"qn:20005027\", \"qn:20004970\", \"qn:20004954\"], \"ppm_last_12m\": 870, \"qns\": 19, \"received_last_12m\": 9194, \"recharged_eur\": 1950, \"supplier_caused\": 18, \"supplier_id\": \"sup:70340\"",
+     "parts": [
+      "part:330030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 330020: ppm last 12 months 225, 15 QNs, 12 supplier-caused.",
+     "kind": "fact",
+     "source": "evidence:part:330020:part_quality",
+     "quote": "\"ppm_last_12m\": 225, \"qns\": 15, \"received_last_12m\": 13318, \"recharged_eur\": 1200, \"supplier_caused\": 12",
+     "parts": [
+      "part:330020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Recurring 'wrong material certificate' supplier-caused complaint on part 330030 in June 2026.",
+     "kind": "fact",
+     "source": "qn:20004954",
+     "quote": "\"defect\": \"wrong material certificate\", \"gr_id\": \"gr:5000105038\", \"id\": \"qn:20004954\", \"part_id\": \"part:330030\"",
+     "parts": [
+      "part:330030"
+     ],
+     "observed_at": "2026-06-20",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is ISO 9001 certified with VDA 6.3 grade A; 40 staff, family-owned.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"certifications\": \"ISO 9001\", \"credit_index\": 230, \"credit_index_12m_ago\": 230, \"equity_ratio_pct\": 33.0, \"filed_fy\": 2024, \"founded\": 1977, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 40, \"supplier_id\": \"sup:70340\", \"turnover_band\": \"2-5 M EUR\", \"turnover_eur\": null, \"vda63_grade\": \"A\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": []
+ }
+}

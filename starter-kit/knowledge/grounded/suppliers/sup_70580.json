@@ -1,0 +1,837 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70580",
+ "name": "Motorenwerk Saalach GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "42e5a0615dd76e586b6fe3a7579ac9606837efa4a28c0f5702b5bee431664347",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:21:45.730880+00:00",
+  "seconds": 33.3,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:d4152c41fc5f50e4",
+   "text": "Current 2026 renewal price for part 350013 is EUR 1,608.32 per unit, +1.7% vs 2025, with no end date recorded.",
+   "kind": "fact",
+   "source": "EV-2026-70580-350013",
+   "quote": "\"change_pct\": 1.7, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70580-350013\", \"price\": 1608.32, \"price_unit\": 1, \"supplier_id\": \"sup:70580\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:d4152c41fc5f50e4",
+    "verdict": "supported",
+    "reason": "The price record shows EUR 1,608.32, a change of +1.7%, valid from 2026-01-01, and valid_to null."
+   }
+  },
+  {
+   "id": "obs:2b7d4c3333149260",
+   "text": "Should-cost for part 350013 at this supplier's plant is EUR 1,567.90 per unit (no margin, confidence ±5%).",
+   "kind": "fact",
+   "source": "cost:350013",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 724.37, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350013\", \"material_eur\": 533.09, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 310.44, \"part_id\": \"part:350013\", \"price_unit\": 1, \"supplier_id\": \"sup:70580\", \"unit_cost\": 1567.9",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2b7d4c3333149260",
+    "verdict": "supported",
+    "reason": "This is a qualified statement of the recorded estimate (unit cost EUR 1,567.90, no margin, 5% confidence), matching the record."
+   }
+  },
+  {
+   "id": "obs:948105f24c6747c0",
+   "text": "At the 2025-11-18 renewal the supplier asked +3.3 % and settled at +1.7 %.",
+   "kind": "fact",
+   "source": "EV-2026-70580-350013",
+   "quote": "\"asked_pct\": 3.3, \"date\": \"2025-11-18\", \"event_id\": \"EV-2026-70580-350013\", \"note\": \"\", \"part_id\": \"part:350013\", \"settled_pct\": 1.7",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": "2025-11-18",
+   "valid_until": null,
+   "review": {
+    "id": "obs:948105f24c6747c0",
+    "verdict": "supported",
+    "reason": "Matches the negotiation record (asked +3.3%, settled +1.7% on 2025-11-18)."
+   }
+  },
+  {
+   "id": "obs:5a4bdd9d710498e8",
+   "text": "Supplier's key account manager stated price changes above 2% need pricing committee approval, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260322-70580-M2",
+   "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-03-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:5a4bdd9d710498e8",
+    "verdict": "supported",
+    "reason": "Correctly attributed as a supplier statement and matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:629948d098c4dd84",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070580#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:629948d098c4dd84",
+    "verdict": "supported",
+    "reason": "Matches clause 3.1."
+   }
+  },
+  {
+   "id": "obs:dbdf2566c8fe00b8",
+   "text": "Supplier complained of repeated overdue invoices and warned it may review its conditions if payment terms are not kept.",
+   "kind": "supplier_statement",
+   "source": "doc:20260612-70580-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-06-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:dbdf2566c8fe00b8",
+    "verdict": "supported",
+    "reason": "Matches the email. Calling it 'repeated' is consistent with 'overdue again'."
+   }
+  },
+  {
+   "id": "obs:6706ba2a13d9edc3",
+   "text": "Invoice record: 97.1 % of invoices paid late, average 19.4 days after due, max 40 days late.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due\": 19.4, \"avg_days_paid_after_due_last_12m\": 19.3, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 75, \"max_days_late\": 40, \"paid_late_pct\": 97.1",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:6706ba2a13d9edc3",
+    "verdict": "supported",
+    "reason": "Matches the invoice summary figures (97.1% paid late, 19.4 days average, 40 days max)."
+   }
+  },
+  {
+   "id": "obs:0c26759851a238b9",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070580#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:0c26759851a238b9",
+    "verdict": "supported",
+    "reason": "Matches clause 4.1."
+   }
+  },
+  {
+   "id": "obs:36290425a1240af6",
+   "text": "Supplier master: payment terms 30 days, DAP, standard lead time 42 days.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"DAP\", \"name\": \"Motorenwerk Saalach GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 42",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:36290425a1240af6",
+    "verdict": "supported",
+    "reason": "Matches the supplier master record."
+   }
+  },
+  {
+   "id": "obs:2739e0cf61e4301c",
+   "text": "Delivery DAP with standard lead time of 42 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070580#5.1",
+   "quote": "Delivery DAP; standard lead time 42 days from order.",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:2739e0cf61e4301c",
+    "verdict": "supported",
+    "reason": "Matches clause 5.1."
+   }
+  },
+  {
+   "id": "obs:a74d43f996e53075",
+   "text": "Supplier's new sales director called Hollerau's volumes 'not strategic'; purchasing notes slower replies since summer.",
+   "kind": "supplier_statement",
+   "source": "doc:20260926-70580-M1",
+   "quote": "Their new sales director said Hollerau's volumes are 'not strategic' for Motorenwerk Saalach GmbH any more; replies have become slower since the summer.",
+   "parts": [],
+   "observed_at": "2026-09-26",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a74d43f996e53075",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:78a0ee262ef22ef9",
+   "text": "Sales director said the supplier is reviewing small accounts and will focus on customers with volume.",
+   "kind": "supplier_statement",
+   "source": "doc:20260908-70580-M3",
+   "quote": "they are reviewing small accounts and will focus on customers with volume",
+   "parts": [],
+   "observed_at": "2026-09-08",
+   "valid_until": null,
+   "review": {
+    "id": "obs:78a0ee262ef22ef9",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:73b9990f20c7485f",
+   "text": "Trade press reports the supplier will concentrate on larger key accounts and new product lines, serving smaller customers increasingly from standard ranges.",
+   "kind": "fact",
+   "source": "news:20260327-07",
+   "quote": "Motorenwerk Saalach GmbH will concentrate on larger key accounts and new product lines; smaller customers are to be served increasingly from standard ranges.",
+   "parts": [],
+   "observed_at": "2026-03-27",
+   "valid_until": null,
+   "review": {
+    "id": "obs:73b9990f20c7485f",
+    "verdict": "supported",
+    "reason": "Framed as a trade-press report and matches the news item."
+   }
+  },
+  {
+   "id": "obs:cabe9b02b96d576a",
+   "text": "Last 12 months: 24 receipts, 95.8% on time vs requested, 4.2% late, with the late receipt 28 days late.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 28.0, \"early_pct\": 0.0, \"late_pct\": 4.2, \"max_days_late\": 28, \"on_time_confirmed_pct\": 95.8, \"on_time_requested_pct\": 95.8, \"receipts\": 24}",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:cabe9b02b96d576a",
+    "verdict": "supported",
+    "reason": "Matches the last-12-month delivery stats, which by_part shows relate to part 350013."
+   }
+  },
+  {
+   "id": "obs:1d8cb668ca7e34ec",
+   "text": "PO line 4500014388-10 for part 350013 was first confirmed 2026-10-24 against a requested date of 2026-10-20.",
+   "kind": "fact",
+   "source": "po:4500014388-10",
+   "quote": "\"first_confirmed_date\": \"2026-10-24\", \"id\": \"po:4500014388-10\", \"order_date\": \"2026-09-07\", \"price\": 1608.32, \"price_note\": \"\", \"price_unit\": 1, \"qty\": 27, \"requested_date\": \"2026-10-20\"",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": "2026-09-07",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1d8cb668ca7e34ec",
+    "verdict": "supported",
+    "reason": "Matches the PO line (confirmed 2026-10-24 against requested 2026-10-20)."
+   }
+  },
+  {
+   "id": "obs:7e4aad4971244c80",
+   "text": "Supplier-caused complaint for leakage at test on part 350013 (1 pc, 26316 ppm on lot, EUR 150 recharged); 8D closed 2025-01-15.",
+   "kind": "fact",
+   "source": "qn:20004373",
+   "quote": "\"complaint_qty\": 1, \"cost_recharged_eur\": 150, \"d3_date\": \"2024-12-17\", \"d8_date\": \"2025-01-15\", \"defect\": \"leakage at test\", \"gr_id\": \"gr:5000102112\", \"id\": \"qn:20004373\", \"part_id\": \"part:350013\", \"ppm\": 26316, \"qn_date\": \"2024-12-14\", \"returned_qty\": 0, \"supplier_caused\": 1",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": "2024-12-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7e4aad4971244c80",
+    "verdict": "supported",
+    "reason": "Matches the quality notification."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:48cd2b41d13f3c74",
+   "text": "Supplier's key account manager stated price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260322-70580-M2",
+   "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks",
+   "parts": [],
+   "observed_at": "2026-03-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:48cd2b41d13f3c74",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:69bde95bfa3ad0b5",
+   "text": "Supplier complained that several invoices are overdue again and asked Hollerau to keep agreed payment terms, otherwise it will review its conditions.",
+   "kind": "supplier_statement",
+   "source": "doc:20260612-70580-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-06-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:69bde95bfa3ad0b5",
+    "verdict": "supported",
+    "reason": "Matches the email."
+   }
+  },
+  {
+   "id": "obs:173b81cc973cff82",
+   "text": "New sales director said Hollerau's volumes are 'not strategic' for the supplier any more; buyer notes replies have become slower since the summer.",
+   "kind": "supplier_statement",
+   "source": "doc:20260926-70580-M1",
+   "quote": "Their new sales director said Hollerau's volumes are 'not strategic' for Motorenwerk Saalach GmbH any more; replies have become slower since the summer.",
+   "parts": [],
+   "observed_at": "2026-09-26",
+   "valid_until": null,
+   "review": {
+    "id": "obs:173b81cc973cff82",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:4a6e3ee26858cb67",
+   "text": "Supplier's key account manager said price changes above 2 % need pricing committee approval; committee meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260322-70580-M2",
+   "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks",
+   "parts": [],
+   "observed_at": "2026-03-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:4a6e3ee26858cb67",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:a8c868790644b5e1",
+   "text": "Supplier says several invoices are overdue again and asks that agreed payment terms be kept, otherwise it will review its conditions.",
+   "kind": "supplier_statement",
+   "source": "doc:20260612-70580-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-06-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a8c868790644b5e1",
+    "verdict": "supported",
+    "reason": "Matches the email."
+   }
+  },
+  {
+   "id": "obs:c39ba67220318f5f",
+   "text": "New sales director said Hollerau's volumes are 'not strategic' any more; purchasing notes replies slower since summer.",
+   "kind": "supplier_statement",
+   "source": "doc:20260926-70580-M1",
+   "quote": "Their new sales director said Hollerau's volumes are 'not strategic' for Motorenwerk Saalach GmbH any more; replies have become slower since the summer.",
+   "parts": [],
+   "observed_at": "2026-09-26",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c39ba67220318f5f",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Current 2026 renewal price for part 350013 is EUR 1,608.32 per unit, +1.7% vs 2025, with no end date recorded.",
+     "kind": "fact",
+     "source": "EV-2026-70580-350013",
+     "quote": "\"change_pct\": 1.7, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70580-350013\", \"price\": 1608.32, \"price_unit\": 1, \"supplier_id\": \"sup:70580\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for part 350013 at this supplier's plant is EUR 1,567.90 per unit (no margin, confidence ±5%).",
+     "kind": "fact",
+     "source": "cost:350013",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 724.37, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350013\", \"material_eur\": 533.09, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 310.44, \"part_id\": \"part:350013\", \"price_unit\": 1, \"supplier_id\": \"sup:70580\", \"unit_cost\": 1567.9",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's key account manager stated price changes above 2% need pricing committee approval, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260322-70580-M2",
+     "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-03-22",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's new sales director called Hollerau's volumes 'not strategic'; purchasing notes slower replies since summer.",
+     "kind": "supplier_statement",
+     "source": "doc:20260926-70580-M1",
+     "quote": "Their new sales director said Hollerau's volumes are 'not strategic' for Motorenwerk Saalach GmbH any more; replies have become slower since the summer.",
+     "parts": [],
+     "observed_at": "2026-09-26",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier complained of repeated overdue invoices and warned it may review its conditions if payment terms are not kept.",
+     "kind": "supplier_statement",
+     "source": "doc:20260612-70580-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-06-12",
+     "valid_until": null
+    },
+    {
+     "text": "Latest quote for part 350013 is EUR 1,608.32 at list conditions, stock supply only, valid 7 days.",
+     "kind": "fact",
+     "source": "quote:7300057",
+     "quote": "\"quote_date\": \"2026-09-09\", \"remarks\": \"List conditions; supply from stock only.\", \"rfq_id\": null, \"supplier_id\": \"sup:70580\", \"tooling_eur\": 0, \"unit_price\": 1608.32, \"validity_days\": 7",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": "2026-09-09",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier quoted EUR 421.06 for part 350011 in the 2026 second-source RFQ, 90-day validity.",
+     "kind": "fact",
+     "source": "quote:7200002",
+     "quote": "\"quote_date\": \"2026-09-03\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000202\", \"supplier_id\": \"sup:70580\", \"tooling_eur\": 0, \"unit_price\": 421.06, \"validity_days\": 90",
+     "parts": [
+      "part:350011"
+     ],
+     "observed_at": "2026-09-03",
+     "valid_until": null
+    },
+    {
+     "text": "Copper notation driver for part 350013 rose 47.7% over 12 months to Sep 2026 (weight 0.19, category team estimate).",
+     "kind": "fact",
+     "source": "evidence:part:350013:drivers",
+     "quote": "\"change_12m_pct\": 47.7",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": "2026-09",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier's key account manager stated price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260322-70580-M2",
+     "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks",
+     "parts": [],
+     "observed_at": "2026-03-22",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier complained that several invoices are overdue again and asked Hollerau to keep agreed payment terms, otherwise it will review its conditions.",
+     "kind": "supplier_statement",
+     "source": "doc:20260612-70580-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-06-12",
+     "valid_until": null
+    },
+    {
+     "text": "Invoice record: 97.1 % of invoices paid late, average 19.4 days after due, max 40 days late.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due\": 19.4, \"avg_days_paid_after_due_last_12m\": 19.3, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 75, \"max_days_late\": 40, \"paid_late_pct\": 97.1",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "New sales director said Hollerau's volumes are 'not strategic' for the supplier any more; buyer notes replies have become slower since the summer.",
+     "kind": "supplier_statement",
+     "source": "doc:20260926-70580-M1",
+     "quote": "Their new sales director said Hollerau's volumes are 'not strategic' for Motorenwerk Saalach GmbH any more; replies have become slower since the summer.",
+     "parts": [],
+     "observed_at": "2026-09-26",
+     "valid_until": null
+    },
+    {
+     "text": "Sales director said the supplier is reviewing small accounts and will focus on customers with volume.",
+     "kind": "supplier_statement",
+     "source": "doc:20260908-70580-M3",
+     "quote": "they are reviewing small accounts and will focus on customers with volume",
+     "parts": [],
+     "observed_at": "2026-09-08",
+     "valid_until": null
+    },
+    {
+     "text": "Trade press reports the supplier will concentrate on larger key accounts and new product lines, serving smaller customers increasingly from standard ranges.",
+     "kind": "fact",
+     "source": "news:20260327-07",
+     "quote": "Motorenwerk Saalach GmbH will concentrate on larger key accounts and new product lines; smaller customers are to be served increasingly from standard ranges.",
+     "parts": [],
+     "observed_at": "2026-03-27",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master: payment terms 30 days, DAP, standard lead time 42 days.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"DAP\", \"name\": \"Motorenwerk Saalach GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 42",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier financials: credit index 171 unchanged from 12 months ago, equity ratio 30.2 %, turnover EUR 182 M.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 171, \"credit_index_12m_ago\": 171, \"equity_ratio_pct\": 30.2, \"filed_fy\": 2025",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement covers supply of Motor IE4 30 kW, 4-pole; valid 2024-01-01 to 2026-12-31 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070580#8.1",
+     "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070580#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070580#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery DAP with standard lead time of 42 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070580#5.1",
+     "quote": "Delivery DAP; standard lead time 42 days from order.",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's key account manager said price changes above 2 % need pricing committee approval; committee meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260322-70580-M2",
+     "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks",
+     "parts": [],
+     "observed_at": "2026-03-22",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier says several invoices are overdue again and asks that agreed payment terms be kept, otherwise it will review its conditions.",
+     "kind": "supplier_statement",
+     "source": "doc:20260612-70580-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-06-12",
+     "valid_until": null
+    },
+    {
+     "text": "New sales director said Hollerau's volumes are 'not strategic' any more; purchasing notes replies slower since summer.",
+     "kind": "supplier_statement",
+     "source": "doc:20260926-70580-M1",
+     "quote": "Their new sales director said Hollerau's volumes are 'not strategic' for Motorenwerk Saalach GmbH any more; replies have become slower since the summer.",
+     "parts": [],
+     "observed_at": "2026-09-26",
+     "valid_until": null
+    },
+    {
+     "text": "At the 2025-11-18 renewal the supplier asked +3.3 % and settled at +1.7 %.",
+     "kind": "fact",
+     "source": "EV-2026-70580-350013",
+     "quote": "\"asked_pct\": 3.3, \"date\": \"2025-11-18\", \"event_id\": \"EV-2026-70580-350013\", \"note\": \"\", \"part_id\": \"part:350013\", \"settled_pct\": 1.7",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": "2025-11-18",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month on-time delivery reached 95.8% (vs requested date) in the 2026Q3 scorecard, class A green, score 97.9.",
+     "kind": "fact",
+     "source": "sc:70580@2026Q3",
+     "quote": "\"class\": \"A\", \"colour\": \"green\", \"complaint_qty\": 0, \"gr_lines\": 24, \"id\": \"sc:70580@2026Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 95.8, \"otd_pct\": 95.8, \"period_end\": \"2026-09-30\"",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "In 2024Q3 the rolling OTD was only 60.0% (64.0% vs confirmed), class B amber, score 80.0.",
+     "kind": "fact",
+     "source": "sc:70580@2024Q3",
+     "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 0, \"gr_lines\": 25, \"id\": \"sc:70580@2024Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 64.0, \"otd_pct\": 60.0",
+     "parts": [],
+     "observed_at": "2024-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier-caused complaint for leakage at test on part 350013 (1 pc, 26316 ppm on lot, EUR 150 recharged); 8D closed 2025-01-15.",
+     "kind": "fact",
+     "source": "qn:20004373",
+     "quote": "\"complaint_qty\": 1, \"cost_recharged_eur\": 150, \"d3_date\": \"2024-12-17\", \"d8_date\": \"2025-01-15\", \"defect\": \"leakage at test\", \"gr_id\": \"gr:5000102112\", \"id\": \"qn:20004373\", \"part_id\": \"part:350013\", \"ppm\": 26316, \"qn_date\": \"2024-12-14\", \"returned_qty\": 0, \"supplier_caused\": 1",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": "2024-12-14",
+     "valid_until": null
+    },
+    {
+     "text": "Rolling ppm has been 0 with no QNs since the 2025Q4 scorecard; 2026Q2 scored 100.0 with 100% OTD.",
+     "kind": "fact",
+     "source": "sc:70580@2026Q2",
+     "quote": "\"otd_confirmed_pct\": 100.0, \"otd_pct\": 100.0, \"period_end\": \"2026-06-30\", \"period_start\": \"2025-07-01\", \"ppm\": 0, \"qn_count\": 0, \"quarter\": \"2026Q2\", \"received_qty\": 739, \"score\": 100.0",
+     "parts": [],
+     "observed_at": "2026-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months: 24 receipts, 95.8% on time vs requested, 4.2% late, with the late receipt 28 days late.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 28.0, \"early_pct\": 0.0, \"late_pct\": 4.2, \"max_days_late\": 28, \"on_time_confirmed_pct\": 95.8, \"on_time_requested_pct\": 95.8, \"receipts\": 24}",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "PO line 4500014388-10 for part 350013 was first confirmed 2026-10-24 against a requested date of 2026-10-20.",
+     "kind": "fact",
+     "source": "po:4500014388-10",
+     "quote": "\"first_confirmed_date\": \"2026-10-24\", \"id\": \"po:4500014388-10\", \"order_date\": \"2026-09-07\", \"price\": 1608.32, \"price_note\": \"\", \"price_unit\": 1, \"qty\": 27, \"requested_date\": \"2026-10-20\"",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": "2026-09-07",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier holds VDA 6.3 grade A and ISO 9001/ISO 14001 certifications.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"certifications\": \"ISO 9001; ISO 14001\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [
+  {
+   "id": "obs:d3363d969e8dc719",
+   "text": "Latest quote for part 350013 is EUR 1,608.32 at list conditions, stock supply only, valid 7 days.",
+   "kind": "fact",
+   "source": "quote:7300057",
+   "quote": "\"quote_date\": \"2026-09-09\", \"remarks\": \"List conditions; supply from stock only.\", \"rfq_id\": null, \"supplier_id\": \"sup:70580\", \"tooling_eur\": 0, \"unit_price\": 1608.32, \"validity_days\": 7",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": "2026-09-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:d3363d969e8dc719",
+    "verdict": "reject",
+    "reason": "The 7-day validity from 2026-09-09 means the quote expired 2026-09-16, but valid_until is null. The text also labels it the 'latest quote' without qualification."
+   }
+  },
+  {
+   "id": "obs:29645d251f269bed",
+   "text": "Supplier quoted EUR 421.06 for part 350011 in the 2026 second-source RFQ, 90-day validity.",
+   "kind": "fact",
+   "source": "quote:7200002",
+   "quote": "\"quote_date\": \"2026-09-03\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000202\", \"supplier_id\": \"sup:70580\", \"tooling_eur\": 0, \"unit_price\": 421.06, \"validity_days\": 90",
+   "parts": [
+    "part:350011"
+   ],
+   "observed_at": "2026-09-03",
+   "valid_until": null,
+   "review": {
+    "id": "obs:29645d251f269bed",
+    "verdict": "reject",
+    "reason": "The 90-day validity from 2026-09-03 implies an expiry of 2026-12-02, but valid_until is null."
+   }
+  },
+  {
+   "id": "obs:3c87a7f28844717b",
+   "text": "Supplier financials: credit index 171 unchanged from 12 months ago, equity ratio 30.2 %, turnover EUR 182 M.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 171, \"credit_index_12m_ago\": 171, \"equity_ratio_pct\": 30.2, \"filed_fy\": 2025",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:3c87a7f28844717b",
+    "verdict": "reject",
+    "reason": "The cited quote omits the turnover figure, and observed_at is null even though the data is FY2025 financials."
+   }
+  },
+  {
+   "id": "obs:6859b501279bf3f5",
+   "text": "Framework agreement covers supply of Motor IE4 30 kW, 4-pole; valid 2024-01-01 to 2026-12-31 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070580#8.1",
+   "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:350013"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:6859b501279bf3f5",
+    "verdict": "reject",
+    "reason": "The scope claim (Motor IE4 30 kW) comes from clause 2.1, not the cited clause 8.1. The 2026-12-31 expiry is also not captured in valid_until."
+   }
+  },
+  {
+   "id": "obs:a9a67097be500a57",
+   "text": "Rolling 12-month on-time delivery reached 95.8% (vs requested date) in the 2026Q3 scorecard, class A green, score 97.9.",
+   "kind": "fact",
+   "source": "sc:70580@2026Q3",
+   "quote": "\"class\": \"A\", \"colour\": \"green\", \"complaint_qty\": 0, \"gr_lines\": 24, \"id\": \"sc:70580@2026Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 95.8, \"otd_pct\": 95.8, \"period_end\": \"2026-09-30\"",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a9a67097be500a57",
+    "verdict": "reject",
+    "reason": "The score of 97.9 is not in the cited excerpt."
+   }
+  },
+  {
+   "id": "obs:a0a6ed24ceb25a2b",
+   "text": "In 2024Q3 the rolling OTD was only 60.0% (64.0% vs confirmed), class B amber, score 80.0.",
+   "kind": "fact",
+   "source": "sc:70580@2024Q3",
+   "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 0, \"gr_lines\": 25, \"id\": \"sc:70580@2024Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 64.0, \"otd_pct\": 60.0",
+   "parts": [],
+   "observed_at": "2024-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a0a6ed24ceb25a2b",
+    "verdict": "reject",
+    "reason": "The score of 80.0 is not in the cited excerpt."
+   }
+  },
+  {
+   "id": "obs:fec851b6a196c2f0",
+   "text": "Rolling ppm has been 0 with no QNs since the 2025Q4 scorecard; 2026Q2 scored 100.0 with 100% OTD.",
+   "kind": "fact",
+   "source": "sc:70580@2026Q2",
+   "quote": "\"otd_confirmed_pct\": 100.0, \"otd_pct\": 100.0, \"period_end\": \"2026-06-30\", \"period_start\": \"2025-07-01\", \"ppm\": 0, \"qn_count\": 0, \"quarter\": \"2026Q2\", \"received_qty\": 739, \"score\": 100.0",
+   "parts": [],
+   "observed_at": "2026-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:fec851b6a196c2f0",
+    "verdict": "reject",
+    "reason": "The claim about 2025Q4 onward is not supported by the single cited 2026Q2 row."
+   }
+  },
+  {
+   "id": "obs:7e2b1c1e0a304c26",
+   "text": "Supplier holds VDA 6.3 grade A and ISO 9001/ISO 14001 certifications.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"certifications\": \"ISO 9001; ISO 14001\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7e2b1c1e0a304c26",
+    "verdict": "reject",
+    "reason": "The VDA 6.3 grade A is not in the cited excerpt."
+   }
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "role": "economics",
+    "observation": {
+     "text": "Copper notation driver for part 350013 rose 47.7% over 12 months to Sep 2026 (weight 0.19, category team estimate).",
+     "kind": "fact",
+     "source": "evidence:part:350013:drivers",
+     "quote": "\"change_12m_pct\": 47.7",
+     "parts": [
+      "part:350013"
+     ],
+     "observed_at": "2026-09",
+     "valid_until": null
+    },
+    "why": "invalid date"
+   }
+  ]
+ }
+}

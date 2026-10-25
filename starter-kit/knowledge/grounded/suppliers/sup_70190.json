@@ -1,0 +1,895 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70190",
+ "name": "Gießerei Pfaffenreuth GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "3dc2fedc8b5d372327b42813b038f1101bf2ca43e225d0f4a952604d68c50505",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:18:08.248798+00:00",
+  "seconds": 34.3,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:eadc7f9468fc7dfb",
+   "text": "Quote for part 310040 at EUR 33.94, 90-day validity, with remark that material is covered until December 2028 and the price is valid accordingly.",
+   "kind": "supplier_statement",
+   "source": "quote:7300064",
+   "quote": "\"remarks\": \"Material covered until December 2028; price valid accordingly.\", \"rfq_id\": null, \"supplier_id\": \"sup:70190\", \"tooling_eur\": 0, \"unit_price\": 33.94, \"validity_days\": 90",
+   "parts": [
+    "part:310040"
+   ],
+   "observed_at": "2026-09-16",
+   "valid_until": null,
+   "review": {
+    "id": "obs:eadc7f9468fc7dfb",
+    "verdict": "supported",
+    "reason": "The quote record matches: EUR 33.94, 90-day validity and the stated remark. valid_until is null, although 90-day validity from 2026-09-16 is recorded; acceptable."
+   }
+  },
+  {
+   "id": "obs:66f23ef01a64a1c6",
+   "text": "2026 renewal price for part 310040 is EUR 33.94, -2.5%, open-ended.",
+   "kind": "fact",
+   "source": "EV-2026-70190-310040",
+   "quote": "\"change_pct\": -2.5, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70190-310040\", \"price\": 33.94, \"price_unit\": 1, \"supplier_id\": \"sup:70190\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+   "parts": [
+    "part:310040"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:66f23ef01a64a1c6",
+    "verdict": "supported",
+    "reason": "Price record shows 33.94, -2.5%, valid from 2026-01-01 with valid_to null."
+   }
+  },
+  {
+   "id": "obs:7c9983966b1491fd",
+   "text": "Should-cost estimate of this supplier's plant for part 310040 is EUR 33.93 per unit without margin, error about 5%.",
+   "kind": "fact",
+   "source": "cost:310040",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 15.91, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:310040\", \"material_eur\": 11.2, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 6.82, \"part_id\": \"part:310040\", \"price_unit\": 1, \"supplier_id\": \"sup:70190\", \"unit_cost\": 33.93",
+   "parts": [
+    "part:310040"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7c9983966b1491fd",
+    "verdict": "supported",
+    "reason": "Should-cost record shows 33.93 per unit, no margin, confidence 5%."
+   }
+  },
+  {
+   "id": "obs:da2a40e9e1176522",
+   "text": "2026 renewal price for part 310060 is EUR 43.39, unchanged (0.0%).",
+   "kind": "fact",
+   "source": "EV-2026-70190-310060",
+   "quote": "\"change_pct\": 0.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70190-310060\", \"price\": 43.39, \"price_unit\": 1, \"supplier_id\": \"sup:70190\", \"valid_from\": \"2026-01-01\"",
+   "parts": [
+    "part:310060"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:da2a40e9e1176522",
+    "verdict": "supported",
+    "reason": "Price record shows 43.39 with 0.0% change for 2026."
+   }
+  },
+  {
+   "id": "obs:06a7ce83f3b4d111",
+   "text": "German-cost-base should-cost for part 310060 is EUR 39.82 without margin, confidence ±12%.",
+   "kind": "fact",
+   "source": "cost:310060",
+   "quote": "\"checked_unit_cost\": 39.82, \"confidence_pct\": 12",
+   "parts": [
+    "part:310060"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:06a7ce83f3b4d111",
+    "verdict": "supported",
+    "reason": "Should-cost record shows 39.82, German cost base, confidence 12%."
+   }
+  },
+  {
+   "id": "obs:05999796890d6631",
+   "text": "2026 renewal for part 310040: supplier asked +1.3%, settled -2.5%.",
+   "kind": "fact",
+   "source": "EV-2026-70190-310040",
+   "quote": "\"asked_pct\": 1.3, \"date\": \"2025-12-04\", \"event_id\": \"EV-2026-70190-310040\", \"note\": \"\", \"part_id\": \"part:310040\", \"settled_pct\": -2.5",
+   "parts": [
+    "part:310040"
+   ],
+   "observed_at": "2025-12-04",
+   "valid_until": null,
+   "review": {
+    "id": "obs:05999796890d6631",
+    "verdict": "supported",
+    "reason": "Negotiation history records asked +1.3%, settled -2.5%."
+   }
+  },
+  {
+   "id": "obs:0d52437d5a2e9f71",
+   "text": "2026 renewal for part 310060: supplier asked +1.5%, settled 0.0%.",
+   "kind": "fact",
+   "source": "EV-2026-70190-310060",
+   "quote": "\"asked_pct\": 1.5, \"date\": \"2025-11-20\", \"event_id\": \"EV-2026-70190-310060\", \"note\": \"\", \"part_id\": \"part:310060\", \"settled_pct\": 0.0",
+   "parts": [
+    "part:310060"
+   ],
+   "observed_at": "2025-11-20",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0d52437d5a2e9f71",
+    "verdict": "supported",
+    "reason": "Negotiation history records asked +1.5%, settled 0.0%."
+   }
+  },
+  {
+   "id": "obs:a1a208543e0d5fdb",
+   "text": "Supplier stated in a call that it bought electricity forward until December 2028 and that the market price is 'not our reality' before then.",
+   "kind": "supplier_statement",
+   "source": "doc:20260623-70190-M1",
+   "quote": "they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.",
+   "parts": [],
+   "observed_at": "2026-06-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a1a208543e0d5fdb",
+    "verdict": "supported",
+    "reason": "Call note records this statement on 2026-06-23."
+   }
+  },
+  {
+   "id": "obs:01ba55ed08c4d98f",
+   "text": "Supplier said it fixed its electricity supply for 2026-2028 under a long-term contract.",
+   "kind": "supplier_statement",
+   "source": "news:20260426-10",
+   "quote": "Gießerei Pfaffenreuth GmbH has fixed its electricity supply for 2026-2028 under a long-term contract, the company said.",
+   "parts": [],
+   "observed_at": "2026-04-26",
+   "valid_until": null,
+   "review": {
+    "id": "obs:01ba55ed08c4d98f",
+    "verdict": "supported",
+    "reason": "The news item reports the company's own statement; kind supplier_statement is correct."
+   }
+  },
+  {
+   "id": "obs:6a0b0a2ec072aa18",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070190#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:310040",
+    "part:310060"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:6a0b0a2ec072aa18",
+    "verdict": "supported",
+    "reason": "Matches contract clause 3.1."
+   }
+  },
+  {
+   "id": "obs:996f6593d03cc35c",
+   "text": "Framework agreement 4600070190 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070190#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:310040",
+    "part:310060"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:996f6593d03cc35c",
+    "verdict": "supported",
+    "reason": "Matches contract clause 8.1."
+   }
+  },
+  {
+   "id": "obs:a0f6dcb3895d93f1",
+   "text": "Current terms: 30 payment days, FCA, 42-day standard lead time; A-class castings supplier.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"abc_class\": \"A\", \"blocked\": 0, \"category\": \"castings\", \"contract_id\": \"ctr:4600070190\", \"country\": \"DE\", \"created\": \"1996-01-01\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70190\", \"incoterm\": \"FCA\", \"name\": \"Gießerei Pfaffenreuth GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 42",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a0f6dcb3895d93f1",
+    "verdict": "supported",
+    "reason": "Matches the vendor master record."
+   }
+  },
+  {
+   "id": "obs:d1c4c7d2e6438c37",
+   "text": "Quality agreement: 95% on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070190#6.1",
+   "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:310040",
+    "part:310060"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:d1c4c7d2e6438c37",
+    "verdict": "supported",
+    "reason": "Matches contract clause 6.1."
+   }
+  },
+  {
+   "id": "obs:c03f6f3557309417",
+   "text": "Rolling 12-month scorecard to 2026-09-30: OTD 85.1%, ppm 715, score 84.0, class B amber, 1 open 8D overdue.",
+   "kind": "fact",
+   "source": "sc:70190@2026Q3",
+   "quote": "\"open_8d_overdue\": 1, \"otd_confirmed_pct\": 85.1, \"otd_pct\": 85.1, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 715, \"qn_count\": 13, \"quarter\": \"2026Q3\", \"received_qty\": 27973, \"score\": 84.0",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c03f6f3557309417",
+    "verdict": "supported",
+    "reason": "Matches scorecard 2026Q3."
+   }
+  },
+  {
+   "id": "obs:f554fef25832ef44",
+   "text": "Part 310040 delivery last 12m: 79.2% on time, 20.8% late over 24 receipts.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"late_pct\": 20.8, \"max_days_late\": 16, \"on_time_confirmed_pct\": 79.2, \"on_time_requested_pct\": 79.2, \"part_id\": \"part:310040\", \"receipts\": 24",
+   "parts": [
+    "part:310040"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:f554fef25832ef44",
+    "verdict": "supported",
+    "reason": "Matches the part 310040 delivery figures."
+   }
+  },
+  {
+   "id": "obs:56105547ec7bdbfb",
+   "text": "Open supplier-caused coating defect complaint on part 310040 (QN 2026-09-06), 8D not yet closed.",
+   "kind": "fact",
+   "source": "qn:20005015",
+   "quote": "\"d8_date\": null, \"defect\": \"coating defect\", \"gr_id\": \"gr:5000105430\", \"id\": \"qn:20005015\", \"part_id\": \"part:310040\", \"ppm\": 3409, \"qn_date\": \"2026-09-06\", \"returned_qty\": 2, \"supplier_caused\": 1",
+   "parts": [
+    "part:310040"
+   ],
+   "observed_at": "2026-09-06",
+   "valid_until": null,
+   "review": {
+    "id": "obs:56105547ec7bdbfb",
+    "verdict": "supported",
+    "reason": "QN record shows d8_date null and supplier_caused 1."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:2cc12c4953497065",
+   "text": "Supplier quoted EUR 53.56 for part 310020 in a second-source benchmark RFQ, 42-day lead time, 30 days payment.",
+   "kind": "fact",
+   "source": "quote:7200011",
+   "quote": "\"lead_time_days\": 42, \"missing_fields\": \"\", \"name\": \"Gießerei Pfaffenreuth GmbH\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-12\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000211\", \"supplier_id\": \"sup:70190\", \"tooling_eur\": 0, \"unit_price\": 53.56",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-09-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2cc12c4953497065",
+    "verdict": "supported",
+    "reason": "This reports a recorded quote; the figures match the record."
+   }
+  },
+  {
+   "id": "obs:a2a936d64d6b289f",
+   "text": "Supplier financials: equity ratio 33.9%, credit index 227 unchanged from 12 months ago, turnover EUR 14.8 M, family-owned, ISO 50001 certified.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"certifications\": \"ISO 9001; ISO 50001\", \"credit_index\": 227, \"credit_index_12m_ago\": 227, \"equity_ratio_pct\": 33.9, \"filed_fy\": 2024, \"founded\": 1949, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 95, \"supplier_id\": \"sup:70190\", \"turnover_band\": \"10-25 M EUR\", \"turnover_eur\": 14800000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a2a936d64d6b289f",
+    "verdict": "supported",
+    "reason": "All listed values match the intel record."
+   }
+  },
+  {
+   "id": "obs:54a9f410a409a657",
+   "text": "Supplier stated it bought its electricity forward until December 2028 and called the market price 'not our reality' before then.",
+   "kind": "supplier_statement",
+   "source": "doc:20260623-70190-M1",
+   "quote": "they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.",
+   "parts": [],
+   "observed_at": "2026-06-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:54a9f410a409a657",
+    "verdict": "supported",
+    "reason": "Matches the call note."
+   }
+  },
+  {
+   "id": "obs:692444c00e554014",
+   "text": "Sales contact changed to a new inside sales colleague from 1 October; other contacts unchanged.",
+   "kind": "supplier_statement",
+   "source": "doc:20251014-70190-N",
+   "quote": "From 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.",
+   "parts": [],
+   "observed_at": "2025-10-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:692444c00e554014",
+    "verdict": "supported",
+    "reason": "Matches the email."
+   }
+  },
+  {
+   "id": "obs:044a0361902ec511",
+   "text": "Family-owned supplier, founded 1949, 95 staff.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"founded\": 1949, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 95",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:044a0361902ec511",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:43f34cebe3215eca",
+   "text": "Supplier holds ISO 9001 and ISO 50001 certifications.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"certifications\": \"ISO 9001; ISO 50001\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:43f34cebe3215eca",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:eccdf0829b92af6e",
+   "text": "Credit index 227, unchanged from 12 months ago; equity ratio 33.9%.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 227, \"credit_index_12m_ago\": 227, \"equity_ratio_pct\": 33.9",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:eccdf0829b92af6e",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:95e7d7ecf069b0aa",
+   "text": "Buyer paid 80.6% of invoices late, averaging 3.0 days after due, max 8 days.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due\": 3.0, \"avg_days_paid_after_due_last_12m\": 3.2, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 143, \"max_days_late\": 8, \"paid_late_pct\": 80.6",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:95e7d7ecf069b0aa",
+    "verdict": "supported",
+    "reason": "Matches the invoice record."
+   }
+  },
+  {
+   "id": "obs:15cf354354824cd4",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070190#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:310040",
+    "part:310060"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:15cf354354824cd4",
+    "verdict": "supported",
+    "reason": "Matches contract clause 4.1."
+   }
+  },
+  {
+   "id": "obs:48feaa22e5a20263",
+   "text": "Delivery FCA with standard lead time 42 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070190#5.1",
+   "quote": "Delivery FCA; standard lead time 42 days from order.",
+   "parts": [
+    "part:310040",
+    "part:310060"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:48feaa22e5a20263",
+    "verdict": "supported",
+    "reason": "Matches contract clause 5.1."
+   }
+  },
+  {
+   "id": "obs:81570bbe698fad47",
+   "text": "Supplier says it bought electricity forward until December 2028 and that the market price is 'not our reality' before then.",
+   "kind": "supplier_statement",
+   "source": "doc:20260623-70190-M1",
+   "quote": "they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.",
+   "parts": [],
+   "observed_at": "2026-06-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:81570bbe698fad47",
+    "verdict": "supported",
+    "reason": "Matches the call note."
+   }
+  },
+  {
+   "id": "obs:affebbef83d9e0ff",
+   "text": "Last 12 months: 47 receipts, 85.1% on time vs requested date, 12.8% late, average 12.0 days late when late, max 16 days.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 12.0, \"early_pct\": 2.1, \"late_pct\": 12.8, \"max_days_late\": 16, \"on_time_confirmed_pct\": 85.1, \"on_time_requested_pct\": 85.1, \"receipts\": 47}",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:affebbef83d9e0ff",
+    "verdict": "supported",
+    "reason": "Matches the last-12-month delivery figures."
+   }
+  },
+  {
+   "id": "obs:de09a612b18c59b5",
+   "text": "Part 310060 delivery last 12m: 91.3% on time over 23 receipts.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"on_time_confirmed_pct\": 91.3, \"on_time_requested_pct\": 91.3, \"part_id\": \"part:310060\", \"receipts\": 23",
+   "parts": [
+    "part:310060"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:de09a612b18c59b5",
+    "verdict": "supported",
+    "reason": "Matches the part 310060 delivery figures."
+   }
+  },
+  {
+   "id": "obs:05ffda26e5bfd38d",
+   "text": "Part 310040 quality: ppm last 12m 551, 22 QNs, 19 supplier-caused.",
+   "kind": "fact",
+   "source": "evidence:part:310040:part_quality",
+   "quote": "\"ppm_last_12m\": 551, \"qns\": 22, \"received_last_12m\": 18163, \"recharged_eur\": 2100, \"supplier_caused\": 19, \"supplier_id\": \"sup:70190\"",
+   "parts": [
+    "part:310040"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:05ffda26e5bfd38d",
+    "verdict": "supported",
+    "reason": "Matches the part 310040 quality summary."
+   }
+  },
+  {
+   "id": "obs:86c740b17780aeaa",
+   "text": "Part 310060 quality at this supplier: ppm last 12m 1019, 22 QNs, 18 supplier-caused.",
+   "kind": "fact",
+   "source": "evidence:part:310060:part_quality",
+   "quote": "\"ppm_last_12m\": 1019, \"qns\": 22, \"received_last_12m\": 9810, \"recharged_eur\": 1800, \"supplier_caused\": 18, \"supplier_id\": \"sup:70190\"",
+   "parts": [
+    "part:310060"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:86c740b17780aeaa",
+    "verdict": "supported",
+    "reason": "Matches the part 310060 quality summary for this supplier."
+   }
+  },
+  {
+   "id": "obs:4bd64e79c554be8e",
+   "text": "Open supplier-caused coating defect complaint on part 310060 (QN 2026-07-26), 8D not yet closed.",
+   "kind": "fact",
+   "source": "qn:20004988",
+   "quote": "\"d8_date\": null, \"defect\": \"coating defect\", \"gr_id\": \"gr:5000105205\", \"id\": \"qn:20004988\", \"part_id\": \"part:310060\", \"ppm\": 4348, \"qn_date\": \"2026-07-26\", \"returned_qty\": 2, \"supplier_caused\": 1",
+   "parts": [
+    "part:310060"
+   ],
+   "observed_at": "2026-07-26",
+   "valid_until": null,
+   "review": {
+    "id": "obs:4bd64e79c554be8e",
+    "verdict": "supported",
+    "reason": "QN record shows d8_date null and supplier_caused 1."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier stated in a call that it bought electricity forward until December 2028 and that the market price is 'not our reality' before then.",
+     "kind": "supplier_statement",
+     "source": "doc:20260623-70190-M1",
+     "quote": "they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.",
+     "parts": [],
+     "observed_at": "2026-06-23",
+     "valid_until": null
+    },
+    {
+     "text": "Quote for part 310040 at EUR 33.94, 90-day validity, with remark that material is covered until December 2028 and the price is valid accordingly.",
+     "kind": "supplier_statement",
+     "source": "quote:7300064",
+     "quote": "\"remarks\": \"Material covered until December 2028; price valid accordingly.\", \"rfq_id\": null, \"supplier_id\": \"sup:70190\", \"tooling_eur\": 0, \"unit_price\": 33.94, \"validity_days\": 90",
+     "parts": [
+      "part:310040"
+     ],
+     "observed_at": "2026-09-16",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost estimate of this supplier's plant for part 310040 is EUR 33.93 per unit without margin, error about 5%.",
+     "kind": "fact",
+     "source": "cost:310040",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 15.91, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:310040\", \"material_eur\": 11.2, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 6.82, \"part_id\": \"part:310040\", \"price_unit\": 1, \"supplier_id\": \"sup:70190\", \"unit_cost\": 33.93",
+     "parts": [
+      "part:310040"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "2026 renewal price for part 310040 is EUR 33.94, -2.5%, open-ended.",
+     "kind": "fact",
+     "source": "EV-2026-70190-310040",
+     "quote": "\"change_pct\": -2.5, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70190-310040\", \"price\": 33.94, \"price_unit\": 1, \"supplier_id\": \"sup:70190\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+     "parts": [
+      "part:310040"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "2026 renewal price for part 310060 is EUR 43.39, unchanged (0.0%).",
+     "kind": "fact",
+     "source": "EV-2026-70190-310060",
+     "quote": "\"change_pct\": 0.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70190-310060\", \"price\": 43.39, \"price_unit\": 1, \"supplier_id\": \"sup:70190\", \"valid_from\": \"2026-01-01\"",
+     "parts": [
+      "part:310060"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "German-cost-base should-cost for part 310060 is EUR 39.82 without margin, confidence ±12%.",
+     "kind": "fact",
+     "source": "cost:310060",
+     "quote": "\"checked_unit_cost\": 39.82, \"confidence_pct\": 12",
+     "parts": [
+      "part:310060"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier quoted EUR 53.56 for part 310020 in a second-source benchmark RFQ, 42-day lead time, 30 days payment.",
+     "kind": "fact",
+     "source": "quote:7200011",
+     "quote": "\"lead_time_days\": 42, \"missing_fields\": \"\", \"name\": \"Gießerei Pfaffenreuth GmbH\", \"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-12\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000211\", \"supplier_id\": \"sup:70190\", \"tooling_eur\": 0, \"unit_price\": 53.56",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-09-12",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier financials: equity ratio 33.9%, credit index 227 unchanged from 12 months ago, turnover EUR 14.8 M, family-owned, ISO 50001 certified.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"certifications\": \"ISO 9001; ISO 50001\", \"credit_index\": 227, \"credit_index_12m_ago\": 227, \"equity_ratio_pct\": 33.9, \"filed_fy\": 2024, \"founded\": 1949, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 95, \"supplier_id\": \"sup:70190\", \"turnover_band\": \"10-25 M EUR\", \"turnover_eur\": 14800000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier stated it bought its electricity forward until December 2028 and called the market price 'not our reality' before then.",
+     "kind": "supplier_statement",
+     "source": "doc:20260623-70190-M1",
+     "quote": "they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.",
+     "parts": [],
+     "observed_at": "2026-06-23",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said it fixed its electricity supply for 2026-2028 under a long-term contract.",
+     "kind": "supplier_statement",
+     "source": "news:20260426-10",
+     "quote": "Gießerei Pfaffenreuth GmbH has fixed its electricity supply for 2026-2028 under a long-term contract, the company said.",
+     "parts": [],
+     "observed_at": "2026-04-26",
+     "valid_until": null
+    },
+    {
+     "text": "Sales contact changed to a new inside sales colleague from 1 October; other contacts unchanged.",
+     "kind": "supplier_statement",
+     "source": "doc:20251014-70190-N",
+     "quote": "From 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.",
+     "parts": [],
+     "observed_at": "2025-10-14",
+     "valid_until": null
+    },
+    {
+     "text": "Family-owned supplier, founded 1949, 95 staff.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"founded\": 1949, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 95",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier holds ISO 9001 and ISO 50001 certifications.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"certifications\": \"ISO 9001; ISO 50001\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Credit index 227, unchanged from 12 months ago; equity ratio 33.9%.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 227, \"credit_index_12m_ago\": 227, \"equity_ratio_pct\": 33.9",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Buyer paid 80.6% of invoices late, averaging 3.0 days after due, max 8 days.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due\": 3.0, \"avg_days_paid_after_due_last_12m\": 3.2, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 143, \"max_days_late\": 8, \"paid_late_pct\": 80.6",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Current terms: 30 payment days, FCA, 42-day standard lead time; A-class castings supplier.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"abc_class\": \"A\", \"blocked\": 0, \"category\": \"castings\", \"contract_id\": \"ctr:4600070190\", \"country\": \"DE\", \"created\": \"1996-01-01\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70190\", \"incoterm\": \"FCA\", \"name\": \"Gießerei Pfaffenreuth GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 42",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement 4600070190 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070190#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:310040",
+      "part:310060"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070190#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:310040",
+      "part:310060"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070190#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:310040",
+      "part:310060"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery FCA with standard lead time 42 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070190#5.1",
+     "quote": "Delivery FCA; standard lead time 42 days from order.",
+     "parts": [
+      "part:310040",
+      "part:310060"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: 95% on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070190#6.1",
+     "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:310040",
+      "part:310060"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier says it bought electricity forward until December 2028 and that the market price is 'not our reality' before then.",
+     "kind": "supplier_statement",
+     "source": "doc:20260623-70190-M1",
+     "quote": "they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.",
+     "parts": [],
+     "observed_at": "2026-06-23",
+     "valid_until": null
+    },
+    {
+     "text": "2026 renewal for part 310040: supplier asked +1.3%, settled -2.5%.",
+     "kind": "fact",
+     "source": "EV-2026-70190-310040",
+     "quote": "\"asked_pct\": 1.3, \"date\": \"2025-12-04\", \"event_id\": \"EV-2026-70190-310040\", \"note\": \"\", \"part_id\": \"part:310040\", \"settled_pct\": -2.5",
+     "parts": [
+      "part:310040"
+     ],
+     "observed_at": "2025-12-04",
+     "valid_until": null
+    },
+    {
+     "text": "2026 renewal for part 310060: supplier asked +1.5%, settled 0.0%.",
+     "kind": "fact",
+     "source": "EV-2026-70190-310060",
+     "quote": "\"asked_pct\": 1.5, \"date\": \"2025-11-20\", \"event_id\": \"EV-2026-70190-310060\", \"note\": \"\", \"part_id\": \"part:310060\", \"settled_pct\": 0.0",
+     "parts": [
+      "part:310060"
+     ],
+     "observed_at": "2025-11-20",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month scorecard to 2026-09-30: OTD 85.1%, ppm 715, score 84.0, class B amber, 1 open 8D overdue.",
+     "kind": "fact",
+     "source": "sc:70190@2026Q3",
+     "quote": "\"open_8d_overdue\": 1, \"otd_confirmed_pct\": 85.1, \"otd_pct\": 85.1, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 715, \"qn_count\": 13, \"quarter\": \"2026Q3\", \"received_qty\": 27973, \"score\": 84.0",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months: 47 receipts, 85.1% on time vs requested date, 12.8% late, average 12.0 days late when late, max 16 days.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 12.0, \"early_pct\": 2.1, \"late_pct\": 12.8, \"max_days_late\": 16, \"on_time_confirmed_pct\": 85.1, \"on_time_requested_pct\": 85.1, \"receipts\": 47}",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 310040 delivery last 12m: 79.2% on time, 20.8% late over 24 receipts.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"late_pct\": 20.8, \"max_days_late\": 16, \"on_time_confirmed_pct\": 79.2, \"on_time_requested_pct\": 79.2, \"part_id\": \"part:310040\", \"receipts\": 24",
+     "parts": [
+      "part:310040"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 310060 delivery last 12m: 91.3% on time over 23 receipts.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"on_time_confirmed_pct\": 91.3, \"on_time_requested_pct\": 91.3, \"part_id\": \"part:310060\", \"receipts\": 23",
+     "parts": [
+      "part:310060"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 310040 quality: ppm last 12m 551, 22 QNs, 19 supplier-caused.",
+     "kind": "fact",
+     "source": "evidence:part:310040:part_quality",
+     "quote": "\"ppm_last_12m\": 551, \"qns\": 22, \"received_last_12m\": 18163, \"recharged_eur\": 2100, \"supplier_caused\": 19, \"supplier_id\": \"sup:70190\"",
+     "parts": [
+      "part:310040"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 310060 quality at this supplier: ppm last 12m 1019, 22 QNs, 18 supplier-caused.",
+     "kind": "fact",
+     "source": "evidence:part:310060:part_quality",
+     "quote": "\"ppm_last_12m\": 1019, \"qns\": 22, \"received_last_12m\": 9810, \"recharged_eur\": 1800, \"supplier_caused\": 18, \"supplier_id\": \"sup:70190\"",
+     "parts": [
+      "part:310060"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Open supplier-caused coating defect complaint on part 310040 (QN 2026-09-06), 8D not yet closed.",
+     "kind": "fact",
+     "source": "qn:20005015",
+     "quote": "\"d8_date\": null, \"defect\": \"coating defect\", \"gr_id\": \"gr:5000105430\", \"id\": \"qn:20005015\", \"part_id\": \"part:310040\", \"ppm\": 3409, \"qn_date\": \"2026-09-06\", \"returned_qty\": 2, \"supplier_caused\": 1",
+     "parts": [
+      "part:310040"
+     ],
+     "observed_at": "2026-09-06",
+     "valid_until": null
+    },
+    {
+     "text": "Open supplier-caused coating defect complaint on part 310060 (QN 2026-07-26), 8D not yet closed.",
+     "kind": "fact",
+     "source": "qn:20004988",
+     "quote": "\"d8_date\": null, \"defect\": \"coating defect\", \"gr_id\": \"gr:5000105205\", \"id\": \"qn:20004988\", \"part_id\": \"part:310060\", \"ppm\": 4348, \"qn_date\": \"2026-07-26\", \"returned_qty\": 2, \"supplier_caused\": 1",
+     "parts": [
+      "part:310060"
+     ],
+     "observed_at": "2026-07-26",
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": []
+ }
+}

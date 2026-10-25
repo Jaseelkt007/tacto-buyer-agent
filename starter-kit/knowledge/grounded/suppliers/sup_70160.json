@@ -1,0 +1,849 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70160",
+ "name": "Meridune Precision Castings Co., Ltd.",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "528fd8aec285c2d280c26ff3165ea4fee38ad735b0e0cb743ad96b8dad696f7a",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:17:37.683180+00:00",
+  "seconds": 38.1,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:edc981285aea2ad2",
+   "text": "Supplier asked to be paid within 10 days, offering a cash discount in return (no percentage stated).",
+   "kind": "supplier_statement",
+   "source": "doc:20260701-70160-M1",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:edc981285aea2ad2",
+    "verdict": "supported",
+    "reason": "It faithfully reports the supplier's email."
+   }
+  },
+  {
+   "id": "obs:8337b87bdc0f5a2d",
+   "text": "Supplier master records 90 payment days, FCA incoterm, standard lead time 105 days, and no skonto terms.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"FCA\", \"name\": \"Meridune Precision Castings Co., Ltd.\", \"payment_days\": 90, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 105",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8337b87bdc0f5a2d",
+    "verdict": "supported",
+    "reason": "It matches the master record."
+   }
+  },
+  {
+   "id": "obs:60651ceb0dc6d2ce",
+   "text": "Contract payment term is 90 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070160#4.1",
+   "quote": "Payment: 90 days net.",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:60651ceb0dc6d2ce",
+    "verdict": "supported",
+    "reason": "It matches clause 4.1."
+   }
+  },
+  {
+   "id": "obs:c7934acc4e2f2e07",
+   "text": "Invoices to this supplier were paid late in 74.2% of cases, on average 2.5 days after due in the last 12 months, with a maximum of 7 days late.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due_last_12m\": 2.5, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 68, \"max_days_late\": 7, \"paid_late_pct\": 74.2",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:c7934acc4e2f2e07",
+    "verdict": "supported",
+    "reason": "It matches the invoice evidence."
+   }
+  },
+  {
+   "id": "obs:4d9a167410b63de8",
+   "text": "Current 2026 renewal price for part 310051 is EUR 79.44 per unit, down 2.3 %, with no end date recorded.",
+   "kind": "fact",
+   "source": "EV-2026-70160-310051",
+   "quote": "\"change_pct\": -2.3, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70160-310051\", \"price\": 79.44, \"price_unit\": 1, \"supplier_id\": \"sup:70160\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:4d9a167410b63de8",
+    "verdict": "supported",
+    "reason": "The price record shows 79.44, -2.3% and valid_to null from 2026-01-01."
+   }
+  },
+  {
+   "id": "obs:108a8ea22d13d1dd",
+   "text": "At the 2025-12-09 renewal, asked -1.1 % and settled -2.3 %, noted as accepted below full cost to keep the volume.",
+   "kind": "fact",
+   "source": "EV-2026-70160-310051",
+   "quote": "\"asked_pct\": -1.1, \"date\": \"2025-12-09\", \"event_id\": \"EV-2026-70160-310051\", \"note\": \"accepted below full cost to keep the volume\", \"part_id\": \"part:310051\", \"settled_pct\": -2.3",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2025-12-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:108a8ea22d13d1dd",
+    "verdict": "supported",
+    "reason": "It matches the negotiation history record."
+   }
+  },
+  {
+   "id": "obs:7d3ed3e5692db3b3",
+   "text": "Should-cost bottom-up estimate of this supplier's plant for part 310051 is EUR 84.97 per unit without margin (material 27.19, conversion 40.44, overhead 17.33), with a confidence figure of 5 %.",
+   "kind": "fact",
+   "source": "cost:310051",
+   "quote": "\"checked_unit_cost\": 84.97, \"confidence_pct\": 5, \"conversion_eur\": 40.44, \"cost_base\": \"CN\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:310051\", \"material_eur\": 27.19, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 17.33",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7d3ed3e5692db3b3",
+    "verdict": "supported",
+    "reason": "It accurately reports the recorded estimate, its components and the 5% confidence figure."
+   }
+  },
+  {
+   "id": "obs:e004cdecb0b8c37f",
+   "text": "In the April 2024 benchmark RFQ the supplier quoted EUR 91.40 with 112 days lead time and 90 payment days, and was not awarded.",
+   "kind": "fact",
+   "source": "quote:7100015",
+   "quote": "\"awarded\": 0, \"currency\": \"EUR\", \"id\": \"quote:7100015\", \"incoterm\": \"FCA\", \"lead_time_days\": 112, \"missing_fields\": \"\", \"name\": \"Meridune Precision Castings Co., Ltd.\", \"payment_days\": 90, \"price_unit\": 1, \"quote_date\": \"2024-04-12\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000106\", \"supplier_id\": \"sup:70160\", \"tooling_eur\": 0, \"unit_price\": 91.4",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2024-04-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e004cdecb0b8c37f",
+    "verdict": "supported",
+    "reason": "It matches the quote and the RFQ purpose."
+   }
+  },
+  {
+   "id": "obs:e99919d9446eb5bc",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070160#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e99919d9446eb5bc",
+    "verdict": "supported",
+    "reason": "It matches clause 3.1."
+   }
+  },
+  {
+   "id": "obs:0c21494aab40c06c",
+   "text": "Framework agreement 4600070160 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070160#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0c21494aab40c06c",
+    "verdict": "supported",
+    "reason": "It matches clause 8.1."
+   }
+  },
+  {
+   "id": "obs:56434300e9e58d37",
+   "text": "Quality agreement applies: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070160#6.1",
+   "quote": "The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:56434300e9e58d37",
+    "verdict": "supported",
+    "reason": "It matches clause 6.1."
+   }
+  },
+  {
+   "id": "obs:860ca3d239e825f6",
+   "text": "OTD against requested date in 2026Q1 was 72.0% (80.0% vs confirmed), below the 95% quality-agreement target.",
+   "kind": "fact",
+   "source": "sc:70160@2026Q1",
+   "quote": "\"otd_confirmed_pct\": 80.0, \"otd_pct\": 72.0",
+   "parts": [],
+   "observed_at": "2026-03-31",
+   "valid_until": null,
+   "review": {
+    "id": "obs:860ca3d239e825f6",
+    "verdict": "supported",
+    "reason": "It matches the 2026Q1 scorecard and the 95% contract target."
+   }
+  },
+  {
+   "id": "obs:6abfeb915d5b49f7",
+   "text": "Latest rolling scorecard (2026Q3) rates supplier class A green, score 92.0, OTD 84.0% against requested date, ppm 0.",
+   "kind": "fact",
+   "source": "sc:70160@2026Q3",
+   "quote": "\"class\": \"A\", \"colour\": \"green\", \"complaint_qty\": 0, \"gr_lines\": 25, \"id\": \"sc:70160@2026Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 84.0, \"otd_pct\": 84.0",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:6abfeb915d5b49f7",
+    "verdict": "supported",
+    "reason": "It matches the 2026Q3 scorecard."
+   }
+  },
+  {
+   "id": "obs:77831aaa27e49543",
+   "text": "Supplier was class C red for four consecutive quarters, with the lowest score 47.1 in 2025Q2 (ppm 7905, 4 QNs, one overdue 8D).",
+   "kind": "fact",
+   "source": "sc:70160@2025Q2",
+   "quote": "\"class\": \"C\", \"colour\": \"red\", \"complaint_qty\": 4, \"gr_lines\": 24, \"id\": \"sc:70160@2025Q2\", \"open_8d_overdue\": 1, \"otd_confirmed_pct\": 87.5, \"otd_pct\": 83.3, \"period_end\": \"2025-06-30\", \"period_start\": \"2024-07-01\", \"ppm\": 7905, \"qn_count\": 4, \"quarter\": \"2025Q2\", \"received_qty\": 506, \"score\": 47.1",
+   "parts": [],
+   "observed_at": "2025-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:77831aaa27e49543",
+    "verdict": "supported",
+    "reason": "The scorecards show red from 2025Q2 to 2026Q1, with 2025Q2 the lowest at 47.1."
+   }
+  },
+  {
+   "id": "obs:ad695fe068d3cd5a",
+   "text": "Over the last 12 months, part 310051 had 25 receipts, 84.0% on time, 16.0% late, averaging 14.5 days late when late (max 21).",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"avg_days_late_when_late\": 14.5, \"early_pct\": 0.0, \"late_pct\": 16.0, \"max_days_late\": 21, \"on_time_confirmed_pct\": 84.0, \"on_time_requested_pct\": 84.0, \"part_id\": \"part:310051\", \"receipts\": 25",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:ad695fe068d3cd5a",
+    "verdict": "supported",
+    "reason": "It matches the per-part delivery stats."
+   }
+  },
+  {
+   "id": "obs:065e6ef748a83543",
+   "text": "Supplier financials: equity ratio 25.3 %, credit index 254 unchanged from 12 months ago, turnover EUR 39.3 M (FY2024).",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 254, \"credit_index_12m_ago\": 254, \"equity_ratio_pct\": 25.3, \"filed_fy\": 2024",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:065e6ef748a83543",
+    "verdict": "supported",
+    "reason": "All figures, including turnover, are in the intel record."
+   }
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "obs:62887b4ccbc9da1b",
+   "text": "Current price (79.44) lies below the should-cost estimate (84.97 ±~5 %), suggesting the supplier may be selling this part at or below its estimated full cost.",
+   "kind": "hypothesis",
+   "source": "cost:310051",
+   "quote": "\"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 17.33, \"part_id\": \"part:310051\", \"price_unit\": 1, \"supplier_id\": \"sup:70160\", \"unit_cost\": 84.97",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:62887b4ccbc9da1b",
+    "verdict": "hypothesis",
+    "reason": "It is a plausible inference from the 79.44 price against the 84.97 estimate, and the negotiation notes agree, but the estimate is not the true cost."
+   }
+  },
+  {
+   "id": "obs:b8c9ac83474d3940",
+   "text": "The request for 10-day payment may indicate the supplier values faster cash; its equity ratio is 25.3%.",
+   "kind": "hypothesis",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 25.3",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:b8c9ac83474d3940",
+    "verdict": "hypothesis",
+    "reason": "Inferring that the supplier values faster cash is plausible but not established."
+   }
+  },
+  {
+   "id": "obs:fb10541332e3f743",
+   "text": "Supplier-caused porosity complaint on part 310051; 8D closed 2024-10-20, about 99 days after QN, exceeding the 60-day 8D requirement.",
+   "kind": "hypothesis",
+   "source": "qn:20004221",
+   "quote": "\"d8_date\": \"2024-10-20\", \"defect\": \"porosity\", \"gr_id\": \"gr:5000101296\", \"id\": \"qn:20004221\", \"part_id\": \"part:310051\", \"ppm\": 47619, \"qn_date\": \"2024-07-13\"",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2024-07-13",
+   "valid_until": null,
+   "review": {
+    "id": "obs:fb10541332e3f743",
+    "verdict": "hypothesis",
+    "reason": "The 99 days is correctly computed; the 60-day rule comes from the company policy, not the cited contract clause."
+   }
+  }
+ ],
+ "verified_unselected": [
+  {
+   "id": "obs:e0a51bfb29580dad",
+   "text": "Supplier asked the buyer to pay its invoices within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260701-70160-M1",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e0a51bfb29580dad",
+    "verdict": "supported",
+    "reason": "It faithfully reports the supplier's email."
+   }
+  },
+  {
+   "id": "obs:60cbe7c86a6c800c",
+   "text": "Supplier master records payment terms of 90 days with no cash discount (skonto) defined.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"payment_days\": 90, \"skonto_days\": null, \"skonto_pct\": null",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:60cbe7c86a6c800c",
+    "verdict": "supported",
+    "reason": "It matches the master record."
+   }
+  },
+  {
+   "id": "obs:e03c070e77bc676f",
+   "text": "Credit index is 254, unchanged from 12 months ago.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 254, \"credit_index_12m_ago\": 254",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:e03c070e77bc676f",
+    "verdict": "supported",
+    "reason": "It matches the intel record."
+   }
+  },
+  {
+   "id": "obs:3ec14b3e03fbe5c2",
+   "text": "Supplier is a privately owned Chinese castings maker with 900 staff and turnover of EUR 39.3 M, no group parent.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"group_parent\": null, \"legal_form\": \"Co., Ltd.\", \"owner_type\": \"private\", \"staff\": 900, \"supplier_id\": \"sup:70160\", \"turnover_band\": \"25-50 M EUR\", \"turnover_eur\": 39300000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:3ec14b3e03fbe5c2",
+    "verdict": "supported",
+    "reason": "It matches the intel record and the master record (country CN, category castings)."
+   }
+  },
+  {
+   "id": "obs:2b07e5a15e7df18b",
+   "text": "Supplier appointed a new managing director for sales.",
+   "kind": "fact",
+   "source": "news:20260925-37",
+   "quote": "Meridune Precision Castings Co., Ltd. has appointed a new managing director for sales.",
+   "parts": [],
+   "observed_at": "2026-09-25",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2b07e5a15e7df18b",
+    "verdict": "supported",
+    "reason": "It matches the news item."
+   }
+  },
+  {
+   "id": "obs:f12e6fb48af9158f",
+   "text": "Standard lead time is 105 days, Incoterm FCA.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"FCA\", \"name\": \"Meridune Precision Castings Co., Ltd.\", \"payment_days\": 90, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 105",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:f12e6fb48af9158f",
+    "verdict": "supported",
+    "reason": "It matches the master record."
+   }
+  },
+  {
+   "id": "obs:33bf276e746a4189",
+   "text": "Delivery FCA with standard lead time 105 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070160#5.1",
+   "quote": "Delivery FCA; standard lead time 105 days from order.",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:33bf276e746a4189",
+    "verdict": "supported",
+    "reason": "It matches clause 5.1."
+   }
+  },
+  {
+   "id": "obs:7c7ecc06fd8f21a6",
+   "text": "Supplier requested payment within 10 days, offering a cash discount in return (no rate stated).",
+   "kind": "supplier_statement",
+   "source": "doc:20260701-70160-M1",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7c7ecc06fd8f21a6",
+    "verdict": "supported",
+    "reason": "It faithfully reports the supplier's email."
+   }
+  },
+  {
+   "id": "obs:a5e7ec9fa4836afb",
+   "text": "Porosity recurred on part 310051 in a supplier-caused QN dated 2025-04-24.",
+   "kind": "fact",
+   "source": "qn:20004523",
+   "quote": "\"defect\": \"porosity\", \"gr_id\": \"gr:5000102806\", \"id\": \"qn:20004523\", \"part_id\": \"part:310051\", \"ppm\": 45455, \"qn_date\": \"2025-04-24\", \"returned_qty\": 0, \"supplier_caused\": 1",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": "2025-04-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a5e7ec9fa4836afb",
+    "verdict": "supported",
+    "reason": "The two porosity QNs are recorded on 2024-07-13 and 2025-04-24."
+   }
+  },
+  {
+   "id": "obs:8d02809943ceb33b",
+   "text": "Part 310051 at this supplier: 4 supplier-caused QNs total, last on 2025-05-23, zero ppm over the last 12 months on 562 received.",
+   "kind": "fact",
+   "source": "evidence:part:310051:part_quality",
+   "quote": "\"complaint_qty\": 4, \"last_qn\": \"2025-05-23\", \"latest_qns\": [\"qn:20004548\", \"qn:20004523\", \"qn:20004457\"], \"ppm_last_12m\": 0, \"qns\": 4, \"received_last_12m\": 562, \"recharged_eur\": 150, \"supplier_caused\": 4, \"supplier_id\": \"sup:70160\"",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8d02809943ceb33b",
+    "verdict": "supported",
+    "reason": "It matches the part quality summary."
+   }
+  },
+  {
+   "id": "obs:cf3a6263ce4b32eb",
+   "text": "Supplier's part 310051 orders include 10 rush lines out of 72.",
+   "kind": "fact",
+   "source": "evidence:part:310051:orders",
+   "quote": "\"lines\": 72, \"price_change_pct\": -7.6, \"price_unit\": 1, \"qty\": 1617, \"qty_last_12m\": 577, \"rush_lines\": 10",
+   "parts": [
+    "part:310051"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:cf3a6263ce4b32eb",
+    "verdict": "supported",
+    "reason": "It matches the orders record."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Current 2026 renewal price for part 310051 is EUR 79.44 per unit, down 2.3 %, with no end date recorded.",
+     "kind": "fact",
+     "source": "EV-2026-70160-310051",
+     "quote": "\"change_pct\": -2.3, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70160-310051\", \"price\": 79.44, \"price_unit\": 1, \"supplier_id\": \"sup:70160\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost bottom-up estimate of this supplier's plant for part 310051 is EUR 84.97 per unit without margin (material 27.19, conversion 40.44, overhead 17.33), with a confidence figure of 5 %.",
+     "kind": "fact",
+     "source": "cost:310051",
+     "quote": "\"checked_unit_cost\": 84.97, \"confidence_pct\": 5, \"conversion_eur\": 40.44, \"cost_base\": \"CN\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:310051\", \"material_eur\": 27.19, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 17.33",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Current price (79.44) lies below the should-cost estimate (84.97 ±~5 %), suggesting the supplier may be selling this part at or below its estimated full cost.",
+     "kind": "hypothesis",
+     "source": "cost:310051",
+     "quote": "\"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 17.33, \"part_id\": \"part:310051\", \"price_unit\": 1, \"supplier_id\": \"sup:70160\", \"unit_cost\": 84.97",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier asked to be paid within 10 days, offering a cash discount in return (no percentage stated).",
+     "kind": "supplier_statement",
+     "source": "doc:20260701-70160-M1",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master records 90 payment days, FCA incoterm, standard lead time 105 days, and no skonto terms.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"FCA\", \"name\": \"Meridune Precision Castings Co., Ltd.\", \"payment_days\": 90, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 105",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "In the April 2024 benchmark RFQ the supplier quoted EUR 91.40 with 112 days lead time and 90 payment days, and was not awarded.",
+     "kind": "fact",
+     "source": "quote:7100015",
+     "quote": "\"awarded\": 0, \"currency\": \"EUR\", \"id\": \"quote:7100015\", \"incoterm\": \"FCA\", \"lead_time_days\": 112, \"missing_fields\": \"\", \"name\": \"Meridune Precision Castings Co., Ltd.\", \"payment_days\": 90, \"price_unit\": 1, \"quote_date\": \"2024-04-12\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000106\", \"supplier_id\": \"sup:70160\", \"tooling_eur\": 0, \"unit_price\": 91.4",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2024-04-12",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier financials: equity ratio 25.3 %, credit index 254 unchanged from 12 months ago, turnover EUR 39.3 M (FY2024).",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 254, \"credit_index_12m_ago\": 254, \"equity_ratio_pct\": 25.3, \"filed_fy\": 2024",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Alloy surcharge 1.4404 driver (weight 0.24) rose 5.9 % over 12 months to EUR 3,007.80/t in 2026-09.",
+     "kind": "fact",
+     "source": "evidence:part:310051:drivers",
+     "quote": "\"change_12m_pct\": 5.9, \"change_from_low_pct\": 6.6, \"change_from_peak_pct\": -13.0",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2026-09",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier asked the buyer to pay its invoices within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260701-70160-M1",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master records payment terms of 90 days with no cash discount (skonto) defined.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"payment_days\": 90, \"skonto_days\": null, \"skonto_pct\": null",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Invoices to this supplier were paid late in 74.2% of cases, on average 2.5 days after due in the last 12 months, with a maximum of 7 days late.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due_last_12m\": 2.5, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 68, \"max_days_late\": 7, \"paid_late_pct\": 74.2",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "The request for 10-day payment may indicate the supplier values faster cash; its equity ratio is 25.3%.",
+     "kind": "hypothesis",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 25.3",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Credit index is 254, unchanged from 12 months ago.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 254, \"credit_index_12m_ago\": 254",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is a privately owned Chinese castings maker with 900 staff and turnover of EUR 39.3 M, no group parent.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"group_parent\": null, \"legal_form\": \"Co., Ltd.\", \"owner_type\": \"private\", \"staff\": 900, \"supplier_id\": \"sup:70160\", \"turnover_band\": \"25-50 M EUR\", \"turnover_eur\": 39300000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier appointed a new managing director for sales.",
+     "kind": "fact",
+     "source": "news:20260925-37",
+     "quote": "Meridune Precision Castings Co., Ltd. has appointed a new managing director for sales.",
+     "parts": [],
+     "observed_at": "2026-09-25",
+     "valid_until": null
+    },
+    {
+     "text": "Standard lead time is 105 days, Incoterm FCA.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"FCA\", \"name\": \"Meridune Precision Castings Co., Ltd.\", \"payment_days\": 90, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 105",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement 4600070160 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070160#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070160#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment term is 90 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070160#4.1",
+     "quote": "Payment: 90 days net.",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Delivery FCA with standard lead time 105 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070160#5.1",
+     "quote": "Delivery FCA; standard lead time 105 days from order.",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement applies: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070160#6.1",
+     "quote": "The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested payment within 10 days, offering a cash discount in return (no rate stated).",
+     "kind": "supplier_statement",
+     "source": "doc:20260701-70160-M1",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "At the 2025-12-09 renewal, asked -1.1 % and settled -2.3 %, noted as accepted below full cost to keep the volume.",
+     "kind": "fact",
+     "source": "EV-2026-70160-310051",
+     "quote": "\"asked_pct\": -1.1, \"date\": \"2025-12-09\", \"event_id\": \"EV-2026-70160-310051\", \"note\": \"accepted below full cost to keep the volume\", \"part_id\": \"part:310051\", \"settled_pct\": -2.3",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2025-12-09",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Latest rolling scorecard (2026Q3) rates supplier class A green, score 92.0, OTD 84.0% against requested date, ppm 0.",
+     "kind": "fact",
+     "source": "sc:70160@2026Q3",
+     "quote": "\"class\": \"A\", \"colour\": \"green\", \"complaint_qty\": 0, \"gr_lines\": 25, \"id\": \"sc:70160@2026Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 84.0, \"otd_pct\": 84.0",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier was class C red for four consecutive quarters, with the lowest score 47.1 in 2025Q2 (ppm 7905, 4 QNs, one overdue 8D).",
+     "kind": "fact",
+     "source": "sc:70160@2025Q2",
+     "quote": "\"class\": \"C\", \"colour\": \"red\", \"complaint_qty\": 4, \"gr_lines\": 24, \"id\": \"sc:70160@2025Q2\", \"open_8d_overdue\": 1, \"otd_confirmed_pct\": 87.5, \"otd_pct\": 83.3, \"period_end\": \"2025-06-30\", \"period_start\": \"2024-07-01\", \"ppm\": 7905, \"qn_count\": 4, \"quarter\": \"2025Q2\", \"received_qty\": 506, \"score\": 47.1",
+     "parts": [],
+     "observed_at": "2025-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "OTD against requested date in 2026Q1 was 72.0% (80.0% vs confirmed), below the 95% quality-agreement target.",
+     "kind": "fact",
+     "source": "sc:70160@2026Q1",
+     "quote": "\"otd_confirmed_pct\": 80.0, \"otd_pct\": 72.0",
+     "parts": [],
+     "observed_at": "2026-03-31",
+     "valid_until": null
+    },
+    {
+     "text": "Over the last 12 months, part 310051 had 25 receipts, 84.0% on time, 16.0% late, averaging 14.5 days late when late (max 21).",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"avg_days_late_when_late\": 14.5, \"early_pct\": 0.0, \"late_pct\": 16.0, \"max_days_late\": 21, \"on_time_confirmed_pct\": 84.0, \"on_time_requested_pct\": 84.0, \"part_id\": \"part:310051\", \"receipts\": 25",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier-caused porosity complaint on part 310051; 8D closed 2024-10-20, about 99 days after QN, exceeding the 60-day 8D requirement.",
+     "kind": "hypothesis",
+     "source": "qn:20004221",
+     "quote": "\"d8_date\": \"2024-10-20\", \"defect\": \"porosity\", \"gr_id\": \"gr:5000101296\", \"id\": \"qn:20004221\", \"part_id\": \"part:310051\", \"ppm\": 47619, \"qn_date\": \"2024-07-13\"",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2024-07-13",
+     "valid_until": null
+    },
+    {
+     "text": "Porosity recurred on part 310051 in a supplier-caused QN dated 2025-04-24.",
+     "kind": "fact",
+     "source": "qn:20004523",
+     "quote": "\"defect\": \"porosity\", \"gr_id\": \"gr:5000102806\", \"id\": \"qn:20004523\", \"part_id\": \"part:310051\", \"ppm\": 45455, \"qn_date\": \"2025-04-24\", \"returned_qty\": 0, \"supplier_caused\": 1",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2025-04-24",
+     "valid_until": null
+    },
+    {
+     "text": "Part 310051 at this supplier: 4 supplier-caused QNs total, last on 2025-05-23, zero ppm over the last 12 months on 562 received.",
+     "kind": "fact",
+     "source": "evidence:part:310051:part_quality",
+     "quote": "\"complaint_qty\": 4, \"last_qn\": \"2025-05-23\", \"latest_qns\": [\"qn:20004548\", \"qn:20004523\", \"qn:20004457\"], \"ppm_last_12m\": 0, \"qns\": 4, \"received_last_12m\": 562, \"recharged_eur\": 150, \"supplier_caused\": 4, \"supplier_id\": \"sup:70160\"",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's part 310051 orders include 10 rush lines out of 72.",
+     "kind": "fact",
+     "source": "evidence:part:310051:orders",
+     "quote": "\"lines\": 72, \"price_change_pct\": -7.6, \"price_unit\": 1, \"qty\": 1617, \"qty_last_12m\": 577, \"rush_lines\": 10",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": [
+   {
+    "role": "economics",
+    "observation": {
+     "text": "Alloy surcharge 1.4404 driver (weight 0.24) rose 5.9 % over 12 months to EUR 3,007.80/t in 2026-09.",
+     "kind": "fact",
+     "source": "evidence:part:310051:drivers",
+     "quote": "\"change_12m_pct\": 5.9, \"change_from_low_pct\": 6.6, \"change_from_peak_pct\": -13.0",
+     "parts": [
+      "part:310051"
+     ],
+     "observed_at": "2026-09",
+     "valid_until": null
+    },
+    "why": "invalid date"
+   }
+  ]
+ }
+}

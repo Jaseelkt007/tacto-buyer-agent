@@ -117,10 +117,16 @@ cap - **8 minutes** (the host may extend one) - and what is still open then ends
 Start the runner before the first wave and leave it running:
 
 ```bash
-uv run arena run --set final --agent llm --parallel 10
+uv run arena run --set final --agent procudeal --data data/package --parallel 10 -v
 ```
 
-It polls `GET /v1/cases?set=final`, plays every case of a new wave at once (one agent per case),
+This team's `procudeal` agent enables the advisory reply interpreter and decision reviewer by default. Configure
+`OPENAI_API_KEY` as well as the fallback provider in `.env`; no extra interpretation flag is
+needed. `PROCUDEAL_REPLY_INTERPRETATION=off` disables the interpreter;
+`PROCUDEAL_DECISION_REVIEW=off` disables the decision reviewer. Both are advisory; the v1.9 policy
+still controls binding decisions. See the [team setup and final guide](../README.md).
+
+The runner polls `GET /v1/cases?set=final`, plays every case of a new wave at once (one agent per case),
 closes each case **90 seconds before its wave's cap** (read from the wave's `seconds_left`, so an
 extension counts) - earlier if a round in that case took longer
 (`play.closing_move`: the cheapest standing term
@@ -145,7 +151,7 @@ short waves of its demo cases (it prints the timeline on start):
 uv run arena-sim serve --final-rehearsal --data data/package
 # a second terminal:
 ARENA_URL=http://127.0.0.1:8000 uv run arena register "Rehearsal" sim
-ARENA_URL=http://127.0.0.1:8000 ARENA_API_KEY=<key> uv run arena run --set final --waves 2 --agent llm --parallel 10
+ARENA_URL=http://127.0.0.1:8000 ARENA_API_KEY=<key> uv run arena run --set final --waves 2 --agent procudeal --data data/package --parallel 10
 ```
 
 Own client: point it at the same URL. It checks the `403` wait (60 s), the wave start, one session

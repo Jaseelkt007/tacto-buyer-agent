@@ -1,0 +1,198 @@
+{
+  "packet_sha256": "23b524d5cf4ef3a90fd6c6bab9d21b19d55e60183687463ce28ce28270bb801b",
+  "request_sha256": "603488ebc342d94c8d0a4ed24dba3578a4eb20d0a7f332b60303357a4e20a6e2",
+  "case_id": "case:G10",
+  "decision_index": 0,
+  "action": "send",
+  "model": "gpt-6-luna",
+  "available": true,
+  "error": null,
+  "answers": [
+    {
+      "type": "choice",
+      "name": "verdict",
+      "choice": "RECONSIDER",
+      "probabilities": [
+        {
+          "value": "NO_ISSUE",
+          "probability": 0.33
+        },
+        {
+          "value": "RECONSIDER",
+          "probability": 0.61
+        },
+        {
+          "value": "CONSTRAINT_CONFLICT",
+          "probability": 0.06
+        }
+      ],
+      "confidence": 0.42
+    },
+    {
+      "type": "choice",
+      "name": "field",
+      "choice": "unit_price",
+      "probabilities": [
+        {
+          "value": "NONE",
+          "probability": 0.09
+        },
+        {
+          "value": "claims",
+          "probability": 0.06
+        },
+        {
+          "value": "contract_months",
+          "probability": 0.03
+        },
+        {
+          "value": "coverage",
+          "probability": 0.04
+        },
+        {
+          "value": "effective_date",
+          "probability": 0.02
+        },
+        {
+          "value": "incoterm",
+          "probability": 0.01
+        },
+        {
+          "value": "index_clause",
+          "probability": 0.01
+        },
+        {
+          "value": "lead_time_days",
+          "probability": 0.03
+        },
+        {
+          "value": "negotiation_status",
+          "probability": 0.07
+        },
+        {
+          "value": "offer_id",
+          "probability": 0.02
+        },
+        {
+          "value": "other",
+          "probability": 0.07
+        },
+        {
+          "value": "payment_days",
+          "probability": 0.17
+        },
+        {
+          "value": "tooling_eur",
+          "probability": 0.02
+        },
+        {
+          "value": "unit_price",
+          "probability": 0.35
+        },
+        {
+          "value": "volume_per_year",
+          "probability": 0.01
+        }
+      ],
+      "confidence": 0.3
+    },
+    {
+      "type": "choice",
+      "name": "evidence",
+      "choice": "case",
+      "probabilities": [
+        {
+          "value": "NONE",
+          "probability": 0.14
+        },
+        {
+          "value": "case",
+          "probability": 0.21
+        },
+        {
+          "value": "message:sup:70640:0",
+          "probability": 0.08
+        },
+        {
+          "value": "doc:20251212-70640-N",
+          "probability": 0.03
+        },
+        {
+          "value": "doc:20260201-70640-M5",
+          "probability": 0.05
+        },
+        {
+          "value": "doc:20260228-70640-M3",
+          "probability": 0.02
+        },
+        {
+          "value": "doc:20260512-70640-M2",
+          "probability": 0.01
+        },
+        {
+          "value": "doc:20260715-70640-M4",
+          "probability": 0.02
+        },
+        {
+          "value": "doc:20260819-70640-M1",
+          "probability": 0.03
+        },
+        {
+          "value": "doc:20260925-70640-P19",
+          "probability": 0.03
+        },
+        {
+          "value": "fc:360020@2026-09",
+          "probability": 0.08
+        },
+        {
+          "value": "news:20261017-S19",
+          "probability": 0.13
+        },
+        {
+          "value": "po:4500014304-10",
+          "probability": 0.06
+        },
+        {
+          "value": "po:4500014370-10",
+          "probability": 0.02
+        },
+        {
+          "value": "po:4500014447-10",
+          "probability": 0.05
+        },
+        {
+          "value": "sc:70640@2026Q3",
+          "probability": 0.04
+        }
+      ],
+      "confidence": 0.16
+    }
+  ],
+  "usage": {
+    "input_tokens": 5779,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 3971,
+      "cache_write_tokens_details": {
+        "ttl_30m_tokens": 3971,
+        "ttl_12h_tokens": 0
+      }
+    },
+    "output_tokens": 0,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5779
+  },
+  "response_id": null,
+  "verdict": "RECONSIDER",
+  "field": "unit_price",
+  "evidence": "case",
+  "supporting_source": {
+    "id": "case",
+    "kind": "buyer_requirements",
+    "text": "{\"case_id\": \"case:G10\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:360020\"], \"suppliers\": [\"sup:70640\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90]}, \"buyer\": {\"need_per_year\": 4000, \"horizon_years\": 1.0, \"current_unit_price\": 10.5, \"fallback_unit_price\": 11.76, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 10.4, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [\"news:20261017-S19\"], \"facts\": {\"news:20261017-S19\": {\"date\": \"2026-10-17\", \"headline\": \"Kugellager-Vertrieb Inntal GmbH loses a large distribution contract\", \"supplier\": \"sup:70640\", \"topic\": \"free_capacity\"}}}"
+  },
+  "seconds": 0.337
+}

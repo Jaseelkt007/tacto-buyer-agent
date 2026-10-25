@@ -1,0 +1,870 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70140",
+ "name": "Odlewnia Kalwisz Sp. z o.o.",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "e091860f0161419c13831d4eae8135e6cf101e90c00a7d61ee634f836725bef5",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:06:25.209561+00:00",
+  "seconds": 31.4,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:0e2b3d1f75520507",
+   "text": "Supplier asked for invoice payment within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260710-70140-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-07-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0e2b3d1f75520507",
+    "verdict": "supported",
+    "reason": "Matches the email text; correctly classed as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:c96ec444b0874a0f",
+   "text": "Managing director asked twice for earlier payment, said the bank is watching monthly, and said he cannot sign anything lowering margin now.",
+   "kind": "supplier_statement",
+   "source": "doc:20260715-70140-M1",
+   "quote": "he asked twice whether we could pay earlier and said the bank is watching every month. 'I cannot sign anything that lowers our margin now.'",
+   "parts": [],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c96ec444b0874a0f",
+    "verdict": "supported",
+    "reason": "Matches the call note."
+   }
+  },
+  {
+   "id": "obs:a329cbd09d57569e",
+   "text": "Quote for part:310020 at EUR 45.15 with 10 payment days, 14-day validity; remark requests payment within 10 days.",
+   "kind": "fact",
+   "source": "quote:7300011",
+   "quote": "\"payment_days\": 10, \"price_unit\": 1, \"quote_date\": \"2026-09-13\", \"remarks\": \"Payment within 10 days requested.\", \"rfq_id\": null, \"supplier_id\": \"sup:70140\", \"tooling_eur\": 0, \"unit_price\": 45.15, \"validity_days\": 14",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-09-13",
+   "valid_until": "2026-09-27",
+   "review": {
+    "id": "obs:a329cbd09d57569e",
+    "verdict": "supported",
+    "reason": "Recorded quote fields match; validity is 14 days from 2026-09-13, which gives 2026-09-27."
+   }
+  },
+  {
+   "id": "obs:1bf2bc850a7ec996",
+   "text": "Current price for part:310020 is EUR 45.15 from 2026-01-01 after a -2.5% renewal.",
+   "kind": "fact",
+   "source": "EV-2026-70140-310020",
+   "quote": "\"change_pct\": -2.5, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70140-310020\", \"price\": 45.15",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1bf2bc850a7ec996",
+    "verdict": "supported",
+    "reason": "The 2026 renewal is recorded at 45.15, -2.5%, valid from 2026-01-01."
+   }
+  },
+  {
+   "id": "obs:a146a6170a82896f",
+   "text": "Rival Pfaffenreuth quoted part:310020 at EUR 53.56 with 30 payment days in the second-source benchmark.",
+   "kind": "fact",
+   "source": "quote:7200011",
+   "quote": "\"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-12\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000211\", \"supplier_id\": \"sup:70190\", \"tooling_eur\": 0, \"unit_price\": 53.56",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-09-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a146a6170a82896f",
+    "verdict": "supported",
+    "reason": "Quote record matches. The text says 'quoted', not an accepted price. Validity of 90 days is omitted but not contradicted."
+   }
+  },
+  {
+   "id": "obs:5d7232670cf93998",
+   "text": "Contract payment terms are 60 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070140#4.1",
+   "quote": "Payment: 60 days net.",
+   "parts": [
+    "part:310020",
+    "part:310030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:5d7232670cf93998",
+    "verdict": "supported",
+    "reason": "Clause matches."
+   }
+  },
+  {
+   "id": "obs:a4449d3ff70fefe5",
+   "text": "Supplier's invoices are mostly paid late: 93.3 % late, average 10.4 days after due in last 12 months.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due_last_12m\": 10.4, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 148, \"max_days_late\": 19, \"paid_late_pct\": 93.3",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a4449d3ff70fefe5",
+    "verdict": "supported",
+    "reason": "Invoice statistics match."
+   }
+  },
+  {
+   "id": "obs:f9d9e32a536f5161",
+   "text": "Prices are fixed per calendar year; changes need written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070140#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:310020",
+    "part:310030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:f9d9e32a536f5161",
+    "verdict": "supported",
+    "reason": "Clause matches."
+   }
+  },
+  {
+   "id": "obs:cf13cc83fd6ec1d9",
+   "text": "Framework agreement valid 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070140#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:310020",
+    "part:310030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:cf13cc83fd6ec1d9",
+    "verdict": "supported",
+    "reason": "Clause matches; parts are per the contract."
+   }
+  },
+  {
+   "id": "obs:2a2241b5ec97b7aa",
+   "text": "Scorecard for supplier is red: on-time delivery 63.5%, 2376 ppm; buyer expects binding improvement plan for part:310020 and will discuss cost recovery.",
+   "kind": "fact",
+   "source": "doc:20260921-70140-P11",
+   "quote": "your rolling 12-month scorecard (sc:70140@2026Q3) is **red**: on-time delivery 63.5 %, 2376 ppm, 0 overdue 8D reports. We expect a binding improvement plan for Bearing bracket HN (part:310020) and will discuss quality commitments and cost recovery.",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-09-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2a2241b5ec97b7aa",
+    "verdict": "supported",
+    "reason": "Matches the escalation letter."
+   }
+  },
+  {
+   "id": "obs:0ee94d29e4c041ae",
+   "text": "Previous quarter scorecard was class B amber with score 77.1 and OTD 78.0%.",
+   "kind": "fact",
+   "source": "sc:70140@2026Q2",
+   "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 37, \"gr_lines\": 50, \"id\": \"sc:70140@2026Q2\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 84.0, \"otd_pct\": 78.0",
+   "parts": [],
+   "observed_at": "2026-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0ee94d29e4c041ae",
+    "verdict": "supported",
+    "reason": "Q2 values match."
+   }
+  },
+  {
+   "id": "obs:011935f5a986c1df",
+   "text": "Supplier started a restructuring programme with its banks after two loss-making years.",
+   "kind": "fact",
+   "source": "news:20260911-28",
+   "quote": "has started a restructuring programme with its banks after two loss-making years",
+   "parts": [],
+   "observed_at": "2026-09-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:011935f5a986c1df",
+    "verdict": "supported",
+    "reason": "Matches the news item about this supplier."
+   }
+  },
+  {
+   "id": "obs:7b798f358443761f",
+   "text": "Management claims customers will not be affected by the restructuring.",
+   "kind": "supplier_statement",
+   "source": "news:20260911-28",
+   "quote": "management says customers will not be affected.",
+   "parts": [],
+   "observed_at": "2026-09-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7b798f358443761f",
+    "verdict": "supported",
+    "reason": "Management claim reported in the news; correctly classed as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:9800608719bffb4b",
+   "text": "Quality agreement: OTD target 95 %, EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070140#6.1",
+   "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:310020",
+    "part:310030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:9800608719bffb4b",
+    "verdict": "supported",
+    "reason": "Clause matches."
+   }
+  },
+  {
+   "id": "obs:6853b528558f006d",
+   "text": "Part 310030 from this supplier has ppm 4433 over last 12 months, 22 QNs, 20 supplier-caused.",
+   "kind": "fact",
+   "source": "evidence:part:310030:part_quality",
+   "quote": "\"complaint_qty\": 24, \"last_qn\": \"2026-09-09\", \"latest_qns\": [\"qn:20005020\", \"qn:20004992\", \"qn:20004963\"], \"ppm_last_12m\": 4433, \"qns\": 22, \"received_last_12m\": 2256, \"recharged_eur\": 3000, \"supplier_caused\": 20, \"supplier_id\": \"sup:70140\"",
+   "parts": [
+    "part:310030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:6853b528558f006d",
+    "verdict": "supported",
+    "reason": "Matches the record; 22 QNs and 20 supplier-caused as stated."
+   }
+  },
+  {
+   "id": "obs:778be2258120e188",
+   "text": "Open QN on part 310020 for wrong material certificate (6 complaints) has no 8D closure date.",
+   "kind": "fact",
+   "source": "qn:20005025",
+   "quote": "\"complaint_qty\": 6, \"cost_recharged_eur\": 150, \"d3_date\": \"2026-09-20\", \"d8_date\": null, \"defect\": \"wrong material certificate\"",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-09-13",
+   "valid_until": null,
+   "review": {
+    "id": "obs:778be2258120e188",
+    "verdict": "supported",
+    "reason": "d8_date is null; the record matches."
+   }
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "obs:c8cb694b9886f8f0",
+   "text": "Liquidity pressure may make the supplier value faster payment over price level.",
+   "kind": "hypothesis",
+   "source": "doc:20260715-70140-M1",
+   "quote": "he asked twice whether we could pay earlier and said the bank is watching every month.",
+   "parts": [],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c8cb694b9886f8f0",
+    "verdict": "hypothesis",
+    "reason": "Plausible inference from the liquidity statements, but not itself recorded."
+   }
+  }
+ ],
+ "verified_unselected": [
+  {
+   "id": "obs:d58780bb1ff88d73",
+   "text": "Supplier financials: turnover EUR 9.77 M, equity ratio 39.1%, credit index 225 unchanged over 12 months, 210 staff.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 225, \"credit_index_12m_ago\": 225, \"equity_ratio_pct\": 39.1, \"filed_fy\": 2024, \"founded\": 1994, \"group_parent\": null, \"legal_form\": \"Sp. z o.o.\", \"owner_type\": \"private\", \"staff\": 210, \"supplier_id\": \"sup:70140\", \"turnover_band\": \"5-10 M EUR\", \"turnover_eur\": 9770000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:d58780bb1ff88d73",
+    "verdict": "supported",
+    "reason": "Intel values match."
+   }
+  },
+  {
+   "id": "obs:15c570fa585171cd",
+   "text": "Managing director asked twice about earlier payment and said the bank is watching every month.",
+   "kind": "supplier_statement",
+   "source": "doc:20260715-70140-M1",
+   "quote": "he asked twice whether we could pay earlier and said the bank is watching every month.",
+   "parts": [],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:15c570fa585171cd",
+    "verdict": "supported",
+    "reason": "Matches the call note."
+   }
+  },
+  {
+   "id": "obs:259bcb2e1d2ae524",
+   "text": "Managing director stated he cannot sign anything that lowers their margin now.",
+   "kind": "supplier_statement",
+   "source": "doc:20260715-70140-M1",
+   "quote": "'I cannot sign anything that lowers our margin now.'",
+   "parts": [],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:259bcb2e1d2ae524",
+    "verdict": "supported",
+    "reason": "Direct quote from the call note."
+   }
+  },
+  {
+   "id": "obs:b0300d2edfdc37f1",
+   "text": "Hollerau Supplier Quality expects a binding improvement plan for part:310020 and will discuss quality commitments and cost recovery.",
+   "kind": "fact",
+   "source": "doc:20260921-70140-P11",
+   "quote": "We expect a binding improvement plan for Bearing bracket HN (part:310020) and will discuss quality commitments and cost recovery.",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-09-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b0300d2edfdc37f1",
+    "verdict": "supported",
+    "reason": "Matches the letter."
+   }
+  },
+  {
+   "id": "obs:43edfd49d14999eb",
+   "text": "Delivery FCA with standard lead time 56 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070140#5.1",
+   "quote": "Delivery FCA; standard lead time 56 days from order.",
+   "parts": [
+    "part:310020",
+    "part:310030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:43edfd49d14999eb",
+    "verdict": "supported",
+    "reason": "Clause matches."
+   }
+  },
+  {
+   "id": "obs:071e55be96012a09",
+   "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260710-70140-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-07-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:071e55be96012a09",
+    "verdict": "supported",
+    "reason": "Matches the email."
+   }
+  },
+  {
+   "id": "obs:2ac7f82ef771ac27",
+   "text": "Managing director asked twice for earlier payment, said the bank watches monthly, and said he cannot sign anything lowering margin now.",
+   "kind": "supplier_statement",
+   "source": "doc:20260715-70140-M1",
+   "quote": "he asked twice whether we could pay earlier and said the bank is watching every month. 'I cannot sign anything that lowers our margin now.'",
+   "parts": [],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2ac7f82ef771ac27",
+    "verdict": "supported",
+    "reason": "Matches the call note."
+   }
+  },
+  {
+   "id": "obs:59165144b81c5fcf",
+   "text": "Buyer escalation: scorecard red with OTD 63.5 % and 2376 ppm; binding improvement plan expected for part 310020.",
+   "kind": "fact",
+   "source": "doc:20260921-70140-P11",
+   "quote": "scorecard (sc:70140@2026Q3) is **red**: on-time delivery 63.5 %, 2376 ppm, 0 overdue 8D reports. We expect a binding improvement plan for Bearing bracket HN (part:310020)",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-09-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:59165144b81c5fcf",
+    "verdict": "supported",
+    "reason": "Matches the letter; the improvement plan genuinely concerns part:310020."
+   }
+  },
+  {
+   "id": "obs:4514fdbac3504b07",
+   "text": "Latest rolling scorecard (2025-10 to 2026-09) is class C red with score 69.9, OTD 63.5% vs requested and 73.1% vs confirmed.",
+   "kind": "fact",
+   "source": "sc:70140@2026Q3",
+   "quote": "\"class\": \"C\", \"colour\": \"red\", \"complaint_qty\": 37, \"gr_lines\": 52, \"id\": \"sc:70140@2026Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 73.1, \"otd_pct\": 63.5",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:4514fdbac3504b07",
+    "verdict": "supported",
+    "reason": "Scorecard values and period match the record."
+   }
+  },
+  {
+   "id": "obs:64080f25deb322a5",
+   "text": "Rolling scorecard ppm was 2376 for the 12 months to 2026-09-30.",
+   "kind": "fact",
+   "source": "sc:70140@2026Q3",
+   "quote": "\"ppm\": 2376, \"qn_count\": 12, \"quarter\": \"2026Q3\"",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:64080f25deb322a5",
+    "verdict": "supported",
+    "reason": "Matches the record."
+   }
+  },
+  {
+   "id": "obs:8fe43a5af53c7cbc",
+   "text": "Last 12 months: 52 receipts, 34.6% late, average 15.9 days late when late, max 31 days.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 15.9, \"early_pct\": 1.9, \"late_pct\": 34.6, \"max_days_late\": 31, \"on_time_confirmed_pct\": 73.1, \"on_time_requested_pct\": 63.5, \"receipts\": 52}",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8fe43a5af53c7cbc",
+    "verdict": "supported",
+    "reason": "Delivery statistics match."
+   }
+  },
+  {
+   "id": "obs:8815075a47daf4a7",
+   "text": "Part 310020 has ppm 2028 over last 12 months, 16 supplier-caused QNs.",
+   "kind": "fact",
+   "source": "evidence:part:310020:part_quality",
+   "quote": "\"ppm_last_12m\": 2028, \"qns\": 16, \"received_last_12m\": 13314, \"recharged_eur\": 1950, \"supplier_caused\": 16, \"supplier_id\": \"sup:70140\"",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8815075a47daf4a7",
+    "verdict": "supported",
+    "reason": "Matches the record."
+   }
+  },
+  {
+   "id": "obs:9f0a1d3e002afaab",
+   "text": "QN for leakage at test on part 310020 with 10 complaints, ppm 27778, in June 2026.",
+   "kind": "fact",
+   "source": "qn:20004952",
+   "quote": "\"complaint_qty\": 10, \"cost_recharged_eur\": 150, \"d3_date\": \"2026-06-23\", \"d8_date\": \"2026-08-02\", \"defect\": \"leakage at test\"",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-06-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:9f0a1d3e002afaab",
+    "verdict": "supported",
+    "reason": "QN record matches; QN date is 2026-06-19 and ppm is 27778."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier asked for invoice payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260710-70140-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-07-10",
+     "valid_until": null
+    },
+    {
+     "text": "Managing director asked twice for earlier payment, said the bank is watching monthly, and said he cannot sign anything lowering margin now.",
+     "kind": "supplier_statement",
+     "source": "doc:20260715-70140-M1",
+     "quote": "he asked twice whether we could pay earlier and said the bank is watching every month. 'I cannot sign anything that lowers our margin now.'",
+     "parts": [],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Quote for part:310020 at EUR 45.15 with 10 payment days, 14-day validity; remark requests payment within 10 days.",
+     "kind": "fact",
+     "source": "quote:7300011",
+     "quote": "\"payment_days\": 10, \"price_unit\": 1, \"quote_date\": \"2026-09-13\", \"remarks\": \"Payment within 10 days requested.\", \"rfq_id\": null, \"supplier_id\": \"sup:70140\", \"tooling_eur\": 0, \"unit_price\": 45.15, \"validity_days\": 14",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-09-13",
+     "valid_until": "2026-09-27"
+    },
+    {
+     "text": "Current price for part:310020 is EUR 45.15 from 2026-01-01 after a -2.5% renewal.",
+     "kind": "fact",
+     "source": "EV-2026-70140-310020",
+     "quote": "\"change_pct\": -2.5, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70140-310020\", \"price\": 45.15",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Rival Pfaffenreuth quoted part:310020 at EUR 53.56 with 30 payment days in the second-source benchmark.",
+     "kind": "fact",
+     "source": "quote:7200011",
+     "quote": "\"payment_days\": 30, \"price_unit\": 1, \"quote_date\": \"2026-09-12\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000211\", \"supplier_id\": \"sup:70190\", \"tooling_eur\": 0, \"unit_price\": 53.56",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-09-12",
+     "valid_until": null
+    },
+    {
+     "text": "Scorecard for supplier is red: on-time delivery 63.5%, 2376 ppm; buyer expects binding improvement plan for part:310020 and will discuss cost recovery.",
+     "kind": "fact",
+     "source": "doc:20260921-70140-P11",
+     "quote": "your rolling 12-month scorecard (sc:70140@2026Q3) is **red**: on-time delivery 63.5 %, 2376 ppm, 0 overdue 8D reports. We expect a binding improvement plan for Bearing bracket HN (part:310020) and will discuss quality commitments and cost recovery.",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-09-21",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier financials: turnover EUR 9.77 M, equity ratio 39.1%, credit index 225 unchanged over 12 months, 210 staff.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 225, \"credit_index_12m_ago\": 225, \"equity_ratio_pct\": 39.1, \"filed_fy\": 2024, \"founded\": 1994, \"group_parent\": null, \"legal_form\": \"Sp. z o.o.\", \"owner_type\": \"private\", \"staff\": 210, \"supplier_id\": \"sup:70140\", \"turnover_band\": \"5-10 M EUR\", \"turnover_eur\": 9770000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Liquidity pressure may make the supplier value faster payment over price level.",
+     "kind": "hypothesis",
+     "source": "doc:20260715-70140-M1",
+     "quote": "he asked twice whether we could pay earlier and said the bank is watching every month.",
+     "parts": [],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier asked for invoice payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260710-70140-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-07-10",
+     "valid_until": null
+    },
+    {
+     "text": "Managing director asked twice about earlier payment and said the bank is watching every month.",
+     "kind": "supplier_statement",
+     "source": "doc:20260715-70140-M1",
+     "quote": "he asked twice whether we could pay earlier and said the bank is watching every month.",
+     "parts": [],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Managing director stated he cannot sign anything that lowers their margin now.",
+     "kind": "supplier_statement",
+     "source": "doc:20260715-70140-M1",
+     "quote": "'I cannot sign anything that lowers our margin now.'",
+     "parts": [],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier started a restructuring programme with its banks after two loss-making years.",
+     "kind": "fact",
+     "source": "news:20260911-28",
+     "quote": "has started a restructuring programme with its banks after two loss-making years",
+     "parts": [],
+     "observed_at": "2026-09-11",
+     "valid_until": null
+    },
+    {
+     "text": "Management claims customers will not be affected by the restructuring.",
+     "kind": "supplier_statement",
+     "source": "news:20260911-28",
+     "quote": "management says customers will not be affected.",
+     "parts": [],
+     "observed_at": "2026-09-11",
+     "valid_until": null
+    },
+    {
+     "text": "Rolling 12-month scorecard is red: OTD 63.5 %, 2376 ppm, 0 overdue 8D reports.",
+     "kind": "fact",
+     "source": "doc:20260921-70140-P11",
+     "quote": "your rolling 12-month scorecard (sc:70140@2026Q3) is **red**: on-time delivery 63.5 %, 2376 ppm, 0 overdue 8D reports.",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-09-21",
+     "valid_until": null
+    },
+    {
+     "text": "Hollerau Supplier Quality expects a binding improvement plan for part:310020 and will discuss quality commitments and cost recovery.",
+     "kind": "fact",
+     "source": "doc:20260921-70140-P11",
+     "quote": "We expect a binding improvement plan for Bearing bracket HN (part:310020) and will discuss quality commitments and cost recovery.",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-09-21",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's invoices are mostly paid late: 93.3 % late, average 10.4 days after due in last 12 months.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due_last_12m\": 10.4, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 148, \"max_days_late\": 19, \"paid_late_pct\": 93.3",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement valid 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070140#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:310020",
+      "part:310030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes need written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070140#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:310020",
+      "part:310030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 60 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070140#4.1",
+     "quote": "Payment: 60 days net.",
+     "parts": [
+      "part:310020",
+      "part:310030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery FCA with standard lead time 56 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070140#5.1",
+     "quote": "Delivery FCA; standard lead time 56 days from order.",
+     "parts": [
+      "part:310020",
+      "part:310030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: OTD target 95 %, EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070140#6.1",
+     "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:310020",
+      "part:310030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260710-70140-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-07-10",
+     "valid_until": null
+    },
+    {
+     "text": "Managing director asked twice for earlier payment, said the bank watches monthly, and said he cannot sign anything lowering margin now.",
+     "kind": "supplier_statement",
+     "source": "doc:20260715-70140-M1",
+     "quote": "he asked twice whether we could pay earlier and said the bank is watching every month. 'I cannot sign anything that lowers our margin now.'",
+     "parts": [],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Buyer escalation: scorecard red with OTD 63.5 % and 2376 ppm; binding improvement plan expected for part 310020.",
+     "kind": "fact",
+     "source": "doc:20260921-70140-P11",
+     "quote": "scorecard (sc:70140@2026Q3) is **red**: on-time delivery 63.5 %, 2376 ppm, 0 overdue 8D reports. We expect a binding improvement plan for Bearing bracket HN (part:310020)",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-09-21",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Latest rolling scorecard (2025-10 to 2026-09) is class C red with score 69.9, OTD 63.5% vs requested and 73.1% vs confirmed.",
+     "kind": "fact",
+     "source": "sc:70140@2026Q3",
+     "quote": "\"class\": \"C\", \"colour\": \"red\", \"complaint_qty\": 37, \"gr_lines\": 52, \"id\": \"sc:70140@2026Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 73.1, \"otd_pct\": 63.5",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Rolling scorecard ppm was 2376 for the 12 months to 2026-09-30.",
+     "kind": "fact",
+     "source": "sc:70140@2026Q3",
+     "quote": "\"ppm\": 2376, \"qn_count\": 12, \"quarter\": \"2026Q3\"",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Previous quarter scorecard was class B amber with score 77.1 and OTD 78.0%.",
+     "kind": "fact",
+     "source": "sc:70140@2026Q2",
+     "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 37, \"gr_lines\": 50, \"id\": \"sc:70140@2026Q2\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 84.0, \"otd_pct\": 78.0",
+     "parts": [],
+     "observed_at": "2026-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months: 52 receipts, 34.6% late, average 15.9 days late when late, max 31 days.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 15.9, \"early_pct\": 1.9, \"late_pct\": 34.6, \"max_days_late\": 31, \"on_time_confirmed_pct\": 73.1, \"on_time_requested_pct\": 63.5, \"receipts\": 52}",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 310030 from this supplier has ppm 4433 over last 12 months, 22 QNs, 20 supplier-caused.",
+     "kind": "fact",
+     "source": "evidence:part:310030:part_quality",
+     "quote": "\"complaint_qty\": 24, \"last_qn\": \"2026-09-09\", \"latest_qns\": [\"qn:20005020\", \"qn:20004992\", \"qn:20004963\"], \"ppm_last_12m\": 4433, \"qns\": 22, \"received_last_12m\": 2256, \"recharged_eur\": 3000, \"supplier_caused\": 20, \"supplier_id\": \"sup:70140\"",
+     "parts": [
+      "part:310030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 310020 has ppm 2028 over last 12 months, 16 supplier-caused QNs.",
+     "kind": "fact",
+     "source": "evidence:part:310020:part_quality",
+     "quote": "\"ppm_last_12m\": 2028, \"qns\": 16, \"received_last_12m\": 13314, \"recharged_eur\": 1950, \"supplier_caused\": 16, \"supplier_id\": \"sup:70140\"",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "QN for leakage at test on part 310020 with 10 complaints, ppm 27778, in June 2026.",
+     "kind": "fact",
+     "source": "qn:20004952",
+     "quote": "\"complaint_qty\": 10, \"cost_recharged_eur\": 150, \"d3_date\": \"2026-06-23\", \"d8_date\": \"2026-08-02\", \"defect\": \"leakage at test\"",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-06-19",
+     "valid_until": null
+    },
+    {
+     "text": "Open QN on part 310020 for wrong material certificate (6 complaints) has no 8D closure date.",
+     "kind": "fact",
+     "source": "qn:20005025",
+     "quote": "\"complaint_qty\": 6, \"cost_recharged_eur\": 150, \"d3_date\": \"2026-09-20\", \"d8_date\": null, \"defect\": \"wrong material certificate\"",
+     "parts": [
+      "part:310020"
+     ],
+     "observed_at": "2026-09-13",
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [
+  {
+   "id": "obs:28c3a1cb0d395195",
+   "text": "Rolling 12-month scorecard is red: OTD 63.5 %, 2376 ppm, 0 overdue 8D reports.",
+   "kind": "fact",
+   "source": "doc:20260921-70140-P11",
+   "quote": "your rolling 12-month scorecard (sc:70140@2026Q3) is **red**: on-time delivery 63.5 %, 2376 ppm, 0 overdue 8D reports.",
+   "parts": [
+    "part:310020"
+   ],
+   "observed_at": "2026-09-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:28c3a1cb0d395195",
+    "verdict": "reject",
+    "reason": "The scorecard is supplier-wide, but the candidate scopes it to part:310020 only, which is wrong part scope."
+   }
+  }
+ ],
+ "validation": {
+  "dropped": []
+ }
+}

@@ -1,0 +1,143 @@
+{
+  "data_month": "2026-09",
+  "primary_records": {
+    "doc:20260902-70110-M2": "# Payment of invoices\n\nemail - 2026-09-02 - Gießerei Brandlhuber GmbH & Co. KG\n\nCould you pay our invoices within 10 days? In return we would grant a cash discount.\n",
+    "doc:20260227-70510-M2": "# Annual review\n\nmeeting note - 2026-02-27 - Hollerau Pumpenwerke, Purchasing\n\nAnnual review with Antriebstechnik Nordmark AG. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.\n",
+    "doc:20251019-70510-N": "# Holiday shutdown\n\nemail - 2025-10-19 - Antriebstechnik Nordmark AG\n\nOur plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December.\n",
+    "ctr:4600070510#8.1": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice.",
+    "cost:350011": "{\"table\": \"should_cost\", \"id\": \"cost:350011\", \"part_id\": \"part:350011\", \"estimate_date\": \"2026-07-15\", \"cost_base\": \"DE\", \"supplier_id\": \"sup:70510\", \"unit_cost\": 374.95, \"price_unit\": 1, \"material_eur\": 127.48, \"conversion_eur\": 173.23, \"overhead_eur\": 74.24, \"confidence_pct\": 5, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\"}",
+    "package:company.md": "# Hollerau Pumpenwerke GmbH\n\nFamily-owned pump maker from Hollerau, Lower Bavaria, Germany, founded 1952, owned by the Stangl family (third generation). Revenue about\nEUR 252 M, 910 employees, one plant. Fiscal year October to September.\n\n## Products\n- **HN**: HN standard water pumps (EN 733)\n- **HB**: HB building-services inline pumps\n- **HI**: HI industrial process pumps, stainless (ISO 5199)\n- **HX**: HX high-efficiency series (start of production 2027-03)\n\n## Purchasing\nYou are the purchasing team for the pump line's parts and materials (about EUR 35 M in FY2026, see\n`spend_cube.csv`). The detailed data covers the 46 suppliers and 60 parts that matter most.\n\n## Policies\n- Standard payment terms: 60 days net. Cost of capital for valuing payment terms:\n  8% a year.\n- Approval: deals above EUR 250 k a year need the head of purchasing, above EUR 1 M the managing director.\n- A-parts are dual-sourced where a qualified second source exists (`sourcing.csv`).\n- Quality agreement with every series supplier: on-time delivery target 95 %, flat fee of\n  EUR 150 per supplier-caused complaint, 8D report within 60 days.\n- Preferred Incoterm: DAP Hollerau. Freight for EXW/FCA deliveries is booked by Hollerau.\n\n## Should-cost\n`should_cost.csv` estimates full cost without margin. For the parts of strategic and bottleneck\nnegotiations the category team modelled the current supplier's own plant (`supplier_id`, error about\n5 %); the other rows use a German cost base with an error of 5-15 %. Rule of thumb for other countries'\nfull cost relative to Germany: AT and CH about 1.0-1.1, CZ, PL and HU about 0.8-0.85, TR about 0.75,\nCN about 0.7.\n\n## Category strategies\nEvery negotiation states its category goal (`stabilise`, `secure_supply`, `quality_first`, `leverage`, `routine`); the rates of its cost C follow it.\nQuality escalations are `quality_first`, capacity squeezes `secure_supply`, kits and bundles `routine`.\n\n| Category | Strategy | Goal |\n|---|---|---|\n| castings | secure supply and energy-cost transparency; build Central-European second sources | stabilise |\n| machined parts | leverage: competition between local job shops, bundle small parts | leverage |\n| sheet metal | leverage; quality first after the 2026 base-frame issues | leverage |\n| seals | bottleneck: long-term agreements, qualify second sources where approvals allow | secure_supply |\n| electrical | strategic: copper and electronics clauses, multi-year frameworks | stabilise |\n| C-parts | routine: fewer suppliers, kits, lower process cost | routine |\n| raw material | index-based pricing, negotiate base price and extras | leverage |\n\n## Targets for FY2027\nMaterial cost -3 % against the index-adjusted baseline; no supplier in red for more than two quarters.\n"
+  },
+  "claims": [
+    {
+      "claim_id": "payment_request",
+      "claim": "Supplier asks for payment within 10 days and offers a cash discount.",
+      "citations": [
+        "doc:20260902-70110-M2"
+      ]
+    },
+    {
+      "claim_id": "payment_reverse",
+      "claim": "Supplier refuses faster payment and will not offer a cash discount.",
+      "citations": [
+        "doc:20260902-70110-M2"
+      ]
+    },
+    {
+      "claim_id": "cash_insolvency",
+      "claim": "The payment email proves this supplier is insolvent.",
+      "citations": [
+        "doc:20260902-70110-M2"
+      ]
+    },
+    {
+      "claim_id": "cash_free",
+      "claim": "Accepting 10-day payment is free to the buyer.",
+      "citations": [
+        "doc:20260902-70110-M2"
+      ]
+    },
+    {
+      "claim_id": "approval",
+      "claim": "The account manager says price changes above 2% require committee approval.",
+      "citations": [
+        "doc:20260227-70510-M2"
+      ]
+    },
+    {
+      "claim_id": "approval_reverse",
+      "claim": "The account manager can approve any price change without committee review.",
+      "citations": [
+        "doc:20260227-70510-M2"
+      ]
+    },
+    {
+      "claim_id": "renewal",
+      "claim": "The contract extends by 12 months unless terminated with 90 days notice.",
+      "citations": [
+        "ctr:4600070510#8.1"
+      ]
+    },
+    {
+      "claim_id": "renewal_discount",
+      "claim": "The renewal clause proves the supplier will give a discount for a 36-month term.",
+      "citations": [
+        "ctr:4600070510#8.1"
+      ]
+    },
+    {
+      "claim_id": "cost_estimate",
+      "claim": "The July 2026 own-plant should-cost estimate is 374.95 per unit, with 5% uncertainty.",
+      "citations": [
+        "cost:350011"
+      ]
+    },
+    {
+      "claim_id": "cost_exact",
+      "claim": "The supplier actual full cost is exactly 374.95, so it cannot accept any lower price.",
+      "citations": [
+        "cost:350011"
+      ]
+    },
+    {
+      "claim_id": "old_shutdown",
+      "claim": "An October 2025 email announced a shutdown from 23 December to 6 January.",
+      "citations": [
+        "doc:20251019-70510-N"
+      ]
+    },
+    {
+      "claim_id": "current_shutdown",
+      "claim": "This October 2025 email confirms the plant will close in December 2026.",
+      "citations": [
+        "doc:20251019-70510-N"
+      ]
+    }
+  ],
+  "expected": {
+    "payment_request": [
+      "supported"
+    ],
+    "payment_reverse": [
+      "contradicted"
+    ],
+    "cash_insolvency": [
+      "unsupported",
+      "inference"
+    ],
+    "cash_free": [
+      "requires_case",
+      "unsupported",
+      "contradicted"
+    ],
+    "approval": [
+      "supported"
+    ],
+    "approval_reverse": [
+      "contradicted"
+    ],
+    "renewal": [
+      "supported"
+    ],
+    "renewal_discount": [
+      "inference",
+      "unsupported",
+      "requires_case"
+    ],
+    "cost_estimate": [
+      "supported"
+    ],
+    "cost_exact": [
+      "unsupported",
+      "inference",
+      "contradicted"
+    ],
+    "old_shutdown": [
+      "supported"
+    ],
+    "current_shutdown": [
+      "unsupported",
+      "inference"
+    ]
+  }
+}

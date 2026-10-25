@@ -1,0 +1,1086 @@
+{
+  "supplier_id": "sup:70440",
+  "input_hash": "f98f65f0c760dbc2279882f0d4a49301fee28aee5ca7cad45d3ec102adc5195f",
+  "dossier_hash": "31dbcde21bf664b451382e86ff2c0323fda4c3115668df2a247c619e4ba2c8cf",
+  "model": "gpt-6.1-sol",
+  "effort": "low",
+  "meta": {
+    "seconds": 34.37,
+    "usage": {
+      "input_tokens": 39882,
+      "input_tokens_details": {
+        "cache_write_tokens": 39879,
+        "cached_tokens": 0
+      },
+      "output_tokens": 4286,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 44168
+    }
+  },
+  "audit": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "inference",
+        "reason": "The 10 September 2026 note records the supplier's pricing rule, not an independently demonstrated desire for binding planning security.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "Kohlering-Technik Pirkheim GmbH stated that standard items are not discounted; only multi-year volume agreements change prices."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "Allocation and poor part-specific delivery are recorded; valuing predictable call-offs and realistic lead times is a plausible hypothesis.",
+        "excerpts": [
+          {
+            "ref": "news:20260827-25",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          },
+          {
+            "ref": "evidence:deliveries",
+            "quote": "\"on_time_requested_pct\": 65.4, \"part_id\": \"part:340011\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "inference",
+        "reason": "September forecasts show shared growth for both parts, but do not demonstrate supplier appetite for volume or a perceived threat to its lip-seal quota.",
+        "excerpts": [
+          {
+            "ref": "fc:340011@2026-09",
+            "quote": "\"ordered_last_12m\": 11420, \"qty_next_12m\": 12720, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "fc:340040@2026-09",
+            "quote": "\"ordered_last_12m\": 37200, \"qty_next_12m\": 39100, \"shared_with_suppliers\": 1"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "inference",
+        "reason": "Driver summaries support recent peaks and a high estimated rubber weight on 340040. Seeking recovery or indexation remains hypothetical.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340040:drivers",
+            "quote": "\"peak_month\": \"2026-08\", \"peak_value\": 122.4"
+          },
+          {
+            "ref": "evidence:part:340040:drivers",
+            "quote": "\"weight\": 0.54"
+          },
+          {
+            "ref": "evidence:part:340011:drivers",
+            "quote": "\"peak_month\": \"2026-04\", \"peak_value\": 119.6"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "unsupported",
+        "reason": "The 24 May 2026 note records approval above 2% and fortnightly meetings, not an approximately two-week processing delay.",
+        "excerpts": [
+          {
+            "ref": "doc:20260524-70440-M2",
+            "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "inference",
+        "reason": "The 27 August allocation report supports a risk to 340011 growth, but neither full capacity nor an agreement as the solution is established.",
+        "excerpts": [
+          {
+            "ref": "news:20260827-25",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "supported",
+        "reason": "The framework covering both parts, valid July 2025–June 2027, directly records these provisions; termination requires 90 days' notice.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070440#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070440#8.1",
+            "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.3",
+        "verdict": "supported",
+        "reason": "Supported as the supplier's stated commercial position on 10 September 2026, not an independently proven absolute limit.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "Kohlering-Technik Pirkheim GmbH stated that standard items are not discounted; only multi-year volume agreements change prices."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "The pricing rule is recorded, but the value of a 24-month commitment needs current allowed options and total-cost calculations.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "only multi-year volume agreements change prices."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "Higher binding volume requires case-specific need, allocation availability, allowed volumes and total-cost economics.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "Standard delivery is recorded, but a steep premium and the economic superiority of keeping it are not established.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070440#5.1",
+            "quote": "Delivery DAP; standard lead time 35 days from order."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "+ late_cost_per_day · max(0, lead_time_days − need_lead_time_days)"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "No cash need cannot be inferred from silence. Payment trade value requires supplier financing economics, allowed options and buyer total cost.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "The rival has lower rolling ppm on 340040, but quota motivation is unproven and a tighter commitment requires allowed options and defect-cost economics.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"ppm_last_12m\": 338"
+          },
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"ppm_last_12m\": 429"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "+ committed · ppm_commitment / 1e6 · (cost_per_defect − min(chargeback_eur_per_complaint, cost_per_defect))"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "Peak indices do not establish whether excluding indexation is cheaper. Current clause options, expected index path and risk costs are needed.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "`index_path` is the case's\nexpected move of the clause's series."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "unsupported",
+        "reason": "Current 340040 prices and rolling ppm support the comparison, but do not establish that it is the strongest price argument.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70430-340040",
+            "quote": "\"price\": 100.98, \"price_unit\": 100"
+          },
+          {
+            "ref": "EV-2026-70440-340040",
+            "quote": "\"price\": 111.69, \"price_unit\": 100"
+          },
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"ppm_last_12m\": 338"
+          },
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"ppm_last_12m\": 429"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "requires_case",
+        "reason": "Shared growth and the supplier's pricing rule do not establish the price value of a binding volume exchange.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "only multi-year volume agreements change prices."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "unsupported",
+        "reason": "The supplier's rule is recorded, but no actual case offer demonstrates that the buyer is offering exactly the required agreement.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "only multi-year volume agreements change prices."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "unsupported",
+        "reason": "The 15 July 2026 estimate for 340011 is below price but uncertain; it does not demonstrate actual supplier margin.",
+        "excerpts": [
+          {
+            "ref": "cost:340011",
+            "quote": "\"checked_unit_cost\": 34.74, \"confidence_pct\": 5, \"conversion_eur\": 20.92, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "requires_case",
+        "reason": "Forecast growth and allocation are recorded, but allocation security versus price-cut value requires case supply-risk and commitment economics.",
+        "excerpts": [
+          {
+            "ref": "fc:340011@2026-09",
+            "quote": "\"change_pct\": 11.4"
+          },
+          {
+            "ref": "news:20260827-25",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "supported",
+        "reason": "For 340040, the 2024–2026 renewals settled at 0%, 1.8% and 0%, supporting the historical characterization, not a future concession.",
+        "excerpts": [
+          {
+            "ref": "EV-2024-70440-340040",
+            "quote": "\"settled_pct\": 0.0"
+          },
+          {
+            "ref": "EV-2025-70440-340040",
+            "quote": "\"settled_pct\": 1.8"
+          },
+          {
+            "ref": "EV-2026-70440-340040",
+            "quote": "\"settled_pct\": 0.0"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "supported",
+        "reason": "For 340011, the 2024–2026 settlements were 0%, 0% and 2.1%; these support the historical comparison only.",
+        "excerpts": [
+          {
+            "ref": "EV-2024-70440-340011",
+            "quote": "\"settled_pct\": 0.0"
+          },
+          {
+            "ref": "EV-2025-70440-340011",
+            "quote": "\"settled_pct\": 0.0"
+          },
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"settled_pct\": 2.1"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "unsupported",
+        "reason": "Eight supplier-caused lip-seal complaints lack a stated period. Records show 16 supplier-caused notifications overall and two currently open 8Ds, not eight open reports.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"qns\": 19, \"received_last_12m\": 18662, \"recharged_eur\": 1800, \"supplier_caused\": 17"
+          },
+          {
+            "ref": "qn:20005017",
+            "quote": "\"d8_date\": null"
+          },
+          {
+            "ref": "qn:20005029",
+            "quote": "\"d8_date\": null"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "unsupported",
+        "reason": "Rolling September 2026 OTD is below the 95% target, but no peer median is supplied.",
+        "excerpts": [
+          {
+            "ref": "sc:70440@2026Q3",
+            "quote": "\"otd_confirmed_pct\": 79.2, \"otd_pct\": 75.5"
+          },
+          {
+            "ref": "ctr:4600070440#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "supported",
+        "reason": "The current framework covering both parts records annual fixed prices and advance notice; this does not establish an actual late notice.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070440#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "supported",
+        "reason": "The January 2025 same-part quotes show a historical gap. The claim appropriately conditions checker use on case inclusion; these expired quotes are not current offers.",
+        "excerpts": [
+          {
+            "ref": "quote:7100040",
+            "quote": "\"unit_price\": 102.34, \"validity_days\": 14"
+          },
+          {
+            "ref": "quote:7100041",
+            "quote": "\"unit_price\": 121.27, \"validity_days\": 30"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "a `quote` of this case (in its `refs` or your alternative)"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.11",
+        "verdict": "unsupported",
+        "reason": "September 2026 power news compares with August 2022; it does not rebut any supplier energy claim or establish this seal plant's costs.",
+        "excerpts": [
+          {
+            "ref": "news:20260912-30",
+            "quote": "Producer prices for electric power stand -43 % against August 2022."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.12",
+        "verdict": "inference",
+        "reason": "Slight lateness is recorded, but 'reliable payer' is an interpretation: most invoices were late and five remain unpaid.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 3.0"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 86.7"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"unpaid\": 5"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "unsupported",
+        "reason": "Price and quality comparisons are supported, but actual concession room, healthy margin, bargaining dominance and the assertion that the last increase covered index costs are not demonstrated by an uncertain should-cost model.",
+        "excerpts": [
+          {
+            "ref": "cost:340011",
+            "quote": "\"method\": \"bottom-up estimate of this supplier's plant, no margin included\""
+          },
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"change_pct\": 2.1"
+          },
+          {
+            "ref": "evidence:part:340011:drivers",
+            "quote": "\"change_12m_pct\": 2.7"
+          },
+          {
+            "ref": "evidence:part:340011:drivers",
+            "quote": "\"change_12m_pct\": 3.9"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "Ownership, staff, allocation, approval and below-ask settlements are recorded. Guardedness, full capacity, high margin, overstated pressure and ability to walk away are unproven. The 0.8% comparison mixes FY2026 buyer spend with FY2024 supplier turnover.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"filed_fy\": 2024, \"founded\": 1972"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"owner_type\": \"family\", \"staff\": 140"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"turnover_eur\": 35200000"
+          },
+          {
+            "ref": "evidence:spend",
+            "quote": "\"fiscal_year\": \"FY2026\", \"invoice_count\": 53, \"spend_eur\": 287769.44"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "unsupported",
+        "reason": "Most operational facts are supported, including two open lip-seal 8Ds and the approximate price/estimate gap. Financial soundness and absence of cash stress are not established by dated credit data or silence; the turnover share is cross-period, and proposed volume/term positioning needs case economics.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"credit_index\": 147, \"credit_index_12m_ago\": 147"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"filed_fy\": 2024"
+          },
+          {
+            "ref": "qn:20005017",
+            "quote": "\"d8_date\": null"
+          },
+          {
+            "ref": "qn:20005029",
+            "quote": "\"d8_date\": null"
+          },
+          {
+            "ref": "cost:340011",
+            "quote": "\"checked_unit_cost\": 34.74"
+          },
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"price\": 37.55"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "unsupported",
+        "reason": "The cheaper mechanical-seal source and n/a tooling entries are supported. No peer median supports the quality comparison; payment-induced stalling, loss of allocation and zero credit for nonbinding volume are not demonstrated supplier reactions.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"price\": 37.55"
+          },
+          {
+            "ref": "EV-2026-70410-340011",
+            "quote": "\"price\": 38.29"
+          },
+          {
+            "ref": "evidence:part:340011:sourcing",
+            "quote": "\"tooling_owner\": \"n/a\""
+          },
+          {
+            "ref": "news:20260827-25",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      }
+    ],
+    "errors": [],
+    "complete": true,
+    "verdict_counts": {
+      "inference": 6,
+      "unsupported": 11,
+      "supported": 6,
+      "requires_case": 8
+    }
+  },
+  "raw": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "inference",
+        "reason": "The 10 September 2026 note records the supplier's pricing rule, not an independently demonstrated desire for binding planning security.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "Kohlering-Technik Pirkheim GmbH stated that standard items are not discounted; only multi-year volume agreements change prices."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "Allocation and poor part-specific delivery are recorded; valuing predictable call-offs and realistic lead times is a plausible hypothesis.",
+        "excerpts": [
+          {
+            "ref": "news:20260827-25",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          },
+          {
+            "ref": "evidence:deliveries",
+            "quote": "\"on_time_requested_pct\": 65.4, \"part_id\": \"part:340011\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "inference",
+        "reason": "September forecasts show shared growth for both parts, but do not demonstrate supplier appetite for volume or a perceived threat to its lip-seal quota.",
+        "excerpts": [
+          {
+            "ref": "fc:340011@2026-09",
+            "quote": "\"ordered_last_12m\": 11420, \"qty_next_12m\": 12720, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "fc:340040@2026-09",
+            "quote": "\"ordered_last_12m\": 37200, \"qty_next_12m\": 39100, \"shared_with_suppliers\": 1"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "inference",
+        "reason": "Driver summaries support recent peaks and a high estimated rubber weight on 340040. Seeking recovery or indexation remains hypothetical.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340040:drivers",
+            "quote": "\"peak_month\": \"2026-08\", \"peak_value\": 122.4"
+          },
+          {
+            "ref": "evidence:part:340040:drivers",
+            "quote": "\"weight\": 0.54"
+          },
+          {
+            "ref": "evidence:part:340011:drivers",
+            "quote": "\"peak_month\": \"2026-04\", \"peak_value\": 119.6"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "unsupported",
+        "reason": "The 24 May 2026 note records approval above 2% and fortnightly meetings, not an approximately two-week processing delay.",
+        "excerpts": [
+          {
+            "ref": "doc:20260524-70440-M2",
+            "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "inference",
+        "reason": "The 27 August allocation report supports a risk to 340011 growth, but neither full capacity nor an agreement as the solution is established.",
+        "excerpts": [
+          {
+            "ref": "news:20260827-25",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "supported",
+        "reason": "The framework covering both parts, valid July 2025–June 2027, directly records these provisions; termination requires 90 days' notice.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070440#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070440#8.1",
+            "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.3",
+        "verdict": "supported",
+        "reason": "Supported as the supplier's stated commercial position on 10 September 2026, not an independently proven absolute limit.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "Kohlering-Technik Pirkheim GmbH stated that standard items are not discounted; only multi-year volume agreements change prices."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "The pricing rule is recorded, but the value of a 24-month commitment needs current allowed options and total-cost calculations.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "only multi-year volume agreements change prices."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "Higher binding volume requires case-specific need, allocation availability, allowed volumes and total-cost economics.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "Standard delivery is recorded, but a steep premium and the economic superiority of keeping it are not established.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070440#5.1",
+            "quote": "Delivery DAP; standard lead time 35 days from order."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "+ late_cost_per_day · max(0, lead_time_days − need_lead_time_days)"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "No cash need cannot be inferred from silence. Payment trade value requires supplier financing economics, allowed options and buyer total cost.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "The rival has lower rolling ppm on 340040, but quota motivation is unproven and a tighter commitment requires allowed options and defect-cost economics.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"ppm_last_12m\": 338"
+          },
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"ppm_last_12m\": 429"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "+ committed · ppm_commitment / 1e6 · (cost_per_defect − min(chargeback_eur_per_complaint, cost_per_defect))"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "Peak indices do not establish whether excluding indexation is cheaper. Current clause options, expected index path and risk costs are needed.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "`index_path` is the case's\nexpected move of the clause's series."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "unsupported",
+        "reason": "Current 340040 prices and rolling ppm support the comparison, but do not establish that it is the strongest price argument.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70430-340040",
+            "quote": "\"price\": 100.98, \"price_unit\": 100"
+          },
+          {
+            "ref": "EV-2026-70440-340040",
+            "quote": "\"price\": 111.69, \"price_unit\": 100"
+          },
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"ppm_last_12m\": 338"
+          },
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"ppm_last_12m\": 429"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "requires_case",
+        "reason": "Shared growth and the supplier's pricing rule do not establish the price value of a binding volume exchange.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "only multi-year volume agreements change prices."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "unsupported",
+        "reason": "The supplier's rule is recorded, but no actual case offer demonstrates that the buyer is offering exactly the required agreement.",
+        "excerpts": [
+          {
+            "ref": "doc:20260910-70440-M1",
+            "quote": "only multi-year volume agreements change prices."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "unsupported",
+        "reason": "The 15 July 2026 estimate for 340011 is below price but uncertain; it does not demonstrate actual supplier margin.",
+        "excerpts": [
+          {
+            "ref": "cost:340011",
+            "quote": "\"checked_unit_cost\": 34.74, \"confidence_pct\": 5, \"conversion_eur\": 20.92, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "requires_case",
+        "reason": "Forecast growth and allocation are recorded, but allocation security versus price-cut value requires case supply-risk and commitment economics.",
+        "excerpts": [
+          {
+            "ref": "fc:340011@2026-09",
+            "quote": "\"change_pct\": 11.4"
+          },
+          {
+            "ref": "news:20260827-25",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "supported",
+        "reason": "For 340040, the 2024–2026 renewals settled at 0%, 1.8% and 0%, supporting the historical characterization, not a future concession.",
+        "excerpts": [
+          {
+            "ref": "EV-2024-70440-340040",
+            "quote": "\"settled_pct\": 0.0"
+          },
+          {
+            "ref": "EV-2025-70440-340040",
+            "quote": "\"settled_pct\": 1.8"
+          },
+          {
+            "ref": "EV-2026-70440-340040",
+            "quote": "\"settled_pct\": 0.0"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "supported",
+        "reason": "For 340011, the 2024–2026 settlements were 0%, 0% and 2.1%; these support the historical comparison only.",
+        "excerpts": [
+          {
+            "ref": "EV-2024-70440-340011",
+            "quote": "\"settled_pct\": 0.0"
+          },
+          {
+            "ref": "EV-2025-70440-340011",
+            "quote": "\"settled_pct\": 0.0"
+          },
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"settled_pct\": 2.1"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "unsupported",
+        "reason": "Eight supplier-caused lip-seal complaints lack a stated period. Records show 16 supplier-caused notifications overall and two currently open 8Ds, not eight open reports.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340040:part_quality",
+            "quote": "\"qns\": 19, \"received_last_12m\": 18662, \"recharged_eur\": 1800, \"supplier_caused\": 17"
+          },
+          {
+            "ref": "qn:20005017",
+            "quote": "\"d8_date\": null"
+          },
+          {
+            "ref": "qn:20005029",
+            "quote": "\"d8_date\": null"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "unsupported",
+        "reason": "Rolling September 2026 OTD is below the 95% target, but no peer median is supplied.",
+        "excerpts": [
+          {
+            "ref": "sc:70440@2026Q3",
+            "quote": "\"otd_confirmed_pct\": 79.2, \"otd_pct\": 75.5"
+          },
+          {
+            "ref": "ctr:4600070440#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "supported",
+        "reason": "The current framework covering both parts records annual fixed prices and advance notice; this does not establish an actual late notice.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070440#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "supported",
+        "reason": "The January 2025 same-part quotes show a historical gap. The claim appropriately conditions checker use on case inclusion; these expired quotes are not current offers.",
+        "excerpts": [
+          {
+            "ref": "quote:7100040",
+            "quote": "\"unit_price\": 102.34, \"validity_days\": 14"
+          },
+          {
+            "ref": "quote:7100041",
+            "quote": "\"unit_price\": 121.27, \"validity_days\": 30"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "a `quote` of this case (in its `refs` or your alternative)"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.11",
+        "verdict": "unsupported",
+        "reason": "September 2026 power news compares with August 2022; it does not rebut any supplier energy claim or establish this seal plant's costs.",
+        "excerpts": [
+          {
+            "ref": "news:20260912-30",
+            "quote": "Producer prices for electric power stand -43 % against August 2022."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.12",
+        "verdict": "inference",
+        "reason": "Slight lateness is recorded, but 'reliable payer' is an interpretation: most invoices were late and five remain unpaid.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 3.0"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 86.7"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"unpaid\": 5"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "unsupported",
+        "reason": "Price and quality comparisons are supported, but actual concession room, healthy margin, bargaining dominance and the assertion that the last increase covered index costs are not demonstrated by an uncertain should-cost model.",
+        "excerpts": [
+          {
+            "ref": "cost:340011",
+            "quote": "\"method\": \"bottom-up estimate of this supplier's plant, no margin included\""
+          },
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"change_pct\": 2.1"
+          },
+          {
+            "ref": "evidence:part:340011:drivers",
+            "quote": "\"change_12m_pct\": 2.7"
+          },
+          {
+            "ref": "evidence:part:340011:drivers",
+            "quote": "\"change_12m_pct\": 3.9"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "Ownership, staff, allocation, approval and below-ask settlements are recorded. Guardedness, full capacity, high margin, overstated pressure and ability to walk away are unproven. The 0.8% comparison mixes FY2026 buyer spend with FY2024 supplier turnover.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"filed_fy\": 2024, \"founded\": 1972"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"owner_type\": \"family\", \"staff\": 140"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"turnover_eur\": 35200000"
+          },
+          {
+            "ref": "evidence:spend",
+            "quote": "\"fiscal_year\": \"FY2026\", \"invoice_count\": 53, \"spend_eur\": 287769.44"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "unsupported",
+        "reason": "Most operational facts are supported, including two open lip-seal 8Ds and the approximate price/estimate gap. Financial soundness and absence of cash stress are not established by dated credit data or silence; the turnover share is cross-period, and proposed volume/term positioning needs case economics.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"credit_index\": 147, \"credit_index_12m_ago\": 147"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"filed_fy\": 2024"
+          },
+          {
+            "ref": "qn:20005017",
+            "quote": "\"d8_date\": null"
+          },
+          {
+            "ref": "qn:20005029",
+            "quote": "\"d8_date\": null"
+          },
+          {
+            "ref": "cost:340011",
+            "quote": "\"checked_unit_cost\": 34.74"
+          },
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"price\": 37.55"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "unsupported",
+        "reason": "The cheaper mechanical-seal source and n/a tooling entries are supported. No peer median supports the quality comparison; payment-induced stalling, loss of allocation and zero credit for nonbinding volume are not demonstrated supplier reactions.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"price\": 37.55"
+          },
+          {
+            "ref": "EV-2026-70410-340011",
+            "quote": "\"price\": 38.29"
+          },
+          {
+            "ref": "evidence:part:340011:sourcing",
+            "quote": "\"tooling_owner\": \"n/a\""
+          },
+          {
+            "ref": "news:20260827-25",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          }
+        ]
+      }
+    ]
+  }
+}

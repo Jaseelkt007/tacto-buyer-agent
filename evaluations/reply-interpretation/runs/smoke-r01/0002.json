@@ -1,0 +1,361 @@
+{
+  "context": {
+    "schema_version": 1,
+    "case_id": "case:P10",
+    "supplier_id": "sup:70410",
+    "case_terms": {
+      "negotiable": [
+        "unit_price",
+        "volume_per_year",
+        "contract_months",
+        "lead_time_days"
+      ],
+      "fixed_terms": {
+        "payment_days": 30,
+        "effective_date": "2027-01-01",
+        "index_clause": null,
+        "incoterm": "DAP",
+        "tooling_eur": 0
+      },
+      "term_options": {
+        "volume_per_year": [
+          16379,
+          19890,
+          23400
+        ],
+        "contract_months": [
+          12,
+          24,
+          36
+        ],
+        "lead_time_days": [
+          35,
+          42,
+          56
+        ]
+      }
+    },
+    "latest_message_ref": "message:sup:70410:2",
+    "latest_sender": "sales@70410",
+    "latest_status": "open",
+    "history": [
+      {
+        "from": "sales@70410",
+        "message_id": "msg:70410-0-0",
+        "subject": "Quote from Dichtungswerk Ravensteiner GmbH: Ravensteiner cuts the seal allocation",
+        "body": "Dear Sir or Madam,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe offer a price of €32.20 per unit for a volume of 19890 pcs per year. Our Lieferzeit is 54 days, and the contract term is 12 months. \n\nPlease note that this offer remains valid for 30 days. All deliveries and services are strictly subject to our standard procedure and standard conditions.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH",
+        "term_sheets": [
+          {
+            "term_sheet_id": "offer:70410-0",
+            "terms": {
+              "unit_price": 32.2,
+              "lead_time_days": 54,
+              "volume_per_year": 19890,
+              "contract_months": 12
+            }
+          }
+        ],
+        "status": "open",
+        "claim_results": [],
+        "missing_fields": [],
+        "source_ref": "message:sup:70410:0",
+        "attachments": [
+          {
+            "attachment_id": "att:70410-0-quote",
+            "name": "quote-offer-70410-0.pdf",
+            "text": "Dichtungswerk Ravensteiner GmbH\nTo: Hollerau Pumpenwerke GmbH\nAngebot / Quote offer:70410-0\nOffered terms\nUnit price (EUR) 32.20\nLead time (days) 54\nVolume per year (pcs) 19890\nContract term (months) 12\nOur standard terms (apply to everything not stated above)\nQuality commitment (ppm) 300\nChargeback per complaint (EUR) 0.00\nTerms fixed by your enquiry\nPayment terms (days net) 30\nPrice valid from 2027-01-01\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0.00\nPart(s): part:340010. Enquiry: Ravensteiner cuts the seal allocation.\nValidity: 30 days."
+          }
+        ]
+      },
+      {
+        "from": "buyer",
+        "subject": "Re: Quote from Dichtungswerk Ravensteiner GmbH: Ravensteiner cuts the seal allocation",
+        "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nOur bottom-up cost model puts the full cost of this part at EUR 24.31 per unit (cost:340010).\nYour rolling scorecard shows on-time delivery of 79.5% (sc:70410@2026Q3).\nOur demand forecast for this part has risen 10.1% (fc:340010@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+        "term_sheets": [
+          {
+            "terms": {
+              "unit_price": 29.95,
+              "volume_per_year": 23400,
+              "contract_months": 36,
+              "lead_time_days": 56
+            }
+          }
+        ],
+        "source_ref": "message:sup:70410:1",
+        "attachments": []
+      },
+      {
+        "from": "sales@70410",
+        "message_id": "msg:70410-1-2",
+        "subject": "Re: Quote from Dichtungswerk Ravensteiner GmbH: Ravensteiner cuts the seal allocation",
+        "body": "Dear Sir or Madam,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We acknowledge your increased volume of 23,400 units and the 36-month contract term, which allows us to revise our price to €31.70. We checked the volume change data you cited; it holds, but it does not change our calculation. We checked the should cost data you cited; it holds and we took it into account. Theoretical cost models do not reflect the specialized nature of our production and our current high capacity utilization. Our calculation is our property; we do not share a breakdown. We note your delivery data and maintain our focus on supply chain stability. Our Lieferzeit is 56 days. Our proposal covers a volume of 23400 pcs per year, a contract term of 36 months, Lieferzeit 56 days, and a price of €31.70 per unit. This offer stays valid for 30 days.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH",
+        "term_sheets": [
+          {
+            "term_sheet_id": "offer:70410-1",
+            "terms": {
+              "unit_price": 31.7,
+              "lead_time_days": 56,
+              "volume_per_year": 23400,
+              "contract_months": 36
+            }
+          }
+        ],
+        "status": "open",
+        "claim_results": [
+          {
+            "index": 0,
+            "result": "verified"
+          },
+          {
+            "index": 1,
+            "result": "verified"
+          },
+          {
+            "index": 2,
+            "result": "verified"
+          }
+        ],
+        "missing_fields": [],
+        "source_ref": "message:sup:70410:2",
+        "attachments": [
+          {
+            "attachment_id": "att:70410-1-delivery_schedule",
+            "name": "delivery-schedule.xlsx",
+            "text": "[Delivery schedule]\nMonth | Quantity | Cumulative\n1 | =ROUND(23400/12,0) | =SUM(B$2:B2)\n2 | =ROUND(23400/12,0) | =SUM(B$2:B3)\n3 | =ROUND(23400/12,0) | =SUM(B$2:B4)\n4 | =ROUND(23400/12,0) | =SUM(B$2:B5)\n5 | =ROUND(23400/12,0) | =SUM(B$2:B6)\n6 | =ROUND(23400/12,0) | =SUM(B$2:B7)\n7 | =ROUND(23400/12,0) | =SUM(B$2:B8)\n8 | =ROUND(23400/12,0) | =SUM(B$2:B9)\n9 | =ROUND(23400/12,0) | =SUM(B$2:B10)\n10 | =ROUND(23400/12,0) | =SUM(B$2:B11)\n11 | =ROUND(23400/12,0) | =SUM(B$2:B12)\n12 | =ROUND(23400/12,0) | =SUM(B$2:B13)\n13 | =ROUND(23400/12,0) | =SUM(B$2:B14)\n14 | =ROUND(23400/12,0) | =SUM(B$2:B15)\n15 | =ROUND(23400/12,0) | =SUM(B$2:B16)\n16 | =ROUND(23400/12,0) | =SUM(B$2:B17)\n17 | =ROUND(23400/12,0) | =SUM(B$2:B18)\n18 | =ROUND(23400/12,0) | =SUM(B$2:B19)\n19 | =ROUND(23400/12,0) | =SUM(B$2:B20)\n20 | =ROUND(23400/12,0) | =SUM(B$2:B21)\n21 | =ROUND(23400/12,0) | =SUM(B$2:B22)\n22 | =ROUND(23400/12,0) | =SUM(B$2:B23)\n23 | =ROUND(23400/12,0) | =SUM(B$2:B24)\n24 | =ROUND(23400/12,0) | =SUM(B$2:B25)\n25 | =ROUND(23400/12,0) | =SUM(B$2:B26)\n26 | =ROUND(23400/12,0) | =SUM(B$2:B27)\n27 | =ROUND(23400/12,0) | =SUM(B$2:B28)\n28 | =ROUND(23400/12,0) | =SUM(B$2:B29)\n29 | =ROUND(23400/12,0) | =SUM(B$2:B30)\n30 | =ROUND(23400/12,0) | =SUM(B$2:B31)\n31 | =ROUND(23400/12,0) | =SUM(B$2:B32)\n32 | =ROUND(23400/12,0) | =SUM(B$2:B33)\n33 | =ROUND(23400/12,0) | =SUM(B$2:B34)\n34 | =ROUND(23400/12,0) | =SUM(B$2:B35)\n35 | =ROUND(23400/12,0) | =SUM(B$2:B36)\n36 | =ROUND(23400/12,0) | =SUM(B$2:B37)\nLead time (days) | 56 | "
+          }
+        ]
+      }
+    ],
+    "packages": {
+      "package:0": {
+        "message_ref": "message:sup:70410:2",
+        "term_sheet_id": "offer:70410-1",
+        "terms": {
+          "unit_price": 31.7,
+          "lead_time_days": 56,
+          "volume_per_year": 23400,
+          "contract_months": 36
+        }
+      }
+    },
+    "sources": {
+      "message:sup:70410:0:subject": "Quote from Dichtungswerk Ravensteiner GmbH: Ravensteiner cuts the seal allocation",
+      "message:sup:70410:0:body": "Dear Sir or Madam,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe offer a price of €32.20 per unit for a volume of 19890 pcs per year. Our Lieferzeit is 54 days, and the contract term is 12 months. \n\nPlease note that this offer remains valid for 30 days. All deliveries and services are strictly subject to our standard procedure and standard conditions.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH",
+      "message:sup:70410:0:attachment:0": "Dichtungswerk Ravensteiner GmbH\nTo: Hollerau Pumpenwerke GmbH\nAngebot / Quote offer:70410-0\nOffered terms\nUnit price (EUR) 32.20\nLead time (days) 54\nVolume per year (pcs) 19890\nContract term (months) 12\nOur standard terms (apply to everything not stated above)\nQuality commitment (ppm) 300\nChargeback per complaint (EUR) 0.00\nTerms fixed by your enquiry\nPayment terms (days net) 30\nPrice valid from 2027-01-01\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0.00\nPart(s): part:340010. Enquiry: Ravensteiner cuts the seal allocation.\nValidity: 30 days.",
+      "message:sup:70410:2:subject": "Re: Quote from Dichtungswerk Ravensteiner GmbH: Ravensteiner cuts the seal allocation",
+      "message:sup:70410:2:body": "Dear Sir or Madam,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We acknowledge your increased volume of 23,400 units and the 36-month contract term, which allows us to revise our price to €31.70. We checked the volume change data you cited; it holds, but it does not change our calculation. We checked the should cost data you cited; it holds and we took it into account. Theoretical cost models do not reflect the specialized nature of our production and our current high capacity utilization. Our calculation is our property; we do not share a breakdown. We note your delivery data and maintain our focus on supply chain stability. Our Lieferzeit is 56 days. Our proposal covers a volume of 23400 pcs per year, a contract term of 36 months, Lieferzeit 56 days, and a price of €31.70 per unit. This offer stays valid for 30 days.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH",
+      "message:sup:70410:2:attachment:0": "[Delivery schedule]\nMonth | Quantity | Cumulative\n1 | =ROUND(23400/12,0) | =SUM(B$2:B2)\n2 | =ROUND(23400/12,0) | =SUM(B$2:B3)\n3 | =ROUND(23400/12,0) | =SUM(B$2:B4)\n4 | =ROUND(23400/12,0) | =SUM(B$2:B5)\n5 | =ROUND(23400/12,0) | =SUM(B$2:B6)\n6 | =ROUND(23400/12,0) | =SUM(B$2:B7)\n7 | =ROUND(23400/12,0) | =SUM(B$2:B8)\n8 | =ROUND(23400/12,0) | =SUM(B$2:B9)\n9 | =ROUND(23400/12,0) | =SUM(B$2:B10)\n10 | =ROUND(23400/12,0) | =SUM(B$2:B11)\n11 | =ROUND(23400/12,0) | =SUM(B$2:B12)\n12 | =ROUND(23400/12,0) | =SUM(B$2:B13)\n13 | =ROUND(23400/12,0) | =SUM(B$2:B14)\n14 | =ROUND(23400/12,0) | =SUM(B$2:B15)\n15 | =ROUND(23400/12,0) | =SUM(B$2:B16)\n16 | =ROUND(23400/12,0) | =SUM(B$2:B17)\n17 | =ROUND(23400/12,0) | =SUM(B$2:B18)\n18 | =ROUND(23400/12,0) | =SUM(B$2:B19)\n19 | =ROUND(23400/12,0) | =SUM(B$2:B20)\n20 | =ROUND(23400/12,0) | =SUM(B$2:B21)\n21 | =ROUND(23400/12,0) | =SUM(B$2:B22)\n22 | =ROUND(23400/12,0) | =SUM(B$2:B23)\n23 | =ROUND(23400/12,0) | =SUM(B$2:B24)\n24 | =ROUND(23400/12,0) | =SUM(B$2:B25)\n25 | =ROUND(23400/12,0) | =SUM(B$2:B26)\n26 | =ROUND(23400/12,0) | =SUM(B$2:B27)\n27 | =ROUND(23400/12,0) | =SUM(B$2:B28)\n28 | =ROUND(23400/12,0) | =SUM(B$2:B29)\n29 | =ROUND(23400/12,0) | =SUM(B$2:B30)\n30 | =ROUND(23400/12,0) | =SUM(B$2:B31)\n31 | =ROUND(23400/12,0) | =SUM(B$2:B32)\n32 | =ROUND(23400/12,0) | =SUM(B$2:B33)\n33 | =ROUND(23400/12,0) | =SUM(B$2:B34)\n34 | =ROUND(23400/12,0) | =SUM(B$2:B35)\n35 | =ROUND(23400/12,0) | =SUM(B$2:B36)\n36 | =ROUND(23400/12,0) | =SUM(B$2:B37)\nLead time (days) | 56 | "
+    }
+  },
+  "model": "gpt-6.1-sol",
+  "model_called": true,
+  "request_sha256": "2def93a487f2b235960a55c94ce9231a1b5a3f1c036bbecb826463e200bf1f41",
+  "answer": {
+    "observations": [
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "volume_per_year",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70410:2:body",
+            "quote": "We acknowledge your increased volume of 23,400 units and the 36-month contract term, which allows us to revise our price to €31.70."
+          }
+        ]
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "contract_months",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70410:2:body",
+            "quote": "We acknowledge your increased volume of 23,400 units and the 36-month contract term, which allows us to revise our price to €31.70."
+          }
+        ]
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "other",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70410:2:body",
+            "quote": "This offer stays valid for 30 days."
+          }
+        ]
+      }
+    ]
+  },
+  "response_id": "resp_0d1d614893ac4cb7016adde5c7b40487d1a3878f3fdc9c80f5",
+  "usage": {
+    "input_tokens": 4262,
+    "input_tokens_details": {
+      "cache_write_tokens": 4259,
+      "cached_tokens": 0
+    },
+    "output_tokens": 227,
+    "output_tokens_details": {
+      "reasoning_tokens": 23
+    },
+    "total_tokens": 4489
+  },
+  "reading": {
+    "schema_version": 1,
+    "case_id": "case:P10",
+    "supplier_id": "sup:70410",
+    "as_of": "message:sup:70410:2",
+    "context_sha256": "b85866078794ed2a93d0b5746304f355c5c94269f156e1bbceb3f498bcb56d0e",
+    "status": "available",
+    "error": null,
+    "packages": {
+      "package:0": {
+        "message_ref": "message:sup:70410:2",
+        "term_sheet_id": "offer:70410-1",
+        "terms": {
+          "unit_price": 31.7,
+          "lead_time_days": 56,
+          "volume_per_year": 23400,
+          "contract_months": 36
+        }
+      }
+    },
+    "observations": [
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "volume_per_year",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70410:2:body",
+            "quote": "We acknowledge your increased volume of 23,400 units and the 36-month contract term, which allows us to revise our price to €31.70."
+          }
+        ],
+        "quoted_value": 23400,
+        "value_source": "offer:70410-1",
+        "policy_effect": "advisory_only"
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "contract_months",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70410:2:body",
+            "quote": "We acknowledge your increased volume of 23,400 units and the 36-month contract term, which allows us to revise our price to €31.70."
+          }
+        ],
+        "quoted_value": 36,
+        "value_source": "offer:70410-1",
+        "policy_effect": "advisory_only"
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "other",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70410:2:body",
+            "quote": "This offer stays valid for 30 days."
+          }
+        ],
+        "quoted_value": null,
+        "value_source": null,
+        "policy_effect": "advisory_only"
+      }
+    ],
+    "validation": "provenance_checked_not_semantically_proven",
+    "changes_binding_decisions": false
+  },
+  "seconds": 5.558,
+  "source_snapshot_sha256": "208db022fe3f264d7f9a15a291898f1681fe6e489f3e6e387a797c02b23ac7f1",
+  "decision_index": 1,
+  "response_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "observations"
+    ],
+    "properties": {
+      "observations": {
+        "type": "array",
+        "maxItems": 12,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "package_ref",
+            "kind",
+            "field",
+            "evidence"
+          ],
+          "properties": {
+            "package_ref": {
+              "type": "string",
+              "enum": [
+                "unscoped",
+                "package:0"
+              ]
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "condition",
+                "preference",
+                "withdrawal_statement",
+                "conflict",
+                "unclear"
+              ]
+            },
+            "field": {
+              "type": "string",
+              "enum": [
+                "contract_months",
+                "effective_date",
+                "incoterm",
+                "index_clause",
+                "lead_time_days",
+                "other",
+                "payment_days",
+                "tooling_eur",
+                "unit_price",
+                "volume_per_year"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source_ref",
+                  "quote"
+                ],
+                "properties": {
+                  "source_ref": {
+                    "type": "string",
+                    "enum": [
+                      "message:sup:70410:0:subject",
+                      "message:sup:70410:0:body",
+                      "message:sup:70410:0:attachment:0",
+                      "message:sup:70410:2:subject",
+                      "message:sup:70410:2:body",
+                      "message:sup:70410:2:attachment:0"
+                    ]
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 600
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

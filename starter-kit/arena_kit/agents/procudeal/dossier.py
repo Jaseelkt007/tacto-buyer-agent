@@ -54,7 +54,11 @@ FULL_SIGNS = re.compile(
     r"capacity utili[sz]ation|cannot confirm your (?:full )?forecast|fully booked|at capacity", re.I
 )
 # Its material is bought forward at fixed prices: an index rise does not reach its cost yet (v1.7).
-HEDGED_SIGNS = re.compile(r"bought (?:their|our) [\w ,-]{1,60} forward|covered at fixed prices|not our reality", re.I)
+HEDGED_SIGNS = re.compile(
+    r"bought (?:their|our) [\w ,-]{1,60} forward|bought forward at fixed prices"
+    r"|covered at fixed prices|not our reality",
+    re.I,
+)
 SKONTO_CAP = 0.20  # the cost of money a cash discount implies, at most (v1.7, rich_value)
 
 
@@ -77,6 +81,7 @@ class Dossier:
     full_cost_floor: float = 0.0  # the estimate's error band: offers never push it below this
     rate_measured: bool = False  # measured_rate: interest_rate comes from its own sheets
     notes: list[str] = field(default_factory=list)
+    source_ids: list[str] = field(default_factory=list)
 
     def estimate(self, standard, rich=False):
         """The supplier estimate the kit's cost functions take. `rich` (v1.7): with its real ppm."""
@@ -124,13 +129,17 @@ def build(case, supplier_id, package, quote_price=None, rich=False):
     d.ppm = sc.get("ppm")
 
     texts = []
-    for row in query(package, "SELECT id, subject FROM documents WHERE supplier_id = ? ORDER BY date", (supplier_id,)):
-        try:
-            texts.append(f"{row['subject']}\n{document(package, row['id'])}")
-        except (FileNotFoundError, ValueError):
-            texts.append(row["subject"] or "")
-    for row in query(package, "SELECT headline, body FROM news WHERE supplier_id = ?", (supplier_id,)):
-        texts.append(f"{row['headline']}\n{row['body'] or ''}")
+    for prefix in ("doc:", "news:"):
+        for ref in ids(package, prefix):
+            row = lookup(package, ref) or {}
+            if (row.get("supplier") or row.get("supplier_id")) != supplier_id:
+                continue
+            title = row.get("subject") or row.get("title") or row.get("headline") or ""
+            try:
+                texts.append(f"{title}\n{document(package, ref)}")
+            except (FileNotFoundError, ValueError):
+                texts.append(title)
+            d.source_ids.append(ref)
     blob = "\n".join(texts)
     d.cash_need = bool(CASH_SIGNS.search(blob))
     d.capacity_full = bool(FULL_SIGNS.search(blob))

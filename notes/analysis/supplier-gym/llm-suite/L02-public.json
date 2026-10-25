@@ -1,0 +1,373 @@
+{
+  "case": {
+    "case_id": "case:L02",
+    "set": "practice",
+    "type": "renewal",
+    "title": "Casting order financing control",
+    "briefing": "Fictional local practice: obtain an acceptable supply agreement for the stated need.",
+    "trigger_doc": "doc:20261016-70170-S12",
+    "parts": [
+      "part:310050"
+    ],
+    "suppliers": [
+      "sup:70170"
+    ],
+    "negotiable": [
+      "unit_price",
+      "payment_days"
+    ],
+    "fixed_terms": {
+      "lead_time_days": 42,
+      "volume_per_year": 6000,
+      "contract_months": 12,
+      "index_clause": null,
+      "incoterm": "DAP",
+      "tooling_eur": 0,
+      "effective_date": "2027-01-01"
+    },
+    "term_options": {
+      "payment_days": [
+        10,
+        30,
+        60,
+        90
+      ]
+    },
+    "buyer": {
+      "need_per_year": 6000,
+      "horizon_years": 1,
+      "current_unit_price": 100,
+      "fallback_unit_price": 120.0,
+      "interest_rate": 0.08,
+      "reference_payment_days": 60,
+      "need_lead_time_days": 42,
+      "category_goal": "leverage",
+      "fallback_risk_pct": 3,
+      "index_risk_pct": 1,
+      "late_cost_per_day": 200,
+      "cost_per_defect": 50,
+      "freight_eur_per_unit": {
+        "EXW": 0.5,
+        "FCA": 0.3,
+        "DAP": 0
+      },
+      "index_paths": {},
+      "must_haves": [
+        {
+          "field": "lead_time_days",
+          "op": "<=",
+          "value": 42
+        }
+      ],
+      "alternative": {
+        "kind": "other_supplier",
+        "ref": null,
+        "terms": {
+          "lead_time_days": 42,
+          "volume_per_year": 6000,
+          "contract_months": 12,
+          "index_clause": null,
+          "incoterm": "DAP",
+          "tooling_eur": 0,
+          "effective_date": "2027-01-01",
+          "unit_price": 118.0,
+          "payment_days": 60
+        }
+      }
+    },
+    "round_limit": 10,
+    "refs": [
+      "doc:20261016-70170-S12",
+      "news:20261014-S11"
+    ],
+    "facts": {
+      "doc:20261016-70170-S12": {
+        "asked_pct": null,
+        "asked_price": null,
+        "date": "2026-10-16",
+        "days": null,
+        "effective_date": null,
+        "supplier": "sup:70170",
+        "title": "Payment terms for stainless castings",
+        "type": "letter"
+      },
+      "news:20261014-S11": {
+        "date": "2026-10-14",
+        "headline": "Bank tightens credit line for Slévárna Vrbenský s.r.o.",
+        "supplier": "sup:70170",
+        "topic": "credit_downgrade"
+      }
+    }
+  },
+  "transcript": {
+    "sim1": {
+      "sup:70170": [
+        {
+          "thread_id": "thread:L02:70170",
+          "message_id": "msg:70170-0-1",
+          "in_reply_to": null,
+          "from": "sales@70170",
+          "subject": "Re: Casting order financing control",
+          "body": "Simulated supplier. Fictional practice enquiry. Our opening quote is attached; we welcome a package proposal.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70170-0",
+              "terms": {
+                "unit_price": 99.1
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [
+            "payment_days"
+          ],
+          "attachments": [
+            {
+              "attachment_id": "att:70170-0-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Casting order financing control",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nAlloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived) changed -5.5% from 2026-06 to 2026-09 (idx:AS-14404@2026-06, idx:AS-14404@2026-09).\nOur demand forecast for this part has risen 13.3% (fc:310050@2026-09).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 77.93,
+                "payment_days": 10
+              }
+            }
+          ],
+          "refs": [
+            "fc:310050@2026-09",
+            "idx:AS-14404@2026-06",
+            "idx:AS-14404@2026-09"
+          ],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L02:70170",
+          "message_id": "msg:70170-1-2",
+          "in_reply_to": null,
+          "from": "sales@70170",
+          "subject": "Re: Casting order financing control",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70170-1",
+              "terms": {
+                "payment_days": 30,
+                "unit_price": 96.13
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70170-1-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Casting order financing control",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 83.19,
+                "payment_days": 10
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L02:70170",
+          "message_id": "msg:70170-2-3",
+          "in_reply_to": null,
+          "from": "sales@70170",
+          "subject": "Re: Casting order financing control",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70170-2",
+              "terms": {
+                "payment_days": 30,
+                "unit_price": 89.32
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70170-2-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Casting order financing control",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 84.85,
+                "payment_days": 10
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L02:70170",
+          "message_id": "msg:70170-3-4",
+          "in_reply_to": null,
+          "from": "sales@70170",
+          "subject": "Re: Casting order financing control",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70170-3",
+              "terms": {
+                "payment_days": 30,
+                "unit_price": 87.95
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70170-3-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Casting order financing control",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 85.6,
+                "payment_days": 10
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L02:70170",
+          "message_id": "msg:70170-4-5",
+          "in_reply_to": null,
+          "from": "sales@70170",
+          "subject": "Re: Casting order financing control",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70170-4",
+              "terms": {
+                "payment_days": 30,
+                "unit_price": 86.59
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70170-4-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "thread_id": "thread:L02:70170",
+          "message_id": "msg:70170-4-6",
+          "in_reply_to": null,
+          "from": "sales@70170",
+          "subject": "Re: Casting order financing control",
+          "body": "Simulated supplier. Thank you for your order.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70170-4",
+              "terms": {
+                "payment_days": 30,
+                "unit_price": 86.59
+              }
+            }
+          ],
+          "status": "agreed",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70170-4-order-confirmation",
+              "name": "order-confirmation.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

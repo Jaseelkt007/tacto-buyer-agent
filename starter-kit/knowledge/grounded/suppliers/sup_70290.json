@@ -1,0 +1,816 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70290",
+ "name": "Feinmechanik Rottaler GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "db53148dfed3f6e3e7072db1621dc1fccbd88981fa65871e5878ea15c3c2a76d",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:19:35.519319+00:00",
+  "seconds": 35.6,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:244bb90f695d8cc9",
+   "text": "Supplier states order intake is very strong and will confirm additional volumes only against a binding 12-month commitment.",
+   "kind": "supplier_statement",
+   "source": "doc:20260619-70290-M3",
+   "quote": "Order intake is very strong. We can confirm additional volumes only against a binding 12-month commitment.",
+   "parts": [],
+   "observed_at": "2026-06-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:244bb90f695d8cc9",
+    "verdict": "supported",
+    "reason": "Verbatim supplier statement, correctly dated 2026-06-19."
+   }
+  },
+  {
+   "id": "obs:5a6d661ca6b337da",
+   "text": "Same condition for additional volumes was already stated in March 2026.",
+   "kind": "supplier_statement",
+   "source": "doc:20260315-70290-M1",
+   "quote": "We can confirm additional volumes only against a binding 12-month commitment.",
+   "parts": [],
+   "observed_at": "2026-03-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:5a6d661ca6b337da",
+    "verdict": "supported",
+    "reason": "The 2026-03-15 email states the same condition for additional volumes."
+   }
+  },
+  {
+   "id": "obs:eb7a73d68a595999",
+   "text": "Supplier asked for invoice payment within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260501-70290-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-05-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:eb7a73d68a595999",
+    "verdict": "supported",
+    "reason": "Verbatim supplier request, correctly dated 2026-05-01."
+   }
+  },
+  {
+   "id": "obs:1b203988d265b9f3",
+   "text": "Buyer pays invoices late: 94.4% paid late, average 10.4 days after due in last 12 months, 4 unpaid.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due_last_12m\": 10.4, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 76, \"max_days_late\": 23, \"paid_late_pct\": 94.4, \"paid_over_10_days_late_pct\": 50.0, \"short_paid_without_discount\": 0, \"unpaid\": 4",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:1b203988d265b9f3",
+    "verdict": "supported",
+    "reason": "Invoice data shows 94.4% paid late, 10.4 days average after due in the last 12m, 4 unpaid."
+   }
+  },
+  {
+   "id": "obs:c11d3c64a2422391",
+   "text": "Supplier master records payment terms of 30 days, EXW incoterm, standard lead time 35 days, no skonto recorded.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"EXW\", \"name\": \"Feinmechanik Rottaler GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:c11d3c64a2422391",
+    "verdict": "supported",
+    "reason": "Master record shows payment 30 days, EXW, lead time 35 days, skonto null."
+   }
+  },
+  {
+   "id": "obs:30a9e7406157aa8c",
+   "text": "Current 2026 renewal price for part 320010 from sup:70290 is EUR 24.92 per unit, -2.9% vs prior, valid from 2026-01-01 with no end date recorded.",
+   "kind": "fact",
+   "source": "EV-2026-70290-320010",
+   "quote": "\"change_pct\": -2.9, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70290-320010\", \"price\": 24.92, \"price_unit\": 1, \"supplier_id\": \"sup:70290\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:30a9e7406157aa8c",
+    "verdict": "supported",
+    "reason": "Matches the price history record: EUR 24.92, -2.9%, valid from 2026-01-01, valid_to null."
+   }
+  },
+  {
+   "id": "obs:03a90957c0deecec",
+   "text": "Should-cost for part 320010 at this supplier's plant is EUR 25.22 per unit (no margin), with about 5% confidence error, estimated 2026-07-15.",
+   "kind": "fact",
+   "source": "cost:320010",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 11.47, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320010\", \"material_eur\": 8.83, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 4.92, \"part_id\": \"part:320010\", \"price_unit\": 1, \"supplier_id\": \"sup:70290\", \"unit_cost\": 25.22",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:03a90957c0deecec",
+    "verdict": "supported",
+    "reason": "Recorded estimate of EUR 25.22, no margin, about 5% error, dated 2026-07-15; stated as an estimate."
+   }
+  },
+  {
+   "id": "obs:b82c6bcd6745a418",
+   "text": "Price for part 320010 fell from 26.37 to 24.92 EUR (-5.5%) since 2023.",
+   "kind": "fact",
+   "source": "evidence:part:320010:orders",
+   "quote": "\"first_price\": 26.37, \"last_order\": \"2026-09-28\", \"latest\": [",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2026-09-28",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b82c6bcd6745a418",
+    "verdict": "supported",
+    "reason": "Order data shows first price 26.37, latest 24.92, price_change_pct -5.5, first order in 2023."
+   }
+  },
+  {
+   "id": "obs:7abd9b713ddd5c2f",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070290#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7abd9b713ddd5c2f",
+    "verdict": "supported",
+    "reason": "Verbatim from clause 3.1."
+   }
+  },
+  {
+   "id": "obs:f9a63e4964809b17",
+   "text": "Framework agreement runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070290#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:f9a63e4964809b17",
+    "verdict": "supported",
+    "reason": "Verbatim from clause 8.1."
+   }
+  },
+  {
+   "id": "obs:5bbd4061329d8c72",
+   "text": "Trade press reports a multi-year hydraulics contract that will occupy most of the supplier's turning capacity from the summer.",
+   "kind": "fact",
+   "source": "news:20260323-06",
+   "quote": "won a multi-year contract from a hydraulics maker that will occupy most of its turning capacity from the summer",
+   "parts": [],
+   "observed_at": "2026-03-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:5bbd4061329d8c72",
+    "verdict": "supported",
+    "reason": "Accurately framed as a trade press report about this supplier, dated 2026-03-23."
+   }
+  },
+  {
+   "id": "obs:495aee150ff6d728",
+   "text": "Rolling 12-month scorecard to 2026-09-30: OTD 75.9% vs requested date, 79.3% vs confirmed date, ppm 921, score 83.3, class B amber.",
+   "kind": "fact",
+   "source": "sc:70290@2026Q3",
+   "quote": "\"otd_confirmed_pct\": 79.3, \"otd_pct\": 75.9, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 921, \"qn_count\": 8, \"quarter\": \"2026Q3\", \"received_qty\": 8685, \"score\": 83.3",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:495aee150ff6d728",
+    "verdict": "supported",
+    "reason": "All figures match scorecard sc:70290@2026Q3, including class B amber."
+   }
+  },
+  {
+   "id": "obs:dead08b4f3fa6c4e",
+   "text": "Last 12 months: 20.7% of receipts late, averaging 13.0 days late when late, max 32 days.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 13.0, \"early_pct\": 3.4, \"late_pct\": 20.7, \"max_days_late\": 32",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:dead08b4f3fa6c4e",
+    "verdict": "supported",
+    "reason": "Delivery last_12m figures match: 20.7% late, 13.0 days average, max 32."
+   }
+  },
+  {
+   "id": "obs:32778a792b01d7bd",
+   "text": "Part 320010 at this supplier: 24 QNs, 22 supplier-caused, EUR 2,100 recharged; ppm last 12m 921.",
+   "kind": "fact",
+   "source": "evidence:part:320010:part_quality",
+   "quote": "\"ppm_last_12m\": 921, \"qns\": 24, \"received_last_12m\": 8685, \"recharged_eur\": 2100, \"supplier_caused\": 22, \"supplier_id\": \"sup:70290\"",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:32778a792b01d7bd",
+    "verdict": "supported",
+    "reason": "Part quality evidence matches: 24 QNs, 22 supplier-caused, EUR 2,100 recharged, ppm 921."
+   }
+  },
+  {
+   "id": "obs:a9da0bc4304256be",
+   "text": "Latest QN (coating defect, supplier-caused, 2026-09-07) has no closed 8D (d8_date null).",
+   "kind": "fact",
+   "source": "qn:20005019",
+   "quote": "\"d8_date\": null, \"defect\": \"coating defect\"",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2026-09-07",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a9da0bc4304256be",
+    "verdict": "supported",
+    "reason": "QN record shows a supplier-caused coating defect dated 2026-09-07 with d8_date null."
+   }
+  },
+  {
+   "id": "obs:31bc301e102204da",
+   "text": "Small founder-owned supplier: 25 staff, turnover band 2-5 M EUR, equity ratio 21.7%, credit index 231 unchanged over 12 months.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 231, \"credit_index_12m_ago\": 231, \"equity_ratio_pct\": 21.7, \"filed_fy\": 2024, \"founded\": 1993, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 25, \"supplier_id\": \"sup:70290\", \"turnover_band\": \"2-5 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:31bc301e102204da",
+    "verdict": "supported",
+    "reason": "Intel record shows founder-owned, 25 staff, 2-5 M EUR band, equity 21.7%, credit index 231 both now and 12m ago."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:4cb8aa41a663f704",
+   "text": "Small founder-owned GmbH: 25 staff, turnover band 2-5 M EUR, equity ratio 21.7%.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 21.7, \"filed_fy\": 2024, \"founded\": 1993, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 25, \"supplier_id\": \"sup:70290\", \"turnover_band\": \"2-5 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:4cb8aa41a663f704",
+    "verdict": "supported",
+    "reason": "All figures match the intel record."
+   }
+  },
+  {
+   "id": "obs:08fb9f21ea16da2a",
+   "text": "Current master terms: 30 payment days, EXW, standard lead time 35 days, no skonto agreed.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"EXW\", \"name\": \"Feinmechanik Rottaler GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:08fb9f21ea16da2a",
+    "verdict": "supported",
+    "reason": "Master record supports these terms; null skonto read as none recorded."
+   }
+  },
+  {
+   "id": "obs:36009906a79e9bae",
+   "text": "Supplier's credit index is 231, unchanged from 12 months ago.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 231, \"credit_index_12m_ago\": 231",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:36009906a79e9bae",
+    "verdict": "supported",
+    "reason": "Intel record shows credit index 231 now and 231 twelve months ago."
+   }
+  },
+  {
+   "id": "obs:b9cc08cc6a65dc90",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070290#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b9cc08cc6a65dc90",
+    "verdict": "supported",
+    "reason": "Verbatim from clause 4.1."
+   }
+  },
+  {
+   "id": "obs:02464a0200baf197",
+   "text": "Delivery EXW with standard lead time of 35 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070290#5.1",
+   "quote": "Delivery EXW; standard lead time 35 days from order.",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:02464a0200baf197",
+    "verdict": "supported",
+    "reason": "Verbatim from clause 5.1."
+   }
+  },
+  {
+   "id": "obs:d3bab18e2898032c",
+   "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070290#6.1",
+   "quote": "The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:d3bab18e2898032c",
+    "verdict": "supported",
+    "reason": "Verbatim from clause 6.1."
+   }
+  },
+  {
+   "id": "obs:b25c73356c8a9345",
+   "text": "Supplier states strong order intake and will confirm additional volumes only against a binding 12-month commitment.",
+   "kind": "supplier_statement",
+   "source": "doc:20260619-70290-M3",
+   "quote": "Order intake is very strong. We can confirm additional volumes only against a binding 12-month commitment.",
+   "parts": [],
+   "observed_at": "2026-06-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b25c73356c8a9345",
+    "verdict": "supported",
+    "reason": "Verbatim supplier statement dated 2026-06-19."
+   }
+  },
+  {
+   "id": "obs:a6798aa3c1c41b40",
+   "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260501-70290-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-05-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a6798aa3c1c41b40",
+    "verdict": "supported",
+    "reason": "Verbatim supplier request dated 2026-05-01."
+   }
+  },
+  {
+   "id": "obs:ff87c424af65a46f",
+   "text": "Scorecard OTD fell from 90.5% (class A, 2024Q3) to a low of 61.5% in 2025Q3.",
+   "kind": "fact",
+   "source": "sc:70290@2025Q3",
+   "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 9, \"gr_lines\": 26, \"id\": \"sc:70290@2025Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 65.4, \"otd_pct\": 61.5",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2025-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ff87c424af65a46f",
+    "verdict": "supported",
+    "reason": "Scorecards show OTD 90.5% class A in 2024Q3 and a series minimum of 61.5% in 2025Q3."
+   }
+  },
+  {
+   "id": "obs:5618578652e1c874",
+   "text": "Seven PO lines were confirmed later than requested; 7 partial lines.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"confirmed_later_than_requested_lines\": 7",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:5618578652e1c874",
+    "verdict": "supported",
+    "reason": "Delivery evidence records 7 lines confirmed later than requested and 7 partial lines."
+   }
+  },
+  {
+   "id": "obs:7f44c0fa15041a70",
+   "text": "Supplier is a small founder-owned firm: 25 staff, turnover band 2-5 M EUR, equity ratio 21.7%, ISO 9001, VDA 6.3 grade B.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"certifications\": \"ISO 9001\", \"credit_index\": 231, \"credit_index_12m_ago\": 231, \"equity_ratio_pct\": 21.7, \"filed_fy\": 2024, \"founded\": 1993, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 25, \"supplier_id\": \"sup:70290\", \"turnover_band\": \"2-5 M EUR\", \"turnover_eur\": null, \"vda63_grade\": \"B\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7f44c0fa15041a70",
+    "verdict": "supported",
+    "reason": "All attributes, including ISO 9001 and VDA 6.3 grade B, match the intel record."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Current 2026 renewal price for part 320010 from sup:70290 is EUR 24.92 per unit, -2.9% vs prior, valid from 2026-01-01 with no end date recorded.",
+     "kind": "fact",
+     "source": "EV-2026-70290-320010",
+     "quote": "\"change_pct\": -2.9, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70290-320010\", \"price\": 24.92, \"price_unit\": 1, \"supplier_id\": \"sup:70290\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for part 320010 at this supplier's plant is EUR 25.22 per unit (no margin), with about 5% confidence error, estimated 2026-07-15.",
+     "kind": "fact",
+     "source": "cost:320010",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 11.47, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320010\", \"material_eur\": 8.83, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 4.92, \"part_id\": \"part:320010\", \"price_unit\": 1, \"supplier_id\": \"sup:70290\", \"unit_cost\": 25.22",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "The estimated full cost (EUR 25.22) exceeds the current price (EUR 24.92), suggesting the supplier may have a thin or negative margin on part 320010, within the ~5% estimate error.",
+     "kind": "hypothesis",
+     "source": "cost:320010",
+     "quote": "\"confidence_pct\": 5, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"unit_cost\": 25.22",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier states order intake is very strong and will confirm additional volumes only against a binding 12-month commitment.",
+     "kind": "supplier_statement",
+     "source": "doc:20260619-70290-M3",
+     "quote": "Order intake is very strong. We can confirm additional volumes only against a binding 12-month commitment.",
+     "parts": [],
+     "observed_at": "2026-06-19",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier asked for invoice payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260501-70290-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-05-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master records payment terms of 30 days, EXW incoterm, standard lead time 35 days, no skonto recorded.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"EXW\", \"name\": \"Feinmechanik Rottaler GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Small founder-owned supplier: 25 staff, turnover band 2-5 M EUR, equity ratio 21.7%, credit index 231 unchanged over 12 months.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 231, \"credit_index_12m_ago\": 231, \"equity_ratio_pct\": 21.7, \"filed_fy\": 2024, \"founded\": 1993, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 25, \"supplier_id\": \"sup:70290\", \"turnover_band\": \"2-5 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "In the 2025-06-21 benchmark RFQ, sup:70290 quoted EUR 27.00 with 41 days lead time and was awarded.",
+     "kind": "fact",
+     "source": "quote:7100018",
+     "quote": "\"awarded\": 1, \"currency\": \"EUR\", \"id\": \"quote:7100018\", \"incoterm\": null, \"lead_time_days\": 41, \"quote_date\": \"2025-06-21\", \"supplier_id\": \"sup:70290\", \"tooling_eur\": 0, \"unit_price\": 27.0",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2025-06-21",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier states order intake is very strong and will confirm additional volumes only against a binding 12-month commitment.",
+     "kind": "supplier_statement",
+     "source": "doc:20260619-70290-M3",
+     "quote": "Order intake is very strong. We can confirm additional volumes only against a binding 12-month commitment.",
+     "parts": [],
+     "observed_at": "2026-06-19",
+     "valid_until": null
+    },
+    {
+     "text": "Same condition for additional volumes was already stated in March 2026.",
+     "kind": "supplier_statement",
+     "source": "doc:20260315-70290-M1",
+     "quote": "We can confirm additional volumes only against a binding 12-month commitment.",
+     "parts": [],
+     "observed_at": "2026-03-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier asked for invoice payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260501-70290-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-05-01",
+     "valid_until": null
+    },
+    {
+     "text": "Trade press reports a multi-year hydraulics contract that will occupy most of the supplier's turning capacity from the summer.",
+     "kind": "fact",
+     "source": "news:20260323-06",
+     "quote": "won a multi-year contract from a hydraulics maker that will occupy most of its turning capacity from the summer",
+     "parts": [],
+     "observed_at": "2026-03-23",
+     "valid_until": null
+    },
+    {
+     "text": "Buyer pays invoices late: 94.4% paid late, average 10.4 days after due in last 12 months, 4 unpaid.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due_last_12m\": 10.4, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 76, \"max_days_late\": 23, \"paid_late_pct\": 94.4, \"paid_over_10_days_late_pct\": 50.0, \"short_paid_without_discount\": 0, \"unpaid\": 4",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Small founder-owned GmbH: 25 staff, turnover band 2-5 M EUR, equity ratio 21.7%.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 21.7, \"filed_fy\": 2024, \"founded\": 1993, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 25, \"supplier_id\": \"sup:70290\", \"turnover_band\": \"2-5 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Current master terms: 30 payment days, EXW, standard lead time 35 days, no skonto agreed.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"EXW\", \"name\": \"Feinmechanik Rottaler GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's credit index is 231, unchanged from 12 months ago.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 231, \"credit_index_12m_ago\": 231",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070290#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070290#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070290#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Delivery EXW with standard lead time of 35 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070290#5.1",
+     "quote": "Delivery EXW; standard lead time 35 days from order.",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070290#6.1",
+     "quote": "The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier states strong order intake and will confirm additional volumes only against a binding 12-month commitment.",
+     "kind": "supplier_statement",
+     "source": "doc:20260619-70290-M3",
+     "quote": "Order intake is very strong. We can confirm additional volumes only against a binding 12-month commitment.",
+     "parts": [],
+     "observed_at": "2026-06-19",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260501-70290-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-05-01",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month scorecard to 2026-09-30: OTD 75.9% vs requested date, 79.3% vs confirmed date, ppm 921, score 83.3, class B amber.",
+     "kind": "fact",
+     "source": "sc:70290@2026Q3",
+     "quote": "\"otd_confirmed_pct\": 79.3, \"otd_pct\": 75.9, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 921, \"qn_count\": 8, \"quarter\": \"2026Q3\", \"received_qty\": 8685, \"score\": 83.3",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Scorecard OTD fell from 90.5% (class A, 2024Q3) to a low of 61.5% in 2025Q3.",
+     "kind": "fact",
+     "source": "sc:70290@2025Q3",
+     "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 9, \"gr_lines\": 26, \"id\": \"sc:70290@2025Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 65.4, \"otd_pct\": 61.5",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2025-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months: 20.7% of receipts late, averaging 13.0 days late when late, max 32 days.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 13.0, \"early_pct\": 3.4, \"late_pct\": 20.7, \"max_days_late\": 32",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Seven PO lines were confirmed later than requested; 7 partial lines.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"confirmed_later_than_requested_lines\": 7",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Latest QN (coating defect, supplier-caused, 2026-09-07) has no closed 8D (d8_date null).",
+     "kind": "fact",
+     "source": "qn:20005019",
+     "quote": "\"d8_date\": null, \"defect\": \"coating defect\"",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2026-09-07",
+     "valid_until": null
+    },
+    {
+     "text": "Part 320010 at this supplier: 24 QNs, 22 supplier-caused, EUR 2,100 recharged; ppm last 12m 921.",
+     "kind": "fact",
+     "source": "evidence:part:320010:part_quality",
+     "quote": "\"ppm_last_12m\": 921, \"qns\": 24, \"received_last_12m\": 8685, \"recharged_eur\": 2100, \"supplier_caused\": 22, \"supplier_id\": \"sup:70290\"",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is a small founder-owned firm: 25 staff, turnover band 2-5 M EUR, equity ratio 21.7%, ISO 9001, VDA 6.3 grade B.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"certifications\": \"ISO 9001\", \"credit_index\": 231, \"credit_index_12m_ago\": 231, \"equity_ratio_pct\": 21.7, \"filed_fy\": 2024, \"founded\": 1993, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 25, \"supplier_id\": \"sup:70290\", \"turnover_band\": \"2-5 M EUR\", \"turnover_eur\": null, \"vda63_grade\": \"B\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Price for part 320010 fell from 26.37 to 24.92 EUR (-5.5%) since 2023.",
+     "kind": "fact",
+     "source": "evidence:part:320010:orders",
+     "quote": "\"first_price\": 26.37, \"last_order\": \"2026-09-28\", \"latest\": [",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2026-09-28",
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": [
+   {
+    "role": "economics",
+    "observation": {
+     "text": "The estimated full cost (EUR 25.22) exceeds the current price (EUR 24.92), suggesting the supplier may have a thin or negative margin on part 320010, within the ~5% estimate error.",
+     "kind": "hypothesis",
+     "source": "cost:320010",
+     "quote": "\"confidence_pct\": 5, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"unit_cost\": 25.22",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    "why": "excerpt missing from source"
+   },
+   {
+    "role": "economics",
+    "observation": {
+     "text": "In the 2025-06-21 benchmark RFQ, sup:70290 quoted EUR 27.00 with 41 days lead time and was awarded.",
+     "kind": "fact",
+     "source": "quote:7100018",
+     "quote": "\"awarded\": 1, \"currency\": \"EUR\", \"id\": \"quote:7100018\", \"incoterm\": null, \"lead_time_days\": 41, \"quote_date\": \"2025-06-21\", \"supplier_id\": \"sup:70290\", \"tooling_eur\": 0, \"unit_price\": 27.0",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2025-06-21",
+     "valid_until": null
+    },
+    "why": "excerpt missing from source"
+   }
+  ]
+ }
+}

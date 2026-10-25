@@ -1,0 +1,1442 @@
+{
+  "evaluation": {
+    "case_id": "case:G07",
+    "status": "completed",
+    "error": null,
+    "supplier_model_calls": 5,
+    "supplier_fallbacks": 0,
+    "buyer_fallbacks": 0,
+    "supplier_threads_contacted": [
+      "sup:70340"
+    ],
+    "finished_seconds": 25.062,
+    "end_reason": "accepted",
+    "result": {
+      "ended": true,
+      "deal": true,
+      "supplier_id": "sup:70340",
+      "offer_id": "offer:70340-5",
+      "terms": {
+        "volume_per_year": 5200,
+        "contract_months": 12,
+        "payment_days": 90,
+        "lead_time_days": 35,
+        "incoterm": "DAP",
+        "index_clause": null,
+        "tooling_eur": 0,
+        "effective_date": "2028-01-01",
+        "unit_price": 14.47
+      },
+      "c_open": 88192.0,
+      "c_deal": 74742.37,
+      "c_alt": 101088.0,
+      "c_best": 72159.71,
+      "score": 0.838908852072911,
+      "must_haves_ok": true,
+      "cost_breakdown": {
+        "price": 75244.0,
+        "uncovered_need": 0.0,
+        "fallback_risk": 0.0,
+        "payment_terms": -501.62666666666667,
+        "freight": 0.0,
+        "late_delivery": 0,
+        "quality": 0.0,
+        "tooling": 0.0,
+        "index_clause": 0.0,
+        "index_risk": 0.0,
+        "relationship": 0.0
+      },
+      "evaluation": "synthetic economics; not a leaderboard estimate"
+    },
+    "missed_savings_eur": 2582.66
+  },
+  "profiles": {
+    "sup:70340": {
+      "standard": {
+        "payment_days": 60,
+        "contract_months": 12,
+        "volume_per_year": 5200,
+        "index_clause": null
+      },
+      "economics": {
+        "unit_cost": 13.0,
+        "annual_fixed_cost": 0,
+        "finance_rate": 0.065,
+        "minimum_margin": 0.04,
+        "opening_markup": 0.22,
+        "capacity": 12000,
+        "normal_capacity": 9000,
+        "overtime_per_unit": 2.34,
+        "commitment_credit": 0,
+        "hedge_until": "2026-12-31",
+        "material_share": 0.6,
+        "unhedged_reserve": 0.025,
+        "hedged_index_reserve": 0.04,
+        "final_round": 5,
+        "priorities": "An indexed quote transfers material exposure. The buyer must evaluate its own index path.",
+        "opening_email": "Fictional evaluation quote. An indexed headline price can be lower; the clause still adjusts invoices.",
+        "final_markup": 0.035,
+        "concession_power": 1.3,
+        "commitment_penalty": 0
+      }
+    }
+  },
+  "choices": [
+    {
+      "supplier_id": "sup:70340",
+      "round": 1,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "hold",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 16.96
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a1",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 15.21
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 16.16
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.99
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 15.93
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 15.27
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 16.22
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 15.04
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a8",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 15.99
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a9",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 15.35
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a10",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 16.32
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a11",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 15.12
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a12",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 16.07
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a13",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 15.43
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a14",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 16.4
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a15",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 15.21
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a16",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 16.16
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a15",
+      "summary": "Counter at €15.21 with 90-day payment and material indexation. This materially reduces our opening price, accommodates the buyer’s payment request, and transfers material-price exposure while preserving margin. The cited electricity decline does not establish equivalent savings in our material costs.",
+      "usage": {
+        "input_tokens": 2261,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2258
+        },
+        "output_tokens": 71,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2332
+      },
+      "response_id": "resp_0da6648d181aaa67016addd130458c87d1b6e58f7de465d9ed",
+      "seconds": 3.133
+    },
+    {
+      "supplier_id": "sup:70340",
+      "round": 2,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "hold",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 15.21
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a1",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 14.91
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 15.57
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.7
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 15.34
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 14.97
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 15.62
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.75
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a8",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 15.4
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a9",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 15.05
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a10",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 15.72
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a11",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.83
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a12",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 15.48
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a13",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 15.13
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a14",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 15.79
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a15",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.91
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a16",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 15.57
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a13",
+      "summary": "Offer EUR 15.13 fixed with 90-day payment: it accommodates the buyer’s requested structure and undercuts the cited EUR 15.63 purchase price while preserving margin. The electricity-index citation does not establish an equivalent reduction in our material costs.",
+      "usage": {
+        "input_tokens": 2598,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2595
+        },
+        "output_tokens": 101,
+        "output_tokens_details": {
+          "reasoning_tokens": 30
+        },
+        "total_tokens": 2699
+      },
+      "response_id": "resp_0ead452769f4f3de016addd13496c087d1a612c6d239c1382d",
+      "seconds": 4.821
+    },
+    {
+      "supplier_id": "sup:70340",
+      "round": 3,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "agree",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.21
+          },
+          "reason": "We can agree to this package. Please confirm your order."
+        },
+        {
+          "id": "a1",
+          "kind": "hold",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 15.13
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 14.64
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 15.03
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.43
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.81
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 14.7
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 15.09
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a8",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.48
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a9",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.87
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a10",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 14.78
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a11",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 15.17
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a12",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.56
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a13",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.94
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a14",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.86
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a15",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 15.25
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a16",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.64
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a17",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 15.03
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a14",
+      "summary": "Counter at EUR 14.86 with 90-day payment and no index clause, preserving the buyer’s requested structure while making a further price concession. This balances closing prospects with margin and retained material exposure; the cited electricity decline does not establish equivalent savings in our material costs.",
+      "usage": {
+        "input_tokens": 2801,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2798
+        },
+        "output_tokens": 73,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2874
+      },
+      "response_id": "resp_0aa84a1504abcd0a016addd13899bc87d18d1edc0fd69c22a7",
+      "seconds": 3.723
+    },
+    {
+      "supplier_id": "sup:70340",
+      "round": 4,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "agree",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.41
+          },
+          "reason": "We can agree to this package. Please confirm your order."
+        },
+        {
+          "id": "a1",
+          "kind": "hold",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.86
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 14.41
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 14.57
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.2
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.36
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 14.47
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 14.62
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a8",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.26
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a9",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.41
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a10",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 14.55
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a11",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 14.71
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a12",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.33
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a13",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.49
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a14",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.62
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a15",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.78
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a16",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.41
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a17",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.57
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a14",
+      "summary": "Offer EUR 14.62 with 90-day payment and no index clause, narrowing the remaining price gap while preserving margin and the buyer’s preferred terms. The cited electricity decline does not establish equivalent total-cost savings; this concession offers a credible route to closing without accepting the lowest price.",
+      "usage": {
+        "input_tokens": 2982,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2979
+        },
+        "output_tokens": 120,
+        "output_tokens_details": {
+          "reasoning_tokens": 43
+        },
+        "total_tokens": 3102
+      },
+      "response_id": "resp_0529afaa37c248df016addd13c7afc87d1a2d75b92ce310dd0",
+      "seconds": 4.878
+    },
+    {
+      "supplier_id": "sup:70340",
+      "round": 5,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "agree",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.47
+          },
+          "reason": "We can agree to this package. Please confirm your order."
+        },
+        {
+          "id": "a2",
+          "kind": "final",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 14.26
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "final",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.05
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "final",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 14.31
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "final",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.1
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "final",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 14.39
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "final",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.17
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a8",
+          "kind": "final",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.46
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a9",
+          "kind": "final",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.26
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a0",
+      "summary": "Accept EUR 14.47 at 90 days without indexation. The buyer has narrowed the gap sufficiently, and acceptance preserves more revenue than the comparable final offer while securing the order without further bargaining risk.",
+      "usage": {
+        "input_tokens": 2479,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2476
+        },
+        "output_tokens": 59,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2538
+      },
+      "response_id": "resp_0b38c2dd38aaa956016addd141788887d194ab7b0d98f210c4",
+      "seconds": 2.907
+    }
+  ],
+  "buyer_trace": [
+    {
+      "round": 0,
+      "supplier_id": "sup:70340",
+      "their_status": "open",
+      "their_offer": "offer:70340-0",
+      "their_terms": {
+        "unit_price": 16.96
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 13.65,
+          "payment_days": 90,
+          "index_clause": null
+        }
+      ],
+      "seconds": 0.027,
+      "source": "engine",
+      "price": 13.65,
+      "anchor": 13.65,
+      "ceiling": 17.07,
+      "their_price_on_our_terms": 17.07,
+      "c_main": 70507,
+      "limit": 88192,
+      "sheets": 1,
+      "claims": [
+        "index_change",
+        "delivery_record",
+        "volume_change"
+      ],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 90,
+        "index_clause": null
+      },
+      "budget": null,
+      "trade": null,
+      "features_off": [
+        "ask_breakdown",
+        "call_note_lever",
+        "case_plan",
+        "grounded_dossier",
+        "measured_trades",
+        "patience",
+        "plan_paragraph",
+        "plan_priced_trades",
+        "plan_stance",
+        "tactician",
+        "tactician_text"
+      ],
+      "plan": false
+    },
+    {
+      "round": 1,
+      "supplier_id": "sup:70340",
+      "their_status": "open",
+      "their_offer": "offer:70340-1",
+      "their_terms": {
+        "index_clause": {
+          "base_month": "2026-09",
+          "deadband_pct": 3.0,
+          "material_share": 0.6,
+          "series": "PPI-C241"
+        },
+        "payment_days": 90,
+        "unit_price": 15.21
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 13.81,
+          "payment_days": 90,
+          "index_clause": null
+        }
+      ],
+      "seconds": 0.001,
+      "source": "engine",
+      "price": 13.81,
+      "anchor": 13.65,
+      "ceiling": 17.07,
+      "their_price_on_our_terms": 15.21,
+      "c_main": 71333,
+      "limit": 88192,
+      "sheets": 1,
+      "claims": [
+        "order_history"
+      ],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 90,
+        "index_clause": null
+      },
+      "budget": null,
+      "trade": null
+    },
+    {
+      "round": 2,
+      "supplier_id": "sup:70340",
+      "their_status": "open",
+      "their_offer": "offer:70340-2",
+      "their_terms": {
+        "index_clause": null,
+        "payment_days": 90,
+        "unit_price": 15.13
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 14.21,
+          "payment_days": 90,
+          "index_clause": null
+        }
+      ],
+      "seconds": 0.0,
+      "source": "engine",
+      "price": 14.21,
+      "anchor": 13.65,
+      "ceiling": 17.07,
+      "their_price_on_our_terms": 15.13,
+      "c_main": 73399,
+      "limit": 88192,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 90,
+        "index_clause": null
+      },
+      "budget": null,
+      "trade": null
+    },
+    {
+      "round": 3,
+      "supplier_id": "sup:70340",
+      "their_status": "open",
+      "their_offer": "offer:70340-3",
+      "their_terms": {
+        "index_clause": null,
+        "payment_days": 90,
+        "unit_price": 14.86
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 14.41,
+          "payment_days": 90,
+          "index_clause": null
+        }
+      ],
+      "seconds": 0.0,
+      "source": "engine",
+      "price": 14.41,
+      "anchor": 13.65,
+      "ceiling": 17.07,
+      "their_price_on_our_terms": 14.86,
+      "c_main": 74432,
+      "limit": 88192,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 90,
+        "index_clause": null
+      },
+      "budget": null,
+      "trade": null
+    },
+    {
+      "round": 4,
+      "supplier_id": "sup:70340",
+      "their_status": "open",
+      "their_offer": "offer:70340-4",
+      "their_terms": {
+        "index_clause": null,
+        "payment_days": 90,
+        "unit_price": 14.62
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 14.47,
+          "payment_days": 90,
+          "index_clause": null
+        }
+      ],
+      "seconds": 0.0,
+      "source": "engine",
+      "price": 14.47,
+      "anchor": 13.65,
+      "ceiling": 17.07,
+      "their_price_on_our_terms": 14.62,
+      "c_main": 74742,
+      "limit": 88192,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 90,
+        "index_clause": null
+      },
+      "budget": null,
+      "trade": null
+    },
+    {
+      "round": 5,
+      "supplier_id": "sup:70340",
+      "their_status": "agreed",
+      "their_offer": "offer:70340-5",
+      "their_terms": {
+        "index_clause": null,
+        "payment_days": 90,
+        "unit_price": 14.47
+      },
+      "action": "accept",
+      "our_sheets": [],
+      "seconds": 0.0,
+      "source": "engine",
+      "why": "agreed; C 74,742 below the limit 88,192"
+    }
+  ],
+  "dossiers": {
+    "sup:70340": {
+      "supplier_id": "sup:70340",
+      "name": "Metallbau Steinfelder KG",
+      "country": "DE",
+      "owner_type": "family",
+      "contract_id": "ctr:4600070340",
+      "interest_rate": 0.075,
+      "cash_need": false,
+      "wants_work": false,
+      "capacity_full": false,
+      "hedged": true,
+      "ppm": 489,
+      "skonto_rate": 0.0,
+      "full_cost": null,
+      "full_cost_source": "none",
+      "full_cost_floor": 0.0,
+      "rate_measured": false,
+      "notes": [],
+      "source_ids": [
+        "doc:20251009-70340-N",
+        "doc:20260418-70340-M3",
+        "doc:20260721-70340-M2",
+        "doc:20260728-70340-M1",
+        "doc:20261013-70340-S15"
+      ]
+    }
+  },
+  "case_sha256": "b67aed18da2915f438d6a4f2fbd9e843168d6b46cb61216b5690c611b70d3fa3",
+  "profile_sha256": "e94b92fbb2d18add8485e2b0b576d4053650d73097746ef09ec020f0e9fa27b5"
+}

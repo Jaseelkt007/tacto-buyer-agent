@@ -4,8 +4,9 @@
     uv run python scripts/research.py --all --parallel 4                     # every supplier with documents
     uv run python scripts/research.py --all --force                          # rebuild (e.g. after the release)
 
-Writes knowledge/suppliers/<sup_id>.json and knowledge/index.json (what was built, model, data
-version, token usage and cost). Model answers are cached under knowledge/.cache, so a rerun pays only
+The default grounded pipeline writes knowledge/grounded/suppliers/<sup_id>.json and its index.json.
+Use --pipeline legacy for the original knowledge/suppliers artifacts. Model answers are cached under
+knowledge/.cache, so a rerun pays only
 for what changed. Offline only: no arena call, no time limit. See docs/research.md.
 """
 
@@ -20,7 +21,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from arena_kit.agents.procudeal.dossier import query
-from arena_kit.agents.procudeal.research import dossier, llm
+from arena_kit.agents.procudeal.research import dossier, grounded, llm
 from arena_kit.cli import load_env
 from arena_kit.data import DataPackage
 
@@ -35,15 +36,18 @@ def path_for(sid):
 
 def data_version(pkg):
     """A short fingerprint of the facts the dossiers were built from (changes with the Sunday release)."""
-    h = hashlib.sha256(json.dumps(sorted(pkg.facts), ensure_ascii=False).encode()).hexdigest()[:12]
+    h = hashlib.sha256(json.dumps(pkg.facts, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:12]
     return {"facts": len(pkg.facts), "hash": h, "release": str(pkg.release) if pkg.release else None}
 
 
 def suppliers_with_documents(pkg):
-    return [
+    found = {
         r["supplier_id"]
         for r in query(pkg, "SELECT DISTINCT supplier_id FROM documents WHERE supplier_id IS NOT NULL ORDER BY 1")
-    ]
+    }
+    found.update(f.get("supplier") or f.get("supplier_id") for ref, f in pkg.facts.items()
+                 if ref.startswith("doc:") and (f.get("supplier") or f.get("supplier_id")))
+    return sorted(found)
 
 
 def build_playbook(pkg, effort):
@@ -58,6 +62,7 @@ def build_playbook(pkg, effort):
 
 
 def main():
+    global OUT
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--suppliers", nargs="*", default=[], help="supplier IDs, e.g. sup:70110")
     ap.add_argument("--all", action="store_true", help="every supplier with documents in the package")
@@ -66,8 +71,13 @@ def main():
     ap.add_argument("--effort", default=None, help="model effort (default RESEARCH_EFFORT or high)")
     ap.add_argument("--data", default=None, help="data package folder (default ARENA_DATA or data/package)")
     ap.add_argument("--playbook", action="store_true", help="also build knowledge/playbook.json from our practice runs")
+    ap.add_argument("--pipeline", choices=["grounded", "legacy"], default="grounded")
+    ap.add_argument("--out", type=Path, help="isolated artifact directory for experiments")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args()
+    OUT = args.out or (KIT / "knowledge" / "grounded" if args.pipeline == "grounded" else KIT / "knowledge")
+    if args.playbook and args.pipeline == "grounded":
+        ap.error("playbook is not evidence for the grounded pipeline; build it with --pipeline legacy")
     load_env(KIT / ".env")
     logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING, format="%(asctime)s %(message)s")
     logging.getLogger("research").setLevel(logging.INFO)
@@ -77,14 +87,19 @@ def main():
         sys.exit("give --suppliers, --all or --playbook")
     if args.playbook:
         build_playbook(pkg, args.effort)
-    todo = [s for s in sids if args.force or not path_for(s).is_file()]
+    todo = [s for s in sids if args.force or (
+        grounded.load(pkg, s, OUT) is None if args.pipeline == "grounded" else not path_for(s).is_file()
+    )]
     print(f"{len(sids)} suppliers, {len(todo)} to build with {llm.MODEL} (effort {args.effort or llm.EFFORT})")
     (OUT / "suppliers").mkdir(parents=True, exist_ok=True)
     t0, built, failed = time.monotonic(), [], {}
 
     def one(sid):
-        d = dossier.build(pkg, sid, effort=args.effort)
-        path_for(sid).write_text(json.dumps(d, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
+        builder = grounded if args.pipeline == "grounded" else dossier
+        d = builder.build(pkg, sid, effort=args.effort)
+        temporary = path_for(sid).with_suffix(".tmp")
+        temporary.write_text(json.dumps(d, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
+        temporary.replace(path_for(sid))
         return d
 
     with ThreadPoolExecutor(max_workers=max(1, args.parallel)) as pool:
@@ -96,7 +111,8 @@ def main():
                 built.append(sid)
                 errs = d["meta"]["errors"]
                 print(
-                    f"  {sid} {d.get('name') or ''}: {d['meta']['seconds']}s, {d['meta']['arguments']} arguments, "
+                    f"  {sid} {d.get('name') or ''}: {d['meta']['seconds']}s, "
+                    f"{len(d.get('observations') or [])} observations, "
                     f"{len(d['validation']['dropped'])} dropped{', errors: ' + ', '.join(errs) if errs else ''}"
                 )
             except Exception as e:  # one supplier must not stop the rest
@@ -108,7 +124,7 @@ def main():
     index = json.loads(index_path.read_text(encoding="utf-8")) if index_path.is_file() else {"suppliers": {}}
     for sid in built:
         d = json.loads(path_for(sid).read_text(encoding="utf-8"))
-        index["suppliers"][sid] = {"name": d.get("name"), "file": str(path_for(sid).relative_to(KIT)), **d["meta"]}
+        index["suppliers"][sid] = {"name": d.get("name"), "file": str(path_for(sid).resolve()), **d["meta"]}
     runs = index.setdefault("runs", [])
     runs.append(
         {
@@ -128,6 +144,8 @@ def main():
         f"done: {len(built)} built, {len(failed)} failed in {time.monotonic() - t0:.0f}s; "
         f"{int(total.get('calls', 0))} model calls, ${total.get('usd', 0):.2f}"
     )
+    if failed:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,2039 @@
+{
+  "observation_packets": [
+    {
+      "packet": {
+        "case_id": "case:G06",
+        "decision_index": 0,
+        "case": {
+          "case_id": "case:G06",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:330020"
+          ],
+          "suppliers": [
+            "sup:70340"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          },
+          "buyer": {
+            "need_per_year": 7400,
+            "horizon_years": 2.0,
+            "current_unit_price": 17.5,
+            "fallback_unit_price": 19.6,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {
+              "PPI-C241": 0.02
+            },
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 7400,
+                "contract_months": 24,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-07-01",
+                "unit_price": 18.9,
+                "payment_days": 60,
+                "index_clause": null
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261013-70340-S15"
+          ],
+          "facts": {
+            "doc:20261013-70340-S15": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-13",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70340",
+              "title": "Steel for 2027",
+              "type": "letter"
+            }
+          }
+        },
+        "threads": {
+          "sup:70340": [
+            {
+              "message_id": "msg:70340-0-1",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-0",
+                  "terms": {
+                    "unit_price": 17.33
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "index_clause",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70340",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 13.95,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "refs": [
+              "fc:330020@2026-09",
+              "idx:PPI-D351@2025-11",
+              "idx:PPI-D351@2026-08",
+              "sc:70340@2026Q3"
+            ]
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 10,
+        "standing_offer_id": "offer:70340-0",
+        "engine_estimates": {
+          "sup:70340": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 24,
+              "volume_per_year": 7400,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70340",
+              "name": "Metallbau Steinfelder KG",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070340",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 489,
+              "skonto_rate": 0.0,
+              "full_cost": 15.6,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": [
+                "doc:20251009-70340-N",
+                "doc:20260418-70340-M3",
+                "doc:20260721-70340-M2",
+                "doc:20260728-70340-M1",
+                "doc:20261013-70340-S15"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "unit_price": 17.33
+            },
+            "estimated_total_cost": 256484.0,
+            "passes_accept_check": false,
+            "accept_check_reason": "C 256,484 does not beat the limit 256,484"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 13.95,
+              "payment_days": 90,
+              "index_clause": null
+            },
+            "estimated_total_cost": 205083.6,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 205,084 below the limit 256,484"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G06\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:330020\"], \"suppliers\": [\"sup:70340\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"index_clause\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"index_clause\": [null, {\"series\": \"PPI-C241\", \"material_share\": 0.6, \"deadband_pct\": 3.0, \"base_month\": \"2026-09\"}]}, \"buyer\": {\"need_per_year\": 7400, \"horizon_years\": 2.0, \"current_unit_price\": 17.5, \"fallback_unit_price\": 19.6, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {\"PPI-C241\": 0.02}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\", \"unit_price\": 18.9, \"payment_days\": 60, \"index_clause\": null}}}, \"round_limit\": 10, \"refs\": [\"doc:20261013-70340-S15\"], \"facts\": {\"doc:20261013-70340-S15\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-13\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70340\", \"title\": \"Steel for 2027\", \"type\": \"letter\"}}}"
+          },
+          {
+            "id": "message:sup:70340:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-0-1\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-0\", \"terms\": {\"unit_price\": 17.33}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"index_clause\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70340-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 17.33\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "doc:20251009-70340-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-09 - Metallbau Steinfelder KG\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260418-70340-M3",
+            "kind": "public_source",
+            "text": "# Supplier day\n\nmeeting note - 2026-04-18 - Hollerau Pumpenwerke, Purchasing\n\nAt our supplier day Metallbau Steinfelder KG said Hollerau is an important reference customer for them.\n"
+          },
+          {
+            "id": "doc:20260721-70340-M2",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-21 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.\n"
+          },
+          {
+            "id": "doc:20260728-70340-M1",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-28 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.\n"
+          },
+          {
+            "id": "doc:20261013-70340-S15",
+            "kind": "public_source",
+            "text": "# Steel for 2027\n\nletter - 2026-10-13 - Metallbau Steinfelder KG\n\nDear Sir or Madam,\n\nfor your planning: we have secured our steel sheet and coil for 2027, bought forward at fixed prices with our mill. Whatever the steel market does reaches our prices only from 2028.\n\nYours faithfully,\nMetallbau Steinfelder KG\n"
+          },
+          {
+            "id": "fc:330020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:330020@2026-09\", \"part_id\": \"part:330020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 15040, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "sc:70340@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70340@2026Q3\", \"supplier_id\": \"sup:70340\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 88.5, \"otd_confirmed_pct\": 90.4, \"received_qty\": 22512, \"complaint_qty\": 11, \"ppm\": 489, \"qn_count\": 10, \"open_8d_overdue\": 0, \"score\": 91.8, \"class\": \"A\", \"colour\": \"green\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "31e4e974ccd2707307d177b0eec99acb7d5efe39fc21009d57fa6db49c5963db",
+      "capture_seconds": 0.002832
+    },
+    {
+      "packet": {
+        "case_id": "case:G06",
+        "decision_index": 1,
+        "case": {
+          "case_id": "case:G06",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:330020"
+          ],
+          "suppliers": [
+            "sup:70340"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          },
+          "buyer": {
+            "need_per_year": 7400,
+            "horizon_years": 2.0,
+            "current_unit_price": 17.5,
+            "fallback_unit_price": 19.6,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {
+              "PPI-C241": 0.02
+            },
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 7400,
+                "contract_months": 24,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-07-01",
+                "unit_price": 18.9,
+                "payment_days": 60,
+                "index_clause": null
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261013-70340-S15"
+          ],
+          "facts": {
+            "doc:20261013-70340-S15": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-13",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70340",
+              "title": "Steel for 2027",
+              "type": "letter"
+            }
+          }
+        },
+        "threads": {
+          "sup:70340": [
+            {
+              "message_id": "msg:70340-0-1",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-0",
+                  "terms": {
+                    "unit_price": 17.33
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "index_clause",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:330020@2026-09",
+                "idx:PPI-D351@2025-11",
+                "idx:PPI-D351@2026-08",
+                "sc:70340@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 13.95,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-1-2",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-1",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 15.97
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 15.97\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70340",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.15,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 9,
+        "standing_offer_id": "offer:70340-1",
+        "engine_estimates": {
+          "sup:70340": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 24,
+              "volume_per_year": 7400,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70340",
+              "name": "Metallbau Steinfelder KG",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070340",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 489,
+              "skonto_rate": 0.0,
+              "full_cost": 15.6,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": [
+                "doc:20251009-70340-N",
+                "doc:20260418-70340-M3",
+                "doc:20260721-70340-M2",
+                "doc:20260728-70340-M1",
+                "doc:20261013-70340-S15"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 15.97
+            },
+            "estimated_total_cost": 236198.43,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 236,198 below the limit 256,484"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 14.15,
+              "payment_days": 90,
+              "index_clause": null
+            },
+            "estimated_total_cost": 208023.87,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 208,024 below the limit 256,484"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G06\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:330020\"], \"suppliers\": [\"sup:70340\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"index_clause\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"index_clause\": [null, {\"series\": \"PPI-C241\", \"material_share\": 0.6, \"deadband_pct\": 3.0, \"base_month\": \"2026-09\"}]}, \"buyer\": {\"need_per_year\": 7400, \"horizon_years\": 2.0, \"current_unit_price\": 17.5, \"fallback_unit_price\": 19.6, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {\"PPI-C241\": 0.02}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\", \"unit_price\": 18.9, \"payment_days\": 60, \"index_clause\": null}}}, \"round_limit\": 10, \"refs\": [\"doc:20261013-70340-S15\"], \"facts\": {\"doc:20261013-70340-S15\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-13\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70340\", \"title\": \"Steel for 2027\", \"type\": \"letter\"}}}"
+          },
+          {
+            "id": "message:sup:70340:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-0-1\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-0\", \"terms\": {\"unit_price\": 17.33}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"index_clause\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70340-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 17.33\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:330020@2026-09\", \"idx:PPI-D351@2025-11\", \"idx:PPI-D351@2026-08\", \"sc:70340@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 13.95, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-1-2\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-1\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 15.97}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 15.97\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "doc:20251009-70340-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-09 - Metallbau Steinfelder KG\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260418-70340-M3",
+            "kind": "public_source",
+            "text": "# Supplier day\n\nmeeting note - 2026-04-18 - Hollerau Pumpenwerke, Purchasing\n\nAt our supplier day Metallbau Steinfelder KG said Hollerau is an important reference customer for them.\n"
+          },
+          {
+            "id": "doc:20260721-70340-M2",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-21 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.\n"
+          },
+          {
+            "id": "doc:20260728-70340-M1",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-28 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.\n"
+          },
+          {
+            "id": "doc:20261013-70340-S15",
+            "kind": "public_source",
+            "text": "# Steel for 2027\n\nletter - 2026-10-13 - Metallbau Steinfelder KG\n\nDear Sir or Madam,\n\nfor your planning: we have secured our steel sheet and coil for 2027, bought forward at fixed prices with our mill. Whatever the steel market does reaches our prices only from 2028.\n\nYours faithfully,\nMetallbau Steinfelder KG\n"
+          },
+          {
+            "id": "fc:330020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:330020@2026-09\", \"part_id\": \"part:330020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 15040, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "sc:70340@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70340@2026Q3\", \"supplier_id\": \"sup:70340\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 88.5, \"otd_confirmed_pct\": 90.4, \"received_qty\": 22512, \"complaint_qty\": 11, \"ppm\": 489, \"qn_count\": 10, \"open_8d_overdue\": 0, \"score\": 91.8, \"class\": \"A\", \"colour\": \"green\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "23aecd884a64eac727aabd5303a6a8cb328fb025f539fd636340234b3a8a04df",
+      "capture_seconds": 0.000922
+    },
+    {
+      "packet": {
+        "case_id": "case:G06",
+        "decision_index": 2,
+        "case": {
+          "case_id": "case:G06",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:330020"
+          ],
+          "suppliers": [
+            "sup:70340"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          },
+          "buyer": {
+            "need_per_year": 7400,
+            "horizon_years": 2.0,
+            "current_unit_price": 17.5,
+            "fallback_unit_price": 19.6,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {
+              "PPI-C241": 0.02
+            },
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 7400,
+                "contract_months": 24,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-07-01",
+                "unit_price": 18.9,
+                "payment_days": 60,
+                "index_clause": null
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261013-70340-S15"
+          ],
+          "facts": {
+            "doc:20261013-70340-S15": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-13",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70340",
+              "title": "Steel for 2027",
+              "type": "letter"
+            }
+          }
+        },
+        "threads": {
+          "sup:70340": [
+            {
+              "message_id": "msg:70340-0-1",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-0",
+                  "terms": {
+                    "unit_price": 17.33
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "index_clause",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:330020@2026-09",
+                "idx:PPI-D351@2025-11",
+                "idx:PPI-D351@2026-08",
+                "sc:70340@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 13.95,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-1-2",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-1",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 15.97
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 15.97\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 14.15,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-2-3",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-2",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 14.77
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.77\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70340",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.34,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 8,
+        "standing_offer_id": "offer:70340-2",
+        "engine_estimates": {
+          "sup:70340": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 24,
+              "volume_per_year": 7400,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70340",
+              "name": "Metallbau Steinfelder KG",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070340",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 489,
+              "skonto_rate": 0.0,
+              "full_cost": 15.6,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": [
+                "doc:20251009-70340-N",
+                "doc:20260418-70340-M3",
+                "doc:20260721-70340-M2",
+                "doc:20260728-70340-M1",
+                "doc:20261013-70340-S15"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.77
+            },
+            "estimated_total_cost": 218450.27,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 218,450 below the limit 256,484"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 14.34,
+              "payment_days": 90,
+              "index_clause": null
+            },
+            "estimated_total_cost": 210817.12,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 210,817 below the limit 256,484"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G06\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:330020\"], \"suppliers\": [\"sup:70340\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"index_clause\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"index_clause\": [null, {\"series\": \"PPI-C241\", \"material_share\": 0.6, \"deadband_pct\": 3.0, \"base_month\": \"2026-09\"}]}, \"buyer\": {\"need_per_year\": 7400, \"horizon_years\": 2.0, \"current_unit_price\": 17.5, \"fallback_unit_price\": 19.6, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {\"PPI-C241\": 0.02}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\", \"unit_price\": 18.9, \"payment_days\": 60, \"index_clause\": null}}}, \"round_limit\": 10, \"refs\": [\"doc:20261013-70340-S15\"], \"facts\": {\"doc:20261013-70340-S15\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-13\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70340\", \"title\": \"Steel for 2027\", \"type\": \"letter\"}}}"
+          },
+          {
+            "id": "message:sup:70340:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-0-1\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-0\", \"terms\": {\"unit_price\": 17.33}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"index_clause\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70340-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 17.33\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:330020@2026-09\", \"idx:PPI-D351@2025-11\", \"idx:PPI-D351@2026-08\", \"sc:70340@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 13.95, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-1-2\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-1\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 15.97}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 15.97\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 14.15, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-2-3\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-2\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 14.77}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 14.77\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "doc:20251009-70340-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-09 - Metallbau Steinfelder KG\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260418-70340-M3",
+            "kind": "public_source",
+            "text": "# Supplier day\n\nmeeting note - 2026-04-18 - Hollerau Pumpenwerke, Purchasing\n\nAt our supplier day Metallbau Steinfelder KG said Hollerau is an important reference customer for them.\n"
+          },
+          {
+            "id": "doc:20260721-70340-M2",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-21 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.\n"
+          },
+          {
+            "id": "doc:20260728-70340-M1",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-28 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.\n"
+          },
+          {
+            "id": "doc:20261013-70340-S15",
+            "kind": "public_source",
+            "text": "# Steel for 2027\n\nletter - 2026-10-13 - Metallbau Steinfelder KG\n\nDear Sir or Madam,\n\nfor your planning: we have secured our steel sheet and coil for 2027, bought forward at fixed prices with our mill. Whatever the steel market does reaches our prices only from 2028.\n\nYours faithfully,\nMetallbau Steinfelder KG\n"
+          },
+          {
+            "id": "fc:330020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:330020@2026-09\", \"part_id\": \"part:330020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 15040, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "sc:70340@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70340@2026Q3\", \"supplier_id\": \"sup:70340\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 88.5, \"otd_confirmed_pct\": 90.4, \"received_qty\": 22512, \"complaint_qty\": 11, \"ppm\": 489, \"qn_count\": 10, \"open_8d_overdue\": 0, \"score\": 91.8, \"class\": \"A\", \"colour\": \"green\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "de72544921c7e4a3dba4da9f008aa7f578c23185ccdb2304232ad70b25847f0e",
+      "capture_seconds": 0.00067
+    },
+    {
+      "packet": {
+        "case_id": "case:G06",
+        "decision_index": 3,
+        "case": {
+          "case_id": "case:G06",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:330020"
+          ],
+          "suppliers": [
+            "sup:70340"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          },
+          "buyer": {
+            "need_per_year": 7400,
+            "horizon_years": 2.0,
+            "current_unit_price": 17.5,
+            "fallback_unit_price": 19.6,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {
+              "PPI-C241": 0.02
+            },
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 7400,
+                "contract_months": 24,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-07-01",
+                "unit_price": 18.9,
+                "payment_days": 60,
+                "index_clause": null
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261013-70340-S15"
+          ],
+          "facts": {
+            "doc:20261013-70340-S15": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-13",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70340",
+              "title": "Steel for 2027",
+              "type": "letter"
+            }
+          }
+        },
+        "threads": {
+          "sup:70340": [
+            {
+              "message_id": "msg:70340-0-1",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-0",
+                  "terms": {
+                    "unit_price": 17.33
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "index_clause",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:330020@2026-09",
+                "idx:PPI-D351@2025-11",
+                "idx:PPI-D351@2026-08",
+                "sc:70340@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 13.95,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-1-2",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-1",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 15.97
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 15.97\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 14.15,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-2-3",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-2",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 14.77
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.77\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 14.34,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-3-4",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-3",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 14.51
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-3-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.51\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70340",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.39,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 7,
+        "standing_offer_id": "offer:70340-3",
+        "engine_estimates": {
+          "sup:70340": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 24,
+              "volume_per_year": 7400,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70340",
+              "name": "Metallbau Steinfelder KG",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070340",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 489,
+              "skonto_rate": 0.0,
+              "full_cost": 15.6,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": [
+                "doc:20251009-70340-N",
+                "doc:20260418-70340-M3",
+                "doc:20260721-70340-M2",
+                "doc:20260728-70340-M1",
+                "doc:20261013-70340-S15"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.51
+            },
+            "estimated_total_cost": 214604.83,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 214,605 below the limit 256,484"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 14.39,
+              "payment_days": 90,
+              "index_clause": null
+            },
+            "estimated_total_cost": 211552.19,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 211,552 below the limit 256,484"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G06\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:330020\"], \"suppliers\": [\"sup:70340\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"index_clause\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"index_clause\": [null, {\"series\": \"PPI-C241\", \"material_share\": 0.6, \"deadband_pct\": 3.0, \"base_month\": \"2026-09\"}]}, \"buyer\": {\"need_per_year\": 7400, \"horizon_years\": 2.0, \"current_unit_price\": 17.5, \"fallback_unit_price\": 19.6, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {\"PPI-C241\": 0.02}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\", \"unit_price\": 18.9, \"payment_days\": 60, \"index_clause\": null}}}, \"round_limit\": 10, \"refs\": [\"doc:20261013-70340-S15\"], \"facts\": {\"doc:20261013-70340-S15\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-13\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70340\", \"title\": \"Steel for 2027\", \"type\": \"letter\"}}}"
+          },
+          {
+            "id": "message:sup:70340:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-0-1\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-0\", \"terms\": {\"unit_price\": 17.33}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"index_clause\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70340-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 17.33\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:330020@2026-09\", \"idx:PPI-D351@2025-11\", \"idx:PPI-D351@2026-08\", \"sc:70340@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 13.95, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-1-2\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-1\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 15.97}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 15.97\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 14.15, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-2-3\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-2\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 14.77}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 14.77\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:5",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 14.34, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:6",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-3-4\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-3\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 14.51}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-3-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 14.51\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "doc:20251009-70340-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-09 - Metallbau Steinfelder KG\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260418-70340-M3",
+            "kind": "public_source",
+            "text": "# Supplier day\n\nmeeting note - 2026-04-18 - Hollerau Pumpenwerke, Purchasing\n\nAt our supplier day Metallbau Steinfelder KG said Hollerau is an important reference customer for them.\n"
+          },
+          {
+            "id": "doc:20260721-70340-M2",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-21 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.\n"
+          },
+          {
+            "id": "doc:20260728-70340-M1",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-28 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.\n"
+          },
+          {
+            "id": "doc:20261013-70340-S15",
+            "kind": "public_source",
+            "text": "# Steel for 2027\n\nletter - 2026-10-13 - Metallbau Steinfelder KG\n\nDear Sir or Madam,\n\nfor your planning: we have secured our steel sheet and coil for 2027, bought forward at fixed prices with our mill. Whatever the steel market does reaches our prices only from 2028.\n\nYours faithfully,\nMetallbau Steinfelder KG\n"
+          },
+          {
+            "id": "fc:330020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:330020@2026-09\", \"part_id\": \"part:330020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 15040, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "sc:70340@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70340@2026Q3\", \"supplier_id\": \"sup:70340\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 88.5, \"otd_confirmed_pct\": 90.4, \"received_qty\": 22512, \"complaint_qty\": 11, \"ppm\": 489, \"qn_count\": 10, \"open_8d_overdue\": 0, \"score\": 91.8, \"class\": \"A\", \"colour\": \"green\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "d2dc4c56fc6ba5b309393e00bf0dd4854362391903f4d8bd5f75982cde87f4b4",
+      "capture_seconds": 0.00057
+    },
+    {
+      "packet": {
+        "case_id": "case:G06",
+        "decision_index": 4,
+        "case": {
+          "case_id": "case:G06",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:330020"
+          ],
+          "suppliers": [
+            "sup:70340"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          },
+          "buyer": {
+            "need_per_year": 7400,
+            "horizon_years": 2.0,
+            "current_unit_price": 17.5,
+            "fallback_unit_price": 19.6,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {
+              "PPI-C241": 0.02
+            },
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 7400,
+                "contract_months": 24,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-07-01",
+                "unit_price": 18.9,
+                "payment_days": 60,
+                "index_clause": null
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261013-70340-S15"
+          ],
+          "facts": {
+            "doc:20261013-70340-S15": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-13",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70340",
+              "title": "Steel for 2027",
+              "type": "letter"
+            }
+          }
+        },
+        "threads": {
+          "sup:70340": [
+            {
+              "message_id": "msg:70340-0-1",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-0",
+                  "terms": {
+                    "unit_price": 17.33
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "index_clause",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:330020@2026-09",
+                "idx:PPI-D351@2025-11",
+                "idx:PPI-D351@2026-08",
+                "sc:70340@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 13.95,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-1-2",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-1",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 15.97
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 15.97\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 14.15,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-2-3",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-2",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 14.77
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.77\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 14.34,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-3-4",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-3",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 14.51
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-3-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.51\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 14.39,
+                    "payment_days": 90,
+                    "index_clause": null
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70340-4-5",
+              "from": "sales@70340",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70340-4",
+                  "terms": {
+                    "index_clause": {
+                      "base_month": "2026-09",
+                      "deadband_pct": 3.0,
+                      "material_share": 0.6,
+                      "series": "PPI-C241"
+                    },
+                    "payment_days": 90,
+                    "unit_price": 14.0
+                  }
+                }
+              ],
+              "status": "final_offer",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70340-4-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.00\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70340",
+          "message": {
+            "action": {
+              "type": "accept",
+              "term_sheet_id": "offer:70340-4"
+            }
+          }
+        },
+        "supplier_status": "final_offer",
+        "moves_left": 6,
+        "standing_offer_id": "offer:70340-4",
+        "engine_estimates": {
+          "sup:70340": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 24,
+              "volume_per_year": 7400,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70340",
+              "name": "Metallbau Steinfelder KG",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070340",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 489,
+              "skonto_rate": 0.0,
+              "full_cost": 15.6,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [],
+              "source_ids": [
+                "doc:20251009-70340-N",
+                "doc:20260418-70340-M3",
+                "doc:20260721-70340-M2",
+                "doc:20260728-70340-M1",
+                "doc:20261013-70340-S15"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.0
+            },
+            "estimated_total_cost": 207061.87,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 207,062 below the limit 256,484"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G06\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:330020\"], \"suppliers\": [\"sup:70340\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"index_clause\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"index_clause\": [null, {\"series\": \"PPI-C241\", \"material_share\": 0.6, \"deadband_pct\": 3.0, \"base_month\": \"2026-09\"}]}, \"buyer\": {\"need_per_year\": 7400, \"horizon_years\": 2.0, \"current_unit_price\": 17.5, \"fallback_unit_price\": 19.6, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {\"PPI-C241\": 0.02}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 7400, \"contract_months\": 24, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-07-01\", \"unit_price\": 18.9, \"payment_days\": 60, \"index_clause\": null}}}, \"round_limit\": 10, \"refs\": [\"doc:20261013-70340-S15\"], \"facts\": {\"doc:20261013-70340-S15\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-13\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70340\", \"title\": \"Steel for 2027\", \"type\": \"letter\"}}}"
+          },
+          {
+            "id": "message:sup:70340:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-0-1\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-0\", \"terms\": {\"unit_price\": 17.33}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"index_clause\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70340-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 17.33\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:330020@2026-09\", \"idx:PPI-D351@2025-11\", \"idx:PPI-D351@2026-08\", \"sc:70340@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 13.95, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-1-2\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-1\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 15.97}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 15.97\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 14.15, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-2-3\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-2\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 14.77}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 14.77\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:5",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 14.34, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:6",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-3-4\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-3\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 14.51}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-3-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 14.51\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "message:sup:70340:7",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 14.39, \"payment_days\": 90, \"index_clause\": null}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70340:8",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70340-4-5\", \"from\": \"sales@70340\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70340-4\", \"terms\": {\"index_clause\": {\"base_month\": \"2026-09\", \"deadband_pct\": 3.0, \"material_share\": 0.6, \"series\": \"PPI-C241\"}, \"payment_days\": 90, \"unit_price\": 14.0}}], \"status\": \"final_offer\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70340-4-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\\nPayment terms (days net) 90\\nUnit price (EUR) 14.00\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 24\\nVolume per year (pcs) 7400\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 7400\\nContract term (months) 24\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-07-01\"}]}"
+          },
+          {
+            "id": "doc:20251009-70340-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-09 - Metallbau Steinfelder KG\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260418-70340-M3",
+            "kind": "public_source",
+            "text": "# Supplier day\n\nmeeting note - 2026-04-18 - Hollerau Pumpenwerke, Purchasing\n\nAt our supplier day Metallbau Steinfelder KG said Hollerau is an important reference customer for them.\n"
+          },
+          {
+            "id": "doc:20260721-70340-M2",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-21 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.\n"
+          },
+          {
+            "id": "doc:20260728-70340-M1",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-07-28 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Metallbau Steinfelder KG: he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.\n"
+          },
+          {
+            "id": "doc:20261013-70340-S15",
+            "kind": "public_source",
+            "text": "# Steel for 2027\n\nletter - 2026-10-13 - Metallbau Steinfelder KG\n\nDear Sir or Madam,\n\nfor your planning: we have secured our steel sheet and coil for 2027, bought forward at fixed prices with our mill. Whatever the steel market does reaches our prices only from 2028.\n\nYours faithfully,\nMetallbau Steinfelder KG\n"
+          },
+          {
+            "id": "fc:330020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:330020@2026-09\", \"part_id\": \"part:330020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 15040, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "sc:70340@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70340@2026Q3\", \"supplier_id\": \"sup:70340\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 88.5, \"otd_confirmed_pct\": 90.4, \"received_qty\": 22512, \"complaint_qty\": 11, \"ppm\": 489, \"qn_count\": 10, \"open_8d_overdue\": 0, \"score\": 91.8, \"class\": \"A\", \"colour\": \"green\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "ec5a338c03e29e503320129e7a41b66ef07588c43fe1c8434ec21b9a2027b07a",
+      "capture_seconds": 0.000716
+    }
+  ],
+  "observation_errors": []
+}

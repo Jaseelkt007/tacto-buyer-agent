@@ -1,0 +1,831 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70720",
+ "name": "Stahlhandel Rupprecht-Kessel GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "74bbca9442ecd087a82b33b841049dd6a454542535decbe34a5b89b1e1665d46",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:22:14.353122+00:00",
+  "seconds": 28.6,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:ef2cafe7b6ab7dda",
+   "text": "Supplier proposes agreeing the price basis for the coming period for part:370020 including a price adjustment clause based on PPI-C241, and asks for Hollerau's view.",
+   "kind": "supplier_statement",
+   "source": "doc:20260916-70720-P16",
+   "quote": "for Sheet S235JR 3 mm, hot rolled, cut to size (part:370020) we propose to agree the price basis for the coming period, including a price adjustment clause based on PPI-C241. Please let us know your view.",
+   "parts": [
+    "part:370020"
+   ],
+   "observed_at": "2026-09-16",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ef2cafe7b6ab7dda",
+    "verdict": "supported",
+    "reason": "Matches the letter, including the request for Hollerau's view."
+   }
+  },
+  {
+   "id": "obs:e9b8f76f4c097178",
+   "text": "The supplier's owner offered to walk Hollerau through their calculation (hourly rates and material) to help settle prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260712-70720-M3",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+   "parts": [],
+   "observed_at": "2026-07-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e9b8f76f4c097178",
+    "verdict": "supported",
+    "reason": "Matches the call note."
+   }
+  },
+  {
+   "id": "obs:b22563a2e5a6e45c",
+   "text": "Current 2026 price for part:370020 is EUR 84.34 per 100, a -2.3% renewal.",
+   "kind": "fact",
+   "source": "EV-2026-70720-370020",
+   "quote": "\"change_pct\": -2.3, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70720-370020\", \"price\": 84.34, \"price_unit\": 100",
+   "parts": [
+    "part:370020"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b22563a2e5a6e45c",
+    "verdict": "supported",
+    "reason": "The price event shows 84.34 per 100 at -2.3%, valid from 2026-01-01 with no end date."
+   }
+  },
+  {
+   "id": "obs:c802c3616b7654c6",
+   "text": "Current 2026 price for part:370012 is EUR 126.05 per 100, a -2.3% renewal.",
+   "kind": "fact",
+   "source": "EV-2026-70720-370012",
+   "quote": "\"change_pct\": -2.3, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70720-370012\", \"price\": 126.05, \"price_unit\": 100",
+   "parts": [
+    "part:370012"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c802c3616b7654c6",
+    "verdict": "supported",
+    "reason": "The price event shows 126.05 per 100 at -2.3%, valid from 2026-01-01 for sup:70720."
+   }
+  },
+  {
+   "id": "obs:b96599f7561b961d",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 60 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070720#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 60 days before the end of the calendar year.",
+   "parts": [
+    "part:370012",
+    "part:370020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:b96599f7561b961d",
+    "verdict": "supported",
+    "reason": "Matches contract clause 3.1."
+   }
+  },
+  {
+   "id": "obs:3b747b1860f9c659",
+   "text": "Framework agreement 4600070720 runs 2024-01-01 to 2026-12-31 and extends by 12 months unless terminated with 60 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070720#8.1",
+   "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 60 days' notice.",
+   "parts": [
+    "part:370012",
+    "part:370020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:3b747b1860f9c659",
+    "verdict": "supported",
+    "reason": "Matches contract clause 8.1."
+   }
+  },
+  {
+   "id": "obs:7dab566ab8f79ab6",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070720#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:370012",
+    "part:370020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7dab566ab8f79ab6",
+    "verdict": "supported",
+    "reason": "Matches contract clause 4.1."
+   }
+  },
+  {
+   "id": "obs:99cd14bea24e6342",
+   "text": "Delivery is DAP with a standard lead time of 10 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070720#5.1",
+   "quote": "Delivery DAP; standard lead time 10 days from order.",
+   "parts": [
+    "part:370012",
+    "part:370020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:99cd14bea24e6342",
+    "verdict": "supported",
+    "reason": "Matches contract clause 5.1."
+   }
+  },
+  {
+   "id": "obs:8b639b910034a84c",
+   "text": "Quality agreement applies: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070720#6.1",
+   "quote": "The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:370012",
+    "part:370020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8b639b910034a84c",
+    "verdict": "supported",
+    "reason": "Matches contract clause 6.1."
+   }
+  },
+  {
+   "id": "obs:7349cdc6e55bb12c",
+   "text": "Part 370020 last 12 months: 11.1% late receipts, max 13 days late, 88.9% on time vs requested.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"avg_days_late_when_late\": 9.3, \"early_pct\": 0.0, \"late_pct\": 11.1, \"max_days_late\": 13, \"on_time_confirmed_pct\": 88.9, \"on_time_requested_pct\": 88.9, \"part_id\": \"part:370020\", \"receipts\": 27",
+   "parts": [
+    "part:370020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7349cdc6e55bb12c",
+    "verdict": "supported",
+    "reason": "Matches the per-part delivery data for part:370020."
+   }
+  },
+  {
+   "id": "obs:193efe3a86438b59",
+   "text": "Part 370020: 22 supplier-caused QNs in total, 45 ppm over last 12 months, EUR 1,950 recharged.",
+   "kind": "fact",
+   "source": "evidence:part:370020:part_quality",
+   "quote": "\"complaint_qty\": 65, \"last_qn\": \"2026-09-11\", \"latest_qns\": [\"qn:20005023\", \"qn:20004986\", \"qn:20004935\"], \"ppm_last_12m\": 45, \"qns\": 22, \"received_last_12m\": 464390, \"recharged_eur\": 1950, \"supplier_caused\": 22",
+   "parts": [
+    "part:370020"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:193efe3a86438b59",
+    "verdict": "supported",
+    "reason": "The quote shows 22 supplier-caused QNs, 45 ppm over the last 12 months and EUR 1,950 recharged."
+   }
+  },
+  {
+   "id": "obs:9f5a76c7f35ab835",
+   "text": "Part 370012 last 12 months: 95.8% on time vs requested, 100% vs confirmed, 4.2% late.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"late_pct\": 4.2, \"max_days_late\": 5, \"on_time_confirmed_pct\": 100.0, \"on_time_requested_pct\": 95.8, \"part_id\": \"part:370012\", \"receipts\": 24",
+   "parts": [
+    "part:370012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:9f5a76c7f35ab835",
+    "verdict": "supported",
+    "reason": "Matches the per-part delivery data for part:370012."
+   }
+  },
+  {
+   "id": "obs:c0c154066644382d",
+   "text": "Part 370012 from this supplier: 27 ppm over last 12 months, 3 supplier-caused of 4 QNs.",
+   "kind": "fact",
+   "source": "evidence:part:370012:part_quality",
+   "quote": "\"complaint_qty\": 4, \"last_qn\": \"2025-11-06\", \"latest_qns\": [\"qn:20004719\", \"qn:20004268\", \"qn:20004082\"], \"ppm_last_12m\": 27, \"qns\": 4, \"received_last_12m\": 36501, \"recharged_eur\": 450, \"supplier_caused\": 3, \"supplier_id\": \"sup:70720\"",
+   "parts": [
+    "part:370012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:c0c154066644382d",
+    "verdict": "supported",
+    "reason": "Matches the part:370012 quality record for sup:70720: 27 ppm, 3 supplier-caused of 4 QNs."
+   }
+  },
+  {
+   "id": "obs:095c740fbebc2c13",
+   "text": "Hollerau paid 81.5% of this supplier's invoices late, by 2.2 days on average (max 8 days).",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due\": 2.2, \"avg_days_paid_after_due_last_12m\": 2.5, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 150, \"max_days_late\": 8, \"paid_late_pct\": 81.5",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:095c740fbebc2c13",
+    "verdict": "supported",
+    "reason": "Matches the invoice record: 81.5% paid late, 2.2 days average, 8 days max."
+   }
+  },
+  {
+   "id": "obs:721b43e640485c6b",
+   "text": "Supplier said Hollerau is an important reference customer for them.",
+   "kind": "supplier_statement",
+   "source": "doc:20260924-70720-M1",
+   "quote": "Stahlhandel Rupprecht-Kessel GmbH said Hollerau is an important reference customer for them.",
+   "parts": [],
+   "observed_at": "2026-09-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:721b43e640485c6b",
+    "verdict": "supported",
+    "reason": "Matches the meeting note dated 2026-09-24."
+   }
+  },
+  {
+   "id": "obs:1b64d5dfcae9641a",
+   "text": "Credit index is 177, unchanged from 12 months ago.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:1b64d5dfcae9641a",
+    "verdict": "supported",
+    "reason": "The quote shows credit index 177 now and 12 months ago."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:d5cbded5afc38826",
+   "text": "Supplier proposes agreeing the price basis for part:370020 for the coming period including a price adjustment clause based on PPI-C241.",
+   "kind": "supplier_statement",
+   "source": "doc:20260916-70720-P16",
+   "quote": "for Sheet S235JR 3 mm, hot rolled, cut to size (part:370020) we propose to agree the price basis for the coming period, including a price adjustment clause based on PPI-C241.",
+   "parts": [
+    "part:370020"
+   ],
+   "observed_at": "2026-09-16",
+   "valid_until": null,
+   "review": {
+    "id": "obs:d5cbded5afc38826",
+    "verdict": "supported",
+    "reason": "Matches letter text, part and date."
+   }
+  },
+  {
+   "id": "obs:bc4df9e1ea348870",
+   "text": "Supplier's owner offered to walk Hollerau through their calculation (hourly rates and material) to help settle prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260712-70720-M3",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+   "parts": [],
+   "observed_at": "2026-07-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:bc4df9e1ea348870",
+    "verdict": "supported",
+    "reason": "Matches the call note dated 2026-07-12."
+   }
+  },
+  {
+   "id": "obs:f6bcf5dd2cfc345e",
+   "text": "Supplier is family-owned, founded 1908, with 500 staff.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"founded\": 1908, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 500",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:f6bcf5dd2cfc345e",
+    "verdict": "supported",
+    "reason": "The quote shows founded 1908, owner_type family and 500 staff."
+   }
+  },
+  {
+   "id": "obs:6699a7f47b0e6659",
+   "text": "Current standard terms: 30 payment days, DAP, 10-day standard lead time.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"DAP\", \"name\": \"Stahlhandel Rupprecht-Kessel GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 10",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:6699a7f47b0e6659",
+    "verdict": "supported",
+    "reason": "The master record shows 30 payment days, DAP and a 10-day standard lead time."
+   }
+  },
+  {
+   "id": "obs:72ffc40ac65be881",
+   "text": "Supplier proposes agreeing the price basis for part:370020 including a price adjustment clause based on PPI-C241.",
+   "kind": "supplier_statement",
+   "source": "doc:20260916-70720-P16",
+   "quote": "for Sheet S235JR 3 mm, hot rolled, cut to size (part:370020) we propose to agree the price basis for the coming period, including a price adjustment clause based on PPI-C241.",
+   "parts": [
+    "part:370020"
+   ],
+   "observed_at": "2026-09-16",
+   "valid_until": null,
+   "review": {
+    "id": "obs:72ffc40ac65be881",
+    "verdict": "supported",
+    "reason": "Matches the letter."
+   }
+  },
+  {
+   "id": "obs:5e0fd5e31351ab1d",
+   "text": "Supplier's owner offered to walk Hollerau through their calculation (hourly rates and material).",
+   "kind": "supplier_statement",
+   "source": "doc:20260712-70720-M3",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+   "parts": [],
+   "observed_at": "2026-07-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:5e0fd5e31351ab1d",
+    "verdict": "supported",
+    "reason": "Matches the call note."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier proposes agreeing the price basis for part:370020 for the coming period including a price adjustment clause based on PPI-C241.",
+     "kind": "supplier_statement",
+     "source": "doc:20260916-70720-P16",
+     "quote": "for Sheet S235JR 3 mm, hot rolled, cut to size (part:370020) we propose to agree the price basis for the coming period, including a price adjustment clause based on PPI-C241.",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": "2026-09-16",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's owner offered to walk Hollerau through their calculation (hourly rates and material) to help settle prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260712-70720-M3",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+     "parts": [],
+     "observed_at": "2026-07-12",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260924-70720-M1",
+     "quote": "Stahlhandel Rupprecht-Kessel GmbH said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-09-24",
+     "valid_until": null
+    },
+    {
+     "text": "Current 2026 price for part:370020 is EUR 84.34 per 100, a -2.3% renewal.",
+     "kind": "fact",
+     "source": "EV-2026-70720-370020",
+     "quote": "\"change_pct\": -2.3, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70720-370020\", \"price\": 84.34, \"price_unit\": 100",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Current 2026 price for part:370012 is EUR 126.05 per 100, a -2.3% renewal.",
+     "kind": "fact",
+     "source": "EV-2026-70720-370012",
+     "quote": "\"change_pct\": -2.3, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70720-370012\", \"price\": 126.05, \"price_unit\": 100",
+     "parts": [
+      "part:370012"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Second-source benchmark quote from Blankstahl Werdenfels for part:370020 is EUR 96.37 per 100, valid 90 days.",
+     "kind": "fact",
+     "source": "quote:7200016",
+     "quote": "\"quote_date\": \"2026-09-17\", \"rfq_id\": \"rfq:6000000216\", \"supplier_id\": \"sup:70740\", \"tooling_eur\": 0, \"unit_price\": 96.37, \"validity_days\": 90",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": "2026-09-17",
+     "valid_until": null
+    },
+    {
+     "text": "PPI-C241 (weight 0.84 for part:370020) rose 6.5% over 12 months to 105.9 in 2026-08; category team estimate.",
+     "kind": "fact",
+     "source": "evidence:part:370020:drivers",
+     "quote": "\"change_12m_pct\": 6.5, \"change_from_low_pct\": 7.8, \"change_from_peak_pct\": -6.3, \"change_from_top_pct\": -26.7, \"estimate\": \"category team estimate 2026-06\"",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": "2026-08",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is family-owned with equity ratio 39% and unchanged credit index 177.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177, \"equity_ratio_pct\": 39.0",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier proposes agreeing the price basis for the coming period for part:370020 including a price adjustment clause based on PPI-C241, and asks for Hollerau's view.",
+     "kind": "supplier_statement",
+     "source": "doc:20260916-70720-P16",
+     "quote": "for Sheet S235JR 3 mm, hot rolled, cut to size (part:370020) we propose to agree the price basis for the coming period, including a price adjustment clause based on PPI-C241. Please let us know your view.",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": "2026-09-16",
+     "valid_until": null
+    },
+    {
+     "text": "The supplier's owner offered to walk Hollerau through their calculation (hourly rates and material) to help settle prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260712-70720-M3",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+     "parts": [],
+     "observed_at": "2026-07-12",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260924-70720-M1",
+     "quote": "Stahlhandel Rupprecht-Kessel GmbH said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-09-24",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is family-owned, founded 1908, with 500 staff.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"founded\": 1908, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 500",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier turnover is EUR 196 M with an equity ratio of 39.0%.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 39.0, \"filed_fy\": 2025",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Credit index is 177, unchanged from 12 months ago.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Current standard terms: 30 payment days, DAP, 10-day standard lead time.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"DAP\", \"name\": \"Stahlhandel Rupprecht-Kessel GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 10",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Hollerau paid 81.5% of this supplier's invoices late, by 2.2 days on average (max 8 days).",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due\": 2.2, \"avg_days_paid_after_due_last_12m\": 2.5, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 150, \"max_days_late\": 8, \"paid_late_pct\": 81.5",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement 4600070720 runs 2024-01-01 to 2026-12-31 and extends by 12 months unless terminated with 60 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070720#8.1",
+     "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 60 days' notice.",
+     "parts": [
+      "part:370012",
+      "part:370020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 60 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070720#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 60 days before the end of the calendar year.",
+     "parts": [
+      "part:370012",
+      "part:370020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070720#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:370012",
+      "part:370020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery is DAP with a standard lead time of 10 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070720#5.1",
+     "quote": "Delivery DAP; standard lead time 10 days from order.",
+     "parts": [
+      "part:370012",
+      "part:370020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement applies: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070720#6.1",
+     "quote": "The quality agreement applies: on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:370012",
+      "part:370020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier proposes agreeing the price basis for part:370020 including a price adjustment clause based on PPI-C241.",
+     "kind": "supplier_statement",
+     "source": "doc:20260916-70720-P16",
+     "quote": "for Sheet S235JR 3 mm, hot rolled, cut to size (part:370020) we propose to agree the price basis for the coming period, including a price adjustment clause based on PPI-C241.",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": "2026-09-16",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's owner offered to walk Hollerau through their calculation (hourly rates and material).",
+     "kind": "supplier_statement",
+     "source": "doc:20260712-70720-M3",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+     "parts": [],
+     "observed_at": "2026-07-12",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260924-70720-M1",
+     "quote": "Stahlhandel Rupprecht-Kessel GmbH said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-09-24",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month scorecard to 2026-09-30: OTD 92.2% vs requested, 94.1% vs confirmed, 44 ppm, score 95.9, class A green.",
+     "kind": "fact",
+     "source": "sc:70720@2026Q3",
+     "quote": "\"otd_confirmed_pct\": 94.1, \"otd_pct\": 92.2, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 44, \"qn_count\": 9, \"quarter\": \"2026Q3\", \"received_qty\": 500891, \"score\": 95.9",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Lowest recent scorecard was 2025Q2: OTD 86.3%, 63 ppm, score 92.8.",
+     "kind": "fact",
+     "source": "sc:70720@2025Q2",
+     "quote": "\"otd_confirmed_pct\": 86.3, \"otd_pct\": 86.3, \"period_end\": \"2025-06-30\", \"period_start\": \"2024-07-01\", \"ppm\": 63, \"qn_count\": 11, \"quarter\": \"2025Q2\"",
+     "parts": [],
+     "observed_at": "2025-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "Part 370020 last 12 months: 11.1% late receipts, max 13 days late, 88.9% on time vs requested.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"avg_days_late_when_late\": 9.3, \"early_pct\": 0.0, \"late_pct\": 11.1, \"max_days_late\": 13, \"on_time_confirmed_pct\": 88.9, \"on_time_requested_pct\": 88.9, \"part_id\": \"part:370020\", \"receipts\": 27",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 370012 last 12 months: 95.8% on time vs requested, 100% vs confirmed, 4.2% late.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"late_pct\": 4.2, \"max_days_late\": 5, \"on_time_confirmed_pct\": 100.0, \"on_time_requested_pct\": 95.8, \"part_id\": \"part:370012\", \"receipts\": 24",
+     "parts": [
+      "part:370012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 370020: 22 supplier-caused QNs in total, 45 ppm over last 12 months, EUR 1,950 recharged.",
+     "kind": "fact",
+     "source": "evidence:part:370020:part_quality",
+     "quote": "\"complaint_qty\": 65, \"last_qn\": \"2026-09-11\", \"latest_qns\": [\"qn:20005023\", \"qn:20004986\", \"qn:20004935\"], \"ppm_last_12m\": 45, \"qns\": 22, \"received_last_12m\": 464390, \"recharged_eur\": 1950, \"supplier_caused\": 22",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Open supplier-caused QN for burr/sharp edge on part 370020 dated 2026-09-11, 8D not yet closed.",
+     "kind": "fact",
+     "source": "qn:20005023",
+     "quote": "\"d3_date\": \"2026-09-13\", \"d8_date\": null, \"defect\": \"burr / sharp edge\", \"gr_id\": \"gr:5000105437\", \"id\": \"qn:20005023\", \"part_id\": \"part:370020\"",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": "2026-09-11",
+     "valid_until": null
+    },
+    {
+     "text": "Part 370012 from this supplier: 27 ppm over last 12 months, 3 supplier-caused of 4 QNs.",
+     "kind": "fact",
+     "source": "evidence:part:370012:part_quality",
+     "quote": "\"complaint_qty\": 4, \"last_qn\": \"2025-11-06\", \"latest_qns\": [\"qn:20004719\", \"qn:20004268\", \"qn:20004082\"], \"ppm_last_12m\": 27, \"qns\": 4, \"received_last_12m\": 36501, \"recharged_eur\": 450, \"supplier_caused\": 3, \"supplier_id\": \"sup:70720\"",
+     "parts": [
+      "part:370012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [
+  {
+   "id": "obs:6c56343de8bbcceb",
+   "text": "Supplier is family-owned with equity ratio 39% and unchanged credit index 177.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177, \"equity_ratio_pct\": 39.0",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:6c56343de8bbcceb",
+    "verdict": "reject",
+    "reason": "The cited quote does not include owner_type, so 'family-owned' is unsupported by the excerpt."
+   }
+  },
+  {
+   "id": "obs:be3871d74840a586",
+   "text": "Supplier turnover is EUR 196 M with an equity ratio of 39.0%.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 39.0, \"filed_fy\": 2025",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:be3871d74840a586",
+    "verdict": "reject",
+    "reason": "The turnover figure is not in the cited quote."
+   }
+  },
+  {
+   "id": "obs:b707c5c003e623ae",
+   "text": "Rolling 12-month scorecard to 2026-09-30: OTD 92.2% vs requested, 94.1% vs confirmed, 44 ppm, score 95.9, class A green.",
+   "kind": "fact",
+   "source": "sc:70720@2026Q3",
+   "quote": "\"otd_confirmed_pct\": 94.1, \"otd_pct\": 92.2, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 44, \"qn_count\": 9, \"quarter\": \"2026Q3\", \"received_qty\": 500891, \"score\": 95.9",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b707c5c003e623ae",
+    "verdict": "reject",
+    "reason": "The cited quote omits class and colour, so 'class A green' is not warranted by the excerpt."
+   }
+  },
+  {
+   "id": "obs:6cdd4c73d2e85b3d",
+   "text": "Lowest recent scorecard was 2025Q2: OTD 86.3%, 63 ppm, score 92.8.",
+   "kind": "fact",
+   "source": "sc:70720@2025Q2",
+   "quote": "\"otd_confirmed_pct\": 86.3, \"otd_pct\": 86.3, \"period_end\": \"2025-06-30\", \"period_start\": \"2024-07-01\", \"ppm\": 63, \"qn_count\": 11, \"quarter\": \"2025Q2\"",
+   "parts": [],
+   "observed_at": "2025-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:6cdd4c73d2e85b3d",
+    "verdict": "reject",
+    "reason": "The cited quote omits ppm and score, and the 'lowest' comparison needs records beyond the excerpt."
+   }
+  },
+  {
+   "id": "obs:e4718157d8a54cfb",
+   "text": "Open supplier-caused QN for burr/sharp edge on part 370020 dated 2026-09-11, 8D not yet closed.",
+   "kind": "fact",
+   "source": "qn:20005023",
+   "quote": "\"d3_date\": \"2026-09-13\", \"d8_date\": null, \"defect\": \"burr / sharp edge\", \"gr_id\": \"gr:5000105437\", \"id\": \"qn:20005023\", \"part_id\": \"part:370020\"",
+   "parts": [
+    "part:370020"
+   ],
+   "observed_at": "2026-09-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e4718157d8a54cfb",
+    "verdict": "reject",
+    "reason": "The cited quote omits the qn_date and supplier_caused fields, so the date and 'supplier-caused' are not warranted by it."
+   }
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "role": "economics",
+    "observation": {
+     "text": "Second-source benchmark quote from Blankstahl Werdenfels for part:370020 is EUR 96.37 per 100, valid 90 days.",
+     "kind": "fact",
+     "source": "quote:7200016",
+     "quote": "\"quote_date\": \"2026-09-17\", \"rfq_id\": \"rfq:6000000216\", \"supplier_id\": \"sup:70740\", \"tooling_eur\": 0, \"unit_price\": 96.37, \"validity_days\": 90",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": "2026-09-17",
+     "valid_until": null
+    },
+    "why": "excerpt missing from source"
+   },
+   {
+    "role": "economics",
+    "observation": {
+     "text": "PPI-C241 (weight 0.84 for part:370020) rose 6.5% over 12 months to 105.9 in 2026-08; category team estimate.",
+     "kind": "fact",
+     "source": "evidence:part:370020:drivers",
+     "quote": "\"change_12m_pct\": 6.5, \"change_from_low_pct\": 7.8, \"change_from_peak_pct\": -6.3, \"change_from_top_pct\": -26.7, \"estimate\": \"category team estimate 2026-06\"",
+     "parts": [
+      "part:370020"
+     ],
+     "observed_at": "2026-08",
+     "valid_until": null
+    },
+    "why": "invalid date"
+   }
+  ]
+ }
+}

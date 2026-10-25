@@ -1,0 +1,590 @@
+{
+ "case_id": "case:P01",
+ "agent": "procudeal",
+ "commit": "99159a4-dirty",
+ "note": "zone0-v3-corrected-r5",
+ "experiment": {
+  "code_hash": "44430375a3fb508397fa6564f73a4665787eb2b238c2118571853f44c9662d51",
+  "extra_flags": "tactician,grounded_dossier,measured_trades",
+  "model_cache": false
+ },
+ "when": "2026-10-25T06:47:43+00:00",
+ "seconds": 35.5,
+ "session_id": "2c4d666ac3da8511",
+ "result": {
+  "ended": true,
+  "deal": true,
+  "supplier_id": "sup:70110",
+  "offer_id": "offer:70110-2",
+  "terms": {
+   "payment_days": 14,
+   "lead_time_days": 42,
+   "volume_per_year": 8150,
+   "contract_months": 12,
+   "effective_date": "2026-11-01",
+   "index_clause": null,
+   "incoterm": "FCA",
+   "tooling_eur": 0.0,
+   "ppm_commitment": 900,
+   "chargeback_eur_per_complaint": 0.0,
+   "unit_price": 130.8
+  },
+  "c_open": 1153779.74,
+  "c_deal": 1100153.28,
+  "c_alt": 1176178.02,
+  "c_best": 1096815.78,
+  "score": 0.9414103232991526,
+  "must_haves_ok": true,
+  "cost_breakdown": {
+   "price": 1066020.0,
+   "uncovered_need": 0.0,
+   "fallback_risk": 0.0,
+   "payment_terms": 10897.09,
+   "freight": 15485.0,
+   "late_delivery": 0.0,
+   "quality": 1584.36,
+   "tooling": 0.0,
+   "index_clause": 0.0,
+   "index_risk": 0.0,
+   "relationship": 6166.82
+  }
+ },
+ "session": {
+  "session_id": "2c4d666ac3da8511",
+  "case_id": "case:P01",
+  "status": "ended",
+  "end_reason": "accepted",
+  "rounds": 3,
+  "set": "practice",
+  "opening": {
+   "sup:70110": {
+    "offer_id": "offer:70110-0",
+    "round": 0,
+    "status": "open",
+    "terms": {
+     "unit_price": 138.55,
+     "effective_date": "2026-11-01"
+    },
+    "alternatives": [],
+    "missing_fields": [
+     "payment_days"
+    ],
+    "claims": [
+     {
+      "type": "index_change",
+      "refs": [
+       "idx:LCI-C@2025-06",
+       "idx:LCI-C@2026-06"
+      ],
+      "asserted": {
+       "change_pct": 2.7
+      }
+     },
+     {
+      "type": "index_change",
+      "refs": [
+       "idx:PPI-C241@2025-08",
+       "idx:PPI-C241@2026-08"
+      ],
+      "asserted": {
+       "change_pct": 6.5
+      }
+     }
+    ],
+    "claim_results": [],
+    "signals": {
+     "reply_delay_days": 2,
+     "validity_days": 30
+    },
+    "text": "Guten Tag,\n\nThank you for your enquiry. Please find our Angebot below. For many years, our family foundry has taken great pride in supplying your respected company with high-quality castings from our region, and we value our long standing relationship very much.\n\nOur team has prepared our offer carefully. We can offer you a price of €138.55 per unit, valid from 1 November 2026. This Angebot remains valid for 30 days.\n\nTo remain transparent about our situation, LCI-C rose 2.7 % in twelve months and is 30 % of our cost. Furthermore, PPI-C241 rose 6.5 % in twelve months and is 24 % of our cost. We trust that you understand the necessity of these figures for our ongoing operation and quality standards.\n\nViele Grüße aus der Gießerei\nThomas Brandlhuber\nOwner, Gießerei Brandlhuber GmbH & Co. KG"
+   }
+  },
+  "threads": {
+   "sup:70110": {
+    "offer_id": "offer:70110-2",
+    "status": "agreed",
+    "offers": 3,
+    "closed": null,
+    "seconds_left": null
+   }
+  },
+  "moves": [],
+  "result": {
+   "ended": true,
+   "deal": true,
+   "supplier_id": "sup:70110",
+   "offer_id": "offer:70110-2",
+   "terms": {
+    "payment_days": 14,
+    "lead_time_days": 42,
+    "volume_per_year": 8150,
+    "contract_months": 12,
+    "effective_date": "2026-11-01",
+    "index_clause": null,
+    "incoterm": "FCA",
+    "tooling_eur": 0.0,
+    "ppm_commitment": 900,
+    "chargeback_eur_per_complaint": 0.0,
+    "unit_price": 130.8
+   },
+   "c_open": 1153779.74,
+   "c_deal": 1100153.28,
+   "c_alt": 1176178.02,
+   "c_best": 1096815.78,
+   "score": 0.9414103232991526,
+   "must_haves_ok": true,
+   "cost_breakdown": {
+    "price": 1066020.0,
+    "uncovered_need": 0.0,
+    "fallback_risk": 0.0,
+    "payment_terms": 10897.09,
+    "freight": 15485.0,
+    "late_delivery": 0.0,
+    "quality": 1584.36,
+    "tooling": 0.0,
+    "index_clause": 0.0,
+    "index_risk": 0.0,
+    "relationship": 6166.82
+   },
+   "trace": [
+    {
+     "round": 0,
+     "actor": "sup:70110",
+     "move": {
+      "offer_id": "offer:70110-0",
+      "round": 0,
+      "status": "open",
+      "terms": {
+       "unit_price": 138.55,
+       "effective_date": "2026-11-01"
+      },
+      "alternatives": [],
+      "missing_fields": [
+       "payment_days"
+      ],
+      "claims": [
+       {
+        "type": "index_change",
+        "refs": [
+         "idx:LCI-C@2025-06",
+         "idx:LCI-C@2026-06"
+        ],
+        "asserted": {
+         "change_pct": 2.7
+        }
+       },
+       {
+        "type": "index_change",
+        "refs": [
+         "idx:PPI-C241@2025-08",
+         "idx:PPI-C241@2026-08"
+        ],
+        "asserted": {
+         "change_pct": 6.5
+        }
+       }
+      ],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Guten Tag,\n\nThank you for your enquiry. Please find our Angebot below. For many years, our family foundry has taken great pride in supplying your respected company with high-quality castings from our region, and we value our long standing relationship very much.\n\nOur team has prepared our offer carefully. We can offer you a price of €138.55 per unit, valid from 1 November 2026. This Angebot remains valid for 30 days.\n\nTo remain transparent about our situation, LCI-C rose 2.7 % in twelve months and is 30 % of our cost. Furthermore, PPI-C241 rose 6.5 % in twelve months and is 24 % of our cost. We trust that you understand the necessity of these figures for our ongoing operation and quality standards.\n\nViele Grüße aus der Gießerei\nThomas Brandlhuber\nOwner, Gießerei Brandlhuber GmbH & Co. KG"
+     },
+     "reasons": [
+      "LCI-C rose … in twelve months and is … of our cost.",
+      "PPI-C241 rose … in twelve months and is … of our cost."
+     ]
+    },
+    {
+     "round": 1,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Gießerei Brandlhuber GmbH & Co. KG: Brandlhuber announces +9.5 % on HN volute casings",
+      "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour letter gives 51 days' notice (doc:20260911-70110-P01), while our framework agreement requires 90 days (ctr:4600070110#3.1).\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 85.2% (sc:70110@2026Q3).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [
+       "ctr:4600070110#3.1",
+       "doc:20260911-70110-P01",
+       "idx:PPI-D351@2025-11",
+       "idx:PPI-D351@2026-08",
+       "sc:70110@2026Q3"
+      ],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 126.53,
+         "effective_date": "2026-11-01",
+         "payment_days": 14
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": [
+        {
+         "type": "index_change",
+         "refs": [
+          "idx:PPI-D351@2025-11",
+          "idx:PPI-D351@2026-08"
+         ],
+         "asserted": {
+          "change_pct": -6.1
+         }
+        },
+        {
+         "type": "delivery_record",
+         "refs": [
+          "sc:70110@2026Q3"
+         ],
+         "asserted": {
+          "otd_pct": 85.2
+         }
+        },
+        {
+         "type": "notice_period",
+         "refs": [
+          "doc:20260911-70110-P01",
+          "ctr:4600070110#3.1"
+         ],
+         "asserted": {
+          "days": 51.0
+         }
+        }
+       ]
+      },
+      "supplier_id": "sup:70110"
+     },
+     "reasons": []
+    },
+    {
+     "round": 1,
+     "actor": "sup:70110",
+     "move": {
+      "offer_id": "offer:70110-1",
+      "round": 1,
+      "status": "open",
+      "terms": {
+       "unit_price": 132.6,
+       "payment_days": 14,
+       "effective_date": "2026-11-01"
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [
+       {
+        "index": 0,
+        "result": "verified"
+       },
+       {
+        "index": 1,
+        "result": "verified"
+       },
+       {
+        "index": 2,
+        "result": "verified"
+       }
+      ],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Guten Tag,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We checked the notice period data you cited; it holds and we took it into account. As to the index change and delivery record and notice period data you cited, we did not know that - a fair point. LCI-C rose 2.7 % in twelve months and is 30 % of our cost. That remains. PPI-C241 rose 6.5 % in twelve months and is 24 % of our cost. That remains. We have carefully reviewed your data regarding the energy index and our delivery performance, and we take these matters seriously. We are pleased to accept your proposed 14-day payment terms, and in exchange for maintaining the November 1st effective date, we have adjusted our price. Please find our revised offer of €132.60 per unit, which reflects these verified points and our dedication to our long-standing relationship. Our price reflects our costs; our calculation stays internal. Our Lieferzeit is 42 days. Our standard Zahlungsziel is 30 days net. This offer is valid for 30 days.\n\nViele Grüße aus der Gießerei\nThomas Brandlhuber\nOwner, Gießerei Brandlhuber GmbH & Co. KG"
+     },
+     "reasons": [
+      "We checked the notice period data you cited; it holds and we took it into account.",
+      "As to the index change and delivery record and notice period data you cited, we did not know that - a fair point.",
+      "LCI-C rose … in twelve months and is … of our cost. That remains.",
+      "PPI-C241 rose … in twelve months and is … of our cost. That remains.",
+      "We have carefully reviewed your data regarding the energy index and our delivery performance, and we take these matters seriously.",
+      "We are pleased to accept your proposed 14-day payment terms, and in exchange for maintaining the November 1st effective date, we have adjusted our price.",
+      "Please find our revised offer of €… per unit, which reflects these verified points and our dedication to our long-standing relationship.",
+      "Our price reflects our costs; our calculation stays internal.",
+      "Our Lieferzeit is … days.",
+      "Our standard Zahlungsziel is … days net."
+     ]
+    },
+    {
+     "round": 2,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Gießerei Brandlhuber GmbH & Co. KG: Brandlhuber announces +9.5 % on HN volute casings",
+      "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 126.53 per unit (po:4500014428-10, po:4500014358-10, po:4500014313-10).\nOur demand forecast for this part has risen 10.1% (fc:310010@2026-09).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [
+       "fc:310010@2026-09",
+       "po:4500014313-10",
+       "po:4500014358-10",
+       "po:4500014428-10"
+      ],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 128.35,
+         "effective_date": "2026-11-01",
+         "payment_days": 14
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": [
+        {
+         "type": "price_history",
+         "refs": [
+          "po:4500014313-10",
+          "po:4500014358-10",
+          "po:4500014428-10"
+         ],
+         "asserted": {
+          "prices": [
+           126.53,
+           126.53,
+           126.53
+          ]
+         }
+        },
+        {
+         "type": "volume_change",
+         "refs": [
+          "fc:310010@2026-09"
+         ],
+         "asserted": {
+          "change_pct": 10.1
+         }
+        }
+       ]
+      },
+      "supplier_id": "sup:70110"
+     },
+     "reasons": []
+    },
+    {
+     "round": 2,
+     "actor": "sup:70110",
+     "move": {
+      "offer_id": "offer:70110-2",
+      "round": 2,
+      "status": "open",
+      "terms": {
+       "unit_price": 130.8,
+       "payment_days": 14,
+       "effective_date": "2026-11-01"
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [
+       {
+        "index": 0,
+        "result": "verified"
+       },
+       {
+        "index": 1,
+        "result": "verified"
+       }
+      ],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Guten Tag,\n\nWe have reviewed your offer and can adjust our Angebot as follows. \n\nWe checked the price history data you cited; it holds, but it does not change our calculation. Our price reflects our costs; our calculation stays internal. However, we checked the volume change data you cited; it holds and we took it into account. We did not know that - a fair point. In recognition of this higher volume, we have adjusted our price to €130.80 per unit. A binding higher volume would help us and can improve the price. Which volume can you commit to?\n\nFor this Angebot, we are keeping the 14-day payment terms and the November 1st effective date. Our complete offer stands at a price of €130.80 per unit, Zahlungsziel 14 days net, valid from 1 November 2026. This offer remains valid for 30 days.\n\nViele Grüße aus der Gießerei\nThomas Brandlhuber\nOwner, Gießerei Brandlhuber GmbH & Co. KG"
+     },
+     "reasons": [
+      "We checked the price history data you cited; it holds, but it does not change our calculation.",
+      "We checked the volume change data you cited; it holds and we took it into account.",
+      "We did not know that - a fair point.",
+      "In recognition of this higher volume, we have adjusted our price to €… per unit.",
+      "We are keeping the 14-day payment terms and the November 1st effective date.",
+      "A binding higher volume would help us and can improve the price.",
+      "Which volume can you commit to?",
+      "Our price reflects our costs; our calculation stays internal."
+     ]
+    },
+    {
+     "round": 2,
+     "actor": "buyer",
+     "move": {
+      "type": "accept",
+      "offer_id": "offer:70110-2",
+      "supplier_id": "sup:70110"
+     },
+     "reasons": []
+    }
+   ]
+  },
+  "replay_url": "/replay/2c4d666ac3da8511"
+ },
+ "backoffice": [
+  {
+   "round": 0,
+   "supplier_id": "sup:70110",
+   "supplier": "Gießerei Brandlhuber GmbH & Co. KG",
+   "from": "Owner",
+   "to": "team",
+   "text": "quote attached (quote-offer-70110-0.pdf)"
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70110",
+   "supplier": "Gießerei Brandlhuber GmbH & Co. KG",
+   "from": "Owner",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70110",
+   "supplier": "Gießerei Brandlhuber GmbH & Co. KG",
+   "from": "Owner",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet and … cited facts to check; we answer with our offer."
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70110",
+   "supplier": "Gießerei Brandlhuber GmbH & Co. KG",
+   "from": "Owner",
+   "to": "team",
+   "text": "delivery schedule attached (delivery-schedule.xlsx)"
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70110",
+   "supplier": "Gießerei Brandlhuber GmbH & Co. KG",
+   "from": "Owner",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70110",
+   "supplier": "Gießerei Brandlhuber GmbH & Co. KG",
+   "from": "Owner",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet and … cited facts to check; we answer with our offer."
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70110",
+   "supplier": "Gießerei Brandlhuber GmbH & Co. KG",
+   "from": "Owner",
+   "to": "team",
+   "text": "order confirmation attached (order-confirmation-offer-70110-2.pdf)"
+  }
+ ],
+ "decisions": [
+  {
+   "round": 0,
+   "supplier_id": "sup:70110",
+   "their_status": "open",
+   "their_offer": "offer:70110-0",
+   "their_terms": {
+    "unit_price": 138.55,
+    "effective_date": "2026-11-01"
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 126.53,
+     "effective_date": "2026-11-01",
+     "payment_days": 14
+    }
+   ],
+   "seconds": 8.337,
+   "source": "engine",
+   "tactician": "E0 is the only selectable option; every other term mix has an unknown supplier trade value. E0 offers short payment terms, which meets the supplier's stated cash need (M2), while anchoring on the current price. Citing the notice breach, the falling power index and the weak delivery record presses our position on price without leaning on should-cost, which could cut both ways. This is still an early round with plenty of messages left.",
+   "option": "E0",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 8.0,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "E0",
+     "claims": [
+      "a1",
+      "a3",
+      "a4"
+     ],
+     "reason": "E0 is the only selectable option; every other term mix has an unknown supplier trade value. E0 offers short payment terms, which meets the supplier's stated cash need (M2), while anchoring on the current price. Citing the notice breach, the falling power index and the weak delivery record presses our position on price without leaning on should-cost, which could cut both ways. This is still an early round with plenty of messages left."
+    },
+    "used": true,
+    "packet_seconds": 0.06
+   },
+   "features_off": [
+    "ask_breakdown",
+    "call_note_lever",
+    "case_plan",
+    "patience",
+    "plan_paragraph",
+    "plan_priced_trades",
+    "plan_stance",
+    "tactician_text"
+   ],
+   "plan": false
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70110",
+   "their_status": "open",
+   "their_offer": "offer:70110-1",
+   "their_terms": {
+    "unit_price": 132.6,
+    "payment_days": 14,
+    "effective_date": "2026-11-01"
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 128.35,
+     "effective_date": "2026-11-01",
+     "payment_days": 14
+    }
+   ],
+   "seconds": 7.66,
+   "source": "engine",
+   "tactician": "No other option is selectable: every alternative term mix has an unknown trade value. E0 lowers our C below the standing €132.60 sheet. The supplier is still open and conceding about €5 per reply, so one more counter is likely to reach E0. Order history and the volume increase are new argument kinds that support a lower price without leaking urgency. We do not resend the should-cost argument, because a figure near its quote could anchor the price upward.",
+   "option": "E0",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 7.6,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "E0",
+     "claims": [
+      "a3",
+      "a2"
+     ],
+     "reason": "No other option is selectable: every alternative term mix has an unknown trade value. E0 lowers our C below the standing €132.60 sheet. The supplier is still open and conceding about €5 per reply, so one more counter is likely to reach E0. Order history and the volume increase are new argument kinds that support a lower price without leaking urgency. We do not resend the should-cost argument, because a figure near its quote could anchor the price upward."
+    },
+    "used": true,
+    "packet_seconds": 0.05
+   }
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70110",
+   "their_status": "open",
+   "their_offer": "offer:70110-2",
+   "their_terms": {
+    "unit_price": 130.8,
+    "payment_days": 14,
+    "effective_date": "2026-11-01"
+   },
+   "action": "accept",
+   "our_sheets": [],
+   "seconds": 0.001,
+   "source": "engine",
+   "why": "at the price that is cheapest for us with the relationship charge; C 1,116,875 below the limit 1,153,780"
+  }
+ ],
+ "plan": null,
+ "prepare_seconds": null
+}

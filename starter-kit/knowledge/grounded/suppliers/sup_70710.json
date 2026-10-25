@@ -1,0 +1,850 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70710",
+ "name": "Edelstahl-Service Donautal GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "4c5ce7da73cf12b8f1b352e1c188f08f4c37459e2fbd408f14e4aed37f1b0098",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:03:39.701947+00:00",
+  "seconds": 29.5,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:94f0a8929e7e0ec6",
+   "text": "Supplier proposes agreeing the price basis for part:370010 for the coming period, including a price adjustment clause based on AS-14404.",
+   "kind": "supplier_statement",
+   "source": "doc:20260912-70710-P08",
+   "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": "2026-09-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:94f0a8929e7e0ec6",
+    "verdict": "supported",
+    "reason": "Matches the 2026-09-12 letter for part:370010."
+   }
+  },
+  {
+   "id": "obs:21162f3fedb97d86",
+   "text": "Supplier states its nickel and alloys requirement is covered at fixed prices until March 2027, so market movements reach its costs only after that.",
+   "kind": "supplier_statement",
+   "source": "doc:20260706-70710-M1",
+   "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that.",
+   "parts": [],
+   "observed_at": "2026-07-06",
+   "valid_until": null,
+   "review": {
+    "id": "obs:21162f3fedb97d86",
+    "verdict": "supported",
+    "reason": "Matches the 2026-07-06 supplier letter."
+   }
+  },
+  {
+   "id": "obs:5be2a1cbf0cbb578",
+   "text": "Unsolicited quote for part:370010 at EUR 5.45, 90-day validity, remark that material is covered until March 2027.",
+   "kind": "fact",
+   "source": "quote:7300008",
+   "quote": "\"unit_price\": 5.45, \"validity_days\": 90}",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": "2026-09-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:5be2a1cbf0cbb578",
+    "verdict": "supported",
+    "reason": "quote:7300008 records 5.45 EUR, 90-day validity, no RFQ, and the remark that material is covered until March 2027."
+   }
+  },
+  {
+   "id": "obs:8df31388ca058f3f",
+   "text": "Quote for part:370010 in second-source benchmark RFQ rfq:6000000218 at EUR 6.31.",
+   "kind": "fact",
+   "source": "quote:7200018",
+   "quote": "\"rfq_id\": \"rfq:6000000218\", \"supplier_id\": \"sup:70710\", \"tooling_eur\": 0, \"unit_price\": 6.31",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": "2026-09-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:8df31388ca058f3f",
+    "verdict": "supported",
+    "reason": "quote:7200018 records 6.31 EUR in rfq:6000000218 for part:370010."
+   }
+  },
+  {
+   "id": "obs:2120ac66f1ca2a58",
+   "text": "Current price for part:370010 is EUR 5.45 from 2026-07-01 after a +0.4% index adjustment.",
+   "kind": "fact",
+   "source": "EV-2026-70710-370010-Q3",
+   "quote": "\"change_pct\": 0.4, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70710-370010-Q3\", \"price\": 5.45",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": "2026-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2120ac66f1ca2a58",
+    "verdict": "supported",
+    "reason": "The Q3 2026 index event sets 5.45 EUR from 2026-07-01 with +0.4% and no valid_to; it is consistent with the latest PO prices."
+   }
+  },
+  {
+   "id": "obs:3530eb280a142597",
+   "text": "Price follows index AS-14404 with 45% material share, adjusted quarterly if change exceeds 0%.",
+   "kind": "fact",
+   "source": "ctr:4600070710#3.2",
+   "quote": "The price follows index AS-14404: P = P0 x (1 - 0.45 + 0.45 x I(m-2) / I(base)), base = the index two months before the price year starts, adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %.",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:3530eb280a142597",
+    "verdict": "supported",
+    "reason": "Matches contract clause 3.2."
+   }
+  },
+  {
+   "id": "obs:0f97d21b389f0cb9",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 60 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070710#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 60 days before the end of the calendar year.",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:0f97d21b389f0cb9",
+    "verdict": "supported",
+    "reason": "Matches contract clause 3.1."
+   }
+  },
+  {
+   "id": "obs:5e3d49e6e8fe35ee",
+   "text": "Framework agreement runs 2024-01-01 to 2026-12-31 and extends by 12 months unless terminated with 60 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070710#8.1",
+   "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 60 days' notice.",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:5e3d49e6e8fe35ee",
+    "verdict": "supported",
+    "reason": "Matches contract clause 8.1."
+   }
+  },
+  {
+   "id": "obs:405749f5a6cb5f69",
+   "text": "Alloy surcharge for 1.4404 stands at EUR 3,008/t, +6% on a year ago.",
+   "kind": "fact",
+   "source": "news:20260916-32",
+   "quote": "The alloy surcharge for 1.4404 stands at EUR 3,008/t, +6 % on a year ago.",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": "2026-09-16",
+   "valid_until": null,
+   "review": {
+    "id": "obs:405749f5a6cb5f69",
+    "verdict": "supported",
+    "reason": "Matches the 2026-09-16 market news item on the 1.4404 alloy surcharge."
+   }
+  },
+  {
+   "id": "obs:aa61499101058457",
+   "text": "Owner offered to walk the buyer through the supplier's calculation (hourly rates and material) to help settle prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260421-70710-M2",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices",
+   "parts": [],
+   "observed_at": "2026-04-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:aa61499101058457",
+    "verdict": "supported",
+    "reason": "Matches the 2026-04-21 call note."
+   }
+  },
+  {
+   "id": "obs:b886e379e15d6913",
+   "text": "Part 370010 price fell from first price 6.06 to latest 5.45 (-10.1%); 2026 average 5.37.",
+   "kind": "fact",
+   "source": "evidence:part:370010:orders",
+   "quote": "\"first_price\": 6.06, \"last_order\": \"2026-09-24\"",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": "2026-09-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b886e379e15d6913",
+    "verdict": "supported",
+    "reason": "The orders summary records first price 6.06, latest 5.45, price change -10.1% and a 2026 average of 5.37."
+   }
+  },
+  {
+   "id": "obs:7018c33935f004ed",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070710#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7018c33935f004ed",
+    "verdict": "supported",
+    "reason": "Matches contract clause 4.1."
+   }
+  },
+  {
+   "id": "obs:2f4ef825f69fea06",
+   "text": "Buyer paid 78.7% of invoices late, averaging 2.1 days after due, max 7 days.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due\": 2.1, \"avg_days_paid_after_due_last_12m\": 1.9, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 77, \"max_days_late\": 7, \"paid_late_pct\": 78.7",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:2f4ef825f69fea06",
+    "verdict": "supported",
+    "reason": "Invoice data records 78.7% paid late, 2.1 days average after due and 7 days maximum."
+   }
+  },
+  {
+   "id": "obs:aa28d8b608b13c14",
+   "text": "Rolling 12 months to 2026-09-30: OTD vs requested date 88.0%, vs first confirmed date 92.0%, ppm 75, score 93.6, class A green.",
+   "kind": "fact",
+   "source": "sc:70710@2026Q3",
+   "quote": "\"otd_confirmed_pct\": 92.0, \"otd_pct\": 88.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 75",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:aa28d8b608b13c14",
+    "verdict": "supported",
+    "reason": "All figures match scorecard sc:70710@2026Q3 for the period to 2026-09-30."
+   }
+  },
+  {
+   "id": "obs:18a02dab908722a3",
+   "text": "Scorecard for rolling 12 months to 2026-03-31 showed ppm 43, OTD 92.0%, score 95.8.",
+   "kind": "fact",
+   "source": "sc:70710@2026Q1",
+   "quote": "\"otd_pct\": 92.0, \"period_end\": \"2026-03-31\", \"period_start\": \"2025-04-01\", \"ppm\": 43, \"qn_count\": 4, \"quarter\": \"2026Q1\", \"received_qty\": 93500, \"score\": 95.8",
+   "parts": [],
+   "observed_at": "2026-03-31",
+   "valid_until": null,
+   "review": {
+    "id": "obs:18a02dab908722a3",
+    "verdict": "supported",
+    "reason": "Scorecard 2026Q1 records ppm 43, otd_pct 92.0 and score 95.8."
+   }
+  },
+  {
+   "id": "obs:f7a5d52000596d3b",
+   "text": "Part 370010: 23 supplier-caused QNs in total, EUR 2550 recharged, ppm last 12 months 75.",
+   "kind": "fact",
+   "source": "evidence:part:370010:part_quality",
+   "quote": "\"complaint_qty\": 23, \"last_qn\": \"2026-09-06\", \"latest_qns\": [\"qn:20005016\", \"qn:20004951\", \"qn:20004940\"], \"ppm_last_12m\": 75, \"qns\": 23, \"received_last_12m\": 93000, \"recharged_eur\": 2550, \"supplier_caused\": 23, \"supplier_id\": \"sup:70710\"",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:f7a5d52000596d3b",
+    "verdict": "supported",
+    "reason": "Matches the part quality summary."
+   }
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "obs:e25ec8d302afc00a",
+   "text": "Supplier OTD (88.0% vs requested) is below the buyer's 95% on-time target in the quality agreement.",
+   "kind": "hypothesis",
+   "source": "package:company.md",
+   "quote": "on-time delivery target 95 %",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:e25ec8d302afc00a",
+    "verdict": "supported",
+    "reason": "88.0% is below the 95% target in the policy and contract clause 6.1; this is a direct comparison of recorded figures, not a speculative inference."
+   }
+  }
+ ],
+ "verified_unselected": [
+  {
+   "id": "obs:2f8f223b03d6f075",
+   "text": "Supplier financials: turnover EUR 165 M, equity ratio 33.9%, credit index 177 unchanged over 12 months.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177, \"equity_ratio_pct\": 33.9",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:2f8f223b03d6f075",
+    "verdict": "supported",
+    "reason": "Matches the intel record: turnover 165 M EUR, equity ratio 33.9%, credit index 177 now and 12 months ago."
+   }
+  },
+  {
+   "id": "obs:8ba48b9c1b011baf",
+   "text": "Supplier proposes agreeing the price basis for the coming period for part:370010 including a price adjustment clause based on AS-14404.",
+   "kind": "supplier_statement",
+   "source": "doc:20260912-70710-P08",
+   "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": "2026-09-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:8ba48b9c1b011baf",
+    "verdict": "supported",
+    "reason": "Duplicate of the same letter content; it is accurate."
+   }
+  },
+  {
+   "id": "obs:c603141946469eeb",
+   "text": "Supplier states its nickel and alloys requirement is covered at fixed prices until March 2027, with market movements reaching its costs only after that.",
+   "kind": "supplier_statement",
+   "source": "doc:20260706-70710-M1",
+   "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that.",
+   "parts": [],
+   "observed_at": "2026-07-06",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c603141946469eeb",
+    "verdict": "supported",
+    "reason": "Accurate restatement of the supplier letter."
+   }
+  },
+  {
+   "id": "obs:76fa9efdf9a7e4ea",
+   "text": "Owner offered to walk the buyer through their calculation (hourly rates and material) to help settle prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260421-70710-M2",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+   "parts": [],
+   "observed_at": "2026-04-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:76fa9efdf9a7e4ea",
+    "verdict": "supported",
+    "reason": "Accurate restatement of the call note."
+   }
+  },
+  {
+   "id": "obs:daec1e362bb887dc",
+   "text": "Supplier is a group-owned GmbH with 350 staff and turnover of EUR 165 M.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"legal_form\": \"GmbH\", \"owner_type\": \"group\", \"staff\": 350, \"supplier_id\": \"sup:70710\", \"turnover_band\": \"100-250 M EUR\", \"turnover_eur\": 165000000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:daec1e362bb887dc",
+    "verdict": "supported",
+    "reason": "Intel records owner_type group, GmbH, 350 staff and 165 M EUR turnover."
+   }
+  },
+  {
+   "id": "obs:1bf906696c902ac6",
+   "text": "Credit index is 177, unchanged from 12 months ago; equity ratio 33.9%.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177, \"equity_ratio_pct\": 33.9",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:1bf906696c902ac6",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:60aedc308581a425",
+   "text": "Master data: A-class raw material supplier, DAP, 30 payment days, 10-day standard lead time.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"abc_class\": \"A\", \"blocked\": 0, \"category\": \"raw material\", \"contract_id\": \"ctr:4600070710\", \"country\": \"DE\", \"created\": \"1996-01-01\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70710\", \"incoterm\": \"DAP\", \"name\": \"Edelstahl-Service Donautal GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 10",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:60aedc308581a425",
+    "verdict": "supported",
+    "reason": "Matches the vendor master record."
+   }
+  },
+  {
+   "id": "obs:730dc05161e28083",
+   "text": "Delivery DAP with standard lead time of 10 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070710#5.1",
+   "quote": "Delivery DAP; standard lead time 10 days from order.",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:730dc05161e28083",
+    "verdict": "supported",
+    "reason": "Matches contract clause 5.1."
+   }
+  },
+  {
+   "id": "obs:cef89077d0b52ba1",
+   "text": "Supplier proposes agreeing the price basis for the coming period including a price adjustment clause based on AS-14404.",
+   "kind": "supplier_statement",
+   "source": "doc:20260912-70710-P08",
+   "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": "2026-09-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:cef89077d0b52ba1",
+    "verdict": "supported",
+    "reason": "Accurate restatement of the letter."
+   }
+  },
+  {
+   "id": "obs:d4609be6ac27d320",
+   "text": "Supplier states its nickel and alloys requirement is covered at fixed prices until March 2027.",
+   "kind": "supplier_statement",
+   "source": "doc:20260706-70710-M1",
+   "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that.",
+   "parts": [],
+   "observed_at": "2026-07-06",
+   "valid_until": null,
+   "review": {
+    "id": "obs:d4609be6ac27d320",
+    "verdict": "supported",
+    "reason": "Accurate restatement of the supplier letter."
+   }
+  },
+  {
+   "id": "obs:8ae3086952fa6d82",
+   "text": "Owner offered to walk the buyer through their calculation (hourly rates and material).",
+   "kind": "supplier_statement",
+   "source": "doc:20260421-70710-M2",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+   "parts": [],
+   "observed_at": "2026-04-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:8ae3086952fa6d82",
+    "verdict": "supported",
+    "reason": "Accurate restatement of the call note."
+   }
+  },
+  {
+   "id": "obs:36e8989ce3270dd8",
+   "text": "Last 12 months deliveries: 25 receipts, 12% late, average 14.0 days late when late, max 21 days late.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 14.0, \"early_pct\": 0.0, \"late_pct\": 12.0, \"max_days_late\": 21, \"on_time_confirmed_pct\": 92.0, \"on_time_requested_pct\": 88.0, \"receipts\": 25}",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:36e8989ce3270dd8",
+    "verdict": "supported",
+    "reason": "Matches the last_12m delivery figures, which are identical in the part-level breakdown."
+   }
+  },
+  {
+   "id": "obs:2f97f474aa8ee4f5",
+   "text": "Latest QN (burr / sharp edge, 2026-09-06) on part 370010 has no 8D closure date recorded.",
+   "kind": "fact",
+   "source": "qn:20005016",
+   "quote": "\"d3_date\": \"2026-09-08\", \"d8_date\": null, \"defect\": \"burr / sharp edge\"",
+   "parts": [
+    "part:370010"
+   ],
+   "observed_at": "2026-09-06",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2f97f474aa8ee4f5",
+    "verdict": "supported",
+    "reason": "qn:20005016 has d8_date null."
+   }
+  },
+  {
+   "id": "obs:ab0817ff6d71bc63",
+   "text": "No overdue open 8D reports at end of 2026Q3.",
+   "kind": "fact",
+   "source": "sc:70710@2026Q3",
+   "quote": "\"open_8d_overdue\": 0",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ab0817ff6d71bc63",
+    "verdict": "supported",
+    "reason": "Scorecard 2026Q3 records open_8d_overdue 0."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier proposes agreeing the price basis for part:370010 for the coming period, including a price adjustment clause based on AS-14404.",
+     "kind": "supplier_statement",
+     "source": "doc:20260912-70710-P08",
+     "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": "2026-09-12",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier states its nickel and alloys requirement is covered at fixed prices until March 2027, so market movements reach its costs only after that.",
+     "kind": "supplier_statement",
+     "source": "doc:20260706-70710-M1",
+     "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that.",
+     "parts": [],
+     "observed_at": "2026-07-06",
+     "valid_until": null
+    },
+    {
+     "text": "Unsolicited quote for part:370010 at EUR 5.45, 90-day validity, remark that material is covered until March 2027.",
+     "kind": "fact",
+     "source": "quote:7300008",
+     "quote": "\"unit_price\": 5.45, \"validity_days\": 90}",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": "2026-09-10",
+     "valid_until": null
+    },
+    {
+     "text": "Quote for part:370010 in second-source benchmark RFQ rfq:6000000218 at EUR 6.31.",
+     "kind": "fact",
+     "source": "quote:7200018",
+     "quote": "\"rfq_id\": \"rfq:6000000218\", \"supplier_id\": \"sup:70710\", \"tooling_eur\": 0, \"unit_price\": 6.31",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": "2026-09-19",
+     "valid_until": null
+    },
+    {
+     "text": "Current price for part:370010 is EUR 5.45 from 2026-07-01 after a +0.4% index adjustment.",
+     "kind": "fact",
+     "source": "EV-2026-70710-370010-Q3",
+     "quote": "\"change_pct\": 0.4, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70710-370010-Q3\", \"price\": 5.45",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": "2026-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Owner offered to walk the buyer through the supplier's calculation (hourly rates and material) to help settle prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260421-70710-M2",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices",
+     "parts": [],
+     "observed_at": "2026-04-21",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier financials: turnover EUR 165 M, equity ratio 33.9%, credit index 177 unchanged over 12 months.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177, \"equity_ratio_pct\": 33.9",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Alloy surcharge for 1.4404 stands at EUR 3,008/t, +6% on a year ago.",
+     "kind": "fact",
+     "source": "news:20260916-32",
+     "quote": "The alloy surcharge for 1.4404 stands at EUR 3,008/t, +6 % on a year ago.",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": "2026-09-16",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier proposes agreeing the price basis for the coming period for part:370010 including a price adjustment clause based on AS-14404.",
+     "kind": "supplier_statement",
+     "source": "doc:20260912-70710-P08",
+     "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": "2026-09-12",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier states its nickel and alloys requirement is covered at fixed prices until March 2027, with market movements reaching its costs only after that.",
+     "kind": "supplier_statement",
+     "source": "doc:20260706-70710-M1",
+     "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that.",
+     "parts": [],
+     "observed_at": "2026-07-06",
+     "valid_until": null
+    },
+    {
+     "text": "Owner offered to walk the buyer through their calculation (hourly rates and material) to help settle prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260421-70710-M2",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+     "parts": [],
+     "observed_at": "2026-04-21",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is a group-owned GmbH with 350 staff and turnover of EUR 165 M.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"legal_form\": \"GmbH\", \"owner_type\": \"group\", \"staff\": 350, \"supplier_id\": \"sup:70710\", \"turnover_band\": \"100-250 M EUR\", \"turnover_eur\": 165000000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Credit index is 177, unchanged from 12 months ago; equity ratio 33.9%.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177, \"equity_ratio_pct\": 33.9",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Master data: A-class raw material supplier, DAP, 30 payment days, 10-day standard lead time.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"abc_class\": \"A\", \"blocked\": 0, \"category\": \"raw material\", \"contract_id\": \"ctr:4600070710\", \"country\": \"DE\", \"created\": \"1996-01-01\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70710\", \"incoterm\": \"DAP\", \"name\": \"Edelstahl-Service Donautal GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 10",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Buyer paid 78.7% of invoices late, averaging 2.1 days after due, max 7 days.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due\": 2.1, \"avg_days_paid_after_due_last_12m\": 1.9, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 77, \"max_days_late\": 7, \"paid_late_pct\": 78.7",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement runs 2024-01-01 to 2026-12-31 and extends by 12 months unless terminated with 60 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070710#8.1",
+     "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 60 days' notice.",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Price follows index AS-14404 with 45% material share, adjusted quarterly if change exceeds 0%.",
+     "kind": "fact",
+     "source": "ctr:4600070710#3.2",
+     "quote": "The price follows index AS-14404: P = P0 x (1 - 0.45 + 0.45 x I(m-2) / I(base)), base = the index two months before the price year starts, adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %.",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 60 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070710#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 60 days before the end of the calendar year.",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070710#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery DAP with standard lead time of 10 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070710#5.1",
+     "quote": "Delivery DAP; standard lead time 10 days from order.",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier proposes agreeing the price basis for the coming period including a price adjustment clause based on AS-14404.",
+     "kind": "supplier_statement",
+     "source": "doc:20260912-70710-P08",
+     "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": "2026-09-12",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier states its nickel and alloys requirement is covered at fixed prices until March 2027.",
+     "kind": "supplier_statement",
+     "source": "doc:20260706-70710-M1",
+     "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that.",
+     "parts": [],
+     "observed_at": "2026-07-06",
+     "valid_until": null
+    },
+    {
+     "text": "Owner offered to walk the buyer through their calculation (hourly rates and material).",
+     "kind": "supplier_statement",
+     "source": "doc:20260421-70710-M2",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+     "parts": [],
+     "observed_at": "2026-04-21",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12 months to 2026-09-30: OTD vs requested date 88.0%, vs first confirmed date 92.0%, ppm 75, score 93.6, class A green.",
+     "kind": "fact",
+     "source": "sc:70710@2026Q3",
+     "quote": "\"otd_confirmed_pct\": 92.0, \"otd_pct\": 88.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 75",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Scorecard for rolling 12 months to 2026-03-31 showed ppm 43, OTD 92.0%, score 95.8.",
+     "kind": "fact",
+     "source": "sc:70710@2026Q1",
+     "quote": "\"otd_pct\": 92.0, \"period_end\": \"2026-03-31\", \"period_start\": \"2025-04-01\", \"ppm\": 43, \"qn_count\": 4, \"quarter\": \"2026Q1\", \"received_qty\": 93500, \"score\": 95.8",
+     "parts": [],
+     "observed_at": "2026-03-31",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months deliveries: 25 receipts, 12% late, average 14.0 days late when late, max 21 days late.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 14.0, \"early_pct\": 0.0, \"late_pct\": 12.0, \"max_days_late\": 21, \"on_time_confirmed_pct\": 92.0, \"on_time_requested_pct\": 88.0, \"receipts\": 25}",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 370010: 23 supplier-caused QNs in total, EUR 2550 recharged, ppm last 12 months 75.",
+     "kind": "fact",
+     "source": "evidence:part:370010:part_quality",
+     "quote": "\"complaint_qty\": 23, \"last_qn\": \"2026-09-06\", \"latest_qns\": [\"qn:20005016\", \"qn:20004951\", \"qn:20004940\"], \"ppm_last_12m\": 75, \"qns\": 23, \"received_last_12m\": 93000, \"recharged_eur\": 2550, \"supplier_caused\": 23, \"supplier_id\": \"sup:70710\"",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Latest QN (burr / sharp edge, 2026-09-06) on part 370010 has no 8D closure date recorded.",
+     "kind": "fact",
+     "source": "qn:20005016",
+     "quote": "\"d3_date\": \"2026-09-08\", \"d8_date\": null, \"defect\": \"burr / sharp edge\"",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": "2026-09-06",
+     "valid_until": null
+    },
+    {
+     "text": "No overdue open 8D reports at end of 2026Q3.",
+     "kind": "fact",
+     "source": "sc:70710@2026Q3",
+     "quote": "\"open_8d_overdue\": 0",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier OTD (88.0% vs requested) is below the buyer's 95% on-time target in the quality agreement.",
+     "kind": "hypothesis",
+     "source": "package:company.md",
+     "quote": "on-time delivery target 95 %",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 370010 price fell from first price 6.06 to latest 5.45 (-10.1%); 2026 average 5.37.",
+     "kind": "fact",
+     "source": "evidence:part:370010:orders",
+     "quote": "\"first_price\": 6.06, \"last_order\": \"2026-09-24\"",
+     "parts": [
+      "part:370010"
+     ],
+     "observed_at": "2026-09-24",
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": []
+ }
+}

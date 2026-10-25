@@ -1,0 +1,821 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70210",
+ "name": "Zerspanung Dralveck GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "0a19349ac29b07eae4cb4a49a815f049125cb071d57128ca120d5f560991325d",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:18:14.357448+00:00",
+  "seconds": 36.7,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:6035ee15cc9ee12b",
+   "text": "Current 2026 renewal price for part 320010 at Dralveck is EUR 24.37 per unit (-3.0%), no end date recorded.",
+   "kind": "fact",
+   "source": "EV-2026-70210-320010",
+   "quote": "\"change_pct\": -3.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70210-320010\", \"price\": 24.37, \"price_unit\": 1, \"supplier_id\": \"sup:70210\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:6035ee15cc9ee12b",
+    "verdict": "supported",
+    "reason": "The record shows a 2026 renewal at EUR 24.37 (-3.0%) from 2026-01-01 with valid_to null."
+   }
+  },
+  {
+   "id": "obs:c63f1d2c722af722",
+   "text": "Should-cost for part 320010 (modelled on sup:70290's plant, no margin) is EUR 25.22 with about 5% confidence band.",
+   "kind": "fact",
+   "source": "cost:320010",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 11.47, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320010\", \"material_eur\": 8.83, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 4.92, \"part_id\": \"part:320010\", \"price_unit\": 1, \"supplier_id\": \"sup:70290\", \"unit_cost\": 25.22",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c63f1d2c722af722",
+    "verdict": "supported",
+    "reason": "This correctly reports the recorded estimate: EUR 25.22, 5% confidence, modelled on sup:70290's plant, no margin."
+   }
+  },
+  {
+   "id": "obs:ed0d9a1f3aca186c",
+   "text": "Price for part 320080 at Dralveck has stayed at EUR 41.63 in 2026 (0.0% change).",
+   "kind": "fact",
+   "source": "EV-2026-70210-320080",
+   "quote": "\"change_pct\": 0.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70210-320080\", \"price\": 41.63",
+   "parts": [
+    "part:320080"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ed0d9a1f3aca186c",
+    "verdict": "supported",
+    "reason": "The 2026 renewal records EUR 41.63 with a change of 0.0%."
+   }
+  },
+  {
+   "id": "obs:b09000be5e0a9ea8",
+   "text": "Should-cost for new part 320070 is EUR 36.87 (German cost base, no margin), confidence about 10%.",
+   "kind": "fact",
+   "source": "cost:320070",
+   "quote": "\"confidence_pct\": 10, \"conversion_eur\": 16.78, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320070\", \"material_eur\": 12.91, \"method\": \"bottom-up estimate, German cost base, no margin included\", \"overhead_eur\": 7.19, \"part_id\": \"part:320070\", \"price_unit\": 1, \"supplier_id\": null, \"unit_cost\": 36.87",
+   "parts": [
+    "part:320070"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b09000be5e0a9ea8",
+    "verdict": "supported",
+    "reason": "This correctly reports the recorded estimate of EUR 36.87, German cost base, 10% confidence."
+   }
+  },
+  {
+   "id": "obs:8b8f398cf16fadf7",
+   "text": "Supplier invited to RFQ for Pump shaft HX, 4200 pc/year, alongside two competitors.",
+   "kind": "fact",
+   "source": "doc:20260923-70210-P05",
+   "quote": "Annual volume: 4200 pc",
+   "parts": [
+    "part:320070"
+   ],
+   "observed_at": "2026-09-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:8b8f398cf16fadf7",
+    "verdict": "supported",
+    "reason": "The RFQ lists 4200 pc and three invitees, so two competitors are present."
+   }
+  },
+  {
+   "id": "obs:bf281c552bab03af",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before calendar year end.",
+   "kind": "fact",
+   "source": "ctr:4600070210#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:320010",
+    "part:320080"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:bf281c552bab03af",
+    "verdict": "supported",
+    "reason": "The text matches clause 3.1."
+   }
+  },
+  {
+   "id": "obs:9b717899102d019a",
+   "text": "Framework agreement 4600070210 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070210#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:320010",
+    "part:320080"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:9b717899102d019a",
+    "verdict": "supported",
+    "reason": "The text matches clause 8.1."
+   }
+  },
+  {
+   "id": "obs:eada14aa6bd832f5",
+   "text": "Contract payment terms: 30 days net, 2 % discount within 10 days.",
+   "kind": "fact",
+   "source": "ctr:4600070210#4.1",
+   "quote": "Payment: 30 days net, 2 % discount within 10 days.",
+   "parts": [
+    "part:320010",
+    "part:320080"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:eada14aa6bd832f5",
+    "verdict": "supported",
+    "reason": "The text matches clause 4.1."
+   }
+  },
+  {
+   "id": "obs:11f5a6a6fd75bd78",
+   "text": "Dralveck complained invoices are overdue again and said it would review its conditions if agreed payment terms are not kept.",
+   "kind": "supplier_statement",
+   "source": "doc:20260504-70210-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-05-04",
+   "valid_until": null,
+   "review": {
+    "id": "obs:11f5a6a6fd75bd78",
+    "verdict": "supported",
+    "reason": "The email content is accurately reported."
+   }
+  },
+  {
+   "id": "obs:9efdec51791d4765",
+   "text": "Invoice history: 35.6% paid late, max 24 days late, 2 unpaid; 11 discounts taken after the period.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"discount_taken_after_period\": 11, \"invoices\": 148, \"max_days_late\": 24, \"paid_late_pct\": 35.6, \"paid_over_10_days_late_pct\": 19.9, \"short_paid_without_discount\": 0, \"unpaid\": 2",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:9efdec51791d4765",
+    "verdict": "supported",
+    "reason": "These figures match the invoice summary."
+   }
+  },
+  {
+   "id": "obs:79c72a78add9a91a",
+   "text": "Purchasing call note records Dralveck sales saying they could take additional parts at short notice, with the second shift on hold since spring.",
+   "kind": "supplier_statement",
+   "source": "doc:20260722-70210-M2",
+   "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+   "parts": [],
+   "observed_at": "2026-07-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:79c72a78add9a91a",
+    "verdict": "supported",
+    "reason": "The text is accurately framed as a supplier statement recorded in the call note."
+   }
+  },
+  {
+   "id": "obs:d3533e3269aeb014",
+   "text": "Owner admitted he had not closely followed material and energy prices since the 2022 peak; his office manager does the costing.",
+   "kind": "supplier_statement",
+   "source": "doc:20260908-70210-M1",
+   "quote": "admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "parts": [],
+   "observed_at": "2026-09-08",
+   "valid_until": null,
+   "review": {
+    "id": "obs:d3533e3269aeb014",
+    "verdict": "supported",
+    "reason": "The text accurately reports what the meeting note records."
+   }
+  },
+  {
+   "id": "obs:b1800fe4f40e3760",
+   "text": "Rolling 12-month scorecard to 2026-09-30: OTD 80.8% vs requested, 84.6% vs confirmed, ppm 1863, score 81.1, class B amber.",
+   "kind": "fact",
+   "source": "sc:70210@2026Q3",
+   "quote": "\"otd_confirmed_pct\": 84.6, \"otd_pct\": 80.8, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 1863",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b1800fe4f40e3760",
+    "verdict": "supported",
+    "reason": "All the values match the 2026Q3 scorecard row."
+   }
+  },
+  {
+   "id": "obs:417245f775fb825f",
+   "text": "Scorecard score was 71.4 (class B amber) for the 12 months to 2026-06-30, with ppm 1997 and 2 overdue open 8D reports.",
+   "kind": "fact",
+   "source": "sc:70210@2026Q2",
+   "quote": "\"open_8d_overdue\": 2, \"otd_confirmed_pct\": 84.6, \"otd_pct\": 82.7, \"period_end\": \"2026-06-30\", \"period_start\": \"2025-07-01\", \"ppm\": 1997, \"qn_count\": 18, \"quarter\": \"2026Q2\", \"received_qty\": 9015, \"score\": 71.4",
+   "parts": [],
+   "observed_at": "2026-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:417245f775fb825f",
+    "verdict": "supported",
+    "reason": "All the values match the 2026Q2 scorecard row."
+   }
+  },
+  {
+   "id": "obs:9955c35e53b75d14",
+   "text": "Part 320080: 30 QNs, 25 supplier-caused, ppm last 12m 1850, EUR 2850 recharged.",
+   "kind": "fact",
+   "source": "evidence:part:320080:part_quality",
+   "quote": "\"complaint_qty\": 30, \"last_qn\": \"2026-09-23\", \"latest_qns\": [\"qn:20005032\", \"qn:20005018\", \"qn:20005006\"], \"ppm_last_12m\": 1850, \"qns\": 30, \"received_last_12m\": 5406, \"recharged_eur\": 2850, \"supplier_caused\": 25",
+   "parts": [
+    "part:320080"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:9955c35e53b75d14",
+    "verdict": "supported",
+    "reason": "This matches the part quality record for 320080."
+   }
+  },
+  {
+   "id": "obs:11162a402733cfe8",
+   "text": "Recurring 'leakage at test' complaint, supplier-caused, on part 320080 in September 2026; 8D not yet closed.",
+   "kind": "fact",
+   "source": "qn:20005032",
+   "quote": "\"d8_date\": null, \"defect\": \"leakage at test\", \"gr_id\": \"gr:5000105531\", \"id\": \"qn:20005032\", \"part_id\": \"part:320080\", \"ppm\": 4000, \"qn_date\": \"2026-09-23\", \"returned_qty\": 1, \"supplier_caused\": 1",
+   "parts": [
+    "part:320080"
+   ],
+   "observed_at": "2026-09-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:11162a402733cfe8",
+    "verdict": "supported",
+    "reason": "The QN shows a supplier-caused leakage complaint on 2026-09-23 with d8 null. Earlier leakage QNs on 320080 support calling it recurring."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:cfe44257065d5733",
+   "text": "Purchasing meeting note records the owner saying he had not followed material and energy prices closely since the 2022 peak; his office manager does costing.",
+   "kind": "supplier_statement",
+   "source": "doc:20260908-70210-M1",
+   "quote": "admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+   "parts": [],
+   "observed_at": "2026-09-08",
+   "valid_until": null,
+   "review": {
+    "id": "obs:cfe44257065d5733",
+    "verdict": "supported",
+    "reason": "The meeting note is accurately reported."
+   }
+  },
+  {
+   "id": "obs:8b07afd65b818998",
+   "text": "Supplier master terms: 30 days payment, 2% skonto in 10 days, EXW, 28 days standard lead time.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"EXW\", \"name\": \"Zerspanung Dralveck GmbH\", \"payment_days\": 30, \"skonto_days\": 10, \"skonto_pct\": 2, \"standard_lead_time_days\": 28",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8b07afd65b818998",
+    "verdict": "supported",
+    "reason": "These terms match the supplier master record."
+   }
+  },
+  {
+   "id": "obs:6c4c5d435e0c88e3",
+   "text": "Supplier complained that several invoices are overdue again and asked Hollerau to keep to agreed payment terms, otherwise it will review its conditions.",
+   "kind": "supplier_statement",
+   "source": "doc:20260504-70210-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-05-04",
+   "valid_until": null,
+   "review": {
+    "id": "obs:6c4c5d435e0c88e3",
+    "verdict": "supported",
+    "reason": "The email content is accurately reported."
+   }
+  },
+  {
+   "id": "obs:a3f1d4733dc92718",
+   "text": "Supplier sales said they could take additional parts at short notice; second shift on hold since spring.",
+   "kind": "supplier_statement",
+   "source": "doc:20260722-70210-M2",
+   "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+   "parts": [],
+   "observed_at": "2026-07-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a3f1d4733dc92718",
+    "verdict": "supported",
+    "reason": "The call note is accurately reported as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:8f6a917b09ffbe3f",
+   "text": "Supplier said Hollerau is an important reference customer for them.",
+   "kind": "supplier_statement",
+   "source": "doc:20260910-70210-M3",
+   "quote": "Zerspanung Dralveck GmbH said Hollerau is an important reference customer for them.",
+   "parts": [],
+   "observed_at": "2026-09-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:8f6a917b09ffbe3f",
+    "verdict": "supported",
+    "reason": "The meeting note is accurately reported."
+   }
+  },
+  {
+   "id": "obs:b237bc6772e501df",
+   "text": "Founder-owned GmbH with 22 staff, turnover band 2-5 M EUR, equity ratio 43.6%.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 43.6, \"filed_fy\": 2024, \"founded\": 1991, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 22, \"supplier_id\": \"sup:70210\", \"turnover_band\": \"2-5 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:b237bc6772e501df",
+    "verdict": "supported",
+    "reason": "These figures match the intel record."
+   }
+  },
+  {
+   "id": "obs:3b3434ccc35e7325",
+   "text": "Delivery EXW with standard lead time of 28 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070210#5.1",
+   "quote": "Delivery EXW; standard lead time 28 days from order.",
+   "parts": [
+    "part:320010",
+    "part:320080"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3b3434ccc35e7325",
+    "verdict": "supported",
+    "reason": "The text matches clause 5.1."
+   }
+  },
+  {
+   "id": "obs:a82d25cc2410c549",
+   "text": "Quality agreement: on-time delivery target 95 %, EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070210#6.1",
+   "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:320010",
+    "part:320080"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a82d25cc2410c549",
+    "verdict": "supported",
+    "reason": "The text matches clause 6.1."
+   }
+  },
+  {
+   "id": "obs:872ac8548b396e7e",
+   "text": "Supplier complained that several invoices are overdue again and said it would review its conditions if agreed payment terms are not kept.",
+   "kind": "supplier_statement",
+   "source": "doc:20260504-70210-P",
+   "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+   "parts": [],
+   "observed_at": "2026-05-04",
+   "valid_until": null,
+   "review": {
+    "id": "obs:872ac8548b396e7e",
+    "verdict": "supported",
+    "reason": "The email content is accurately reported."
+   }
+  },
+  {
+   "id": "obs:81e499db3828998b",
+   "text": "Supplier scored class A green with 93.9% OTD in the 12 months to 2025-09-30.",
+   "kind": "fact",
+   "source": "sc:70210@2025Q3",
+   "quote": "\"class\": \"A\", \"colour\": \"green\", \"complaint_qty\": 12, \"gr_lines\": 49, \"id\": \"sc:70210@2025Q3\", \"open_8d_overdue\": 1, \"otd_confirmed_pct\": 95.9, \"otd_pct\": 93.9",
+   "parts": [],
+   "observed_at": "2025-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:81e499db3828998b",
+    "verdict": "supported",
+    "reason": "This matches the 2025Q3 scorecard row."
+   }
+  },
+  {
+   "id": "obs:a3163da55fd01cb3",
+   "text": "Last 12 months deliveries: 52 receipts, 15.4% late, average 13.2 days late when late, max 21 days.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 13.2, \"early_pct\": 3.8, \"late_pct\": 15.4, \"max_days_late\": 21, \"on_time_confirmed_pct\": 84.6, \"on_time_requested_pct\": 80.8, \"receipts\": 52}",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a3163da55fd01cb3",
+    "verdict": "supported",
+    "reason": "This matches the last_12m delivery figures."
+   }
+  },
+  {
+   "id": "obs:89af33078a2ce50e",
+   "text": "Part 320010 from this supplier: ppm last 12m 1882 vs 921 for sup:70290.",
+   "kind": "fact",
+   "source": "evidence:part:320010:part_quality",
+   "quote": "\"ppm_last_12m\": 1882, \"qns\": 13, \"received_last_12m\": 3720, \"recharged_eur\": 1200, \"supplier_caused\": 12, \"supplier_id\": \"sup:70210\"}, {\"complaint_qty\": 27, \"last_qn\": \"2026-09-07\", \"latest_qns\": [\"qn:20005019\", \"qn:20004965\", \"qn:20004962\"], \"ppm_last_12m\": 921",
+   "parts": [
+    "part:320010"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:89af33078a2ce50e",
+    "verdict": "supported",
+    "reason": "This matches the part quality comparison for 320010."
+   }
+  },
+  {
+   "id": "obs:4f740020fb6faad6",
+   "text": "Part 320080 by-part delivery last 12m: 76.9% on time vs requested, 80.8% vs confirmed.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"on_time_confirmed_pct\": 80.8, \"on_time_requested_pct\": 76.9, \"part_id\": \"part:320080\", \"receipts\": 26",
+   "parts": [
+    "part:320080"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:4f740020fb6faad6",
+    "verdict": "supported",
+    "reason": "This matches the by-part delivery figures for 320080."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Current 2026 renewal price for part 320010 at Dralveck is EUR 24.37 per unit (-3.0%), no end date recorded.",
+     "kind": "fact",
+     "source": "EV-2026-70210-320010",
+     "quote": "\"change_pct\": -3.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70210-320010\", \"price\": 24.37, \"price_unit\": 1, \"supplier_id\": \"sup:70210\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Price for part 320080 at Dralveck has stayed at EUR 41.63 in 2026 (0.0% change).",
+     "kind": "fact",
+     "source": "EV-2026-70210-320080",
+     "quote": "\"change_pct\": 0.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70210-320080\", \"price\": 41.63",
+     "parts": [
+      "part:320080"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for part 320010 (modelled on sup:70290's plant, no margin) is EUR 25.22 with about 5% confidence band.",
+     "kind": "fact",
+     "source": "cost:320010",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 11.47, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320010\", \"material_eur\": 8.83, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 4.92, \"part_id\": \"part:320010\", \"price_unit\": 1, \"supplier_id\": \"sup:70290\", \"unit_cost\": 25.22",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for new part 320070 is EUR 36.87 (German cost base, no margin), confidence about 10%.",
+     "kind": "fact",
+     "source": "cost:320070",
+     "quote": "\"confidence_pct\": 10, \"conversion_eur\": 16.78, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320070\", \"material_eur\": 12.91, \"method\": \"bottom-up estimate, German cost base, no margin included\", \"overhead_eur\": 7.19, \"part_id\": \"part:320070\", \"price_unit\": 1, \"supplier_id\": null, \"unit_cost\": 36.87",
+     "parts": [
+      "part:320070"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Purchasing call note records Dralveck sales saying they could take additional parts at short notice, with the second shift on hold since spring.",
+     "kind": "supplier_statement",
+     "source": "doc:20260722-70210-M2",
+     "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "parts": [],
+     "observed_at": "2026-07-22",
+     "valid_until": null
+    },
+    {
+     "text": "Dralveck complained invoices are overdue again and said it would review its conditions if agreed payment terms are not kept.",
+     "kind": "supplier_statement",
+     "source": "doc:20260504-70210-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-05-04",
+     "valid_until": null
+    },
+    {
+     "text": "Purchasing meeting note records the owner saying he had not followed material and energy prices closely since the 2022 peak; his office manager does costing.",
+     "kind": "supplier_statement",
+     "source": "doc:20260908-70210-M1",
+     "quote": "admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "parts": [],
+     "observed_at": "2026-09-08",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master terms: 30 days payment, 2% skonto in 10 days, EXW, 28 days standard lead time.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"EXW\", \"name\": \"Zerspanung Dralveck GmbH\", \"payment_days\": 30, \"skonto_days\": 10, \"skonto_pct\": 2, \"standard_lead_time_days\": 28",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier complained that several invoices are overdue again and asked Hollerau to keep to agreed payment terms, otherwise it will review its conditions.",
+     "kind": "supplier_statement",
+     "source": "doc:20260504-70210-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-05-04",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier sales said they could take additional parts at short notice; second shift on hold since spring.",
+     "kind": "supplier_statement",
+     "source": "doc:20260722-70210-M2",
+     "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "parts": [],
+     "observed_at": "2026-07-22",
+     "valid_until": null
+    },
+    {
+     "text": "Owner admitted he had not closely followed material and energy prices since the 2022 peak; his office manager does the costing.",
+     "kind": "supplier_statement",
+     "source": "doc:20260908-70210-M1",
+     "quote": "admitted he had not followed his material and energy prices closely since the 2022 peak; his office manager does the costing.",
+     "parts": [],
+     "observed_at": "2026-09-08",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260910-70210-M3",
+     "quote": "Zerspanung Dralveck GmbH said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-09-10",
+     "valid_until": null
+    },
+    {
+     "text": "Founder-owned GmbH with 22 staff, turnover band 2-5 M EUR, equity ratio 43.6%.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 43.6, \"filed_fy\": 2024, \"founded\": 1991, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 22, \"supplier_id\": \"sup:70210\", \"turnover_band\": \"2-5 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Invoice history: 35.6% paid late, max 24 days late, 2 unpaid; 11 discounts taken after the period.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"discount_taken_after_period\": 11, \"invoices\": 148, \"max_days_late\": 24, \"paid_late_pct\": 35.6, \"paid_over_10_days_late_pct\": 19.9, \"short_paid_without_discount\": 0, \"unpaid\": 2",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier invited to RFQ for Pump shaft HX, 4200 pc/year, alongside two competitors.",
+     "kind": "fact",
+     "source": "doc:20260923-70210-P05",
+     "quote": "Annual volume: 4200 pc",
+     "parts": [
+      "part:320070"
+     ],
+     "observed_at": "2026-09-23",
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement 4600070210 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070210#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:320010",
+      "part:320080"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before calendar year end.",
+     "kind": "fact",
+     "source": "ctr:4600070210#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:320010",
+      "part:320080"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms: 30 days net, 2 % discount within 10 days.",
+     "kind": "fact",
+     "source": "ctr:4600070210#4.1",
+     "quote": "Payment: 30 days net, 2 % discount within 10 days.",
+     "parts": [
+      "part:320010",
+      "part:320080"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Delivery EXW with standard lead time of 28 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070210#5.1",
+     "quote": "Delivery EXW; standard lead time 28 days from order.",
+     "parts": [
+      "part:320010",
+      "part:320080"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: on-time delivery target 95 %, EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070210#6.1",
+     "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:320010",
+      "part:320080"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier complained that several invoices are overdue again and said it would review its conditions if agreed payment terms are not kept.",
+     "kind": "supplier_statement",
+     "source": "doc:20260504-70210-P",
+     "quote": "Several of our invoices are overdue again. We ask you to keep to the agreed payment terms; otherwise we will have to review our conditions.",
+     "parts": [],
+     "observed_at": "2026-05-04",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier sales said they could take additional parts at short notice; second shift on hold since spring.",
+     "kind": "supplier_statement",
+     "source": "doc:20260722-70210-M2",
+     "quote": "they could take additional parts at short notice; the second shift has been on hold since spring.",
+     "parts": [],
+     "observed_at": "2026-07-22",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260910-70210-M3",
+     "quote": "Zerspanung Dralveck GmbH said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-09-10",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month scorecard to 2026-09-30: OTD 80.8% vs requested, 84.6% vs confirmed, ppm 1863, score 81.1, class B amber.",
+     "kind": "fact",
+     "source": "sc:70210@2026Q3",
+     "quote": "\"otd_confirmed_pct\": 84.6, \"otd_pct\": 80.8, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 1863",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Scorecard score was 71.4 (class B amber) for the 12 months to 2026-06-30, with ppm 1997 and 2 overdue open 8D reports.",
+     "kind": "fact",
+     "source": "sc:70210@2026Q2",
+     "quote": "\"open_8d_overdue\": 2, \"otd_confirmed_pct\": 84.6, \"otd_pct\": 82.7, \"period_end\": \"2026-06-30\", \"period_start\": \"2025-07-01\", \"ppm\": 1997, \"qn_count\": 18, \"quarter\": \"2026Q2\", \"received_qty\": 9015, \"score\": 71.4",
+     "parts": [],
+     "observed_at": "2026-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier scored class A green with 93.9% OTD in the 12 months to 2025-09-30.",
+     "kind": "fact",
+     "source": "sc:70210@2025Q3",
+     "quote": "\"class\": \"A\", \"colour\": \"green\", \"complaint_qty\": 12, \"gr_lines\": 49, \"id\": \"sc:70210@2025Q3\", \"open_8d_overdue\": 1, \"otd_confirmed_pct\": 95.9, \"otd_pct\": 93.9",
+     "parts": [],
+     "observed_at": "2025-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months deliveries: 52 receipts, 15.4% late, average 13.2 days late when late, max 21 days.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 13.2, \"early_pct\": 3.8, \"late_pct\": 15.4, \"max_days_late\": 21, \"on_time_confirmed_pct\": 84.6, \"on_time_requested_pct\": 80.8, \"receipts\": 52}",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 320080: 30 QNs, 25 supplier-caused, ppm last 12m 1850, EUR 2850 recharged.",
+     "kind": "fact",
+     "source": "evidence:part:320080:part_quality",
+     "quote": "\"complaint_qty\": 30, \"last_qn\": \"2026-09-23\", \"latest_qns\": [\"qn:20005032\", \"qn:20005018\", \"qn:20005006\"], \"ppm_last_12m\": 1850, \"qns\": 30, \"received_last_12m\": 5406, \"recharged_eur\": 2850, \"supplier_caused\": 25",
+     "parts": [
+      "part:320080"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 320010 from this supplier: ppm last 12m 1882 vs 921 for sup:70290.",
+     "kind": "fact",
+     "source": "evidence:part:320010:part_quality",
+     "quote": "\"ppm_last_12m\": 1882, \"qns\": 13, \"received_last_12m\": 3720, \"recharged_eur\": 1200, \"supplier_caused\": 12, \"supplier_id\": \"sup:70210\"}, {\"complaint_qty\": 27, \"last_qn\": \"2026-09-07\", \"latest_qns\": [\"qn:20005019\", \"qn:20004965\", \"qn:20004962\"], \"ppm_last_12m\": 921",
+     "parts": [
+      "part:320010"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 320080 by-part delivery last 12m: 76.9% on time vs requested, 80.8% vs confirmed.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"on_time_confirmed_pct\": 80.8, \"on_time_requested_pct\": 76.9, \"part_id\": \"part:320080\", \"receipts\": 26",
+     "parts": [
+      "part:320080"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Recurring 'leakage at test' complaint, supplier-caused, on part 320080 in September 2026; 8D not yet closed.",
+     "kind": "fact",
+     "source": "qn:20005032",
+     "quote": "\"d8_date\": null, \"defect\": \"leakage at test\", \"gr_id\": \"gr:5000105531\", \"id\": \"qn:20005032\", \"part_id\": \"part:320080\", \"ppm\": 4000, \"qn_date\": \"2026-09-23\", \"returned_qty\": 1, \"supplier_caused\": 1",
+     "parts": [
+      "part:320080"
+     ],
+     "observed_at": "2026-09-23",
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": []
+ }
+}

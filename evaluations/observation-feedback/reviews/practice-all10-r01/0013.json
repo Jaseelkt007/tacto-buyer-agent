@@ -1,0 +1,287 @@
+{
+  "packet_sha256": "71101cd78b0ae2c2976ff80309cb0d19ce90c1fdb4d9961206bd37f34ccf05ed",
+  "request_sha256": "52e6b52b267b5bda27c0f02f44528ee7de24125cb4303b5f236e12b717ca8e86",
+  "input_packet_sha256": "f15d7752f948d99424afe45f796d13cb09da6ecc15d9dc77050854adaaa9194f",
+  "feedback_enabled": true,
+  "case_id": "case:P05",
+  "decision_index": 1,
+  "action": "send",
+  "model": "gpt-6-luna",
+  "available": true,
+  "error": null,
+  "calls": [
+    {
+      "request_sha256": "52e6b52b267b5bda27c0f02f44528ee7de24125cb4303b5f236e12b717ca8e86",
+      "stage": "assessment",
+      "answers": [
+        {
+          "type": "choice",
+          "name": "assessment",
+          "choice": "NO_ISSUE",
+          "probabilities": [
+            {
+              "value": "NO_ISSUE",
+              "probability": 0.38
+            },
+            {
+              "value": "RECONSIDER:claims",
+              "probability": 0.03
+            },
+            {
+              "value": "RECONSIDER:contract_months",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:coverage",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:effective_date",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:incoterm",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:index_clause",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:lead_time_days",
+              "probability": 0.2
+            },
+            {
+              "value": "RECONSIDER:negotiation_status",
+              "probability": 0.01
+            },
+            {
+              "value": "RECONSIDER:offer_id",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:other",
+              "probability": 0.01
+            },
+            {
+              "value": "RECONSIDER:payment_days",
+              "probability": 0.04
+            },
+            {
+              "value": "RECONSIDER:tooling_eur",
+              "probability": 0.01
+            },
+            {
+              "value": "RECONSIDER:unit_price",
+              "probability": 0.19
+            },
+            {
+              "value": "RECONSIDER:volume_per_year",
+              "probability": 0.01
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:claims",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:contract_months",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:coverage",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:effective_date",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:incoterm",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:index_clause",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:lead_time_days",
+              "probability": 0.08
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:negotiation_status",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:offer_id",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:other",
+              "probability": 0.01
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:payment_days",
+              "probability": 0.01
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:tooling_eur",
+              "probability": 0.01
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:unit_price",
+              "probability": 0.01
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:volume_per_year",
+              "probability": 0.0
+            }
+          ],
+          "confidence": 0.36
+        }
+      ],
+      "usage": {
+        "input_tokens": 11588,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 10061,
+          "cache_write_tokens_details": {
+            "ttl_30m_tokens": 10061,
+            "ttl_12h_tokens": 0
+          }
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 11588
+      },
+      "response_id": null
+    }
+  ],
+  "exchange_feedback": {
+    "case_id": "case:P05",
+    "as_of_decision": 1,
+    "source": "public message history only",
+    "suppliers": {
+      "sup:70210": {
+        "exchanges": [
+          {
+            "buyer": {
+              "source": "message:sup:70210:1",
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 27.48,
+                    "payment_days": 14,
+                    "lead_time_days": 35
+                  }
+                }
+              ],
+              "action": null
+            },
+            "reply_source": "message:sup:70210:2",
+            "status": "open",
+            "supplier_term_sheets": [
+              {
+                "term_sheet_id": "offer:70210-1",
+                "terms": {
+                  "unit_price": 32.0,
+                  "payment_days": 14,
+                  "lead_time_days": 35
+                }
+              }
+            ],
+            "interpretation": "Observed response only; not inferred rejection of individual terms."
+          }
+        ],
+        "quotation_history": [
+          {
+            "source": "message:sup:70210:0",
+            "status": "open",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70210-0",
+                "terms": {
+                  "unit_price": 36.0
+                }
+              }
+            ]
+          },
+          {
+            "source": "message:sup:70210:2",
+            "status": "open",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70210-1",
+                "terms": {
+                  "unit_price": 32.0,
+                  "payment_days": 14,
+                  "lead_time_days": 35
+                }
+              }
+            ]
+          }
+        ],
+        "repeated_quoted_values": [],
+        "current_draft_differences": [],
+        "latest_quotation_source": "message:sup:70210:2"
+      },
+      "sup:70240": {
+        "exchanges": [],
+        "quotation_history": [
+          {
+            "source": "message:sup:70240:0",
+            "status": "open",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70240-0",
+                "terms": {
+                  "unit_price": 31.5,
+                  "lead_time_days": 52
+                }
+              }
+            ]
+          }
+        ],
+        "repeated_quoted_values": [],
+        "current_draft_differences": [
+          {
+            "field": "lead_time_days",
+            "supplier_value": 52,
+            "draft_value": 42,
+            "source": "message:sup:70240:0",
+            "term_sheet_id": "offer:70240-0",
+            "is_violation": "not determined"
+          }
+        ],
+        "latest_quotation_source": "message:sup:70240:0"
+      },
+      "sup:70250": {
+        "exchanges": [],
+        "quotation_history": [
+          {
+            "source": "message:sup:70250:0",
+            "status": "open",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70250-0",
+                "terms": {
+                  "unit_price": 38.5
+                }
+              }
+            ]
+          }
+        ],
+        "repeated_quoted_values": [],
+        "current_draft_differences": [],
+        "latest_quotation_source": "message:sup:70250:0"
+      }
+    }
+  },
+  "assessment": "NO_ISSUE",
+  "verdict": "NO_ISSUE",
+  "field": "NONE",
+  "evidence": "NONE",
+  "supporting_source": null,
+  "seconds": 0.18
+}

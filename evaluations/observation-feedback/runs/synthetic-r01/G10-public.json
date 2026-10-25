@@ -1,0 +1,316 @@
+{
+  "case": {
+    "case_id": "case:G10",
+    "set": "practice",
+    "type": "renewal",
+    "title": "Supply enquiry",
+    "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+    "trigger_doc": null,
+    "parts": [
+      "part:360020"
+    ],
+    "suppliers": [
+      "sup:70640"
+    ],
+    "negotiable": [
+      "unit_price",
+      "payment_days"
+    ],
+    "fixed_terms": {
+      "lead_time_days": 35,
+      "volume_per_year": 4000,
+      "contract_months": 12,
+      "index_clause": null,
+      "incoterm": "DAP",
+      "tooling_eur": 0,
+      "effective_date": "2027-01-01"
+    },
+    "term_options": {
+      "payment_days": [
+        10,
+        30,
+        60,
+        90
+      ]
+    },
+    "buyer": {
+      "need_per_year": 4000,
+      "horizon_years": 1.0,
+      "current_unit_price": 10.5,
+      "fallback_unit_price": 11.76,
+      "interest_rate": 0.08,
+      "reference_payment_days": 60,
+      "need_lead_time_days": 35,
+      "category_goal": "leverage",
+      "fallback_risk_pct": 3,
+      "index_risk_pct": 1,
+      "late_cost_per_day": 200,
+      "cost_per_defect": 50,
+      "freight_eur_per_unit": {
+        "EXW": 0.6,
+        "FCA": 0.35,
+        "DAP": 0
+      },
+      "index_paths": {},
+      "must_haves": [
+        {
+          "field": "lead_time_days",
+          "op": "<=",
+          "value": 60
+        }
+      ],
+      "alternative": {
+        "kind": "other_supplier",
+        "ref": null,
+        "terms": {
+          "lead_time_days": 35,
+          "volume_per_year": 4000,
+          "contract_months": 12,
+          "index_clause": null,
+          "incoterm": "DAP",
+          "tooling_eur": 0,
+          "effective_date": "2027-01-01",
+          "unit_price": 10.4,
+          "payment_days": 60
+        }
+      }
+    },
+    "round_limit": 10,
+    "refs": [
+      "news:20261017-S19"
+    ],
+    "facts": {
+      "news:20261017-S19": {
+        "date": "2026-10-17",
+        "headline": "Kugellager-Vertrieb Inntal GmbH loses a large distribution contract",
+        "supplier": "sup:70640",
+        "topic": "free_capacity"
+      }
+    }
+  },
+  "transcript": {
+    "sim20001": {
+      "sup:70640": [
+        {
+          "thread_id": "thread:G10:70640",
+          "message_id": "msg:70640-0-1",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Supply enquiry",
+          "body": "Simulated supplier. Fictional evaluation quote. We have limited price flexibility. Please propose a commercially complete package.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-0",
+              "terms": {
+                "unit_price": 12.44
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [
+            "payment_days"
+          ],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-0-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Supply enquiry",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows on-time delivery of 86.5% (sc:70640@2026Q3).\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\nOur last 3 orders for this part were at EUR 4.20 per unit (po:4500014447-10, po:4500014370-10, po:4500014304-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 10.01,
+                "payment_days": 90
+              }
+            }
+          ],
+          "refs": [
+            "fc:360020@2026-09",
+            "po:4500014304-10",
+            "po:4500014370-10",
+            "po:4500014447-10",
+            "sc:70640@2026Q3"
+          ],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:G10:70640",
+          "message_id": "msg:70640-1-2",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Supply enquiry",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-1",
+              "terms": {
+                "payment_days": 90,
+                "unit_price": 11.73
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-1-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Supply enquiry",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 10.18,
+                "payment_days": 90
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:G10:70640",
+          "message_id": "msg:70640-2-3",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Supply enquiry",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-2",
+              "terms": {
+                "payment_days": 90,
+                "unit_price": 11.58
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-2-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Supply enquiry",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 10.46,
+                "payment_days": 90
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:G10:70640",
+          "message_id": "msg:70640-3-4",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Supply enquiry",
+          "body": "Simulated supplier. We can agree to this package. Please confirm your order.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-3",
+              "terms": {
+                "payment_days": 90,
+                "unit_price": 10.46
+              }
+            }
+          ],
+          "status": "agreed",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-3-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "thread_id": "thread:G10:70640",
+          "message_id": "msg:70640-3-5",
+          "in_reply_to": null,
+          "from": "sales@70640",
+          "subject": "Re: Supply enquiry",
+          "body": "Simulated supplier. Thank you for your order.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70640-3",
+              "terms": {
+                "payment_days": 90,
+                "unit_price": 10.46
+              }
+            }
+          ],
+          "status": "agreed",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70640-3-order-confirmation",
+              "name": "order-confirmation.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

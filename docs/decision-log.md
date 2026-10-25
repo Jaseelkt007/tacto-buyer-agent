@@ -1,5 +1,167 @@
 # Decision log
 
+## Test a typed bridge from reconsideration to policy (25 October)
+
+User requested testing the complete path beyond observation. Compare v1.9, a deterministic
+supplier-package adapter and the same adapter behind a binary decision gate. Preserve main offers
+and add at most one code-priced alternative instead of rewriting price history or inferring a
+discount from supplier prose. This isolates whether the adapter or the model adds value. The
+experiment stays opt-in. [Protocol](../evaluations/reconsideration/plan.md).
+
+Two local passes per arm produced means 79.85/79.60/80.10; all 60 cases closed valid deals.
+The gate approved all ten opportunities. Both intervention arms had one supplier-model fallback.
+Independent audit found 12 of 18 added prices below private supplier floors; two extra sheets
+were accepted. Those private figures are diagnostics, not buyer inputs. Hosted sandbox D02
+scored lower under both interventions; D01 had no intervention. Keep the experiment disabled.
+The next useful test concerns re-anchoring counteroffers on changed terms, not another binary gate.
+
+After evaluation, added an outer wall deadline so asynchronous DNS cleanup cannot block the buyer.
+Preserved the exact evaluated adapter with a verified hash and tested the final wrapper on a real
+captured request. [Results and limitations](../evaluations/reconsideration/README.md).
+
+## Observe context without changing negotiation decisions (25 October)
+
+User authorized a narrow reviewer experiment, followed by synthetic and hosted practice cases.
+Implement snapshot capture and an offline Decisions reviewer first. The model chooses a verdict,
+term and supporting evidence ID; it cannot return a buyer action or rewrite a price. A fresh
+synthetic wave and sandbox checks precede a bounded hosted practice pass, subject to remaining
+quota. Existing frozen baseline runs remain untouched. Reviewer output is not fed back into policy;
+any score differences in stochastic reruns are not evidence of a reviewer benefit.
+
+Completed ten synthetic, two sandbox and ten hosted practice cases. Practice mean 75.0863 is
+unchanged from the earlier v1.9 baseline. Synthetic 79.6 includes one supplier-model fallback.
+The first reviewer returned inconsistent independent choices, so verdict/field became one choice
+and source selection became conditional. Both versions and every attempt remain recorded.
+On 120 actual snapshots, the final reviewer retained nine reconsiderations, returned 46 NO_ISSUE,
+and left 65 unavailable (63 unsupported flags, two connection failures). Inspection did not justify
+acting on those nine findings. A fabricated quality violation was detected; a stale-offer violation
+failed the evidence stage. Keep the observer off the action path. 209 tests passed, one skipped.
+[Evidence and limitations](../evaluations/decision-observer/interpretation.md).
+
+## Freeze a harder prospective wave before buyer evaluation (25 October)
+
+User questioned whether Wave 01's high synthetic score reflected an easy simulator. That concern
+has a concrete basis: the first supplier schedule always reached its financial floor by the final
+round, and cases deliberately exposed simple mechanisms. Wave 02 changes the simulator assumptions
+and the cases, so its raw score will not be directly comparable to Wave 01's 93.6.
+
+Built ten authored stress cases with twelve supplier instances. Cases reverse capacity/commitment
+assumptions, penalize overbuying, cover partial hedge expiry and adverse index paths, and include
+PDF-standard RFQs and a narrow agreement corridor. Matched pairs change only opaque IDs or supplier
+ordering. Their stochastic differences require repetitions, not a one-run pass/fail label.
+
+Added optional positive final margins, varied concession pace and commitment penalties to private
+profiles. Production buyer and runner source remain unchanged. Inputs are sealed before the first
+buyer evaluation; future tuning must be reported as development and tested on another new suite.
+Documentation explicitly calls this a prospective authored stress suite, not an independent hidden
+benchmark or proof against overfitting.
+
+The operator will perform the first negotiation run. Added `--suite`, `--validate-only` and
+`--finish-when-done`, plus saved-input copies, baseline comparisons and paired diagnostics.
+All 177 relevant tests passed. New-case checks executed only fixture/arithmetic validation;
+quick-completion integration tests used old fixtures and a trivial test buyer. Report generation
+was checked against copied Wave 01 artifacts. No Wave 02 performance score is claimed.
+[Protocol and commands](../evaluations/supplier-generalization/README.md).
+
+## One parallel local wave (25 October)
+
+User requested one actual wave with the current ten synthetic cases. A single inherited simulator
+would hold its global lock throughout a supplier model call. Added a local transport routing each
+case to its own simulator/API, with one shared schedule and one rate-limited `ArenaClient`.
+This preserves the kit's `play_waves` discovery, case workers, deadline closing and exit behavior
+without serializing unrelated supplier calls or changing production buyer/runner source.
+
+Enabled 60-second thread clocks, one-session-per-case final semantics and a 480-second wave cap.
+Suppliers still use bounded `gpt-6.1-sol` decisions. The score benchmark now includes the cheaper
+buyer alternative, matching the published rules; the prior intentional-walkaway score remains 1.
+Four new tests cover pre-wave visibility/session/cap semantics, actual overlapping supplier calls,
+thread timeouts and late supplier replies, and alternative-inclusive scoring. All 167 relevant
+tests passed before reporting the live wave. The actual eight-minute run is recorded separately
+from the earlier sequential passes.
+
+The wave completed and exited normally: synthetic score 93.6/100, nine valid deals, one intentional
+walkaway. All cases finished within 39.376 seconds; ten supplier requests overlapped at peak. The
+runner remained active until the scheduled cap, taking 491.107 seconds including wait/poll overhead.
+All 57 model choices succeeded without fallback. No HTTP errors, thread timeouts, cap closures or
+must-have failures occurred. Recomputed scores and published-offer checks found no mismatches.
+[Saved wave report](../notes/analysis/supplier-gym/wave-480/report.md). Production buyer and runner
+source stayed unchanged throughout the run, verified against captured source hashes.
+
+## Independent local supplier agents (25 October)
+
+User selected an LLM supplier constrained by independently specified finances. Chose an extension
+of the kit simulator over a separate match engine so the real email API and quote parsing are
+exercised. Replaced openings, bargaining and scoring together; kept production buyer code unchanged.
+Financial assumptions are synthetic and cannot read buyer dossiers, alternatives or internal traces.
+The LLM selects among code-validated complete packages; API errors, invalid choices and the 25-second
+wall deadline produce recorded fallbacks. Reference mode checks mechanics without model calls.
+
+Ten cases cover six Sunday suppliers: eight single-supplier cases and two two-supplier RFQs. Cases
+include controls for financing, hedge expiry and irrelevant news, plus an intentional walkaway.
+This suite uses leverage goals only; it does not claim to validate relationship/health scoring,
+semantic claim verification or parallel timed waves. [Full design](supplier-gym.md).
+
+Validation: 163 tests passed (22 supplier-gym tests), plus ten reference episodes and a corrected
+ten-case LLM pass. The latter made 57 real model calls, with no fallbacks or broken must-haves;
+nine deals and the intended walkaway. Saved offers all passed financial and selected-action
+reconciliation. Inspection fixed two simulator issues before completion: shared opening-message
+dictionaries and omitted fixed enquiry dates in the model context. The supplier's price guard had
+already enforced dates, but its initial interpretation of the expired hedge was wrong. No buyer
+behavior change was made. [Evidence](../notes/analysis/supplier-gym/llm-enquiry-suite/report.md).
+
+## Deterministic dossier reads the Sunday release (25 October)
+
+`DataPackage` loaded the ten new facts, but `dossier.build` discovered documents/news only through
+the original SQLite tables. Switched discovery to the merged ID/document interface and recorded
+source IDs. Added the generic explicit hedge phrase “bought forward at fixed prices”. No supplier
+IDs, case IDs, hidden outcomes, numerical cost formulas or feature defaults were added or changed.
+
+Exported 12 supplier/part inspection snapshots for the six suppliers mentioned in the release:
+`starter-kit/knowledge/deterministic/release.json`. All eight supplier-specific release records
+were consumed; the global memo and market news were not assigned to individual suppliers.
+Pfaffenreuth now signals cash need; Kraslin and Inntal signal spare capacity; Steinfelder signals
+hedging. Vrbenský already signalled cash need and Rhönsberg gains no new economic signal.
+
+Four focused tests failed before the fix and passed after it. All 141 non-simulator tests passed;
+simulator/rehearsal tests were deliberately not run. Lint and diff checks passed. Comparing the
+90 original supplier/part dossiers before/after, excluding the new provenance field, found zero
+changes without the release. Evidence: [local comparison](../notes/analysis/deterministic-sunday-check.json).
+No hosted session, rehearsal, model call or score measurement was made for this change.
+
+## Grounded Zone-0 implementation and hybrid retest (25 October)
+
+Replaced the default offline builder with source extraction, independent support review and
+selection of existing observation IDs. Built and checked all 46 supplier artifacts under
+`knowledge/grounded/`; original dossiers remain available for the diagnostic comparison.
+Runtime consumption is opt-in through `grounded_dossier`. The `measured_trades` experiment prevents
+unknown term values from being treated as zero and retains engine acceptance timing.
+
+The primary hypothesis and repeated comparison are recorded in the
+[experiment protocol](../notes/analysis/zone0-v3/experiment.md). The
+[implementation and results report](../notes/analysis/zone0-v3/results.md) separates source-quality
+checks from realized negotiation performance. v1.9 remains the default unless the comparison
+establishes an improvement; no supplier-specific rules or hidden cost parameters were added.
+
+Outcome: five paired passes gave **75.086 baseline versus 73.434 corrected**, with all five deltas
+negative. The original/source-only diagnostic passes scored 70.504/74.203, each once. All 120 hosted
+sessions preserved must-haves and closed deals; there were zero model errors or engine fallbacks.
+The repaired pipeline stays available, but both runtime flags remain off. Source fidelity alone
+does not solve live term selection and argument timing. Full suite: 153 passed, one skipped;
+Ruff and diff checks passed. The last run left 67 practice sessions available.
+
+## Independent Zone-0 audit (25 October)
+
+Added `scripts/audit_zone0.py` and `research/source_audit.py` to inventory the stored dossiers and
+check interpretations against source records. Reports are separate from live knowledge. Production
+prompts, models, dossiers, and negotiation behavior are unchanged. The research includes the git
+history, the Claude engine conversation, expert tactics, primary agent-research sources, and a small
+model diagnostic. Findings and limitations: [Zone-0 audit](zone0-audit.md).
+
+The main defect is promotion of uncertain interpretations into strategy. Two P10 assertions were
+checked directly against SQLite: supplier-owned tooling (`n/a` in sourcing) and reliable payment
+(76.4% of paid invoices were late). P10's planning-security need is supported and should be preserved;
+it does not establish a discount for a particular term. No new hosted runs or score gains are claimed.
+
 One entry per engine version: what changed, why, and what the hosted practice cases said.
 Scores are case scores (0–1); "mean" is the mean over the 10 hosted cases × 100.
 
@@ -575,3 +737,17 @@ type and traits).
 every fact found by hand plus a second part as bundle leverage and a trap list. The playbook confirms
 two v1.7b weaknesses: token steps led to higher finals (the patience budget), and citing meeting notes
 without data drew requests for proof (the call-note lever). Not yet used by any live move.
+
+## Supplier reply interpretation foundation (25 Oct)
+
+Added an optional structured reading of the latest reply with original public negotiation feedback. Two designs and independent review favored a fresh per-prefix projection, with code-owned package references and values. Rejected an LLM availability gate because current structured sheets already establish the quoted alternatives; the P08/P18 clause filter remains a separate policy issue.
+
+The policy receives advisory observations and traces their relation to its proposal, with no semantic control of actions. Live latency can still affect scheduling, so the new feature stays off by default. Six offline calls produced four usable readings, one schema-boundary rejection and one timeout. After restricting fields per package, two verification calls passed structural/provenance validation. P07 still demonstrates a possible preference/condition misclassification; no score improvement is claimed. [Full evidence and commands](../evaluations/reply-interpretation/README.md).
+
+Finalization timing check: four hosted practice cases and ten concurrent local synthetic cases completed with interpretation enabled. All 72 decisions were below 60 seconds (maximum 12.98); no thread timeouts or invalid deals. Three real provider timeouts returned through the eight-second fallback. The four hosted scores/actions/terms were unchanged. Leave v1.9 as the default; passing latency does not justify giving semantic observations control of offers. [Timing and outcome evidence](../evaluations/reply-interpretation/runs/finalization-r01/report.md).
+
+Following that check, the user requested the advisory interpreter as the default for final waves. Enabled it in `ProcuDealAgent`, shared by CLI practice/final factories and local wave runs. The v1.9 binding decision policy remains in control; no observation-to-offer intervention was added. `PROCUDEAL_REPLY_INTERPRETATION=off` and evaluation `--no-interpret-replies` retain an explicit baseline path. Updated the root and kit READMEs, environment example, and current architecture documentation. The historical timing report describes the earlier opt-in configuration; the same interpreter/model/deadline now runs by default.
+
+Verification: 265 tests passed, 1 skipped, including the production factory and local final-wave path; actual local configuration confirms the interpreter enabled and Sunday release loaded. No final/rehearsal sessions or new score runs were opened for this default switch. [Default integration evidence](../evaluations/reply-interpretation/default-integration.md).
+
+The user then requested the earlier LLM decision model as well. Connected the existing `gpt-6-luna` reviewer with exchange feedback before dispatch, enabled by default alongside the reply interpreter. It remains advisory, retains the evidence check, and has one eight-second review deadline limited by a 45-second decision budget. Verified 271 tests (one skipped), P08/P18 with unchanged scores/actions/terms, and a concurrent ten-case synthetic wave. All 64 decisions finished within 10.35 seconds; no thread timeouts or invalid deals. [Combined-model report](../evaluations/reply-interpretation/runs/dual-default-report-r01/report.md).

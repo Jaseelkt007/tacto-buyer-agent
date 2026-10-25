@@ -1,0 +1,470 @@
+{
+  "context": {
+    "schema_version": 1,
+    "case_id": "case:P07",
+    "supplier_id": "sup:70610",
+    "case_terms": {
+      "negotiable": [
+        "unit_price",
+        "payment_days",
+        "contract_months"
+      ],
+      "fixed_terms": {
+        "lead_time_days": 5,
+        "volume_per_year": 30000,
+        "effective_date": "2027-01-01",
+        "index_clause": null,
+        "incoterm": "DAP",
+        "tooling_eur": 0
+      },
+      "term_options": {
+        "payment_days": [
+          14,
+          30,
+          45,
+          60,
+          90
+        ],
+        "contract_months": [
+          12,
+          24,
+          36
+        ]
+      }
+    },
+    "latest_message_ref": "message:sup:70610:2",
+    "latest_sender": "sales@70610",
+    "latest_status": "open",
+    "history": [
+      {
+        "from": "sales@70610",
+        "message_id": "msg:70610-0-0",
+        "subject": "Quote from Schraubenhandel Leitner & Sohn GmbH: Bundle the fastener kit with one distributor",
+        "body": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe are delighted to submit our offer for your consideration. We can offer you a price of €5.74 per unit, with a Zahlungsziel 30 days net, and a contract term of 12 months.\n\nAs a valued partner, we always strive to support your operations with our extensive inventory and reliable delivery service. Please note that this offer remains valid for 30 days.\n\nWe look forward to continuing our successful business relationship and standing by as your trusted partner for all your supply needs.\n\nMit freundlichen Grüßen\nFranz Stadler\nInside Sales, Schraubenhandel Leitner & Sohn GmbH",
+        "term_sheets": [
+          {
+            "term_sheet_id": "offer:70610-0",
+            "terms": {
+              "unit_price": 5.74,
+              "payment_days": 30,
+              "contract_months": 12
+            }
+          }
+        ],
+        "status": "open",
+        "claim_results": [],
+        "missing_fields": [],
+        "source_ref": "message:sup:70610:0",
+        "attachments": [
+          {
+            "attachment_id": "att:70610-0-quote",
+            "name": "quote-offer-70610-0.pdf",
+            "text": "Schraubenhandel Leitner & Sohn GmbH\nTo: Hollerau Pumpenwerke GmbH\nAngebot / Quote offer:70610-0\nOffered terms\nUnit price (EUR) 5.74\nPayment terms (days net) 30\nContract term (months) 12\nOur standard terms (apply to everything not stated above)\nQuality commitment (ppm) 80\nChargeback per complaint (EUR) 0.00\nTerms fixed by your enquiry\nLead time (days) 5\nVolume per year (pcs) 30000\nPrice valid from 2027-01-01\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0.00\nPart(s): part:360010, part:360011, part:360012, part:360030. Enquiry: Bundle the fastener kit with one distributor.\nValidity: 30 days."
+          }
+        ]
+      },
+      {
+        "from": "buyer",
+        "subject": "Re: Quote from Schraubenhandel Leitner & Sohn GmbH: Bundle the fastener kit with one distributor",
+        "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows on-time delivery of 88.6% (sc:70610@2026Q3).\nOur demand forecast for this part has risen 6.0% (fc:360010@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+        "term_sheets": [
+          {
+            "terms": {
+              "unit_price": 4.85,
+              "payment_days": 60,
+              "contract_months": 36
+            }
+          }
+        ],
+        "source_ref": "message:sup:70610:1",
+        "attachments": []
+      },
+      {
+        "from": "sales@70610",
+        "message_id": "msg:70610-1-2",
+        "subject": "Re: Quote from Schraubenhandel Leitner & Sohn GmbH: Bundle the fastener kit with one distributor",
+        "body": "Dear customer,\n\nWe have reviewed your offer and can adjust our Angebot as follows.\n\nWe checked the delivery record data you cited; it holds, but it does not change our calculation. We checked the volume change data you cited; it holds and we took it into account. We appreciate the increased volume forecast and your willingness to commit to a 36-month contract. While we acknowledge the delivery metric and are actively optimizing our logistics, your target price is significantly below our capabilities.\n\nWe can offer €5.56 per unit under your proposed terms of 60 days payment and a 36-month contract. Thus, our current Angebot stands at a price of €5.56 per unit, Zahlungsziel 60 days net, a contract term of 36 months. A binding higher volume would help us and can improve the price. Which volume can you commit to? Please note that our offer stays valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Stadler\nInside Sales, Schraubenhandel Leitner & Sohn GmbH\n\nLogistics: We have free capacity for your parts. Our Lieferzeit is 5 days. With overtime we can deliver in 5 days, at a premium.",
+        "term_sheets": [
+          {
+            "term_sheet_id": "offer:70610-1",
+            "terms": {
+              "unit_price": 5.56,
+              "payment_days": 60,
+              "contract_months": 36
+            }
+          }
+        ],
+        "status": "open",
+        "claim_results": [
+          {
+            "index": 0,
+            "result": "verified"
+          },
+          {
+            "index": 1,
+            "result": "verified"
+          }
+        ],
+        "missing_fields": [],
+        "source_ref": "message:sup:70610:2",
+        "attachments": [
+          {
+            "attachment_id": "att:70610-1-delivery_schedule",
+            "name": "delivery-schedule.xlsx",
+            "text": "[Delivery schedule]\nMonth | Quantity | Cumulative\n1 | =ROUND(30000/12,0) | =SUM(B$2:B2)\n2 | =ROUND(30000/12,0) | =SUM(B$2:B3)\n3 | =ROUND(30000/12,0) | =SUM(B$2:B4)\n4 | =ROUND(30000/12,0) | =SUM(B$2:B5)\n5 | =ROUND(30000/12,0) | =SUM(B$2:B6)\n6 | =ROUND(30000/12,0) | =SUM(B$2:B7)\n7 | =ROUND(30000/12,0) | =SUM(B$2:B8)\n8 | =ROUND(30000/12,0) | =SUM(B$2:B9)\n9 | =ROUND(30000/12,0) | =SUM(B$2:B10)\n10 | =ROUND(30000/12,0) | =SUM(B$2:B11)\n11 | =ROUND(30000/12,0) | =SUM(B$2:B12)\n12 | =ROUND(30000/12,0) | =SUM(B$2:B13)\n13 | =ROUND(30000/12,0) | =SUM(B$2:B14)\n14 | =ROUND(30000/12,0) | =SUM(B$2:B15)\n15 | =ROUND(30000/12,0) | =SUM(B$2:B16)\n16 | =ROUND(30000/12,0) | =SUM(B$2:B17)\n17 | =ROUND(30000/12,0) | =SUM(B$2:B18)\n18 | =ROUND(30000/12,0) | =SUM(B$2:B19)\n19 | =ROUND(30000/12,0) | =SUM(B$2:B20)\n20 | =ROUND(30000/12,0) | =SUM(B$2:B21)\n21 | =ROUND(30000/12,0) | =SUM(B$2:B22)\n22 | =ROUND(30000/12,0) | =SUM(B$2:B23)\n23 | =ROUND(30000/12,0) | =SUM(B$2:B24)\n24 | =ROUND(30000/12,0) | =SUM(B$2:B25)\n25 | =ROUND(30000/12,0) | =SUM(B$2:B26)\n26 | =ROUND(30000/12,0) | =SUM(B$2:B27)\n27 | =ROUND(30000/12,0) | =SUM(B$2:B28)\n28 | =ROUND(30000/12,0) | =SUM(B$2:B29)\n29 | =ROUND(30000/12,0) | =SUM(B$2:B30)\n30 | =ROUND(30000/12,0) | =SUM(B$2:B31)\n31 | =ROUND(30000/12,0) | =SUM(B$2:B32)\n32 | =ROUND(30000/12,0) | =SUM(B$2:B33)\n33 | =ROUND(30000/12,0) | =SUM(B$2:B34)\n34 | =ROUND(30000/12,0) | =SUM(B$2:B35)\n35 | =ROUND(30000/12,0) | =SUM(B$2:B36)\n36 | =ROUND(30000/12,0) | =SUM(B$2:B37)\nLead time (days) | 5 | "
+          }
+        ]
+      }
+    ],
+    "packages": {
+      "package:0": {
+        "message_ref": "message:sup:70610:2",
+        "term_sheet_id": "offer:70610-1",
+        "terms": {
+          "unit_price": 5.56,
+          "payment_days": 60,
+          "contract_months": 36
+        }
+      }
+    },
+    "sources": {
+      "message:sup:70610:0:subject": "Quote from Schraubenhandel Leitner & Sohn GmbH: Bundle the fastener kit with one distributor",
+      "message:sup:70610:0:body": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe are delighted to submit our offer for your consideration. We can offer you a price of €5.74 per unit, with a Zahlungsziel 30 days net, and a contract term of 12 months.\n\nAs a valued partner, we always strive to support your operations with our extensive inventory and reliable delivery service. Please note that this offer remains valid for 30 days.\n\nWe look forward to continuing our successful business relationship and standing by as your trusted partner for all your supply needs.\n\nMit freundlichen Grüßen\nFranz Stadler\nInside Sales, Schraubenhandel Leitner & Sohn GmbH",
+      "message:sup:70610:0:attachment:0": "Schraubenhandel Leitner & Sohn GmbH\nTo: Hollerau Pumpenwerke GmbH\nAngebot / Quote offer:70610-0\nOffered terms\nUnit price (EUR) 5.74\nPayment terms (days net) 30\nContract term (months) 12\nOur standard terms (apply to everything not stated above)\nQuality commitment (ppm) 80\nChargeback per complaint (EUR) 0.00\nTerms fixed by your enquiry\nLead time (days) 5\nVolume per year (pcs) 30000\nPrice valid from 2027-01-01\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0.00\nPart(s): part:360010, part:360011, part:360012, part:360030. Enquiry: Bundle the fastener kit with one distributor.\nValidity: 30 days.",
+      "message:sup:70610:2:subject": "Re: Quote from Schraubenhandel Leitner & Sohn GmbH: Bundle the fastener kit with one distributor",
+      "message:sup:70610:2:body": "Dear customer,\n\nWe have reviewed your offer and can adjust our Angebot as follows.\n\nWe checked the delivery record data you cited; it holds, but it does not change our calculation. We checked the volume change data you cited; it holds and we took it into account. We appreciate the increased volume forecast and your willingness to commit to a 36-month contract. While we acknowledge the delivery metric and are actively optimizing our logistics, your target price is significantly below our capabilities.\n\nWe can offer €5.56 per unit under your proposed terms of 60 days payment and a 36-month contract. Thus, our current Angebot stands at a price of €5.56 per unit, Zahlungsziel 60 days net, a contract term of 36 months. A binding higher volume would help us and can improve the price. Which volume can you commit to? Please note that our offer stays valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Stadler\nInside Sales, Schraubenhandel Leitner & Sohn GmbH\n\nLogistics: We have free capacity for your parts. Our Lieferzeit is 5 days. With overtime we can deliver in 5 days, at a premium.",
+      "message:sup:70610:2:attachment:0": "[Delivery schedule]\nMonth | Quantity | Cumulative\n1 | =ROUND(30000/12,0) | =SUM(B$2:B2)\n2 | =ROUND(30000/12,0) | =SUM(B$2:B3)\n3 | =ROUND(30000/12,0) | =SUM(B$2:B4)\n4 | =ROUND(30000/12,0) | =SUM(B$2:B5)\n5 | =ROUND(30000/12,0) | =SUM(B$2:B6)\n6 | =ROUND(30000/12,0) | =SUM(B$2:B7)\n7 | =ROUND(30000/12,0) | =SUM(B$2:B8)\n8 | =ROUND(30000/12,0) | =SUM(B$2:B9)\n9 | =ROUND(30000/12,0) | =SUM(B$2:B10)\n10 | =ROUND(30000/12,0) | =SUM(B$2:B11)\n11 | =ROUND(30000/12,0) | =SUM(B$2:B12)\n12 | =ROUND(30000/12,0) | =SUM(B$2:B13)\n13 | =ROUND(30000/12,0) | =SUM(B$2:B14)\n14 | =ROUND(30000/12,0) | =SUM(B$2:B15)\n15 | =ROUND(30000/12,0) | =SUM(B$2:B16)\n16 | =ROUND(30000/12,0) | =SUM(B$2:B17)\n17 | =ROUND(30000/12,0) | =SUM(B$2:B18)\n18 | =ROUND(30000/12,0) | =SUM(B$2:B19)\n19 | =ROUND(30000/12,0) | =SUM(B$2:B20)\n20 | =ROUND(30000/12,0) | =SUM(B$2:B21)\n21 | =ROUND(30000/12,0) | =SUM(B$2:B22)\n22 | =ROUND(30000/12,0) | =SUM(B$2:B23)\n23 | =ROUND(30000/12,0) | =SUM(B$2:B24)\n24 | =ROUND(30000/12,0) | =SUM(B$2:B25)\n25 | =ROUND(30000/12,0) | =SUM(B$2:B26)\n26 | =ROUND(30000/12,0) | =SUM(B$2:B27)\n27 | =ROUND(30000/12,0) | =SUM(B$2:B28)\n28 | =ROUND(30000/12,0) | =SUM(B$2:B29)\n29 | =ROUND(30000/12,0) | =SUM(B$2:B30)\n30 | =ROUND(30000/12,0) | =SUM(B$2:B31)\n31 | =ROUND(30000/12,0) | =SUM(B$2:B32)\n32 | =ROUND(30000/12,0) | =SUM(B$2:B33)\n33 | =ROUND(30000/12,0) | =SUM(B$2:B34)\n34 | =ROUND(30000/12,0) | =SUM(B$2:B35)\n35 | =ROUND(30000/12,0) | =SUM(B$2:B36)\n36 | =ROUND(30000/12,0) | =SUM(B$2:B37)\nLead time (days) | 5 | "
+    }
+  },
+  "model": "gpt-6.1-sol",
+  "model_called": true,
+  "request_sha256": "72da09bceea42e95a446bc13714dc2dffb27853fc192f9bde23dfb401877210d",
+  "answer": {
+    "observations": [
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "payment_days",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "We can offer €5.56 per unit under your proposed terms of 60 days payment and a 36-month contract."
+          }
+        ]
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "contract_months",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "We can offer €5.56 per unit under your proposed terms of 60 days payment and a 36-month contract."
+          }
+        ]
+      },
+      {
+        "package_ref": "unscoped",
+        "kind": "condition",
+        "field": "volume_per_year",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "A binding higher volume would help us and can improve the price. Which volume can you commit to?"
+          }
+        ]
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "other",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "Please note that our offer stays valid for 30 days."
+          }
+        ]
+      },
+      {
+        "package_ref": "unscoped",
+        "kind": "unclear",
+        "field": "lead_time_days",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "Logistics: We have free capacity for your parts. Our Lieferzeit is 5 days. With overtime we can deliver in 5 days, at a premium."
+          }
+        ]
+      }
+    ]
+  },
+  "response_id": "resp_0b24d477a1d7dbe2016adde67d047c87d180d574a846b740b5",
+  "usage": {
+    "input_tokens": 4542,
+    "input_tokens_details": {
+      "cache_write_tokens": 4539,
+      "cached_tokens": 0
+    },
+    "output_tokens": 372,
+    "output_tokens_details": {
+      "reasoning_tokens": 48
+    },
+    "total_tokens": 4914
+  },
+  "reading": {
+    "schema_version": 1,
+    "case_id": "case:P07",
+    "supplier_id": "sup:70610",
+    "as_of": "message:sup:70610:2",
+    "context_sha256": "6f08b10244cd2f04431498351e3cfdb60209c156f490eba53ee8dd6176243738",
+    "status": "available",
+    "error": null,
+    "packages": {
+      "package:0": {
+        "message_ref": "message:sup:70610:2",
+        "term_sheet_id": "offer:70610-1",
+        "terms": {
+          "unit_price": 5.56,
+          "payment_days": 60,
+          "contract_months": 36
+        }
+      }
+    },
+    "observations": [
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "payment_days",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "We can offer €5.56 per unit under your proposed terms of 60 days payment and a 36-month contract."
+          }
+        ],
+        "quoted_value": 60,
+        "value_source": "offer:70610-1",
+        "policy_effect": "advisory_only"
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "contract_months",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "We can offer €5.56 per unit under your proposed terms of 60 days payment and a 36-month contract."
+          }
+        ],
+        "quoted_value": 36,
+        "value_source": "offer:70610-1",
+        "policy_effect": "advisory_only"
+      },
+      {
+        "package_ref": "unscoped",
+        "kind": "condition",
+        "field": "volume_per_year",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "A binding higher volume would help us and can improve the price. Which volume can you commit to?"
+          }
+        ],
+        "quoted_value": null,
+        "value_source": null,
+        "policy_effect": "advisory_only"
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "other",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "Please note that our offer stays valid for 30 days."
+          }
+        ],
+        "quoted_value": null,
+        "value_source": null,
+        "policy_effect": "advisory_only"
+      },
+      {
+        "package_ref": "unscoped",
+        "kind": "unclear",
+        "field": "lead_time_days",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70610:2:body",
+            "quote": "Logistics: We have free capacity for your parts. Our Lieferzeit is 5 days. With overtime we can deliver in 5 days, at a premium."
+          }
+        ],
+        "quoted_value": null,
+        "value_source": null,
+        "policy_effect": "advisory_only"
+      }
+    ],
+    "validation": "provenance_checked_not_semantically_proven",
+    "semantic_authority": "none"
+  },
+  "seconds": 5.315,
+  "source_snapshot_sha256": "8adb64813bcbeef721bddf2507f293e023e8f216c164e50d376c43f3218b27d7",
+  "decision_index": 1,
+  "response_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "observations"
+    ],
+    "properties": {
+      "observations": {
+        "type": "array",
+        "maxItems": 12,
+        "items": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "package_ref",
+                "kind",
+                "field",
+                "evidence"
+              ],
+              "properties": {
+                "package_ref": {
+                  "type": "string",
+                  "enum": [
+                    "unscoped"
+                  ]
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "condition",
+                    "preference",
+                    "withdrawal_statement",
+                    "conflict",
+                    "unclear"
+                  ]
+                },
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "contract_months",
+                    "effective_date",
+                    "incoterm",
+                    "index_clause",
+                    "lead_time_days",
+                    "other",
+                    "payment_days",
+                    "tooling_eur",
+                    "unit_price",
+                    "volume_per_year"
+                  ]
+                },
+                "evidence": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "source_ref",
+                      "quote"
+                    ],
+                    "properties": {
+                      "source_ref": {
+                        "type": "string",
+                        "enum": [
+                          "message:sup:70610:0:subject",
+                          "message:sup:70610:0:body",
+                          "message:sup:70610:0:attachment:0",
+                          "message:sup:70610:2:subject",
+                          "message:sup:70610:2:body",
+                          "message:sup:70610:2:attachment:0"
+                        ]
+                      },
+                      "quote": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "package_ref",
+                "kind",
+                "field",
+                "evidence"
+              ],
+              "properties": {
+                "package_ref": {
+                  "type": "string",
+                  "enum": [
+                    "package:0"
+                  ]
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "condition",
+                    "preference",
+                    "withdrawal_statement",
+                    "conflict",
+                    "unclear"
+                  ]
+                },
+                "field": {
+                  "type": "string",
+                  "enum": [
+                    "contract_months",
+                    "other",
+                    "payment_days",
+                    "unit_price"
+                  ]
+                },
+                "evidence": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "source_ref",
+                      "quote"
+                    ],
+                    "properties": {
+                      "source_ref": {
+                        "type": "string",
+                        "enum": [
+                          "message:sup:70610:0:subject",
+                          "message:sup:70610:0:body",
+                          "message:sup:70610:0:attachment:0",
+                          "message:sup:70610:2:subject",
+                          "message:sup:70610:2:body",
+                          "message:sup:70610:2:attachment:0"
+                        ]
+                      },
+                      "quote": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 600
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

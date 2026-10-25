@@ -1,0 +1,1110 @@
+{
+  "supplier_id": "sup:70340",
+  "input_hash": "da650b081ef5b740e7f8811a4155dadac41bf367eaed3a8de641018d13e908e8",
+  "dossier_hash": "54892d7c0ff4b5102874c1e46dc6df20d2fdf34de4919e0883fda5aab18ab9e0",
+  "model": "gpt-6.1-sol",
+  "effort": "low",
+  "meta": {
+    "seconds": 40.94,
+    "usage": {
+      "input_tokens": 40509,
+      "input_tokens_details": {
+        "cache_write_tokens": 40506,
+        "cached_tokens": 0
+      },
+      "output_tokens": 4578,
+      "output_tokens_details": {
+        "reasoning_tokens": 14
+      },
+      "total_tokens": 45087
+    }
+  },
+  "audit": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "inference",
+        "reason": "Late payment and contractual 30-day terms are established as of September 2026. A strong supplier cash need or preference for faster payment is not recorded.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 95.7"
+          },
+          {
+            "ref": "ctr:4600070340#4.1",
+            "quote": "Payment: 30 days net."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "The April and July 2026 notes support reference-customer importance and an offer of transparency, not the full asserted relationship preference or its strength.",
+        "excerpts": [
+          {
+            "ref": "doc:20260418-70340-M3",
+            "quote": "At our supplier day Metallbau Steinfelder KG said Hollerau is an important reference customer for them."
+          },
+          {
+            "ref": "doc:20260721-70340-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "inference",
+        "reason": "September 2026 buyer forecasts rise for both parts, but do not demonstrate supplier appetite for volume or a larger 330030 quota. Capacity and preferences are unknown.",
+        "excerpts": [
+          {
+            "ref": "fc:330020@2026-09",
+            "quote": "\"change_pct\": 13.1"
+          },
+          {
+            "ref": "fc:330030@2026-09",
+            "quote": "\"change_pct\": 2.3"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "inference",
+        "reason": "Planning benefits are plausible, but the existing framework renewal provision does not demonstrate a preference for additional binding commitment.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#8.1",
+            "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.4",
+        "verdict": "inference",
+        "reason": "The August 2026 steel driver reports a 6.5% annual increase for both parts. Seeking relief after updating the spreadsheet remains a hypothesis.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330020:drivers",
+            "quote": "\"change_12m_pct\": 6.5"
+          },
+          {
+            "ref": "doc:20260728-70340-M1",
+            "quote": "he works from his own spreadsheet, last updated two years ago."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "unsupported",
+        "reason": "The July 28 note dates the owner's index spreadsheet, not his entire cost basis. Its effect on costing and whether buyer indices can reset it are unproven.",
+        "excerpts": [
+          {
+            "ref": "doc:20260728-70340-M1",
+            "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "supported",
+        "reason": "The framework covering both parts, valid July 2025–June 2027, directly records annual fixed prices, written price-change notice and automatic extension subject to termination notice.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070340#8.1",
+            "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "unsupported",
+        "reason": "No part-specific should-cost row is supplied, which does not prove none exists. FY2024 financial indicators do not establish current health or willingness to walk.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"credit_index\": 230, \"credit_index_12m_ago\": 230, \"equity_ratio_pct\": 33.0, \"filed_fy\": 2024"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "Trading faster payment for price requires allowed options and buyer/supplier payment economics. Late payment alone does not establish high supplier trade value.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 9.6"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "A proposed 24-month price-stability exchange needs case eligibility and total-cost evaluation; the renewal clause proves no willingness to exchange price for duration.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "A longer contract or an index clause is security for it, not cash, and does not count."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "Binding forecast volume or increasing quota requires case need, permitted volumes, capacity and total-cost math. Buyer forecasts are not supplier valuations.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "covered   = min(V, N) · years"
+          },
+          {
+            "ref": "evidence:part:330030:sourcing",
+            "quote": "\"quota_pct\": 50, \"status\": \"active\", \"supplier_id\": \"sup:70340\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "A tighter 330030 defect commitment without premium is not established as feasible or cheapest; allowed commitments and quality economics are missing.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "what a faster delivery, a larger volume or a tighter defect commitment costs or\nbrings it."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "Some supplier-caused complaints have zero recharge, but selecting or retaining chargeback terms requires current case options and quality-cost math.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#6.1",
+            "quote": "flat fee of EUR 150 per supplier-caused complaint."
+          },
+          {
+            "ref": "qn:20004911",
+            "quote": "\"cost_recharged_eur\": 0"
+          },
+          {
+            "ref": "qn:20004911",
+            "quote": "\"supplier_caused\": 1"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "The existing framework is annual fixed-price, not an evidenced index clause to remove. Preference between a new clause and fixed price needs case index path, risk, price and options.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "`index_path` is the case's\nexpected move of the clause's series."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "supported",
+        "reason": "For 330020, September 2026 orders and the September 26 quote both record EUR 18.16 per unit.",
+        "excerpts": [
+          {
+            "ref": "po:4500014452-10",
+            "quote": "\"order_date\": \"2026-09-24\", \"price\": 18.16"
+          },
+          {
+            "ref": "quote:7300074",
+            "quote": "\"unit_price\": 18.16"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "supported",
+        "reason": "The September 24, 2026 supplier order for 330030 records the current EUR 15.63 price, also present in the 2026 renewal.",
+        "excerpts": [
+          {
+            "ref": "po:4500014452-20",
+            "quote": "\"order_date\": \"2026-09-24\", \"price\": 15.63"
+          },
+          {
+            "ref": "EV-2026-70340-330030",
+            "quote": "\"price\": 15.63"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "requires_case",
+        "reason": "The September forecast growth and 100% quota on 330020 are recorded. Calling volume the strongest trade currency requires supplier valuation and comparative case economics.",
+        "excerpts": [
+          {
+            "ref": "fc:330020@2026-09",
+            "quote": "\"change_pct\": 13.1"
+          },
+          {
+            "ref": "evidence:part:330020:sourcing",
+            "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70340\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "inference",
+        "reason": "The July 21 offer is recorded; that accepting it will flatter the owner is an unverified psychological inference.",
+        "excerpts": [
+          {
+            "ref": "doc:20260721-70340-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "unsupported",
+        "reason": "The stale spreadsheet is recorded, but no eligible two-index pair is supplied to establish checker eligibility for the proposed argument; helpful reception is also unproven.",
+        "excerpts": [
+          {
+            "ref": "doc:20260728-70340-M1",
+            "quote": "he works from his own spreadsheet, last updated two years ago."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "requires_case",
+        "reason": "Repeated certificate defects on 330030 are recorded in 2026. Their value for price resistance or particular ppm/chargeback terms requires case options and economics.",
+        "excerpts": [
+          {
+            "ref": "qn:20004887",
+            "quote": "\"defect\": \"wrong material certificate\""
+          },
+          {
+            "ref": "qn:20004954",
+            "quote": "\"defect\": \"wrong material certificate\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "unsupported",
+        "reason": "The 330030 driver summary reports a power decline, but the argument specifies no window and supplies no eligible pair of index records. Checker eligibility and an actual supplier-cost offset are not established.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330030:drivers",
+            "quote": "\"change_12m_pct\": -3.7"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "unsupported",
+        "reason": "For 330020, power's estimated weight is small and its annual index change is negative, but the requisite eligible index pair and argument window are absent.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330020:drivers",
+            "quote": "\"change_12m_pct\": -3.7"
+          },
+          {
+            "ref": "evidence:part:330020:drivers",
+            "quote": "\"unit\": \"index 2021=100\", \"weight\": 0.01"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "inference",
+        "reason": "All three recorded 330030 renewals settled below their asks, but this does not establish present concession room.",
+        "excerpts": [
+          {
+            "ref": "EV-2024-70340-330030",
+            "quote": "\"settled_pct\": -7.4"
+          },
+          {
+            "ref": "EV-2025-70340-330030",
+            "quote": "\"asked_pct\": 2.1"
+          },
+          {
+            "ref": "EV-2026-70340-330030",
+            "quote": "\"asked_pct\": 3.2"
+          },
+          {
+            "ref": "EV-2026-70340-330030",
+            "quote": "\"settled_pct\": 0.0"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "requires_case",
+        "reason": "September 2026 330030 forecast growth is modest, and two suppliers are active. Quota movement as a valuable trade requires allowed volume options, allocation authority and economics.",
+        "excerpts": [
+          {
+            "ref": "fc:330030@2026-09",
+            "quote": "\"change_pct\": 2.3"
+          },
+          {
+            "ref": "evidence:part:330030:sourcing",
+            "quote": "\"quota_pct\": 50, \"status\": \"active\", \"supplier_id\": \"sup:70360\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "supported",
+        "reason": "The latest supplier-wide rolling scorecard to September 30, 2026 improves on June: ppm falls from 531 to 489 and overdue 8Ds from one to zero.",
+        "excerpts": [
+          {
+            "ref": "sc:70340@2026Q2",
+            "quote": "\"open_8d_overdue\": 1"
+          },
+          {
+            "ref": "sc:70340@2026Q2",
+            "quote": "\"ppm\": 531"
+          },
+          {
+            "ref": "sc:70340@2026Q3",
+            "quote": "\"open_8d_overdue\": 0"
+          },
+          {
+            "ref": "sc:70340@2026Q3",
+            "quote": "\"ppm\": 489"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.11",
+        "verdict": "supported",
+        "reason": "Supplier-wide rolling requested-date OTD improves from 88.0% at June to 88.5% at September 2026, still below the contractual 95% target.",
+        "excerpts": [
+          {
+            "ref": "sc:70340@2026Q2",
+            "quote": "\"otd_pct\": 88.0"
+          },
+          {
+            "ref": "sc:70340@2026Q3",
+            "quote": "\"otd_pct\": 88.5"
+          },
+          {
+            "ref": "ctr:4600070340#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.12",
+        "verdict": "supported",
+        "reason": "The current framework for both parts contains the price-notice rule. This supports a conditional reference, not a finding that any actual request was late.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#3.1",
+            "quote": "Changes require written notice of at least 90 days before the end of the calendar year."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.13",
+        "verdict": "unsupported",
+        "reason": "Two active 50% sources establish sourcing structure, not authority or capacity to move quota under this case.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330030:sourcing",
+            "quote": "\"quota_pct\": 50, \"status\": \"active\", \"supplier_id\": \"sup:70340\""
+          },
+          {
+            "ref": "evidence:part:330030:sourcing",
+            "quote": "\"quota_pct\": 50, \"status\": \"active\", \"supplier_id\": \"sup:70360\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "requires_case",
+        "reason": "Historical cuts and higher rival prices are recorded, but no aligned cumulative input-cost calculation establishes matching declines. A realistic price target, term absorption and the claimed exclusive condition for further cuts need current case economics and supplier costs.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330020:orders",
+            "quote": "\"price_change_pct\": -8.3"
+          },
+          {
+            "ref": "evidence:part:330030:orders",
+            "quote": "\"price_change_pct\": -7.4"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "Family KG status, owner contact, transparency offer and historical settlements are evidenced. Soft negotiation style, a late-payment complaint, actual cost pressure, current financial soundness and willingness to walk are not. FY2024 turnover is only a band.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 40"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"turnover_band\": \"2-5 M EUR\", \"turnover_eur\": null"
+          },
+          {
+            "ref": "doc:20260721-70340-M2",
+            "quote": "Call with the owner of Metallbau Steinfelder KG"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "requires_case",
+        "reason": "Several facts are supported, including below-ask renewals, reference status, prices and certificate defects. Turnover share is only approximately 8–19% using a stale band; the whole costing basis is not dated. No recorded grievance establishes late payment as the main concern. Flat-price targeting and payment as cheapest currency require case economics and supplier valuation.",
+        "excerpts": [
+          {
+            "ref": "evidence:spend",
+            "quote": "\"spend_eur\": 386527.7"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"turnover_band\": \"2-5 M EUR\""
+          },
+          {
+            "ref": "doc:20260728-70340-M1",
+            "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "+ spend · r · (d_ref − payment_days) / 360"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "requires_case",
+        "reason": "Higher rival prices and buyer late payment are recorded, and disclosure can reveal private quotes. Predicted supplier reactions and financial-health implications are unproven. Index peaks are not categorically ineligible: eligibility depends on window and recency. Exit credibility and alternative cost require current case options and total-cost math, not incomplete 2025 quotes.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "Citing a buyer-private fact - a rival quote - reveals it to the\nsupplier you cite it to."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "an index window too long or too old."
+          },
+          {
+            "ref": "quote:7100033",
+            "quote": "\"missing_fields\": \"validity_days;incoterm;payment_days\""
+          },
+          {
+            "ref": "quote:7100033",
+            "quote": "\"quote_date\": \"2025-04-08\""
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 95.7"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      }
+    ],
+    "errors": [],
+    "complete": true,
+    "verdict_counts": {
+      "inference": 7,
+      "unsupported": 7,
+      "supported": 6,
+      "requires_case": 12
+    }
+  },
+  "raw": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "inference",
+        "reason": "Late payment and contractual 30-day terms are established as of September 2026. A strong supplier cash need or preference for faster payment is not recorded.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 95.7"
+          },
+          {
+            "ref": "ctr:4600070340#4.1",
+            "quote": "Payment: 30 days net."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "The April and July 2026 notes support reference-customer importance and an offer of transparency, not the full asserted relationship preference or its strength.",
+        "excerpts": [
+          {
+            "ref": "doc:20260418-70340-M3",
+            "quote": "At our supplier day Metallbau Steinfelder KG said Hollerau is an important reference customer for them."
+          },
+          {
+            "ref": "doc:20260721-70340-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "inference",
+        "reason": "September 2026 buyer forecasts rise for both parts, but do not demonstrate supplier appetite for volume or a larger 330030 quota. Capacity and preferences are unknown.",
+        "excerpts": [
+          {
+            "ref": "fc:330020@2026-09",
+            "quote": "\"change_pct\": 13.1"
+          },
+          {
+            "ref": "fc:330030@2026-09",
+            "quote": "\"change_pct\": 2.3"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "inference",
+        "reason": "Planning benefits are plausible, but the existing framework renewal provision does not demonstrate a preference for additional binding commitment.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#8.1",
+            "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.4",
+        "verdict": "inference",
+        "reason": "The August 2026 steel driver reports a 6.5% annual increase for both parts. Seeking relief after updating the spreadsheet remains a hypothesis.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330020:drivers",
+            "quote": "\"change_12m_pct\": 6.5"
+          },
+          {
+            "ref": "doc:20260728-70340-M1",
+            "quote": "he works from his own spreadsheet, last updated two years ago."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "unsupported",
+        "reason": "The July 28 note dates the owner's index spreadsheet, not his entire cost basis. Its effect on costing and whether buyer indices can reset it are unproven.",
+        "excerpts": [
+          {
+            "ref": "doc:20260728-70340-M1",
+            "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "supported",
+        "reason": "The framework covering both parts, valid July 2025–June 2027, directly records annual fixed prices, written price-change notice and automatic extension subject to termination notice.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070340#8.1",
+            "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "unsupported",
+        "reason": "No part-specific should-cost row is supplied, which does not prove none exists. FY2024 financial indicators do not establish current health or willingness to walk.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"credit_index\": 230, \"credit_index_12m_ago\": 230, \"equity_ratio_pct\": 33.0, \"filed_fy\": 2024"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "Trading faster payment for price requires allowed options and buyer/supplier payment economics. Late payment alone does not establish high supplier trade value.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 9.6"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "A proposed 24-month price-stability exchange needs case eligibility and total-cost evaluation; the renewal clause proves no willingness to exchange price for duration.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "A longer contract or an index clause is security for it, not cash, and does not count."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "Binding forecast volume or increasing quota requires case need, permitted volumes, capacity and total-cost math. Buyer forecasts are not supplier valuations.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "covered   = min(V, N) · years"
+          },
+          {
+            "ref": "evidence:part:330030:sourcing",
+            "quote": "\"quota_pct\": 50, \"status\": \"active\", \"supplier_id\": \"sup:70340\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "A tighter 330030 defect commitment without premium is not established as feasible or cheapest; allowed commitments and quality economics are missing.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "what a faster delivery, a larger volume or a tighter defect commitment costs or\nbrings it."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "Some supplier-caused complaints have zero recharge, but selecting or retaining chargeback terms requires current case options and quality-cost math.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#6.1",
+            "quote": "flat fee of EUR 150 per supplier-caused complaint."
+          },
+          {
+            "ref": "qn:20004911",
+            "quote": "\"cost_recharged_eur\": 0"
+          },
+          {
+            "ref": "qn:20004911",
+            "quote": "\"supplier_caused\": 1"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "The existing framework is annual fixed-price, not an evidenced index clause to remove. Preference between a new clause and fixed price needs case index path, risk, price and options.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "`index_path` is the case's\nexpected move of the clause's series."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "supported",
+        "reason": "For 330020, September 2026 orders and the September 26 quote both record EUR 18.16 per unit.",
+        "excerpts": [
+          {
+            "ref": "po:4500014452-10",
+            "quote": "\"order_date\": \"2026-09-24\", \"price\": 18.16"
+          },
+          {
+            "ref": "quote:7300074",
+            "quote": "\"unit_price\": 18.16"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "supported",
+        "reason": "The September 24, 2026 supplier order for 330030 records the current EUR 15.63 price, also present in the 2026 renewal.",
+        "excerpts": [
+          {
+            "ref": "po:4500014452-20",
+            "quote": "\"order_date\": \"2026-09-24\", \"price\": 15.63"
+          },
+          {
+            "ref": "EV-2026-70340-330030",
+            "quote": "\"price\": 15.63"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "requires_case",
+        "reason": "The September forecast growth and 100% quota on 330020 are recorded. Calling volume the strongest trade currency requires supplier valuation and comparative case economics.",
+        "excerpts": [
+          {
+            "ref": "fc:330020@2026-09",
+            "quote": "\"change_pct\": 13.1"
+          },
+          {
+            "ref": "evidence:part:330020:sourcing",
+            "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70340\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "inference",
+        "reason": "The July 21 offer is recorded; that accepting it will flatter the owner is an unverified psychological inference.",
+        "excerpts": [
+          {
+            "ref": "doc:20260721-70340-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "unsupported",
+        "reason": "The stale spreadsheet is recorded, but no eligible two-index pair is supplied to establish checker eligibility for the proposed argument; helpful reception is also unproven.",
+        "excerpts": [
+          {
+            "ref": "doc:20260728-70340-M1",
+            "quote": "he works from his own spreadsheet, last updated two years ago."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "requires_case",
+        "reason": "Repeated certificate defects on 330030 are recorded in 2026. Their value for price resistance or particular ppm/chargeback terms requires case options and economics.",
+        "excerpts": [
+          {
+            "ref": "qn:20004887",
+            "quote": "\"defect\": \"wrong material certificate\""
+          },
+          {
+            "ref": "qn:20004954",
+            "quote": "\"defect\": \"wrong material certificate\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "unsupported",
+        "reason": "The 330030 driver summary reports a power decline, but the argument specifies no window and supplies no eligible pair of index records. Checker eligibility and an actual supplier-cost offset are not established.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330030:drivers",
+            "quote": "\"change_12m_pct\": -3.7"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "unsupported",
+        "reason": "For 330020, power's estimated weight is small and its annual index change is negative, but the requisite eligible index pair and argument window are absent.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330020:drivers",
+            "quote": "\"change_12m_pct\": -3.7"
+          },
+          {
+            "ref": "evidence:part:330020:drivers",
+            "quote": "\"unit\": \"index 2021=100\", \"weight\": 0.01"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "inference",
+        "reason": "All three recorded 330030 renewals settled below their asks, but this does not establish present concession room.",
+        "excerpts": [
+          {
+            "ref": "EV-2024-70340-330030",
+            "quote": "\"settled_pct\": -7.4"
+          },
+          {
+            "ref": "EV-2025-70340-330030",
+            "quote": "\"asked_pct\": 2.1"
+          },
+          {
+            "ref": "EV-2026-70340-330030",
+            "quote": "\"asked_pct\": 3.2"
+          },
+          {
+            "ref": "EV-2026-70340-330030",
+            "quote": "\"settled_pct\": 0.0"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "requires_case",
+        "reason": "September 2026 330030 forecast growth is modest, and two suppliers are active. Quota movement as a valuable trade requires allowed volume options, allocation authority and economics.",
+        "excerpts": [
+          {
+            "ref": "fc:330030@2026-09",
+            "quote": "\"change_pct\": 2.3"
+          },
+          {
+            "ref": "evidence:part:330030:sourcing",
+            "quote": "\"quota_pct\": 50, \"status\": \"active\", \"supplier_id\": \"sup:70360\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "supported",
+        "reason": "The latest supplier-wide rolling scorecard to September 30, 2026 improves on June: ppm falls from 531 to 489 and overdue 8Ds from one to zero.",
+        "excerpts": [
+          {
+            "ref": "sc:70340@2026Q2",
+            "quote": "\"open_8d_overdue\": 1"
+          },
+          {
+            "ref": "sc:70340@2026Q2",
+            "quote": "\"ppm\": 531"
+          },
+          {
+            "ref": "sc:70340@2026Q3",
+            "quote": "\"open_8d_overdue\": 0"
+          },
+          {
+            "ref": "sc:70340@2026Q3",
+            "quote": "\"ppm\": 489"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.11",
+        "verdict": "supported",
+        "reason": "Supplier-wide rolling requested-date OTD improves from 88.0% at June to 88.5% at September 2026, still below the contractual 95% target.",
+        "excerpts": [
+          {
+            "ref": "sc:70340@2026Q2",
+            "quote": "\"otd_pct\": 88.0"
+          },
+          {
+            "ref": "sc:70340@2026Q3",
+            "quote": "\"otd_pct\": 88.5"
+          },
+          {
+            "ref": "ctr:4600070340#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.12",
+        "verdict": "supported",
+        "reason": "The current framework for both parts contains the price-notice rule. This supports a conditional reference, not a finding that any actual request was late.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070340#3.1",
+            "quote": "Changes require written notice of at least 90 days before the end of the calendar year."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.13",
+        "verdict": "unsupported",
+        "reason": "Two active 50% sources establish sourcing structure, not authority or capacity to move quota under this case.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330030:sourcing",
+            "quote": "\"quota_pct\": 50, \"status\": \"active\", \"supplier_id\": \"sup:70340\""
+          },
+          {
+            "ref": "evidence:part:330030:sourcing",
+            "quote": "\"quota_pct\": 50, \"status\": \"active\", \"supplier_id\": \"sup:70360\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "requires_case",
+        "reason": "Historical cuts and higher rival prices are recorded, but no aligned cumulative input-cost calculation establishes matching declines. A realistic price target, term absorption and the claimed exclusive condition for further cuts need current case economics and supplier costs.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:330020:orders",
+            "quote": "\"price_change_pct\": -8.3"
+          },
+          {
+            "ref": "evidence:part:330030:orders",
+            "quote": "\"price_change_pct\": -7.4"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "Family KG status, owner contact, transparency offer and historical settlements are evidenced. Soft negotiation style, a late-payment complaint, actual cost pressure, current financial soundness and willingness to walk are not. FY2024 turnover is only a band.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 40"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"turnover_band\": \"2-5 M EUR\", \"turnover_eur\": null"
+          },
+          {
+            "ref": "doc:20260721-70340-M2",
+            "quote": "Call with the owner of Metallbau Steinfelder KG"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "requires_case",
+        "reason": "Several facts are supported, including below-ask renewals, reference status, prices and certificate defects. Turnover share is only approximately 8–19% using a stale band; the whole costing basis is not dated. No recorded grievance establishes late payment as the main concern. Flat-price targeting and payment as cheapest currency require case economics and supplier valuation.",
+        "excerpts": [
+          {
+            "ref": "evidence:spend",
+            "quote": "\"spend_eur\": 386527.7"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"turnover_band\": \"2-5 M EUR\""
+          },
+          {
+            "ref": "doc:20260728-70340-M1",
+            "quote": "he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "+ spend · r · (d_ref − payment_days) / 360"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "requires_case",
+        "reason": "Higher rival prices and buyer late payment are recorded, and disclosure can reveal private quotes. Predicted supplier reactions and financial-health implications are unproven. Index peaks are not categorically ineligible: eligibility depends on window and recency. Exit credibility and alternative cost require current case options and total-cost math, not incomplete 2025 quotes.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "Citing a buyer-private fact - a rival quote - reveals it to the\nsupplier you cite it to."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "an index window too long or too old."
+          },
+          {
+            "ref": "quote:7100033",
+            "quote": "\"missing_fields\": \"validity_days;incoterm;payment_days\""
+          },
+          {
+            "ref": "quote:7100033",
+            "quote": "\"quote_date\": \"2025-04-08\""
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 95.7"
+          }
+        ]
+      }
+    ]
+  }
+}

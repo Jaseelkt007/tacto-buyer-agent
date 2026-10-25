@@ -1,0 +1,118 @@
+{
+  "case_id": "case:G09",
+  "set": "practice",
+  "type": "rfq",
+  "title": "Supply enquiry",
+  "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+  "trigger_doc": null,
+  "parts": [
+    "part:310050"
+  ],
+  "suppliers": [
+    "sup:70190",
+    "sup:70170"
+  ],
+  "negotiable": [
+    "unit_price",
+    "payment_days"
+  ],
+  "fixed_terms": {
+    "volume_per_year": 3200,
+    "contract_months": 12,
+    "index_clause": null,
+    "incoterm": "DAP",
+    "tooling_eur": 0,
+    "effective_date": "2027-01-01"
+  },
+  "term_options": {
+    "payment_days": [
+      10,
+      30,
+      60,
+      90
+    ]
+  },
+  "buyer": {
+    "need_per_year": 3200,
+    "horizon_years": 1.0,
+    "current_unit_price": 90,
+    "fallback_unit_price": 100.8,
+    "interest_rate": 0.08,
+    "reference_payment_days": 60,
+    "need_lead_time_days": 35,
+    "category_goal": "leverage",
+    "fallback_risk_pct": 3,
+    "index_risk_pct": 1,
+    "late_cost_per_day": 3000,
+    "cost_per_defect": 50,
+    "freight_eur_per_unit": {
+      "EXW": 0.6,
+      "FCA": 0.35,
+      "DAP": 0
+    },
+    "index_paths": {},
+    "must_haves": [
+      {
+        "field": "lead_time_days",
+        "op": "<=",
+        "value": 60
+      }
+    ],
+    "alternative": {
+      "kind": "other_supplier",
+      "ref": null,
+      "terms": {
+        "volume_per_year": 3200,
+        "contract_months": 12,
+        "index_clause": null,
+        "incoterm": "DAP",
+        "tooling_eur": 0,
+        "effective_date": "2027-01-01",
+        "unit_price": 97.2,
+        "payment_days": 60,
+        "lead_time_days": 35
+      }
+    }
+  },
+  "round_limit": 10,
+  "refs": [
+    "doc:20261016-70170-S12",
+    "doc:20261019-70190-S13",
+    "news:20261014-S11",
+    "news:20261015-S14"
+  ],
+  "facts": {
+    "doc:20261016-70170-S12": {
+      "asked_pct": null,
+      "asked_price": null,
+      "date": "2026-10-16",
+      "days": null,
+      "effective_date": null,
+      "supplier": "sup:70170",
+      "title": "Payment terms for stainless castings",
+      "type": "letter"
+    },
+    "news:20261014-S11": {
+      "date": "2026-10-14",
+      "headline": "Bank tightens credit line for Slévárna Vrbenský s.r.o.",
+      "supplier": "sup:70170",
+      "topic": "credit_downgrade"
+    },
+    "doc:20261019-70190-S13": {
+      "asked_pct": null,
+      "asked_price": null,
+      "date": "2026-10-19",
+      "days": null,
+      "effective_date": null,
+      "supplier": "sup:70190",
+      "title": "Our liquidity and your call-offs",
+      "type": "letter"
+    },
+    "news:20261015-S14": {
+      "date": "2026-10-15",
+      "headline": "Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH",
+      "supplier": "sup:70190",
+      "topic": "customer_loss"
+    }
+  }
+}

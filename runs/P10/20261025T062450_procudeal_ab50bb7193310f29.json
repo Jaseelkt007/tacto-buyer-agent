@@ -1,0 +1,567 @@
+{
+ "case_id": "case:P10",
+ "agent": "procudeal",
+ "commit": "99159a4-dirty",
+ "note": "zone0-v3-original-r1",
+ "experiment": {
+  "code_hash": "44430375a3fb508397fa6564f73a4665787eb2b238c2118571853f44c9662d51",
+  "extra_flags": "tactician",
+  "model_cache": false
+ },
+ "when": "2026-10-25T06:24:50+00:00",
+ "seconds": 56.9,
+ "session_id": "ab50bb7193310f29",
+ "result": {
+  "ended": true,
+  "deal": true,
+  "supplier_id": "sup:70410",
+  "offer_id": "offer:70410-2",
+  "terms": {
+   "payment_days": 30,
+   "lead_time_days": 42,
+   "volume_per_year": 23400,
+   "contract_months": 36,
+   "effective_date": "2027-01-01",
+   "index_clause": null,
+   "incoterm": "DAP",
+   "tooling_eur": 0.0,
+   "ppm_commitment": 300,
+   "chargeback_eur_per_complaint": 0.0,
+   "unit_price": 33.5
+  },
+  "c_open": 1932492.18,
+  "c_deal": 1583587.2,
+  "c_alt": null,
+  "c_best": 1328926.89,
+  "score": 0.5780733017301243,
+  "must_haves_ok": true,
+  "cost_breakdown": {
+   "price": 1567800.0,
+   "uncovered_need": 0.0,
+   "fallback_risk": 0.0,
+   "payment_terms": 10452.0,
+   "freight": 0.0,
+   "late_delivery": 0.0,
+   "quality": 5335.2,
+   "tooling": 0.0,
+   "index_clause": 0.0,
+   "index_risk": 0.0,
+   "relationship": 0.0
+  }
+ },
+ "session": {
+  "session_id": "ab50bb7193310f29",
+  "case_id": "case:P10",
+  "status": "ended",
+  "end_reason": "accepted",
+  "rounds": 3,
+  "set": "practice",
+  "opening": {
+   "sup:70410": {
+    "offer_id": "offer:70410-0",
+    "round": 0,
+    "status": "open",
+    "terms": {
+     "unit_price": 32.2,
+     "lead_time_days": 54,
+     "volume_per_year": 19890,
+     "contract_months": 12
+    },
+    "alternatives": [],
+    "missing_fields": [],
+    "claims": [],
+    "claim_results": [],
+    "signals": {
+     "reply_delay_days": 2,
+     "validity_days": 30
+    },
+    "text": "Dear Sir or Madam,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe offer a price of €32.20 per unit for a volume of 19890 pcs per year. Our Lieferzeit is 54 days, and the contract term is 12 months. \n\nPlease note that this offer remains valid for 30 days. All deliveries and services are strictly subject to our standard procedure and standard conditions.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH"
+   }
+  },
+  "threads": {
+   "sup:70410": {
+    "offer_id": "offer:70410-2",
+    "status": "agreed",
+    "offers": 3,
+    "closed": null,
+    "seconds_left": null
+   }
+  },
+  "moves": [],
+  "result": {
+   "ended": true,
+   "deal": true,
+   "supplier_id": "sup:70410",
+   "offer_id": "offer:70410-2",
+   "terms": {
+    "payment_days": 30,
+    "lead_time_days": 42,
+    "volume_per_year": 23400,
+    "contract_months": 36,
+    "effective_date": "2027-01-01",
+    "index_clause": null,
+    "incoterm": "DAP",
+    "tooling_eur": 0.0,
+    "ppm_commitment": 300,
+    "chargeback_eur_per_complaint": 0.0,
+    "unit_price": 33.5
+   },
+   "c_open": 1932492.18,
+   "c_deal": 1583587.2,
+   "c_alt": null,
+   "c_best": 1328926.89,
+   "score": 0.5780733017301243,
+   "must_haves_ok": true,
+   "cost_breakdown": {
+    "price": 1567800.0,
+    "uncovered_need": 0.0,
+    "fallback_risk": 0.0,
+    "payment_terms": 10452.0,
+    "freight": 0.0,
+    "late_delivery": 0.0,
+    "quality": 5335.2,
+    "tooling": 0.0,
+    "index_clause": 0.0,
+    "index_risk": 0.0,
+    "relationship": 0.0
+   },
+   "trace": [
+    {
+     "round": 0,
+     "actor": "sup:70410",
+     "move": {
+      "offer_id": "offer:70410-0",
+      "round": 0,
+      "status": "open",
+      "terms": {
+       "unit_price": 32.2,
+       "lead_time_days": 54,
+       "volume_per_year": 19890,
+       "contract_months": 12
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Dear Sir or Madam,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe offer a price of €32.20 per unit for a volume of 19890 pcs per year. Our Lieferzeit is 54 days, and the contract term is 12 months. \n\nPlease note that this offer remains valid for 30 days. All deliveries and services are strictly subject to our standard procedure and standard conditions.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH"
+     },
+     "reasons": []
+    },
+    {
+     "round": 1,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Dichtungswerk Ravensteiner GmbH: Ravensteiner cuts the seal allocation",
+      "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nOur bottom-up cost model puts the full cost of this part at EUR 24.31 per unit (cost:340010).\nOur demand forecast for this part has risen 10.1% (fc:340010@2026-09).\nOur last 3 orders for this part were at EUR 29.89 per unit (po:4500014436-10, po:4500014383-10, po:4500014337-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [
+       "cost:340010",
+       "fc:340010@2026-09",
+       "po:4500014337-10",
+       "po:4500014383-10",
+       "po:4500014436-10"
+      ],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 29.95,
+         "volume_per_year": 23400,
+         "contract_months": 36,
+         "lead_time_days": 42
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": [
+        {
+         "type": "price_history",
+         "refs": [
+          "po:4500014337-10",
+          "po:4500014383-10",
+          "po:4500014436-10"
+         ],
+         "asserted": {
+          "prices": [
+           29.89,
+           29.89,
+           29.89
+          ]
+         }
+        },
+        {
+         "type": "volume_change",
+         "refs": [
+          "fc:340010@2026-09"
+         ],
+         "asserted": {
+          "change_pct": 10.1
+         }
+        },
+        {
+         "type": "should_cost",
+         "refs": [
+          "cost:340010"
+         ],
+         "asserted": {
+          "unit_cost": 24.31
+         }
+        }
+       ]
+      },
+      "supplier_id": "sup:70410"
+     },
+     "reasons": []
+    },
+    {
+     "round": 1,
+     "actor": "sup:70410",
+     "move": {
+      "offer_id": "offer:70410-1",
+      "round": 1,
+      "status": "open",
+      "terms": {
+       "unit_price": 33.6,
+       "lead_time_days": 42,
+       "volume_per_year": 23400,
+       "contract_months": 36
+      },
+      "alternatives": [
+       {
+        "offer_id": "offer:70410-1-a",
+        "terms": {
+         "unit_price": 31.7,
+         "lead_time_days": 54,
+         "volume_per_year": 23400,
+         "contract_months": 36
+        }
+       }
+      ],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [
+       {
+        "index": 0,
+        "result": "verified"
+       },
+       {
+        "index": 1,
+        "result": "verified"
+       },
+       {
+        "index": 2,
+        "result": "verified"
+       }
+      ],
+      "signals": {
+       "reply_delay_days": 2,
+       "validity_days": 30
+      },
+      "text": "Dear Sir or Madam,\n\nWe have reviewed your offer and can adjust our Angebot as follows. We checked the price history data you cited; it holds, but it does not change our calculation. We checked the volume change data you cited; it holds, but it does not change our calculation. We checked the should cost data you cited; it holds and we took it into account. We note your historical purchase prices and cost model; however, our current pricing reflects our high capacity utilisation and present manufacturing costs. Our price reflects our costs; our calculation stays internal.\n\nWe can accommodate your requested volume of 23,400 units and the 36-month contract term. Our Angebot is a price of €33.60 per unit, Lieferzeit 42 days, a volume of 23400 pcs per year, a contract term of 36 months. Our Lieferzeit is 42 days.\n\nAlternatively, with Lieferzeit 54 days: €31.70 per unit, alongside a price of €31.70 per unit, Lieferzeit 54 days, a volume of 23400 pcs per year, a contract term of 36 months.\n\nThis offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH"
+     },
+     "reasons": [
+      "We checked the price history data you cited; it holds, but it does not change our calculation.",
+      "We checked the volume change data you cited; it holds, but it does not change our calculation.",
+      "We checked the should cost data you cited; it holds and we took it into account.",
+      "We note your historical purchase prices and cost model; however, our current pricing reflects our high capacity utilisation and present manufacturing costs.",
+      "We can accommodate your requested volume of … units and the 36-month contract term.",
+      "Alternatively, with Lieferzeit … days: €… per unit.",
+      "Our price reflects our costs; our calculation stays internal.",
+      "Our Lieferzeit is … days."
+     ]
+    },
+    {
+     "round": 2,
+     "actor": "buyer",
+     "move": {
+      "type": "message",
+      "message_id": null,
+      "subject": "Re: Quote from Dichtungswerk Ravensteiner GmbH: Ravensteiner cuts the seal allocation",
+      "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nYour rolling scorecard shows on-time delivery of 79.5% (sc:70410@2026Q3).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+      "refs": [
+       "sc:70410@2026Q3"
+      ],
+      "term_sheets": [
+       {
+        "term_sheet_id": null,
+        "terms": {
+         "unit_price": 30.47,
+         "volume_per_year": 23400,
+         "contract_months": 36,
+         "lead_time_days": 42
+        }
+       }
+      ],
+      "interpreted": {
+       "claims": [
+        {
+         "type": "delivery_record",
+         "refs": [
+          "sc:70410@2026Q3"
+         ],
+         "asserted": {
+          "otd_pct": 79.5
+         }
+        }
+       ]
+      },
+      "supplier_id": "sup:70410"
+     },
+     "reasons": []
+    },
+    {
+     "round": 2,
+     "actor": "sup:70410",
+     "move": {
+      "offer_id": "offer:70410-2",
+      "round": 2,
+      "status": "final_offer",
+      "terms": {
+       "unit_price": 33.5,
+       "lead_time_days": 42,
+       "volume_per_year": 23400,
+       "contract_months": 36
+      },
+      "alternatives": [],
+      "missing_fields": [],
+      "claims": [],
+      "claim_results": [
+       {
+        "index": 0,
+        "result": "verified"
+       }
+      ],
+      "signals": {
+       "reply_delay_days": 3,
+       "validity_days": 7
+      },
+      "text": "Dear Sir or Madam,\n\nWe verified the delivery record you cited; it holds, but it does not change our calculation. Our price reflects our costs; our calculation stays internal.\n\nWe note your slight price increase and adjust our offer accordingly. For the requested package, our revised price is €33.50 per unit. This is our final offer (letztes Angebot). Please decide.\n\nOurangebot comprises a price of €33.50 per unit, Lieferzeit 42 days, a volume of 23400 pcs per year, and a contract term of 36 months. Our Lieferzeit is 42 days.\n\nThis offer stays valid for 7 days.\n\nMit freundlichen Grüßen\nMonika Zellner\nSegment Manager, Dichtungswerk Ravensteiner GmbH"
+     },
+     "reasons": [
+      "We verified the delivery record you cited; it holds, but it does not change our calculation.",
+      "We note your slight price increase and adjust our offer accordingly.",
+      "For the requested package, our revised price is €… per unit.",
+      "Our Lieferzeit is … days.",
+      "Our price reflects our costs; our calculation stays internal."
+     ]
+    },
+    {
+     "round": 2,
+     "actor": "buyer",
+     "move": {
+      "type": "accept",
+      "offer_id": "offer:70410-2",
+      "supplier_id": "sup:70410"
+     },
+     "reasons": []
+    }
+   ]
+  },
+  "replay_url": "/replay/ab50bb7193310f29"
+ },
+ "backoffice": [
+  {
+   "round": 0,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "quote attached (quote-offer-70410-0.pdf)"
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet and … cited facts to check; we answer with our offer."
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "delivery schedule attached (delivery-schedule.xlsx)"
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "My call: counter."
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "Read the buyer's e-mail: … term sheet and … cited fact to check; we answer with our final offer."
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "quote attached (quote-offer-70410-2.pdf)"
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "delivery schedule attached (delivery-schedule.xlsx)"
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "order confirmation attached (order-confirmation-offer-70410-2.pdf)"
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70410",
+   "supplier": "Dichtungswerk Ravensteiner GmbH",
+   "from": "Segment Manager",
+   "to": "team",
+   "text": "delivery schedule attached (delivery-schedule.xlsx)"
+  }
+ ],
+ "decisions": [
+  {
+   "round": 0,
+   "supplier_id": "sup:70410",
+   "their_status": "open",
+   "their_offer": "offer:70410-0",
+   "their_terms": {
+    "unit_price": 32.2,
+    "lead_time_days": 54,
+    "volume_per_year": 19890,
+    "contract_months": 12
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 29.95,
+     "volume_per_year": 23400,
+     "contract_months": 36,
+     "lead_time_days": 42
+    }
+   ],
+   "seconds": 7.477,
+   "source": "engine",
+   "tactician": "o4 and o3 give our lowest C (€1,416,340), lower than E0's €1,449,940, because the 42 d lead time is a must-have for us. o4's 36-month commitment speaks most directly to its strong planning_security need, and the 'to it' figure does not count contract length. That partly offsets the 56 d lead E0 offered it, so o4 has a better chance of acceptance than o3 at the same C. At €29.95 the price sits well below its quote but above its health price, so it is a firm and credible opening. o5/o6 risk refusal because it cannot deliver faster under full capacity, and o7 costs far more.",
+   "option": "o4",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 7.4,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "o4",
+     "claims": [
+      "a1",
+      "a3",
+      "a4"
+     ],
+     "reason": "o4 and o3 give our lowest C (€1,416,340), lower than E0's €1,449,940, because the 42 d lead time is a must-have for us. o4's 36-month commitment speaks most directly to its strong planning_security need, and the 'to it' figure does not count contract length. That partly offsets the 56 d lead E0 offered it, so o4 has a better chance of acceptance than o3 at the same C. At €29.95 the price sits well below its quote but above its health price, so it is a firm and credible opening. o5/o6 risk refusal because it cannot deliver faster under full capacity, and o7 costs far more."
+    },
+    "used": true,
+    "packet_seconds": 0.03
+   },
+   "features_off": [
+    "ask_breakdown",
+    "call_note_lever",
+    "case_plan",
+    "grounded_dossier",
+    "measured_trades",
+    "patience",
+    "plan_paragraph",
+    "plan_priced_trades",
+    "plan_stance",
+    "tactician_text"
+   ],
+   "plan": false
+  },
+  {
+   "round": 1,
+   "supplier_id": "sup:70410",
+   "their_status": "open",
+   "their_offer": "offer:70410-1",
+   "their_terms": {
+    "unit_price": 33.6,
+    "lead_time_days": 42,
+    "volume_per_year": 23400,
+    "contract_months": 36
+   },
+   "action": "send",
+   "our_sheets": [
+    {
+     "unit_price": 30.47,
+     "volume_per_year": 23400,
+     "contract_months": 36,
+     "lead_time_days": 42
+    }
+   ],
+   "seconds": 7.57,
+   "source": "engine",
+   "tactician": "o4 keeps the 36-month binding term the supplier values for planning security, and the 42 d lead time. It gives our lowest C of €1,440,838, better than E0's €1,474,438 on the 56 d lead and equal to o3/o5/o6. The 36-month term is a concession the supplier already accepted and values, so it is likely to draw a better counter than the 24-month variants. The delivery record argument (a1) is a new kind and undercuts the lead-time premium. Accepting now at €31.70 or €33.60 would leave value on the table while it is still moving.",
+   "option": "o4",
+   "claims_dropped": [],
+   "hybrid": {
+    "seconds": 7.5,
+    "check": "ok",
+    "error": null,
+    "choice": {
+     "action": "counter",
+     "option": "o4",
+     "claims": [
+      "a1"
+     ],
+     "reason": "o4 keeps the 36-month binding term the supplier values for planning security, and the 42 d lead time. It gives our lowest C of €1,440,838, better than E0's €1,474,438 on the 56 d lead and equal to o3/o5/o6. The 36-month term is a concession the supplier already accepted and values, so it is likely to draw a better counter than the 24-month variants. The delivery record argument (a1) is a new kind and undercuts the lead-time premium. Accepting now at €31.70 or €33.60 would leave value on the table while it is still moving."
+    },
+    "used": true,
+    "packet_seconds": 0.03
+   }
+  },
+  {
+   "round": 2,
+   "supplier_id": "sup:70410",
+   "their_status": "final_offer",
+   "their_offer": "offer:70410-2",
+   "their_terms": {
+    "unit_price": 33.5,
+    "lead_time_days": 42,
+    "volume_per_year": 23400,
+    "contract_months": 36
+   },
+   "action": "accept",
+   "our_sheets": [],
+   "seconds": 0.0,
+   "source": "engine",
+   "why": "final_offer; C 1,583,587 below the limit inf"
+  }
+ ],
+ "plan": null,
+ "prepare_seconds": null
+}

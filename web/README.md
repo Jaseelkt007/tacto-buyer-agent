@@ -1,7 +1,15 @@
 # ProcuDeal web app
 
-Sections: **Home** (step through a negotiation chapter by chapter; any run at `/story/<session>`), **Mail** (below), **Deals** (negotiation replays), **Suppliers**, **Parts & Cost**, **Market**, **Contracts**, **Demand**, **Arguments**, **Facts**; each replay links to its deal anatomy. Full docs per section,
-data sources and the phase plan: [docs/README.md](docs/README.md).
+The homepage and **Demo** present the original v1.9 engine and its ten hosted cases (75.09 mean).
+`/live` opens the recorded P01 negotiation; `/demo` opens the same monitor. The site uses a fixed
+white/gray theme. **Deals** retains historical versions, while **Mail**, **Suppliers**, **Parts & Cost**,
+**Market**, **Contracts**, **Demand**, **Arguments**, and **Facts** expose the supporting data.
+
+Rebuild and validate the v1.9 snapshot with `npm run sync:v19` and `npm run check:v19`.
+See [demo documentation](docs/live.md) for provenance and replay behavior.
+
+The demo also exposes the latest offline decision-review model and public exchange feedback.
+See [reviewer documentation](docs/reviewer.md) for its saved examples, authority, and data export.
 
 ## Mail: what the buyer agent sees
 

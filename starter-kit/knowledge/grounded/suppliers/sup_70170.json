@@ -1,0 +1,848 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70170",
+ "name": "Slévárna Vrbenský s.r.o.",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "b79739387655bb00bc7c4936aceb0e7cd373a31f5e2a8c1ded1156b5e0794a7f",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:18:02.870216+00:00",
+  "seconds": 32.5,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:1d33b1f1a918a36a",
+   "text": "The supplier asked Hollerau to pay its invoices within 10 days and offered a cash discount in return; no percentage is stated.",
+   "kind": "supplier_statement",
+   "source": "doc:20260210-70170-M1",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-02-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1d33b1f1a918a36a",
+    "verdict": "supported",
+    "reason": "Correctly reported as a supplier statement; the email states no discount percentage."
+   }
+  },
+  {
+   "id": "obs:aa9fb0448d65d0c9",
+   "text": "Current master terms: 45 payment days, no cash discount, FCA, 56-day standard lead time.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"FCA\", \"name\": \"Slévárna Vrbenský s.r.o.\", \"payment_days\": 45, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 56",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:aa9fb0448d65d0c9",
+    "verdict": "supported",
+    "reason": "Vendor master shows 45 payment days, null cash-discount fields, FCA and 56-day standard lead time."
+   }
+  },
+  {
+   "id": "obs:77116fbfe5e183dc",
+   "text": "Slévárna Vrbenský's renewal price for part 310050 from 2026-01-01 is EUR 559.61 per unit, -1.7 %, with no end date recorded.",
+   "kind": "fact",
+   "source": "EV-2026-70170-310050",
+   "quote": "\"basis\": \"renewal\", \"change_pct\": -1.7, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70170-310050\", \"price\": 559.61, \"price_unit\": 1, \"supplier_id\": \"sup:70170\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:77116fbfe5e183dc",
+    "verdict": "supported",
+    "reason": "Matches the price record: EUR 559.61, -1.7 %, valid_from 2026-01-01, valid_to null."
+   }
+  },
+  {
+   "id": "obs:0be360c20d2b44c2",
+   "text": "At the 2025-11-17 renewal the supplier asked +0.6 % and settled at -1.7 %.",
+   "kind": "fact",
+   "source": "EV-2026-70170-310050",
+   "quote": "\"asked_pct\": 0.6, \"date\": \"2025-11-17\", \"event_id\": \"EV-2026-70170-310050\", \"note\": \"\", \"part_id\": \"part:310050\", \"settled_pct\": -1.7",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": "2025-11-17",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0be360c20d2b44c2",
+    "verdict": "supported",
+    "reason": "Negotiation history shows asked +0.6 % and settled -1.7 % on 2025-11-17."
+   }
+  },
+  {
+   "id": "obs:4645ff2978d3ec99",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070170#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:4645ff2978d3ec99",
+    "verdict": "supported",
+    "reason": "Restates contract clause 3.1 exactly."
+   }
+  },
+  {
+   "id": "obs:b03ca56cb0d79b33",
+   "text": "Framework agreement 4600070170 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070170#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:b03ca56cb0d79b33",
+    "verdict": "supported",
+    "reason": "Restates contract clause 8.1 exactly."
+   }
+  },
+  {
+   "id": "obs:fdfb08729c9a44f2",
+   "text": "Contract payment term is 45 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070170#4.1",
+   "quote": "Payment: 45 days net.",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:fdfb08729c9a44f2",
+    "verdict": "supported",
+    "reason": "Restates contract clause 4.1 exactly."
+   }
+  },
+  {
+   "id": "obs:980f6694553c30fc",
+   "text": "Delivery FCA with standard lead time 56 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070170#5.1",
+   "quote": "Delivery FCA; standard lead time 56 days from order.",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:980f6694553c30fc",
+    "verdict": "supported",
+    "reason": "Restates contract clause 5.1 exactly."
+   }
+  },
+  {
+   "id": "obs:55ea3921c92ed6ee",
+   "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070170#6.1",
+   "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:55ea3921c92ed6ee",
+    "verdict": "supported",
+    "reason": "Restates contract clause 6.1 exactly."
+   }
+  },
+  {
+   "id": "obs:cc1823d02cc05b24",
+   "text": "92.3% of the supplier's invoices were paid late, on average 5.5 days after due.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due\": 5.5, \"avg_days_paid_after_due_last_12m\": 5.2, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 69, \"max_days_late\": 13, \"paid_late_pct\": 92.3",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:cc1823d02cc05b24",
+    "verdict": "supported",
+    "reason": "Invoice record shows paid_late_pct 92.3 and avg_days_paid_after_due 5.5."
+   }
+  },
+  {
+   "id": "obs:36f39cecc7ceecd2",
+   "text": "Rolling scorecard for 2026Q3 is class C / red with score 67.4, ppm 5682 and otd_pct 91.7.",
+   "kind": "fact",
+   "source": "sc:70170@2026Q3",
+   "quote": "\"class\": \"C\", \"colour\": \"red\", \"complaint_qty\": 2, \"gr_lines\": 24, \"id\": \"sc:70170@2026Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 95.8, \"otd_pct\": 91.7",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:36f39cecc7ceecd2",
+    "verdict": "supported",
+    "reason": "Scorecard 2026Q3 record shows class C / red, score 67.4, ppm 5682, otd_pct 91.7."
+   }
+  },
+  {
+   "id": "obs:3f52f86c216b584c",
+   "text": "Scorecard 2026Q2 was class B / amber, score 80.6, otd_pct 91.3.",
+   "kind": "fact",
+   "source": "sc:70170@2026Q2",
+   "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 1, \"gr_lines\": 23, \"id\": \"sc:70170@2026Q2\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 95.7, \"otd_pct\": 91.3",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": "2026-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3f52f86c216b584c",
+    "verdict": "supported",
+    "reason": "Scorecard 2026Q2 record shows class B / amber, score 80.6, otd_pct 91.3."
+   }
+  },
+  {
+   "id": "obs:11fb8d6078636076",
+   "text": "Supplier-caused porosity complaint on part 310050 dated 2026-08-26; EUR 150 recharged, 1 returned, 8D not yet closed (d8_date null).",
+   "kind": "fact",
+   "source": "qn:20005004",
+   "quote": "\"cost_recharged_eur\": 150, \"d3_date\": \"2026-09-03\", \"d8_date\": null, \"defect\": \"porosity\"",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": "2026-08-26",
+   "valid_until": null,
+   "review": {
+    "id": "obs:11fb8d6078636076",
+    "verdict": "supported",
+    "reason": "Complaint record qn:20005004 matches: supplier-caused porosity, 2026-08-26, EUR 150 recharged, 1 returned, d8_date null."
+   }
+  },
+  {
+   "id": "obs:5002589c07be3dff",
+   "text": "Last 12 months: 24 receipts, 91.7% on time vs requested, 95.8% vs confirmed, 8.3% late, max 10 days late.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 8.5, \"early_pct\": 0.0, \"late_pct\": 8.3, \"max_days_late\": 10, \"on_time_confirmed_pct\": 95.8, \"on_time_requested_pct\": 91.7, \"receipts\": 24}",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:5002589c07be3dff",
+    "verdict": "supported",
+    "reason": "Delivery figures match the last-12-month record, which covers part 310050 only."
+   }
+  },
+  {
+   "id": "obs:3492432633e2ef6e",
+   "text": "In the 2025-07-10 benchmark RFQ, Slévárna Vrbenský quoted EUR 598.1 per unit FCA, with a 54-day lead time and 45 payment days, and was not awarded.",
+   "kind": "fact",
+   "source": "quote:7100013",
+   "quote": "\"awarded\": 0, \"currency\": \"EUR\", \"id\": \"quote:7100013\", \"incoterm\": \"FCA\", \"lead_time_days\": 54, \"missing_fields\": \"\", \"name\": \"Slévárna Vrbenský s.r.o.\", \"payment_days\": 45, \"price_unit\": 1, \"quote_date\": \"2025-07-10\"",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": "2025-07-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3492432633e2ef6e",
+    "verdict": "supported",
+    "reason": "Quote record shows EUR 598.1 FCA, 54-day lead time, 45 payment days, not awarded, in the periodic benchmark RFQ dated 2025-07-10."
+   }
+  },
+  {
+   "id": "obs:b89604d25b2c2361",
+   "text": "At the supplier day, the supplier said Hollerau is an important reference customer for them.",
+   "kind": "supplier_statement",
+   "source": "doc:20260512-70170-M2",
+   "quote": "Slévárna Vrbenský s.r.o. said Hollerau is an important reference customer for them.",
+   "parts": [],
+   "observed_at": "2026-05-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b89604d25b2c2361",
+    "verdict": "supported",
+    "reason": "Matches the meeting note and is correctly reported as a supplier statement."
+   }
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "obs:4ff69e6053062978",
+   "text": "Hypothesis: the request for 10-day payment may indicate that the supplier places a value on liquidity.",
+   "kind": "hypothesis",
+   "source": "doc:20260210-70170-M1",
+   "quote": "Could you pay our invoices within 10 days?",
+   "parts": [],
+   "observed_at": "2026-02-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:4ff69e6053062978",
+    "verdict": "hypothesis",
+    "reason": "Plausible inference from the 10-day payment request, correctly labelled as a hypothesis."
+   }
+  },
+  {
+   "id": "obs:f5aeda534fe163c0",
+   "text": "The early-payment request may indicate the supplier values faster cash, possibly linked to late payments by Hollerau.",
+   "kind": "hypothesis",
+   "source": "doc:20260210-70170-M1",
+   "quote": "Could you pay our invoices within 10 days?",
+   "parts": [],
+   "observed_at": "2026-02-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:f5aeda534fe163c0",
+    "verdict": "hypothesis",
+    "reason": "Plausible inference linking the request to late payment, correctly labelled and not proven."
+   }
+  }
+ ],
+ "verified_unselected": [
+  {
+   "id": "obs:88aa0e3a05b1f231",
+   "text": "Producer prices for iron castings rose 1.8 % in the twelve months to August.",
+   "kind": "fact",
+   "source": "news:20260914-31",
+   "quote": "Producer prices for iron castings rose +1.8 % in the twelve months to August.",
+   "parts": [],
+   "observed_at": "2026-09-14",
+   "valid_until": null,
+   "review": {
+    "id": "obs:88aa0e3a05b1f231",
+    "verdict": "supported",
+    "reason": "Restates the market news item accurately, with the correct date."
+   }
+  },
+  {
+   "id": "obs:b503edf8a4d3e2e0",
+   "text": "Supplier asked Hollerau to pay its invoices within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260210-70170-M1",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-02-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b503edf8a4d3e2e0",
+    "verdict": "supported",
+    "reason": "Matches the email and is correctly reported as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:7111211609dad06f",
+   "text": "Supplier said Hollerau is an important reference customer for them.",
+   "kind": "supplier_statement",
+   "source": "doc:20260512-70170-M2",
+   "quote": "Slévárna Vrbenský s.r.o. said Hollerau is an important reference customer for them.",
+   "parts": [],
+   "observed_at": "2026-05-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:7111211609dad06f",
+    "verdict": "supported",
+    "reason": "Matches the meeting note and is correctly reported as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:965bb59ecd4d7c24",
+   "text": "Supplier commissioned a new automatic moulding line that doubles its stainless castings capacity.",
+   "kind": "fact",
+   "source": "news:20260420-09",
+   "quote": "has commissioned a new automatic moulding line that doubles its capacity for stainless castings.",
+   "parts": [],
+   "observed_at": "2026-04-20",
+   "valid_until": null,
+   "review": {
+    "id": "obs:965bb59ecd4d7c24",
+    "verdict": "supported",
+    "reason": "Matches the news report of a new moulding line doubling stainless castings capacity."
+   }
+  },
+  {
+   "id": "obs:06f7c4c537f373d5",
+   "text": "Supplier is family-owned, founded 1997, with 150 staff.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"founded\": 1997, \"group_parent\": null, \"legal_form\": \"s.r.o.\", \"owner_type\": \"family\", \"staff\": 150",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:06f7c4c537f373d5",
+    "verdict": "supported",
+    "reason": "Intel record shows owner_type family, founded 1997, staff 150."
+   }
+  },
+  {
+   "id": "obs:5c6d179c0fa15574",
+   "text": "Supplier turnover is EUR 8.27 M with equity ratio 36.4% (FY2024 filing).",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 36.4, \"filed_fy\": 2024",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:5c6d179c0fa15574",
+    "verdict": "supported",
+    "reason": "Intel record shows turnover EUR 8,270,000, equity ratio 36.4 %, filed FY2024; the turnover figure is in the source record though not in the cited excerpt."
+   }
+  },
+  {
+   "id": "obs:a713a85f329daa24",
+   "text": "Supplier requested payment of invoices within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260210-70170-M1",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-02-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a713a85f329daa24",
+    "verdict": "supported",
+    "reason": "Matches the email and is correctly reported as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:1374ce6cd018ee05",
+   "text": "Scorecard 2025Q3 was class A / green with score 100.0, ppm 0 and otd 100%.",
+   "kind": "fact",
+   "source": "sc:70170@2025Q3",
+   "quote": "\"class\": \"A\", \"colour\": \"green\", \"complaint_qty\": 0, \"gr_lines\": 24, \"id\": \"sc:70170@2025Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 100.0, \"otd_pct\": 100.0",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": "2025-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1374ce6cd018ee05",
+    "verdict": "supported",
+    "reason": "Scorecard 2025Q3 record shows class A / green, score 100.0, ppm 0, otd 100 %."
+   }
+  },
+  {
+   "id": "obs:9adb643d02c65b6c",
+   "text": "Supplier-caused burr / sharp edge complaint on part 310050 dated 2025-12-27; 8D closed 2026-03-24, nothing recharged.",
+   "kind": "fact",
+   "source": "qn:20004778",
+   "quote": "\"cost_recharged_eur\": 0, \"d3_date\": \"2025-12-29\", \"d8_date\": \"2026-03-24\", \"defect\": \"burr / sharp edge\"",
+   "parts": [
+    "part:310050"
+   ],
+   "observed_at": "2025-12-27",
+   "valid_until": null,
+   "review": {
+    "id": "obs:9adb643d02c65b6c",
+    "verdict": "supported",
+    "reason": "Complaint record qn:20004778 matches: supplier-caused burr, 2025-12-27, 8D closed 2026-03-24, nothing recharged."
+   }
+  },
+  {
+   "id": "obs:46184c7dcb91236b",
+   "text": "Supplier's standard lead time is 56 days; incoterm FCA, payment 45 days.",
+   "kind": "fact",
+   "source": "sup:70170",
+   "quote": "\"incoterm\": \"FCA\", \"name\": \"Slévárna Vrbenský s.r.o.\", \"payment_days\": 45, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 56",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:46184c7dcb91236b",
+    "verdict": "supported",
+    "reason": "Vendor master shows 56-day lead time, FCA and 45 payment days."
+   }
+  },
+  {
+   "id": "obs:919331493505718f",
+   "text": "Supplier holds VDA 6.3 grade B and ISO 9001/14001/50001 certifications.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"certifications\": \"ISO 9001; ISO 14001; ISO 50001\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:919331493505718f",
+    "verdict": "supported",
+    "reason": "Intel record shows vda63_grade B and the three ISO certifications."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Slévárna Vrbenský's renewal price for part 310050 from 2026-01-01 is EUR 559.61 per unit, -1.7 %, with no end date recorded.",
+     "kind": "fact",
+     "source": "EV-2026-70170-310050",
+     "quote": "\"basis\": \"renewal\", \"change_pct\": -1.7, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70170-310050\", \"price\": 559.61, \"price_unit\": 1, \"supplier_id\": \"sup:70170\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "In the 2025-07-10 benchmark RFQ, Slévárna Vrbenský quoted EUR 598.1 per unit FCA, with a 54-day lead time and 45 payment days, and was not awarded.",
+     "kind": "fact",
+     "source": "quote:7100013",
+     "quote": "\"awarded\": 0, \"currency\": \"EUR\", \"id\": \"quote:7100013\", \"incoterm\": \"FCA\", \"lead_time_days\": 54, \"missing_fields\": \"\", \"name\": \"Slévárna Vrbenský s.r.o.\", \"payment_days\": 45, \"price_unit\": 1, \"quote_date\": \"2025-07-10\"",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": "2025-07-10",
+     "valid_until": null
+    },
+    {
+     "text": "The supplier asked Hollerau to pay its invoices within 10 days and offered a cash discount in return; no percentage is stated.",
+     "kind": "supplier_statement",
+     "source": "doc:20260210-70170-M1",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-02-10",
+     "valid_until": null
+    },
+    {
+     "text": "Hypothesis: the request for 10-day payment may indicate that the supplier places a value on liquidity.",
+     "kind": "hypothesis",
+     "source": "doc:20260210-70170-M1",
+     "quote": "Could you pay our invoices within 10 days?",
+     "parts": [],
+     "observed_at": "2026-02-10",
+     "valid_until": null
+    },
+    {
+     "text": "At the supplier day, the supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260512-70170-M2",
+     "quote": "Slévárna Vrbenský s.r.o. said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-05-12",
+     "valid_until": null
+    },
+    {
+     "text": "The supplier's financial profile shows turnover of EUR 8.27 M, a 36.4 % equity ratio and a credit index of 239, unchanged from 12 months ago. It is family-owned.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 239, \"credit_index_12m_ago\": 239, \"equity_ratio_pct\": 36.4, \"filed_fy\": 2024, \"founded\": 1997, \"legal_form\": \"s.r.o.\", \"owner_type\": \"family\", \"staff\": 150, \"supplier_id\": \"sup:70170\", \"turnover_band\": \"5-10 M EUR\", \"turnover_eur\": 8270000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "The supplier master records the supplier as based in CZ, with FCA delivery terms, 45 payment days and a standard lead time of 56 days.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"country\": \"CZ\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70170\", \"incoterm\": \"FCA\", \"name\": \"Slévárna Vrbenský s.r.o.\", \"payment_days\": 45, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 56",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Producer prices for iron castings rose 1.8 % in the twelve months to August.",
+     "kind": "fact",
+     "source": "news:20260914-31",
+     "quote": "Producer prices for iron castings rose +1.8 % in the twelve months to August.",
+     "parts": [],
+     "observed_at": "2026-09-14",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier asked Hollerau to pay its invoices within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260210-70170-M1",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-02-10",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260512-70170-M2",
+     "quote": "Slévárna Vrbenský s.r.o. said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-05-12",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier commissioned a new automatic moulding line that doubles its stainless castings capacity.",
+     "kind": "fact",
+     "source": "news:20260420-09",
+     "quote": "has commissioned a new automatic moulding line that doubles its capacity for stainless castings.",
+     "parts": [],
+     "observed_at": "2026-04-20",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is family-owned, founded 1997, with 150 staff.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"founded\": 1997, \"group_parent\": null, \"legal_form\": \"s.r.o.\", \"owner_type\": \"family\", \"staff\": 150",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier turnover is EUR 8.27 M with equity ratio 36.4% (FY2024 filing).",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 36.4, \"filed_fy\": 2024",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Current master terms: 45 payment days, no cash discount, FCA, 56-day standard lead time.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"FCA\", \"name\": \"Slévárna Vrbenský s.r.o.\", \"payment_days\": 45, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 56",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "92.3% of the supplier's invoices were paid late, on average 5.5 days after due.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due\": 5.5, \"avg_days_paid_after_due_last_12m\": 5.2, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 69, \"max_days_late\": 13, \"paid_late_pct\": 92.3",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "The early-payment request may indicate the supplier values faster cash, possibly linked to late payments by Hollerau.",
+     "kind": "hypothesis",
+     "source": "doc:20260210-70170-M1",
+     "quote": "Could you pay our invoices within 10 days?",
+     "parts": [],
+     "observed_at": "2026-02-10",
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement 4600070170 runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070170#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070170#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment term is 45 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070170#4.1",
+     "quote": "Payment: 45 days net.",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery FCA with standard lead time 56 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070170#5.1",
+     "quote": "Delivery FCA; standard lead time 56 days from order.",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070170#6.1",
+     "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested payment of invoices within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260210-70170-M1",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-02-10",
+     "valid_until": null
+    },
+    {
+     "text": "At the 2025-11-17 renewal the supplier asked +0.6 % and settled at -1.7 %.",
+     "kind": "fact",
+     "source": "EV-2026-70170-310050",
+     "quote": "\"asked_pct\": 0.6, \"date\": \"2025-11-17\", \"event_id\": \"EV-2026-70170-310050\", \"note\": \"\", \"part_id\": \"part:310050\", \"settled_pct\": -1.7",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": "2025-11-17",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260512-70170-M2",
+     "quote": "Slévárna Vrbenský s.r.o. said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-05-12",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling scorecard for 2026Q3 is class C / red with score 67.4, ppm 5682 and otd_pct 91.7.",
+     "kind": "fact",
+     "source": "sc:70170@2026Q3",
+     "quote": "\"class\": \"C\", \"colour\": \"red\", \"complaint_qty\": 2, \"gr_lines\": 24, \"id\": \"sc:70170@2026Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 95.8, \"otd_pct\": 91.7",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Scorecard 2026Q2 was class B / amber, score 80.6, otd_pct 91.3.",
+     "kind": "fact",
+     "source": "sc:70170@2026Q2",
+     "quote": "\"class\": \"B\", \"colour\": \"amber\", \"complaint_qty\": 1, \"gr_lines\": 23, \"id\": \"sc:70170@2026Q2\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 95.7, \"otd_pct\": 91.3",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": "2026-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "Scorecard 2025Q3 was class A / green with score 100.0, ppm 0 and otd 100%.",
+     "kind": "fact",
+     "source": "sc:70170@2025Q3",
+     "quote": "\"class\": \"A\", \"colour\": \"green\", \"complaint_qty\": 0, \"gr_lines\": 24, \"id\": \"sc:70170@2025Q3\", \"open_8d_overdue\": 0, \"otd_confirmed_pct\": 100.0, \"otd_pct\": 100.0",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": "2025-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier-caused porosity complaint on part 310050 dated 2026-08-26; EUR 150 recharged, 1 returned, 8D not yet closed (d8_date null).",
+     "kind": "fact",
+     "source": "qn:20005004",
+     "quote": "\"cost_recharged_eur\": 150, \"d3_date\": \"2026-09-03\", \"d8_date\": null, \"defect\": \"porosity\"",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": "2026-08-26",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier-caused burr / sharp edge complaint on part 310050 dated 2025-12-27; 8D closed 2026-03-24, nothing recharged.",
+     "kind": "fact",
+     "source": "qn:20004778",
+     "quote": "\"cost_recharged_eur\": 0, \"d3_date\": \"2025-12-29\", \"d8_date\": \"2026-03-24\", \"defect\": \"burr / sharp edge\"",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": "2025-12-27",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months: 24 receipts, 91.7% on time vs requested, 95.8% vs confirmed, 8.3% late, max 10 days late.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 8.5, \"early_pct\": 0.0, \"late_pct\": 8.3, \"max_days_late\": 10, \"on_time_confirmed_pct\": 95.8, \"on_time_requested_pct\": 91.7, \"receipts\": 24}",
+     "parts": [
+      "part:310050"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's standard lead time is 56 days; incoterm FCA, payment 45 days.",
+     "kind": "fact",
+     "source": "sup:70170",
+     "quote": "\"incoterm\": \"FCA\", \"name\": \"Slévárna Vrbenský s.r.o.\", \"payment_days\": 45, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 56",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier holds VDA 6.3 grade B and ISO 9001/14001/50001 certifications.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"certifications\": \"ISO 9001; ISO 14001; ISO 50001\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": [
+   {
+    "role": "economics",
+    "observation": {
+     "text": "The supplier's financial profile shows turnover of EUR 8.27 M, a 36.4 % equity ratio and a credit index of 239, unchanged from 12 months ago. It is family-owned.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 239, \"credit_index_12m_ago\": 239, \"equity_ratio_pct\": 36.4, \"filed_fy\": 2024, \"founded\": 1997, \"legal_form\": \"s.r.o.\", \"owner_type\": \"family\", \"staff\": 150, \"supplier_id\": \"sup:70170\", \"turnover_band\": \"5-10 M EUR\", \"turnover_eur\": 8270000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    "why": "excerpt missing from source"
+   },
+   {
+    "role": "economics",
+    "observation": {
+     "text": "The supplier master records the supplier as based in CZ, with FCA delivery terms, 45 payment days and a standard lead time of 56 days.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"country\": \"CZ\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70170\", \"incoterm\": \"FCA\", \"name\": \"Slévárna Vrbenský s.r.o.\", \"payment_days\": 45, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 56",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    "why": "excerpt missing from source"
+   }
+  ]
+ }
+}

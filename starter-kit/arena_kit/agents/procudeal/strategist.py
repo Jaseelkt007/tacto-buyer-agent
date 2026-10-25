@@ -15,8 +15,9 @@ import threading
 import time
 from pathlib import Path
 
+from .policy import on
 from .research import agents as ag
-from .research import llm
+from .research import grounded, llm
 
 log = logging.getLogger("arena")
 KNOWLEDGE = Path(__file__).resolve().parents[3] / "knowledge"
@@ -159,8 +160,10 @@ def _for_case(arguments, case):
     return [a for a in arguments if not a.get("part") or a["part"] in parts]
 
 
-def supplier_text(sid, d, arguments):
-    if not d or not d.get("strategy"):
+def supplier_text(sid, d, arguments, parts=()):
+    if on("grounded_dossier"):
+        head = [f"SUPPLIER {sid}", *grounded.lines(d, parts)]
+    elif not d or not d.get("strategy"):
         head = [f"SUPPLIER {sid}: no dossier (a new supplier) - plan from the case file alone."]
     else:
         s = d["strategy"]
@@ -287,7 +290,7 @@ def arguments_for(case, package=None):
     """Each supplier's argument library for this case's parts: from its dossier, else built now."""
     out = {}
     for sid in case.get("suppliers") or []:
-        d = dossier(sid)
+        d = None if on("grounded_dossier") else dossier(sid)
         args = (d or {}).get("arguments")
         if args is None and package is not None:
             try:
@@ -296,6 +299,8 @@ def arguments_for(case, package=None):
                 args = library.argument_library(package, sid)
             except Exception:  # a supplier the package does not know
                 args = []
+        if on("grounded_dossier"):
+            args = [{**a, "side": "unranked"} for a in args or [] if a.get("checkable") and a.get("sentence")]
         out[sid] = _for_case(args or [], case)
     return out
 
@@ -305,9 +310,12 @@ def make_plan(case, package=None, effort=None, model=None, timeout=None):
     t0 = time.monotonic()
     arguments = arguments_for(case, package)
     parts = [case_text(case, package)]
+    dossiers = {}
     for sid in case.get("suppliers") or []:
-        parts.append(supplier_text(sid, dossier(sid), arguments[sid]))
-    lessons = lessons_text(case)
+        d = grounded.load(package, sid) if on("grounded_dossier") else dossier(sid)
+        dossiers[sid] = d is not None
+        parts.append(supplier_text(sid, d, arguments[sid], case.get("parts") or []))
+    lessons = "" if on("grounded_dossier") else lessons_text(case)
     if lessons:
         parts.append(f"{ag.PLAYBOOK_HEAD}:\n{lessons}")
     parts.append("Plan the negotiation.")
@@ -325,7 +333,7 @@ def make_plan(case, package=None, effort=None, model=None, timeout=None):
         "model": model or MODEL,
         "effort": effort or EFFORT,
         "seconds": round(time.monotonic() - t0, 1),
-        "dossiers": {sid: dossier(sid) is not None for sid in case.get("suppliers") or []},
+        "dossiers": dossiers,
         "prompt_chars": sum(len(p) for p in parts),
     }
     return plan

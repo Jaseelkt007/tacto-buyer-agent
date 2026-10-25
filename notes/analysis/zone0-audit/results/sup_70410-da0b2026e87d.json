@@ -1,0 +1,1199 @@
+{
+  "supplier_id": "sup:70410",
+  "input_hash": "da0b2026e87d32832c80435ea9dd823b1ef59fb47e80b7edffbba9101c729373",
+  "dossier_hash": "81f513ddca5f1687bde9ed4c1da2fd31bdae821cb55f0505123a71c0a14a5883",
+  "model": "gpt-6.1-sol",
+  "effort": "low",
+  "meta": {
+    "seconds": 42.77,
+    "usage": {
+      "input_tokens": 50814,
+      "input_tokens_details": {
+        "cache_write_tokens": 50811,
+        "cached_tokens": 0
+      },
+      "output_tokens": 4915,
+      "output_tokens_details": {
+        "reasoning_tokens": 23
+      },
+      "total_tokens": 55729
+    }
+  },
+  "audit": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "supported",
+        "reason": "The supplier explicitly requested a binding 12-month commitment on 2026-03-27 and prioritised long-term commitments for part 340010 on 2026-09-18.",
+        "excerpts": [
+          {
+            "ref": "doc:20260327-70410-M2",
+            "quote": "We can confirm additional volumes only against a binding 12-month commitment."
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "Allocation and the supplier's reported capacity constraints are recorded, particularly for 340010 in September 2026. A desire for capacity relief and literally full capacity are not independently established.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "due to very high capacity utilisation we cannot confirm your full forecast for Mechanical seal 24 mm, SiC/carbon, EPDM (part:340010) for the coming months. Lead times are currently longer than agreed."
+          },
+          {
+            "ref": "news:20260822-23",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "inference",
+        "reason": "The supplied driver summaries show labour and rubber at their observed peaks and 2026 prices unchanged. A future catch-up request or preference for price stability is a hypothesis, not a recorded intention.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340030:drivers",
+            "quote": "\"change_from_peak_pct\": 0.0"
+          },
+          {
+            "ref": "EV-2026-70410-340030",
+            "quote": "\"basis\": \"renewal\", \"change_pct\": 0.0"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "unsupported",
+        "reason": "The vendor master dates from 1996 and commitments are explicitly valued, but punctual-payment preference is not recorded. Payment data does not establish consistently on-time payment.",
+        "excerpts": [
+          {
+            "ref": "sup:70410",
+            "quote": "\"created\": \"1996-01-01\""
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 2.1"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 76.4"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "supported",
+        "reason": "August 2026 reporting records allocation of standard mechanical seals; September supplier correspondence reports longer lead times for 340010. March correspondence conditions extra volumes on commitment.",
+        "excerpts": [
+          {
+            "ref": "news:20260822-23",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "Lead times are currently longer than agreed."
+          },
+          {
+            "ref": "doc:20260327-70410-M2",
+            "quote": "We can confirm additional volumes only against a binding 12-month commitment."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "inference",
+        "reason": "The 2026-03-10 note records the manager's explanation of approval above 2% and fortnightly meetings. Actual response delays are not demonstrated.",
+        "excerpts": [
+          {
+            "ref": "doc:20260310-70410-M1",
+            "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "supported",
+        "reason": "The agreement covering all three parts, valid July 2025–June 2027, directly states these provisions.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070410#8.1",
+            "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.3",
+        "verdict": "contradicted",
+        "reason": "The sourcing extract supports a single active 100% source for 340010, but records tooling ownership as n/a, not supplier-owned.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340010:sourcing",
+            "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70410\", \"tooling_owner\": \"n/a\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "Commitment is a stated allocation criterion, not a guarantee of full supply. A higher binding volume requires permitted options and total-cost calculations including surplus and uncovered need.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "Long-term prioritisation is recorded, but the value and legality of the proposed duration require case options and economics.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "A longer contract or an index clause is security for it, not cash, and does not count."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "There is no quantified steep expedite premium. Keeping a lead time must be evaluated against allowed options and the case's late-delivery cost.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "Lead times are currently longer than agreed."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "+ late_cost_per_day · max(0, lead_time_days − need_lead_time_days)"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "Repeated gasket complaints are recorded, but inexpensive acceptance of a tight commitment is unproven. Quality options and their full economics are needed.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340030:part_quality",
+            "quote": "\"qns\": 25"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "what a faster delivery, a larger volume or a tighter defect commitment costs or\nbrings it"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "Existing terms are 30 days, but absence of cash need is unproven. Payment trade value requires allowed options and supplier-specific financing assumptions, not financial-health proxies.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#4.1",
+            "quote": "Payment: 30 days net."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "payment timing and tooling paid up front at what money is worth to **it** now"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "The annual price clause is historical contractual evidence, not sufficient authority for a new effective-date/price package. Current allowed dates and total-cost math are missing.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "The horizon starts at the fixed or earliest `effective_date` option"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "requires_case",
+        "reason": "Commitment is an allocation criterion; it does not establish a price-stability concession or guaranteed allocation. That proposed exchange requires case economics.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "we cannot confirm your full forecast"
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "unsupported",
+        "reason": "The July 2026 own-plant estimate for 340010 indicates a price/cost gap, not demonstrated actual margin or an ability to absorb increases easily.",
+        "excerpts": [
+          {
+            "ref": "cost:340010",
+            "quote": "\"checked_unit_cost\": 24.31, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "cost:340010",
+            "quote": "\"method\": \"bottom-up estimate of this supplier's plant, no margin included\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "inference",
+        "reason": "Current 2026 prices and the majority-source split support the comparison for 340011. Its strength as a reason for this supplier to concede remains a hypothesis.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"price\": 37.55"
+          },
+          {
+            "ref": "EV-2026-70410-340011",
+            "quote": "\"price\": 38.29"
+          },
+          {
+            "ref": "evidence:part:340011:sourcing",
+            "quote": "\"quota_pct\": 60"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "supported",
+        "reason": "For 340030, the May 2025 qualified alternative quoted a lower price and shorter lead time than Ravensteiner. The claim correctly conditions checker use on case inclusion; the expired quote is not a current offer.",
+        "excerpts": [
+          {
+            "ref": "quote:7100039",
+            "quote": "\"lead_time_days\": 8"
+          },
+          {
+            "ref": "quote:7100039",
+            "quote": "\"unit_price\": 1.97, \"validity_days\": 14"
+          },
+          {
+            "ref": "quote:7100038",
+            "quote": "\"lead_time_days\": 49"
+          },
+          {
+            "ref": "quote:7100038",
+            "quote": "\"unit_price\": 2.35"
+          },
+          {
+            "ref": "evidence:part:340030:sourcing",
+            "quote": "\"quota_pct\": 0, \"status\": \"qualified\", \"supplier_id\": \"sup:70430\""
+          },
+          {
+            "ref": "rules:api",
+            "quote": "a `quote` of this case (in its `refs` or your alternative)"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "requires_case",
+        "reason": "September 2026 gasket growth is recorded, but no supplier discount preference follows from it. A binding volume-for-price exchange needs case options and cost math.",
+        "excerpts": [
+          {
+            "ref": "fc:340030@2026-09",
+            "quote": "\"change_pct\": 10.2"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "requires_case",
+        "reason": "340011 has two active sources and a growing forecast, but a share-shift bargain requires permitted volumes, available capacity, and total-cost evaluation.",
+        "excerpts": [
+          {
+            "ref": "fc:340011@2026-09",
+            "quote": "\"change_pct\": 11.4"
+          },
+          {
+            "ref": "evidence:part:340011:sourcing",
+            "quote": "\"quota_pct\": 40, \"status\": \"active\", \"supplier_id\": \"sup:70410\""
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "unsupported",
+        "reason": "The qualification is correct: the July 2026 estimate models sup:70440's plant. It does not establish Ravensteiner's costs or provide a supplier-relevant checked cost argument.",
+        "excerpts": [
+          {
+            "ref": "cost:340011",
+            "quote": "\"supplier_id\": \"sup:70440\", \"unit_cost\": 34.74"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "true, but not about this supplier or part"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "supported",
+        "reason": "As a statement of the existing agreement covering all three parts, the notice requirement is explicit. No actual notice or breach is established here.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#3.1",
+            "quote": "Changes require written notice of at least 90 days before the end of the calendar year."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "inference",
+        "reason": "The rolling year to September 2026 shows delivery below the contractual target. Whether this undermines a scarcity premium is an argument, not an established economic consequence.",
+        "excerpts": [
+          {
+            "ref": "sc:70410@2026Q3",
+            "quote": "\"otd_confirmed_pct\": 85.9, \"otd_pct\": 79.5"
+          },
+          {
+            "ref": "ctr:4600070410#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "inference",
+        "reason": "Repeated supplier-caused gasket defects support considering a quality commitment, but do not demonstrate acceptance or define suitable terms.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340030:part_quality",
+            "quote": "\"qns\": 25"
+          },
+          {
+            "ref": "evidence:part:340030:part_quality",
+            "quote": "\"supplier_caused\": 25"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "requires_case",
+        "reason": "The June 2026 category estimate associates rubber with the gasket, but does not establish an actual supplier driver or a binding ceiling on price increases. Such a cap needs case economics.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340030:drivers",
+            "quote": "\"change_12m_pct\": 3.9"
+          },
+          {
+            "ref": "evidence:part:340030:drivers",
+            "quote": "\"estimate\": \"category team estimate 2026-06\""
+          },
+          {
+            "ref": "evidence:part:340030:drivers",
+            "quote": "\"weight\": 0.56"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.11",
+        "verdict": "inference",
+        "reason": "The labour index and estimated 28% weight suggest a limited labour contribution for 340010, not a demonstrated limit on the supplier's total price requirement.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340010:drivers",
+            "quote": "\"change_12m_pct\": 2.7"
+          },
+          {
+            "ref": "evidence:part:340010:drivers",
+            "quote": "\"weight\": 0.28"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.12",
+        "verdict": "unsupported",
+        "reason": "September 2026 market reporting compares power prices with August 2022. It neither establishes this supplier's energy costs nor rebuts a specific supplier claim; generic news is not supplier-relevant merely because it exists.",
+        "excerpts": [
+          {
+            "ref": "news:20260912-30",
+            "quote": "Producer prices for electric power stand -43 % against August 2022."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "`fc` / `cost` / `news` | the recorded change / the estimate / that it is about this supplier"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.13",
+        "verdict": "inference",
+        "reason": "Payment delays are generally short, which may support a broad reliability argument, but punctuality is not established and fairness value is subjective.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 2.1"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 76.4, \"paid_over_10_days_late_pct\": 0.0"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.14",
+        "verdict": "unsupported",
+        "reason": "The agreement provides termination notice, but does not establish a part-specific exit right or operational credibility only for these two parts. Alternative capacity and transition feasibility are missing.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#8.1",
+            "quote": "extends by 12 months unless terminated with 90 days' notice."
+          },
+          {
+            "ref": "evidence:part:340030:sourcing",
+            "quote": "\"quota_pct\": 0, \"status\": \"qualified\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "requires_case",
+        "reason": "The price-holding and reduction proposals require case options and total-cost math. The July 2026 estimate is uncertain, the 340011 estimate concerns the rival, and the gasket quote expired in 2025; none establishes concession room.",
+        "excerpts": [
+          {
+            "ref": "cost:340010",
+            "quote": "\"checked_unit_cost\": 24.31, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "quote:7100039",
+            "quote": "\"quote_date\": \"2025-05-23\""
+          },
+          {
+            "ref": "quote:7100039",
+            "quote": "\"validity_days\": 14"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "Group ownership, approval processes, allocation and operational issues are recorded. Guardedness, actual high margin, preference for commitment over cash, ability to walk away, and concessions caused by factual pressure are not established.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"group_parent\": \"Ravensteiner Holding AG\""
+          },
+          {
+            "ref": "doc:20260310-70410-M1",
+            "quote": "price changes above 2 % need the approval of their pricing committee"
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "contradicted",
+        "reason": "Much of the factual background is recorded, but supplier-owned 340010 tooling conflicts with n/a in sourcing. Healthy actual margin, lack of cash interest, secured allocation for price stability, and threats necessarily backfiring are also unproven.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340010:sourcing",
+            "quote": "\"tooling_owner\": \"n/a\""
+          },
+          {
+            "ref": "cost:340010",
+            "quote": "\"method\": \"bottom-up estimate of this supplier's plant, no margin included\""
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "we cannot confirm your full forecast"
+          },
+          {
+            "ref": "doc:20260327-70410-M2",
+            "quote": "We can confirm additional volumes only against a binding 12-month commitment."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "unsupported",
+        "reason": "The checklist mixes plausible risks with unproven assertions. No peer median, declared-final-offer rule, or demonstrated loss of allocation from should-cost pressure is supplied. Historical forecast overstatement is not established merely by forecasts exceeding subsequent orders. Quote eligibility is correctly conditional.",
+        "excerpts": [
+          {
+            "ref": "sc:70410@2026Q3",
+            "quote": "\"ppm\": 270"
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "a `quote` of this case (in its `refs` or your alternative)"
+          },
+          {
+            "ref": "ctr:4600070410#3.1",
+            "quote": "Changes require written notice of at least 90 days before the end of the calendar year."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      }
+    ],
+    "errors": [],
+    "complete": true,
+    "verdict_counts": {
+      "supported": 5,
+      "inference": 8,
+      "unsupported": 7,
+      "contradicted": 2,
+      "requires_case": 11
+    }
+  },
+  "raw": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "supported",
+        "reason": "The supplier explicitly requested a binding 12-month commitment on 2026-03-27 and prioritised long-term commitments for part 340010 on 2026-09-18.",
+        "excerpts": [
+          {
+            "ref": "doc:20260327-70410-M2",
+            "quote": "We can confirm additional volumes only against a binding 12-month commitment."
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "Allocation and the supplier's reported capacity constraints are recorded, particularly for 340010 in September 2026. A desire for capacity relief and literally full capacity are not independently established.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "due to very high capacity utilisation we cannot confirm your full forecast for Mechanical seal 24 mm, SiC/carbon, EPDM (part:340010) for the coming months. Lead times are currently longer than agreed."
+          },
+          {
+            "ref": "news:20260822-23",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "inference",
+        "reason": "The supplied driver summaries show labour and rubber at their observed peaks and 2026 prices unchanged. A future catch-up request or preference for price stability is a hypothesis, not a recorded intention.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340030:drivers",
+            "quote": "\"change_from_peak_pct\": 0.0"
+          },
+          {
+            "ref": "EV-2026-70410-340030",
+            "quote": "\"basis\": \"renewal\", \"change_pct\": 0.0"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "unsupported",
+        "reason": "The vendor master dates from 1996 and commitments are explicitly valued, but punctual-payment preference is not recorded. Payment data does not establish consistently on-time payment.",
+        "excerpts": [
+          {
+            "ref": "sup:70410",
+            "quote": "\"created\": \"1996-01-01\""
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 2.1"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 76.4"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "supported",
+        "reason": "August 2026 reporting records allocation of standard mechanical seals; September supplier correspondence reports longer lead times for 340010. March correspondence conditions extra volumes on commitment.",
+        "excerpts": [
+          {
+            "ref": "news:20260822-23",
+            "quote": "deliveries of standard mechanical seals will be allocated in line with last year's call-offs."
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "Lead times are currently longer than agreed."
+          },
+          {
+            "ref": "doc:20260327-70410-M2",
+            "quote": "We can confirm additional volumes only against a binding 12-month commitment."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "inference",
+        "reason": "The 2026-03-10 note records the manager's explanation of approval above 2% and fortnightly meetings. Actual response delays are not demonstrated.",
+        "excerpts": [
+          {
+            "ref": "doc:20260310-70410-M1",
+            "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "supported",
+        "reason": "The agreement covering all three parts, valid July 2025–June 2027, directly states these provisions.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070410#8.1",
+            "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.3",
+        "verdict": "contradicted",
+        "reason": "The sourcing extract supports a single active 100% source for 340010, but records tooling ownership as n/a, not supplier-owned.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340010:sourcing",
+            "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70410\", \"tooling_owner\": \"n/a\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "Commitment is a stated allocation criterion, not a guarantee of full supply. A higher binding volume requires permitted options and total-cost calculations including surplus and uncovered need.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "Long-term prioritisation is recorded, but the value and legality of the proposed duration require case options and economics.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "A longer contract or an index clause is security for it, not cash, and does not count."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "There is no quantified steep expedite premium. Keeping a lead time must be evaluated against allowed options and the case's late-delivery cost.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "Lead times are currently longer than agreed."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "+ late_cost_per_day · max(0, lead_time_days − need_lead_time_days)"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "Repeated gasket complaints are recorded, but inexpensive acceptance of a tight commitment is unproven. Quality options and their full economics are needed.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340030:part_quality",
+            "quote": "\"qns\": 25"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "what a faster delivery, a larger volume or a tighter defect commitment costs or\nbrings it"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "Existing terms are 30 days, but absence of cash need is unproven. Payment trade value requires allowed options and supplier-specific financing assumptions, not financial-health proxies.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#4.1",
+            "quote": "Payment: 30 days net."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "payment timing and tooling paid up front at what money is worth to **it** now"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "The annual price clause is historical contractual evidence, not sufficient authority for a new effective-date/price package. Current allowed dates and total-cost math are missing.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "The horizon starts at the fixed or earliest `effective_date` option"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "requires_case",
+        "reason": "Commitment is an allocation criterion; it does not establish a price-stability concession or guaranteed allocation. That proposed exchange requires case economics.",
+        "excerpts": [
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "we cannot confirm your full forecast"
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "unsupported",
+        "reason": "The July 2026 own-plant estimate for 340010 indicates a price/cost gap, not demonstrated actual margin or an ability to absorb increases easily.",
+        "excerpts": [
+          {
+            "ref": "cost:340010",
+            "quote": "\"checked_unit_cost\": 24.31, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "cost:340010",
+            "quote": "\"method\": \"bottom-up estimate of this supplier's plant, no margin included\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "inference",
+        "reason": "Current 2026 prices and the majority-source split support the comparison for 340011. Its strength as a reason for this supplier to concede remains a hypothesis.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70440-340011",
+            "quote": "\"price\": 37.55"
+          },
+          {
+            "ref": "EV-2026-70410-340011",
+            "quote": "\"price\": 38.29"
+          },
+          {
+            "ref": "evidence:part:340011:sourcing",
+            "quote": "\"quota_pct\": 60"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "supported",
+        "reason": "For 340030, the May 2025 qualified alternative quoted a lower price and shorter lead time than Ravensteiner. The claim correctly conditions checker use on case inclusion; the expired quote is not a current offer.",
+        "excerpts": [
+          {
+            "ref": "quote:7100039",
+            "quote": "\"lead_time_days\": 8"
+          },
+          {
+            "ref": "quote:7100039",
+            "quote": "\"unit_price\": 1.97, \"validity_days\": 14"
+          },
+          {
+            "ref": "quote:7100038",
+            "quote": "\"lead_time_days\": 49"
+          },
+          {
+            "ref": "quote:7100038",
+            "quote": "\"unit_price\": 2.35"
+          },
+          {
+            "ref": "evidence:part:340030:sourcing",
+            "quote": "\"quota_pct\": 0, \"status\": \"qualified\", \"supplier_id\": \"sup:70430\""
+          },
+          {
+            "ref": "rules:api",
+            "quote": "a `quote` of this case (in its `refs` or your alternative)"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "requires_case",
+        "reason": "September 2026 gasket growth is recorded, but no supplier discount preference follows from it. A binding volume-for-price exchange needs case options and cost math.",
+        "excerpts": [
+          {
+            "ref": "fc:340030@2026-09",
+            "quote": "\"change_pct\": 10.2"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "requires_case",
+        "reason": "340011 has two active sources and a growing forecast, but a share-shift bargain requires permitted volumes, available capacity, and total-cost evaluation.",
+        "excerpts": [
+          {
+            "ref": "fc:340011@2026-09",
+            "quote": "\"change_pct\": 11.4"
+          },
+          {
+            "ref": "evidence:part:340011:sourcing",
+            "quote": "\"quota_pct\": 40, \"status\": \"active\", \"supplier_id\": \"sup:70410\""
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "unsupported",
+        "reason": "The qualification is correct: the July 2026 estimate models sup:70440's plant. It does not establish Ravensteiner's costs or provide a supplier-relevant checked cost argument.",
+        "excerpts": [
+          {
+            "ref": "cost:340011",
+            "quote": "\"supplier_id\": \"sup:70440\", \"unit_cost\": 34.74"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "true, but not about this supplier or part"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "supported",
+        "reason": "As a statement of the existing agreement covering all three parts, the notice requirement is explicit. No actual notice or breach is established here.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#3.1",
+            "quote": "Changes require written notice of at least 90 days before the end of the calendar year."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "inference",
+        "reason": "The rolling year to September 2026 shows delivery below the contractual target. Whether this undermines a scarcity premium is an argument, not an established economic consequence.",
+        "excerpts": [
+          {
+            "ref": "sc:70410@2026Q3",
+            "quote": "\"otd_confirmed_pct\": 85.9, \"otd_pct\": 79.5"
+          },
+          {
+            "ref": "ctr:4600070410#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "inference",
+        "reason": "Repeated supplier-caused gasket defects support considering a quality commitment, but do not demonstrate acceptance or define suitable terms.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340030:part_quality",
+            "quote": "\"qns\": 25"
+          },
+          {
+            "ref": "evidence:part:340030:part_quality",
+            "quote": "\"supplier_caused\": 25"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "requires_case",
+        "reason": "The June 2026 category estimate associates rubber with the gasket, but does not establish an actual supplier driver or a binding ceiling on price increases. Such a cap needs case economics.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340030:drivers",
+            "quote": "\"change_12m_pct\": 3.9"
+          },
+          {
+            "ref": "evidence:part:340030:drivers",
+            "quote": "\"estimate\": \"category team estimate 2026-06\""
+          },
+          {
+            "ref": "evidence:part:340030:drivers",
+            "quote": "\"weight\": 0.56"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.11",
+        "verdict": "inference",
+        "reason": "The labour index and estimated 28% weight suggest a limited labour contribution for 340010, not a demonstrated limit on the supplier's total price requirement.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340010:drivers",
+            "quote": "\"change_12m_pct\": 2.7"
+          },
+          {
+            "ref": "evidence:part:340010:drivers",
+            "quote": "\"weight\": 0.28"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.12",
+        "verdict": "unsupported",
+        "reason": "September 2026 market reporting compares power prices with August 2022. It neither establishes this supplier's energy costs nor rebuts a specific supplier claim; generic news is not supplier-relevant merely because it exists.",
+        "excerpts": [
+          {
+            "ref": "news:20260912-30",
+            "quote": "Producer prices for electric power stand -43 % against August 2022."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "`fc` / `cost` / `news` | the recorded change / the estimate / that it is about this supplier"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.13",
+        "verdict": "inference",
+        "reason": "Payment delays are generally short, which may support a broad reliability argument, but punctuality is not established and fairness value is subjective.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 2.1"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 76.4, \"paid_over_10_days_late_pct\": 0.0"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.14",
+        "verdict": "unsupported",
+        "reason": "The agreement provides termination notice, but does not establish a part-specific exit right or operational credibility only for these two parts. Alternative capacity and transition feasibility are missing.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070410#8.1",
+            "quote": "extends by 12 months unless terminated with 90 days' notice."
+          },
+          {
+            "ref": "evidence:part:340030:sourcing",
+            "quote": "\"quota_pct\": 0, \"status\": \"qualified\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "requires_case",
+        "reason": "The price-holding and reduction proposals require case options and total-cost math. The July 2026 estimate is uncertain, the 340011 estimate concerns the rival, and the gasket quote expired in 2025; none establishes concession room.",
+        "excerpts": [
+          {
+            "ref": "cost:340010",
+            "quote": "\"checked_unit_cost\": 24.31, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "quote:7100039",
+            "quote": "\"quote_date\": \"2025-05-23\""
+          },
+          {
+            "ref": "quote:7100039",
+            "quote": "\"validity_days\": 14"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "Group ownership, approval processes, allocation and operational issues are recorded. Guardedness, actual high margin, preference for commitment over cash, ability to walk away, and concessions caused by factual pressure are not established.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"group_parent\": \"Ravensteiner Holding AG\""
+          },
+          {
+            "ref": "doc:20260310-70410-M1",
+            "quote": "price changes above 2 % need the approval of their pricing committee"
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "contradicted",
+        "reason": "Much of the factual background is recorded, but supplier-owned 340010 tooling conflicts with n/a in sourcing. Healthy actual margin, lack of cash interest, secured allocation for price stability, and threats necessarily backfiring are also unproven.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:340010:sourcing",
+            "quote": "\"tooling_owner\": \"n/a\""
+          },
+          {
+            "ref": "cost:340010",
+            "quote": "\"method\": \"bottom-up estimate of this supplier's plant, no margin included\""
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "we cannot confirm your full forecast"
+          },
+          {
+            "ref": "doc:20260327-70410-M2",
+            "quote": "We can confirm additional volumes only against a binding 12-month commitment."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "unsupported",
+        "reason": "The checklist mixes plausible risks with unproven assertions. No peer median, declared-final-offer rule, or demonstrated loss of allocation from should-cost pressure is supplied. Historical forecast overstatement is not established merely by forecasts exceeding subsequent orders. Quote eligibility is correctly conditional.",
+        "excerpts": [
+          {
+            "ref": "sc:70410@2026Q3",
+            "quote": "\"ppm\": 270"
+          },
+          {
+            "ref": "doc:20260918-70410-P10",
+            "quote": "We will prioritise customers with firm, long-term commitments."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "a `quote` of this case (in its `refs` or your alternative)"
+          },
+          {
+            "ref": "ctr:4600070410#3.1",
+            "quote": "Changes require written notice of at least 90 days before the end of the calendar year."
+          }
+        ]
+      }
+    ]
+  }
+}

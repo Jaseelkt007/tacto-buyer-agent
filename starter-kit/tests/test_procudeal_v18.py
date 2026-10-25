@@ -17,8 +17,9 @@ from arena_kit.cost import supplier_value
 
 @pytest.fixture
 def flags(monkeypatch):
-    """Every flag on (whatever PROCUDEAL_OFF says); a test may switch some off."""
-    monkeypatch.setattr(po, "FLAGS", dict.fromkeys(po.FEATURES, True))
+    """Legacy v1.8 behavior; new hybrid experiments have separate tests."""
+    monkeypatch.setattr(po, "FLAGS", {**dict.fromkeys(po.FEATURES, True),
+                                    "grounded_dossier": False, "measured_trades": False})
     return po.FLAGS
 
 

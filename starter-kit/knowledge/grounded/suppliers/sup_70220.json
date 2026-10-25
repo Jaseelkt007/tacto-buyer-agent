@@ -1,0 +1,885 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70220",
+ "name": "CNC-Technik Obermaier & Huber GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "4a6fccc0ff34c8058206ada71237b35ffb009223678d2d91b025c6b7af644d7f",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:18:35.994068+00:00",
+  "seconds": 33.1,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:737db3d55a43a589",
+   "text": "Supplier states it cannot confirm the full forecast for part:320030 due to very high capacity utilisation, lead times are longer than agreed, and it will prioritise customers with firm long-term commitments.",
+   "kind": "supplier_statement",
+   "source": "doc:20260915-70220-P09",
+   "quote": "due to very high capacity utilisation we cannot confirm your full forecast for Flange DN 65 PN 16, machined (part:320030) for the coming months. Lead times are currently longer than agreed. We will prioritise customers with firm, long-term commitments.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-09-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:737db3d55a43a589",
+    "verdict": "supported",
+    "reason": "Matches the cited supplier email in full and is correctly framed as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:8f5a4f4ca2beed36",
+   "text": "Supplier requested invoice payment within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260511-70220-M1",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-05-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:8f5a4f4ca2beed36",
+    "verdict": "supported",
+    "reason": "Matches the cited supplier email dated 2026-05-11 and is correctly framed as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:b3b0245b4b8ea929",
+   "text": "Current price for part:320030 is EUR 16.02 per unit (renewal, 0.0% change), valid from 2026-01-01 with no end date.",
+   "kind": "fact",
+   "source": "EV-2026-70220-320030",
+   "quote": "\"basis\": \"renewal\", \"change_pct\": 0.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70220-320030\", \"price\": 16.02, \"price_unit\": 1",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b3b0245b4b8ea929",
+    "verdict": "supported",
+    "reason": "Record EV-2026 shows EUR 16.02, renewal, 0.0% change, valid from 2026-01-01 with valid_to null."
+   }
+  },
+  {
+   "id": "obs:2fc11674777bce22",
+   "text": "At the 2025-12-04 annual renewal the supplier asked +3.5 % and the settlement was 0.0 %.",
+   "kind": "fact",
+   "source": "EV-2026-70220-320030",
+   "quote": "\"asked_pct\": 3.5, \"date\": \"2025-12-04\", \"event_id\": \"EV-2026-70220-320030\", \"note\": \"\", \"part_id\": \"part:320030\", \"settled_pct\": 0.0",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2025-12-04",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2fc11674777bce22",
+    "verdict": "supported",
+    "reason": "Renewal record dated 2025-12-04 shows asked 3.5% and settled 0.0%."
+   }
+  },
+  {
+   "id": "obs:e0f8076334b92d1a",
+   "text": "Should-cost for part:320030 at this supplier's plant is EUR 15.40 per unit (no margin), with about 5% uncertainty.",
+   "kind": "fact",
+   "source": "cost:320030",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 7.22, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320030\", \"material_eur\": 5.08, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 3.09, \"part_id\": \"part:320030\", \"price_unit\": 1, \"supplier_id\": \"sup:70220\", \"unit_cost\": 15.4",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e0f8076334b92d1a",
+    "verdict": "supported",
+    "reason": "Correctly reports the recorded should-cost estimate of 15.40 with 5% confidence for this supplier's plant, without claiming true cost."
+   }
+  },
+  {
+   "id": "obs:cbee825765312314",
+   "text": "Competitor Strojírna Hrvelec quoted EUR 16.33 for part:320030, FCA, 45 payment days, 42 days lead time, valid 90 days.",
+   "kind": "fact",
+   "source": "quote:7200009",
+   "quote": "\"incoterm\": \"FCA\", \"lead_time_days\": 42, \"missing_fields\": \"\", \"name\": \"Strojírna Hrvelec s.r.o.\", \"payment_days\": 45, \"price_unit\": 1, \"quote_date\": \"2026-09-10\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000209\", \"supplier_id\": \"sup:70240\", \"tooling_eur\": 0, \"unit_price\": 16.33, \"validity_days\": 90",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-09-10",
+   "valid_until": "2026-12-09",
+   "review": {
+    "id": "obs:cbee825765312314",
+    "verdict": "supported",
+    "reason": "Correctly reports the recorded quote: 16.33, FCA, 45 payment days, 42 days lead time, 90-day validity from 2026-09-10, giving 2026-12-09."
+   }
+  },
+  {
+   "id": "obs:06de30a5fcacbd4d",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070220#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:06de30a5fcacbd4d",
+    "verdict": "supported",
+    "reason": "Matches contract clause 3.1."
+   }
+  },
+  {
+   "id": "obs:e497b3b70f8f58ee",
+   "text": "Framework agreement runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070220#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e497b3b70f8f58ee",
+    "verdict": "supported",
+    "reason": "Matches contract clause 8.1."
+   }
+  },
+  {
+   "id": "obs:a467ab375698668c",
+   "text": "Current master terms: 30 payment days, EXW, standard lead time 35 days.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"EXW\", \"name\": \"CNC-Technik Obermaier & Huber GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a467ab375698668c",
+    "verdict": "supported",
+    "reason": "Matches the vendor master: 30 payment days, EXW, 35-day standard lead time."
+   }
+  },
+  {
+   "id": "obs:a73fd4a5680cbb9e",
+   "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070220#6.1",
+   "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a73fd4a5680cbb9e",
+    "verdict": "supported",
+    "reason": "Matches contract clause 6.1."
+   }
+  },
+  {
+   "id": "obs:b9dcd5993c6f9541",
+   "text": "Rolling 12-month scorecard to 2026-09-30: OTD vs requested 56.0%, vs confirmed 76.0%, ppm 731, score 74.3, class B amber.",
+   "kind": "fact",
+   "source": "sc:70220@2026Q3",
+   "quote": "\"otd_confirmed_pct\": 76.0, \"otd_pct\": 56.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 731",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b9dcd5993c6f9541",
+    "verdict": "supported",
+    "reason": "Matches scorecard 2026Q3: 56.0% OTD, 76.0% confirmed, 731 ppm, score 74.3, B amber."
+   }
+  },
+  {
+   "id": "obs:1abf3ad54e865c8f",
+   "text": "Last 12 months for part 320030: 40.0% of 25 receipts late, average 17.9 days late when late, max 28 days.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"avg_days_late_when_late\": 17.9, \"early_pct\": 4.0, \"late_pct\": 40.0, \"max_days_late\": 28, \"on_time_confirmed_pct\": 76.0, \"on_time_requested_pct\": 56.0, \"part_id\": \"part:320030\", \"receipts\": 25",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:1abf3ad54e865c8f",
+    "verdict": "supported",
+    "reason": "Matches the part-level delivery figures for the last 12 months."
+   }
+  },
+  {
+   "id": "obs:8564868a400ec481",
+   "text": "Part 320030: 24 QNs, 23 supplier-caused, 28 complaint pcs, EUR 1950 recharged in total.",
+   "kind": "fact",
+   "source": "evidence:part:320030:part_quality",
+   "quote": "\"complaint_qty\": 28, \"last_qn\": \"2026-08-30\", \"latest_qns\": [\"qn:20005010\", \"qn:20004991\", \"qn:20004882\"], \"ppm_last_12m\": 731, \"qns\": 24, \"received_last_12m\": 9580, \"recharged_eur\": 1950, \"supplier_caused\": 23",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8564868a400ec481",
+    "verdict": "supported",
+    "reason": "Matches the part quality summary."
+   }
+  },
+  {
+   "id": "obs:35d36f4bd187cecf",
+   "text": "QN 20005010 (coating defect, supplier-caused) from 2026-08-30 has no 8D closure date recorded.",
+   "kind": "fact",
+   "source": "qn:20005010",
+   "quote": "\"d8_date\": null, \"defect\": \"coating defect\"",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-08-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:35d36f4bd187cecf",
+    "verdict": "supported",
+    "reason": "QN dated 2026-08-30 is supplier-caused with d8_date null."
+   }
+  },
+  {
+   "id": "obs:e62fd7f831cd6928",
+   "text": "Invoices are mostly paid late: 94.4% paid late, average 8.1 days after due.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due\": 8.1, \"avg_days_paid_after_due_last_12m\": 8.1, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 72, \"max_days_late\": 17, \"paid_late_pct\": 94.4",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:e62fd7f831cd6928",
+    "verdict": "supported",
+    "reason": "Invoice record shows 94.4% paid late with an average of 8.1 days after due."
+   }
+  },
+  {
+   "id": "obs:1474ba006bfe177a",
+   "text": "Trade press reported an order backlog of more than six months and a stop on accepting new projects for now.",
+   "kind": "fact",
+   "source": "news:20260320-04",
+   "quote": "reports an order backlog of more than six months and has stopped accepting new projects for now.",
+   "parts": [],
+   "observed_at": "2026-03-20",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1474ba006bfe177a",
+    "verdict": "supported",
+    "reason": "Correctly attributed as a trade press report about this supplier, dated 2026-03-20."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:ce8cd737e424a81b",
+   "text": "Supplier states it cannot confirm the full forecast for part:320030 for the coming months due to very high capacity utilisation; lead times currently longer than agreed.",
+   "kind": "supplier_statement",
+   "source": "doc:20260915-70220-P09",
+   "quote": "due to very high capacity utilisation we cannot confirm your full forecast for Flange DN 65 PN 16, machined (part:320030) for the coming months. Lead times are currently longer than agreed.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-09-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ce8cd737e424a81b",
+    "verdict": "supported",
+    "reason": "Matches the cited supplier email dated 2026-09-15 and is correctly framed as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:0b437af23991e048",
+   "text": "Supplier says it will prioritise customers with firm, long-term commitments.",
+   "kind": "supplier_statement",
+   "source": "doc:20260915-70220-P09",
+   "quote": "We will prioritise customers with firm, long-term commitments.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-09-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0b437af23991e048",
+    "verdict": "supported",
+    "reason": "Matches the cited supplier email dated 2026-09-15 and is correctly framed as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:2fe2c1d9f8ba15c8",
+   "text": "Small founder-owned firm: 35 staff, turnover band 2-5 M EUR, equity ratio 31.1%, credit index unchanged at 245.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 245, \"credit_index_12m_ago\": 245, \"equity_ratio_pct\": 31.1, \"filed_fy\": 2024, \"founded\": 2004, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 35, \"supplier_id\": \"sup:70220\", \"turnover_band\": \"2-5 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:2fe2c1d9f8ba15c8",
+    "verdict": "supported",
+    "reason": "Matches the intel record: founder-owned, 35 staff, 2-5 M EUR band, 31.1% equity ratio, credit index 245 then and now; 'small' is fair for this size."
+   }
+  },
+  {
+   "id": "obs:bf524a3bfd9f1cb5",
+   "text": "Supplier called Hollerau an important reference customer.",
+   "kind": "supplier_statement",
+   "source": "doc:20260224-70220-M2",
+   "quote": "CNC-Technik Obermaier & Huber GmbH said Hollerau is an important reference customer for them.",
+   "parts": [],
+   "observed_at": "2026-02-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:bf524a3bfd9f1cb5",
+    "verdict": "supported",
+    "reason": "Matches the meeting note of 2026-02-24 and is correctly framed as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:3f57fd8068c8ca3a",
+   "text": "Supplier cannot confirm the full forecast for part:320030 for the coming months due to very high capacity utilisation; lead times currently longer than agreed.",
+   "kind": "supplier_statement",
+   "source": "doc:20260915-70220-P09",
+   "quote": "due to very high capacity utilisation we cannot confirm your full forecast for Flange DN 65 PN 16, machined (part:320030) for the coming months. Lead times are currently longer than agreed.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-09-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3f57fd8068c8ca3a",
+    "verdict": "supported",
+    "reason": "Text is unhedged, but the kind is supplier_statement and the content matches the email."
+   }
+  },
+  {
+   "id": "obs:11c46fa526eac184",
+   "text": "Supplier states it will prioritise customers with firm, long-term commitments.",
+   "kind": "supplier_statement",
+   "source": "doc:20260915-70220-P09",
+   "quote": "We will prioritise customers with firm, long-term commitments.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-09-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:11c46fa526eac184",
+    "verdict": "supported",
+    "reason": "Matches the cited supplier email dated 2026-09-15."
+   }
+  },
+  {
+   "id": "obs:122cdef3a095e2aa",
+   "text": "Supplier asked for invoice payment within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260511-70220-M1",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-05-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:122cdef3a095e2aa",
+    "verdict": "supported",
+    "reason": "Matches the cited supplier email dated 2026-05-11."
+   }
+  },
+  {
+   "id": "obs:3c740ba5a8b743cf",
+   "text": "Supplier said Hollerau is an important reference customer for them.",
+   "kind": "supplier_statement",
+   "source": "doc:20260224-70220-M2",
+   "quote": "CNC-Technik Obermaier & Huber GmbH said Hollerau is an important reference customer for them.",
+   "parts": [],
+   "observed_at": "2026-02-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3c740ba5a8b743cf",
+    "verdict": "supported",
+    "reason": "Matches the meeting note of 2026-02-24."
+   }
+  },
+  {
+   "id": "obs:005c208240c8155f",
+   "text": "Founder-owned GmbH with 35 staff, turnover band 2-5 M EUR, equity ratio 31.1%.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 31.1, \"filed_fy\": 2024, \"founded\": 2004, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 35, \"supplier_id\": \"sup:70220\", \"turnover_band\": \"2-5 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:005c208240c8155f",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:cdaaabf71afaf6e8",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070220#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:cdaaabf71afaf6e8",
+    "verdict": "supported",
+    "reason": "Matches contract clause 4.1."
+   }
+  },
+  {
+   "id": "obs:21df0a540a6919b0",
+   "text": "Delivery EXW with standard lead time of 35 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070220#5.1",
+   "quote": "Delivery EXW; standard lead time 35 days from order.",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2025-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:21df0a540a6919b0",
+    "verdict": "supported",
+    "reason": "Matches contract clause 5.1."
+   }
+  },
+  {
+   "id": "obs:2e3decfecd962560",
+   "text": "Supplier requested payment within 10 days in exchange for a cash discount.",
+   "kind": "supplier_statement",
+   "source": "doc:20260511-70220-M1",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-05-11",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2e3decfecd962560",
+    "verdict": "supported",
+    "reason": "Matches the cited supplier email dated 2026-05-11."
+   }
+  },
+  {
+   "id": "obs:1177e364e86c8cea",
+   "text": "Supplier has been class B amber in every scorecard from 2024Q3 to 2026Q3; scores ranged 71.8-80.1.",
+   "kind": "fact",
+   "source": "evidence:scorecards",
+   "quote": "\"class\": \"B\", \"colour\": \"amber\"",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1177e364e86c8cea",
+    "verdict": "supported",
+    "reason": "All nine scorecards from 2024Q3 to 2026Q3 are B amber, with scores from 71.8 to 80.1."
+   }
+  },
+  {
+   "id": "obs:451243dbb129b50c",
+   "text": "15 PO lines were confirmed later than requested.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"confirmed_later_than_requested_lines\": 15",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:451243dbb129b50c",
+    "verdict": "supported",
+    "reason": "Matches the delivery record count of 15 lines."
+   }
+  },
+  {
+   "id": "obs:fe296aef10afb407",
+   "text": "Rush order 4500014340-10 requested for 2026-09-17 was first confirmed for 2026-10-01.",
+   "kind": "fact",
+   "source": "po:4500014340-10",
+   "quote": "\"change_type\": \"rush\", \"first_confirmed_date\": \"2026-10-01\", \"id\": \"po:4500014340-10\", \"order_date\": \"2026-08-28\", \"price\": 16.02, \"price_note\": \"\", \"price_unit\": 1, \"qty\": 360, \"requested_date\": \"2026-09-17\"",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": "2026-08-28",
+   "valid_until": null,
+   "review": {
+    "id": "obs:fe296aef10afb407",
+    "verdict": "supported",
+    "reason": "Matches the PO record: rush order requested for 2026-09-17, first confirmed for 2026-10-01."
+   }
+  },
+  {
+   "id": "obs:f2c3495f486e80d8",
+   "text": "13 of 71 order lines for part 320030 were rush lines.",
+   "kind": "fact",
+   "source": "evidence:part:320030:orders",
+   "quote": "\"lines\": 71, \"price_change_pct\": -4.1, \"price_unit\": 1, \"qty\": 28760, \"qty_last_12m\": 9100, \"rush_lines\": 13",
+   "parts": [
+    "part:320030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:f2c3495f486e80d8",
+    "verdict": "supported",
+    "reason": "Order summary shows 71 lines with 13 rush lines."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier states it cannot confirm the full forecast for part:320030 for the coming months due to very high capacity utilisation; lead times currently longer than agreed.",
+     "kind": "supplier_statement",
+     "source": "doc:20260915-70220-P09",
+     "quote": "due to very high capacity utilisation we cannot confirm your full forecast for Flange DN 65 PN 16, machined (part:320030) for the coming months. Lead times are currently longer than agreed.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-09-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier says it will prioritise customers with firm, long-term commitments.",
+     "kind": "supplier_statement",
+     "source": "doc:20260915-70220-P09",
+     "quote": "We will prioritise customers with firm, long-term commitments.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-09-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested invoice payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260511-70220-M1",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-05-11",
+     "valid_until": null
+    },
+    {
+     "text": "Current price for part:320030 is EUR 16.02 per unit (renewal, 0.0% change), valid from 2026-01-01 with no end date.",
+     "kind": "fact",
+     "source": "EV-2026-70220-320030",
+     "quote": "\"basis\": \"renewal\", \"change_pct\": 0.0, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70220-320030\", \"price\": 16.02, \"price_unit\": 1",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for part:320030 at this supplier's plant is EUR 15.40 per unit (no margin), with about 5% uncertainty.",
+     "kind": "fact",
+     "source": "cost:320030",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 7.22, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:320030\", \"material_eur\": 5.08, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 3.09, \"part_id\": \"part:320030\", \"price_unit\": 1, \"supplier_id\": \"sup:70220\", \"unit_cost\": 15.4",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Competitor Strojírna Hrvelec quoted EUR 16.33 for part:320030, FCA, 45 payment days, 42 days lead time, valid 90 days.",
+     "kind": "fact",
+     "source": "quote:7200009",
+     "quote": "\"incoterm\": \"FCA\", \"lead_time_days\": 42, \"missing_fields\": \"\", \"name\": \"Strojírna Hrvelec s.r.o.\", \"payment_days\": 45, \"price_unit\": 1, \"quote_date\": \"2026-09-10\", \"remarks\": \"\", \"rfq_id\": \"rfq:6000000209\", \"supplier_id\": \"sup:70240\", \"tooling_eur\": 0, \"unit_price\": 16.33, \"validity_days\": 90",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-09-10",
+     "valid_until": "2026-12-09"
+    },
+    {
+     "text": "Small founder-owned firm: 35 staff, turnover band 2-5 M EUR, equity ratio 31.1%, credit index unchanged at 245.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 245, \"credit_index_12m_ago\": 245, \"equity_ratio_pct\": 31.1, \"filed_fy\": 2024, \"founded\": 2004, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 35, \"supplier_id\": \"sup:70220\", \"turnover_band\": \"2-5 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier called Hollerau an important reference customer.",
+     "kind": "supplier_statement",
+     "source": "doc:20260224-70220-M2",
+     "quote": "CNC-Technik Obermaier & Huber GmbH said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-02-24",
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier cannot confirm the full forecast for part:320030 for the coming months due to very high capacity utilisation; lead times currently longer than agreed.",
+     "kind": "supplier_statement",
+     "source": "doc:20260915-70220-P09",
+     "quote": "due to very high capacity utilisation we cannot confirm your full forecast for Flange DN 65 PN 16, machined (part:320030) for the coming months. Lead times are currently longer than agreed.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-09-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier states it will prioritise customers with firm, long-term commitments.",
+     "kind": "supplier_statement",
+     "source": "doc:20260915-70220-P09",
+     "quote": "We will prioritise customers with firm, long-term commitments.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-09-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier asked for invoice payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260511-70220-M1",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-05-11",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said Hollerau is an important reference customer for them.",
+     "kind": "supplier_statement",
+     "source": "doc:20260224-70220-M2",
+     "quote": "CNC-Technik Obermaier & Huber GmbH said Hollerau is an important reference customer for them.",
+     "parts": [],
+     "observed_at": "2026-02-24",
+     "valid_until": null
+    },
+    {
+     "text": "Trade press reported an order backlog of more than six months and a stop on accepting new projects for now.",
+     "kind": "fact",
+     "source": "news:20260320-04",
+     "quote": "reports an order backlog of more than six months and has stopped accepting new projects for now.",
+     "parts": [],
+     "observed_at": "2026-03-20",
+     "valid_until": null
+    },
+    {
+     "text": "Invoices are mostly paid late: 94.4% paid late, average 8.1 days after due.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due\": 8.1, \"avg_days_paid_after_due_last_12m\": 8.1, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 72, \"max_days_late\": 17, \"paid_late_pct\": 94.4",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Founder-owned GmbH with 35 staff, turnover band 2-5 M EUR, equity ratio 31.1%.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 31.1, \"filed_fy\": 2024, \"founded\": 2004, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"founder\", \"staff\": 35, \"supplier_id\": \"sup:70220\", \"turnover_band\": \"2-5 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Current master terms: 30 payment days, EXW, standard lead time 35 days.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"EXW\", \"name\": \"CNC-Technik Obermaier & Huber GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070220#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070220#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070220#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Delivery EXW with standard lead time of 35 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070220#5.1",
+     "quote": "Delivery EXW; standard lead time 35 days from order.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: 95 % on-time delivery target and EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070220#6.1",
+     "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2025-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier states it cannot confirm the full forecast for part:320030 due to very high capacity utilisation, lead times are longer than agreed, and it will prioritise customers with firm long-term commitments.",
+     "kind": "supplier_statement",
+     "source": "doc:20260915-70220-P09",
+     "quote": "due to very high capacity utilisation we cannot confirm your full forecast for Flange DN 65 PN 16, machined (part:320030) for the coming months. Lead times are currently longer than agreed. We will prioritise customers with firm, long-term commitments.",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-09-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested payment within 10 days in exchange for a cash discount.",
+     "kind": "supplier_statement",
+     "source": "doc:20260511-70220-M1",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-05-11",
+     "valid_until": null
+    },
+    {
+     "text": "At the 2025-12-04 annual renewal the supplier asked +3.5 % and the settlement was 0.0 %.",
+     "kind": "fact",
+     "source": "EV-2026-70220-320030",
+     "quote": "\"asked_pct\": 3.5, \"date\": \"2025-12-04\", \"event_id\": \"EV-2026-70220-320030\", \"note\": \"\", \"part_id\": \"part:320030\", \"settled_pct\": 0.0",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2025-12-04",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month scorecard to 2026-09-30: OTD vs requested 56.0%, vs confirmed 76.0%, ppm 731, score 74.3, class B amber.",
+     "kind": "fact",
+     "source": "sc:70220@2026Q3",
+     "quote": "\"otd_confirmed_pct\": 76.0, \"otd_pct\": 56.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 731",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier has been class B amber in every scorecard from 2024Q3 to 2026Q3; scores ranged 71.8-80.1.",
+     "kind": "fact",
+     "source": "evidence:scorecards",
+     "quote": "\"class\": \"B\", \"colour\": \"amber\"",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months for part 320030: 40.0% of 25 receipts late, average 17.9 days late when late, max 28 days.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"avg_days_late_when_late\": 17.9, \"early_pct\": 4.0, \"late_pct\": 40.0, \"max_days_late\": 28, \"on_time_confirmed_pct\": 76.0, \"on_time_requested_pct\": 56.0, \"part_id\": \"part:320030\", \"receipts\": 25",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "15 PO lines were confirmed later than requested.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"confirmed_later_than_requested_lines\": 15",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Rush order 4500014340-10 requested for 2026-09-17 was first confirmed for 2026-10-01.",
+     "kind": "fact",
+     "source": "po:4500014340-10",
+     "quote": "\"change_type\": \"rush\", \"first_confirmed_date\": \"2026-10-01\", \"id\": \"po:4500014340-10\", \"order_date\": \"2026-08-28\", \"price\": 16.02, \"price_note\": \"\", \"price_unit\": 1, \"qty\": 360, \"requested_date\": \"2026-09-17\"",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-08-28",
+     "valid_until": null
+    },
+    {
+     "text": "Part 320030: 24 QNs, 23 supplier-caused, 28 complaint pcs, EUR 1950 recharged in total.",
+     "kind": "fact",
+     "source": "evidence:part:320030:part_quality",
+     "quote": "\"complaint_qty\": 28, \"last_qn\": \"2026-08-30\", \"latest_qns\": [\"qn:20005010\", \"qn:20004991\", \"qn:20004882\"], \"ppm_last_12m\": 731, \"qns\": 24, \"received_last_12m\": 9580, \"recharged_eur\": 1950, \"supplier_caused\": 23",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "QN 20005010 (coating defect, supplier-caused) from 2026-08-30 has no 8D closure date recorded.",
+     "kind": "fact",
+     "source": "qn:20005010",
+     "quote": "\"d8_date\": null, \"defect\": \"coating defect\"",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": "2026-08-30",
+     "valid_until": null
+    },
+    {
+     "text": "13 of 71 order lines for part 320030 were rush lines.",
+     "kind": "fact",
+     "source": "evidence:part:320030:orders",
+     "quote": "\"lines\": 71, \"price_change_pct\": -4.1, \"price_unit\": 1, \"qty\": 28760, \"qty_last_12m\": 9100, \"rush_lines\": 13",
+     "parts": [
+      "part:320030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": []
+ }
+}

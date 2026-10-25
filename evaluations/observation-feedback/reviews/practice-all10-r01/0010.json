@@ -1,0 +1,302 @@
+{
+  "packet_sha256": "729f116bfb4e8507b0940c76f526e4663f199270d490e10ad19e22358e7874c0",
+  "request_sha256": "0a3bddca7347715b0fa0fa1edd08f93ed58b1059f949618aab082f45fae4afe4",
+  "input_packet_sha256": "e3a34c9de58984a650aade149d718547df44f0d668255a1af8563fbaa4252a9d",
+  "feedback_enabled": true,
+  "case_id": "case:P04",
+  "decision_index": 2,
+  "action": "send",
+  "model": "gpt-6-luna",
+  "available": true,
+  "error": null,
+  "calls": [
+    {
+      "request_sha256": "0a3bddca7347715b0fa0fa1edd08f93ed58b1059f949618aab082f45fae4afe4",
+      "stage": "assessment",
+      "answers": [
+        {
+          "type": "choice",
+          "name": "assessment",
+          "choice": "NO_ISSUE",
+          "probabilities": [
+            {
+              "value": "NO_ISSUE",
+              "probability": 0.43
+            },
+            {
+              "value": "RECONSIDER:claims",
+              "probability": 0.04
+            },
+            {
+              "value": "RECONSIDER:contract_months",
+              "probability": 0.07
+            },
+            {
+              "value": "RECONSIDER:coverage",
+              "probability": 0.01
+            },
+            {
+              "value": "RECONSIDER:effective_date",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:incoterm",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:index_clause",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:lead_time_days",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:negotiation_status",
+              "probability": 0.01
+            },
+            {
+              "value": "RECONSIDER:offer_id",
+              "probability": 0.0
+            },
+            {
+              "value": "RECONSIDER:other",
+              "probability": 0.03
+            },
+            {
+              "value": "RECONSIDER:payment_days",
+              "probability": 0.14
+            },
+            {
+              "value": "RECONSIDER:tooling_eur",
+              "probability": 0.01
+            },
+            {
+              "value": "RECONSIDER:unit_price",
+              "probability": 0.26
+            },
+            {
+              "value": "RECONSIDER:volume_per_year",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:claims",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:contract_months",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:coverage",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:effective_date",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:incoterm",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:index_clause",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:lead_time_days",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:negotiation_status",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:offer_id",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:other",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:payment_days",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:tooling_eur",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:unit_price",
+              "probability": 0.0
+            },
+            {
+              "value": "CONSTRAINT_CONFLICT:volume_per_year",
+              "probability": 0.0
+            }
+          ],
+          "confidence": 0.41
+        }
+      ],
+      "usage": {
+        "input_tokens": 10245,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 8718,
+          "cache_write_tokens_details": {
+            "ttl_30m_tokens": 8718,
+            "ttl_12h_tokens": 0
+          }
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 10245
+      },
+      "response_id": null
+    }
+  ],
+  "exchange_feedback": {
+    "case_id": "case:P04",
+    "as_of_decision": 2,
+    "source": "public message history only",
+    "suppliers": {
+      "sup:70620": {
+        "exchanges": [
+          {
+            "buyer": {
+              "source": "message:sup:70620:1",
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 4.22,
+                    "payment_days": 90,
+                    "contract_months": 36
+                  }
+                }
+              ],
+              "action": null
+            },
+            "reply_source": "message:sup:70620:2",
+            "status": "open",
+            "supplier_term_sheets": [
+              {
+                "term_sheet_id": "offer:70620-1",
+                "terms": {
+                  "unit_price": 4.94,
+                  "payment_days": 90,
+                  "contract_months": 36
+                }
+              }
+            ],
+            "interpretation": "Observed response only; not inferred rejection of individual terms."
+          },
+          {
+            "buyer": {
+              "source": "message:sup:70620:3",
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 4.44,
+                    "payment_days": 90,
+                    "contract_months": 36
+                  }
+                }
+              ],
+              "action": null
+            },
+            "reply_source": "message:sup:70620:4",
+            "status": "open",
+            "supplier_term_sheets": [
+              {
+                "term_sheet_id": "offer:70620-2",
+                "terms": {
+                  "unit_price": 4.94,
+                  "payment_days": 90,
+                  "contract_months": 36
+                }
+              }
+            ],
+            "interpretation": "Observed response only; not inferred rejection of individual terms."
+          }
+        ],
+        "quotation_history": [
+          {
+            "source": "message:sup:70620:0",
+            "status": "open",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70620-0",
+                "terms": {
+                  "unit_price": 4.96,
+                  "payment_days": 30,
+                  "contract_months": 12
+                }
+              }
+            ]
+          },
+          {
+            "source": "message:sup:70620:2",
+            "status": "open",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70620-1",
+                "terms": {
+                  "unit_price": 4.94,
+                  "payment_days": 90,
+                  "contract_months": 36
+                }
+              }
+            ]
+          },
+          {
+            "source": "message:sup:70620:4",
+            "status": "open",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70620-2",
+                "terms": {
+                  "unit_price": 4.94,
+                  "payment_days": 90,
+                  "contract_months": 36
+                }
+              }
+            ]
+          }
+        ],
+        "repeated_quoted_values": [
+          {
+            "field": "payment_days",
+            "value": 90,
+            "consecutive_quotes": 2,
+            "sources": [
+              "message:sup:70620:2",
+              "message:sup:70620:4"
+            ],
+            "latest_term_sheet_id": "offer:70620-2"
+          },
+          {
+            "field": "contract_months",
+            "value": 36,
+            "consecutive_quotes": 2,
+            "sources": [
+              "message:sup:70620:2",
+              "message:sup:70620:4"
+            ],
+            "latest_term_sheet_id": "offer:70620-2"
+          }
+        ],
+        "current_draft_differences": [],
+        "latest_quotation_source": "message:sup:70620:4"
+      }
+    }
+  },
+  "assessment": "NO_ISSUE",
+  "verdict": "NO_ISSUE",
+  "field": "NONE",
+  "evidence": "NONE",
+  "supporting_source": null,
+  "seconds": 0.324
+}

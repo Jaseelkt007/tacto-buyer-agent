@@ -79,6 +79,12 @@ export default async function Page({ params }: PageProps<"/negotiations/[id]">) 
               <BackIcon width={14} height={14} /> All negotiations
             </Link>
             <Link
+              href={run.note === "engine v1.9 (defaults)" ? `/live/${run.session_id}` : "/live"}
+              className="ml-auto rounded border border-[var(--line)] bg-[var(--surface)] px-2.5 py-1 text-[12.5px] font-medium hover:bg-[var(--hover)]"
+            >
+              {run.note === "engine v1.9 (defaults)" ? "Replay this v1.9 run →" : "Play the v1.9 demo →"}
+            </Link>
+            <Link
               href={`/negotiations/${run.session_id}/anatomy`}
               className="rounded border border-[var(--accent-line)] bg-[var(--accent-wash)] px-2.5 py-1 text-[12.5px] font-medium text-[var(--accent-ink)] hover:bg-[var(--select)]"
             >

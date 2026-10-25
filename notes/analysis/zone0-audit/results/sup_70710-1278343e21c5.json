@@ -1,0 +1,1167 @@
+{
+  "supplier_id": "sup:70710",
+  "input_hash": "1278343e21c5c502c54c6363b854806b1154e8f58ab747f5a6df9d119fa330b4",
+  "dossier_hash": "ca4e6fe54844db9dddd148aa563911d498ffe9dcc586afdeb86f1f0c4525a772",
+  "model": "gpt-6.1-sol",
+  "effort": "low",
+  "meta": {
+    "seconds": 45.92,
+    "usage": {
+      "input_tokens": 44522,
+      "input_tokens_details": {
+        "cache_write_tokens": 44519,
+        "cached_tokens": 0
+      },
+      "output_tokens": 5234,
+      "output_tokens_details": {
+        "reasoning_tokens": 25
+      },
+      "total_tokens": 49756
+    }
+  },
+  "audit": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "inference",
+        "reason": "The September 12, 2026 proposal explicitly requests AS-14404 for part:370010. Linking its purpose and start to hedge expiry is plausible but not stated.",
+        "excerpts": [
+          {
+            "ref": "doc:20260912-70710-P08",
+            "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404."
+          },
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "Agreement on the coming period is requested, but the desired timing and wish to retain quota during benchmarks are inferred, not recorded supplier preferences.",
+        "excerpts": [
+          {
+            "ref": "doc:20260912-70710-P08",
+            "quote": "we propose to agree the price basis for the coming period"
+          },
+          {
+            "ref": "ctr:4600070710#3.1",
+            "quote": "Changes require written notice of at least 60 days before the end of the calendar year."
+          },
+          {
+            "ref": "evidence:part:370010:sourcing",
+            "quote": "\"quota_pct\": 80, \"status\": \"active\", \"supplier_id\": \"sup:70710\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "inference",
+        "reason": "September 2026 forecasts are shared and above trailing orders. Binding-volume and duration preferences are not demonstrated. Qualified zero-quota status on part:370021 makes new business plausible, not assured.",
+        "excerpts": [
+          {
+            "ref": "fc:370010@2026-09",
+            "quote": "\"ordered_last_12m\": 116340, \"qty_next_12m\": 118500, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "evidence:part:370021:sourcing",
+            "quote": "\"quota_pct\": 0, \"status\": \"qualified\", \"supplier_id\": \"sup:70710\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "inference",
+        "reason": "The April 21, 2026 offer is recorded; a need for recognition and the perceived respect from accepting it are interpretations.",
+        "excerpts": [
+          {
+            "ref": "doc:20260421-70710-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "unsupported",
+        "reason": "The July letter records the supplier's assertion, corroborated only by its own September quote remarks. Actual purchasing coverage is not independently established, and its predicted refusal of a cost argument is unrecorded.",
+        "excerpts": [
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that."
+          },
+          {
+            "ref": "quote:7300008",
+            "quote": "\"remarks\": \"Material covered until March 2027; price valid accordingly.\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "supported",
+        "reason": "These are the recorded framework terms for part:370010, valid January 2024–December 2026. Annual fixing must be read alongside the express quarterly index adjustment.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 60 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %."
+          },
+          {
+            "ref": "ctr:4600070710#8.1",
+            "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 60 days' notice."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "unsupported",
+        "reason": "The December 25, 2025 notice concerns the past 2025–26 holiday period. It does not establish a current September 2026 constraint or the next shutdown.",
+        "excerpts": [
+          {
+            "ref": "doc:20251225-70710-N",
+            "quote": "email - 2025-12-25 - Edelstahl-Service Donautal GmbH"
+          },
+          {
+            "ref": "doc:20251225-70710-N",
+            "quote": "Our plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "The supplier proposes, rather than insists on, a clause. Deadband, timing and price exchanges require current allowed options and total-cost economics; historical terms do not establish the best package.",
+        "excerpts": [
+          {
+            "ref": "doc:20260912-70710-P08",
+            "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes a value from `term_options` (or the supplier's standard value)."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "Neither the price value of 24 months nor its equivalence to 36 months is established. Allowed duration choices and case economics are missing.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "A longer contract or an index clause is security for it, not cash, and does not count."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "years     = min(M / 12, H); a single order (M = 0) counts as 1"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "Shared forecasts do not establish reliability, supplier appetite or low commitment risk. Binding-volume value requires the case's need, fallback exposure and supplier economics.",
+        "excerpts": [
+          {
+            "ref": "fc:370010@2026-09",
+            "quote": "\"qty_next_12m\": 118500, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "uncovered = (N · H − covered) · fallback_unit_price"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "Reported hedge coverage does not establish the best effective date or price premium. Those alternatives require allowed dates and pre-effective-date spend calculations.",
+        "excerpts": [
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "spend     = pre · current_unit_price + new"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "No recorded cash need does not prove its absence. Current 30-day terms are established, but retaining or extending them requires case options and payment-value math.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#4.1",
+            "quote": "Payment: 30 days net."
+          },
+          {
+            "ref": "package:company.md",
+            "quote": "Standard payment terms: 60 days net. Cost of capital for valuing payment terms:\n  8% a year."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "paying earlier costs interest"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "Recurring defects and the historical fee are documented. The value of retaining or trading chargebacks requires allowed options and defect-cost calculations.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#6.1",
+            "quote": "flat fee of EUR 150 per supplier-caused complaint."
+          },
+          {
+            "ref": "qn:20004940",
+            "quote": "\"defect\": \"coating defect\""
+          },
+          {
+            "ref": "qn:20005016",
+            "quote": "\"defect\": \"burr / sharp edge\""
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed · ppm_commitment / 1e6 · (cost_per_defect − min(chargeback_eur_per_complaint, cost_per_defect))"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.6",
+        "verdict": "requires_case",
+        "reason": "Ten days is the historical standard, but adequacy and the cost of shorter delivery require case need, allowed choices and supplier economics.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#5.1",
+            "quote": "Delivery DAP; standard lead time 10 days from order."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "late_cost_per_day · max(0, lead_time_days − need_lead_time_days)"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "requires_case",
+        "reason": "The letter concerns nickel and alloys, not all costs, and does not override the existing quarterly clause. Deferring or fixing prices requires allowed case terms and economics.",
+        "excerpts": [
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027."
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes a value from `term_options` (or the supplier's standard value)."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "supported",
+        "reason": "For part:370010, the current price from July 2026 and the September 10 continuation quote are both EUR 5.45. The higher September 19 benchmark quote has a different RFQ scope.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70710-370010-Q3",
+            "quote": "\"price\": 5.45, \"price_unit\": 1, \"supplier_id\": \"sup:70710\", \"valid_from\": \"2026-07-01\", \"valid_to\": null"
+          },
+          {
+            "ref": "quote:7300008",
+            "quote": "\"unit_price\": 5.45, \"validity_days\": 90"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "requires_case",
+        "reason": "The September forecast records a 1.9% increase for part:370010. Turning it into a binding-volume trade needs allowed volumes and total-cost math; forecast growth alone proves no supplier preference.",
+        "excerpts": [
+          {
+            "ref": "fc:370010@2026-09",
+            "quote": "\"change_pct\": 1.9"
+          },
+          {
+            "ref": "fc:370010@2026-09",
+            "quote": "\"ordered_last_12m\": 116340, \"qty_next_12m\": 118500, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "inference",
+        "reason": "The April offer is recorded, but what a future walkthrough will disclose or independently establish is not yet known.",
+        "excerpts": [
+          {
+            "ref": "doc:20260421-70710-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "inference",
+        "reason": "The September driver summary supports a 5.5% fall from June for part:370010. Its effect on the next quarterly price is not demonstrated without the contractual lag/base calculation; its persuasiveness under reported hedging is judgment.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:370010:drivers",
+            "quote": "\"max_fall_from_id\": \"idx:AS-14404@2026-06\", \"max_fall_pct\": -5.5"
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "P = P0 x (1 - 0.45 + 0.45 x I(m-2) / I(base))"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "supported",
+        "reason": "The three recorded renewals for part:370010 settled below their asks. Negotiation-history events are not an eligible checker category under rules:api.",
+        "excerpts": [
+          {
+            "ref": "EV-2024-70710-370010",
+            "quote": "\"asked_pct\": -3.1, \"date\": \"2023-11-29\""
+          },
+          {
+            "ref": "EV-2024-70710-370010",
+            "quote": "\"settled_pct\": -7.1"
+          },
+          {
+            "ref": "EV-2025-70710-370010",
+            "quote": "\"asked_pct\": 2.0"
+          },
+          {
+            "ref": "EV-2025-70710-370010",
+            "quote": "\"settled_pct\": -1.5"
+          },
+          {
+            "ref": "EV-2026-70710-370010",
+            "quote": "\"asked_pct\": 3.2"
+          },
+          {
+            "ref": "EV-2026-70710-370010",
+            "quote": "\"settled_pct\": 1.4"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "IDs of meeting notes, suppliers or parts\nare context, not checks."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "supported",
+        "reason": "The rolling year ending September 30, 2026 records 88% requested-date OTD and 92% confirmed-date OTD, both below the part:370010 framework's 95% target.",
+        "excerpts": [
+          {
+            "ref": "sc:70710@2026Q3",
+            "quote": "\"otd_confirmed_pct\": 92.0, \"otd_pct\": 88.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\""
+          },
+          {
+            "ref": "ctr:4600070710#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "requires_case",
+        "reason": "Recurring defects and an unclosed September 2026 8D are recorded for part:370010; it is not overdue. The chargeback/PPM recommendation requires case options and economics.",
+        "excerpts": [
+          {
+            "ref": "qn:20005016",
+            "quote": "\"d8_date\": null, \"defect\": \"burr / sharp edge\""
+          },
+          {
+            "ref": "qn:20005016",
+            "quote": "\"qn_date\": \"2026-09-06\""
+          },
+          {
+            "ref": "sc:70710@2026Q3",
+            "quote": "\"open_8d_overdue\": 0"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed · ppm_commitment / 1e6 · (cost_per_defect − min(chargeback_eur_per_complaint, cost_per_defect))"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "unsupported",
+        "reason": "Annual fixing and notice are recorded, but treating them as a general objection to mid-year changes omits the express quarterly index exception for part:370010.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year."
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "contradicted",
+        "reason": "As a claim of timely payment reliability, it conflicts with 78.7% of invoices paid late. Delays are modest, but that does not make payment punctual.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 1.9"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"max_days_late\": 7, \"paid_late_pct\": 78.7"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "unsupported",
+        "reason": "For part:370021, a fall since June is supported, but an unqualified falling trend is not: September 2026 is above both the year-earlier level and December low.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:370021:drivers",
+            "quote": "\"change_12m_pct\": 8.6, \"change_from_low_pct\": 9.6"
+          },
+          {
+            "ref": "evidence:part:370021:drivers",
+            "quote": "\"max_fall_from_id\": \"idx:AS-14301@2026-06\", \"max_fall_pct\": -7.6"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "requires_case",
+        "reason": "The proposed price, volume, duration and clause package needs current case options and cost math. The record does not establish actual margin, harmless squeezing, how much driver inflation is already priced, or checker eligibility of a particular index argument without its required pair of IDs.",
+        "excerpts": [
+          {
+            "ref": "quote:7300008",
+            "quote": "\"remarks\": \"Material covered until March 2027; price valid accordingly.\""
+          },
+          {
+            "ref": "quote:7200008",
+            "quote": "\"unit_price\": 6.06"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "FY2025 intel supports group ownership and 350 staff; the April note supports openness to a walkthrough. High margin, overstated cost pressure and the ability to walk away are not established by those records or financial ratios. Writing style is interpretive.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"owner_type\": \"group\", \"staff\": 350"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177, \"equity_ratio_pct\": 33.9, \"filed_fy\": 2025"
+          },
+          {
+            "ref": "doc:20260421-70710-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          },
+          {
+            "ref": "evidence:deliveries",
+            "quote": "\"avg_days_late_when_late\": 14.0"
+          },
+          {
+            "ref": "sc:70710@2026Q3",
+            "quote": "\"ppm\": 75"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "requires_case",
+        "reason": "Quota, historical clause, reported hedge and open-book offer are supported. Ranking the strongest lever, ruling out a credible price exit and recommending date/duration/volume trades require case alternatives and economics. Supplier financial strength does not prove walk-away behavior.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:370010:sourcing",
+            "quote": "\"quota_pct\": 80, \"status\": \"active\", \"supplier_id\": \"sup:70710\""
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "P = P0 x (1 - 0.45 + 0.45 x I(m-2) / I(base))"
+          },
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes a value from `term_options` (or the supplier's standard value)."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "C_best`: the cheaper\nof your alternative and the best package any supplier in the case would accept with every valid\nlever applied."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "unsupported",
+        "reason": "The compound list overstates several conclusions: n/a tooling ownership and zero tooling price do not conflict; not all peak comparisons are ineligible; higher rival prices do not prove termination is a bluff; hedging does not demonstrate double payment or walk-away ability. Rival-quote disclosure is correctly identified.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:370010:sourcing",
+            "quote": "\"tooling_owner\": \"n/a\""
+          },
+          {
+            "ref": "quote:7300008",
+            "quote": "\"tooling_eur\": 0"
+          },
+          {
+            "ref": "evidence:part:370010:drivers",
+            "quote": "\"peak_month\": \"2026-06\", \"peak_value\": 132.1"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Citing a buyer-private fact - a rival quote - reveals it to the\nsupplier you cite it to."
+          },
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      }
+    ],
+    "errors": [],
+    "complete": true,
+    "verdict_counts": {
+      "inference": 6,
+      "unsupported": 6,
+      "supported": 4,
+      "requires_case": 12,
+      "contradicted": 1
+    }
+  },
+  "raw": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "inference",
+        "reason": "The September 12, 2026 proposal explicitly requests AS-14404 for part:370010. Linking its purpose and start to hedge expiry is plausible but not stated.",
+        "excerpts": [
+          {
+            "ref": "doc:20260912-70710-P08",
+            "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404."
+          },
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "Agreement on the coming period is requested, but the desired timing and wish to retain quota during benchmarks are inferred, not recorded supplier preferences.",
+        "excerpts": [
+          {
+            "ref": "doc:20260912-70710-P08",
+            "quote": "we propose to agree the price basis for the coming period"
+          },
+          {
+            "ref": "ctr:4600070710#3.1",
+            "quote": "Changes require written notice of at least 60 days before the end of the calendar year."
+          },
+          {
+            "ref": "evidence:part:370010:sourcing",
+            "quote": "\"quota_pct\": 80, \"status\": \"active\", \"supplier_id\": \"sup:70710\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "inference",
+        "reason": "September 2026 forecasts are shared and above trailing orders. Binding-volume and duration preferences are not demonstrated. Qualified zero-quota status on part:370021 makes new business plausible, not assured.",
+        "excerpts": [
+          {
+            "ref": "fc:370010@2026-09",
+            "quote": "\"ordered_last_12m\": 116340, \"qty_next_12m\": 118500, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "evidence:part:370021:sourcing",
+            "quote": "\"quota_pct\": 0, \"status\": \"qualified\", \"supplier_id\": \"sup:70710\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "inference",
+        "reason": "The April 21, 2026 offer is recorded; a need for recognition and the perceived respect from accepting it are interpretations.",
+        "excerpts": [
+          {
+            "ref": "doc:20260421-70710-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "unsupported",
+        "reason": "The July letter records the supplier's assertion, corroborated only by its own September quote remarks. Actual purchasing coverage is not independently established, and its predicted refusal of a cost argument is unrecorded.",
+        "excerpts": [
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027. Market movements reach our costs only after that."
+          },
+          {
+            "ref": "quote:7300008",
+            "quote": "\"remarks\": \"Material covered until March 2027; price valid accordingly.\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "supported",
+        "reason": "These are the recorded framework terms for part:370010, valid January 2024–December 2026. Annual fixing must be read alongside the express quarterly index adjustment.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 60 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %."
+          },
+          {
+            "ref": "ctr:4600070710#8.1",
+            "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 60 days' notice."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "unsupported",
+        "reason": "The December 25, 2025 notice concerns the past 2025–26 holiday period. It does not establish a current September 2026 constraint or the next shutdown.",
+        "excerpts": [
+          {
+            "ref": "doc:20251225-70710-N",
+            "quote": "email - 2025-12-25 - Edelstahl-Service Donautal GmbH"
+          },
+          {
+            "ref": "doc:20251225-70710-N",
+            "quote": "Our plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "The supplier proposes, rather than insists on, a clause. Deadband, timing and price exchanges require current allowed options and total-cost economics; historical terms do not establish the best package.",
+        "excerpts": [
+          {
+            "ref": "doc:20260912-70710-P08",
+            "quote": "we propose to agree the price basis for the coming period, including a price adjustment clause based on AS-14404."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes a value from `term_options` (or the supplier's standard value)."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "Neither the price value of 24 months nor its equivalence to 36 months is established. Allowed duration choices and case economics are missing.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "A longer contract or an index clause is security for it, not cash, and does not count."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "years     = min(M / 12, H); a single order (M = 0) counts as 1"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "Shared forecasts do not establish reliability, supplier appetite or low commitment risk. Binding-volume value requires the case's need, fallback exposure and supplier economics.",
+        "excerpts": [
+          {
+            "ref": "fc:370010@2026-09",
+            "quote": "\"qty_next_12m\": 118500, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "uncovered = (N · H − covered) · fallback_unit_price"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "Reported hedge coverage does not establish the best effective date or price premium. Those alternatives require allowed dates and pre-effective-date spend calculations.",
+        "excerpts": [
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "spend     = pre · current_unit_price + new"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "No recorded cash need does not prove its absence. Current 30-day terms are established, but retaining or extending them requires case options and payment-value math.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#4.1",
+            "quote": "Payment: 30 days net."
+          },
+          {
+            "ref": "package:company.md",
+            "quote": "Standard payment terms: 60 days net. Cost of capital for valuing payment terms:\n  8% a year."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "paying earlier costs interest"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "Recurring defects and the historical fee are documented. The value of retaining or trading chargebacks requires allowed options and defect-cost calculations.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#6.1",
+            "quote": "flat fee of EUR 150 per supplier-caused complaint."
+          },
+          {
+            "ref": "qn:20004940",
+            "quote": "\"defect\": \"coating defect\""
+          },
+          {
+            "ref": "qn:20005016",
+            "quote": "\"defect\": \"burr / sharp edge\""
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed · ppm_commitment / 1e6 · (cost_per_defect − min(chargeback_eur_per_complaint, cost_per_defect))"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.6",
+        "verdict": "requires_case",
+        "reason": "Ten days is the historical standard, but adequacy and the cost of shorter delivery require case need, allowed choices and supplier economics.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#5.1",
+            "quote": "Delivery DAP; standard lead time 10 days from order."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "late_cost_per_day · max(0, lead_time_days − need_lead_time_days)"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "requires_case",
+        "reason": "The letter concerns nickel and alloys, not all costs, and does not override the existing quarterly clause. Deferring or fixing prices requires allowed case terms and economics.",
+        "excerpts": [
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027."
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes a value from `term_options` (or the supplier's standard value)."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "supported",
+        "reason": "For part:370010, the current price from July 2026 and the September 10 continuation quote are both EUR 5.45. The higher September 19 benchmark quote has a different RFQ scope.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70710-370010-Q3",
+            "quote": "\"price\": 5.45, \"price_unit\": 1, \"supplier_id\": \"sup:70710\", \"valid_from\": \"2026-07-01\", \"valid_to\": null"
+          },
+          {
+            "ref": "quote:7300008",
+            "quote": "\"unit_price\": 5.45, \"validity_days\": 90"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "requires_case",
+        "reason": "The September forecast records a 1.9% increase for part:370010. Turning it into a binding-volume trade needs allowed volumes and total-cost math; forecast growth alone proves no supplier preference.",
+        "excerpts": [
+          {
+            "ref": "fc:370010@2026-09",
+            "quote": "\"change_pct\": 1.9"
+          },
+          {
+            "ref": "fc:370010@2026-09",
+            "quote": "\"ordered_last_12m\": 116340, \"qty_next_12m\": 118500, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "inference",
+        "reason": "The April offer is recorded, but what a future walkthrough will disclose or independently establish is not yet known.",
+        "excerpts": [
+          {
+            "ref": "doc:20260421-70710-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "inference",
+        "reason": "The September driver summary supports a 5.5% fall from June for part:370010. Its effect on the next quarterly price is not demonstrated without the contractual lag/base calculation; its persuasiveness under reported hedging is judgment.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:370010:drivers",
+            "quote": "\"max_fall_from_id\": \"idx:AS-14404@2026-06\", \"max_fall_pct\": -5.5"
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "P = P0 x (1 - 0.45 + 0.45 x I(m-2) / I(base))"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "supported",
+        "reason": "The three recorded renewals for part:370010 settled below their asks. Negotiation-history events are not an eligible checker category under rules:api.",
+        "excerpts": [
+          {
+            "ref": "EV-2024-70710-370010",
+            "quote": "\"asked_pct\": -3.1, \"date\": \"2023-11-29\""
+          },
+          {
+            "ref": "EV-2024-70710-370010",
+            "quote": "\"settled_pct\": -7.1"
+          },
+          {
+            "ref": "EV-2025-70710-370010",
+            "quote": "\"asked_pct\": 2.0"
+          },
+          {
+            "ref": "EV-2025-70710-370010",
+            "quote": "\"settled_pct\": -1.5"
+          },
+          {
+            "ref": "EV-2026-70710-370010",
+            "quote": "\"asked_pct\": 3.2"
+          },
+          {
+            "ref": "EV-2026-70710-370010",
+            "quote": "\"settled_pct\": 1.4"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "IDs of meeting notes, suppliers or parts\nare context, not checks."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "supported",
+        "reason": "The rolling year ending September 30, 2026 records 88% requested-date OTD and 92% confirmed-date OTD, both below the part:370010 framework's 95% target.",
+        "excerpts": [
+          {
+            "ref": "sc:70710@2026Q3",
+            "quote": "\"otd_confirmed_pct\": 92.0, \"otd_pct\": 88.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\""
+          },
+          {
+            "ref": "ctr:4600070710#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "requires_case",
+        "reason": "Recurring defects and an unclosed September 2026 8D are recorded for part:370010; it is not overdue. The chargeback/PPM recommendation requires case options and economics.",
+        "excerpts": [
+          {
+            "ref": "qn:20005016",
+            "quote": "\"d8_date\": null, \"defect\": \"burr / sharp edge\""
+          },
+          {
+            "ref": "qn:20005016",
+            "quote": "\"qn_date\": \"2026-09-06\""
+          },
+          {
+            "ref": "sc:70710@2026Q3",
+            "quote": "\"open_8d_overdue\": 0"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed · ppm_commitment / 1e6 · (cost_per_defect − min(chargeback_eur_per_complaint, cost_per_defect))"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "unsupported",
+        "reason": "Annual fixing and notice are recorded, but treating them as a general objection to mid-year changes omits the express quarterly index exception for part:370010.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070710#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year."
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "contradicted",
+        "reason": "As a claim of timely payment reliability, it conflicts with 78.7% of invoices paid late. Delays are modest, but that does not make payment punctual.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 1.9"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"max_days_late\": 7, \"paid_late_pct\": 78.7"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "unsupported",
+        "reason": "For part:370021, a fall since June is supported, but an unqualified falling trend is not: September 2026 is above both the year-earlier level and December low.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:370021:drivers",
+            "quote": "\"change_12m_pct\": 8.6, \"change_from_low_pct\": 9.6"
+          },
+          {
+            "ref": "evidence:part:370021:drivers",
+            "quote": "\"max_fall_from_id\": \"idx:AS-14301@2026-06\", \"max_fall_pct\": -7.6"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "requires_case",
+        "reason": "The proposed price, volume, duration and clause package needs current case options and cost math. The record does not establish actual margin, harmless squeezing, how much driver inflation is already priced, or checker eligibility of a particular index argument without its required pair of IDs.",
+        "excerpts": [
+          {
+            "ref": "quote:7300008",
+            "quote": "\"remarks\": \"Material covered until March 2027; price valid accordingly.\""
+          },
+          {
+            "ref": "quote:7200008",
+            "quote": "\"unit_price\": 6.06"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "FY2025 intel supports group ownership and 350 staff; the April note supports openness to a walkthrough. High margin, overstated cost pressure and the ability to walk away are not established by those records or financial ratios. Writing style is interpretive.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"owner_type\": \"group\", \"staff\": 350"
+          },
+          {
+            "ref": "evidence:intel",
+            "quote": "\"credit_index\": 177, \"credit_index_12m_ago\": 177, \"equity_ratio_pct\": 33.9, \"filed_fy\": 2025"
+          },
+          {
+            "ref": "doc:20260421-70710-M2",
+            "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices."
+          },
+          {
+            "ref": "evidence:deliveries",
+            "quote": "\"avg_days_late_when_late\": 14.0"
+          },
+          {
+            "ref": "sc:70710@2026Q3",
+            "quote": "\"ppm\": 75"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "requires_case",
+        "reason": "Quota, historical clause, reported hedge and open-book offer are supported. Ranking the strongest lever, ruling out a credible price exit and recommending date/duration/volume trades require case alternatives and economics. Supplier financial strength does not prove walk-away behavior.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:370010:sourcing",
+            "quote": "\"quota_pct\": 80, \"status\": \"active\", \"supplier_id\": \"sup:70710\""
+          },
+          {
+            "ref": "ctr:4600070710#3.2",
+            "quote": "P = P0 x (1 - 0.45 + 0.45 x I(m-2) / I(base))"
+          },
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes a value from `term_options` (or the supplier's standard value)."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "C_best`: the cheaper\nof your alternative and the best package any supplier in the case would accept with every valid\nlever applied."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "unsupported",
+        "reason": "The compound list overstates several conclusions: n/a tooling ownership and zero tooling price do not conflict; not all peak comparisons are ineligible; higher rival prices do not prove termination is a bluff; hedging does not demonstrate double payment or walk-away ability. Rival-quote disclosure is correctly identified.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:370010:sourcing",
+            "quote": "\"tooling_owner\": \"n/a\""
+          },
+          {
+            "ref": "quote:7300008",
+            "quote": "\"tooling_eur\": 0"
+          },
+          {
+            "ref": "evidence:part:370010:drivers",
+            "quote": "\"peak_month\": \"2026-06\", \"peak_value\": 132.1"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Citing a buyer-private fact - a rival quote - reveals it to the\nsupplier you cite it to."
+          },
+          {
+            "ref": "doc:20260706-70710-M1",
+            "quote": "our nickel and alloys requirement is covered at fixed prices until March 2027."
+          }
+        ]
+      }
+    ]
+  }
+}

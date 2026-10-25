@@ -1,5 +1,116 @@
 # Implementation
 
+## Experimental supplier-package reconsideration
+
+`--reconsider deterministic|decision` on the wave and benchmark CLIs installs an optional adapter
+after the engine proposes a counteroffer and before the writer builds the email. A typed reference
+identifies a sheet in the latest supplier message. Code validates its complete nonprice package
+and computes an alternative price at no greater estimated buyer cost than the main offer, using
+`economics.equal_cost_price`. The adapter appends at most one sheet; main-offer accounting and
+terminal decisions remain unchanged. The `decision` arm uses a bounded binary Decisions request
+to choose whether to include the alternative; it cannot supply terms or financial parameters.
+Defaults remain off. See [protocol](../evaluations/reconsideration/plan.md).
+
+## Observation-only decision reviewer
+
+Experimental `--observe` on `scripts/supplier_wave.py` and `scripts/bench.py` wraps the existing
+buyer with `observation.CaptureAgent`. Each decision captures an independent snapshot of the
+case, messages available at that moment, public source documents, parsed standard terms, engine
+estimates and proposed wire message. It returns the original message unchanged. Capture errors
+are recorded separately and cannot trigger the buyer's model fallback.
+
+`scripts/observe_decisions.py INPUT --out OUTPUT` reviews the saved `observation_packets` after
+negotiations finish. It uses OpenAI Decisions (`gpt-6-luna`): one combined verdict/field choice,
+then a conditional source-selection call for flags, a 15-second overall hard deadline and no retries. Failures
+are unavailable observations, never approvals. Evidence selection proves provenance only;
+semantic correctness still needs inspection. No future replies, scores, private supplier profiles
+or back-office information are sent to the reviewer. This experiment cannot improve offers or
+scores: it measures detection quality and offline call latency. Default/final behavior is unchanged.
+
+See [experiment and commands](../evaluations/decision-observer/README.md).
+
+## Prospective supplier stress suite
+
+`evaluations/supplier-generalization/wave-02/` contains ten new cases, separate private profiles,
+the preregistered protocol and a SHA-256 seal. `scripts/build_generalization_wave.py` reproduces
+the files without running a buyer and refuses to change frozen content. `supplier_gym/suite.py`
+checks inventory, hashes and financial feasibility. The fixture tests inspect arithmetic and
+paired controls; they do not negotiate these cases with v1.9.
+
+The wave CLI accepts `--suite`, `--validate-only` and `--finish-when-done`. Quick completion retains
+thread deadlines and the cap, but closes the local wave after all cases have ended. The unchanged
+`play_waves` runner then exits. Each run copies its exact suite and records code hashes. Reports
+add the static opening/alternative baseline and diagnostics for the ID and supplier-order pairs.
+Private profiles can specify positive final margins, concession pace and commitment penalties;
+defaults retain the first suite's financial behavior. The production buyer is unchanged.
+
+See [commands and report handoff](../evaluations/supplier-generalization/README.md) and
+[paper methodology](../evaluations/supplier-generalization/methodology.md).
+
+## Local LLM supplier practice
+
+`arena_kit/supplier_gym/` replaces the starter simulator's scripted bargaining with independent
+private financial limits and an LLM selecting legal actions. Ten synthetic Sunday-inspired cases
+contain twelve supplier instances. `scripts/supplier_gym.py` runs the unchanged v1.9 buyer through
+the existing email API, attachments and `play` runner, using an in-process transport. Public cases,
+private assumptions, transcripts and diagnostics stay separate. This command makes no hosted arena
+calls or timed rehearsal. `scripts/supplier_wave.py` runs the same fixtures as one timed 480-second
+wave through unchanged `play_waves`, with ten concurrent cases and 60-second thread clocks.
+`supplier_gym/wave.py` routes one shared rate-limited client's requests to isolated case APIs, so
+supplier model calls can overlap. It records request intervals, finish times, failures and scores.
+See [design, assumptions and commands](supplier-gym.md).
+
+## Sunday release in the deterministic dossier
+
+`dossier.build` discovers supplier documents and news through `DataPackage.ids`, `lookup` and
+`document`, so both the original SQLite records and the additive Sunday CSV/document release reach
+the same phrase rules. Records without a supplier, such as the market memo, are not copied into
+every supplier's signals. Master data, quality, should-cost and financing formulas remain unchanged.
+`source_ids` records which supplier documents/news were read. The hedge matcher also recognizes
+the explicit phrase “bought forward at fixed prices”; these flags remain coarse text signals,
+not a full interpretation of dates, part scope or supplier willingness to trade.
+
+`scripts/deterministic_dossiers.py` exports source-stage dossiers for the release's affected
+suppliers and their known parts, without an arena session or model call. They are inspection
+snapshots: the live engine rebuilds the dossier for the actual case and applies its opening-quote
+cap and measured financing-rate updates. Hidden final cases are not downloaded or invented.
+
+From `starter-kit/`, regenerate them with:
+
+```bash
+.venv/bin/python scripts/deterministic_dossiers.py
+```
+
+Output: `knowledge/deterministic/release.json` (12 supplier/part snapshots for six suppliers in
+the current release). The live engine builds directly from the data; it does not read this export.
+
+## Experimental grounded hybrid (25 October)
+
+The v1.9 default remains active. Opt-in flags `tactician,grounded_dossier,measured_trades` use the
+new offline dossiers and bounded option menu. `grounded_dossier` also selects the grounded reader
+for `case_plan` when that separate experimental flag is enabled; the hosted comparison does not
+enable `case_plan` or `tactician_text`.
+
+- `research/grounded.py`: four source extractors, independent support verifier, then an ID-only
+  selector. Observations retain exact excerpts, part scope, dates and fact/statement/hypothesis
+  kinds. Rejections stay in the artifact. Source and pipeline fingerprints prevent stale reuse.
+- `scripts/research.py --pipeline grounded`: resumable builds under `knowledge/grounded/`;
+  a failed build cannot replace a healthy artifact. The legacy pipeline is explicitly selectable.
+- `context.py` and `strategist.py`: load checked observations scoped to the case. Missing or stale
+  grounded artifacts do not fall back to legacy interpretations. Preparation warms source records
+  before opening the session; heavy model research is always offline.
+- `trades.py`: compare otherwise identical pairs from the latest supplier message. Price ratios
+  can price one changed term but do not establish acceptance of a new offer. The experimental menu
+  also retains the explicit-driver clause estimate; unknown trade values never become zero.
+- `tactician.py`: model choices must reference permitted options and code-built claims. Engine
+  acceptance timing is retained. Model timeouts keep the engine move.
+- `scripts/test_grounded_hybrid.py`: replay fixed public negotiation states across three hybrid
+  arms. `scripts/bench.py --on ... --no-model-cache` records fresh hosted choices, errors and a
+  code fingerprint. `scripts/analyse_grounded_hybrid.py` reproduces complete paired comparisons.
+
+See [research and rebuild commands](research.md) and the [experiment protocol](../notes/analysis/zone0-v3/experiment.md).
+The older architecture sections below describe the engine's development history.
+
 ProcuDeal is a buyer agent for Hollerau Pumpenwerke. It negotiates by e-mail with the arena's
 supplier bots and closes the deal with the lowest total cost C, or walks away.
 
@@ -28,6 +139,7 @@ starter-kit/arena_kit/agents/procudeal/
                  practice corpus and playbook - see docs/research.md
 starter-kit/arena_kit/cli.py      registers `--agent procudeal` (only change to a kit file)
 starter-kit/scripts/research.py   builds knowledge/ (supplier dossiers, playbook) offline
+starter-kit/scripts/audit_zone0.py independent source audit; writes separate reports, never live knowledge
 starter-kit/knowledge/            zone 0 output: suppliers/*.json, playbook.json, index.json
 starter-kit/scripts/bench.py      benchmark runner: plays cases, saves runs, logs a row
 starter-kit/scripts/compare.py    score table per agent or per run note
@@ -418,3 +530,13 @@ single-supplier cases, on offers and accepts. Walk-aways, notes and RFQs stay wi
 - **Agreed or final offer:** the engine decides; the model is not called.
 
 Run: `PROCUDEAL_ON="tactician,quote_cap,measured_rate,health_refresh" uv run python scripts/bench.py ...`
+
+## Default advisory reply interpretation
+
+`procudeal/reply_interpretation.py` converts a supplier's public exchange history into typed, offer-scoped observations. `Negotiator` receives the reading before its normal decision path; the trace compares observations to the outgoing terms. Interpretation content has no authority to change prices, offers, claims or acceptances. ProcuDeal enables it by default, including through `arena run --set final --agent procudeal`. `PROCUDEAL_REPLY_INTERPRETATION=off` disables it. Live observation adds latency and can affect scheduling.
+
+`scripts/interpret_replies.py` replays saved public prefixes without opening sessions. `scripts/bench.py` and `scripts/supplier_wave.py` inherit the constructor default; `--interpret-replies` and `--no-interpret-replies` explicitly override the environment setting. Their manifests record the resolved setting. The existing feedback reviewer is unchanged. See [reply-interpretation.md](reply-interpretation.md) for the JSON contract and [evaluation README](../evaluations/reply-interpretation/README.md) for commands and actual results.
+
+Both evaluation runners wrap the buyer with `scripts/negotiation_timing.py` to record complete decision latency, including observation capture. `scripts/analyse_reply_finalization.py` compares saved hosted/synthetic results and can read back hosted thread timeout counters. The final runner uses the shared agent constructor, so no separate runner hook is required. Its wave scheduling and deadline-closing behavior are unchanged.
+
+The earlier decision reviewer also runs by default through `observation.LiveDecisionReviewer`, after the action/email is prepared and before dispatch. It reuses the existing `gpt-6-luna` review with `feedback=True`, including the conditional evidence check. An eight-second wall deadline covers the whole review; the remaining 45-second decision budget can shorten or skip it. Results are attached as `decision_review` in the trace and archived as `decision_reviews` by evaluation runners. `PROCUDEAL_DECISION_REVIEW=off` disables this stage independently. No reviewer verdict changes the selected action. The original v1.9 baseline requires both LLM-stage settings off.

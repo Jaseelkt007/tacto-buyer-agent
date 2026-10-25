@@ -1,0 +1,70 @@
+{
+  "suite_id": "wave-02",
+  "design": "authored prospective stress test after Wave 01",
+  "buyer_evaluations_at_construction": 0,
+  "synthetic_finances": true,
+  "generator_sha256": "8e1c0430f048413f8c474dedae3f05c52bff4f83494e0effa0192aa5fc16a4c2",
+  "cases": [
+    {
+      "case_id": "case:G01",
+      "mechanism": "capacity reversal",
+      "expectation": "A 6,000-unit proposal cannot be accepted; current capacity overrides old news."
+    },
+    {
+      "case_id": "case:G02",
+      "mechanism": "overbuying",
+      "expectation": "Lower unit price for excess volume need not mean lower buyer total cost."
+    },
+    {
+      "case_id": "case:G03",
+      "mechanism": "commitment reversal",
+      "expectation": "Evaluate the long-term premium against shorter coverage plus fallback buying."
+    },
+    {
+      "case_id": "case:G04",
+      "mechanism": "identity control A",
+      "expectation": "Compare with G05 across repeated runs; economics and available history match."
+    },
+    {
+      "case_id": "case:G05",
+      "mechanism": "identity control B",
+      "expectation": "Only case and supplier IDs differ from G04."
+    },
+    {
+      "case_id": "case:G06",
+      "mechanism": "partial hedge",
+      "expectation": "A blanket hedged flag loses the distinction between covered and uncovered deliveries."
+    },
+    {
+      "case_id": "case:G07",
+      "mechanism": "index total-cost trap",
+      "expectation": "A lower indexed quote can cost more under the disclosed upward index path."
+    },
+    {
+      "case_id": "case:G08",
+      "mechanism": "RFQ total cost and order A",
+      "expectation": "Compare full cost with supplier-specific PDF standards, not headline price."
+    },
+    {
+      "case_id": "case:G09",
+      "mechanism": "RFQ order B",
+      "expectation": "Only case ID and supplier ordering differ from G08."
+    },
+    {
+      "case_id": "case:G10",
+      "mechanism": "narrow agreement corridor",
+      "expectation": "Close only below the credible alternative or walk away; deal rate alone is not success."
+    }
+  ],
+  "pairs": [
+    [
+      "G04",
+      "G05"
+    ],
+    [
+      "G08",
+      "G09"
+    ]
+  ],
+  "hypotheses_hidden_from_buyer": true
+}

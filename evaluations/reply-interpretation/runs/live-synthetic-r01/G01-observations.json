@@ -1,0 +1,1489 @@
+{
+  "observation_packets": [
+    {
+      "packet": {
+        "case_id": "case:G01",
+        "decision_index": 0,
+        "case": {
+          "case_id": "case:G01",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:320050"
+          ],
+          "suppliers": [
+            "sup:70270"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "volume_per_year"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "volume_per_year": [
+              3000,
+              4000,
+              6000
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4000,
+            "horizon_years": 1.0,
+            "current_unit_price": 17,
+            "fallback_unit_price": 19.04,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 18.36,
+                "payment_days": 60,
+                "volume_per_year": 4000
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "news:20261020-S16"
+          ],
+          "facts": {
+            "news:20261020-S16": {
+              "date": "2026-10-20",
+              "headline": "Obrábění Kraslin s.r.o. puts its turning shop on short-time work",
+              "supplier": "sup:70270",
+              "topic": "short_time_work"
+            }
+          }
+        },
+        "threads": {
+          "sup:70270": [
+            {
+              "message_id": "msg:70270-0-1",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Historical short-time work is over. Only 4,800 units fit this window.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-0",
+                  "terms": {
+                    "unit_price": 17.56
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days",
+                "volume_per_year"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.56\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70270",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nYour rolling scorecard shows on-time delivery of 84.6% (sc:70270@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 13.34,
+                  "payment_days": 10,
+                  "volume_per_year": 4000
+                }
+              }
+            ],
+            "refs": [
+              "fc:320050@2026-09",
+              "idx:PPI-C2431@2026-06",
+              "idx:PPI-C2431@2026-08",
+              "sc:70270@2026Q3"
+            ]
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 10,
+        "standing_offer_id": "offer:70270-0",
+        "engine_estimates": {
+          "sup:70270": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4000,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70270",
+              "name": "Obrábění Kraslin s.r.o.",
+              "country": "CZ",
+              "owner_type": "founder",
+              "contract_id": "ctr:4600070270",
+              "interest_rate": 0.1,
+              "cash_need": false,
+              "wants_work": true,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 1531,
+              "skonto_rate": 0.0,
+              "full_cost": 15.8,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "looks for work"
+              ],
+              "source_ids": [
+                "doc:20251211-70270-N",
+                "doc:20260223-70270-M2",
+                "doc:20260318-70270-M3",
+                "doc:20260809-70270-M1",
+                "news:20261020-S16"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "unit_price": 17.56
+            },
+            "estimated_total_cost": 70240.0,
+            "passes_accept_check": false,
+            "accept_check_reason": "C 70,240 does not beat the limit 70,240"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 13.34,
+              "payment_days": 10,
+              "volume_per_year": 4000
+            },
+            "estimated_total_cost": 53952.89,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 53,953 below the limit 70,240"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G01\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:320050\"], \"suppliers\": [\"sup:70270\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"volume_per_year\"], \"fixed_terms\": {\"lead_time_days\": 35, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"volume_per_year\": [3000, 4000, 6000]}, \"buyer\": {\"need_per_year\": 4000, \"horizon_years\": 1.0, \"current_unit_price\": 17, \"fallback_unit_price\": 19.04, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 18.36, \"payment_days\": 60, \"volume_per_year\": 4000}}}, \"round_limit\": 10, \"refs\": [\"news:20261020-S16\"], \"facts\": {\"news:20261020-S16\": {\"date\": \"2026-10-20\", \"headline\": \"Obrábění Kraslin s.r.o. puts its turning shop on short-time work\", \"supplier\": \"sup:70270\", \"topic\": \"short_time_work\"}}}"
+          },
+          {
+            "id": "message:sup:70270:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-0-1\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Historical short-time work is over. Only 4,800 units fit this window.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-0\", \"terms\": {\"unit_price\": 17.56}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\", \"volume_per_year\"], \"attachments\": [{\"attachment_id\": \"att:70270-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 17.56\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251211-70270-N",
+            "kind": "public_source",
+            "text": "# Packaging\n\nemail - 2025-12-11 - Obrábění Kraslin s.r.o.\n\nFrom November we deliver in returnable boxes instead of cardboard.\n"
+          },
+          {
+            "id": "doc:20260223-70270-M2",
+            "kind": "public_source",
+            "text": "# Customer portfolio\n\nmeeting note - 2026-02-23 - Hollerau Pumpenwerke, Purchasing\n\nThe sales director of Obrábění Kraslin s.r.o. said they are reviewing small accounts and will focus on customers with volume.\n"
+          },
+          {
+            "id": "doc:20260318-70270-M3",
+            "kind": "public_source",
+            "text": "# Visit by the owner\n\nmeeting note - 2026-03-18 - Hollerau Pumpenwerke, Purchasing\n\nVisit by the owner of Obrábění Kraslin s.r.o.. He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.\n"
+          },
+          {
+            "id": "doc:20260809-70270-M1",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-08-09 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Obrábění Kraslin s.r.o.: he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.\n"
+          },
+          {
+            "id": "fc:320050@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:320050@2026-09\", \"part_id\": \"part:320050\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 6650, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-06",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-06\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-06\", \"value\": 132.1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-08\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-08\", \"value\": 129.1}"
+          },
+          {
+            "id": "news:20261020-S16",
+            "kind": "public_source",
+            "text": "Obrábění Kraslin s.r.o. has lost an automotive order and put its turning shop on short-time work from November; the owner says he is looking for new customers in Germany."
+          },
+          {
+            "id": "sc:70270@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70270@2026Q3\", \"supplier_id\": \"sup:70270\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 26, \"otd_pct\": 84.6, \"otd_confirmed_pct\": 88.5, \"received_qty\": 5880, \"complaint_qty\": 9, \"ppm\": 1531, \"qn_count\": 6, \"open_8d_overdue\": 0, \"score\": 84.7, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "c513adc88c076e792d795f1fddc9ac4d957d38042be10e7656ebea8af8b9f85a",
+      "capture_seconds": 0.001175
+    },
+    {
+      "packet": {
+        "case_id": "case:G01",
+        "decision_index": 1,
+        "case": {
+          "case_id": "case:G01",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:320050"
+          ],
+          "suppliers": [
+            "sup:70270"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "volume_per_year"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "volume_per_year": [
+              3000,
+              4000,
+              6000
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4000,
+            "horizon_years": 1.0,
+            "current_unit_price": 17,
+            "fallback_unit_price": 19.04,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 18.36,
+                "payment_days": 60,
+                "volume_per_year": 4000
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "news:20261020-S16"
+          ],
+          "facts": {
+            "news:20261020-S16": {
+              "date": "2026-10-20",
+              "headline": "Obrábění Kraslin s.r.o. puts its turning shop on short-time work",
+              "supplier": "sup:70270",
+              "topic": "short_time_work"
+            }
+          }
+        },
+        "threads": {
+          "sup:70270": [
+            {
+              "message_id": "msg:70270-0-1",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Historical short-time work is over. Only 4,800 units fit this window.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-0",
+                  "terms": {
+                    "unit_price": 17.56
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days",
+                "volume_per_year"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.56\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nYour rolling scorecard shows on-time delivery of 84.6% (sc:70270@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:320050@2026-09",
+                "idx:PPI-C2431@2026-06",
+                "idx:PPI-C2431@2026-08",
+                "sc:70270@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 13.34,
+                    "payment_days": 10,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70270-1-2",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-1",
+                  "terms": {
+                    "payment_days": 10,
+                    "unit_price": 16.08,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 10\nUnit price (EUR) 16.08\nVolume per year (pcs) 4000\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70270",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 15.88 per unit (po:4500014443-10, po:4500014380-10, po:4500014316-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 13.61,
+                  "payment_days": 10,
+                  "volume_per_year": 4000
+                }
+              }
+            ],
+            "refs": [
+              "po:4500014316-10",
+              "po:4500014380-10",
+              "po:4500014443-10"
+            ]
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 9,
+        "standing_offer_id": "offer:70270-1",
+        "engine_estimates": {
+          "sup:70270": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4000,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70270",
+              "name": "Obrábění Kraslin s.r.o.",
+              "country": "CZ",
+              "owner_type": "founder",
+              "contract_id": "ctr:4600070270",
+              "interest_rate": 0.1,
+              "cash_need": false,
+              "wants_work": true,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 1531,
+              "skonto_rate": 0.0,
+              "full_cost": 15.8,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "looks for work"
+              ],
+              "source_ids": [
+                "doc:20251211-70270-N",
+                "doc:20260223-70270-M2",
+                "doc:20260318-70270-M3",
+                "doc:20260809-70270-M1",
+                "news:20261020-S16"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 10,
+              "unit_price": 16.08,
+              "volume_per_year": 4000
+            },
+            "estimated_total_cost": 65034.67,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 65,035 below the limit 70,240"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 13.61,
+              "payment_days": 10,
+              "volume_per_year": 4000
+            },
+            "estimated_total_cost": 55044.89,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 55,045 below the limit 70,240"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G01\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:320050\"], \"suppliers\": [\"sup:70270\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"volume_per_year\"], \"fixed_terms\": {\"lead_time_days\": 35, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"volume_per_year\": [3000, 4000, 6000]}, \"buyer\": {\"need_per_year\": 4000, \"horizon_years\": 1.0, \"current_unit_price\": 17, \"fallback_unit_price\": 19.04, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 18.36, \"payment_days\": 60, \"volume_per_year\": 4000}}}, \"round_limit\": 10, \"refs\": [\"news:20261020-S16\"], \"facts\": {\"news:20261020-S16\": {\"date\": \"2026-10-20\", \"headline\": \"Obrábění Kraslin s.r.o. puts its turning shop on short-time work\", \"supplier\": \"sup:70270\", \"topic\": \"short_time_work\"}}}"
+          },
+          {
+            "id": "message:sup:70270:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-0-1\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Historical short-time work is over. Only 4,800 units fit this window.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-0\", \"terms\": {\"unit_price\": 17.56}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\", \"volume_per_year\"], \"attachments\": [{\"attachment_id\": \"att:70270-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 17.56\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70270:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\\nYour rolling scorecard shows on-time delivery of 84.6% (sc:70270@2026Q3).\\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:320050@2026-09\", \"idx:PPI-C2431@2026-06\", \"idx:PPI-C2431@2026-08\", \"sc:70270@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 13.34, \"payment_days\": 10, \"volume_per_year\": 4000}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70270:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-1-2\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-1\", \"terms\": {\"payment_days\": 10, \"unit_price\": 16.08, \"volume_per_year\": 4000}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70270-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 10\\nUnit price (EUR) 16.08\\nVolume per year (pcs) 4000\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251211-70270-N",
+            "kind": "public_source",
+            "text": "# Packaging\n\nemail - 2025-12-11 - Obrábění Kraslin s.r.o.\n\nFrom November we deliver in returnable boxes instead of cardboard.\n"
+          },
+          {
+            "id": "doc:20260223-70270-M2",
+            "kind": "public_source",
+            "text": "# Customer portfolio\n\nmeeting note - 2026-02-23 - Hollerau Pumpenwerke, Purchasing\n\nThe sales director of Obrábění Kraslin s.r.o. said they are reviewing small accounts and will focus on customers with volume.\n"
+          },
+          {
+            "id": "doc:20260318-70270-M3",
+            "kind": "public_source",
+            "text": "# Visit by the owner\n\nmeeting note - 2026-03-18 - Hollerau Pumpenwerke, Purchasing\n\nVisit by the owner of Obrábění Kraslin s.r.o.. He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.\n"
+          },
+          {
+            "id": "doc:20260809-70270-M1",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-08-09 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Obrábění Kraslin s.r.o.: he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.\n"
+          },
+          {
+            "id": "fc:320050@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:320050@2026-09\", \"part_id\": \"part:320050\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 6650, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-06",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-06\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-06\", \"value\": 132.1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-08\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-08\", \"value\": 129.1}"
+          },
+          {
+            "id": "news:20261020-S16",
+            "kind": "public_source",
+            "text": "Obrábění Kraslin s.r.o. has lost an automotive order and put its turning shop on short-time work from November; the owner says he is looking for new customers in Germany."
+          },
+          {
+            "id": "po:4500014316-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014316-10\", \"po_number\": \"4500014316\", \"line\": 10, \"supplier_id\": \"sup:70270\", \"part_id\": \"part:320050\", \"contract_id\": \"ctr:4600070270\", \"order_date\": \"2026-08-24\", \"qty\": 290, \"uom\": \"pc\", \"price\": 15.88, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-05\", \"first_confirmed_date\": \"2026-10-05\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014380-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014380-10\", \"po_number\": \"4500014380\", \"line\": 10, \"supplier_id\": \"sup:70270\", \"part_id\": \"part:320050\", \"contract_id\": \"ctr:4600070270\", \"order_date\": \"2026-09-07\", \"qty\": 290, \"uom\": \"pc\", \"price\": 15.88, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-19\", \"first_confirmed_date\": \"2026-10-19\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014443-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014443-10\", \"po_number\": \"4500014443\", \"line\": 10, \"supplier_id\": \"sup:70270\", \"part_id\": \"part:320050\", \"contract_id\": \"ctr:4600070270\", \"order_date\": \"2026-09-22\", \"qty\": 270, \"uom\": \"pc\", \"price\": 15.88, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-11-03\", \"first_confirmed_date\": \"2026-11-03\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "sc:70270@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70270@2026Q3\", \"supplier_id\": \"sup:70270\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 26, \"otd_pct\": 84.6, \"otd_confirmed_pct\": 88.5, \"received_qty\": 5880, \"complaint_qty\": 9, \"ppm\": 1531, \"qn_count\": 6, \"open_8d_overdue\": 0, \"score\": 84.7, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "227a9cedf9f003875d091d64058b73b91570f53f3ac30461c557f7db7c773264",
+      "capture_seconds": 0.000544
+    },
+    {
+      "packet": {
+        "case_id": "case:G01",
+        "decision_index": 2,
+        "case": {
+          "case_id": "case:G01",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:320050"
+          ],
+          "suppliers": [
+            "sup:70270"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "volume_per_year"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "volume_per_year": [
+              3000,
+              4000,
+              6000
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4000,
+            "horizon_years": 1.0,
+            "current_unit_price": 17,
+            "fallback_unit_price": 19.04,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 18.36,
+                "payment_days": 60,
+                "volume_per_year": 4000
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "news:20261020-S16"
+          ],
+          "facts": {
+            "news:20261020-S16": {
+              "date": "2026-10-20",
+              "headline": "Obrábění Kraslin s.r.o. puts its turning shop on short-time work",
+              "supplier": "sup:70270",
+              "topic": "short_time_work"
+            }
+          }
+        },
+        "threads": {
+          "sup:70270": [
+            {
+              "message_id": "msg:70270-0-1",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Historical short-time work is over. Only 4,800 units fit this window.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-0",
+                  "terms": {
+                    "unit_price": 17.56
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days",
+                "volume_per_year"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.56\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nYour rolling scorecard shows on-time delivery of 84.6% (sc:70270@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:320050@2026-09",
+                "idx:PPI-C2431@2026-06",
+                "idx:PPI-C2431@2026-08",
+                "sc:70270@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 13.34,
+                    "payment_days": 10,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70270-1-2",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-1",
+                  "terms": {
+                    "payment_days": 10,
+                    "unit_price": 16.08,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 10\nUnit price (EUR) 16.08\nVolume per year (pcs) 4000\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 15.88 per unit (po:4500014443-10, po:4500014380-10, po:4500014316-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "po:4500014316-10",
+                "po:4500014380-10",
+                "po:4500014443-10"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 13.61,
+                    "payment_days": 10,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70270-2-3",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-2",
+                  "terms": {
+                    "payment_days": 10,
+                    "unit_price": 15.83,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 10\nUnit price (EUR) 15.83\nVolume per year (pcs) 4000\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70270",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.28,
+                  "payment_days": 10,
+                  "volume_per_year": 4000
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 8,
+        "standing_offer_id": "offer:70270-2",
+        "engine_estimates": {
+          "sup:70270": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4000,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70270",
+              "name": "Obrábění Kraslin s.r.o.",
+              "country": "CZ",
+              "owner_type": "founder",
+              "contract_id": "ctr:4600070270",
+              "interest_rate": 0.1,
+              "cash_need": false,
+              "wants_work": true,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 1531,
+              "skonto_rate": 0.0,
+              "full_cost": 15.8,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "looks for work"
+              ],
+              "source_ids": [
+                "doc:20251211-70270-N",
+                "doc:20260223-70270-M2",
+                "doc:20260318-70270-M3",
+                "doc:20260809-70270-M1",
+                "news:20261020-S16"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 10,
+              "unit_price": 15.83,
+              "volume_per_year": 4000
+            },
+            "estimated_total_cost": 64023.56,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 64,024 below the limit 70,240"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 14.28,
+              "payment_days": 10,
+              "volume_per_year": 4000
+            },
+            "estimated_total_cost": 57754.67,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 57,755 below the limit 70,240"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G01\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:320050\"], \"suppliers\": [\"sup:70270\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"volume_per_year\"], \"fixed_terms\": {\"lead_time_days\": 35, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"volume_per_year\": [3000, 4000, 6000]}, \"buyer\": {\"need_per_year\": 4000, \"horizon_years\": 1.0, \"current_unit_price\": 17, \"fallback_unit_price\": 19.04, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 18.36, \"payment_days\": 60, \"volume_per_year\": 4000}}}, \"round_limit\": 10, \"refs\": [\"news:20261020-S16\"], \"facts\": {\"news:20261020-S16\": {\"date\": \"2026-10-20\", \"headline\": \"Obrábění Kraslin s.r.o. puts its turning shop on short-time work\", \"supplier\": \"sup:70270\", \"topic\": \"short_time_work\"}}}"
+          },
+          {
+            "id": "message:sup:70270:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-0-1\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Historical short-time work is over. Only 4,800 units fit this window.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-0\", \"terms\": {\"unit_price\": 17.56}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\", \"volume_per_year\"], \"attachments\": [{\"attachment_id\": \"att:70270-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 17.56\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70270:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\\nYour rolling scorecard shows on-time delivery of 84.6% (sc:70270@2026Q3).\\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:320050@2026-09\", \"idx:PPI-C2431@2026-06\", \"idx:PPI-C2431@2026-08\", \"sc:70270@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 13.34, \"payment_days\": 10, \"volume_per_year\": 4000}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70270:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-1-2\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-1\", \"terms\": {\"payment_days\": 10, \"unit_price\": 16.08, \"volume_per_year\": 4000}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70270-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 10\\nUnit price (EUR) 16.08\\nVolume per year (pcs) 4000\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70270:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nOne more point from our side:\\nOur last 3 orders for this part were at EUR 15.88 per unit (po:4500014443-10, po:4500014380-10, po:4500014316-10).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"po:4500014316-10\", \"po:4500014380-10\", \"po:4500014443-10\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 13.61, \"payment_days\": 10, \"volume_per_year\": 4000}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70270:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-2-3\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-2\", \"terms\": {\"payment_days\": 10, \"unit_price\": 15.83, \"volume_per_year\": 4000}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70270-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 10\\nUnit price (EUR) 15.83\\nVolume per year (pcs) 4000\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251211-70270-N",
+            "kind": "public_source",
+            "text": "# Packaging\n\nemail - 2025-12-11 - Obrábění Kraslin s.r.o.\n\nFrom November we deliver in returnable boxes instead of cardboard.\n"
+          },
+          {
+            "id": "doc:20260223-70270-M2",
+            "kind": "public_source",
+            "text": "# Customer portfolio\n\nmeeting note - 2026-02-23 - Hollerau Pumpenwerke, Purchasing\n\nThe sales director of Obrábění Kraslin s.r.o. said they are reviewing small accounts and will focus on customers with volume.\n"
+          },
+          {
+            "id": "doc:20260318-70270-M3",
+            "kind": "public_source",
+            "text": "# Visit by the owner\n\nmeeting note - 2026-03-18 - Hollerau Pumpenwerke, Purchasing\n\nVisit by the owner of Obrábění Kraslin s.r.o.. He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.\n"
+          },
+          {
+            "id": "doc:20260809-70270-M1",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-08-09 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Obrábění Kraslin s.r.o.: he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.\n"
+          },
+          {
+            "id": "fc:320050@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:320050@2026-09\", \"part_id\": \"part:320050\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 6650, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-06",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-06\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-06\", \"value\": 132.1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-08\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-08\", \"value\": 129.1}"
+          },
+          {
+            "id": "news:20261020-S16",
+            "kind": "public_source",
+            "text": "Obrábění Kraslin s.r.o. has lost an automotive order and put its turning shop on short-time work from November; the owner says he is looking for new customers in Germany."
+          },
+          {
+            "id": "po:4500014316-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014316-10\", \"po_number\": \"4500014316\", \"line\": 10, \"supplier_id\": \"sup:70270\", \"part_id\": \"part:320050\", \"contract_id\": \"ctr:4600070270\", \"order_date\": \"2026-08-24\", \"qty\": 290, \"uom\": \"pc\", \"price\": 15.88, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-05\", \"first_confirmed_date\": \"2026-10-05\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014380-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014380-10\", \"po_number\": \"4500014380\", \"line\": 10, \"supplier_id\": \"sup:70270\", \"part_id\": \"part:320050\", \"contract_id\": \"ctr:4600070270\", \"order_date\": \"2026-09-07\", \"qty\": 290, \"uom\": \"pc\", \"price\": 15.88, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-19\", \"first_confirmed_date\": \"2026-10-19\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014443-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014443-10\", \"po_number\": \"4500014443\", \"line\": 10, \"supplier_id\": \"sup:70270\", \"part_id\": \"part:320050\", \"contract_id\": \"ctr:4600070270\", \"order_date\": \"2026-09-22\", \"qty\": 270, \"uom\": \"pc\", \"price\": 15.88, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-11-03\", \"first_confirmed_date\": \"2026-11-03\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "sc:70270@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70270@2026Q3\", \"supplier_id\": \"sup:70270\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 26, \"otd_pct\": 84.6, \"otd_confirmed_pct\": 88.5, \"received_qty\": 5880, \"complaint_qty\": 9, \"ppm\": 1531, \"qn_count\": 6, \"open_8d_overdue\": 0, \"score\": 84.7, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "c385cd244449939c96a1840b81b5e89de7c550cca3c2e83a98f6e20964a30e88",
+      "capture_seconds": 0.000532
+    },
+    {
+      "packet": {
+        "case_id": "case:G01",
+        "decision_index": 3,
+        "case": {
+          "case_id": "case:G01",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:320050"
+          ],
+          "suppliers": [
+            "sup:70270"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "volume_per_year"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "volume_per_year": [
+              3000,
+              4000,
+              6000
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4000,
+            "horizon_years": 1.0,
+            "current_unit_price": 17,
+            "fallback_unit_price": 19.04,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 18.36,
+                "payment_days": 60,
+                "volume_per_year": 4000
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "news:20261020-S16"
+          ],
+          "facts": {
+            "news:20261020-S16": {
+              "date": "2026-10-20",
+              "headline": "Obrábění Kraslin s.r.o. puts its turning shop on short-time work",
+              "supplier": "sup:70270",
+              "topic": "short_time_work"
+            }
+          }
+        },
+        "threads": {
+          "sup:70270": [
+            {
+              "message_id": "msg:70270-0-1",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Historical short-time work is over. Only 4,800 units fit this window.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-0",
+                  "terms": {
+                    "unit_price": 17.56
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days",
+                "volume_per_year"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.56\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nYour rolling scorecard shows on-time delivery of 84.6% (sc:70270@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:320050@2026-09",
+                "idx:PPI-C2431@2026-06",
+                "idx:PPI-C2431@2026-08",
+                "sc:70270@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 13.34,
+                    "payment_days": 10,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70270-1-2",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-1",
+                  "terms": {
+                    "payment_days": 10,
+                    "unit_price": 16.08,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 10\nUnit price (EUR) 16.08\nVolume per year (pcs) 4000\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 15.88 per unit (po:4500014443-10, po:4500014380-10, po:4500014316-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "po:4500014316-10",
+                "po:4500014380-10",
+                "po:4500014443-10"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 13.61,
+                    "payment_days": 10,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70270-2-3",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-2",
+                  "terms": {
+                    "payment_days": 10,
+                    "unit_price": 15.83,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 10\nUnit price (EUR) 15.83\nVolume per year (pcs) 4000\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 14.28,
+                    "payment_days": 10,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70270-3-4",
+              "from": "sales@70270",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70270-3",
+                  "terms": {
+                    "payment_days": 10,
+                    "unit_price": 15.13,
+                    "volume_per_year": 4000
+                  }
+                }
+              ],
+              "status": "final_offer",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70270-3-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 10\nUnit price (EUR) 15.13\nVolume per year (pcs) 4000\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70270",
+          "message": {
+            "action": {
+              "type": "accept",
+              "term_sheet_id": "offer:70270-3"
+            }
+          }
+        },
+        "supplier_status": "final_offer",
+        "moves_left": 7,
+        "standing_offer_id": "offer:70270-3",
+        "engine_estimates": {
+          "sup:70270": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4000,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70270",
+              "name": "Obrábění Kraslin s.r.o.",
+              "country": "CZ",
+              "owner_type": "founder",
+              "contract_id": "ctr:4600070270",
+              "interest_rate": 0.1,
+              "cash_need": false,
+              "wants_work": true,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 1531,
+              "skonto_rate": 0.0,
+              "full_cost": 15.8,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "looks for work"
+              ],
+              "source_ids": [
+                "doc:20251211-70270-N",
+                "doc:20260223-70270-M2",
+                "doc:20260318-70270-M3",
+                "doc:20260809-70270-M1",
+                "news:20261020-S16"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 10,
+              "unit_price": 15.13,
+              "volume_per_year": 4000
+            },
+            "estimated_total_cost": 61192.44,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 61,192 below the limit 70,240"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G01\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:320050\"], \"suppliers\": [\"sup:70270\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"volume_per_year\"], \"fixed_terms\": {\"lead_time_days\": 35, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"volume_per_year\": [3000, 4000, 6000]}, \"buyer\": {\"need_per_year\": 4000, \"horizon_years\": 1.0, \"current_unit_price\": 17, \"fallback_unit_price\": 19.04, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 18.36, \"payment_days\": 60, \"volume_per_year\": 4000}}}, \"round_limit\": 10, \"refs\": [\"news:20261020-S16\"], \"facts\": {\"news:20261020-S16\": {\"date\": \"2026-10-20\", \"headline\": \"Obrábění Kraslin s.r.o. puts its turning shop on short-time work\", \"supplier\": \"sup:70270\", \"topic\": \"short_time_work\"}}}"
+          },
+          {
+            "id": "message:sup:70270:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-0-1\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Historical short-time work is over. Only 4,800 units fit this window.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-0\", \"terms\": {\"unit_price\": 17.56}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\", \"volume_per_year\"], \"attachments\": [{\"attachment_id\": \"att:70270-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 17.56\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70270:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\\nYour rolling scorecard shows on-time delivery of 84.6% (sc:70270@2026Q3).\\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:320050@2026-09\", \"idx:PPI-C2431@2026-06\", \"idx:PPI-C2431@2026-08\", \"sc:70270@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 13.34, \"payment_days\": 10, \"volume_per_year\": 4000}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70270:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-1-2\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-1\", \"terms\": {\"payment_days\": 10, \"unit_price\": 16.08, \"volume_per_year\": 4000}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70270-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 10\\nUnit price (EUR) 16.08\\nVolume per year (pcs) 4000\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70270:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nOne more point from our side:\\nOur last 3 orders for this part were at EUR 15.88 per unit (po:4500014443-10, po:4500014380-10, po:4500014316-10).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"po:4500014316-10\", \"po:4500014380-10\", \"po:4500014443-10\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 13.61, \"payment_days\": 10, \"volume_per_year\": 4000}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70270:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-2-3\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-2\", \"terms\": {\"payment_days\": 10, \"unit_price\": 15.83, \"volume_per_year\": 4000}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70270-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 10\\nUnit price (EUR) 15.83\\nVolume per year (pcs) 4000\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70270:5",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 14.28, \"payment_days\": 10, \"volume_per_year\": 4000}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70270:6",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70270-3-4\", \"from\": \"sales@70270\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70270-3\", \"terms\": {\"payment_days\": 10, \"unit_price\": 15.13, \"volume_per_year\": 4000}}], \"status\": \"final_offer\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70270-3-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 10\\nUnit price (EUR) 15.13\\nVolume per year (pcs) 4000\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251211-70270-N",
+            "kind": "public_source",
+            "text": "# Packaging\n\nemail - 2025-12-11 - Obrábění Kraslin s.r.o.\n\nFrom November we deliver in returnable boxes instead of cardboard.\n"
+          },
+          {
+            "id": "doc:20260223-70270-M2",
+            "kind": "public_source",
+            "text": "# Customer portfolio\n\nmeeting note - 2026-02-23 - Hollerau Pumpenwerke, Purchasing\n\nThe sales director of Obrábění Kraslin s.r.o. said they are reviewing small accounts and will focus on customers with volume.\n"
+          },
+          {
+            "id": "doc:20260318-70270-M3",
+            "kind": "public_source",
+            "text": "# Visit by the owner\n\nmeeting note - 2026-03-18 - Hollerau Pumpenwerke, Purchasing\n\nVisit by the owner of Obrábění Kraslin s.r.o.. He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.\n"
+          },
+          {
+            "id": "doc:20260809-70270-M1",
+            "kind": "public_source",
+            "text": "# Price discussion\n\ncall note - 2026-08-09 - Hollerau Pumpenwerke, Purchasing\n\nCall with the owner of Obrábění Kraslin s.r.o.: he asked where we get our index figures from - he works from his own spreadsheet, last updated two years ago.\n"
+          },
+          {
+            "id": "fc:320050@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:320050@2026-09\", \"part_id\": \"part:320050\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 6650, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-06",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-06\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-06\", \"value\": 132.1}"
+          },
+          {
+            "id": "idx:PPI-C2431@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-C2431@2026-08\", \"series_id\": \"PPI-C2431\", \"month\": \"2026-08\", \"value\": 129.1}"
+          },
+          {
+            "id": "news:20261020-S16",
+            "kind": "public_source",
+            "text": "Obrábění Kraslin s.r.o. has lost an automotive order and put its turning shop on short-time work from November; the owner says he is looking for new customers in Germany."
+          },
+          {
+            "id": "po:4500014316-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014316-10\", \"po_number\": \"4500014316\", \"line\": 10, \"supplier_id\": \"sup:70270\", \"part_id\": \"part:320050\", \"contract_id\": \"ctr:4600070270\", \"order_date\": \"2026-08-24\", \"qty\": 290, \"uom\": \"pc\", \"price\": 15.88, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-05\", \"first_confirmed_date\": \"2026-10-05\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014380-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014380-10\", \"po_number\": \"4500014380\", \"line\": 10, \"supplier_id\": \"sup:70270\", \"part_id\": \"part:320050\", \"contract_id\": \"ctr:4600070270\", \"order_date\": \"2026-09-07\", \"qty\": 290, \"uom\": \"pc\", \"price\": 15.88, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-19\", \"first_confirmed_date\": \"2026-10-19\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014443-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014443-10\", \"po_number\": \"4500014443\", \"line\": 10, \"supplier_id\": \"sup:70270\", \"part_id\": \"part:320050\", \"contract_id\": \"ctr:4600070270\", \"order_date\": \"2026-09-22\", \"qty\": 270, \"uom\": \"pc\", \"price\": 15.88, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-11-03\", \"first_confirmed_date\": \"2026-11-03\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "sc:70270@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70270@2026Q3\", \"supplier_id\": \"sup:70270\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 26, \"otd_pct\": 84.6, \"otd_confirmed_pct\": 88.5, \"received_qty\": 5880, \"complaint_qty\": 9, \"ppm\": 1531, \"qn_count\": 6, \"open_8d_overdue\": 0, \"score\": 84.7, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "25497e5a113357789c0df81749ac11a45883c16d1adc92b7d1736c6534cfa045",
+      "capture_seconds": 0.000576
+    }
+  ],
+  "observation_errors": []
+}

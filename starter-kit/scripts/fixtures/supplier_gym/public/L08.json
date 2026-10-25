@@ -1,0 +1,93 @@
+{
+  "case_id": "case:L08",
+  "set": "practice",
+  "type": "renewal",
+  "title": "Bearing distribution renewal",
+  "briefing": "Fictional local practice: obtain an acceptable supply agreement for the stated need.",
+  "trigger_doc": null,
+  "parts": [
+    "part:360020"
+  ],
+  "suppliers": [
+    "sup:70640"
+  ],
+  "negotiable": [
+    "unit_price",
+    "payment_days",
+    "contract_months"
+  ],
+  "fixed_terms": {
+    "lead_time_days": 42,
+    "volume_per_year": 6000,
+    "index_clause": null,
+    "incoterm": "DAP",
+    "tooling_eur": 0,
+    "effective_date": "2027-01-01"
+  },
+  "term_options": {
+    "payment_days": [
+      10,
+      30,
+      60,
+      90
+    ],
+    "contract_months": [
+      12,
+      24
+    ]
+  },
+  "buyer": {
+    "need_per_year": 6000,
+    "horizon_years": 2,
+    "current_unit_price": 10,
+    "fallback_unit_price": 12.0,
+    "interest_rate": 0.08,
+    "reference_payment_days": 60,
+    "need_lead_time_days": 42,
+    "category_goal": "leverage",
+    "fallback_risk_pct": 3,
+    "index_risk_pct": 1,
+    "late_cost_per_day": 200,
+    "cost_per_defect": 50,
+    "freight_eur_per_unit": {
+      "EXW": 0.5,
+      "FCA": 0.3,
+      "DAP": 0
+    },
+    "index_paths": {},
+    "must_haves": [
+      {
+        "field": "lead_time_days",
+        "op": "<=",
+        "value": 42
+      }
+    ],
+    "alternative": {
+      "kind": "other_supplier",
+      "ref": null,
+      "terms": {
+        "lead_time_days": 42,
+        "volume_per_year": 6000,
+        "index_clause": null,
+        "incoterm": "DAP",
+        "tooling_eur": 0,
+        "effective_date": "2027-01-01",
+        "unit_price": 11.8,
+        "payment_days": 60,
+        "contract_months": 24
+      }
+    }
+  },
+  "round_limit": 10,
+  "refs": [
+    "news:20261017-S19"
+  ],
+  "facts": {
+    "news:20261017-S19": {
+      "date": "2026-10-17",
+      "headline": "Kugellager-Vertrieb Inntal GmbH loses a large distribution contract",
+      "supplier": "sup:70640",
+      "topic": "free_capacity"
+    }
+  }
+}

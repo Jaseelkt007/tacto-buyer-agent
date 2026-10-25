@@ -1,0 +1,1483 @@
+{
+  "observation_packets": [
+    {
+      "packet": {
+        "case_id": "case:G10",
+        "decision_index": 0,
+        "case": {
+          "case_id": "case:G10",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:360020"
+          ],
+          "suppliers": [
+            "sup:70640"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4000,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4000,
+            "horizon_years": 1.0,
+            "current_unit_price": 10.5,
+            "fallback_unit_price": 11.76,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4000,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 10.4,
+                "payment_days": 60
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "news:20261017-S19"
+          ],
+          "facts": {
+            "news:20261017-S19": {
+              "date": "2026-10-17",
+              "headline": "Kugellager-Vertrieb Inntal GmbH loses a large distribution contract",
+              "supplier": "sup:70640",
+              "topic": "free_capacity"
+            }
+          }
+        },
+        "threads": {
+          "sup:70640": [
+            {
+              "message_id": "msg:70640-0-1",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. We have limited price flexibility. Please propose a commercially complete package.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-0",
+                  "terms": {
+                    "unit_price": 12.44
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 12.44\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70640",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows on-time delivery of 86.5% (sc:70640@2026Q3).\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\nOur last 3 orders for this part were at EUR 4.20 per unit (po:4500014447-10, po:4500014370-10, po:4500014304-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 10.01,
+                  "payment_days": 90
+                }
+              }
+            ],
+            "refs": [
+              "fc:360020@2026-09",
+              "po:4500014304-10",
+              "po:4500014370-10",
+              "po:4500014447-10",
+              "sc:70640@2026Q3"
+            ]
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 10,
+        "standing_offer_id": "offer:70640-0",
+        "engine_estimates": {
+          "sup:70640": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4000,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70640",
+              "name": "Kugellager-Vertrieb Inntal GmbH",
+              "country": "AT",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070640",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": true,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 0,
+              "skonto_rate": 0.0,
+              "full_cost": 11.2,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "looks for work"
+              ],
+              "source_ids": [
+                "doc:20251212-70640-N",
+                "doc:20260201-70640-M5",
+                "doc:20260228-70640-M3",
+                "doc:20260512-70640-M2",
+                "doc:20260715-70640-M4",
+                "doc:20260819-70640-M1",
+                "doc:20260925-70640-P19",
+                "news:20261017-S19"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "unit_price": 12.44
+            },
+            "estimated_total_cost": 49760.0,
+            "passes_accept_check": false,
+            "accept_check_reason": "C 49,760 does not beat the limit 41,600"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 10.01,
+              "payment_days": 90
+            },
+            "estimated_total_cost": 39773.07,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 39,773 below the limit 41,600"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G10\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:360020\"], \"suppliers\": [\"sup:70640\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90]}, \"buyer\": {\"need_per_year\": 4000, \"horizon_years\": 1.0, \"current_unit_price\": 10.5, \"fallback_unit_price\": 11.76, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 10.4, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [\"news:20261017-S19\"], \"facts\": {\"news:20261017-S19\": {\"date\": \"2026-10-17\", \"headline\": \"Kugellager-Vertrieb Inntal GmbH loses a large distribution contract\", \"supplier\": \"sup:70640\", \"topic\": \"free_capacity\"}}}"
+          },
+          {
+            "id": "message:sup:70640:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-0-1\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. We have limited price flexibility. Please propose a commercially complete package.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-0\", \"terms\": {\"unit_price\": 12.44}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70640-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 12.44\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251212-70640-N",
+            "kind": "public_source",
+            "text": "# ISO 9001 certificate\n\nemail - 2025-12-12 - Kugellager-Vertrieb Inntal GmbH\n\nPlease find attached our renewed ISO 9001 certificate.\n"
+          },
+          {
+            "id": "doc:20260201-70640-M5",
+            "kind": "public_source",
+            "text": "# Capacity\n\ncall note - 2026-02-01 - Hollerau Pumpenwerke, Purchasing\n\nCall with sales at Kugellager-Vertrieb Inntal GmbH: they could take additional parts at short notice; the second shift has been on hold since spring.\n"
+          },
+          {
+            "id": "doc:20260228-70640-M3",
+            "kind": "public_source",
+            "text": "# Annual review\n\nmeeting note - 2026-02-28 - Hollerau Pumpenwerke, Purchasing\n\nAnnual review with Kugellager-Vertrieb Inntal GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.\n"
+          },
+          {
+            "id": "doc:20260512-70640-M2",
+            "kind": "public_source",
+            "text": "# Annual review\n\nmeeting note - 2026-05-12 - Hollerau Pumpenwerke, Purchasing\n\nAnnual review with Kugellager-Vertrieb Inntal GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.\n"
+          },
+          {
+            "id": "doc:20260715-70640-M4",
+            "kind": "public_source",
+            "text": "# Capacity\n\ncall note - 2026-07-15 - Hollerau Pumpenwerke, Purchasing\n\nCall with sales at Kugellager-Vertrieb Inntal GmbH: they could take additional parts at short notice; the second shift has been on hold since spring.\n"
+          },
+          {
+            "id": "doc:20260819-70640-M1",
+            "kind": "public_source",
+            "text": "# Customer portfolio\n\nmeeting note - 2026-08-19 - Hollerau Pumpenwerke, Purchasing\n\nThe sales director of Kugellager-Vertrieb Inntal GmbH said they are reviewing small accounts and will focus on customers with volume.\n"
+          },
+          {
+            "id": "doc:20260925-70640-P19",
+            "kind": "public_source",
+            "text": "# Renewal of framework agreement 4600070640\n\nemail - 2026-09-25 - Kugellager-Vertrieb Inntal GmbH\n\nHello,\n\nour framework agreement ctr:4600070640 for Deep groove ball bearing 6306-2Z C3 (part:360020) expires on 30 June 2027. We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.\n\nBest regards,\nKugellager-Vertrieb Inntal GmbH\n"
+          },
+          {
+            "id": "fc:360020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:360020@2026-09\", \"part_id\": \"part:360020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 28600, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "news:20261017-S19",
+            "kind": "public_source",
+            "text": "A machinery group has moved its bearing purchasing to a central European platform; Kugellager-Vertrieb Inntal GmbH loses about a tenth of its volume and is looking for new customers to fill its warehouse."
+          },
+          {
+            "id": "po:4500014304-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014304-10\", \"po_number\": \"4500014304\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-08-20\", \"qty\": 360, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-09-03\", \"first_confirmed_date\": \"2026-09-03\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014370-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014370-10\", \"po_number\": \"4500014370\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-09-04\", \"qty\": 360, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-09-17\", \"first_confirmed_date\": \"2026-09-17\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014447-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014447-10\", \"po_number\": \"4500014447\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-09-22\", \"qty\": 380, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-05\", \"first_confirmed_date\": \"2026-10-05\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "sc:70640@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70640@2026Q3\", \"supplier_id\": \"sup:70640\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 86.5, \"otd_confirmed_pct\": 88.5, \"received_qty\": 17200, \"complaint_qty\": 0, \"ppm\": 0, \"qn_count\": 0, \"open_8d_overdue\": 0, \"score\": 93.3, \"class\": \"A\", \"colour\": \"green\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "23b524d5cf4ef3a90fd6c6bab9d21b19d55e60183687463ce28ce28270bb801b",
+      "capture_seconds": 0.002347
+    },
+    {
+      "packet": {
+        "case_id": "case:G10",
+        "decision_index": 1,
+        "case": {
+          "case_id": "case:G10",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:360020"
+          ],
+          "suppliers": [
+            "sup:70640"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4000,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4000,
+            "horizon_years": 1.0,
+            "current_unit_price": 10.5,
+            "fallback_unit_price": 11.76,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4000,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 10.4,
+                "payment_days": 60
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "news:20261017-S19"
+          ],
+          "facts": {
+            "news:20261017-S19": {
+              "date": "2026-10-17",
+              "headline": "Kugellager-Vertrieb Inntal GmbH loses a large distribution contract",
+              "supplier": "sup:70640",
+              "topic": "free_capacity"
+            }
+          }
+        },
+        "threads": {
+          "sup:70640": [
+            {
+              "message_id": "msg:70640-0-1",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. We have limited price flexibility. Please propose a commercially complete package.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-0",
+                  "terms": {
+                    "unit_price": 12.44
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 12.44\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows on-time delivery of 86.5% (sc:70640@2026Q3).\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\nOur last 3 orders for this part were at EUR 4.20 per unit (po:4500014447-10, po:4500014370-10, po:4500014304-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:360020@2026-09",
+                "po:4500014304-10",
+                "po:4500014370-10",
+                "po:4500014447-10",
+                "sc:70640@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 10.01,
+                    "payment_days": 90
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70640-1-2",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-1",
+                  "terms": {
+                    "payment_days": 90,
+                    "unit_price": 11.73
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 90\nUnit price (EUR) 11.73\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70640",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 10.18,
+                  "payment_days": 90
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 9,
+        "standing_offer_id": "offer:70640-1",
+        "engine_estimates": {
+          "sup:70640": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4000,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70640",
+              "name": "Kugellager-Vertrieb Inntal GmbH",
+              "country": "AT",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070640",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": true,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 0,
+              "skonto_rate": 0.0,
+              "full_cost": 11.2,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "looks for work"
+              ],
+              "source_ids": [
+                "doc:20251212-70640-N",
+                "doc:20260201-70640-M5",
+                "doc:20260228-70640-M3",
+                "doc:20260512-70640-M2",
+                "doc:20260715-70640-M4",
+                "doc:20260819-70640-M1",
+                "doc:20260925-70640-P19",
+                "news:20261017-S19"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 90,
+              "unit_price": 11.73
+            },
+            "estimated_total_cost": 46607.2,
+            "passes_accept_check": false,
+            "accept_check_reason": "C 46,607 does not beat the limit 41,600"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 10.18,
+              "payment_days": 90
+            },
+            "estimated_total_cost": 40448.53,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 40,449 below the limit 41,600"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G10\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:360020\"], \"suppliers\": [\"sup:70640\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90]}, \"buyer\": {\"need_per_year\": 4000, \"horizon_years\": 1.0, \"current_unit_price\": 10.5, \"fallback_unit_price\": 11.76, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 10.4, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [\"news:20261017-S19\"], \"facts\": {\"news:20261017-S19\": {\"date\": \"2026-10-17\", \"headline\": \"Kugellager-Vertrieb Inntal GmbH loses a large distribution contract\", \"supplier\": \"sup:70640\", \"topic\": \"free_capacity\"}}}"
+          },
+          {
+            "id": "message:sup:70640:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-0-1\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. We have limited price flexibility. Please propose a commercially complete package.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-0\", \"terms\": {\"unit_price\": 12.44}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70640-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 12.44\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70640:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nYour rolling scorecard shows on-time delivery of 86.5% (sc:70640@2026Q3).\\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\\nOur last 3 orders for this part were at EUR 4.20 per unit (po:4500014447-10, po:4500014370-10, po:4500014304-10).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:360020@2026-09\", \"po:4500014304-10\", \"po:4500014370-10\", \"po:4500014447-10\", \"sc:70640@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 10.01, \"payment_days\": 90}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70640:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-1-2\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-1\", \"terms\": {\"payment_days\": 90, \"unit_price\": 11.73}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70640-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 90\\nUnit price (EUR) 11.73\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251212-70640-N",
+            "kind": "public_source",
+            "text": "# ISO 9001 certificate\n\nemail - 2025-12-12 - Kugellager-Vertrieb Inntal GmbH\n\nPlease find attached our renewed ISO 9001 certificate.\n"
+          },
+          {
+            "id": "doc:20260201-70640-M5",
+            "kind": "public_source",
+            "text": "# Capacity\n\ncall note - 2026-02-01 - Hollerau Pumpenwerke, Purchasing\n\nCall with sales at Kugellager-Vertrieb Inntal GmbH: they could take additional parts at short notice; the second shift has been on hold since spring.\n"
+          },
+          {
+            "id": "doc:20260228-70640-M3",
+            "kind": "public_source",
+            "text": "# Annual review\n\nmeeting note - 2026-02-28 - Hollerau Pumpenwerke, Purchasing\n\nAnnual review with Kugellager-Vertrieb Inntal GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.\n"
+          },
+          {
+            "id": "doc:20260512-70640-M2",
+            "kind": "public_source",
+            "text": "# Annual review\n\nmeeting note - 2026-05-12 - Hollerau Pumpenwerke, Purchasing\n\nAnnual review with Kugellager-Vertrieb Inntal GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.\n"
+          },
+          {
+            "id": "doc:20260715-70640-M4",
+            "kind": "public_source",
+            "text": "# Capacity\n\ncall note - 2026-07-15 - Hollerau Pumpenwerke, Purchasing\n\nCall with sales at Kugellager-Vertrieb Inntal GmbH: they could take additional parts at short notice; the second shift has been on hold since spring.\n"
+          },
+          {
+            "id": "doc:20260819-70640-M1",
+            "kind": "public_source",
+            "text": "# Customer portfolio\n\nmeeting note - 2026-08-19 - Hollerau Pumpenwerke, Purchasing\n\nThe sales director of Kugellager-Vertrieb Inntal GmbH said they are reviewing small accounts and will focus on customers with volume.\n"
+          },
+          {
+            "id": "doc:20260925-70640-P19",
+            "kind": "public_source",
+            "text": "# Renewal of framework agreement 4600070640\n\nemail - 2026-09-25 - Kugellager-Vertrieb Inntal GmbH\n\nHello,\n\nour framework agreement ctr:4600070640 for Deep groove ball bearing 6306-2Z C3 (part:360020) expires on 30 June 2027. We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.\n\nBest regards,\nKugellager-Vertrieb Inntal GmbH\n"
+          },
+          {
+            "id": "fc:360020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:360020@2026-09\", \"part_id\": \"part:360020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 28600, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "news:20261017-S19",
+            "kind": "public_source",
+            "text": "A machinery group has moved its bearing purchasing to a central European platform; Kugellager-Vertrieb Inntal GmbH loses about a tenth of its volume and is looking for new customers to fill its warehouse."
+          },
+          {
+            "id": "po:4500014304-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014304-10\", \"po_number\": \"4500014304\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-08-20\", \"qty\": 360, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-09-03\", \"first_confirmed_date\": \"2026-09-03\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014370-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014370-10\", \"po_number\": \"4500014370\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-09-04\", \"qty\": 360, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-09-17\", \"first_confirmed_date\": \"2026-09-17\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014447-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014447-10\", \"po_number\": \"4500014447\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-09-22\", \"qty\": 380, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-05\", \"first_confirmed_date\": \"2026-10-05\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "sc:70640@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70640@2026Q3\", \"supplier_id\": \"sup:70640\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 86.5, \"otd_confirmed_pct\": 88.5, \"received_qty\": 17200, \"complaint_qty\": 0, \"ppm\": 0, \"qn_count\": 0, \"open_8d_overdue\": 0, \"score\": 93.3, \"class\": \"A\", \"colour\": \"green\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "922758374cb5ad080602297e37f9b6ea2d32e86846a87fd23aedfa972ab4a476",
+      "capture_seconds": 0.000548
+    },
+    {
+      "packet": {
+        "case_id": "case:G10",
+        "decision_index": 2,
+        "case": {
+          "case_id": "case:G10",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:360020"
+          ],
+          "suppliers": [
+            "sup:70640"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4000,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4000,
+            "horizon_years": 1.0,
+            "current_unit_price": 10.5,
+            "fallback_unit_price": 11.76,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4000,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 10.4,
+                "payment_days": 60
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "news:20261017-S19"
+          ],
+          "facts": {
+            "news:20261017-S19": {
+              "date": "2026-10-17",
+              "headline": "Kugellager-Vertrieb Inntal GmbH loses a large distribution contract",
+              "supplier": "sup:70640",
+              "topic": "free_capacity"
+            }
+          }
+        },
+        "threads": {
+          "sup:70640": [
+            {
+              "message_id": "msg:70640-0-1",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. We have limited price flexibility. Please propose a commercially complete package.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-0",
+                  "terms": {
+                    "unit_price": 12.44
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 12.44\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows on-time delivery of 86.5% (sc:70640@2026Q3).\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\nOur last 3 orders for this part were at EUR 4.20 per unit (po:4500014447-10, po:4500014370-10, po:4500014304-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:360020@2026-09",
+                "po:4500014304-10",
+                "po:4500014370-10",
+                "po:4500014447-10",
+                "sc:70640@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 10.01,
+                    "payment_days": 90
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70640-1-2",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-1",
+                  "terms": {
+                    "payment_days": 90,
+                    "unit_price": 11.73
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 90\nUnit price (EUR) 11.73\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 10.18,
+                    "payment_days": 90
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70640-2-3",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-2",
+                  "terms": {
+                    "payment_days": 90,
+                    "unit_price": 11.58
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 90\nUnit price (EUR) 11.58\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70640",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 10.46,
+                  "payment_days": 90
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 8,
+        "standing_offer_id": "offer:70640-2",
+        "engine_estimates": {
+          "sup:70640": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4000,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70640",
+              "name": "Kugellager-Vertrieb Inntal GmbH",
+              "country": "AT",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070640",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": true,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 0,
+              "skonto_rate": 0.0,
+              "full_cost": 11.2,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "looks for work"
+              ],
+              "source_ids": [
+                "doc:20251212-70640-N",
+                "doc:20260201-70640-M5",
+                "doc:20260228-70640-M3",
+                "doc:20260512-70640-M2",
+                "doc:20260715-70640-M4",
+                "doc:20260819-70640-M1",
+                "doc:20260925-70640-P19",
+                "news:20261017-S19"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 90,
+              "unit_price": 11.58
+            },
+            "estimated_total_cost": 46011.2,
+            "passes_accept_check": false,
+            "accept_check_reason": "C 46,011 does not beat the limit 41,600"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 10.46,
+              "payment_days": 90
+            },
+            "estimated_total_cost": 41561.07,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 41,561 below the limit 41,600"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G10\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:360020\"], \"suppliers\": [\"sup:70640\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90]}, \"buyer\": {\"need_per_year\": 4000, \"horizon_years\": 1.0, \"current_unit_price\": 10.5, \"fallback_unit_price\": 11.76, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 10.4, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [\"news:20261017-S19\"], \"facts\": {\"news:20261017-S19\": {\"date\": \"2026-10-17\", \"headline\": \"Kugellager-Vertrieb Inntal GmbH loses a large distribution contract\", \"supplier\": \"sup:70640\", \"topic\": \"free_capacity\"}}}"
+          },
+          {
+            "id": "message:sup:70640:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-0-1\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. We have limited price flexibility. Please propose a commercially complete package.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-0\", \"terms\": {\"unit_price\": 12.44}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70640-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 12.44\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70640:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nYour rolling scorecard shows on-time delivery of 86.5% (sc:70640@2026Q3).\\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\\nOur last 3 orders for this part were at EUR 4.20 per unit (po:4500014447-10, po:4500014370-10, po:4500014304-10).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:360020@2026-09\", \"po:4500014304-10\", \"po:4500014370-10\", \"po:4500014447-10\", \"sc:70640@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 10.01, \"payment_days\": 90}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70640:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-1-2\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-1\", \"terms\": {\"payment_days\": 90, \"unit_price\": 11.73}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70640-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 90\\nUnit price (EUR) 11.73\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70640:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 10.18, \"payment_days\": 90}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70640:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-2-3\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-2\", \"terms\": {\"payment_days\": 90, \"unit_price\": 11.58}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70640-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 90\\nUnit price (EUR) 11.58\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251212-70640-N",
+            "kind": "public_source",
+            "text": "# ISO 9001 certificate\n\nemail - 2025-12-12 - Kugellager-Vertrieb Inntal GmbH\n\nPlease find attached our renewed ISO 9001 certificate.\n"
+          },
+          {
+            "id": "doc:20260201-70640-M5",
+            "kind": "public_source",
+            "text": "# Capacity\n\ncall note - 2026-02-01 - Hollerau Pumpenwerke, Purchasing\n\nCall with sales at Kugellager-Vertrieb Inntal GmbH: they could take additional parts at short notice; the second shift has been on hold since spring.\n"
+          },
+          {
+            "id": "doc:20260228-70640-M3",
+            "kind": "public_source",
+            "text": "# Annual review\n\nmeeting note - 2026-02-28 - Hollerau Pumpenwerke, Purchasing\n\nAnnual review with Kugellager-Vertrieb Inntal GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.\n"
+          },
+          {
+            "id": "doc:20260512-70640-M2",
+            "kind": "public_source",
+            "text": "# Annual review\n\nmeeting note - 2026-05-12 - Hollerau Pumpenwerke, Purchasing\n\nAnnual review with Kugellager-Vertrieb Inntal GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.\n"
+          },
+          {
+            "id": "doc:20260715-70640-M4",
+            "kind": "public_source",
+            "text": "# Capacity\n\ncall note - 2026-07-15 - Hollerau Pumpenwerke, Purchasing\n\nCall with sales at Kugellager-Vertrieb Inntal GmbH: they could take additional parts at short notice; the second shift has been on hold since spring.\n"
+          },
+          {
+            "id": "doc:20260819-70640-M1",
+            "kind": "public_source",
+            "text": "# Customer portfolio\n\nmeeting note - 2026-08-19 - Hollerau Pumpenwerke, Purchasing\n\nThe sales director of Kugellager-Vertrieb Inntal GmbH said they are reviewing small accounts and will focus on customers with volume.\n"
+          },
+          {
+            "id": "doc:20260925-70640-P19",
+            "kind": "public_source",
+            "text": "# Renewal of framework agreement 4600070640\n\nemail - 2026-09-25 - Kugellager-Vertrieb Inntal GmbH\n\nHello,\n\nour framework agreement ctr:4600070640 for Deep groove ball bearing 6306-2Z C3 (part:360020) expires on 30 June 2027. We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.\n\nBest regards,\nKugellager-Vertrieb Inntal GmbH\n"
+          },
+          {
+            "id": "fc:360020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:360020@2026-09\", \"part_id\": \"part:360020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 28600, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "news:20261017-S19",
+            "kind": "public_source",
+            "text": "A machinery group has moved its bearing purchasing to a central European platform; Kugellager-Vertrieb Inntal GmbH loses about a tenth of its volume and is looking for new customers to fill its warehouse."
+          },
+          {
+            "id": "po:4500014304-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014304-10\", \"po_number\": \"4500014304\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-08-20\", \"qty\": 360, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-09-03\", \"first_confirmed_date\": \"2026-09-03\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014370-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014370-10\", \"po_number\": \"4500014370\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-09-04\", \"qty\": 360, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-09-17\", \"first_confirmed_date\": \"2026-09-17\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014447-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014447-10\", \"po_number\": \"4500014447\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-09-22\", \"qty\": 380, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-05\", \"first_confirmed_date\": \"2026-10-05\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "sc:70640@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70640@2026Q3\", \"supplier_id\": \"sup:70640\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 86.5, \"otd_confirmed_pct\": 88.5, \"received_qty\": 17200, \"complaint_qty\": 0, \"ppm\": 0, \"qn_count\": 0, \"open_8d_overdue\": 0, \"score\": 93.3, \"class\": \"A\", \"colour\": \"green\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "6c7e79d1ea56dc908ccc7eb814f1ae8ab477129e24c623b74c9df982a5235c35",
+      "capture_seconds": 0.000671
+    },
+    {
+      "packet": {
+        "case_id": "case:G10",
+        "decision_index": 3,
+        "case": {
+          "case_id": "case:G10",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:360020"
+          ],
+          "suppliers": [
+            "sup:70640"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4000,
+            "contract_months": 12,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4000,
+            "horizon_years": 1.0,
+            "current_unit_price": 10.5,
+            "fallback_unit_price": 11.76,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4000,
+                "contract_months": 12,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 10.4,
+                "payment_days": 60
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "news:20261017-S19"
+          ],
+          "facts": {
+            "news:20261017-S19": {
+              "date": "2026-10-17",
+              "headline": "Kugellager-Vertrieb Inntal GmbH loses a large distribution contract",
+              "supplier": "sup:70640",
+              "topic": "free_capacity"
+            }
+          }
+        },
+        "threads": {
+          "sup:70640": [
+            {
+              "message_id": "msg:70640-0-1",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. We have limited price flexibility. Please propose a commercially complete package.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-0",
+                  "terms": {
+                    "unit_price": 12.44
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 12.44\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nYour rolling scorecard shows on-time delivery of 86.5% (sc:70640@2026Q3).\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\nOur last 3 orders for this part were at EUR 4.20 per unit (po:4500014447-10, po:4500014370-10, po:4500014304-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:360020@2026-09",
+                "po:4500014304-10",
+                "po:4500014370-10",
+                "po:4500014447-10",
+                "sc:70640@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 10.01,
+                    "payment_days": 90
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70640-1-2",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-1",
+                  "terms": {
+                    "payment_days": 90,
+                    "unit_price": 11.73
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 90\nUnit price (EUR) 11.73\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 10.18,
+                    "payment_days": 90
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70640-2-3",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-2",
+                  "terms": {
+                    "payment_days": 90,
+                    "unit_price": 11.58
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 90\nUnit price (EUR) 11.58\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 10.46,
+                    "payment_days": 90
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70640-3-4",
+              "from": "sales@70640",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can agree to this package. Please confirm your order.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70640-3",
+                  "terms": {
+                    "payment_days": 90,
+                    "unit_price": 10.46
+                  }
+                }
+              ],
+              "status": "agreed",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70640-3-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nPayment terms (days net) 90\nUnit price (EUR) 10.46\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4000\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4000\nContract term (months) 12\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70640",
+          "message": {
+            "action": {
+              "type": "accept",
+              "term_sheet_id": "offer:70640-3"
+            }
+          }
+        },
+        "supplier_status": "agreed",
+        "moves_left": 7,
+        "standing_offer_id": "offer:70640-3",
+        "engine_estimates": {
+          "sup:70640": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4000,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70640",
+              "name": "Kugellager-Vertrieb Inntal GmbH",
+              "country": "AT",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070640",
+              "interest_rate": 0.075,
+              "cash_need": false,
+              "wants_work": true,
+              "capacity_full": false,
+              "hedged": false,
+              "ppm": 0,
+              "skonto_rate": 0.0,
+              "full_cost": 11.2,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "looks for work"
+              ],
+              "source_ids": [
+                "doc:20251212-70640-N",
+                "doc:20260201-70640-M5",
+                "doc:20260228-70640-M3",
+                "doc:20260512-70640-M2",
+                "doc:20260715-70640-M4",
+                "doc:20260819-70640-M1",
+                "doc:20260925-70640-P19",
+                "news:20261017-S19"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "payment_days": 90,
+              "unit_price": 10.46
+            },
+            "estimated_total_cost": 41561.07,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 41,561 below the limit 41,600"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G10\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:360020\"], \"suppliers\": [\"sup:70640\"], \"negotiable\": [\"unit_price\", \"payment_days\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90]}, \"buyer\": {\"need_per_year\": 4000, \"horizon_years\": 1.0, \"current_unit_price\": 10.5, \"fallback_unit_price\": 11.76, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4000, \"contract_months\": 12, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 10.4, \"payment_days\": 60}}}, \"round_limit\": 10, \"refs\": [\"news:20261017-S19\"], \"facts\": {\"news:20261017-S19\": {\"date\": \"2026-10-17\", \"headline\": \"Kugellager-Vertrieb Inntal GmbH loses a large distribution contract\", \"supplier\": \"sup:70640\", \"topic\": \"free_capacity\"}}}"
+          },
+          {
+            "id": "message:sup:70640:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-0-1\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. We have limited price flexibility. Please propose a commercially complete package.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-0\", \"terms\": {\"unit_price\": 12.44}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70640-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 12.44\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70640:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nYour rolling scorecard shows on-time delivery of 86.5% (sc:70640@2026Q3).\\nOur demand forecast for this part has risen 4.2% (fc:360020@2026-09).\\nOur last 3 orders for this part were at EUR 4.20 per unit (po:4500014447-10, po:4500014370-10, po:4500014304-10).\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:360020@2026-09\", \"po:4500014304-10\", \"po:4500014370-10\", \"po:4500014447-10\", \"sc:70640@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 10.01, \"payment_days\": 90}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70640:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-1-2\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-1\", \"terms\": {\"payment_days\": 90, \"unit_price\": 11.73}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70640-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 90\\nUnit price (EUR) 11.73\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70640:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 10.18, \"payment_days\": 90}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70640:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-2-3\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-2\", \"terms\": {\"payment_days\": 90, \"unit_price\": 11.58}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70640-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 90\\nUnit price (EUR) 11.58\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70640:5",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 10.46, \"payment_days\": 90}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70640:6",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70640-3-4\", \"from\": \"sales@70640\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can agree to this package. Please confirm your order.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70640-3\", \"terms\": {\"payment_days\": 90, \"unit_price\": 10.46}}], \"status\": \"agreed\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70640-3-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nPayment terms (days net) 90\\nUnit price (EUR) 10.46\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4000\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4000\\nContract term (months) 12\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251212-70640-N",
+            "kind": "public_source",
+            "text": "# ISO 9001 certificate\n\nemail - 2025-12-12 - Kugellager-Vertrieb Inntal GmbH\n\nPlease find attached our renewed ISO 9001 certificate.\n"
+          },
+          {
+            "id": "doc:20260201-70640-M5",
+            "kind": "public_source",
+            "text": "# Capacity\n\ncall note - 2026-02-01 - Hollerau Pumpenwerke, Purchasing\n\nCall with sales at Kugellager-Vertrieb Inntal GmbH: they could take additional parts at short notice; the second shift has been on hold since spring.\n"
+          },
+          {
+            "id": "doc:20260228-70640-M3",
+            "kind": "public_source",
+            "text": "# Annual review\n\nmeeting note - 2026-02-28 - Hollerau Pumpenwerke, Purchasing\n\nAnnual review with Kugellager-Vertrieb Inntal GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.\n"
+          },
+          {
+            "id": "doc:20260512-70640-M2",
+            "kind": "public_source",
+            "text": "# Annual review\n\nmeeting note - 2026-05-12 - Hollerau Pumpenwerke, Purchasing\n\nAnnual review with Kugellager-Vertrieb Inntal GmbH. Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.\n"
+          },
+          {
+            "id": "doc:20260715-70640-M4",
+            "kind": "public_source",
+            "text": "# Capacity\n\ncall note - 2026-07-15 - Hollerau Pumpenwerke, Purchasing\n\nCall with sales at Kugellager-Vertrieb Inntal GmbH: they could take additional parts at short notice; the second shift has been on hold since spring.\n"
+          },
+          {
+            "id": "doc:20260819-70640-M1",
+            "kind": "public_source",
+            "text": "# Customer portfolio\n\nmeeting note - 2026-08-19 - Hollerau Pumpenwerke, Purchasing\n\nThe sales director of Kugellager-Vertrieb Inntal GmbH said they are reviewing small accounts and will focus on customers with volume.\n"
+          },
+          {
+            "id": "doc:20260925-70640-P19",
+            "kind": "public_source",
+            "text": "# Renewal of framework agreement 4600070640\n\nemail - 2026-09-25 - Kugellager-Vertrieb Inntal GmbH\n\nHello,\n\nour framework agreement ctr:4600070640 for Deep groove ball bearing 6306-2Z C3 (part:360020) expires on 30 June 2027. We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.\n\nBest regards,\nKugellager-Vertrieb Inntal GmbH\n"
+          },
+          {
+            "id": "fc:360020@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:360020@2026-09\", \"part_id\": \"part:360020\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 28600, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "news:20261017-S19",
+            "kind": "public_source",
+            "text": "A machinery group has moved its bearing purchasing to a central European platform; Kugellager-Vertrieb Inntal GmbH loses about a tenth of its volume and is looking for new customers to fill its warehouse."
+          },
+          {
+            "id": "po:4500014304-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014304-10\", \"po_number\": \"4500014304\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-08-20\", \"qty\": 360, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-09-03\", \"first_confirmed_date\": \"2026-09-03\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014370-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014370-10\", \"po_number\": \"4500014370\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-09-04\", \"qty\": 360, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-09-17\", \"first_confirmed_date\": \"2026-09-17\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "po:4500014447-10",
+            "kind": "public_source",
+            "text": "{\"table\": \"po_lines\", \"id\": \"po:4500014447-10\", \"po_number\": \"4500014447\", \"line\": 10, \"supplier_id\": \"sup:70640\", \"part_id\": \"part:360020\", \"contract_id\": \"ctr:4600070640\", \"order_date\": \"2026-09-22\", \"qty\": 380, \"uom\": \"pc\", \"price\": 4.2, \"price_unit\": 1, \"currency\": \"EUR\", \"requested_date\": \"2026-10-05\", \"first_confirmed_date\": \"2026-10-05\", \"change_type\": \"\", \"price_note\": \"\"}"
+          },
+          {
+            "id": "sc:70640@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70640@2026Q3\", \"supplier_id\": \"sup:70640\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 52, \"otd_pct\": 86.5, \"otd_confirmed_pct\": 88.5, \"received_qty\": 17200, \"complaint_qty\": 0, \"ppm\": 0, \"qn_count\": 0, \"open_8d_overdue\": 0, \"score\": 93.3, \"class\": \"A\", \"colour\": \"green\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "1a842d394621434dfd5ffad53c17725a965f5c55637978c3c4c33340ffe4fbee",
+      "capture_seconds": 0.00059
+    }
+  ],
+  "observation_errors": []
+}

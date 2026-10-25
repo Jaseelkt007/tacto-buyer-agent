@@ -1,0 +1,874 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70560",
+ "name": "Kabelwerk Rhönsberg GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "75ab1d60130462f1507a6136d6693aff94efc578edd21ea83b882152595031c5",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:21:32.653314+00:00",
+  "seconds": 32.2,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:bcec5cf623438206",
+   "text": "Framework agreement ctr:4600070560 for part:350040 expires 31 December 2026; supplier asks for expected volumes and will send offer when meeting.",
+   "kind": "supplier_statement",
+   "source": "doc:20260910-70560-P14",
+   "quote": "expires on 31 December 2026. We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": "2026-09-10",
+   "valid_until": "2026-12-31",
+   "review": {
+    "id": "obs:bcec5cf623438206",
+    "verdict": "supported",
+    "reason": "Accurately reports the supplier email."
+   }
+  },
+  {
+   "id": "obs:f987d001140d8dc2",
+   "text": "Supplier wants to agree terms for the coming period, will send its offer at the meeting, and requests expected volumes.",
+   "kind": "supplier_statement",
+   "source": "doc:20260910-70560-P14",
+   "quote": "We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": "2026-09-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:f987d001140d8dc2",
+    "verdict": "supported",
+    "reason": "Accurate supplier statement."
+   }
+  },
+  {
+   "id": "obs:eeae9b53b7ea70af",
+   "text": "Framework agreement runs 2024-01-01 to 2026-12-31 and extends by 12 months unless terminated with 60 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070560#8.1",
+   "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 60 days' notice.",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:eeae9b53b7ea70af",
+    "verdict": "supported",
+    "reason": "Matches clause 8.1."
+   }
+  },
+  {
+   "id": "obs:677f59432539a436",
+   "text": "Prices are fixed per calendar year; changes need written notice at least 60 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070560#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 60 days before the end of the calendar year.",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:677f59432539a436",
+    "verdict": "supported",
+    "reason": "Matches clause 3.1."
+   }
+  },
+  {
+   "id": "obs:cbe25037a1f655d9",
+   "text": "Price follows CU-NOTATION index with 0.55 material share, adjusted quarterly if the change exceeds 0 %.",
+   "kind": "fact",
+   "source": "ctr:4600070560#3.2",
+   "quote": "The price follows index CU-NOTATION: P = P0 x (1 - 0.55 + 0.55 x I(m-2) / I(base)), base = the index two months before the price year starts, adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %.",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:cbe25037a1f655d9",
+    "verdict": "supported",
+    "reason": "Matches clause 3.2."
+   }
+  },
+  {
+   "id": "obs:e9fa7ff2a99c0f8c",
+   "text": "Current price for part:350040 is EUR 316.35 per 100 from 2026-07-01 after a +3.5 % index adjustment.",
+   "kind": "fact",
+   "source": "EV-2026-70560-350040-Q3",
+   "quote": "\"basis\": \"index_adjustment\", \"change_pct\": 3.5, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70560-350040-Q3\", \"price\": 316.35, \"price_unit\": 100",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": "2026-07-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e9fa7ff2a99c0f8c",
+    "verdict": "supported",
+    "reason": "Price history shows 316.35 from 2026-07-01 after a +3.5 % index adjustment, with open validity; the PO lines confirm it."
+   }
+  },
+  {
+   "id": "obs:88efe8b75238ba6e",
+   "text": "Supplier quote for part:350040 dated 2026-09-16: EUR 316.35 per 100, DAP, 30 payment days, 14 days lead time, validity 90 days; remark says material covered until March 2027 and price valid accordingly.",
+   "kind": "fact",
+   "source": "quote:7300014",
+   "quote": "\"payment_days\": 30, \"price_unit\": 100, \"quote_date\": \"2026-09-16\", \"remarks\": \"Material covered until March 2027; price valid accordingly.\", \"rfq_id\": null, \"supplier_id\": \"sup:70560\", \"tooling_eur\": 0, \"unit_price\": 316.35, \"validity_days\": 90",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": "2026-09-16",
+   "valid_until": "2026-12-15",
+   "review": {
+    "id": "obs:88efe8b75238ba6e",
+    "verdict": "supported",
+    "reason": "Matches the quote record; validity of 90 days from 2026-09-16 gives 2026-12-15."
+   }
+  },
+  {
+   "id": "obs:2e7bfc2272c731f9",
+   "text": "Supplier's key account manager stated price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260415-70560-M2",
+   "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-04-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2e7bfc2272c731f9",
+    "verdict": "supported",
+    "reason": "Accurately reports the meeting note."
+   }
+  },
+  {
+   "id": "obs:24535d4be5a5a5b3",
+   "text": "Supplier said it bought copper forward until March 2027 and that the market price is 'not our reality' before then.",
+   "kind": "supplier_statement",
+   "source": "doc:20260617-70560-M1",
+   "quote": "they bought their copper forward until March 2027 and said the market price is 'not our reality' before then.",
+   "parts": [],
+   "observed_at": "2026-06-17",
+   "valid_until": null,
+   "review": {
+    "id": "obs:24535d4be5a5a5b3",
+    "verdict": "supported",
+    "reason": "Supplier statement accurately reported from the call note."
+   }
+  },
+  {
+   "id": "obs:81c296b7f6009862",
+   "text": "Copper notation for cables averaged EUR 1,289/100 kg in September 2026, +48 % year on year.",
+   "kind": "fact",
+   "source": "news:20260910-27",
+   "quote": "The copper notation for cables averaged EUR 1,289/100 kg in September, +48 % on a year ago.",
+   "parts": [],
+   "observed_at": "2026-09-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:81c296b7f6009862",
+    "verdict": "supported",
+    "reason": "Matches the market news item, and the drivers data confirm September 2026."
+   }
+  },
+  {
+   "id": "obs:93bafde33cfacdc9",
+   "text": "Should-cost for part:350040 (bottom-up of this supplier's plant, no margin): EUR 304.49 per 100, material 167.47, conversion 95.91, overhead 41.11, confidence ±5 %.",
+   "kind": "fact",
+   "source": "cost:350040",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 95.91, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350040\", \"material_eur\": 167.47, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 41.11, \"part_id\": \"part:350040\", \"price_unit\": 100, \"supplier_id\": \"sup:70560\", \"unit_cost\": 304.49",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:93bafde33cfacdc9",
+    "verdict": "supported",
+    "reason": "Recorded estimate with its components and stated uncertainty matches the should-cost record."
+   }
+  },
+  {
+   "id": "obs:2292e04790344b24",
+   "text": "2026 renewal: supplier asked 8.6 %, settled at 6.0 %.",
+   "kind": "fact",
+   "source": "EV-2026-70560-350040",
+   "quote": "\"asked_pct\": 8.6, \"date\": \"2025-11-22\", \"event_id\": \"EV-2026-70560-350040\", \"note\": \"\", \"part_id\": \"part:350040\", \"settled_pct\": 6.0",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": "2025-11-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2292e04790344b24",
+    "verdict": "supported",
+    "reason": "Matches the negotiation event."
+   }
+  },
+  {
+   "id": "obs:8e290d0d8dca75fd",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070560#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8e290d0d8dca75fd",
+    "verdict": "supported",
+    "reason": "Matches clause 4.1."
+   }
+  },
+  {
+   "id": "obs:2332d1abba6fc2a3",
+   "text": "Rolling 12-month scorecard to 2026Q3: otd_pct 88.5%, otd_confirmed_pct 92.3%, ppm 111, score 93.7, class A green.",
+   "kind": "fact",
+   "source": "sc:70560@2026Q3",
+   "quote": "\"otd_confirmed_pct\": 92.3, \"otd_pct\": 88.5, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 111, \"qn_count\": 8, \"quarter\": \"2026Q3\", \"received_qty\": 289350, \"score\": 93.7",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2332d1abba6fc2a3",
+    "verdict": "supported",
+    "reason": "Matches the scorecard; class A green confirmed."
+   }
+  },
+  {
+   "id": "obs:d74295248c644440",
+   "text": "Last 12 months deliveries for part 350040: 26 receipts, 11.5% late, avg 14.3 days late when late, max 21 days.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"avg_days_late_when_late\": 14.3, \"early_pct\": 0.0, \"late_pct\": 11.5, \"max_days_late\": 21, \"on_time_confirmed_pct\": 92.3, \"on_time_requested_pct\": 88.5, \"part_id\": \"part:350040\", \"receipts\": 26",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:d74295248c644440",
+    "verdict": "supported",
+    "reason": "Matches the delivery data, by part, last 12 months."
+   }
+  },
+  {
+   "id": "obs:39035a2612bbf0d0",
+   "text": "Part 350040 has 24 QNs in total, 21 supplier-caused, EUR 2,550 recharged, ppm last 12m 111.",
+   "kind": "fact",
+   "source": "evidence:part:350040:part_quality",
+   "quote": "\"ppm_last_12m\": 111, \"qns\": 24, \"received_last_12m\": 289350, \"recharged_eur\": 2550, \"supplier_caused\": 21",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:39035a2612bbf0d0",
+    "verdict": "supported",
+    "reason": "Matches the part quality summary."
+   }
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "obs:77d4646db1ea3068",
+   "text": "Repeated wrong material certificate complaints (e.g. 2025-10, 6 parts returned) suggest a recurring documentation weakness.",
+   "kind": "hypothesis",
+   "source": "qn:20004712",
+   "quote": "\"complaint_qty\": 6, \"cost_recharged_eur\": 0, \"d3_date\": \"2025-10-29\", \"d8_date\": \"2025-12-05\", \"defect\": \"wrong material certificate\"",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": "2025-10-26",
+   "valid_until": null,
+   "review": {
+    "id": "obs:77d4646db1ea3068",
+    "verdict": "hypothesis",
+    "reason": "Four wrong-certificate QNs make this a plausible inference; the '6 parts returned' figure is correct."
+   }
+  }
+ ],
+ "verified_unselected": [
+  {
+   "id": "obs:e3da6d07f2bb481a",
+   "text": "Supplier financials: turnover EUR 98.1 M, equity ratio 32.3 %, credit index 149 unchanged from 12 months ago.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 149, \"credit_index_12m_ago\": 149, \"equity_ratio_pct\": 32.3, \"filed_fy\": 2025",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:e3da6d07f2bb481a",
+    "verdict": "supported",
+    "reason": "Matches the intel record (turnover 98,100,000)."
+   }
+  },
+  {
+   "id": "obs:025d3dbfe4def8d2",
+   "text": "Supplier's key account manager stated that price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260415-70560-M2",
+   "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-04-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:025d3dbfe4def8d2",
+    "verdict": "supported",
+    "reason": "Accurate quote of the meeting note."
+   }
+  },
+  {
+   "id": "obs:10acfd2375460a7d",
+   "text": "Supplier said it bought its copper forward until March 2027 and that the market price is 'not our reality' before then.",
+   "kind": "supplier_statement",
+   "source": "doc:20260617-70560-M1",
+   "quote": "they bought their copper forward until March 2027 and said the market price is 'not our reality' before then.",
+   "parts": [],
+   "observed_at": "2026-06-17",
+   "valid_until": null,
+   "review": {
+    "id": "obs:10acfd2375460a7d",
+    "verdict": "supported",
+    "reason": "Accurate supplier statement."
+   }
+  },
+  {
+   "id": "obs:bbacbf5db4a08ed5",
+   "text": "Framework agreement ctr:4600070560 for motor cable part:350040 expires on 31 December 2026.",
+   "kind": "supplier_statement",
+   "source": "doc:20260910-70560-P14",
+   "quote": "our framework agreement ctr:4600070560 for Motor cable H07RN-F 4G2.5 (part:350040) expires on 31 December 2026.",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": "2026-09-10",
+   "valid_until": "2026-12-31",
+   "review": {
+    "id": "obs:bbacbf5db4a08ed5",
+    "verdict": "supported",
+    "reason": "Accurate statement, consistent with contract clause 8.1."
+   }
+  },
+  {
+   "id": "obs:ef63fc51b084959a",
+   "text": "Supplier's credit index is 149, unchanged from 12 months ago; equity ratio 32.3 %.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 149, \"credit_index_12m_ago\": 149, \"equity_ratio_pct\": 32.3",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:ef63fc51b084959a",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:e218b43e878b54e7",
+   "text": "Supplier is group-owned with 400 staff and turnover of EUR 98.1 M.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"owner_type\": \"group\", \"staff\": 400, \"supplier_id\": \"sup:70560\", \"turnover_band\": \"50-100 M EUR\", \"turnover_eur\": 98100000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:e218b43e878b54e7",
+    "verdict": "supported",
+    "reason": "Matches the intel record; the observation draws no tooling inference."
+   }
+  },
+  {
+   "id": "obs:ccc28ba17a2df4b5",
+   "text": "Supplier master terms: 30 payment days, DAP, standard lead time 14 days.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"DAP\", \"name\": \"Kabelwerk Rhönsberg GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 14",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:ccc28ba17a2df4b5",
+    "verdict": "supported",
+    "reason": "Matches the vendor master."
+   }
+  },
+  {
+   "id": "obs:3bec0a1bec93b745",
+   "text": "Supplier's key account manager said price changes above 2 % need approval of their pricing committee, meeting every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260415-70560-M2",
+   "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-04-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3bec0a1bec93b745",
+    "verdict": "supported",
+    "reason": "Accurate report of the meeting note."
+   }
+  },
+  {
+   "id": "obs:346871e8ae47e707",
+   "text": "Supplier requests to agree terms for the coming period and asks for expected volumes; offer to be sent at meeting.",
+   "kind": "supplier_statement",
+   "source": "doc:20260910-70560-P14",
+   "quote": "We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.",
+   "parts": [
+    "part:350040"
+   ],
+   "observed_at": "2026-09-10",
+   "valid_until": null,
+   "review": {
+    "id": "obs:346871e8ae47e707",
+    "verdict": "supported",
+    "reason": "Accurate supplier statement."
+   }
+  },
+  {
+   "id": "obs:3c77790178a6c243",
+   "text": "Rolling OTD against requested date was 96.2% in 2025Q2.",
+   "kind": "fact",
+   "source": "sc:70560@2025Q2",
+   "quote": "\"otd_confirmed_pct\": 96.2, \"otd_pct\": 96.2, \"period_end\": \"2025-06-30\"",
+   "parts": [],
+   "observed_at": "2025-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3c77790178a6c243",
+    "verdict": "supported",
+    "reason": "Matches the 2025Q2 scorecard."
+   }
+  },
+  {
+   "id": "obs:8bdeb3c678fc5d8f",
+   "text": "No overdue open 8D reports in rolling 12 months to 2026Q3.",
+   "kind": "fact",
+   "source": "sc:70560@2026Q3",
+   "quote": "\"open_8d_overdue\": 0, \"otd_confirmed_pct\": 92.3",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:8bdeb3c678fc5d8f",
+    "verdict": "supported",
+    "reason": "Matches the scorecard."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier quote for part:350040 dated 2026-09-16: EUR 316.35 per 100, DAP, 30 payment days, 14 days lead time, validity 90 days; remark says material covered until March 2027 and price valid accordingly.",
+     "kind": "fact",
+     "source": "quote:7300014",
+     "quote": "\"payment_days\": 30, \"price_unit\": 100, \"quote_date\": \"2026-09-16\", \"remarks\": \"Material covered until March 2027; price valid accordingly.\", \"rfq_id\": null, \"supplier_id\": \"sup:70560\", \"tooling_eur\": 0, \"unit_price\": 316.35, \"validity_days\": 90",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2026-09-16",
+     "valid_until": "2026-12-15"
+    },
+    {
+     "text": "Supplier said it bought copper forward until March 2027 and that the market price is 'not our reality' before then.",
+     "kind": "supplier_statement",
+     "source": "doc:20260617-70560-M1",
+     "quote": "they bought their copper forward until March 2027 and said the market price is 'not our reality' before then.",
+     "parts": [],
+     "observed_at": "2026-06-17",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's key account manager stated price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260415-70560-M2",
+     "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-04-15",
+     "valid_until": null
+    },
+    {
+     "text": "Framework agreement ctr:4600070560 for part:350040 expires 31 December 2026; supplier asks for expected volumes and will send offer when meeting.",
+     "kind": "supplier_statement",
+     "source": "doc:20260910-70560-P14",
+     "quote": "expires on 31 December 2026. We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2026-09-10",
+     "valid_until": "2026-12-31"
+    },
+    {
+     "text": "Should-cost for part:350040 (bottom-up of this supplier's plant, no margin): EUR 304.49 per 100, material 167.47, conversion 95.91, overhead 41.11, confidence ±5 %.",
+     "kind": "fact",
+     "source": "cost:350040",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 95.91, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350040\", \"material_eur\": 167.47, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 41.11, \"part_id\": \"part:350040\", \"price_unit\": 100, \"supplier_id\": \"sup:70560\", \"unit_cost\": 304.49",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Current price for part:350040 is EUR 316.35 per 100 from 2026-07-01 after a +3.5 % index adjustment.",
+     "kind": "fact",
+     "source": "EV-2026-70560-350040-Q3",
+     "quote": "\"basis\": \"index_adjustment\", \"change_pct\": 3.5, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70560-350040-Q3\", \"price\": 316.35, \"price_unit\": 100",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2026-07-01",
+     "valid_until": null
+    },
+    {
+     "text": "Copper notation for cables averaged EUR 1,289/100 kg in September 2026, +48 % year on year.",
+     "kind": "fact",
+     "source": "news:20260910-27",
+     "quote": "The copper notation for cables averaged EUR 1,289/100 kg in September, +48 % on a year ago.",
+     "parts": [],
+     "observed_at": "2026-09-10",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier financials: turnover EUR 98.1 M, equity ratio 32.3 %, credit index 149 unchanged from 12 months ago.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 149, \"credit_index_12m_ago\": 149, \"equity_ratio_pct\": 32.3, \"filed_fy\": 2025",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier's key account manager stated that price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260415-70560-M2",
+     "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-04-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said it bought its copper forward until March 2027 and that the market price is 'not our reality' before then.",
+     "kind": "supplier_statement",
+     "source": "doc:20260617-70560-M1",
+     "quote": "they bought their copper forward until March 2027 and said the market price is 'not our reality' before then.",
+     "parts": [],
+     "observed_at": "2026-06-17",
+     "valid_until": null
+    },
+    {
+     "text": "Framework agreement ctr:4600070560 for motor cable part:350040 expires on 31 December 2026.",
+     "kind": "supplier_statement",
+     "source": "doc:20260910-70560-P14",
+     "quote": "our framework agreement ctr:4600070560 for Motor cable H07RN-F 4G2.5 (part:350040) expires on 31 December 2026.",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2026-09-10",
+     "valid_until": "2026-12-31"
+    },
+    {
+     "text": "Supplier wants to agree terms for the coming period, will send its offer at the meeting, and requests expected volumes.",
+     "kind": "supplier_statement",
+     "source": "doc:20260910-70560-P14",
+     "quote": "We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2026-09-10",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's credit index is 149, unchanged from 12 months ago; equity ratio 32.3 %.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 149, \"credit_index_12m_ago\": 149, \"equity_ratio_pct\": 32.3",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is group-owned with 400 staff and turnover of EUR 98.1 M.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"owner_type\": \"group\", \"staff\": 400, \"supplier_id\": \"sup:70560\", \"turnover_band\": \"50-100 M EUR\", \"turnover_eur\": 98100000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master terms: 30 payment days, DAP, standard lead time 14 days.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"DAP\", \"name\": \"Kabelwerk Rhönsberg GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 14",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "72.6 % of invoices were paid late, averaging 1.6 days late in the last 12 months, none over 10 days late.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due_last_12m\": 1.6, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 75, \"max_days_late\": 7, \"paid_late_pct\": 72.6, \"paid_over_10_days_late_pct\": 0.0",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement runs 2024-01-01 to 2026-12-31 and extends by 12 months unless terminated with 60 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070560#8.1",
+     "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 60 days' notice.",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Price follows CU-NOTATION index with 0.55 material share, adjusted quarterly if the change exceeds 0 %.",
+     "kind": "fact",
+     "source": "ctr:4600070560#3.2",
+     "quote": "The price follows index CU-NOTATION: P = P0 x (1 - 0.55 + 0.55 x I(m-2) / I(base)), base = the index two months before the price year starts, adjusted quarterly on the 1st of January, April, July and October if the change exceeds 0 %.",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes need written notice at least 60 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070560#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 60 days before the end of the calendar year.",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070560#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's key account manager said price changes above 2 % need approval of their pricing committee, meeting every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260415-70560-M2",
+     "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-04-15",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier said it bought copper forward until March 2027 and the market price is 'not our reality' before then.",
+     "kind": "supplier_statement",
+     "source": "doc:20260617-70560-M1",
+     "quote": "they bought their copper forward until March 2027 and said the market price is 'not our reality' before then.",
+     "parts": [],
+     "observed_at": "2026-06-17",
+     "valid_until": "2027-03-31"
+    },
+    {
+     "text": "Supplier requests to agree terms for the coming period and asks for expected volumes; offer to be sent at meeting.",
+     "kind": "supplier_statement",
+     "source": "doc:20260910-70560-P14",
+     "quote": "We would like to agree the terms for the coming period and will send our offer when we meet. Please let us know your expected volumes.",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2026-09-10",
+     "valid_until": null
+    },
+    {
+     "text": "2026 renewal: supplier asked 8.6 %, settled at 6.0 %.",
+     "kind": "fact",
+     "source": "EV-2026-70560-350040",
+     "quote": "\"asked_pct\": 8.6, \"date\": \"2025-11-22\", \"event_id\": \"EV-2026-70560-350040\", \"note\": \"\", \"part_id\": \"part:350040\", \"settled_pct\": 6.0",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2025-11-22",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month scorecard to 2026Q3: otd_pct 88.5%, otd_confirmed_pct 92.3%, ppm 111, score 93.7, class A green.",
+     "kind": "fact",
+     "source": "sc:70560@2026Q3",
+     "quote": "\"otd_confirmed_pct\": 92.3, \"otd_pct\": 88.5, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 111, \"qn_count\": 8, \"quarter\": \"2026Q3\", \"received_qty\": 289350, \"score\": 93.7",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Rolling OTD fell to 81.5% (requested) in 2026Q1, versus 96.2% in 2025Q2.",
+     "kind": "fact",
+     "source": "sc:70560@2026Q1",
+     "quote": "\"otd_confirmed_pct\": 85.2, \"otd_pct\": 81.5, \"period_end\": \"2026-03-31\"",
+     "parts": [],
+     "observed_at": "2026-03-31",
+     "valid_until": null
+    },
+    {
+     "text": "Rolling OTD against requested date was 96.2% in 2025Q2.",
+     "kind": "fact",
+     "source": "sc:70560@2025Q2",
+     "quote": "\"otd_confirmed_pct\": 96.2, \"otd_pct\": 96.2, \"period_end\": \"2025-06-30\"",
+     "parts": [],
+     "observed_at": "2025-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months deliveries for part 350040: 26 receipts, 11.5% late, avg 14.3 days late when late, max 21 days.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"avg_days_late_when_late\": 14.3, \"early_pct\": 0.0, \"late_pct\": 11.5, \"max_days_late\": 21, \"on_time_confirmed_pct\": 92.3, \"on_time_requested_pct\": 88.5, \"part_id\": \"part:350040\", \"receipts\": 26",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 350040 has 24 QNs in total, 21 supplier-caused, EUR 2,550 recharged, ppm last 12m 111.",
+     "kind": "fact",
+     "source": "evidence:part:350040:part_quality",
+     "quote": "\"ppm_last_12m\": 111, \"qns\": 24, \"received_last_12m\": 289350, \"recharged_eur\": 2550, \"supplier_caused\": 21",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Most recent QN: supplier-caused porosity, 3 complaints, 435 ppm, 8D closed 2026-09-26.",
+     "kind": "fact",
+     "source": "qn:20004997",
+     "quote": "\"complaint_qty\": 3, \"cost_recharged_eur\": 150, \"d3_date\": \"2026-08-25\", \"d8_date\": \"2026-09-26\", \"defect\": \"porosity\", \"ppm\": 435, \"qn_date\": \"2026-08-22\", \"supplier_caused\": 1",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2026-08-22",
+     "valid_until": null
+    },
+    {
+     "text": "No overdue open 8D reports in rolling 12 months to 2026Q3.",
+     "kind": "fact",
+     "source": "sc:70560@2026Q3",
+     "quote": "\"open_8d_overdue\": 0, \"otd_confirmed_pct\": 92.3",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Repeated wrong material certificate complaints (e.g. 2025-10, 6 parts returned) suggest a recurring documentation weakness.",
+     "kind": "hypothesis",
+     "source": "qn:20004712",
+     "quote": "\"complaint_qty\": 6, \"cost_recharged_eur\": 0, \"d3_date\": \"2025-10-29\", \"d8_date\": \"2025-12-05\", \"defect\": \"wrong material certificate\"",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2025-10-26",
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [
+  {
+   "id": "obs:ef8929707215eebb",
+   "text": "72.6 % of invoices were paid late, averaging 1.6 days late in the last 12 months, none over 10 days late.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due_last_12m\": 1.6, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 75, \"max_days_late\": 7, \"paid_late_pct\": 72.6, \"paid_over_10_days_late_pct\": 0.0",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:ef8929707215eebb",
+    "verdict": "reject",
+    "reason": "Mixes scopes: 72.6 % late refers to all invoices, while 1.6 days is the last-12-month figure."
+   }
+  },
+  {
+   "id": "obs:d54d2f734189a64c",
+   "text": "Supplier said it bought copper forward until March 2027 and the market price is 'not our reality' before then.",
+   "kind": "supplier_statement",
+   "source": "doc:20260617-70560-M1",
+   "quote": "they bought their copper forward until March 2027 and said the market price is 'not our reality' before then.",
+   "parts": [],
+   "observed_at": "2026-06-17",
+   "valid_until": "2027-03-31",
+   "review": {
+    "id": "obs:d54d2f734189a64c",
+    "verdict": "reject",
+    "reason": "The 2027-03-31 expiry is invented; the note says only 'until March 2027' and gives no exact date."
+   }
+  },
+  {
+   "id": "obs:bc0ad4889911a94b",
+   "text": "Rolling OTD fell to 81.5% (requested) in 2026Q1, versus 96.2% in 2025Q2.",
+   "kind": "fact",
+   "source": "sc:70560@2026Q1",
+   "quote": "\"otd_confirmed_pct\": 85.2, \"otd_pct\": 81.5, \"period_end\": \"2026-03-31\"",
+   "parts": [],
+   "observed_at": "2026-03-31",
+   "valid_until": null,
+   "review": {
+    "id": "obs:bc0ad4889911a94b",
+    "verdict": "reject",
+    "reason": "Cites the 2025Q2 figure of 96.2 %, which is not in the cited excerpt."
+   }
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "role": "performance",
+    "observation": {
+     "text": "Most recent QN: supplier-caused porosity, 3 complaints, 435 ppm, 8D closed 2026-09-26.",
+     "kind": "fact",
+     "source": "qn:20004997",
+     "quote": "\"complaint_qty\": 3, \"cost_recharged_eur\": 150, \"d3_date\": \"2026-08-25\", \"d8_date\": \"2026-09-26\", \"defect\": \"porosity\", \"ppm\": 435, \"qn_date\": \"2026-08-22\", \"supplier_caused\": 1",
+     "parts": [
+      "part:350040"
+     ],
+     "observed_at": "2026-08-22",
+     "valid_until": null
+    },
+    "why": "excerpt missing from source"
+   }
+  ]
+ }
+}

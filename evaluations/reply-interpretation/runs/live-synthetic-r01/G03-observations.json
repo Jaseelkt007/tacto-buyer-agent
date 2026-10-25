@@ -1,0 +1,1476 @@
+{
+  "observation_packets": [
+    {
+      "packet": {
+        "case_id": "case:G03",
+        "decision_index": 0,
+        "case": {
+          "case_id": "case:G03",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:310011"
+          ],
+          "suppliers": [
+            "sup:70190"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "contract_months"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4200,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "contract_months": [
+              6,
+              12,
+              24
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4200,
+            "horizon_years": 2.0,
+            "current_unit_price": 88,
+            "fallback_unit_price": 98.56,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4200,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 95.04,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261019-70190-S13",
+            "news:20261015-S14"
+          ],
+          "facts": {
+            "doc:20261019-70190-S13": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-19",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70190",
+              "title": "Our liquidity and your call-offs",
+              "type": "letter"
+            },
+            "news:20261015-S14": {
+              "date": "2026-10-15",
+              "headline": "Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH",
+              "supplier": "sup:70190",
+              "topic": "customer_loss"
+            }
+          }
+        },
+        "threads": {
+          "sup:70190": [
+            {
+              "message_id": "msg:70190-0-1",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-0",
+                  "terms": {
+                    "unit_price": 96.65
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "contract_months",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 96.65\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70190",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 76.0,
+                  "payment_days": 10,
+                  "contract_months": 24
+                }
+              }
+            ],
+            "refs": [
+              "fc:310011@2026-09",
+              "idx:PPI-D351@2025-11",
+              "idx:PPI-D351@2026-08",
+              "sc:70190@2026Q3"
+            ]
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 10,
+        "standing_offer_id": "offer:70190-0",
+        "engine_estimates": {
+          "sup:70190": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4200,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70190",
+              "name": "Gießerei Pfaffenreuth GmbH",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070190",
+              "interest_rate": 0.125,
+              "cash_need": true,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 715,
+              "skonto_rate": 0.0,
+              "full_cost": 86.99,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "asks for faster payment / cash"
+              ],
+              "source_ids": [
+                "doc:20251014-70190-N",
+                "doc:20260623-70190-M1",
+                "doc:20261019-70190-S13",
+                "news:20260426-10",
+                "news:20261015-S14"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "unit_price": 96.65
+            },
+            "estimated_total_cost": 832300.56,
+            "passes_accept_check": false,
+            "accept_check_reason": "C 832,301 does not beat the limit 798,336"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 76.0,
+              "payment_days": 10,
+              "contract_months": 24
+            },
+            "estimated_total_cost": 645493.33,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 645,493 below the limit 798,336"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G03\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:310011\"], \"suppliers\": [\"sup:70190\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"contract_months\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"contract_months\": [6, 12, 24]}, \"buyer\": {\"need_per_year\": 4200, \"horizon_years\": 2.0, \"current_unit_price\": 88, \"fallback_unit_price\": 98.56, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 95.04, \"payment_days\": 60, \"contract_months\": 24}}}, \"round_limit\": 10, \"refs\": [\"doc:20261019-70190-S13\", \"news:20261015-S14\"], \"facts\": {\"doc:20261019-70190-S13\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-19\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70190\", \"title\": \"Our liquidity and your call-offs\", \"type\": \"letter\"}, \"news:20261015-S14\": {\"date\": \"2026-10-15\", \"headline\": \"Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH\", \"supplier\": \"sup:70190\", \"topic\": \"customer_loss\"}}}"
+          },
+          {
+            "id": "message:sup:70190:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-0-1\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-0\", \"terms\": {\"unit_price\": 96.65}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"contract_months\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70190-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 96.65\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251014-70190-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-14 - Gießerei Pfaffenreuth GmbH\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260623-70190-M1",
+            "kind": "public_source",
+            "text": "# Material purchasing\n\ncall note - 2026-06-23 - Hollerau Pumpenwerke, Purchasing\n\nCall with Gießerei Pfaffenreuth GmbH: they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.\n"
+          },
+          {
+            "id": "doc:20261019-70190-S13",
+            "kind": "public_source",
+            "text": "# Our liquidity and your call-offs\n\nletter - 2026-10-19 - Gießerei Pfaffenreuth GmbH\n\nDear Sir or Madam,\n\na large customer from the heating industry has cancelled its orders for 2027, and our bank is watching our liquidity closely. We would be very grateful if you could pay our invoices within 10 days from November and confirm firm call-offs for the first quarter.\n\nYours faithfully,\nGießerei Pfaffenreuth GmbH\n"
+          },
+          {
+            "id": "fc:310011@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:310011@2026-09\", \"part_id\": \"part:310011\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 5220, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "news:20260426-10",
+            "kind": "public_source",
+            "text": "Gießerei Pfaffenreuth GmbH has fixed its electricity supply for 2026-2028 under a long-term contract, the company said."
+          },
+          {
+            "id": "news:20261015-S14",
+            "kind": "public_source",
+            "text": "A heating manufacturer has moved its cast housings to an Eastern European foundry; Gießerei Pfaffenreuth GmbH loses about a fifth of its turnover from January."
+          },
+          {
+            "id": "sc:70190@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70190@2026Q3\", \"supplier_id\": \"sup:70190\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 47, \"otd_pct\": 85.1, \"otd_confirmed_pct\": 85.1, \"received_qty\": 27973, \"complaint_qty\": 20, \"ppm\": 715, \"qn_count\": 13, \"open_8d_overdue\": 1, \"score\": 84.0, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "10d98f684f6b6703f5b5d1b9e4533ce4eb3bce4d916b875b5334da893f4843af",
+      "capture_seconds": 0.00123
+    },
+    {
+      "packet": {
+        "case_id": "case:G03",
+        "decision_index": 1,
+        "case": {
+          "case_id": "case:G03",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:310011"
+          ],
+          "suppliers": [
+            "sup:70190"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "contract_months"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4200,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "contract_months": [
+              6,
+              12,
+              24
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4200,
+            "horizon_years": 2.0,
+            "current_unit_price": 88,
+            "fallback_unit_price": 98.56,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4200,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 95.04,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261019-70190-S13",
+            "news:20261015-S14"
+          ],
+          "facts": {
+            "doc:20261019-70190-S13": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-19",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70190",
+              "title": "Our liquidity and your call-offs",
+              "type": "letter"
+            },
+            "news:20261015-S14": {
+              "date": "2026-10-15",
+              "headline": "Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH",
+              "supplier": "sup:70190",
+              "topic": "customer_loss"
+            }
+          }
+        },
+        "threads": {
+          "sup:70190": [
+            {
+              "message_id": "msg:70190-0-1",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-0",
+                  "terms": {
+                    "unit_price": 96.65
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "contract_months",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 96.65\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:310011@2026-09",
+                "idx:PPI-D351@2025-11",
+                "idx:PPI-D351@2026-08",
+                "sc:70190@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 76.0,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-1-2",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-1",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 88.88
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 88.88\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70190",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 77.29,
+                  "payment_days": 10,
+                  "contract_months": 24
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 9,
+        "standing_offer_id": "offer:70190-1",
+        "engine_estimates": {
+          "sup:70190": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4200,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70190",
+              "name": "Gießerei Pfaffenreuth GmbH",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070190",
+              "interest_rate": 0.125,
+              "cash_need": true,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 715,
+              "skonto_rate": 0.0,
+              "full_cost": 86.99,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "asks for faster payment / cash"
+              ],
+              "source_ids": [
+                "doc:20251014-70190-N",
+                "doc:20260623-70190-M1",
+                "doc:20261019-70190-S13",
+                "news:20260426-10",
+                "news:20261015-S14"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "contract_months": 12,
+              "payment_days": 10,
+              "unit_price": 88.88
+            },
+            "estimated_total_cost": 803814.29,
+            "passes_accept_check": false,
+            "accept_check_reason": "C 803,814 does not beat the limit 798,336"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 77.29,
+              "payment_days": 10,
+              "contract_months": 24
+            },
+            "estimated_total_cost": 656449.73,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 656,450 below the limit 798,336"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G03\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:310011\"], \"suppliers\": [\"sup:70190\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"contract_months\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"contract_months\": [6, 12, 24]}, \"buyer\": {\"need_per_year\": 4200, \"horizon_years\": 2.0, \"current_unit_price\": 88, \"fallback_unit_price\": 98.56, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 95.04, \"payment_days\": 60, \"contract_months\": 24}}}, \"round_limit\": 10, \"refs\": [\"doc:20261019-70190-S13\", \"news:20261015-S14\"], \"facts\": {\"doc:20261019-70190-S13\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-19\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70190\", \"title\": \"Our liquidity and your call-offs\", \"type\": \"letter\"}, \"news:20261015-S14\": {\"date\": \"2026-10-15\", \"headline\": \"Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH\", \"supplier\": \"sup:70190\", \"topic\": \"customer_loss\"}}}"
+          },
+          {
+            "id": "message:sup:70190:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-0-1\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-0\", \"terms\": {\"unit_price\": 96.65}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"contract_months\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70190-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 96.65\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:310011@2026-09\", \"idx:PPI-D351@2025-11\", \"idx:PPI-D351@2026-08\", \"sc:70190@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 76.0, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-1-2\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-1\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 88.88}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 88.88\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251014-70190-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-14 - Gießerei Pfaffenreuth GmbH\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260623-70190-M1",
+            "kind": "public_source",
+            "text": "# Material purchasing\n\ncall note - 2026-06-23 - Hollerau Pumpenwerke, Purchasing\n\nCall with Gießerei Pfaffenreuth GmbH: they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.\n"
+          },
+          {
+            "id": "doc:20261019-70190-S13",
+            "kind": "public_source",
+            "text": "# Our liquidity and your call-offs\n\nletter - 2026-10-19 - Gießerei Pfaffenreuth GmbH\n\nDear Sir or Madam,\n\na large customer from the heating industry has cancelled its orders for 2027, and our bank is watching our liquidity closely. We would be very grateful if you could pay our invoices within 10 days from November and confirm firm call-offs for the first quarter.\n\nYours faithfully,\nGießerei Pfaffenreuth GmbH\n"
+          },
+          {
+            "id": "fc:310011@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:310011@2026-09\", \"part_id\": \"part:310011\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 5220, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "news:20260426-10",
+            "kind": "public_source",
+            "text": "Gießerei Pfaffenreuth GmbH has fixed its electricity supply for 2026-2028 under a long-term contract, the company said."
+          },
+          {
+            "id": "news:20261015-S14",
+            "kind": "public_source",
+            "text": "A heating manufacturer has moved its cast housings to an Eastern European foundry; Gießerei Pfaffenreuth GmbH loses about a fifth of its turnover from January."
+          },
+          {
+            "id": "sc:70190@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70190@2026Q3\", \"supplier_id\": \"sup:70190\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 47, \"otd_pct\": 85.1, \"otd_confirmed_pct\": 85.1, \"received_qty\": 27973, \"complaint_qty\": 20, \"ppm\": 715, \"qn_count\": 13, \"open_8d_overdue\": 1, \"score\": 84.0, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "617a6bd6c27689351c356881f6f5c6da5600f6be6bad95190ecd06d3a321b16c",
+      "capture_seconds": 0.000485
+    },
+    {
+      "packet": {
+        "case_id": "case:G03",
+        "decision_index": 2,
+        "case": {
+          "case_id": "case:G03",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:310011"
+          ],
+          "suppliers": [
+            "sup:70190"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "contract_months"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4200,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "contract_months": [
+              6,
+              12,
+              24
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4200,
+            "horizon_years": 2.0,
+            "current_unit_price": 88,
+            "fallback_unit_price": 98.56,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4200,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 95.04,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261019-70190-S13",
+            "news:20261015-S14"
+          ],
+          "facts": {
+            "doc:20261019-70190-S13": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-19",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70190",
+              "title": "Our liquidity and your call-offs",
+              "type": "letter"
+            },
+            "news:20261015-S14": {
+              "date": "2026-10-15",
+              "headline": "Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH",
+              "supplier": "sup:70190",
+              "topic": "customer_loss"
+            }
+          }
+        },
+        "threads": {
+          "sup:70190": [
+            {
+              "message_id": "msg:70190-0-1",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-0",
+                  "terms": {
+                    "unit_price": 96.65
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "contract_months",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 96.65\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:310011@2026-09",
+                "idx:PPI-D351@2025-11",
+                "idx:PPI-D351@2026-08",
+                "sc:70190@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 76.0,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-1-2",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-1",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 88.88
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 88.88\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 77.29,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-2-3",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-2",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 87.3
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 87.30\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70190",
+          "message": {
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 80.29,
+                  "payment_days": 10,
+                  "contract_months": 24
+                }
+              }
+            ],
+            "refs": []
+          }
+        },
+        "supplier_status": "open",
+        "moves_left": 8,
+        "standing_offer_id": "offer:70190-2",
+        "engine_estimates": {
+          "sup:70190": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4200,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70190",
+              "name": "Gießerei Pfaffenreuth GmbH",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070190",
+              "interest_rate": 0.125,
+              "cash_need": true,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 715,
+              "skonto_rate": 0.0,
+              "full_cost": 86.99,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "asks for faster payment / cash"
+              ],
+              "source_ids": [
+                "doc:20251014-70190-N",
+                "doc:20260623-70190-M1",
+                "doc:20261019-70190-S13",
+                "news:20260426-10",
+                "news:20261015-S14"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "contract_months": 12,
+              "payment_days": 10,
+              "unit_price": 87.3
+            },
+            "estimated_total_cost": 797104.56,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 797,105 below the limit 798,336"
+          },
+          {
+            "sheet": "buyer_sheet_0",
+            "terms": {
+              "unit_price": 80.29,
+              "payment_days": 10,
+              "contract_months": 24
+            },
+            "estimated_total_cost": 681929.73,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 681,930 below the limit 798,336"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G03\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:310011\"], \"suppliers\": [\"sup:70190\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"contract_months\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"contract_months\": [6, 12, 24]}, \"buyer\": {\"need_per_year\": 4200, \"horizon_years\": 2.0, \"current_unit_price\": 88, \"fallback_unit_price\": 98.56, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 95.04, \"payment_days\": 60, \"contract_months\": 24}}}, \"round_limit\": 10, \"refs\": [\"doc:20261019-70190-S13\", \"news:20261015-S14\"], \"facts\": {\"doc:20261019-70190-S13\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-19\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70190\", \"title\": \"Our liquidity and your call-offs\", \"type\": \"letter\"}, \"news:20261015-S14\": {\"date\": \"2026-10-15\", \"headline\": \"Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH\", \"supplier\": \"sup:70190\", \"topic\": \"customer_loss\"}}}"
+          },
+          {
+            "id": "message:sup:70190:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-0-1\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-0\", \"terms\": {\"unit_price\": 96.65}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"contract_months\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70190-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 96.65\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:310011@2026-09\", \"idx:PPI-D351@2025-11\", \"idx:PPI-D351@2026-08\", \"sc:70190@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 76.0, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-1-2\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-1\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 88.88}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 88.88\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 77.29, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-2-3\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-2\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 87.3}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 87.30\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251014-70190-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-14 - Gießerei Pfaffenreuth GmbH\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260623-70190-M1",
+            "kind": "public_source",
+            "text": "# Material purchasing\n\ncall note - 2026-06-23 - Hollerau Pumpenwerke, Purchasing\n\nCall with Gießerei Pfaffenreuth GmbH: they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.\n"
+          },
+          {
+            "id": "doc:20261019-70190-S13",
+            "kind": "public_source",
+            "text": "# Our liquidity and your call-offs\n\nletter - 2026-10-19 - Gießerei Pfaffenreuth GmbH\n\nDear Sir or Madam,\n\na large customer from the heating industry has cancelled its orders for 2027, and our bank is watching our liquidity closely. We would be very grateful if you could pay our invoices within 10 days from November and confirm firm call-offs for the first quarter.\n\nYours faithfully,\nGießerei Pfaffenreuth GmbH\n"
+          },
+          {
+            "id": "fc:310011@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:310011@2026-09\", \"part_id\": \"part:310011\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 5220, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "news:20260426-10",
+            "kind": "public_source",
+            "text": "Gießerei Pfaffenreuth GmbH has fixed its electricity supply for 2026-2028 under a long-term contract, the company said."
+          },
+          {
+            "id": "news:20261015-S14",
+            "kind": "public_source",
+            "text": "A heating manufacturer has moved its cast housings to an Eastern European foundry; Gießerei Pfaffenreuth GmbH loses about a fifth of its turnover from January."
+          },
+          {
+            "id": "sc:70190@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70190@2026Q3\", \"supplier_id\": \"sup:70190\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 47, \"otd_pct\": 85.1, \"otd_confirmed_pct\": 85.1, \"received_qty\": 27973, \"complaint_qty\": 20, \"ppm\": 715, \"qn_count\": 13, \"open_8d_overdue\": 1, \"score\": 84.0, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "2f0f02651ece8f7cf7d51304fb1af5034f97713136a4b6add8a30b6611ff960b",
+      "capture_seconds": 0.000587
+    },
+    {
+      "packet": {
+        "case_id": "case:G03",
+        "decision_index": 3,
+        "case": {
+          "case_id": "case:G03",
+          "set": "hidden",
+          "type": "renewal",
+          "title": "Supply enquiry",
+          "briefing": "Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.",
+          "trigger_doc": null,
+          "parts": [
+            "part:310011"
+          ],
+          "suppliers": [
+            "sup:70190"
+          ],
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "contract_months"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 4200,
+            "index_clause": null,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-01-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "contract_months": [
+              6,
+              12,
+              24
+            ]
+          },
+          "buyer": {
+            "need_per_year": 4200,
+            "horizon_years": 2.0,
+            "current_unit_price": 88,
+            "fallback_unit_price": 98.56,
+            "interest_rate": 0.08,
+            "reference_payment_days": 60,
+            "need_lead_time_days": 35,
+            "category_goal": "leverage",
+            "fallback_risk_pct": 3,
+            "index_risk_pct": 1,
+            "late_cost_per_day": 200,
+            "cost_per_defect": 50,
+            "freight_eur_per_unit": {
+              "EXW": 0.6,
+              "FCA": 0.35,
+              "DAP": 0
+            },
+            "index_paths": {},
+            "must_haves": [
+              {
+                "field": "lead_time_days",
+                "op": "<=",
+                "value": 60
+              }
+            ],
+            "alternative": {
+              "kind": "other_supplier",
+              "ref": null,
+              "terms": {
+                "lead_time_days": 35,
+                "volume_per_year": 4200,
+                "index_clause": null,
+                "incoterm": "DAP",
+                "tooling_eur": 0,
+                "effective_date": "2027-01-01",
+                "unit_price": 95.04,
+                "payment_days": 60,
+                "contract_months": 24
+              }
+            }
+          },
+          "round_limit": 10,
+          "refs": [
+            "doc:20261019-70190-S13",
+            "news:20261015-S14"
+          ],
+          "facts": {
+            "doc:20261019-70190-S13": {
+              "asked_pct": null,
+              "asked_price": null,
+              "date": "2026-10-19",
+              "days": null,
+              "effective_date": null,
+              "supplier": "sup:70190",
+              "title": "Our liquidity and your call-offs",
+              "type": "letter"
+            },
+            "news:20261015-S14": {
+              "date": "2026-10-15",
+              "headline": "Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH",
+              "supplier": "sup:70190",
+              "topic": "customer_loss"
+            }
+          }
+        },
+        "threads": {
+          "sup:70190": [
+            {
+              "message_id": "msg:70190-0-1",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-0",
+                  "terms": {
+                    "unit_price": 96.65
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [
+                "contract_months",
+                "payment_days"
+              ],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-0-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 96.65\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [
+                "fc:310011@2026-09",
+                "idx:PPI-D351@2025-11",
+                "idx:PPI-D351@2026-08",
+                "sc:70190@2026Q3"
+              ],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 76.0,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-1-2",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-1",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 88.88
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-1-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 88.88\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 77.29,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-2-3",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-2",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 87.3
+                  }
+                }
+              ],
+              "status": "open",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-2-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 87.30\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            },
+            {
+              "from": "buyer",
+              "subject": "Re: Supply enquiry",
+              "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\nIf faster payment helps you, we are open to it, as shown in the packages.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+              "refs": [],
+              "term_sheets": [
+                {
+                  "terms": {
+                    "unit_price": 80.29,
+                    "payment_days": 10,
+                    "contract_months": 24
+                  }
+                }
+              ],
+              "attachments": []
+            },
+            {
+              "message_id": "msg:70190-3-4",
+              "from": "sales@70190",
+              "subject": "Re: Supply enquiry",
+              "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+              "refs": [],
+              "action": null,
+              "term_sheets": [
+                {
+                  "term_sheet_id": "offer:70190-3",
+                  "terms": {
+                    "contract_months": 12,
+                    "payment_days": 10,
+                    "unit_price": 84.25
+                  }
+                }
+              ],
+              "status": "final_offer",
+              "claim_results": [],
+              "missing_fields": [],
+              "attachments": [
+                {
+                  "attachment_id": "att:70190-3-quote",
+                  "name": "quote.pdf",
+                  "text": "Synthetic supplier quote\nOffered terms\nContract term (months) 12\nPayment terms (days net) 10\nUnit price (EUR) 84.25\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 12\nVolume per year (pcs) 4200\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 4200\nIndex clause none\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-01-01"
+                }
+              ]
+            }
+          ]
+        },
+        "proposed_action": {
+          "supplier_id": "sup:70190",
+          "message": {
+            "action": {
+              "type": "accept",
+              "term_sheet_id": "offer:70190-3"
+            }
+          }
+        },
+        "supplier_status": "final_offer",
+        "moves_left": 7,
+        "standing_offer_id": "offer:70190-3",
+        "engine_estimates": {
+          "sup:70190": {
+            "standard": {
+              "payment_days": 60,
+              "contract_months": 12,
+              "volume_per_year": 4200,
+              "index_clause": null
+            },
+            "dossier_estimate": {
+              "supplier_id": "sup:70190",
+              "name": "Gießerei Pfaffenreuth GmbH",
+              "country": "DE",
+              "owner_type": "family",
+              "contract_id": "ctr:4600070190",
+              "interest_rate": 0.125,
+              "cash_need": true,
+              "wants_work": false,
+              "capacity_full": false,
+              "hedged": true,
+              "ppm": 715,
+              "skonto_rate": 0.0,
+              "full_cost": 86.99,
+              "full_cost_source": "quote less 10%",
+              "full_cost_floor": 0.0,
+              "rate_measured": false,
+              "notes": [
+                "asks for faster payment / cash"
+              ],
+              "source_ids": [
+                "doc:20251014-70190-N",
+                "doc:20260623-70190-M1",
+                "doc:20261019-70190-S13",
+                "news:20260426-10",
+                "news:20261015-S14"
+              ]
+            }
+          }
+        },
+        "code_cost_checks": [
+          {
+            "sheet": "supplier_standing",
+            "terms": {
+              "contract_months": 12,
+              "payment_days": 10,
+              "unit_price": 84.25
+            },
+            "estimated_total_cost": 784152.23,
+            "passes_accept_check": true,
+            "accept_check_reason": "C 784,152 below the limit 798,336"
+          }
+        ],
+        "evidence": [
+          {
+            "id": "case",
+            "kind": "buyer_requirements",
+            "text": "{\"case_id\": \"case:G03\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:310011\"], \"suppliers\": [\"sup:70190\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"contract_months\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"contract_months\": [6, 12, 24]}, \"buyer\": {\"need_per_year\": 4200, \"horizon_years\": 2.0, \"current_unit_price\": 88, \"fallback_unit_price\": 98.56, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 95.04, \"payment_days\": 60, \"contract_months\": 24}}}, \"round_limit\": 10, \"refs\": [\"doc:20261019-70190-S13\", \"news:20261015-S14\"], \"facts\": {\"doc:20261019-70190-S13\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-19\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70190\", \"title\": \"Our liquidity and your call-offs\", \"type\": \"letter\"}, \"news:20261015-S14\": {\"date\": \"2026-10-15\", \"headline\": \"Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH\", \"supplier\": \"sup:70190\", \"topic\": \"customer_loss\"}}}"
+          },
+          {
+            "id": "message:sup:70190:0",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-0-1\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. Fictional evaluation quote. Twelve months can be fixed. Longer commitments need an exposure premium.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-0\", \"terms\": {\"unit_price\": 96.65}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [\"contract_months\", \"payment_days\"], \"attachments\": [{\"attachment_id\": \"att:70190-0-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nUnit price (EUR) 96.65\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:1",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your offer and for explaining your position.\\n\\nOur data shows a different picture on some points:\\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\\nYour rolling scorecard shows on-time delivery of 85.1% (sc:70190@2026Q3).\\nOur demand forecast for this part has risen 3.2% (fc:310011@2026-09).\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [\"fc:310011@2026-09\", \"idx:PPI-D351@2025-11\", \"idx:PPI-D351@2026-08\", \"sc:70190@2026Q3\"], \"term_sheets\": [{\"terms\": {\"unit_price\": 76.0, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:2",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-1-2\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-1\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 88.88}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-1-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 88.88\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:3",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 77.29, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:4",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-2-3\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-2\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 87.3}}], \"status\": \"open\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-2-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 87.30\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "message:sup:70190:5",
+            "kind": "conversation",
+            "text": "{\"from\": \"buyer\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Dear Sir or Madam,\\n\\nThank you for your reply and for the step you have taken.\\n\\nPlease find our proposal below.\\nIf faster payment helps you, we are open to it, as shown in the packages.\\n\\nWe look forward to your reply.\\n\\nKind regards\\nPurchasing\\nHollerau Pumpenwerke GmbH\", \"refs\": [], \"term_sheets\": [{\"terms\": {\"unit_price\": 80.29, \"payment_days\": 10, \"contract_months\": 24}}], \"attachments\": []}"
+          },
+          {
+            "id": "message:sup:70190:6",
+            "kind": "conversation",
+            "text": "{\"message_id\": \"msg:70190-3-4\", \"from\": \"sales@70190\", \"subject\": \"Re: Supply enquiry\", \"body\": \"Simulated supplier. We can offer the attached package as a whole; its terms are linked.\", \"refs\": [], \"action\": null, \"term_sheets\": [{\"term_sheet_id\": \"offer:70190-3\", \"terms\": {\"contract_months\": 12, \"payment_days\": 10, \"unit_price\": 84.25}}], \"status\": \"final_offer\", \"claim_results\": [], \"missing_fields\": [], \"attachments\": [{\"attachment_id\": \"att:70190-3-quote\", \"name\": \"quote.pdf\", \"text\": \"Synthetic supplier quote\\nOffered terms\\nContract term (months) 12\\nPayment terms (days net) 10\\nUnit price (EUR) 84.25\\nOur standard terms (apply to everything not stated above)\\nPayment terms (days net) 60\\nContract term (months) 12\\nVolume per year (pcs) 4200\\nIndex clause none\\nTerms fixed by your enquiry\\nLead time (days) 35\\nVolume per year (pcs) 4200\\nIndex clause none\\nIncoterm DAP\\nTooling (EUR) 0\\nPrice valid from 2027-01-01\"}]}"
+          },
+          {
+            "id": "doc:20251014-70190-N",
+            "kind": "public_source",
+            "text": "# New contact person\n\nemail - 2025-10-14 - Gießerei Pfaffenreuth GmbH\n\nFrom 1 October your contact in sales is our new colleague in inside sales; all other contacts stay the same.\n"
+          },
+          {
+            "id": "doc:20260623-70190-M1",
+            "kind": "public_source",
+            "text": "# Material purchasing\n\ncall note - 2026-06-23 - Hollerau Pumpenwerke, Purchasing\n\nCall with Gießerei Pfaffenreuth GmbH: they bought their electricity forward until December 2028 and said the market price is 'not our reality' before then.\n"
+          },
+          {
+            "id": "doc:20261019-70190-S13",
+            "kind": "public_source",
+            "text": "# Our liquidity and your call-offs\n\nletter - 2026-10-19 - Gießerei Pfaffenreuth GmbH\n\nDear Sir or Madam,\n\na large customer from the heating industry has cancelled its orders for 2027, and our bank is watching our liquidity closely. We would be very grateful if you could pay our invoices within 10 days from November and confirm firm call-offs for the first quarter.\n\nYours faithfully,\nGießerei Pfaffenreuth GmbH\n"
+          },
+          {
+            "id": "fc:310011@2026-09",
+            "kind": "public_source",
+            "text": "{\"table\": \"forecasts\", \"id\": \"fc:310011@2026-09\", \"part_id\": \"part:310011\", \"snapshot_month\": \"2026-09\", \"horizon_months\": 12, \"qty_next_12m\": 5220, \"uom\": \"pc\", \"shared_with_suppliers\": 1}"
+          },
+          {
+            "id": "idx:PPI-D351@2025-11",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2025-11\", \"series_id\": \"PPI-D351\", \"month\": \"2025-11\", \"value\": 140.5}"
+          },
+          {
+            "id": "idx:PPI-D351@2026-08",
+            "kind": "public_source",
+            "text": "{\"table\": \"index_values\", \"id\": \"idx:PPI-D351@2026-08\", \"series_id\": \"PPI-D351\", \"month\": \"2026-08\", \"value\": 131.9}"
+          },
+          {
+            "id": "news:20260426-10",
+            "kind": "public_source",
+            "text": "Gießerei Pfaffenreuth GmbH has fixed its electricity supply for 2026-2028 under a long-term contract, the company said."
+          },
+          {
+            "id": "news:20261015-S14",
+            "kind": "public_source",
+            "text": "A heating manufacturer has moved its cast housings to an Eastern European foundry; Gießerei Pfaffenreuth GmbH loses about a fifth of its turnover from January."
+          },
+          {
+            "id": "sc:70190@2026Q3",
+            "kind": "public_source",
+            "text": "{\"table\": \"scorecards\", \"id\": \"sc:70190@2026Q3\", \"supplier_id\": \"sup:70190\", \"quarter\": \"2026Q3\", \"period_start\": \"2025-10-01\", \"period_end\": \"2026-09-30\", \"gr_lines\": 47, \"otd_pct\": 85.1, \"otd_confirmed_pct\": 85.1, \"received_qty\": 27973, \"complaint_qty\": 20, \"ppm\": 715, \"qn_count\": 13, \"open_8d_overdue\": 1, \"score\": 84.0, \"class\": \"B\", \"colour\": \"amber\"}"
+          }
+        ],
+        "omitted_evidence_ids": [],
+        "missing_source_ids": []
+      },
+      "sha256": "76c585d2cfe1c7da59a27a187ac987eb144ca68f94c3a14a3d3e67086e0cd29c",
+      "capture_seconds": 0.000672
+    }
+  ],
+  "observation_errors": []
+}

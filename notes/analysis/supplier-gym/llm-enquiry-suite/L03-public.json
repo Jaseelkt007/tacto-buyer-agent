@@ -1,0 +1,432 @@
+{
+  "case": {
+    "case_id": "case:L03",
+    "set": "practice",
+    "type": "renewal",
+    "title": "Machined adapter annual order",
+    "briefing": "Fictional local practice: obtain an acceptable supply agreement for the stated need.",
+    "trigger_doc": null,
+    "parts": [
+      "part:320050"
+    ],
+    "suppliers": [
+      "sup:70270"
+    ],
+    "negotiable": [
+      "unit_price",
+      "payment_days",
+      "volume_per_year"
+    ],
+    "fixed_terms": {
+      "lead_time_days": 42,
+      "contract_months": 12,
+      "index_clause": null,
+      "incoterm": "DAP",
+      "tooling_eur": 0,
+      "effective_date": "2027-01-01"
+    },
+    "term_options": {
+      "payment_days": [
+        10,
+        30,
+        60,
+        90
+      ],
+      "volume_per_year": [
+        6000,
+        9000,
+        15000
+      ]
+    },
+    "buyer": {
+      "need_per_year": 9000,
+      "horizon_years": 1,
+      "current_unit_price": 16,
+      "fallback_unit_price": 19.2,
+      "interest_rate": 0.08,
+      "reference_payment_days": 60,
+      "need_lead_time_days": 42,
+      "category_goal": "leverage",
+      "fallback_risk_pct": 3,
+      "index_risk_pct": 1,
+      "late_cost_per_day": 200,
+      "cost_per_defect": 50,
+      "freight_eur_per_unit": {
+        "EXW": 0.5,
+        "FCA": 0.3,
+        "DAP": 0
+      },
+      "index_paths": {},
+      "must_haves": [
+        {
+          "field": "lead_time_days",
+          "op": "<=",
+          "value": 42
+        }
+      ],
+      "alternative": {
+        "kind": "other_supplier",
+        "ref": null,
+        "terms": {
+          "lead_time_days": 42,
+          "contract_months": 12,
+          "index_clause": null,
+          "incoterm": "DAP",
+          "tooling_eur": 0,
+          "effective_date": "2027-01-01",
+          "unit_price": 18.88,
+          "payment_days": 60,
+          "volume_per_year": 9000
+        }
+      }
+    },
+    "round_limit": 10,
+    "refs": [
+      "news:20261020-S16"
+    ],
+    "facts": {
+      "news:20261020-S16": {
+        "date": "2026-10-20",
+        "headline": "Obrábění Kraslin s.r.o. puts its turning shop on short-time work",
+        "supplier": "sup:70270",
+        "topic": "short_time_work"
+      }
+    }
+  },
+  "transcript": {
+    "sim1": {
+      "sup:70270": [
+        {
+          "thread_id": "thread:L03:70270",
+          "message_id": "msg:70270-0-1",
+          "in_reply_to": null,
+          "from": "sales@70270",
+          "subject": "Re: Machined adapter annual order",
+          "body": "Simulated supplier. Fictional practice enquiry. Our opening quote is attached; we welcome a package proposal.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70270-0",
+              "terms": {
+                "unit_price": 17.43
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [
+            "payment_days",
+            "volume_per_year"
+          ],
+          "attachments": [
+            {
+              "attachment_id": "att:70270-0-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Machined adapter annual order",
+          "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: cold drawing of bars changed -2.3% from 2026-06 to 2026-08 (idx:PPI-C2431@2026-06, idx:PPI-C2431@2026-08).\nYour rolling scorecard shows on-time delivery of 84.6% (sc:70270@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:320050@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 13.11,
+                "payment_days": 10,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "refs": [
+            "fc:320050@2026-09",
+            "idx:PPI-C2431@2026-06",
+            "idx:PPI-C2431@2026-08",
+            "sc:70270@2026Q3"
+          ],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L03:70270",
+          "message_id": "msg:70270-1-2",
+          "in_reply_to": null,
+          "from": "sales@70270",
+          "subject": "Re: Machined adapter annual order",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70270-1",
+              "terms": {
+                "payment_days": 10,
+                "unit_price": 14.7,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70270-1-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Machined adapter annual order",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nOne more point from our side:\nOur last 3 orders for this part were at EUR 15.88 per unit (po:4500014443-10, po:4500014380-10, po:4500014316-10).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 13.27,
+                "payment_days": 10,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "refs": [
+            "po:4500014316-10",
+            "po:4500014380-10",
+            "po:4500014443-10"
+          ],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L03:70270",
+          "message_id": "msg:70270-2-3",
+          "in_reply_to": null,
+          "from": "sales@70270",
+          "subject": "Re: Machined adapter annual order",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70270-2",
+              "terms": {
+                "payment_days": 10,
+                "unit_price": 14.48,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70270-2-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Machined adapter annual order",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 13.63,
+                "payment_days": 10,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L03:70270",
+          "message_id": "msg:70270-3-4",
+          "in_reply_to": null,
+          "from": "sales@70270",
+          "subject": "Re: Machined adapter annual order",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70270-3",
+              "terms": {
+                "payment_days": 10,
+                "unit_price": 14.26,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70270-3-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Machined adapter annual order",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 13.82,
+                "payment_days": 10,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L03:70270",
+          "message_id": "msg:70270-4-5",
+          "in_reply_to": null,
+          "from": "sales@70270",
+          "subject": "Re: Machined adapter annual order",
+          "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70270-4",
+              "terms": {
+                "payment_days": 10,
+                "unit_price": 14.04,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "status": "open",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70270-4-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "subject": "Re: Machined adapter annual order",
+          "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+          "term_sheets": [
+            {
+              "terms": {
+                "unit_price": 13.89,
+                "payment_days": 10,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "refs": [],
+          "from": "buyer"
+        },
+        {
+          "thread_id": "thread:L03:70270",
+          "message_id": "msg:70270-5-6",
+          "in_reply_to": null,
+          "from": "sales@70270",
+          "subject": "Re: Machined adapter annual order",
+          "body": "Simulated supplier. We can agree to this package. Please confirm your order.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70270-5",
+              "terms": {
+                "payment_days": 10,
+                "unit_price": 13.89,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "status": "agreed",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70270-5-quote",
+              "name": "quote.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        },
+        {
+          "thread_id": "thread:L03:70270",
+          "message_id": "msg:70270-5-7",
+          "in_reply_to": null,
+          "from": "sales@70270",
+          "subject": "Re: Machined adapter annual order",
+          "body": "Simulated supplier. Thank you for your order.",
+          "refs": [],
+          "action": null,
+          "term_sheets": [
+            {
+              "term_sheet_id": "offer:70270-5",
+              "terms": {
+                "payment_days": 10,
+                "unit_price": 13.89,
+                "volume_per_year": 9000
+              }
+            }
+          ],
+          "status": "agreed",
+          "signals": {
+            "reply_delay_days": 1,
+            "validity_days": 30
+          },
+          "claim_results": [],
+          "missing_fields": [],
+          "attachments": [
+            {
+              "attachment_id": "att:70270-5-order-confirmation",
+              "name": "order-confirmation.pdf",
+              "type": "pdf",
+              "content_b64": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

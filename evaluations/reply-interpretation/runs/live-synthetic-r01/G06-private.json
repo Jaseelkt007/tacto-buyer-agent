@@ -1,0 +1,2759 @@
+{
+  "evaluation": {
+    "case_id": "case:G06",
+    "status": "completed",
+    "error": null,
+    "supplier_model_calls": 4,
+    "supplier_fallbacks": 0,
+    "buyer_fallbacks": 0,
+    "supplier_threads_contacted": [
+      "sup:70340"
+    ],
+    "finished_seconds": 31.313,
+    "end_reason": "accepted",
+    "result": {
+      "ended": true,
+      "deal": true,
+      "supplier_id": "sup:70340",
+      "offer_id": "offer:70340-4",
+      "terms": {
+        "volume_per_year": 7400,
+        "contract_months": 24,
+        "payment_days": 90,
+        "lead_time_days": 35,
+        "incoterm": "DAP",
+        "index_clause": {
+          "base_month": "2026-09",
+          "deadband_pct": 3.0,
+          "material_share": 0.6,
+          "series": "PPI-C241"
+        },
+        "tooling_eur": 0,
+        "effective_date": "2027-07-01",
+        "unit_price": 14.0
+      },
+      "c_open": 256484.0,
+      "c_deal": 207061.87,
+      "c_alt": 279720.0,
+      "c_best": 198039.89,
+      "score": 0.8456306375441429,
+      "must_haves_ok": true,
+      "cost_breakdown": {
+        "price": 207200.0,
+        "uncovered_need": 0.0,
+        "fallback_risk": 0.0,
+        "payment_terms": -1381.3333333333333,
+        "freight": 0.0,
+        "late_delivery": 0,
+        "quality": 0.0,
+        "tooling": 0.0,
+        "index_clause": 0.0,
+        "index_risk": 1243.2,
+        "relationship": 0.0
+      },
+      "evaluation": "synthetic economics; not a leaderboard estimate"
+    },
+    "missed_savings_eur": 9021.98
+  },
+  "profiles": {
+    "sup:70340": {
+      "standard": {
+        "payment_days": 60,
+        "contract_months": 24,
+        "volume_per_year": 7400,
+        "index_clause": null
+      },
+      "economics": {
+        "unit_cost": 12.6,
+        "annual_fixed_cost": 0,
+        "finance_rate": 0.055,
+        "minimum_margin": 0.04,
+        "opening_markup": 0.22,
+        "capacity": 12000,
+        "normal_capacity": 9000,
+        "overtime_per_unit": 2.268,
+        "commitment_credit": 0,
+        "hedge_until": "2027-12-31",
+        "material_share": 0.6,
+        "unhedged_reserve": 0.16,
+        "hedged_index_reserve": 0.04,
+        "final_round": 4,
+        "priorities": "Only the first six delivery months are hedged; price the remaining material exposure.",
+        "opening_email": "Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+        "final_markup": 0.045,
+        "concession_power": 0.6,
+        "commitment_penalty": 0
+      }
+    }
+  },
+  "choices": [
+    {
+      "supplier_id": "sup:70340",
+      "round": 1,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "hold",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 17.33
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a1",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 15.77
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 16.8
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.8
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 15.78
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 15.82
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 16.86
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.85
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a8",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 15.83
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a9",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 15.89
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a10",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 16.94
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a11",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.92
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a12",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 15.9
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a13",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 15.97
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a14",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 17.02
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a15",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.98
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a16",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 15.97
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a15",
+      "summary": "Counter at €14.98 with 90-day payment and the material index clause. This meaningfully reduces the opening price and meets the buyer’s payment request while protecting exposure beyond the six-month hedge. The cited electricity-price decline does not establish an equivalent reduction in our material costs, and forecast growth is not additional committed volume.",
+      "usage": {
+        "input_tokens": 2257,
+        "input_tokens_details": {
+          "cache_write_tokens": 2254,
+          "cached_tokens": 0
+        },
+        "output_tokens": 115,
+        "output_tokens_details": {
+          "reasoning_tokens": 30
+        },
+        "total_tokens": 2372
+      },
+      "response_id": "resp_0682bb5a3dad02e4016adde95ebc0487d1b7bb26806ebbb88e",
+      "seconds": 4.557
+    },
+    {
+      "supplier_id": "sup:70340",
+      "round": 2,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "hold",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.98
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a1",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 15.54
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 16.36
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.59
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 15.36
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 15.6
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 16.41
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.64
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a8",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 15.4
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a9",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 15.66
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a10",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 16.48
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a11",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.7
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a12",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 15.47
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a13",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 15.74
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a14",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 16.56
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a15",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.77
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a16",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 15.54
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a15",
+      "summary": "Offer €14.77 with 90-day payment and the material index clause: a meaningful price concession while preserving the buyer’s payment terms and protecting exposure after the six-month hedge. The cited electricity decline does not establish lower material costs across the remaining contract.",
+      "usage": {
+        "input_tokens": 2510,
+        "input_tokens_details": {
+          "cache_write_tokens": 2507,
+          "cached_tokens": 0
+        },
+        "output_tokens": 69,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2579
+      },
+      "response_id": "resp_025b896aba2de274016adde965a0a887d189be0cdfa7e49deb",
+      "seconds": 2.651
+    },
+    {
+      "supplier_id": "sup:70340",
+      "round": 3,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "agree",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.27
+          },
+          "reason": "We can agree to this package. Please confirm your order."
+        },
+        {
+          "id": "a1",
+          "kind": "hold",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.77
+          },
+          "reason": "Our current package remains available."
+        },
+        {
+          "id": "a2",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 15.27
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 15.8
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.33
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 14.84
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 15.32
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 15.86
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a8",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.38
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a9",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 14.88
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a10",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 15.38
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a11",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 15.93
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a12",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.44
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a13",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 14.95
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a14",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 15.46
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a15",
+          "kind": "counter",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 16.0
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a16",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.51
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a17",
+          "kind": "counter",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 15.02
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a16",
+      "summary": "Offer €14.51 with 90-day payment and the material index clause. This narrows the price gap while retaining the buyer’s payment terms and protecting material exposure beyond the six-month hedge. The cited electricity index does not establish comparable reductions in our material costs.",
+      "usage": {
+        "input_tokens": 2785,
+        "input_tokens_details": {
+          "cache_write_tokens": 2782,
+          "cached_tokens": 0
+        },
+        "output_tokens": 71,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2856
+      },
+      "response_id": "resp_0073d6dd746a4363016adde96ae0d087d1815d6eb79d831ecb",
+      "seconds": 3.518
+    },
+    {
+      "supplier_id": "sup:70340",
+      "round": 4,
+      "actions": [
+        {
+          "id": "a0",
+          "kind": "agree",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.34
+          },
+          "reason": "We can agree to this package. Please confirm your order."
+        },
+        {
+          "id": "a2",
+          "kind": "final",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 10,
+            "unit_price": 14.73
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a3",
+          "kind": "final",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 10,
+            "unit_price": 13.83
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a4",
+          "kind": "final",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 30,
+            "unit_price": 14.78
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a5",
+          "kind": "final",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 30,
+            "unit_price": 13.87
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a6",
+          "kind": "final",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 60,
+            "unit_price": 14.84
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a7",
+          "kind": "final",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 60,
+            "unit_price": 13.93
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a8",
+          "kind": "final",
+          "terms": {
+            "index_clause": null,
+            "payment_days": 90,
+            "unit_price": 14.92
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        },
+        {
+          "id": "a9",
+          "kind": "final",
+          "terms": {
+            "index_clause": {
+              "base_month": "2026-09",
+              "deadband_pct": 3.0,
+              "material_share": 0.6,
+              "series": "PPI-C241"
+            },
+            "payment_days": 90,
+            "unit_price": 14.0
+          },
+          "reason": "We can offer the attached package as a whole; its terms are linked."
+        }
+      ],
+      "mode": "llm",
+      "model": "gpt-6.1-sol",
+      "error": null,
+      "chosen": "a9",
+      "summary": "Offer €14.00 with 90-day payment and material indexation: a meaningful price concession while preserving the buyer’s payment terms and protecting exposure after the six-month hedge expires. Accepting €14.34 fixed would leave the remaining 18 months unprotected; the cited electricity index does not establish lower material costs.",
+      "usage": {
+        "input_tokens": 2282,
+        "input_tokens_details": {
+          "cache_write_tokens": 2279,
+          "cached_tokens": 0
+        },
+        "output_tokens": 82,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2364
+      },
+      "response_id": "resp_035fa877290f9ebc016adde971442c87d18500bfdc70e7c53e",
+      "seconds": 3.572
+    }
+  ],
+  "buyer_trace": [
+    {
+      "round": 0,
+      "supplier_id": "sup:70340",
+      "their_status": "open",
+      "their_offer": "offer:70340-0",
+      "their_terms": {
+        "unit_price": 17.33
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 13.95,
+          "payment_days": 90,
+          "index_clause": null
+        }
+      ],
+      "seconds": 4.868,
+      "source": "engine",
+      "price": 13.95,
+      "anchor": 13.95,
+      "ceiling": 17.44,
+      "their_price_on_our_terms": 17.44,
+      "c_main": 205084,
+      "limit": 256484,
+      "sheets": 1,
+      "claims": [
+        "index_change",
+        "delivery_record",
+        "volume_change"
+      ],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 90,
+        "index_clause": null
+      },
+      "budget": null,
+      "trade": null,
+      "reply_interpretation": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:0",
+        "context_sha256": "67e0470ce36195520184bfaff8b7f54298c2bce8f07fc55c5f18e53c57439fe9",
+        "status": "available",
+        "error": null,
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:0",
+            "term_sheet_id": "offer:70340-0",
+            "terms": {
+              "unit_price": 17.33
+            }
+          }
+        },
+        "observations": [
+          {
+            "package_ref": "unscoped",
+            "kind": "condition",
+            "field": "payment_days",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:0:attachment:0",
+                "quote": "Our standard terms (apply to everything not stated above)\nPayment terms (days net) 60"
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only",
+            "proposal_comparison": "unresolved"
+          },
+          {
+            "package_ref": "unscoped",
+            "kind": "condition",
+            "field": "index_clause",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:0:attachment:0",
+                "quote": "Our standard terms (apply to everything not stated above)"
+              },
+              {
+                "source_ref": "message:sup:70340:0:attachment:0",
+                "quote": "Index clause none"
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only",
+            "proposal_comparison": "unresolved"
+          }
+        ],
+        "validation": "provenance_checked_not_semantically_proven",
+        "semantic_authority": "none"
+      },
+      "features_off": [
+        "ask_breakdown",
+        "call_note_lever",
+        "case_plan",
+        "grounded_dossier",
+        "measured_trades",
+        "patience",
+        "plan_paragraph",
+        "plan_priced_trades",
+        "plan_stance",
+        "tactician",
+        "tactician_text"
+      ],
+      "plan": false
+    },
+    {
+      "round": 1,
+      "supplier_id": "sup:70340",
+      "their_status": "open",
+      "their_offer": "offer:70340-1",
+      "their_terms": {
+        "index_clause": {
+          "base_month": "2026-09",
+          "deadband_pct": 3.0,
+          "material_share": 0.6,
+          "series": "PPI-C241"
+        },
+        "payment_days": 90,
+        "unit_price": 14.98
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 14.05,
+          "payment_days": 90,
+          "index_clause": null
+        }
+      ],
+      "seconds": 2.145,
+      "source": "engine",
+      "price": 14.05,
+      "anchor": 13.95,
+      "ceiling": 17.44,
+      "their_price_on_our_terms": 14.98,
+      "c_main": 206554,
+      "limit": 256484,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 90,
+        "index_clause": null
+      },
+      "budget": null,
+      "trade": null,
+      "reply_interpretation": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:2",
+        "context_sha256": "d9d16e80e48235198c8855f15dc3126d3a06ae13f9d7fa593d19707928c306a0",
+        "status": "available",
+        "error": null,
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:2",
+            "term_sheet_id": "offer:70340-1",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.98
+            }
+          }
+        },
+        "observations": [
+          {
+            "package_ref": "package:0",
+            "kind": "condition",
+            "field": "other",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:2:body",
+                "quote": "We can offer the attached package as a whole; its terms are linked."
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only",
+            "proposal_comparison": "unresolved"
+          }
+        ],
+        "validation": "provenance_checked_not_semantically_proven",
+        "semantic_authority": "none"
+      }
+    },
+    {
+      "round": 2,
+      "supplier_id": "sup:70340",
+      "their_status": "open",
+      "their_offer": "offer:70340-2",
+      "their_terms": {
+        "index_clause": {
+          "base_month": "2026-09",
+          "deadband_pct": 3.0,
+          "material_share": 0.6,
+          "series": "PPI-C241"
+        },
+        "payment_days": 90,
+        "unit_price": 14.77
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 14.27,
+          "payment_days": 90,
+          "index_clause": null
+        }
+      ],
+      "seconds": 2.312,
+      "source": "engine",
+      "price": 14.27,
+      "anchor": 13.95,
+      "ceiling": 17.44,
+      "their_price_on_our_terms": 14.77,
+      "c_main": 209788,
+      "limit": 256484,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 90,
+        "index_clause": null
+      },
+      "budget": null,
+      "trade": null,
+      "reply_interpretation": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:4",
+        "context_sha256": "5d8534f28048e0d7953578776a2c0e62b900c6b1f4d185ed86a429c4509262c1",
+        "status": "available",
+        "error": null,
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:4",
+            "term_sheet_id": "offer:70340-2",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.77
+            }
+          }
+        },
+        "observations": [
+          {
+            "package_ref": "package:0",
+            "kind": "condition",
+            "field": "other",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:4:body",
+                "quote": "We can offer the attached package as a whole; its terms are linked."
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only",
+            "proposal_comparison": "unresolved"
+          }
+        ],
+        "validation": "provenance_checked_not_semantically_proven",
+        "semantic_authority": "none"
+      }
+    },
+    {
+      "round": 3,
+      "supplier_id": "sup:70340",
+      "their_status": "open",
+      "their_offer": "offer:70340-3",
+      "their_terms": {
+        "index_clause": {
+          "base_month": "2026-09",
+          "deadband_pct": 3.0,
+          "material_share": 0.6,
+          "series": "PPI-C241"
+        },
+        "payment_days": 90,
+        "unit_price": 14.51
+      },
+      "action": "send",
+      "our_sheets": [
+        {
+          "unit_price": 14.34,
+          "payment_days": 90,
+          "index_clause": null
+        }
+      ],
+      "seconds": 2.869,
+      "source": "engine",
+      "price": 14.34,
+      "anchor": 13.95,
+      "ceiling": 17.44,
+      "their_price_on_our_terms": 14.51,
+      "c_main": 210817,
+      "limit": 256484,
+      "sheets": 1,
+      "claims": [],
+      "asks": [],
+      "traits": [],
+      "mix": {
+        "payment_days": 90,
+        "index_clause": null
+      },
+      "budget": null,
+      "trade": null,
+      "reply_interpretation": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:6",
+        "context_sha256": "9e612f8117160abb8f3632e9046dc2ea6129a2409495eb1afd36091f17e8d104",
+        "status": "available",
+        "error": null,
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:6",
+            "term_sheet_id": "offer:70340-3",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.51
+            }
+          }
+        },
+        "observations": [
+          {
+            "package_ref": "package:0",
+            "kind": "condition",
+            "field": "other",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:6:body",
+                "quote": "We can offer the attached package as a whole; its terms are linked."
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only",
+            "proposal_comparison": "unresolved"
+          }
+        ],
+        "validation": "provenance_checked_not_semantically_proven",
+        "semantic_authority": "none"
+      }
+    },
+    {
+      "round": 4,
+      "supplier_id": "sup:70340",
+      "their_status": "final_offer",
+      "their_offer": "offer:70340-4",
+      "their_terms": {
+        "index_clause": {
+          "base_month": "2026-09",
+          "deadband_pct": 3.0,
+          "material_share": 0.6,
+          "series": "PPI-C241"
+        },
+        "payment_days": 90,
+        "unit_price": 14.0
+      },
+      "action": "accept",
+      "our_sheets": [],
+      "seconds": 0.001,
+      "source": "engine",
+      "why": "final_offer; C 207,062 below the limit 256,484",
+      "reply_interpretation": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:8",
+        "context_sha256": "35b39e622ff66641cc93907816734fe20e58d41f2d6122ab0397aff06dcb2cb5",
+        "status": "skipped",
+        "error": "terminal_status",
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:8",
+            "term_sheet_id": "offer:70340-4",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.0
+            }
+          }
+        },
+        "observations": [],
+        "validation": "unavailable",
+        "semantic_authority": "none"
+      }
+    }
+  ],
+  "decision_timings": [
+    {
+      "seconds": 4.869399,
+      "supplier_id": "sup:70340",
+      "action": "send",
+      "error": null
+    },
+    {
+      "seconds": 2.145264,
+      "supplier_id": "sup:70340",
+      "action": "send",
+      "error": null
+    },
+    {
+      "seconds": 2.312841,
+      "supplier_id": "sup:70340",
+      "action": "send",
+      "error": null
+    },
+    {
+      "seconds": 2.869412,
+      "supplier_id": "sup:70340",
+      "action": "send",
+      "error": null
+    },
+    {
+      "seconds": 0.001432,
+      "supplier_id": "sup:70340",
+      "action": "accept",
+      "error": null
+    }
+  ],
+  "reply_interpretations": [
+    {
+      "context": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "case_terms": {
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          }
+        },
+        "latest_message_ref": "message:sup:70340:0",
+        "latest_sender": "sales@70340",
+        "latest_status": "open",
+        "history": [
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-0-1",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-0",
+                "terms": {
+                  "unit_price": 17.33
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [
+              "index_clause",
+              "payment_days"
+            ],
+            "source_ref": "message:sup:70340:0",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-0-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          }
+        ],
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:0",
+            "term_sheet_id": "offer:70340-0",
+            "terms": {
+              "unit_price": 17.33
+            }
+          }
+        },
+        "sources": {
+          "message:sup:70340:0:subject": "Re: Supply enquiry",
+          "message:sup:70340:0:body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+          "message:sup:70340:0:attachment:0": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+        }
+      },
+      "model": "gpt-6.1-sol",
+      "model_called": true,
+      "request_sha256": "8c2e6ed4a20d3d03bbc77d1eeaebbab6e27df267c0239ddbe9a9b22cfec8156f",
+      "answer": {
+        "observations": [
+          {
+            "package_ref": "unscoped",
+            "kind": "condition",
+            "field": "payment_days",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:0:attachment:0",
+                "quote": "Our standard terms (apply to everything not stated above)\nPayment terms (days net) 60"
+              }
+            ]
+          },
+          {
+            "package_ref": "unscoped",
+            "kind": "condition",
+            "field": "index_clause",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:0:attachment:0",
+                "quote": "Our standard terms (apply to everything not stated above)"
+              },
+              {
+                "source_ref": "message:sup:70340:0:attachment:0",
+                "quote": "Index clause none"
+              }
+            ]
+          }
+        ]
+      },
+      "response_id": "resp_0e95de41c0596408016adde959cfb887d1b0b36970eecac9fe",
+      "usage": {
+        "input_tokens": 1449,
+        "input_tokens_details": {
+          "cache_write_tokens": 1446,
+          "cached_tokens": 0
+        },
+        "output_tokens": 226,
+        "output_tokens_details": {
+          "reasoning_tokens": 76
+        },
+        "total_tokens": 1675
+      },
+      "reading": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:0",
+        "context_sha256": "67e0470ce36195520184bfaff8b7f54298c2bce8f07fc55c5f18e53c57439fe9",
+        "status": "available",
+        "error": null,
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:0",
+            "term_sheet_id": "offer:70340-0",
+            "terms": {
+              "unit_price": 17.33
+            }
+          }
+        },
+        "observations": [
+          {
+            "package_ref": "unscoped",
+            "kind": "condition",
+            "field": "payment_days",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:0:attachment:0",
+                "quote": "Our standard terms (apply to everything not stated above)\nPayment terms (days net) 60"
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only"
+          },
+          {
+            "package_ref": "unscoped",
+            "kind": "condition",
+            "field": "index_clause",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:0:attachment:0",
+                "quote": "Our standard terms (apply to everything not stated above)"
+              },
+              {
+                "source_ref": "message:sup:70340:0:attachment:0",
+                "quote": "Index clause none"
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only"
+          }
+        ],
+        "validation": "provenance_checked_not_semantically_proven",
+        "semantic_authority": "none"
+      },
+      "seconds": 4.839
+    },
+    {
+      "context": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "case_terms": {
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          }
+        },
+        "latest_message_ref": "message:sup:70340:2",
+        "latest_sender": "sales@70340",
+        "latest_status": "open",
+        "history": [
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-0-1",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-0",
+                "terms": {
+                  "unit_price": 17.33
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [
+              "index_clause",
+              "payment_days"
+            ],
+            "source_ref": "message:sup:70340:0",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-0-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 13.95,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:1",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-1-2",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-1",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.98
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:2",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-1-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.98\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          }
+        ],
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:2",
+            "term_sheet_id": "offer:70340-1",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.98
+            }
+          }
+        },
+        "sources": {
+          "message:sup:70340:0:subject": "Re: Supply enquiry",
+          "message:sup:70340:0:body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+          "message:sup:70340:0:attachment:0": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:2:subject": "Re: Supply enquiry",
+          "message:sup:70340:2:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:2:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.98\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+        }
+      },
+      "model": "gpt-6.1-sol",
+      "model_called": true,
+      "request_sha256": "f0996cb0f7ef231157f69e247a616ee9b544dabdff57b855ad7a3b393aff4cf8",
+      "answer": {
+        "observations": [
+          {
+            "package_ref": "package:0",
+            "kind": "condition",
+            "field": "other",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:2:body",
+                "quote": "We can offer the attached package as a whole; its terms are linked."
+              }
+            ]
+          }
+        ]
+      },
+      "response_id": "resp_0b28fa0d805eeceb016adde963668487d1a974790c73cc8c0b",
+      "usage": {
+        "input_tokens": 2376,
+        "input_tokens_details": {
+          "cache_write_tokens": 2373,
+          "cached_tokens": 0
+        },
+        "output_tokens": 66,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 2442
+      },
+      "reading": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:2",
+        "context_sha256": "d9d16e80e48235198c8855f15dc3126d3a06ae13f9d7fa593d19707928c306a0",
+        "status": "available",
+        "error": null,
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:2",
+            "term_sheet_id": "offer:70340-1",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.98
+            }
+          }
+        },
+        "observations": [
+          {
+            "package_ref": "package:0",
+            "kind": "condition",
+            "field": "other",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:2:body",
+                "quote": "We can offer the attached package as a whole; its terms are linked."
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only"
+          }
+        ],
+        "validation": "provenance_checked_not_semantically_proven",
+        "semantic_authority": "none"
+      },
+      "seconds": 2.144
+    },
+    {
+      "context": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "case_terms": {
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          }
+        },
+        "latest_message_ref": "message:sup:70340:4",
+        "latest_sender": "sales@70340",
+        "latest_status": "open",
+        "history": [
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-0-1",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-0",
+                "terms": {
+                  "unit_price": 17.33
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [
+              "index_clause",
+              "payment_days"
+            ],
+            "source_ref": "message:sup:70340:0",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-0-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 13.95,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:1",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-1-2",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-1",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.98
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:2",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-1-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.98\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.05,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:3",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-2-3",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-2",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.77
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:4",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-2-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.77\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          }
+        ],
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:4",
+            "term_sheet_id": "offer:70340-2",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.77
+            }
+          }
+        },
+        "sources": {
+          "message:sup:70340:0:subject": "Re: Supply enquiry",
+          "message:sup:70340:0:body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+          "message:sup:70340:0:attachment:0": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:2:subject": "Re: Supply enquiry",
+          "message:sup:70340:2:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:2:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.98\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:4:subject": "Re: Supply enquiry",
+          "message:sup:70340:4:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:4:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.77\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+        }
+      },
+      "model": "gpt-6.1-sol",
+      "model_called": true,
+      "request_sha256": "1429b4a37a6c57f8babe4634fd89b0608c41da2c81f486bb3681401091d83b02",
+      "answer": {
+        "observations": [
+          {
+            "package_ref": "package:0",
+            "kind": "condition",
+            "field": "other",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:4:body",
+                "quote": "We can offer the attached package as a whole; its terms are linked."
+              }
+            ]
+          }
+        ]
+      },
+      "response_id": "resp_039c6029654b42b0016adde9685e9c87d1bb0c6e5a9bb9084f",
+      "usage": {
+        "input_tokens": 3134,
+        "input_tokens_details": {
+          "cache_write_tokens": 3131,
+          "cached_tokens": 0
+        },
+        "output_tokens": 66,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3200
+      },
+      "reading": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:4",
+        "context_sha256": "5d8534f28048e0d7953578776a2c0e62b900c6b1f4d185ed86a429c4509262c1",
+        "status": "available",
+        "error": null,
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:4",
+            "term_sheet_id": "offer:70340-2",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.77
+            }
+          }
+        },
+        "observations": [
+          {
+            "package_ref": "package:0",
+            "kind": "condition",
+            "field": "other",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:4:body",
+                "quote": "We can offer the attached package as a whole; its terms are linked."
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only"
+          }
+        ],
+        "validation": "provenance_checked_not_semantically_proven",
+        "semantic_authority": "none"
+      },
+      "seconds": 2.312
+    },
+    {
+      "context": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "case_terms": {
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          }
+        },
+        "latest_message_ref": "message:sup:70340:6",
+        "latest_sender": "sales@70340",
+        "latest_status": "open",
+        "history": [
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-0-1",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-0",
+                "terms": {
+                  "unit_price": 17.33
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [
+              "index_clause",
+              "payment_days"
+            ],
+            "source_ref": "message:sup:70340:0",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-0-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 13.95,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:1",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-1-2",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-1",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.98
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:2",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-1-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.98\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.05,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:3",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-2-3",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-2",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.77
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:4",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-2-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.77\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.27,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:5",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-3-4",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-3",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.51
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:6",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-3-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.51\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          }
+        ],
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:6",
+            "term_sheet_id": "offer:70340-3",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.51
+            }
+          }
+        },
+        "sources": {
+          "message:sup:70340:0:subject": "Re: Supply enquiry",
+          "message:sup:70340:0:body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+          "message:sup:70340:0:attachment:0": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:2:subject": "Re: Supply enquiry",
+          "message:sup:70340:2:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:2:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.98\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:4:subject": "Re: Supply enquiry",
+          "message:sup:70340:4:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:4:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.77\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:6:subject": "Re: Supply enquiry",
+          "message:sup:70340:6:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:6:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.51\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+        }
+      },
+      "model": "gpt-6.1-sol",
+      "model_called": true,
+      "request_sha256": "40cf711221b9144e45394cb0e6a0eae18a13aa0ebc8288e41bc20ac4547febea",
+      "answer": {
+        "observations": [
+          {
+            "package_ref": "package:0",
+            "kind": "condition",
+            "field": "other",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:6:body",
+                "quote": "We can offer the attached package as a whole; its terms are linked."
+              }
+            ]
+          }
+        ]
+      },
+      "response_id": "resp_04f40b21e42f5543016adde96e69d087d1938d09cb4a7c7b04",
+      "usage": {
+        "input_tokens": 3892,
+        "input_tokens_details": {
+          "cache_write_tokens": 3889,
+          "cached_tokens": 0
+        },
+        "output_tokens": 92,
+        "output_tokens_details": {
+          "reasoning_tokens": 24
+        },
+        "total_tokens": 3984
+      },
+      "reading": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:6",
+        "context_sha256": "9e612f8117160abb8f3632e9046dc2ea6129a2409495eb1afd36091f17e8d104",
+        "status": "available",
+        "error": null,
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:6",
+            "term_sheet_id": "offer:70340-3",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.51
+            }
+          }
+        },
+        "observations": [
+          {
+            "package_ref": "package:0",
+            "kind": "condition",
+            "field": "other",
+            "evidence": [
+              {
+                "source_ref": "message:sup:70340:6:body",
+                "quote": "We can offer the attached package as a whole; its terms are linked."
+              }
+            ],
+            "quoted_value": null,
+            "value_source": null,
+            "policy_effect": "advisory_only"
+          }
+        ],
+        "validation": "provenance_checked_not_semantically_proven",
+        "semantic_authority": "none"
+      },
+      "seconds": 2.868
+    },
+    {
+      "context": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "case_terms": {
+          "negotiable": [
+            "unit_price",
+            "payment_days",
+            "index_clause"
+          ],
+          "fixed_terms": {
+            "lead_time_days": 35,
+            "volume_per_year": 7400,
+            "contract_months": 24,
+            "incoterm": "DAP",
+            "tooling_eur": 0,
+            "effective_date": "2027-07-01"
+          },
+          "term_options": {
+            "payment_days": [
+              10,
+              30,
+              60,
+              90
+            ],
+            "index_clause": [
+              null,
+              {
+                "series": "PPI-C241",
+                "material_share": 0.6,
+                "deadband_pct": 3.0,
+                "base_month": "2026-09"
+              }
+            ]
+          }
+        },
+        "latest_message_ref": "message:sup:70340:8",
+        "latest_sender": "sales@70340",
+        "latest_status": "final_offer",
+        "history": [
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-0-1",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-0",
+                "terms": {
+                  "unit_price": 17.33
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [
+              "index_clause",
+              "payment_days"
+            ],
+            "source_ref": "message:sup:70340:0",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-0-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nProducer prices DE: electric power generation, transmission and distribution changed -6.1% from 2025-11 to 2026-08 (idx:PPI-D351@2025-11, idx:PPI-D351@2026-08).\nYour rolling scorecard shows on-time delivery of 88.5% (sc:70340@2026Q3).\nOur demand forecast for this part has risen 13.1% (fc:330020@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 13.95,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:1",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-1-2",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-1",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.98
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:2",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-1-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.98\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.05,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:3",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-2-3",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-2",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.77
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:4",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-2-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.77\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.27,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:5",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-3-4",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-3",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.51
+                }
+              }
+            ],
+            "status": "open",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:6",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-3-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.51\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          },
+          {
+            "from": "buyer",
+            "subject": "Re: Supply enquiry",
+            "body": "Dear Sir or Madam,\n\nThank you for your reply and for the step you have taken.\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+            "term_sheets": [
+              {
+                "terms": {
+                  "unit_price": 14.34,
+                  "payment_days": 90,
+                  "index_clause": null
+                }
+              }
+            ],
+            "source_ref": "message:sup:70340:7",
+            "attachments": []
+          },
+          {
+            "from": "sales@70340",
+            "message_id": "msg:70340-4-5",
+            "subject": "Re: Supply enquiry",
+            "body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+            "term_sheets": [
+              {
+                "term_sheet_id": "offer:70340-4",
+                "terms": {
+                  "index_clause": {
+                    "base_month": "2026-09",
+                    "deadband_pct": 3.0,
+                    "material_share": 0.6,
+                    "series": "PPI-C241"
+                  },
+                  "payment_days": 90,
+                  "unit_price": 14.0
+                }
+              }
+            ],
+            "status": "final_offer",
+            "claim_results": [],
+            "missing_fields": [],
+            "source_ref": "message:sup:70340:8",
+            "attachments": [
+              {
+                "attachment_id": "att:70340-4-quote",
+                "name": "quote.pdf",
+                "text": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.00\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+              }
+            ]
+          }
+        ],
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:8",
+            "term_sheet_id": "offer:70340-4",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.0
+            }
+          }
+        },
+        "sources": {
+          "message:sup:70340:0:subject": "Re: Supply enquiry",
+          "message:sup:70340:0:body": "Simulated supplier. Fictional evaluation quote. Fixed material inventory covers six months of this two-year enquiry.",
+          "message:sup:70340:0:attachment:0": "Synthetic supplier quote\nOffered terms\nUnit price (EUR) 17.33\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:2:subject": "Re: Supply enquiry",
+          "message:sup:70340:2:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:2:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.98\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:4:subject": "Re: Supply enquiry",
+          "message:sup:70340:4:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:4:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.77\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:6:subject": "Re: Supply enquiry",
+          "message:sup:70340:6:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:6:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.51\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01",
+          "message:sup:70340:8:subject": "Re: Supply enquiry",
+          "message:sup:70340:8:body": "Simulated supplier. We can offer the attached package as a whole; its terms are linked.",
+          "message:sup:70340:8:attachment:0": "Synthetic supplier quote\nOffered terms\nIndex clause PPI-C241, 60% material, deadband 3.0 %, base 2026-09\nPayment terms (days net) 90\nUnit price (EUR) 14.00\nOur standard terms (apply to everything not stated above)\nPayment terms (days net) 60\nContract term (months) 24\nVolume per year (pcs) 7400\nIndex clause none\nTerms fixed by your enquiry\nLead time (days) 35\nVolume per year (pcs) 7400\nContract term (months) 24\nIncoterm DAP\nTooling (EUR) 0\nPrice valid from 2027-07-01"
+        }
+      },
+      "model": "gpt-6.1-sol",
+      "model_called": false,
+      "request_sha256": null,
+      "reading": {
+        "schema_version": 1,
+        "case_id": "case:G06",
+        "supplier_id": "sup:70340",
+        "as_of": "message:sup:70340:8",
+        "context_sha256": "35b39e622ff66641cc93907816734fe20e58d41f2d6122ab0397aff06dcb2cb5",
+        "status": "skipped",
+        "error": "terminal_status",
+        "packages": {
+          "package:0": {
+            "message_ref": "message:sup:70340:8",
+            "term_sheet_id": "offer:70340-4",
+            "terms": {
+              "index_clause": {
+                "base_month": "2026-09",
+                "deadband_pct": 3.0,
+                "material_share": 0.6,
+                "series": "PPI-C241"
+              },
+              "payment_days": 90,
+              "unit_price": 14.0
+            }
+          }
+        },
+        "observations": [],
+        "validation": "unavailable",
+        "semantic_authority": "none"
+      },
+      "seconds": 0.0
+    }
+  ],
+  "dossiers": {
+    "sup:70340": {
+      "supplier_id": "sup:70340",
+      "name": "Metallbau Steinfelder KG",
+      "country": "DE",
+      "owner_type": "family",
+      "contract_id": "ctr:4600070340",
+      "interest_rate": 0.075,
+      "cash_need": false,
+      "wants_work": false,
+      "capacity_full": false,
+      "hedged": true,
+      "ppm": 489,
+      "skonto_rate": 0.0,
+      "full_cost": null,
+      "full_cost_source": "none",
+      "full_cost_floor": 0.0,
+      "rate_measured": false,
+      "notes": [],
+      "source_ids": [
+        "doc:20251009-70340-N",
+        "doc:20260418-70340-M3",
+        "doc:20260721-70340-M2",
+        "doc:20260728-70340-M1",
+        "doc:20261013-70340-S15"
+      ]
+    }
+  },
+  "case_sha256": "9d2c339ab4a5ea74056e6aedb14438784d41ae611a080e3caecb9f24313f71ea",
+  "profile_sha256": "8b3611a341643c6fc161c82868fe1192d6dae7e6613c1f45ab3221e422ef237f"
+}

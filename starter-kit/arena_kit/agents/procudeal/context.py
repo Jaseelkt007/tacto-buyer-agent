@@ -24,6 +24,9 @@ from ...cost import RELATIONSHIP_GOALS, complete_offer, cost_breakdown
 from ...play import latest, moves_left, standing
 from . import economics as eco
 from . import signals as sg
+from . import trades
+from .policy import on
+from .research import grounded
 
 KNOWLEDGE = Path(__file__).resolve().parents[3] / "knowledge"
 TOP_OPTIONS = 6  # menu options shown besides the engine's mix and its own
@@ -216,6 +219,9 @@ def supplier_lines(neg, side, events, zone0=True):
                     " deadband pricing (12 sheet pairs in two practice cases: within 0.4 points)."
                 )
                 break
+    if zone0 and on("grounded_dossier"):
+        lines += grounded.lines(grounded.load(neg.package, side.sid), neg.case.get("parts") or [])
+        return lines
     z = dossier(side.sid) if zone0 else None
     if z:
         s = z.get("strategy") or {}
@@ -305,7 +311,7 @@ def argument_lines(neg, side, move):
         lines.append(
             f"(kinds this supplier has heard already: {', '.join(sorted(heard))}; each kind once, each ID once per case)"
         )
-    z = dossier(side.sid)
+    z = None if on("grounded_dossier") else dossier(side.sid)
     parts = set(neg.case.get("parts", []))
     theirs = [
         a
@@ -345,7 +351,7 @@ def code_price(neg, side, terms, main, its_sheet, drivers, health):
     return round(price, 2), "worth to it what the engine's move is worth to it (the engine's level, on these terms)"
 
 
-def option_lines(neg, side, move, its_sheet, drivers):
+def option_lines(neg, side, move, its_sheet, drivers, events=()):
     case, std, est = neg.case, side.standard, side.estimate()
     main = (move.get("sheets") or [None])[0] if move else None
     standing_terms = complete_offer(case, its_sheet) if its_sheet else None
@@ -369,6 +375,11 @@ def option_lines(neg, side, move, its_sheet, drivers):
     def describe(terms, price, how):
         c = eco.cost_at(case, terms, price, std, est)
         gain = worth(case, terms, price, est, drivers) / target - 1 if target else None
+        delta = c - eco.cost(case, main, std, est) if main else None
+        if on("measured_trades"):
+            return c, (f"{eur(price)} ({how}) → our C {big(c)}"
+                       + (f"; delta C vs E0 {eur(delta)}" if delta is not None else "")
+                       + "; acceptance unknown; qualitative needs have no assigned price")
         return c, f"{eur(price)} ({how}) → our C {big(c)}" + (
             f", to it {gain * 100:+.1f} % vs its own sheet" if gain is not None else ""
         )
@@ -382,12 +393,30 @@ def option_lines(neg, side, move, its_sheet, drivers):
         terms = r["terms"]
         if main and all(main.get(k) == v for k, v in terms.items()):
             continue  # the same terms as E0
-        price, how = code_price(neg, side, terms, main, its_sheet, drivers, r.get("health_price"))
+        if on("measured_trades"):
+            fields = trades.changed(case, main or {}, terms, std)
+            observed = trades.quoted_price(case, main, terms, std, events) if main else None
+            clauses = [c for c in (terms.get("index_clause"), (main or {}).get("index_clause")) if c]
+            priced_clause = fields == ["index_clause"] and clauses and all(c["series"] in drivers for c in clauses)
+            if observed:
+                price, how = observed
+            elif main and priced_clause:
+                # Carry E0's level across this one change. Comparing to its standing package could
+                # silently price other, unmeasured differences between that package and E0 at zero.
+                price, _ = code_price(neg, side, terms, main, its_sheet, drivers, None)
+                how = "explicit-driver clause estimate; excludes other unmeasured supplier values"
+            else:
+                lines.append(f"unpriced {terms_text(case, terms)}: supplier trade value UNKNOWN for {fields}; not selectable")
+                continue
+        else:
+            price, how = code_price(neg, side, terms, main, its_sheet, drivers, r.get("health_price"))
         if price is None:
             continue
         c, txt = describe(terms, price, how)
         if c >= neg.limit:
             continue  # no better than C_open or the alternative
+        if on("measured_trades") and main and c > eco.cost(case, main, std, est) + 0.01:
+            continue
         oid = f"o{i}"
         options[oid] = {"terms": terms, "price": price}
         extra = ""
@@ -400,6 +429,10 @@ def option_lines(neg, side, move, its_sheet, drivers):
                 f" (range {eur(lo)}-{eur(hi)} over its full-cost range)" if lo else ""
             )
         lines.append(f"{oid} {terms_text(case, terms)}: {txt}{extra}")
+    if on("measured_trades"):
+        lines.append("Only observed single-term trades and explicit-driver clause estimates are selectable. "
+                     "Unknown does not mean zero. No quoted ratio guarantees acceptance at our price.")
+        return lines, options
     lines.append(
         "(You choose the terms; code sets the price shown. 'to it' = how much more (+) or less (-) the sheet is worth to it than its"
         " own standing sheet [E: its cash value plus, for a clause, the protection on the exposure it states; contract length or lead"
@@ -453,7 +486,7 @@ def build(neg, threads, move, zone0=True):
     _, its_sheet = standing(events)
     status = latest(events).get("status")
     arg_lines, claims = argument_lines(neg, side, move)
-    opt_lines, options = option_lines(neg, side, move, its_sheet, its_drivers(events))
+    opt_lines, options = option_lines(neg, side, move, its_sheet, its_drivers(events), events)
     acc_lines, accept = accept_lines(neg, side, events)
     pace = pace_lines(neg, side, events, options)
     sections = [
@@ -477,4 +510,5 @@ def build(neg, threads, move, zone0=True):
         ),
     ]
     text = "\n\n".join(f"## {title}\n" + "\n".join(lines) for title, lines in sections)
-    return {"text": text, "options": options, "claims": claims, "accept": accept, "sid": sid, "status": status}
+    return {"text": text, "options": options, "claims": claims, "accept": accept, "sid": sid, "status": status,
+            "measured_trades": on("measured_trades")}

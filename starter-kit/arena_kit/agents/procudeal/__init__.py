@@ -1,9 +1,8 @@
 """ProcuDeal buyer agent.
 
-Design rule: code owns every binding number (prices, terms, claims, accept or walk away); the
-language model only writes words. `policy.Negotiator` decides, `writer` wraps the decision in an
-e-mail. If the engine fails on a move, the kit's LLM agent (with its own guards) takes that move,
-so a bug never costs the case.
+Code owns binding terms, claims and accept/walk decisions. The default reply interpreter
+records advisory readings; `policy.Negotiator` decides and `writer` assembles the email.
+If the engine fails on a move, the kit's guarded LLM agent attempts that move.
 
 Every decision is recorded in `self.trace` with the reason behind it, for run analysis and replays.
 """
@@ -15,6 +14,7 @@ from ...play import latest, standing
 from ..llm import LLMAgent
 from . import context, strategist, tactician, writer
 from .policy import Negotiator, flags_off, on
+from .reply_interpretation import ReplyInterpreter, enabled_by_default
 
 log = logging.getLogger("arena")
 
@@ -22,17 +22,29 @@ log = logging.getLogger("arena")
 class ProcuDealAgent:
     name = "procudeal"
 
-    def __init__(self, complete, package=None):
+    def __init__(self, complete, package=None, *, interpret_replies=None, review_decisions=None):
         self.package = package
         self.delegate = LLMAgent(complete, package)
         self.negotiator = None
         self.trace = []
         self.plan, self.plan_case, self.prepare_seconds = None, None, None
+        self.reconsideration = None
+        enabled = enabled_by_default() if interpret_replies is None else interpret_replies
+        self.reply_interpreter = ReplyInterpreter() if enabled else None
+        from .observation import LiveDecisionReviewer, live_review_enabled
+
+        enabled = live_review_enabled() if review_decisions is None else review_decisions
+        self.decision_reviewer = LiveDecisionReviewer(self) if enabled else None
 
     def prepare(self, case):
         """Zone 1, before the session opens (no supplier clock runs yet): the strategist's plan for
         this case. Never raises: without a plan the engine plays as it always did."""
         self.plan, self.plan_case = None, case.get("case_id")
+        if on("grounded_dossier"):
+            from .research import grounded
+
+            for sid in case.get("suppliers") or []:
+                grounded.load(self.package, sid)
         if not on("case_plan"):
             return None
         t0 = time.monotonic()
@@ -48,15 +60,17 @@ class ProcuDealAgent:
         t0 = time.monotonic()
         if self.negotiator is None or self.negotiator.case["case_id"] != case["case_id"]:
             plan = self.plan if self.plan_case == case["case_id"] else None
-            self.negotiator = Negotiator(case, self.package, plan)
+            self.negotiator = Negotiator(case, self.package, plan, reply_interpreter=self.reply_interpreter)
         try:
             self.negotiator.remember_prices(threads)
             move = self.negotiator.decide(threads)
             if on("tactician") and self.hybrid_applies(move, threads):
                 move = self.hybrid(threads, move)
+            if self.reconsideration is not None:
+                move = self.reconsideration(self.negotiator, threads, move)
             if move.get("action"):
                 decision = {"supplier_id": move["supplier_id"], "message": {"action": move["action"]}}
-                why = {"why": move["why"]}
+                why = move["why"] if isinstance(move["why"], dict) else {"why": move["why"]}
             elif move.get("note"):  # no term sheet: its standing offer stays
                 message = writer.note_email(case, threads[move["supplier_id"]], move)
                 decision = {"supplier_id": move["supplier_id"], "message": message}
@@ -70,6 +84,8 @@ class ProcuDealAgent:
         except Exception as e:  # never lose the case to a bug: the kit's guarded LLM agent moves instead
             log.exception("engine failed - delegating this move")
             decision, why, source = self.delegate.decide(case, threads), {"error": repr(e)}, "kit-llm"
+        if self.decision_reviewer is not None:
+            why = {**why, "decision_review": self.decision_reviewer.check(case, threads, decision, t0)}
         self.record(case, threads, decision, time.monotonic() - t0, source, **why)
         return decision
 
@@ -77,6 +93,8 @@ class ProcuDealAgent:
         """tactician: single-supplier cases, on offers and accepts (walk-aways and notes stay the engine's)."""
         neg = self.negotiator
         kind = (move.get("action") or {}).get("type")
+        if on("measured_trades") and kind == "accept":
+            return False
         events = threads.get(move.get("supplier_id")) or []
         if events and latest(events).get("status") in ("agreed", "final_offer"):
             return False  # it has agreed or called its final offer: the engine closes (phase 3, P18)
@@ -130,6 +148,17 @@ class ProcuDealAgent:
             "source": source,
             **why,
         }
+        if self.reply_interpreter is not None and self.negotiator is not None:
+            side = self.negotiator.sides.get(sid)
+            if side is not None and side.reply_reading is not None:
+                try:
+                    sheets = msg.get("term_sheets") or []
+                    proposed = sheets[0].get("terms") if sheets else None
+                    entry["reply_interpretation"] = self.reply_interpreter.report(
+                        case, sid, events, side.reply_reading, proposed,
+                    )
+                except Exception:
+                    log.exception("%s: reply interpretation trace unavailable", sid)
         docs = [
             {"name": a.get("name"), "text": (a.get("text") or "")[:4000]}
             for m in events

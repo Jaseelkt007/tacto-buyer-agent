@@ -1,0 +1,182 @@
+{
+  "packet_sha256": "135d5b4fe4eca5cb94b65c39af641af6b03d235f33e94454a1c860d2aef9fd8e",
+  "request_sha256": "cec5863165ff4f12904d877e1ea4afd565c842a37b0d170572038e7bcf0cb24e",
+  "case_id": "case:D02",
+  "decision_index": 6,
+  "action": "send",
+  "model": "gpt-6-luna",
+  "available": true,
+  "error": null,
+  "answers": [
+    {
+      "type": "choice",
+      "name": "verdict",
+      "choice": "RECONSIDER",
+      "probabilities": [
+        {
+          "value": "NO_ISSUE",
+          "probability": 0.24
+        },
+        {
+          "value": "RECONSIDER",
+          "probability": 0.74
+        },
+        {
+          "value": "CONSTRAINT_CONFLICT",
+          "probability": 0.02
+        }
+      ],
+      "confidence": 0.61
+    },
+    {
+      "type": "choice",
+      "name": "field",
+      "choice": "payment_days",
+      "probabilities": [
+        {
+          "value": "NONE",
+          "probability": 0.09
+        },
+        {
+          "value": "claims",
+          "probability": 0.01
+        },
+        {
+          "value": "contract_months",
+          "probability": 0.01
+        },
+        {
+          "value": "coverage",
+          "probability": 0.02
+        },
+        {
+          "value": "incoterm",
+          "probability": 0.05
+        },
+        {
+          "value": "lead_time_days",
+          "probability": 0.08
+        },
+        {
+          "value": "negotiation_status",
+          "probability": 0.02
+        },
+        {
+          "value": "offer_id",
+          "probability": 0.02
+        },
+        {
+          "value": "other",
+          "probability": 0.03
+        },
+        {
+          "value": "payment_days",
+          "probability": 0.42
+        },
+        {
+          "value": "unit_price",
+          "probability": 0.25
+        }
+      ],
+      "confidence": 0.36
+    },
+    {
+      "type": "choice",
+      "name": "evidence",
+      "choice": "case",
+      "probabilities": [
+        {
+          "value": "NONE",
+          "probability": 0.14
+        },
+        {
+          "value": "case",
+          "probability": 0.19
+        },
+        {
+          "value": "message:sup:DEMO-J1:0",
+          "probability": 0.11
+        },
+        {
+          "value": "message:sup:DEMO-J1:1",
+          "probability": 0.06
+        },
+        {
+          "value": "message:sup:DEMO-J1:2",
+          "probability": 0.16
+        },
+        {
+          "value": "message:sup:DEMO-J1:3",
+          "probability": 0.03
+        },
+        {
+          "value": "message:sup:DEMO-J1:4",
+          "probability": 0.09
+        },
+        {
+          "value": "message:sup:DEMO-J1:5",
+          "probability": 0.02
+        },
+        {
+          "value": "message:sup:DEMO-J1:6",
+          "probability": 0.18
+        },
+        {
+          "value": "message:sup:DEMO-C1:0",
+          "probability": 0.0
+        },
+        {
+          "value": "message:sup:DEMO-C1:1",
+          "probability": 0.01
+        },
+        {
+          "value": "message:sup:DEMO-C1:2",
+          "probability": 0.0
+        },
+        {
+          "value": "message:sup:DEMO-C1:3",
+          "probability": 0.0
+        },
+        {
+          "value": "message:sup:DEMO-C1:4",
+          "probability": 0.0
+        },
+        {
+          "value": "message:sup:DEMO-C1:5",
+          "probability": 0.01
+        },
+        {
+          "value": "message:sup:DEMO-C1:6",
+          "probability": 0.0
+        }
+      ],
+      "confidence": 0.14
+    }
+  ],
+  "usage": {
+    "input_tokens": 12145,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 10372,
+      "cache_write_tokens_details": {
+        "ttl_30m_tokens": 10372,
+        "ttl_12h_tokens": 0
+      }
+    },
+    "output_tokens": 0,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 12145
+  },
+  "response_id": null,
+  "verdict": "RECONSIDER",
+  "field": "payment_days",
+  "evidence": "case",
+  "supporting_source": {
+    "id": "case",
+    "kind": "buyer_requirements",
+    "text": "{\"case_id\": \"case:D02\", \"set\": \"demo\", \"type\": \"rfq\", \"title\": \"New stainless pump shaft SH-220: award one of two suppliers\", \"briefing\": \"The new PX pump series needs shaft SH-220 (1.4021). Two suppliers quote: a German job shop and a Polish machining company. Lead time must not exceed 42 days; the line needs parts within 35 days, every day later costs EUR 150. Machined shafts are a leverage category: several capable suppliers, the goal is the lowest total cost. Award one.\", \"trigger_doc\": null, \"parts\": [\"part:SH-220\"], \"suppliers\": [\"sup:DEMO-J1\", \"sup:DEMO-C1\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"lead_time_days\", \"incoterm\"], \"fixed_terms\": {\"contract_months\": 24}, \"term_options\": {\"payment_days\": [14, 30, 45, 60], \"lead_time_days\": [21, 28, 35, 42, 49], \"incoterm\": [\"EXW\", \"FCA\", \"DAP\"]}, \"buyer\": {\"category_goal\": \"leverage\", \"need_per_year\": 6000, \"horizon_years\": 2, \"current_unit_price\": null, \"fallback_unit_price\": 19.9, \"fallback_risk_pct\": 5, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"late_cost_per_day\": 150, \"cost_per_defect\": 40, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.4, \"DAP\": 0.0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 42}], \"alternative\": {\"kind\": \"quote\", \"ref\": \"quote:D02-ALT\", \"terms\": {\"unit_price\": 19.9, \"incoterm\": \"DAP\", \"payment_days\": 60, \"lead_time_days\": 35}}}, \"round_limit\": 10, \"refs\": [\"quote:D02-ALT\", \"sc:DEMO-J1@2026Q3\", \"sc:DEMO-C1@2026Q3\", \"cost:part:SH-220\", \"fc:SH-220@2026-09\", \"news:N-0412\"]}"
+  },
+  "seconds": 0.346
+}

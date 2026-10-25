@@ -1,0 +1,1206 @@
+{
+  "supplier_id": "sup:70510",
+  "input_hash": "7e49e12d11c435ac1516bb33ec32907e2aaa7fd8e46f3fed3bd72713552b9cb9",
+  "dossier_hash": "35cfd885a83945d4cd5115677885f760199d1f4fb454f0c0a83bac352eabd082",
+  "model": "gpt-6.1-sol",
+  "effort": "low",
+  "meta": {
+    "seconds": 41.16,
+    "usage": {
+      "input_tokens": 48289,
+      "input_tokens_details": {
+        "cache_write_tokens": 48286,
+        "cached_tokens": 0
+      },
+      "output_tokens": 5138,
+      "output_tokens_details": {
+        "reasoning_tokens": 27
+      },
+      "total_tokens": 53427
+    }
+  },
+  "audit": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "inference",
+        "reason": "September 2026 copper data supports a peak and the supplier's 14 September letter attributes the 350011 increase to costs. Recovery needs and a preference for indexation remain hypotheses, not independently established preferences.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:drivers",
+            "quote": "\"peak_month\": \"2026-09\", \"peak_value\": 1288.5918"
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "Owing to the strong rise in copper and electronic component prices"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "September 2026 buyer forecasts and zero quotas on 350012/350013 do not demonstrate supplier appetite for growth or binding volume. Capacity and willingness are unrecorded.",
+        "excerpts": [
+          {
+            "ref": "fc:350011@2026-09",
+            "quote": "\"qty_next_12m\": 6110, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "evidence:part:350013:sourcing",
+            "quote": "\"name\": \"Antriebstechnik Nordmark AG\", \"quota_pct\": 0, \"status\": \"qualified\""
+          },
+          {
+            "ref": "evidence:part:350012:sourcing",
+            "quote": "\"name\": \"Antriebstechnik Nordmark AG\", \"quota_pct\": 0, \"status\": \"qualified\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "unsupported",
+        "reason": "The renewal clause does not establish a desire for longer commitment. The October 2025 shutdown notice concerns the past holiday period, not a current September 2026 constraint.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070510#8.1",
+            "quote": "extends by 12 months unless terminated with 90 days' notice."
+          },
+          {
+            "ref": "doc:20251019-70510-N",
+            "quote": "email - 2025-10-19 - Antriebstechnik Nordmark AG"
+          },
+          {
+            "ref": "doc:20251019-70510-N",
+            "quote": "Our plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "unsupported",
+        "reason": "FY2025 financial indicators and 30-day contractual payment terms establish neither absence of cash stress nor the supplier's marginal value of faster payment.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"credit_index\": 147, \"credit_index_12m_ago\": 147, \"equity_ratio_pct\": 29.1, \"filed_fy\": 2025"
+          },
+          {
+            "ref": "ctr:4600070510#4.1",
+            "quote": "Payment: 30 days net."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "supported",
+        "reason": "February and April 2026 meeting notes record the KAM's explanation of approval above 2% and fortnightly committee meetings. This supports the reported process, not a guaranteed decision turnaround.",
+        "excerpts": [
+          {
+            "ref": "doc:20260410-70510-M1",
+            "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "supported",
+        "reason": "As explicitly qualified by 'our should-cost,' the July 2026 estimates exceed current prices on both parts. The approximately 5% uncertainty is documented; actual losses are not established.",
+        "excerpts": [
+          {
+            "ref": "cost:350011",
+            "quote": "\"checked_unit_cost\": 374.95, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "cost:350010",
+            "quote": "\"checked_unit_cost\": 244.39, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "EV-2026-70510-350011",
+            "quote": "\"price\": 348.32"
+          },
+          {
+            "ref": "EV-2026-70510-350010",
+            "quote": "\"price\": 239.21"
+          },
+          {
+            "ref": "package:company.md",
+            "quote": "the category team modelled the current supplier's own plant (`supplier_id`, error about\n5 %)"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "supported",
+        "reason": "Current sourcing shows Nordmark at 100% on 350011 and Saalach qualified at zero quota. Saalach's 3 September 2026 quote exceeds both current price and the requested new price.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:sourcing",
+            "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70510\""
+          },
+          {
+            "ref": "evidence:part:350011:sourcing",
+            "quote": "\"quota_pct\": 0, \"status\": \"qualified\", \"supplier_id\": \"sup:70580\""
+          },
+          {
+            "ref": "quote:7200002",
+            "quote": "\"unit_price\": 421.06"
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "from EUR 348.32 to EUR 370.96"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.constraints.3",
+        "verdict": "supported",
+        "reason": "For 350010/350011, the framework fixes annual prices and provides automatic renewal. The 350011 letter gives 109 days versus the required 90, supporting notice timing compliance, not automatic acceptance of the increase.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070510#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070510#8.1",
+            "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice."
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "\"notice_days\": 109, \"notice_given_days\": 109, \"part_ids\": \"part:350011\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "A 24-month trade needs current allowed options and total-cost analysis. Neither a planning-driven persona nor supplier valuation of that commitment is recorded.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "Forecast growth is recorded, but a binding-volume-for-price exchange requires case volume options, need, supplier willingness and total-cost math.",
+        "excerpts": [
+          {
+            "ref": "fc:350011@2026-09",
+            "quote": "\"change_pct\": 11.9"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "covered   = min(V, N) · years"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "Copper exposure is plausible, but the recommended clause, lower base and zero deadband require allowed options and case index-path/risk economics. A peak alone does not establish trade value.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "with an index clause"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "`index_path` is the case's\nexpected move of the clause's series."
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "Owing to the strong rise in copper and electronic component prices"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "Payment trade value requires current options, buyer financing math and a supplier cost-of-money estimate. No cash-stress assessment supports the asserted minor value.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "paying earlier costs interest"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "A later effective date paired with higher price requires permitted dates and calculation of pre-change purchases and total cost.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "pre       = units bought between the horizon start and effective_date (at current_unit_price)"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "A ppm commitment and an assertion of no price cost need case options and supplier economics. Certificate incidents do not establish free tighter commitments.",
+        "excerpts": [
+          {
+            "ref": "qn:20004826",
+            "quote": "\"defect\": \"wrong material certificate\""
+          },
+          {
+            "ref": "rules:api",
+            "quote": "what a faster delivery, a larger volume or a tighter defect commitment costs or\nbrings it"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "inference",
+        "reason": "Historical 350011 settlements were below asks, but a future modest landing within the KAM band is not established by that pattern.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70510-350011",
+            "quote": "\"asked_pct\": 4.7, \"date\": \"2025-11-12\""
+          },
+          {
+            "ref": "EV-2026-70510-350011",
+            "quote": "\"settled_pct\": 1.2"
+          },
+          {
+            "ref": "EV-2025-70510-350011",
+            "quote": "\"asked_pct\": 3.5"
+          },
+          {
+            "ref": "EV-2025-70510-350011",
+            "quote": "\"settled_pct\": 1.4"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "requires_case",
+        "reason": "The September 2026 shared forecast rises, but exchanging binding volume for price restraint requires case options and economics; supplier appetite is not demonstrated.",
+        "excerpts": [
+          {
+            "ref": "fc:350011@2026-09",
+            "quote": "\"change_pct\": 11.9"
+          },
+          {
+            "ref": "fc:350011@2026-09",
+            "quote": "\"qty_next_12m\": 6110, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "supported",
+        "reason": "The 350011 order history directly establishes the current price anchor of EUR 348.32 through September 2026. The opaque argument ID itself adds no evidence.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:orders",
+            "quote": "\"latest_price\": 348.32"
+          },
+          {
+            "ref": "po:4500014474-10",
+            "quote": "\"order_date\": \"2026-09-30\", \"price\": 348.32"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "unsupported",
+        "reason": "The September 2026 Vesmo quote is nominally cheaper and states material coverage, but 'strongest lever' is not demonstrated. FCA freight, payment differences and current case eligibility remain material.",
+        "excerpts": [
+          {
+            "ref": "quote:7300077",
+            "quote": "\"incoterm\": \"FCA\""
+          },
+          {
+            "ref": "quote:7300077",
+            "quote": "\"remarks\": \"Material covered until March 2027; price valid accordingly.\""
+          },
+          {
+            "ref": "quote:7300077",
+            "quote": "\"unit_price\": 225.61"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "a `quote` of this case (in its `refs` or your alternative)"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "unsupported",
+        "reason": "The July 2026 CZ estimate is numerically below prices, but is an uncertain estimate of Vesmo's plant, not demonstrated efficiency or Nordmark's cost.",
+        "excerpts": [
+          {
+            "ref": "cost:350010-70520",
+            "quote": "\"checked_unit_cost\": 221.47, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "cost:350010-70520",
+            "quote": "\"cost_base\": \"CZ\", \"estimate_date\": \"2026-07-15\""
+          },
+          {
+            "ref": "cost:350010-70520",
+            "quote": "\"supplier_id\": \"sup:70520\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "inference",
+        "reason": "September 2026 forecast growth and the existing split make a volume carrot plausible, not a demonstrated supplier preference or available capacity.",
+        "excerpts": [
+          {
+            "ref": "fc:350010@2026-09",
+            "quote": "\"change_pct\": 7.6"
+          },
+          {
+            "ref": "evidence:part:350010:sourcing",
+            "quote": "\"quota_pct\": 70, \"status\": \"active\", \"supplier_id\": \"sup:70510\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "inference",
+        "reason": "Vesmo is an active approved source, making reallocation plausible. Actual incremental capacity and feasibility of a quota move are not recorded.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350010:sourcing",
+            "quote": "\"approved_since\": \"2016-09-01\", \"country\": \"CZ\", \"name\": \"Vesmo Elektromotory a.s.\", \"quota_pct\": 30, \"status\": \"active\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "inference",
+        "reason": "350013 growth, qualification and the cheaper historical bid are recorded. The May 2024 bid expired after 30 days; current bundling appetite and value are hypotheses.",
+        "excerpts": [
+          {
+            "ref": "fc:350013@2026-09",
+            "quote": "\"change_pct\": 33.9"
+          },
+          {
+            "ref": "evidence:part:350013:sourcing",
+            "quote": "\"name\": \"Antriebstechnik Nordmark AG\", \"quota_pct\": 0, \"status\": \"qualified\""
+          },
+          {
+            "ref": "quote:7100049",
+            "quote": "\"quote_date\": \"2024-05-15\""
+          },
+          {
+            "ref": "quote:7100049",
+            "quote": "\"unit_price\": 1495.59, \"validity_days\": 30"
+          },
+          {
+            "ref": "quote:7100048",
+            "quote": "\"unit_price\": 1671.86"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "unsupported",
+        "reason": "A February 2026 certificate complaint on 350011 exists, but is not a fresh September event. Prior citation status and the value of ppm terms are not established.",
+        "excerpts": [
+          {
+            "ref": "qn:20004826",
+            "quote": "\"d8_date\": \"2026-04-02\", \"defect\": \"wrong material certificate\""
+          },
+          {
+            "ref": "qn:20004826",
+            "quote": "\"part_id\": \"part:350011\", \"ppm\": 5263, \"qn_date\": \"2026-02-18\""
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "unsupported",
+        "reason": "Rolling OTD to September 2026 is below target, but delivery data does not establish defect-rate commitments or freshness for a later round.",
+        "excerpts": [
+          {
+            "ref": "sc:70510@2026Q3",
+            "quote": "\"otd_pct\": 90.4, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\""
+          },
+          {
+            "ref": "ctr:4600070510#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "inference",
+        "reason": "Payment delays are small but frequent. Calling the buyer reliable and expecting this to support a trade are interpretations, not recorded supplier views.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 1.1"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 62.2, \"paid_over_10_days_late_pct\": 0.0"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.levers.11",
+        "verdict": "requires_case",
+        "reason": "Historical renewal language does not establish that contract duration is negotiable in the current case or that a longer commitment has favorable trade value.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070510#8.1",
+            "quote": "extends by 12 months unless terminated with 90 days' notice."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "A term sheet carries **exactly** the case's\n`negotiable` fields; `fixed_terms` hold the rest."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "requires_case",
+        "reason": "The proposed landing and terms require current case economics. Estimated copper weights do not prove actual pass-through above the ask, and uncertain should-cost does not establish little price room. A blanket peak-checkability judgment also exceeds the API rules.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:drivers",
+            "quote": "\"estimate\": \"category team estimate 2026-06\""
+          },
+          {
+            "ref": "cost:350011",
+            "quote": "\"checked_unit_cost\": 374.95, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "Group ownership, size, approval process, settlement history and repeated certificate errors have support. Guardedness, actual below-cost sales, financial ability to walk away and recurring shutdown enforcement are not established; the shutdown notice is from 2025.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"group_parent\": \"Nordmark Gruppe\", \"legal_form\": \"AG\", \"owner_type\": \"group\", \"staff\": 4800"
+          },
+          {
+            "ref": "doc:20260410-70510-M1",
+            "quote": "price changes above 2 % need the approval of their pricing committee"
+          },
+          {
+            "ref": "qn:20004826",
+            "quote": "\"defect\": \"wrong material certificate\""
+          },
+          {
+            "ref": "doc:20251019-70510-N",
+            "quote": "email - 2025-10-19 - Antriebstechnik Nordmark AG"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "unsupported",
+        "reason": "Sourcing, ownership, historical bids and committee process are substantially recorded. Actual cost pass-through, little price room, supplier appetite for award carrots and weak electronics relevance are unproven. Should-cost and estimated driver weights cannot establish these conclusions.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:sourcing",
+            "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70510\""
+          },
+          {
+            "ref": "cost:350011",
+            "quote": "\"checked_unit_cost\": 374.95, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "Owing to the strong rise in copper and electronic component prices"
+          },
+          {
+            "ref": "evidence:part:350011:drivers",
+            "quote": "\"estimate\": \"category team estimate 2026-06\""
+          },
+          {
+            "ref": "doc:20260410-70510-M1",
+            "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "unsupported",
+        "reason": "Notice timing and rival-data disclosure concerns have support. Actual below-cost sales, predicted dismissal or flattery and switch credibility are not established. Peak comparisons are not categorically uncheckable: eligibility depends on the index window; the May 2022 steel peak is too old. Order IDs are checked for prices, not automatically treated as rival-quote disclosures.",
+        "excerpts": [
+          {
+            "ref": "cost:350011",
+            "quote": "\"checked_unit_cost\": 374.95, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          },
+          {
+            "ref": "evidence:part:350011:drivers",
+            "quote": "\"top_month\": \"2022-05\", \"top_value\": 144.4"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Citing a buyer-private fact - a rival quote - reveals it to the\nsupplier you cite it to."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2-8 × `po`, same part"
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "\"notice_given_days\": 109"
+          }
+        ],
+        "provenance_valid": true,
+        "validation_errors": []
+      }
+    ],
+    "errors": [],
+    "complete": true,
+    "verdict_counts": {
+      "inference": 7,
+      "unsupported": 9,
+      "supported": 5,
+      "requires_case": 9
+    }
+  },
+  "raw": {
+    "findings": [
+      {
+        "claim_id": "strategy.needs.0",
+        "verdict": "inference",
+        "reason": "September 2026 copper data supports a peak and the supplier's 14 September letter attributes the 350011 increase to costs. Recovery needs and a preference for indexation remain hypotheses, not independently established preferences.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:drivers",
+            "quote": "\"peak_month\": \"2026-09\", \"peak_value\": 1288.5918"
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "Owing to the strong rise in copper and electronic component prices"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.1",
+        "verdict": "inference",
+        "reason": "September 2026 buyer forecasts and zero quotas on 350012/350013 do not demonstrate supplier appetite for growth or binding volume. Capacity and willingness are unrecorded.",
+        "excerpts": [
+          {
+            "ref": "fc:350011@2026-09",
+            "quote": "\"qty_next_12m\": 6110, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "evidence:part:350013:sourcing",
+            "quote": "\"name\": \"Antriebstechnik Nordmark AG\", \"quota_pct\": 0, \"status\": \"qualified\""
+          },
+          {
+            "ref": "evidence:part:350012:sourcing",
+            "quote": "\"name\": \"Antriebstechnik Nordmark AG\", \"quota_pct\": 0, \"status\": \"qualified\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.2",
+        "verdict": "unsupported",
+        "reason": "The renewal clause does not establish a desire for longer commitment. The October 2025 shutdown notice concerns the past holiday period, not a current September 2026 constraint.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070510#8.1",
+            "quote": "extends by 12 months unless terminated with 90 days' notice."
+          },
+          {
+            "ref": "doc:20251019-70510-N",
+            "quote": "email - 2025-10-19 - Antriebstechnik Nordmark AG"
+          },
+          {
+            "ref": "doc:20251019-70510-N",
+            "quote": "Our plant is closed from 23 December to 6 January. Please place call-offs for January by 10 December."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.needs.3",
+        "verdict": "unsupported",
+        "reason": "FY2025 financial indicators and 30-day contractual payment terms establish neither absence of cash stress nor the supplier's marginal value of faster payment.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"credit_index\": 147, \"credit_index_12m_ago\": 147, \"equity_ratio_pct\": 29.1, \"filed_fy\": 2025"
+          },
+          {
+            "ref": "ctr:4600070510#4.1",
+            "quote": "Payment: 30 days net."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.0",
+        "verdict": "supported",
+        "reason": "February and April 2026 meeting notes record the KAM's explanation of approval above 2% and fortnightly committee meetings. This supports the reported process, not a guaranteed decision turnaround.",
+        "excerpts": [
+          {
+            "ref": "doc:20260410-70510-M1",
+            "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.1",
+        "verdict": "supported",
+        "reason": "As explicitly qualified by 'our should-cost,' the July 2026 estimates exceed current prices on both parts. The approximately 5% uncertainty is documented; actual losses are not established.",
+        "excerpts": [
+          {
+            "ref": "cost:350011",
+            "quote": "\"checked_unit_cost\": 374.95, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "cost:350010",
+            "quote": "\"checked_unit_cost\": 244.39, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "EV-2026-70510-350011",
+            "quote": "\"price\": 348.32"
+          },
+          {
+            "ref": "EV-2026-70510-350010",
+            "quote": "\"price\": 239.21"
+          },
+          {
+            "ref": "package:company.md",
+            "quote": "the category team modelled the current supplier's own plant (`supplier_id`, error about\n5 %)"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.2",
+        "verdict": "supported",
+        "reason": "Current sourcing shows Nordmark at 100% on 350011 and Saalach qualified at zero quota. Saalach's 3 September 2026 quote exceeds both current price and the requested new price.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:sourcing",
+            "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70510\""
+          },
+          {
+            "ref": "evidence:part:350011:sourcing",
+            "quote": "\"quota_pct\": 0, \"status\": \"qualified\", \"supplier_id\": \"sup:70580\""
+          },
+          {
+            "ref": "quote:7200002",
+            "quote": "\"unit_price\": 421.06"
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "from EUR 348.32 to EUR 370.96"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.constraints.3",
+        "verdict": "supported",
+        "reason": "For 350010/350011, the framework fixes annual prices and provides automatic renewal. The 350011 letter gives 109 days versus the required 90, supporting notice timing compliance, not automatic acceptance of the increase.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070510#3.1",
+            "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year."
+          },
+          {
+            "ref": "ctr:4600070510#8.1",
+            "quote": "Valid from 2024-01-01 to 2026-12-31; extends by 12 months unless terminated with 90 days' notice."
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "\"notice_days\": 109, \"notice_given_days\": 109, \"part_ids\": \"part:350011\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.0",
+        "verdict": "requires_case",
+        "reason": "A 24-month trade needs current allowed options and total-cost analysis. Neither a planning-driven persona nor supplier valuation of that commitment is recorded.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.1",
+        "verdict": "requires_case",
+        "reason": "Forecast growth is recorded, but a binding-volume-for-price exchange requires case volume options, need, supplier willingness and total-cost math.",
+        "excerpts": [
+          {
+            "ref": "fc:350011@2026-09",
+            "quote": "\"change_pct\": 11.9"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "committed = V · years"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "covered   = min(V, N) · years"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.2",
+        "verdict": "requires_case",
+        "reason": "Copper exposure is plausible, but the recommended clause, lower base and zero deadband require allowed options and case index-path/risk economics. A peak alone does not establish trade value.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "with an index clause"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "`index_path` is the case's\nexpected move of the clause's series."
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "Owing to the strong rise in copper and electronic component prices"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.3",
+        "verdict": "requires_case",
+        "reason": "Payment trade value requires current options, buyer financing math and a supplier cost-of-money estimate. No cash-stress assessment supports the asserted minor value.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "paying earlier costs interest"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.4",
+        "verdict": "requires_case",
+        "reason": "A later effective date paired with higher price requires permitted dates and calculation of pre-change purchases and total cost.",
+        "excerpts": [
+          {
+            "ref": "rules:api",
+            "quote": "pre       = units bought between the horizon start and effective_date (at current_unit_price)"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.trades.5",
+        "verdict": "requires_case",
+        "reason": "A ppm commitment and an assertion of no price cost need case options and supplier economics. Certificate incidents do not establish free tighter commitments.",
+        "excerpts": [
+          {
+            "ref": "qn:20004826",
+            "quote": "\"defect\": \"wrong material certificate\""
+          },
+          {
+            "ref": "rules:api",
+            "quote": "what a faster delivery, a larger volume or a tighter defect commitment costs or\nbrings it"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.0",
+        "verdict": "inference",
+        "reason": "Historical 350011 settlements were below asks, but a future modest landing within the KAM band is not established by that pattern.",
+        "excerpts": [
+          {
+            "ref": "EV-2026-70510-350011",
+            "quote": "\"asked_pct\": 4.7, \"date\": \"2025-11-12\""
+          },
+          {
+            "ref": "EV-2026-70510-350011",
+            "quote": "\"settled_pct\": 1.2"
+          },
+          {
+            "ref": "EV-2025-70510-350011",
+            "quote": "\"asked_pct\": 3.5"
+          },
+          {
+            "ref": "EV-2025-70510-350011",
+            "quote": "\"settled_pct\": 1.4"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.1",
+        "verdict": "requires_case",
+        "reason": "The September 2026 shared forecast rises, but exchanging binding volume for price restraint requires case options and economics; supplier appetite is not demonstrated.",
+        "excerpts": [
+          {
+            "ref": "fc:350011@2026-09",
+            "quote": "\"change_pct\": 11.9"
+          },
+          {
+            "ref": "fc:350011@2026-09",
+            "quote": "\"qty_next_12m\": 6110, \"shared_with_suppliers\": 1"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Every negotiable field except `unit_price` takes\na value from `term_options` (or the supplier's standard value)."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.2",
+        "verdict": "supported",
+        "reason": "The 350011 order history directly establishes the current price anchor of EUR 348.32 through September 2026. The opaque argument ID itself adds no evidence.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:orders",
+            "quote": "\"latest_price\": 348.32"
+          },
+          {
+            "ref": "po:4500014474-10",
+            "quote": "\"order_date\": \"2026-09-30\", \"price\": 348.32"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.3",
+        "verdict": "unsupported",
+        "reason": "The September 2026 Vesmo quote is nominally cheaper and states material coverage, but 'strongest lever' is not demonstrated. FCA freight, payment differences and current case eligibility remain material.",
+        "excerpts": [
+          {
+            "ref": "quote:7300077",
+            "quote": "\"incoterm\": \"FCA\""
+          },
+          {
+            "ref": "quote:7300077",
+            "quote": "\"remarks\": \"Material covered until March 2027; price valid accordingly.\""
+          },
+          {
+            "ref": "quote:7300077",
+            "quote": "\"unit_price\": 225.61"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "a `quote` of this case (in its `refs` or your alternative)"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.4",
+        "verdict": "unsupported",
+        "reason": "The July 2026 CZ estimate is numerically below prices, but is an uncertain estimate of Vesmo's plant, not demonstrated efficiency or Nordmark's cost.",
+        "excerpts": [
+          {
+            "ref": "cost:350010-70520",
+            "quote": "\"checked_unit_cost\": 221.47, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "cost:350010-70520",
+            "quote": "\"cost_base\": \"CZ\", \"estimate_date\": \"2026-07-15\""
+          },
+          {
+            "ref": "cost:350010-70520",
+            "quote": "\"supplier_id\": \"sup:70520\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.5",
+        "verdict": "inference",
+        "reason": "September 2026 forecast growth and the existing split make a volume carrot plausible, not a demonstrated supplier preference or available capacity.",
+        "excerpts": [
+          {
+            "ref": "fc:350010@2026-09",
+            "quote": "\"change_pct\": 7.6"
+          },
+          {
+            "ref": "evidence:part:350010:sourcing",
+            "quote": "\"quota_pct\": 70, \"status\": \"active\", \"supplier_id\": \"sup:70510\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.6",
+        "verdict": "inference",
+        "reason": "Vesmo is an active approved source, making reallocation plausible. Actual incremental capacity and feasibility of a quota move are not recorded.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350010:sourcing",
+            "quote": "\"approved_since\": \"2016-09-01\", \"country\": \"CZ\", \"name\": \"Vesmo Elektromotory a.s.\", \"quota_pct\": 30, \"status\": \"active\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.7",
+        "verdict": "inference",
+        "reason": "350013 growth, qualification and the cheaper historical bid are recorded. The May 2024 bid expired after 30 days; current bundling appetite and value are hypotheses.",
+        "excerpts": [
+          {
+            "ref": "fc:350013@2026-09",
+            "quote": "\"change_pct\": 33.9"
+          },
+          {
+            "ref": "evidence:part:350013:sourcing",
+            "quote": "\"name\": \"Antriebstechnik Nordmark AG\", \"quota_pct\": 0, \"status\": \"qualified\""
+          },
+          {
+            "ref": "quote:7100049",
+            "quote": "\"quote_date\": \"2024-05-15\""
+          },
+          {
+            "ref": "quote:7100049",
+            "quote": "\"unit_price\": 1495.59, \"validity_days\": 30"
+          },
+          {
+            "ref": "quote:7100048",
+            "quote": "\"unit_price\": 1671.86"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.8",
+        "verdict": "unsupported",
+        "reason": "A February 2026 certificate complaint on 350011 exists, but is not a fresh September event. Prior citation status and the value of ppm terms are not established.",
+        "excerpts": [
+          {
+            "ref": "qn:20004826",
+            "quote": "\"d8_date\": \"2026-04-02\", \"defect\": \"wrong material certificate\""
+          },
+          {
+            "ref": "qn:20004826",
+            "quote": "\"part_id\": \"part:350011\", \"ppm\": 5263, \"qn_date\": \"2026-02-18\""
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.9",
+        "verdict": "unsupported",
+        "reason": "Rolling OTD to September 2026 is below target, but delivery data does not establish defect-rate commitments or freshness for a later round.",
+        "excerpts": [
+          {
+            "ref": "sc:70510@2026Q3",
+            "quote": "\"otd_pct\": 90.4, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\""
+          },
+          {
+            "ref": "ctr:4600070510#6.1",
+            "quote": "on-time delivery target 95 %"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.10",
+        "verdict": "inference",
+        "reason": "Payment delays are small but frequent. Calling the buyer reliable and expecting this to support a trade are interpretations, not recorded supplier views.",
+        "excerpts": [
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"avg_days_paid_after_due_last_12m\": 1.1"
+          },
+          {
+            "ref": "evidence:invoices",
+            "quote": "\"paid_late_pct\": 62.2, \"paid_over_10_days_late_pct\": 0.0"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.levers.11",
+        "verdict": "requires_case",
+        "reason": "Historical renewal language does not establish that contract duration is negotiable in the current case or that a longer commitment has favorable trade value.",
+        "excerpts": [
+          {
+            "ref": "ctr:4600070510#8.1",
+            "quote": "extends by 12 months unless terminated with 90 days' notice."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "A term sheet carries **exactly** the case's\n`negotiable` fields; `fixed_terms` hold the rest."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.price_view",
+        "verdict": "requires_case",
+        "reason": "The proposed landing and terms require current case economics. Estimated copper weights do not prove actual pass-through above the ask, and uncertain should-cost does not establish little price room. A blanket peak-checkability judgment also exceeds the API rules.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:drivers",
+            "quote": "\"estimate\": \"category team estimate 2026-06\""
+          },
+          {
+            "ref": "cost:350011",
+            "quote": "\"checked_unit_cost\": 374.95, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "You don't know its cost and rates - estimate them"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.persona",
+        "verdict": "unsupported",
+        "reason": "Group ownership, size, approval process, settlement history and repeated certificate errors have support. Guardedness, actual below-cost sales, financial ability to walk away and recurring shutdown enforcement are not established; the shutdown notice is from 2025.",
+        "excerpts": [
+          {
+            "ref": "evidence:intel",
+            "quote": "\"group_parent\": \"Nordmark Gruppe\", \"legal_form\": \"AG\", \"owner_type\": \"group\", \"staff\": 4800"
+          },
+          {
+            "ref": "doc:20260410-70510-M1",
+            "quote": "price changes above 2 % need the approval of their pricing committee"
+          },
+          {
+            "ref": "qn:20004826",
+            "quote": "\"defect\": \"wrong material certificate\""
+          },
+          {
+            "ref": "doc:20251019-70510-N",
+            "quote": "email - 2025-10-19 - Antriebstechnik Nordmark AG"
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.summary",
+        "verdict": "unsupported",
+        "reason": "Sourcing, ownership, historical bids and committee process are substantially recorded. Actual cost pass-through, little price room, supplier appetite for award carrots and weak electronics relevance are unproven. Should-cost and estimated driver weights cannot establish these conclusions.",
+        "excerpts": [
+          {
+            "ref": "evidence:part:350011:sourcing",
+            "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70510\""
+          },
+          {
+            "ref": "cost:350011",
+            "quote": "\"checked_unit_cost\": 374.95, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "Owing to the strong rise in copper and electronic component prices"
+          },
+          {
+            "ref": "evidence:part:350011:drivers",
+            "quote": "\"estimate\": \"category team estimate 2026-06\""
+          },
+          {
+            "ref": "doc:20260410-70510-M1",
+            "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks."
+          }
+        ]
+      },
+      {
+        "claim_id": "strategy.traps",
+        "verdict": "unsupported",
+        "reason": "Notice timing and rival-data disclosure concerns have support. Actual below-cost sales, predicted dismissal or flattery and switch credibility are not established. Peak comparisons are not categorically uncheckable: eligibility depends on the index window; the May 2022 steel peak is too old. Order IDs are checked for prices, not automatically treated as rival-quote disclosures.",
+        "excerpts": [
+          {
+            "ref": "cost:350011",
+            "quote": "\"checked_unit_cost\": 374.95, \"confidence_pct\": 5"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2 × `idx`, one series, ≤ 12 months apart, ending within the last 12 months of the data"
+          },
+          {
+            "ref": "evidence:part:350011:drivers",
+            "quote": "\"top_month\": \"2022-05\", \"top_value\": 144.4"
+          },
+          {
+            "ref": "rules:api",
+            "quote": "Citing a buyer-private fact - a rival quote - reveals it to the\nsupplier you cite it to."
+          },
+          {
+            "ref": "rules:api",
+            "quote": "2-8 × `po`, same part"
+          },
+          {
+            "ref": "doc:20260914-70510-P02",
+            "quote": "\"notice_given_days\": 109"
+          }
+        ]
+      }
+    ]
+  }
+}

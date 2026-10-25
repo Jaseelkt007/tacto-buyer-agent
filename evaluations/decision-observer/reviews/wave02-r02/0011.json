@@ -1,0 +1,190 @@
+{
+  "packet_sha256": "617a6bd6c27689351c356881f6f5c6da5600f6be6bad95190ecd06d3a321b16c",
+  "request_sha256": "33fb4078f00c639383c0e60e7dddedbd4d5efd1b0ceaa097eaad4ac9c3fc114a",
+  "case_id": "case:G03",
+  "decision_index": 1,
+  "action": "send",
+  "model": "gpt-6-luna",
+  "available": true,
+  "error": null,
+  "answers": [
+    {
+      "type": "choice",
+      "name": "verdict",
+      "choice": "RECONSIDER",
+      "probabilities": [
+        {
+          "value": "NO_ISSUE",
+          "probability": 0.02
+        },
+        {
+          "value": "RECONSIDER",
+          "probability": 0.91
+        },
+        {
+          "value": "CONSTRAINT_CONFLICT",
+          "probability": 0.07
+        }
+      ],
+      "confidence": 0.86
+    },
+    {
+      "type": "choice",
+      "name": "field",
+      "choice": "contract_months",
+      "probabilities": [
+        {
+          "value": "NONE",
+          "probability": 0.07
+        },
+        {
+          "value": "claims",
+          "probability": 0.01
+        },
+        {
+          "value": "contract_months",
+          "probability": 0.46
+        },
+        {
+          "value": "coverage",
+          "probability": 0.09
+        },
+        {
+          "value": "effective_date",
+          "probability": 0.03
+        },
+        {
+          "value": "incoterm",
+          "probability": 0.0
+        },
+        {
+          "value": "index_clause",
+          "probability": 0.0
+        },
+        {
+          "value": "lead_time_days",
+          "probability": 0.01
+        },
+        {
+          "value": "negotiation_status",
+          "probability": 0.01
+        },
+        {
+          "value": "offer_id",
+          "probability": 0.01
+        },
+        {
+          "value": "other",
+          "probability": 0.03
+        },
+        {
+          "value": "payment_days",
+          "probability": 0.15
+        },
+        {
+          "value": "tooling_eur",
+          "probability": 0.01
+        },
+        {
+          "value": "unit_price",
+          "probability": 0.12
+        },
+        {
+          "value": "volume_per_year",
+          "probability": 0.0
+        }
+      ],
+      "confidence": 0.42
+    },
+    {
+      "type": "choice",
+      "name": "evidence",
+      "choice": "case",
+      "probabilities": [
+        {
+          "value": "NONE",
+          "probability": 0.11
+        },
+        {
+          "value": "case",
+          "probability": 0.28
+        },
+        {
+          "value": "message:sup:70190:0",
+          "probability": 0.09
+        },
+        {
+          "value": "message:sup:70190:1",
+          "probability": 0.12
+        },
+        {
+          "value": "message:sup:70190:2",
+          "probability": 0.07
+        },
+        {
+          "value": "doc:20251014-70190-N",
+          "probability": 0.01
+        },
+        {
+          "value": "doc:20260623-70190-M1",
+          "probability": 0.01
+        },
+        {
+          "value": "doc:20261019-70190-S13",
+          "probability": 0.14
+        },
+        {
+          "value": "fc:310011@2026-09",
+          "probability": 0.04
+        },
+        {
+          "value": "idx:PPI-D351@2025-11",
+          "probability": 0.02
+        },
+        {
+          "value": "idx:PPI-D351@2026-08",
+          "probability": 0.02
+        },
+        {
+          "value": "news:20260426-10",
+          "probability": 0.01
+        },
+        {
+          "value": "news:20261015-S14",
+          "probability": 0.06
+        },
+        {
+          "value": "sc:70190@2026Q3",
+          "probability": 0.02
+        }
+      ],
+      "confidence": 0.22
+    }
+  ],
+  "usage": {
+    "input_tokens": 6336,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4563,
+      "cache_write_tokens_details": {
+        "ttl_30m_tokens": 4563,
+        "ttl_12h_tokens": 0
+      }
+    },
+    "output_tokens": 0,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 6336
+  },
+  "response_id": null,
+  "verdict": "RECONSIDER",
+  "field": "contract_months",
+  "evidence": "case",
+  "supporting_source": {
+    "id": "case",
+    "kind": "buyer_requirements",
+    "text": "{\"case_id\": \"case:G03\", \"set\": \"hidden\", \"type\": \"renewal\", \"title\": \"Supply enquiry\", \"briefing\": \"Fictional evaluation enquiry. Negotiate supply for the stated need and conditions.\", \"trigger_doc\": null, \"parts\": [\"part:310011\"], \"suppliers\": [\"sup:70190\"], \"negotiable\": [\"unit_price\", \"payment_days\", \"contract_months\"], \"fixed_terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\"}, \"term_options\": {\"payment_days\": [10, 30, 60, 90], \"contract_months\": [6, 12, 24]}, \"buyer\": {\"need_per_year\": 4200, \"horizon_years\": 2.0, \"current_unit_price\": 88, \"fallback_unit_price\": 98.56, \"interest_rate\": 0.08, \"reference_payment_days\": 60, \"need_lead_time_days\": 35, \"category_goal\": \"leverage\", \"fallback_risk_pct\": 3, \"index_risk_pct\": 1, \"late_cost_per_day\": 200, \"cost_per_defect\": 50, \"freight_eur_per_unit\": {\"EXW\": 0.6, \"FCA\": 0.35, \"DAP\": 0}, \"index_paths\": {}, \"must_haves\": [{\"field\": \"lead_time_days\", \"op\": \"<=\", \"value\": 60}], \"alternative\": {\"kind\": \"other_supplier\", \"ref\": null, \"terms\": {\"lead_time_days\": 35, \"volume_per_year\": 4200, \"index_clause\": null, \"incoterm\": \"DAP\", \"tooling_eur\": 0, \"effective_date\": \"2027-01-01\", \"unit_price\": 95.04, \"payment_days\": 60, \"contract_months\": 24}}}, \"round_limit\": 10, \"refs\": [\"doc:20261019-70190-S13\", \"news:20261015-S14\"], \"facts\": {\"doc:20261019-70190-S13\": {\"asked_pct\": null, \"asked_price\": null, \"date\": \"2026-10-19\", \"days\": null, \"effective_date\": null, \"supplier\": \"sup:70190\", \"title\": \"Our liquidity and your call-offs\", \"type\": \"letter\"}, \"news:20261015-S14\": {\"date\": \"2026-10-15\", \"headline\": \"Heating maker cancels foundry orders at Gießerei Pfaffenreuth GmbH\", \"supplier\": \"sup:70190\", \"topic\": \"customer_loss\"}}}"
+  },
+  "seconds": 0.186
+}

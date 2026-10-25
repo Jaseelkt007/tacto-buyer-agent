@@ -1,0 +1,866 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70550",
+ "name": "Platinenwerk Lausitz GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "73992ac30da509ca06547d2d904ef2900b5df4025bdc45e9f6b9eb18e2b3efb6",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:21:27.405698+00:00",
+  "seconds": 34.4,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:ca2bd52b56e0e8a1",
+   "text": "Supplier requests an 8.0 % price increase for part:350030 from EUR 34.35 to EUR 37.10 per pc effective 01 January 2027, citing copper and electronic component prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260919-70550-P17",
+   "quote": "Owing to the strong rise in copper and electronic component prices, we are forced to adjust our prices for Control board HB smart pump (PCBA) (part:350030) by **8.0 %** with effect from **01 January 2027**: from EUR 34.35 to EUR 37.10 per  pc.",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": "2026-09-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ca2bd52b56e0e8a1",
+    "verdict": "supported",
+    "reason": "Matches the 2026-09-19 letter as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:a33a13c61398d4fe",
+   "text": "Current price for part:350030 is EUR 34.35 from 2026-01-01 (+0.4 % renewal), open-ended.",
+   "kind": "fact",
+   "source": "EV-2026-70550-350030",
+   "quote": "\"basis\": \"renewal\", \"change_pct\": 0.4, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70550-350030\", \"price\": 34.35, \"price_unit\": 1, \"supplier_id\": \"sup:70550\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": "2026-01-01",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a33a13c61398d4fe",
+    "verdict": "supported",
+    "reason": "Price record shows EUR 34.35 valid from 2026-01-01, change +0.4 %, valid_to null."
+   }
+  },
+  {
+   "id": "obs:f722ed00317d36ef",
+   "text": "Per supplier's key account manager, price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260417-70550-M1",
+   "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-04-17",
+   "valid_until": null,
+   "review": {
+    "id": "obs:f722ed00317d36ef",
+    "verdict": "supported",
+    "reason": "Matches the 2026-04-17 meeting note as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:0436bbb4d69b642d",
+   "text": "Contract prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070550#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:0436bbb4d69b642d",
+    "verdict": "supported",
+    "reason": "Matches clause 3.1."
+   }
+  },
+  {
+   "id": "obs:7156eaa2e29eb4f9",
+   "text": "Framework agreement valid 2025-07-01 to 2027-06-30, auto-extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070550#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7156eaa2e29eb4f9",
+    "verdict": "supported",
+    "reason": "Matches clause 8.1."
+   }
+  },
+  {
+   "id": "obs:3d71a983796efff0",
+   "text": "At the last renewal the supplier asked +2.1% and settled +0.4%, noted as accepted below full cost to keep the volume.",
+   "kind": "fact",
+   "source": "EV-2026-70550-350030",
+   "quote": "\"asked_pct\": 2.1, \"date\": \"2025-11-21\", \"event_id\": \"EV-2026-70550-350030\", \"note\": \"accepted below full cost to keep the volume\", \"part_id\": \"part:350030\", \"settled_pct\": 0.4",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": "2025-11-21",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3d71a983796efff0",
+    "verdict": "supported",
+    "reason": "Negotiation record shows asked 2.1 %, settled 0.4 % and the stated note."
+   }
+  },
+  {
+   "id": "obs:74e4b379faf55755",
+   "text": "Should-cost for part:350030 at this supplier's plant is EUR 37.24 per unit (no margin), confidence about 5 %.",
+   "kind": "fact",
+   "source": "cost:350030",
+   "quote": "\"confidence_pct\": 5, \"conversion_eur\": 11.73, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350030\", \"material_eur\": 20.48, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 5.03, \"part_id\": \"part:350030\", \"price_unit\": 1, \"supplier_id\": \"sup:70550\", \"unit_cost\": 37.24",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": "2026-07-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:74e4b379faf55755",
+    "verdict": "supported",
+    "reason": "Reports the recorded should-cost estimate of EUR 37.24 with 5 % confidence, dated 2026-07-15."
+   }
+  },
+  {
+   "id": "obs:f47ea9419145f02d",
+   "text": "Supplier is the sole active source for part 350030 (100% quota).",
+   "kind": "fact",
+   "source": "evidence:part:350030:sourcing",
+   "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70550\"",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:f47ea9419145f02d",
+    "verdict": "supported",
+    "reason": "Sourcing record lists only this supplier, active, with 100 % quota."
+   }
+  },
+  {
+   "id": "obs:b4544b12c137ba5e",
+   "text": "Latest rolling-12-month scorecard (to 2026-09-30): OTD 85.7%, ppm 701, 8 QNs, score 89.4, class A green.",
+   "kind": "fact",
+   "source": "sc:70550@2026Q3",
+   "quote": "\"otd_pct\": 85.7, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 701, \"qn_count\": 8, \"quarter\": \"2026Q3\", \"received_qty\": 18540, \"score\": 89.4",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b4544b12c137ba5e",
+    "verdict": "supported",
+    "reason": "Matches scorecard 2026Q3, including class A green."
+   }
+  },
+  {
+   "id": "obs:da8b5af6938dc84a",
+   "text": "Prior quarter scorecard (to 2026-06-30): OTD 91.7%, ppm 451, score 93.6.",
+   "kind": "fact",
+   "source": "sc:70550@2026Q2",
+   "quote": "\"otd_pct\": 91.7, \"period_end\": \"2026-06-30\", \"period_start\": \"2025-07-01\", \"ppm\": 451, \"qn_count\": 5, \"quarter\": \"2026Q2\", \"received_qty\": 17730, \"score\": 93.6",
+   "parts": [],
+   "observed_at": "2026-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:da8b5af6938dc84a",
+    "verdict": "supported",
+    "reason": "Matches scorecard 2026Q2."
+   }
+  },
+  {
+   "id": "obs:8d91c533dcbf44e8",
+   "text": "The quality agreement sets a 95% on-time delivery target and a flat EUR 150 fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "package:company.md",
+   "quote": "on-time delivery target 95 %, flat fee of\n  EUR 150 per supplier-caused complaint, 8D report within 60 days",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8d91c533dcbf44e8",
+    "verdict": "supported",
+    "reason": "Company policy states these terms, and they also appear in contract clause 6.1."
+   }
+  },
+  {
+   "id": "obs:6530b8a4cd0c5977",
+   "text": "Open supplier-caused QN for wrong material certificate on part 350030, dated 2026-09-17, with no 8D closure date recorded.",
+   "kind": "fact",
+   "source": "qn:20005028",
+   "quote": "\"d8_date\": null, \"defect\": \"wrong material certificate\", \"gr_id\": \"gr:5000105491\", \"id\": \"qn:20005028\", \"part_id\": \"part:350030\", \"ppm\": 2410, \"qn_date\": \"2026-09-17\", \"returned_qty\": 1, \"supplier_caused\": 1",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": "2026-09-17",
+   "valid_until": null,
+   "review": {
+    "id": "obs:6530b8a4cd0c5977",
+    "verdict": "supported",
+    "reason": "QN record shows supplier-caused, dated 2026-09-17, with d8_date null."
+   }
+  },
+  {
+   "id": "obs:0bc3cef06a1faea1",
+   "text": "Part 350030 has 21 QNs in total, 17 supplier-caused, EUR 1,950 recharged, ppm last 12 months 701.",
+   "kind": "fact",
+   "source": "evidence:part:350030:part_quality",
+   "quote": "\"ppm_last_12m\": 701, \"qns\": 21, \"received_last_12m\": 18540, \"recharged_eur\": 1950, \"supplier_caused\": 17",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:0bc3cef06a1faea1",
+    "verdict": "supported",
+    "reason": "Matches the part quality summary."
+   }
+  },
+  {
+   "id": "obs:7bd41557d3fb19cd",
+   "text": "Last 12 months deliveries: 28 receipts, 85.7% on time vs requested, 14.3% late, average 9.5 days late when late, max 15 days.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"last_12m\": {\"avg_days_late_when_late\": 9.5, \"early_pct\": 0.0, \"late_pct\": 14.3, \"max_days_late\": 15, \"on_time_confirmed_pct\": 85.7, \"on_time_requested_pct\": 85.7, \"receipts\": 28}",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7bd41557d3fb19cd",
+    "verdict": "supported",
+    "reason": "Matches the last-12-month delivery figures, which equal the part-level figures."
+   }
+  },
+  {
+   "id": "obs:26f1319c05646bbf",
+   "text": "Supplier master terms: 45 payment days, DAP, standard lead time 56 days, A-class.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"abc_class\": \"A\", \"blocked\": 0, \"category\": \"electrical\", \"contract_id\": \"ctr:4600070550\", \"country\": \"DE\", \"created\": \"1996-01-01\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70550\", \"incoterm\": \"DAP\", \"name\": \"Platinenwerk Lausitz GmbH\", \"payment_days\": 45, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 56",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:26f1319c05646bbf",
+    "verdict": "supported",
+    "reason": "Matches the master record."
+   }
+  },
+  {
+   "id": "obs:4091c7cb81cb59dd",
+   "text": "Supplier financials: turnover EUR 88 M, equity ratio 39.5 %, credit index 150 unchanged from 12 months ago, private owner.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 150, \"credit_index_12m_ago\": 150, \"equity_ratio_pct\": 39.5, \"filed_fy\": 2025, \"founded\": 1991, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"private\", \"staff\": 320, \"supplier_id\": \"sup:70550\", \"turnover_band\": \"50-100 M EUR\", \"turnover_eur\": 88000000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:4091c7cb81cb59dd",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:f71da0477fffecd3",
+   "text": "Supplier announced an 8.0 % price increase for part:350030 from EUR 34.35 to EUR 37.10 per pc, effective 01 January 2027.",
+   "kind": "supplier_statement",
+   "source": "doc:20260919-70550-P17",
+   "quote": "we are forced to adjust our prices for Control board HB smart pump (PCBA) (part:350030) by **8.0 %** with effect from **01 January 2027**: from EUR 34.35 to EUR 37.10 per  pc.",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": "2026-09-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:f71da0477fffecd3",
+    "verdict": "supported",
+    "reason": "Matches the letter."
+   }
+  },
+  {
+   "id": "obs:51b0ccab3e2dc707",
+   "text": "Supplier attributes the increase to rising copper and electronic component prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260919-70550-P17",
+   "quote": "Owing to the strong rise in copper and electronic component prices",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": "2026-09-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:51b0ccab3e2dc707",
+    "verdict": "supported",
+    "reason": "Supplier's stated reason in the letter."
+   }
+  },
+  {
+   "id": "obs:61ff860baa0d5efa",
+   "text": "Supplier emphasises long reliable relationship and expresses regret, asking for understanding.",
+   "kind": "supplier_statement",
+   "source": "doc:20260919-70550-P17",
+   "quote": "we have supplied Hollerau Pumpenwerke reliably for many years.",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": "2026-09-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:61ff860baa0d5efa",
+    "verdict": "supported",
+    "reason": "Letter text contains the reliability claim, regret and request for understanding."
+   }
+  },
+  {
+   "id": "obs:0ac0ecc124c1e4f5",
+   "text": "Per key account manager, price changes above 2 % require approval of their pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260417-70550-M1",
+   "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-04-17",
+   "valid_until": null,
+   "review": {
+    "id": "obs:0ac0ecc124c1e4f5",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:54f0f31768937fe4",
+   "text": "Supplier is privately owned, 320 staff, turnover EUR 88 M, equity ratio 39.5 %.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"equity_ratio_pct\": 39.5, \"filed_fy\": 2025, \"founded\": 1991, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"private\", \"staff\": 320, \"supplier_id\": \"sup:70550\", \"turnover_band\": \"50-100 M EUR\", \"turnover_eur\": 88000000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:54f0f31768937fe4",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:a75db6aacd8ea9a9",
+   "text": "Credit index is 150, unchanged from 12 months ago.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 150, \"credit_index_12m_ago\": 150",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a75db6aacd8ea9a9",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:ba618b76decd41c2",
+   "text": "Contract payment terms are 45 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070550#4.1",
+   "quote": "Payment: 45 days net.",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:ba618b76decd41c2",
+    "verdict": "supported",
+    "reason": "Matches clause 4.1."
+   }
+  },
+  {
+   "id": "obs:2aaf04197e0227c8",
+   "text": "Delivery DAP with standard lead time 56 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070550#5.1",
+   "quote": "Delivery DAP; standard lead time 56 days from order.",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:2aaf04197e0227c8",
+    "verdict": "supported",
+    "reason": "Matches clause 5.1."
+   }
+  },
+  {
+   "id": "obs:c41df9400c7b763b",
+   "text": "Supplier requests an 8.0% price increase for part 350030 from EUR 34.35 to EUR 37.10 per pc effective 2027-01-01, citing copper and electronic component prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260919-70550-P17",
+   "quote": "Owing to the strong rise in copper and electronic component prices, we are forced to adjust our prices for Control board HB smart pump (PCBA) (part:350030) by **8.0 %** with effect from **01 January 2027**: from EUR 34.35 to EUR 37.10 per  pc.",
+   "parts": [
+    "part:350030"
+   ],
+   "observed_at": "2026-09-19",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c41df9400c7b763b",
+    "verdict": "supported",
+    "reason": "Matches the letter."
+   }
+  },
+  {
+   "id": "obs:e37d93fcbfdba571",
+   "text": "Supplier's key account manager said price changes above 2% need approval of their pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260417-70550-M1",
+   "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-04-17",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e37d93fcbfdba571",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier requests an 8.0 % price increase for part:350030 from EUR 34.35 to EUR 37.10 per pc effective 01 January 2027, citing copper and electronic component prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260919-70550-P17",
+     "quote": "Owing to the strong rise in copper and electronic component prices, we are forced to adjust our prices for Control board HB smart pump (PCBA) (part:350030) by **8.0 %** with effect from **01 January 2027**: from EUR 34.35 to EUR 37.10 per  pc.",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-09-19",
+     "valid_until": null
+    },
+    {
+     "text": "Per supplier's key account manager, price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260417-70550-M1",
+     "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-04-17",
+     "valid_until": null
+    },
+    {
+     "text": "Should-cost for part:350030 at this supplier's plant is EUR 37.24 per unit (no margin), confidence about 5 %.",
+     "kind": "fact",
+     "source": "cost:350030",
+     "quote": "\"confidence_pct\": 5, \"conversion_eur\": 11.73, \"cost_base\": \"DE\", \"estimate_date\": \"2026-07-15\", \"id\": \"cost:350030\", \"material_eur\": 20.48, \"method\": \"bottom-up estimate of this supplier's plant, no margin included\", \"overhead_eur\": 5.03, \"part_id\": \"part:350030\", \"price_unit\": 1, \"supplier_id\": \"sup:70550\", \"unit_cost\": 37.24",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-07-15",
+     "valid_until": null
+    },
+    {
+     "text": "Current price for part:350030 is EUR 34.35 from 2026-01-01 (+0.4 % renewal), open-ended.",
+     "kind": "fact",
+     "source": "EV-2026-70550-350030",
+     "quote": "\"basis\": \"renewal\", \"change_pct\": 0.4, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70550-350030\", \"price\": 34.35, \"price_unit\": 1, \"supplier_id\": \"sup:70550\", \"valid_from\": \"2026-01-01\", \"valid_to\": null",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Electronic components PPI (weight 0.55) rose 13.5 % in 12 months to 2026-08.",
+     "kind": "fact",
+     "source": "evidence:part:350030:drivers",
+     "quote": "\"change_12m_pct\": 13.5, \"change_from_low_pct\": 13.7, \"change_from_peak_pct\": 0.0, \"change_from_top_pct\": -0.1, \"estimate\": \"category team estimate 2026-06\", \"formula\": null, \"frequency\": \"monthly\", \"from_12m_id\": \"idx:PPI-C2611@2025-08\", \"from_12m_value\": 97.9, \"last_id\": \"idx:PPI-C2611@2026-08\", \"last_month\": \"2026-08\", \"last_value\": 111.1",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-08",
+     "valid_until": null
+    },
+    {
+     "text": "Labour cost index DE manufacturing (weight 0.2) rose 2.7 % in 12 months to 2026-06.",
+     "kind": "fact",
+     "source": "evidence:part:350030:drivers",
+     "quote": "\"change_12m_pct\": 2.7, \"change_from_low_pct\": 10.9",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-06",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier financials: turnover EUR 88 M, equity ratio 39.5 %, credit index 150 unchanged from 12 months ago, private owner.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 150, \"credit_index_12m_ago\": 150, \"equity_ratio_pct\": 39.5, \"filed_fy\": 2025, \"founded\": 1991, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"private\", \"staff\": 320, \"supplier_id\": \"sup:70550\", \"turnover_band\": \"50-100 M EUR\", \"turnover_eur\": 88000000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master terms: 45 payment days, DAP, standard lead time 56 days, A-class.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"abc_class\": \"A\", \"blocked\": 0, \"category\": \"electrical\", \"contract_id\": \"ctr:4600070550\", \"country\": \"DE\", \"created\": \"1996-01-01\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70550\", \"incoterm\": \"DAP\", \"name\": \"Platinenwerk Lausitz GmbH\", \"payment_days\": 45, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 56",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier announced an 8.0 % price increase for part:350030 from EUR 34.35 to EUR 37.10 per pc, effective 01 January 2027.",
+     "kind": "supplier_statement",
+     "source": "doc:20260919-70550-P17",
+     "quote": "we are forced to adjust our prices for Control board HB smart pump (PCBA) (part:350030) by **8.0 %** with effect from **01 January 2027**: from EUR 34.35 to EUR 37.10 per  pc.",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-09-19",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier attributes the increase to rising copper and electronic component prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260919-70550-P17",
+     "quote": "Owing to the strong rise in copper and electronic component prices",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-09-19",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier emphasises long reliable relationship and expresses regret, asking for understanding.",
+     "kind": "supplier_statement",
+     "source": "doc:20260919-70550-P17",
+     "quote": "we have supplied Hollerau Pumpenwerke reliably for many years.",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-09-19",
+     "valid_until": null
+    },
+    {
+     "text": "Per key account manager, price changes above 2 % require approval of their pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260417-70550-M1",
+     "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-04-17",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is privately owned, 320 staff, turnover EUR 88 M, equity ratio 39.5 %.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"equity_ratio_pct\": 39.5, \"filed_fy\": 2025, \"founded\": 1991, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"private\", \"staff\": 320, \"supplier_id\": \"sup:70550\", \"turnover_band\": \"50-100 M EUR\", \"turnover_eur\": 88000000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Credit index is 150, unchanged from 12 months ago.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 150, \"credit_index_12m_ago\": 150",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Hollerau paid 88.4 % of this supplier's invoices late, average 5.2 days late in last 12 months.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due_last_12m\": 5.2, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 75, \"max_days_late\": 11, \"paid_late_pct\": 88.4",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master terms: 45 payment days, DAP, standard lead time 56 days, A-class.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"abc_class\": \"A\", \"blocked\": 0, \"category\": \"electrical\", \"contract_id\": \"ctr:4600070550\", \"country\": \"DE\", \"created\": \"1996-01-01\", \"currency\": \"EUR\", \"detail\": \"full\", \"id\": \"sup:70550\", \"incoterm\": \"DAP\", \"name\": \"Platinenwerk Lausitz GmbH\", \"payment_days\": 45, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 56",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Contract prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070550#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Framework agreement valid 2025-07-01 to 2027-06-30, auto-extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070550#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 45 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070550#4.1",
+     "quote": "Payment: 45 days net.",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery DAP with standard lead time 56 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070550#5.1",
+     "quote": "Delivery DAP; standard lead time 56 days from order.",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requests an 8.0% price increase for part 350030 from EUR 34.35 to EUR 37.10 per pc effective 2027-01-01, citing copper and electronic component prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260919-70550-P17",
+     "quote": "Owing to the strong rise in copper and electronic component prices, we are forced to adjust our prices for Control board HB smart pump (PCBA) (part:350030) by **8.0 %** with effect from **01 January 2027**: from EUR 34.35 to EUR 37.10 per  pc.",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-09-19",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's key account manager said price changes above 2% need approval of their pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260417-70550-M1",
+     "quote": "Their key account manager explained that price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-04-17",
+     "valid_until": null
+    },
+    {
+     "text": "At the last renewal the supplier asked +2.1% and settled +0.4%, noted as accepted below full cost to keep the volume.",
+     "kind": "fact",
+     "source": "EV-2026-70550-350030",
+     "quote": "\"asked_pct\": 2.1, \"date\": \"2025-11-21\", \"event_id\": \"EV-2026-70550-350030\", \"note\": \"accepted below full cost to keep the volume\", \"part_id\": \"part:350030\", \"settled_pct\": 0.4",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2025-11-21",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is the sole active source for part 350030 (100% quota).",
+     "kind": "fact",
+     "source": "evidence:part:350030:sourcing",
+     "quote": "\"quota_pct\": 100, \"status\": \"active\", \"supplier_id\": \"sup:70550\"",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Latest rolling-12-month scorecard (to 2026-09-30): OTD 85.7%, ppm 701, 8 QNs, score 89.4, class A green.",
+     "kind": "fact",
+     "source": "sc:70550@2026Q3",
+     "quote": "\"otd_pct\": 85.7, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 701, \"qn_count\": 8, \"quarter\": \"2026Q3\", \"received_qty\": 18540, \"score\": 89.4",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Prior quarter scorecard (to 2026-06-30): OTD 91.7%, ppm 451, score 93.6.",
+     "kind": "fact",
+     "source": "sc:70550@2026Q2",
+     "quote": "\"otd_pct\": 91.7, \"period_end\": \"2026-06-30\", \"period_start\": \"2025-07-01\", \"ppm\": 451, \"qn_count\": 5, \"quarter\": \"2026Q2\", \"received_qty\": 17730, \"score\": 93.6",
+     "parts": [],
+     "observed_at": "2026-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "Part 350030 has 21 QNs in total, 17 supplier-caused, EUR 1,950 recharged, ppm last 12 months 701.",
+     "kind": "fact",
+     "source": "evidence:part:350030:part_quality",
+     "quote": "\"ppm_last_12m\": 701, \"qns\": 21, \"received_last_12m\": 18540, \"recharged_eur\": 1950, \"supplier_caused\": 17",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Open supplier-caused QN for leakage at test on part 350030, dated 2026-09-22, with no 8D closure date recorded.",
+     "kind": "fact",
+     "source": "qn:20005031",
+     "quote": "\"d8_date\": null, \"defect\": \"leakage at test\", \"part_id\": \"part:350030\", \"ppm\": 7692, \"qn_date\": \"2026-09-22\", \"returned_qty\": 0, \"supplier_caused\": 1",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-09-22",
+     "valid_until": null
+    },
+    {
+     "text": "Open supplier-caused QN for wrong material certificate on part 350030, dated 2026-09-17, with no 8D closure date recorded.",
+     "kind": "fact",
+     "source": "qn:20005028",
+     "quote": "\"d8_date\": null, \"defect\": \"wrong material certificate\", \"gr_id\": \"gr:5000105491\", \"id\": \"qn:20005028\", \"part_id\": \"part:350030\", \"ppm\": 2410, \"qn_date\": \"2026-09-17\", \"returned_qty\": 1, \"supplier_caused\": 1",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-09-17",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months deliveries: 28 receipts, 85.7% on time vs requested, 14.3% late, average 9.5 days late when late, max 15 days.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"last_12m\": {\"avg_days_late_when_late\": 9.5, \"early_pct\": 0.0, \"late_pct\": 14.3, \"max_days_late\": 15, \"on_time_confirmed_pct\": 85.7, \"on_time_requested_pct\": 85.7, \"receipts\": 28}",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "The quality agreement sets a 95% on-time delivery target and a flat EUR 150 fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "package:company.md",
+     "quote": "on-time delivery target 95 %, flat fee of\n  EUR 150 per supplier-caused complaint, 8D report within 60 days",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier has VDA 6.3 grade A, ISO 9001 and ISO 14001 certifications.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"certifications\": \"ISO 9001; ISO 14001\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [
+  {
+   "id": "obs:5ef3a92d76190680",
+   "text": "Hollerau paid 88.4 % of this supplier's invoices late, average 5.2 days late in last 12 months.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due_last_12m\": 5.2, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 75, \"max_days_late\": 11, \"paid_late_pct\": 88.4",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:5ef3a92d76190680",
+    "verdict": "reject",
+    "reason": "88.4 % is the all-time late-payment share, not a last-12-month figure; the text mixes the periods."
+   }
+  },
+  {
+   "id": "obs:7090a88b3ec87156",
+   "text": "Supplier has VDA 6.3 grade A, ISO 9001 and ISO 14001 certifications.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"certifications\": \"ISO 9001; ISO 14001\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7090a88b3ec87156",
+    "verdict": "reject",
+    "reason": "The quote only shows the ISO certifications; VDA 6.3 grade A is not in the quoted excerpt."
+   }
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "role": "economics",
+    "observation": {
+     "text": "Electronic components PPI (weight 0.55) rose 13.5 % in 12 months to 2026-08.",
+     "kind": "fact",
+     "source": "evidence:part:350030:drivers",
+     "quote": "\"change_12m_pct\": 13.5, \"change_from_low_pct\": 13.7, \"change_from_peak_pct\": 0.0, \"change_from_top_pct\": -0.1, \"estimate\": \"category team estimate 2026-06\", \"formula\": null, \"frequency\": \"monthly\", \"from_12m_id\": \"idx:PPI-C2611@2025-08\", \"from_12m_value\": 97.9, \"last_id\": \"idx:PPI-C2611@2026-08\", \"last_month\": \"2026-08\", \"last_value\": 111.1",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-08",
+     "valid_until": null
+    },
+    "why": "invalid date"
+   },
+   {
+    "role": "economics",
+    "observation": {
+     "text": "Labour cost index DE manufacturing (weight 0.2) rose 2.7 % in 12 months to 2026-06.",
+     "kind": "fact",
+     "source": "evidence:part:350030:drivers",
+     "quote": "\"change_12m_pct\": 2.7, \"change_from_low_pct\": 10.9",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-06",
+     "valid_until": null
+    },
+    "why": "invalid date"
+   },
+   {
+    "role": "performance",
+    "observation": {
+     "text": "Open supplier-caused QN for leakage at test on part 350030, dated 2026-09-22, with no 8D closure date recorded.",
+     "kind": "fact",
+     "source": "qn:20005031",
+     "quote": "\"d8_date\": null, \"defect\": \"leakage at test\", \"part_id\": \"part:350030\", \"ppm\": 7692, \"qn_date\": \"2026-09-22\", \"returned_qty\": 0, \"supplier_caused\": 1",
+     "parts": [
+      "part:350030"
+     ],
+     "observed_at": "2026-09-22",
+     "valid_until": null
+    },
+    "why": "excerpt missing from source"
+   }
+  ]
+ }
+}

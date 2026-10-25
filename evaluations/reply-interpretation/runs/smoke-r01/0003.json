@@ -1,0 +1,457 @@
+{
+  "context": {
+    "schema_version": 1,
+    "case_id": "case:P18",
+    "supplier_id": "sup:70740",
+    "case_terms": {
+      "negotiable": [
+        "unit_price",
+        "index_clause",
+        "payment_days",
+        "contract_months"
+      ],
+      "fixed_terms": {
+        "lead_time_days": 14,
+        "volume_per_year": 23700,
+        "effective_date": "2027-01-01",
+        "incoterm": "DAP",
+        "tooling_eur": 0
+      },
+      "term_options": {
+        "index_clause": [
+          null,
+          {
+            "series": "AS-14404",
+            "material_share": 0.45,
+            "deadband_pct": 0,
+            "base_month": "2026-08"
+          },
+          {
+            "series": "AS-14404",
+            "material_share": 0.45,
+            "deadband_pct": 3,
+            "base_month": "2026-08"
+          },
+          {
+            "series": "AS-14404",
+            "material_share": 0.45,
+            "deadband_pct": 5,
+            "base_month": "2026-08"
+          }
+        ],
+        "payment_days": [
+          14,
+          30,
+          45,
+          60,
+          90
+        ],
+        "contract_months": [
+          12,
+          24,
+          36
+        ]
+      }
+    },
+    "latest_message_ref": "message:sup:70740:2",
+    "latest_sender": "sales@70740",
+    "latest_status": "open",
+    "history": [
+      {
+        "from": "sales@70740",
+        "message_id": "msg:70740-0-0",
+        "subject": "Quote from Blankstahl Werdenfels GmbH: Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+        "body": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe are delighted to present our competitive quote for your requirements. Our price is €6.10 per unit, with a Zahlungsziel of 30 days net, a contract term of 12 months, and no Preisgleitklausel. Please note that AS-14404 rose 5.9 % in twelve months and is 45 % of our cost. Furthermore, LCI-C rose 2.7 % in twelve months and is 5 % of our cost, while PPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. This offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH",
+        "term_sheets": [
+          {
+            "term_sheet_id": "offer:70740-0",
+            "terms": {
+              "unit_price": 6.1,
+              "payment_days": 30,
+              "index_clause": null,
+              "contract_months": 12
+            }
+          }
+        ],
+        "status": "open",
+        "claim_results": [],
+        "missing_fields": [],
+        "source_ref": "message:sup:70740:0",
+        "attachments": [
+          {
+            "attachment_id": "att:70740-0-quote",
+            "name": "quote-offer-70740-0.pdf",
+            "text": "Blankstahl Werdenfels GmbH\nTo: Hollerau Pumpenwerke GmbH\nAngebot / Quote offer:70740-0\nOffered terms\nUnit price (EUR) 6.10\nPayment terms (days net) 30\nIndex clause none\nContract term (months) 12\nOur standard terms (apply to everything not stated above)\nQuality commitment (ppm) 70\nChargeback per complaint (EUR) 0.00\nTerms fixed by your enquiry\nLead time (days) 14\nVolume per year (pcs) 23700\nPrice valid from 2027-01-01\nIncoterm DAP\nTooling (EUR) 0.00\nPart(s): part:370010. Enquiry: Alloy surcharge and base price for 1.4404 bar (Werdenfels).\nValidity: 30 days."
+          }
+        ]
+      },
+      {
+        "from": "buyer",
+        "subject": "Re: Quote from Blankstahl Werdenfels GmbH: Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+        "body": "Dear Sir or Madam,\n\nThank you for your offer and for explaining your position.\n\nOur data shows a different picture on some points:\nAlloy surcharge 1.4404, Isartal Edelstahlwerk (fictional mill, derived) changed -5.5% from 2026-06 to 2026-09 (idx:AS-14404@2026-06, idx:AS-14404@2026-09).\nYour rolling scorecard shows on-time delivery of 81.0% (sc:70740@2026Q3).\nOur demand forecast for this part has risen 1.9% (fc:370010@2026-09).\n\nPlease find our proposal below.\n\nWe look forward to your reply.\n\nKind regards\nPurchasing\nHollerau Pumpenwerke GmbH",
+        "term_sheets": [
+          {
+            "terms": {
+              "unit_price": 4.91,
+              "index_clause": null,
+              "payment_days": 60,
+              "contract_months": 36
+            }
+          }
+        ],
+        "source_ref": "message:sup:70740:1",
+        "attachments": []
+      },
+      {
+        "from": "sales@70740",
+        "message_id": "msg:70740-1-2",
+        "subject": "Re: Quote from Blankstahl Werdenfels GmbH: Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+        "body": "Dear customer,\nMany thanks for your e-mail, and great to hear from you; I went through it right away with our team.\nWe have reviewed your offer and can adjust our Angebot as follows.\nOur terms: a price of €5.40 per unit, Zahlungsziel 60 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404.\nA few words on this from our side.\nWe checked the volume change data you cited; it holds and we took it into account.\nAS-14404 rose 5.9 % in twelve months and is 45 % of our cost. That remains.\nLCI-C rose 2.7 % in twelve months and is 5 % of our cost. That remains.\nPPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. That remains.\nWe acknowledge your data regarding the AS-14404 index decrease, the increased demand forecast, and our recent delivery performance.\nWe can agree to your requested 36-month contract and 60-day payment terms, but we must include an AS-14404 index clause as we cannot fix prices for this duration.\nWith these terms, we propose a revised unit price of €5.50.\nAlternatively, with a Preisgleitklausel on AS-14404: €5.50 per unit.\nOur price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C.\nWe can offer a Preisgleitklausel on AS-14404, AS-14404, AS-14404.\nWe look forward to doing good business together, and our team is always there for you.\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH\n\nLogistics: Please note that our standard Lieferzeit is 14 days, as we currently have free capacity for your parts. With overtime we can also deliver in 14 days, though this option comes at a premium.",
+        "term_sheets": [
+          {
+            "term_sheet_id": "offer:70740-1",
+            "terms": {
+              "unit_price": 5.4,
+              "payment_days": 60,
+              "index_clause": {
+                "series": "AS-14404",
+                "material_share": 0.45,
+                "deadband_pct": 0.0,
+                "base_month": "2026-08"
+              },
+              "contract_months": 36
+            }
+          },
+          {
+            "term_sheet_id": "offer:70740-1-a",
+            "terms": {
+              "unit_price": 5.5,
+              "payment_days": 60,
+              "index_clause": {
+                "series": "AS-14404",
+                "material_share": 0.45,
+                "deadband_pct": 5.0,
+                "base_month": "2026-08"
+              },
+              "contract_months": 36
+            }
+          }
+        ],
+        "status": "open",
+        "claim_results": [
+          {
+            "index": 0,
+            "result": "verified"
+          },
+          {
+            "index": 1,
+            "result": "verified"
+          },
+          {
+            "index": 2,
+            "result": "verified"
+          }
+        ],
+        "missing_fields": [],
+        "source_ref": "message:sup:70740:2",
+        "attachments": [
+          {
+            "attachment_id": "att:70740-1-delivery_schedule",
+            "name": "delivery-schedule.xlsx",
+            "text": "[Delivery schedule]\nMonth | Quantity | Cumulative\n1 | =ROUND(23700/12,0) | =SUM(B$2:B2)\n2 | =ROUND(23700/12,0) | =SUM(B$2:B3)\n3 | =ROUND(23700/12,0) | =SUM(B$2:B4)\n4 | =ROUND(23700/12,0) | =SUM(B$2:B5)\n5 | =ROUND(23700/12,0) | =SUM(B$2:B6)\n6 | =ROUND(23700/12,0) | =SUM(B$2:B7)\n7 | =ROUND(23700/12,0) | =SUM(B$2:B8)\n8 | =ROUND(23700/12,0) | =SUM(B$2:B9)\n9 | =ROUND(23700/12,0) | =SUM(B$2:B10)\n10 | =ROUND(23700/12,0) | =SUM(B$2:B11)\n11 | =ROUND(23700/12,0) | =SUM(B$2:B12)\n12 | =ROUND(23700/12,0) | =SUM(B$2:B13)\n13 | =ROUND(23700/12,0) | =SUM(B$2:B14)\n14 | =ROUND(23700/12,0) | =SUM(B$2:B15)\n15 | =ROUND(23700/12,0) | =SUM(B$2:B16)\n16 | =ROUND(23700/12,0) | =SUM(B$2:B17)\n17 | =ROUND(23700/12,0) | =SUM(B$2:B18)\n18 | =ROUND(23700/12,0) | =SUM(B$2:B19)\n19 | =ROUND(23700/12,0) | =SUM(B$2:B20)\n20 | =ROUND(23700/12,0) | =SUM(B$2:B21)\n21 | =ROUND(23700/12,0) | =SUM(B$2:B22)\n22 | =ROUND(23700/12,0) | =SUM(B$2:B23)\n23 | =ROUND(23700/12,0) | =SUM(B$2:B24)\n24 | =ROUND(23700/12,0) | =SUM(B$2:B25)\n25 | =ROUND(23700/12,0) | =SUM(B$2:B26)\n26 | =ROUND(23700/12,0) | =SUM(B$2:B27)\n27 | =ROUND(23700/12,0) | =SUM(B$2:B28)\n28 | =ROUND(23700/12,0) | =SUM(B$2:B29)\n29 | =ROUND(23700/12,0) | =SUM(B$2:B30)\n30 | =ROUND(23700/12,0) | =SUM(B$2:B31)\n31 | =ROUND(23700/12,0) | =SUM(B$2:B32)\n32 | =ROUND(23700/12,0) | =SUM(B$2:B33)\n33 | =ROUND(23700/12,0) | =SUM(B$2:B34)\n34 | =ROUND(23700/12,0) | =SUM(B$2:B35)\n35 | =ROUND(23700/12,0) | =SUM(B$2:B36)\n36 | =ROUND(23700/12,0) | =SUM(B$2:B37)\nLead time (days) | 14 | "
+          }
+        ]
+      }
+    ],
+    "packages": {
+      "package:0": {
+        "message_ref": "message:sup:70740:2",
+        "term_sheet_id": "offer:70740-1",
+        "terms": {
+          "unit_price": 5.4,
+          "payment_days": 60,
+          "index_clause": {
+            "series": "AS-14404",
+            "material_share": 0.45,
+            "deadband_pct": 0.0,
+            "base_month": "2026-08"
+          },
+          "contract_months": 36
+        }
+      },
+      "package:1": {
+        "message_ref": "message:sup:70740:2",
+        "term_sheet_id": "offer:70740-1-a",
+        "terms": {
+          "unit_price": 5.5,
+          "payment_days": 60,
+          "index_clause": {
+            "series": "AS-14404",
+            "material_share": 0.45,
+            "deadband_pct": 5.0,
+            "base_month": "2026-08"
+          },
+          "contract_months": 36
+        }
+      }
+    },
+    "sources": {
+      "message:sup:70740:0:subject": "Quote from Blankstahl Werdenfels GmbH: Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+      "message:sup:70740:0:body": "Dear customer,\n\nThank you for your enquiry. Please find our Angebot below.\n\nWe are delighted to present our competitive quote for your requirements. Our price is €6.10 per unit, with a Zahlungsziel of 30 days net, a contract term of 12 months, and no Preisgleitklausel. Please note that AS-14404 rose 5.9 % in twelve months and is 45 % of our cost. Furthermore, LCI-C rose 2.7 % in twelve months and is 5 % of our cost, while PPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. This offer remains valid for 30 days.\n\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH",
+      "message:sup:70740:0:attachment:0": "Blankstahl Werdenfels GmbH\nTo: Hollerau Pumpenwerke GmbH\nAngebot / Quote offer:70740-0\nOffered terms\nUnit price (EUR) 6.10\nPayment terms (days net) 30\nIndex clause none\nContract term (months) 12\nOur standard terms (apply to everything not stated above)\nQuality commitment (ppm) 70\nChargeback per complaint (EUR) 0.00\nTerms fixed by your enquiry\nLead time (days) 14\nVolume per year (pcs) 23700\nPrice valid from 2027-01-01\nIncoterm DAP\nTooling (EUR) 0.00\nPart(s): part:370010. Enquiry: Alloy surcharge and base price for 1.4404 bar (Werdenfels).\nValidity: 30 days.",
+      "message:sup:70740:2:subject": "Re: Quote from Blankstahl Werdenfels GmbH: Alloy surcharge and base price for 1.4404 bar (Werdenfels)",
+      "message:sup:70740:2:body": "Dear customer,\nMany thanks for your e-mail, and great to hear from you; I went through it right away with our team.\nWe have reviewed your offer and can adjust our Angebot as follows.\nOur terms: a price of €5.40 per unit, Zahlungsziel 60 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404.\nA few words on this from our side.\nWe checked the volume change data you cited; it holds and we took it into account.\nAS-14404 rose 5.9 % in twelve months and is 45 % of our cost. That remains.\nLCI-C rose 2.7 % in twelve months and is 5 % of our cost. That remains.\nPPI-C2431 rose 12.3 % in twelve months and is 38 % of our cost. That remains.\nWe acknowledge your data regarding the AS-14404 index decrease, the increased demand forecast, and our recent delivery performance.\nWe can agree to your requested 36-month contract and 60-day payment terms, but we must include an AS-14404 index clause as we cannot fix prices for this duration.\nWith these terms, we propose a revised unit price of €5.50.\nAlternatively, with a Preisgleitklausel on AS-14404: €5.50 per unit.\nOur price follows our main cost drivers: AS-14404, PPI-C2431, LCI-C.\nWe can offer a Preisgleitklausel on AS-14404, AS-14404, AS-14404.\nWe look forward to doing good business together, and our team is always there for you.\nMit freundlichen Grüßen\nFranz Seidl\nInside Sales, Blankstahl Werdenfels GmbH\n\nLogistics: Please note that our standard Lieferzeit is 14 days, as we currently have free capacity for your parts. With overtime we can also deliver in 14 days, though this option comes at a premium.",
+      "message:sup:70740:2:attachment:0": "[Delivery schedule]\nMonth | Quantity | Cumulative\n1 | =ROUND(23700/12,0) | =SUM(B$2:B2)\n2 | =ROUND(23700/12,0) | =SUM(B$2:B3)\n3 | =ROUND(23700/12,0) | =SUM(B$2:B4)\n4 | =ROUND(23700/12,0) | =SUM(B$2:B5)\n5 | =ROUND(23700/12,0) | =SUM(B$2:B6)\n6 | =ROUND(23700/12,0) | =SUM(B$2:B7)\n7 | =ROUND(23700/12,0) | =SUM(B$2:B8)\n8 | =ROUND(23700/12,0) | =SUM(B$2:B9)\n9 | =ROUND(23700/12,0) | =SUM(B$2:B10)\n10 | =ROUND(23700/12,0) | =SUM(B$2:B11)\n11 | =ROUND(23700/12,0) | =SUM(B$2:B12)\n12 | =ROUND(23700/12,0) | =SUM(B$2:B13)\n13 | =ROUND(23700/12,0) | =SUM(B$2:B14)\n14 | =ROUND(23700/12,0) | =SUM(B$2:B15)\n15 | =ROUND(23700/12,0) | =SUM(B$2:B16)\n16 | =ROUND(23700/12,0) | =SUM(B$2:B17)\n17 | =ROUND(23700/12,0) | =SUM(B$2:B18)\n18 | =ROUND(23700/12,0) | =SUM(B$2:B19)\n19 | =ROUND(23700/12,0) | =SUM(B$2:B20)\n20 | =ROUND(23700/12,0) | =SUM(B$2:B21)\n21 | =ROUND(23700/12,0) | =SUM(B$2:B22)\n22 | =ROUND(23700/12,0) | =SUM(B$2:B23)\n23 | =ROUND(23700/12,0) | =SUM(B$2:B24)\n24 | =ROUND(23700/12,0) | =SUM(B$2:B25)\n25 | =ROUND(23700/12,0) | =SUM(B$2:B26)\n26 | =ROUND(23700/12,0) | =SUM(B$2:B27)\n27 | =ROUND(23700/12,0) | =SUM(B$2:B28)\n28 | =ROUND(23700/12,0) | =SUM(B$2:B29)\n29 | =ROUND(23700/12,0) | =SUM(B$2:B30)\n30 | =ROUND(23700/12,0) | =SUM(B$2:B31)\n31 | =ROUND(23700/12,0) | =SUM(B$2:B32)\n32 | =ROUND(23700/12,0) | =SUM(B$2:B33)\n33 | =ROUND(23700/12,0) | =SUM(B$2:B34)\n34 | =ROUND(23700/12,0) | =SUM(B$2:B35)\n35 | =ROUND(23700/12,0) | =SUM(B$2:B36)\n36 | =ROUND(23700/12,0) | =SUM(B$2:B37)\nLead time (days) | 14 | "
+    }
+  },
+  "model": "gpt-6.1-sol",
+  "model_called": true,
+  "request_sha256": "744ed7412a67c054ab36edf1744a2b6e92cd71997a1fc824307d93c43a41eab3",
+  "answer": {
+    "observations": [
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "index_clause",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70740:2:body",
+            "quote": "We can agree to your requested 36-month contract and 60-day payment terms, but we must include an AS-14404 index clause as we cannot fix prices for this duration."
+          }
+        ]
+      },
+      {
+        "package_ref": "package:1",
+        "kind": "condition",
+        "field": "index_clause",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70740:2:body",
+            "quote": "We can agree to your requested 36-month contract and 60-day payment terms, but we must include an AS-14404 index clause as we cannot fix prices for this duration."
+          }
+        ]
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "conflict",
+        "field": "unit_price",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70740:2:body",
+            "quote": "Our terms: a price of €5.40 per unit, Zahlungsziel 60 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404."
+          },
+          {
+            "source_ref": "message:sup:70740:2:body",
+            "quote": "With these terms, we propose a revised unit price of €5.50."
+          }
+        ]
+      }
+    ]
+  },
+  "response_id": "resp_0414db83e7c23b6b016adde5c7687887d1b233d242393cd21b",
+  "usage": {
+    "input_tokens": 5233,
+    "input_tokens_details": {
+      "cache_write_tokens": 5230,
+      "cached_tokens": 0
+    },
+    "output_tokens": 327,
+    "output_tokens_details": {
+      "reasoning_tokens": 48
+    },
+    "total_tokens": 5560
+  },
+  "reading": {
+    "schema_version": 1,
+    "case_id": "case:P18",
+    "supplier_id": "sup:70740",
+    "as_of": "message:sup:70740:2",
+    "context_sha256": "b2912a5fed43a954dddc217ff073a01b341c92a76ba0258619864454a44b2c4c",
+    "status": "available",
+    "error": null,
+    "packages": {
+      "package:0": {
+        "message_ref": "message:sup:70740:2",
+        "term_sheet_id": "offer:70740-1",
+        "terms": {
+          "unit_price": 5.4,
+          "payment_days": 60,
+          "index_clause": {
+            "series": "AS-14404",
+            "material_share": 0.45,
+            "deadband_pct": 0.0,
+            "base_month": "2026-08"
+          },
+          "contract_months": 36
+        }
+      },
+      "package:1": {
+        "message_ref": "message:sup:70740:2",
+        "term_sheet_id": "offer:70740-1-a",
+        "terms": {
+          "unit_price": 5.5,
+          "payment_days": 60,
+          "index_clause": {
+            "series": "AS-14404",
+            "material_share": 0.45,
+            "deadband_pct": 5.0,
+            "base_month": "2026-08"
+          },
+          "contract_months": 36
+        }
+      }
+    },
+    "observations": [
+      {
+        "package_ref": "package:0",
+        "kind": "condition",
+        "field": "index_clause",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70740:2:body",
+            "quote": "We can agree to your requested 36-month contract and 60-day payment terms, but we must include an AS-14404 index clause as we cannot fix prices for this duration."
+          }
+        ],
+        "quoted_value": {
+          "series": "AS-14404",
+          "material_share": 0.45,
+          "deadband_pct": 0.0,
+          "base_month": "2026-08"
+        },
+        "value_source": "offer:70740-1",
+        "policy_effect": "advisory_only"
+      },
+      {
+        "package_ref": "package:1",
+        "kind": "condition",
+        "field": "index_clause",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70740:2:body",
+            "quote": "We can agree to your requested 36-month contract and 60-day payment terms, but we must include an AS-14404 index clause as we cannot fix prices for this duration."
+          }
+        ],
+        "quoted_value": {
+          "series": "AS-14404",
+          "material_share": 0.45,
+          "deadband_pct": 5.0,
+          "base_month": "2026-08"
+        },
+        "value_source": "offer:70740-1-a",
+        "policy_effect": "advisory_only"
+      },
+      {
+        "package_ref": "package:0",
+        "kind": "conflict",
+        "field": "unit_price",
+        "evidence": [
+          {
+            "source_ref": "message:sup:70740:2:body",
+            "quote": "Our terms: a price of €5.40 per unit, Zahlungsziel 60 days net, a contract term of 36 months, a Preisgleitklausel on AS-14404."
+          },
+          {
+            "source_ref": "message:sup:70740:2:body",
+            "quote": "With these terms, we propose a revised unit price of €5.50."
+          }
+        ],
+        "quoted_value": 5.4,
+        "value_source": "offer:70740-1",
+        "policy_effect": "advisory_only"
+      }
+    ],
+    "validation": "provenance_checked_not_semantically_proven",
+    "changes_binding_decisions": false
+  },
+  "seconds": 6.552,
+  "source_snapshot_sha256": "be7db945e33242b4e123e63c670811cd7c3eb387108b4dfad61ff9f8b079de4e",
+  "decision_index": 1,
+  "response_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "observations"
+    ],
+    "properties": {
+      "observations": {
+        "type": "array",
+        "maxItems": 12,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "package_ref",
+            "kind",
+            "field",
+            "evidence"
+          ],
+          "properties": {
+            "package_ref": {
+              "type": "string",
+              "enum": [
+                "unscoped",
+                "package:0",
+                "package:1"
+              ]
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "condition",
+                "preference",
+                "withdrawal_statement",
+                "conflict",
+                "unclear"
+              ]
+            },
+            "field": {
+              "type": "string",
+              "enum": [
+                "contract_months",
+                "effective_date",
+                "incoterm",
+                "index_clause",
+                "lead_time_days",
+                "other",
+                "payment_days",
+                "tooling_eur",
+                "unit_price",
+                "volume_per_year"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source_ref",
+                  "quote"
+                ],
+                "properties": {
+                  "source_ref": {
+                    "type": "string",
+                    "enum": [
+                      "message:sup:70740:0:subject",
+                      "message:sup:70740:0:body",
+                      "message:sup:70740:0:attachment:0",
+                      "message:sup:70740:2:subject",
+                      "message:sup:70740:2:body",
+                      "message:sup:70740:2:attachment:0"
+                    ]
+                  },
+                  "quote": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 600
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,832 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70630",
+ "name": "Normteile Brucker KG",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "55f662766ed98b2e8d22cd9108d556652a1db718e60d1ab5dd7b7e329e83ab63",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:22:03.717999+00:00",
+  "seconds": 36.3,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:55cc2b9ab3ebf7c5",
+   "text": "Supplier's sales director said there is no room on price this year because head office froze all price reductions until December 2027; he was open on payment terms and call-off flexibility.",
+   "kind": "supplier_statement",
+   "source": "doc:20260724-70630-M1",
+   "quote": "Their sales director said there is no room on price this year: head office has frozen all price reductions until December 2027. He was open on payment terms and call-off flexibility.",
+   "parts": [],
+   "observed_at": "2026-07-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:55cc2b9ab3ebf7c5",
+    "verdict": "supported",
+    "reason": "Matches the meeting note and is correctly framed as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:e7bfb8b8fdb44125",
+   "text": "Supplier states its price list applies to all customers without exception until December 2027 and offers to discuss logistics and payment conditions.",
+   "kind": "supplier_statement",
+   "source": "doc:20260706-70630-M3",
+   "quote": "Our price list applies to all customers without exception until December 2027. We are happy to discuss logistics and payment conditions.",
+   "parts": [],
+   "observed_at": "2026-07-06",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e7bfb8b8fdb44125",
+    "verdict": "supported",
+    "reason": "Matches the supplier email."
+   }
+  },
+  {
+   "id": "obs:848e04223243c7cb",
+   "text": "Supplier stated standard items are not discounted; only multi-year volume agreements change prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260327-70630-M2",
+   "quote": "Normteile Brucker KG stated that standard items are not discounted; only multi-year volume agreements change prices.",
+   "parts": [],
+   "observed_at": "2026-03-27",
+   "valid_until": null,
+   "review": {
+    "id": "obs:848e04223243c7cb",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:cf94e49cd0eaf4e4",
+   "text": "Supplier's key account manager said price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260923-70630-M4",
+   "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-09-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:cf94e49cd0eaf4e4",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:563494d7432d6d27",
+   "text": "Quote for part 360013 at EUR 29.23 per 100, 30 payment days, DAP, 7 days lead time; remark says discounts not possible this year (head-office directive).",
+   "kind": "fact",
+   "source": "quote:7300052",
+   "quote": "\"payment_days\": 30, \"price_unit\": 100, \"quote_date\": \"2026-09-04\", \"remarks\": \"Prices as per current list; discounts not possible this year (head-office directive).\", \"rfq_id\": null, \"supplier_id\": \"sup:70630\", \"tooling_eur\": 0, \"unit_price\": 29.23",
+   "parts": [
+    "part:360013"
+   ],
+   "observed_at": "2026-09-04",
+   "valid_until": null,
+   "review": {
+    "id": "obs:563494d7432d6d27",
+    "verdict": "supported",
+    "reason": "Accurately reports the recorded quote fields and its remark."
+   }
+  },
+  {
+   "id": "obs:cf17a953968b7033",
+   "text": "Prices fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070630#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:360013",
+    "part:360030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:cf17a953968b7033",
+    "verdict": "supported",
+    "reason": "Matches contract clause 3.1."
+   }
+  },
+  {
+   "id": "obs:31ad40554cc16a3e",
+   "text": "Framework agreement valid 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070630#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:360013",
+    "part:360030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:31ad40554cc16a3e",
+    "verdict": "supported",
+    "reason": "Matches contract clause 8.1, which covers both parts."
+   }
+  },
+  {
+   "id": "obs:7d741efbc5396546",
+   "text": "Current master terms: 30 payment days, DAP, standard lead time 7 days.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"DAP\", \"name\": \"Normteile Brucker KG\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 7",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:7d741efbc5396546",
+    "verdict": "supported",
+    "reason": "Matches the vendor master."
+   }
+  },
+  {
+   "id": "obs:ab398b3f66758101",
+   "text": "Contract payment terms are 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070630#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:360013",
+    "part:360030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:ab398b3f66758101",
+    "verdict": "supported",
+    "reason": "Matches contract clause 4.1."
+   }
+  },
+  {
+   "id": "obs:b6ec2243008aee4b",
+   "text": "Open supplier-caused complaint: wrong material certificate on part 360013, QN 2026-09-09, 8D not closed.",
+   "kind": "fact",
+   "source": "qn:20005021",
+   "quote": "\"d8_date\": null, \"defect\": \"wrong material certificate\", \"gr_id\": \"gr:5000105468\", \"id\": \"qn:20005021\", \"part_id\": \"part:360013\", \"ppm\": 583, \"qn_date\": \"2026-09-09\"",
+   "parts": [
+    "part:360013"
+   ],
+   "observed_at": "2026-09-09",
+   "valid_until": null,
+   "review": {
+    "id": "obs:b6ec2243008aee4b",
+    "verdict": "supported",
+    "reason": "Supplier-caused complaint with d8_date null, i.e. the 8D is not closed."
+   }
+  },
+  {
+   "id": "obs:20855abcb8912954",
+   "text": "Part 360030 from this supplier: 334 ppm last 12 months, 24 supplier-caused of 26 QNs.",
+   "kind": "fact",
+   "source": "evidence:part:360030:part_quality",
+   "quote": "\"complaint_qty\": 245, \"last_qn\": \"2026-06-04\", \"latest_qns\": [\"qn:20004941\", \"qn:20004926\", \"qn:20004905\"], \"ppm_last_12m\": 334, \"qns\": 26, \"received_last_12m\": 338600, \"recharged_eur\": 2700, \"supplier_caused\": 24, \"supplier_id\": \"sup:70630\"",
+   "parts": [
+    "part:360030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:20855abcb8912954",
+    "verdict": "supported",
+    "reason": "Matches the part quality record for sup:70630."
+   }
+  },
+  {
+   "id": "obs:b18128ee4c5ec604",
+   "text": "Part 360013: 164 ppm last 12 months, all 25 QNs supplier-caused.",
+   "kind": "fact",
+   "source": "evidence:part:360013:part_quality",
+   "quote": "\"ppm_last_12m\": 164, \"qns\": 25, \"received_last_12m\": 275000, \"recharged_eur\": 2550, \"supplier_caused\": 25",
+   "parts": [
+    "part:360013"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:b18128ee4c5ec604",
+    "verdict": "supported",
+    "reason": "Matches the part quality record."
+   }
+  },
+  {
+   "id": "obs:87ec3953c21f17c9",
+   "text": "Last 12 months part 360030 on-time vs requested was 84.0%, max 27 days late.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"avg_days_late_when_late\": 18.0, \"early_pct\": 8.0, \"late_pct\": 8.0, \"max_days_late\": 27, \"on_time_confirmed_pct\": 88.0, \"on_time_requested_pct\": 84.0, \"part_id\": \"part:360030\"",
+   "parts": [
+    "part:360030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:87ec3953c21f17c9",
+    "verdict": "supported",
+    "reason": "Matches the by-part delivery stats for the last 12 months."
+   }
+  },
+  {
+   "id": "obs:38beba093f265cdf",
+   "text": "Latest rolling scorecard (2025-10 to 2026-09): OTD 88.0% vs requested, 90.0% vs confirmed, ppm 257, score 92.7, class A green.",
+   "kind": "fact",
+   "source": "sc:70630@2026Q3",
+   "quote": "\"otd_confirmed_pct\": 90.0, \"otd_pct\": 88.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 257, \"qn_count\": 19, \"quarter\": \"2026Q3\", \"received_qty\": 613600, \"score\": 92.7",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:38beba093f265cdf",
+    "verdict": "supported",
+    "reason": "Matches the 2026Q3 scorecard values and period."
+   }
+  },
+  {
+   "id": "obs:afcfc7a18db77b34",
+   "text": "Part 360013 price fell from 33.35 to 29.23 per 100 (-12.4%) since first order.",
+   "kind": "fact",
+   "source": "evidence:part:360013:orders",
+   "quote": "\"first_price\": 33.35, \"last_order\": \"2026-09-28\", \"latest\": [",
+   "parts": [
+    "part:360013"
+   ],
+   "observed_at": "2026-09-28",
+   "valid_until": null,
+   "review": {
+    "id": "obs:afcfc7a18db77b34",
+    "verdict": "supported",
+    "reason": "Orders show a first price of 33.35, a latest price of 29.23 and price_change_pct of -12.4."
+   }
+  },
+  {
+   "id": "obs:3f0d0d9279fd3cc7",
+   "text": "Supplier is family-owned KG, 60 staff, turnover EUR 29.1 M, credit index 185 unchanged over 12 months, VDA 6.3 grade A.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 185, \"credit_index_12m_ago\": 185, \"equity_ratio_pct\": 36.2, \"filed_fy\": 2024, \"founded\": 1966, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 60, \"supplier_id\": \"sup:70630\", \"turnover_band\": \"25-50 M EUR\", \"turnover_eur\": 29100000, \"vda63_grade\": \"A\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:3f0d0d9279fd3cc7",
+    "verdict": "supported",
+    "reason": "Matches the intel record, including VDA 6.3 grade A."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:1101cc43df95be54",
+   "text": "Supplier is family-owned KG, 60 staff, turnover EUR 29.1 M, equity ratio 36.2 %, credit index 185 unchanged over 12 months.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 185, \"credit_index_12m_ago\": 185, \"equity_ratio_pct\": 36.2, \"filed_fy\": 2024, \"founded\": 1966, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 60, \"supplier_id\": \"sup:70630\", \"turnover_band\": \"25-50 M EUR\", \"turnover_eur\": 29100000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:1101cc43df95be54",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:e71af6dece98e754",
+   "text": "Supplier states its price list applies to all customers without exception until December 2027.",
+   "kind": "supplier_statement",
+   "source": "doc:20260706-70630-M3",
+   "quote": "Our price list applies to all customers without exception until December 2027.",
+   "parts": [],
+   "observed_at": "2026-07-06",
+   "valid_until": "2027-12-31",
+   "review": {
+    "id": "obs:e71af6dece98e754",
+    "verdict": "supported",
+    "reason": "Matches the email; the stated horizon of December 2027 is consistent with the record."
+   }
+  },
+  {
+   "id": "obs:bb714adcd3592b15",
+   "text": "Supplier says it is happy to discuss logistics and payment conditions.",
+   "kind": "supplier_statement",
+   "source": "doc:20260706-70630-M3",
+   "quote": "We are happy to discuss logistics and payment conditions.",
+   "parts": [],
+   "observed_at": "2026-07-06",
+   "valid_until": null,
+   "review": {
+    "id": "obs:bb714adcd3592b15",
+    "verdict": "supported",
+    "reason": "Matches the email."
+   }
+  },
+  {
+   "id": "obs:16f49297783d44d5",
+   "text": "Sales director said head office has frozen all price reductions until December 2027.",
+   "kind": "supplier_statement",
+   "source": "doc:20260724-70630-M1",
+   "quote": "there is no room on price this year: head office has frozen all price reductions until December 2027",
+   "parts": [],
+   "observed_at": "2026-07-24",
+   "valid_until": "2027-12-31",
+   "review": {
+    "id": "obs:16f49297783d44d5",
+    "verdict": "supported",
+    "reason": "Matches the meeting note; the expiry is consistent with the stated freeze end."
+   }
+  },
+  {
+   "id": "obs:a25c98136ff61abe",
+   "text": "Sales director was open on payment terms and call-off flexibility.",
+   "kind": "supplier_statement",
+   "source": "doc:20260724-70630-M1",
+   "quote": "He was open on payment terms and call-off flexibility.",
+   "parts": [],
+   "observed_at": "2026-07-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:a25c98136ff61abe",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:94b0206386f0f4a9",
+   "text": "Price changes above 2 % need approval of the supplier's pricing committee, which meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260923-70630-M4",
+   "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks",
+   "parts": [],
+   "observed_at": "2026-09-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:94b0206386f0f4a9",
+    "verdict": "supported",
+    "reason": "Matches the meeting note and is kept as a supplier statement."
+   }
+  },
+  {
+   "id": "obs:3c24d860e6a0bf34",
+   "text": "Supplier stated standard items are not discounted; only multi-year volume agreements change prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260327-70630-M2",
+   "quote": "standard items are not discounted; only multi-year volume agreements change prices",
+   "parts": [],
+   "observed_at": "2026-03-27",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3c24d860e6a0bf34",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:9384bdd9d05f43bd",
+   "text": "Family-owned KG, founded 1966, 60 staff, turnover EUR 29.1 M.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"founded\": 1966, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 60, \"supplier_id\": \"sup:70630\", \"turnover_band\": \"25-50 M EUR\", \"turnover_eur\": 29100000",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:9384bdd9d05f43bd",
+    "verdict": "supported",
+    "reason": "Matches the intel record."
+   }
+  },
+  {
+   "id": "obs:a73a30c422ca86d3",
+   "text": "Delivery DAP with standard lead time of 7 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070630#5.1",
+   "quote": "Delivery DAP; standard lead time 7 days from order.",
+   "parts": [
+    "part:360013",
+    "part:360030"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a73a30c422ca86d3",
+    "verdict": "supported",
+    "reason": "Matches contract clause 5.1."
+   }
+  },
+  {
+   "id": "obs:1e9e5fa9779061dc",
+   "text": "Sales director said there is no room on price this year, citing a head-office freeze on price reductions until December 2027; open on payment terms and call-off flexibility.",
+   "kind": "supplier_statement",
+   "source": "doc:20260724-70630-M1",
+   "quote": "Their sales director said there is no room on price this year: head office has frozen all price reductions until December 2027. He was open on payment terms and call-off flexibility.",
+   "parts": [],
+   "observed_at": "2026-07-24",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1e9e5fa9779061dc",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:5dfe79ed49236b3b",
+   "text": "Key account manager said price changes above 2 % need pricing committee approval; committee meets every two weeks.",
+   "kind": "supplier_statement",
+   "source": "doc:20260923-70630-M4",
+   "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+   "parts": [],
+   "observed_at": "2026-09-23",
+   "valid_until": null,
+   "review": {
+    "id": "obs:5dfe79ed49236b3b",
+    "verdict": "supported",
+    "reason": "Matches the meeting note."
+   }
+  },
+  {
+   "id": "obs:30e84bfc80edbd76",
+   "text": "Rolling ppm rose from 125 (2025Q1 scorecard) to 293 in 2026Q2 scorecard with 21 QNs.",
+   "kind": "fact",
+   "source": "sc:70630@2026Q2",
+   "quote": "\"ppm\": 293, \"qn_count\": 21, \"quarter\": \"2026Q2\"",
+   "parts": [],
+   "observed_at": "2026-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:30e84bfc80edbd76",
+    "verdict": "supported",
+    "reason": "The 2025Q1 ppm was 125 and the 2026Q2 ppm was 293 with 21 QNs, per the scorecards."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Supplier's sales director said there is no room on price this year because head office froze all price reductions until December 2027; he was open on payment terms and call-off flexibility.",
+     "kind": "supplier_statement",
+     "source": "doc:20260724-70630-M1",
+     "quote": "Their sales director said there is no room on price this year: head office has frozen all price reductions until December 2027. He was open on payment terms and call-off flexibility.",
+     "parts": [],
+     "observed_at": "2026-07-24",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier states its price list applies to all customers without exception until December 2027 and offers to discuss logistics and payment conditions.",
+     "kind": "supplier_statement",
+     "source": "doc:20260706-70630-M3",
+     "quote": "Our price list applies to all customers without exception until December 2027. We are happy to discuss logistics and payment conditions.",
+     "parts": [],
+     "observed_at": "2026-07-06",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's key account manager said price changes above 2 % need approval of their pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260923-70630-M4",
+     "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-09-23",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier stated standard items are not discounted; only multi-year volume agreements change prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260327-70630-M2",
+     "quote": "Normteile Brucker KG stated that standard items are not discounted; only multi-year volume agreements change prices.",
+     "parts": [],
+     "observed_at": "2026-03-27",
+     "valid_until": null
+    },
+    {
+     "text": "Quote for part 360013 at EUR 29.23 per 100, 30 payment days, DAP, 7 days lead time; remark says discounts not possible this year (head-office directive).",
+     "kind": "fact",
+     "source": "quote:7300052",
+     "quote": "\"payment_days\": 30, \"price_unit\": 100, \"quote_date\": \"2026-09-04\", \"remarks\": \"Prices as per current list; discounts not possible this year (head-office directive).\", \"rfq_id\": null, \"supplier_id\": \"sup:70630\", \"tooling_eur\": 0, \"unit_price\": 29.23",
+     "parts": [
+      "part:360013"
+     ],
+     "observed_at": "2026-09-04",
+     "valid_until": null
+    },
+    {
+     "text": "Part 360013 price fell from EUR 33.35/100 (2023) to EUR 29.23/100 (2026), with renewal changes of -6.3 %, -2.8 % and -3.8 %.",
+     "kind": "fact",
+     "source": "evidence:part:360013:price_history",
+     "quote": "\"price\": 33.35, \"price_unit\": 100, \"supplier_id\": \"sup:70630\", \"valid_from\": \"2023-01-01\"... \"change_pct\": -6.3... \"change_pct\": -2.8... \"change_pct\": -3.8, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70630-360013\", \"price\": 29.23",
+     "parts": [
+      "part:360013"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "In the 2025-08-14 benchmark RFQ for part 360030 the supplier quoted EUR 12.80/1000 (8 days lead) but was not awarded; Leitner won at EUR 13.06.",
+     "kind": "fact",
+     "source": "evidence:part:360030:quotes",
+     "quote": "\"awarded\": 1, ... \"unit_price\": 13.06 ... \"awarded\": 0, ... \"lead_time_days\": 8, \"missing_fields\": \"\", \"name\": \"Normteile Brucker KG\", ... \"unit_price\": 12.8",
+     "parts": [
+      "part:360030"
+     ],
+     "observed_at": "2025-08-14",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is family-owned KG, 60 staff, turnover EUR 29.1 M, equity ratio 36.2 %, credit index 185 unchanged over 12 months.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 185, \"credit_index_12m_ago\": 185, \"equity_ratio_pct\": 36.2, \"filed_fy\": 2024, \"founded\": 1966, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 60, \"supplier_id\": \"sup:70630\", \"turnover_band\": \"25-50 M EUR\", \"turnover_eur\": 29100000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Supplier states its price list applies to all customers without exception until December 2027.",
+     "kind": "supplier_statement",
+     "source": "doc:20260706-70630-M3",
+     "quote": "Our price list applies to all customers without exception until December 2027.",
+     "parts": [],
+     "observed_at": "2026-07-06",
+     "valid_until": "2027-12-31"
+    },
+    {
+     "text": "Supplier says it is happy to discuss logistics and payment conditions.",
+     "kind": "supplier_statement",
+     "source": "doc:20260706-70630-M3",
+     "quote": "We are happy to discuss logistics and payment conditions.",
+     "parts": [],
+     "observed_at": "2026-07-06",
+     "valid_until": null
+    },
+    {
+     "text": "Sales director said head office has frozen all price reductions until December 2027.",
+     "kind": "supplier_statement",
+     "source": "doc:20260724-70630-M1",
+     "quote": "there is no room on price this year: head office has frozen all price reductions until December 2027",
+     "parts": [],
+     "observed_at": "2026-07-24",
+     "valid_until": "2027-12-31"
+    },
+    {
+     "text": "Sales director was open on payment terms and call-off flexibility.",
+     "kind": "supplier_statement",
+     "source": "doc:20260724-70630-M1",
+     "quote": "He was open on payment terms and call-off flexibility.",
+     "parts": [],
+     "observed_at": "2026-07-24",
+     "valid_until": null
+    },
+    {
+     "text": "Price changes above 2 % need approval of the supplier's pricing committee, which meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260923-70630-M4",
+     "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks",
+     "parts": [],
+     "observed_at": "2026-09-23",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier stated standard items are not discounted; only multi-year volume agreements change prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260327-70630-M2",
+     "quote": "standard items are not discounted; only multi-year volume agreements change prices",
+     "parts": [],
+     "observed_at": "2026-03-27",
+     "valid_until": null
+    },
+    {
+     "text": "Family-owned KG, founded 1966, 60 staff, turnover EUR 29.1 M.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"founded\": 1966, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 60, \"supplier_id\": \"sup:70630\", \"turnover_band\": \"25-50 M EUR\", \"turnover_eur\": 29100000",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Current master terms: 30 payment days, DAP, standard lead time 7 days.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"DAP\", \"name\": \"Normteile Brucker KG\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 7",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement valid 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070630#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:360013",
+      "part:360030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070630#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:360013",
+      "part:360030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment terms are 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070630#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:360013",
+      "part:360030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery DAP with standard lead time of 7 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070630#5.1",
+     "quote": "Delivery DAP; standard lead time 7 days from order.",
+     "parts": [
+      "part:360013",
+      "part:360030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Sales director said there is no room on price this year, citing a head-office freeze on price reductions until December 2027; open on payment terms and call-off flexibility.",
+     "kind": "supplier_statement",
+     "source": "doc:20260724-70630-M1",
+     "quote": "Their sales director said there is no room on price this year: head office has frozen all price reductions until December 2027. He was open on payment terms and call-off flexibility.",
+     "parts": [],
+     "observed_at": "2026-07-24",
+     "valid_until": null
+    },
+    {
+     "text": "Key account manager said price changes above 2 % need pricing committee approval; committee meets every two weeks.",
+     "kind": "supplier_statement",
+     "source": "doc:20260923-70630-M4",
+     "quote": "price changes above 2 % need the approval of their pricing committee, which meets every two weeks.",
+     "parts": [],
+     "observed_at": "2026-09-23",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier states its price list applies to all customers without exception until December 2027 and offers to discuss logistics and payment conditions.",
+     "kind": "supplier_statement",
+     "source": "doc:20260706-70630-M3",
+     "quote": "Our price list applies to all customers without exception until December 2027. We are happy to discuss logistics and payment conditions.",
+     "parts": [],
+     "observed_at": "2026-07-06",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier stated standard items are not discounted; only multi-year volume agreements change prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260327-70630-M2",
+     "quote": "Normteile Brucker KG stated that standard items are not discounted; only multi-year volume agreements change prices.",
+     "parts": [],
+     "observed_at": "2026-03-27",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Latest rolling scorecard (2025-10 to 2026-09): OTD 88.0% vs requested, 90.0% vs confirmed, ppm 257, score 92.7, class A green.",
+     "kind": "fact",
+     "source": "sc:70630@2026Q3",
+     "quote": "\"otd_confirmed_pct\": 90.0, \"otd_pct\": 88.0, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 257, \"qn_count\": 19, \"quarter\": \"2026Q3\", \"received_qty\": 613600, \"score\": 92.7",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Rolling ppm rose from 125 (2025Q1 scorecard) to 293 in 2026Q2 scorecard with 21 QNs.",
+     "kind": "fact",
+     "source": "sc:70630@2026Q2",
+     "quote": "\"ppm\": 293, \"qn_count\": 21, \"quarter\": \"2026Q2\"",
+     "parts": [],
+     "observed_at": "2026-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "Part 360030 from this supplier: 334 ppm last 12 months, 24 supplier-caused of 26 QNs.",
+     "kind": "fact",
+     "source": "evidence:part:360030:part_quality",
+     "quote": "\"complaint_qty\": 245, \"last_qn\": \"2026-06-04\", \"latest_qns\": [\"qn:20004941\", \"qn:20004926\", \"qn:20004905\"], \"ppm_last_12m\": 334, \"qns\": 26, \"received_last_12m\": 338600, \"recharged_eur\": 2700, \"supplier_caused\": 24, \"supplier_id\": \"sup:70630\"",
+     "parts": [
+      "part:360030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 360013: 164 ppm last 12 months, all 25 QNs supplier-caused.",
+     "kind": "fact",
+     "source": "evidence:part:360013:part_quality",
+     "quote": "\"ppm_last_12m\": 164, \"qns\": 25, \"received_last_12m\": 275000, \"recharged_eur\": 2550, \"supplier_caused\": 25",
+     "parts": [
+      "part:360013"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months part 360030 on-time vs requested was 84.0%, max 27 days late.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"avg_days_late_when_late\": 18.0, \"early_pct\": 8.0, \"late_pct\": 8.0, \"max_days_late\": 27, \"on_time_confirmed_pct\": 88.0, \"on_time_requested_pct\": 84.0, \"part_id\": \"part:360030\"",
+     "parts": [
+      "part:360030"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Open supplier-caused complaint: wrong material certificate on part 360013, QN 2026-09-09, 8D not closed.",
+     "kind": "fact",
+     "source": "qn:20005021",
+     "quote": "\"d8_date\": null, \"defect\": \"wrong material certificate\", \"gr_id\": \"gr:5000105468\", \"id\": \"qn:20005021\", \"part_id\": \"part:360013\", \"ppm\": 583, \"qn_date\": \"2026-09-09\"",
+     "parts": [
+      "part:360013"
+     ],
+     "observed_at": "2026-09-09",
+     "valid_until": null
+    },
+    {
+     "text": "Part 360013 price fell from 33.35 to 29.23 per 100 (-12.4%) since first order.",
+     "kind": "fact",
+     "source": "evidence:part:360013:orders",
+     "quote": "\"first_price\": 33.35, \"last_order\": \"2026-09-28\", \"latest\": [",
+     "parts": [
+      "part:360013"
+     ],
+     "observed_at": "2026-09-28",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is family-owned KG, 60 staff, turnover EUR 29.1 M, credit index 185 unchanged over 12 months, VDA 6.3 grade A.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 185, \"credit_index_12m_ago\": 185, \"equity_ratio_pct\": 36.2, \"filed_fy\": 2024, \"founded\": 1966, \"group_parent\": null, \"legal_form\": \"KG\", \"owner_type\": \"family\", \"staff\": 60, \"supplier_id\": \"sup:70630\", \"turnover_band\": \"25-50 M EUR\", \"turnover_eur\": 29100000, \"vda63_grade\": \"A\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [],
+ "validation": {
+  "dropped": [
+   {
+    "role": "economics",
+    "observation": {
+     "text": "Part 360013 price fell from EUR 33.35/100 (2023) to EUR 29.23/100 (2026), with renewal changes of -6.3 %, -2.8 % and -3.8 %.",
+     "kind": "fact",
+     "source": "evidence:part:360013:price_history",
+     "quote": "\"price\": 33.35, \"price_unit\": 100, \"supplier_id\": \"sup:70630\", \"valid_from\": \"2023-01-01\"... \"change_pct\": -6.3... \"change_pct\": -2.8... \"change_pct\": -3.8, \"currency\": \"EUR\", \"event_id\": \"EV-2026-70630-360013\", \"price\": 29.23",
+     "parts": [
+      "part:360013"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    "why": "excerpt missing from source"
+   },
+   {
+    "role": "economics",
+    "observation": {
+     "text": "In the 2025-08-14 benchmark RFQ for part 360030 the supplier quoted EUR 12.80/1000 (8 days lead) but was not awarded; Leitner won at EUR 13.06.",
+     "kind": "fact",
+     "source": "evidence:part:360030:quotes",
+     "quote": "\"awarded\": 1, ... \"unit_price\": 13.06 ... \"awarded\": 0, ... \"lead_time_days\": 8, \"missing_fields\": \"\", \"name\": \"Normteile Brucker KG\", ... \"unit_price\": 12.8",
+     "parts": [
+      "part:360030"
+     ],
+     "observed_at": "2025-08-14",
+     "valid_until": null
+    },
+    "why": "excerpt missing from source"
+   }
+  ]
+ }
+}

@@ -5,6 +5,13 @@ import time
 import pytest
 
 
+@pytest.fixture(autouse=True)
+def no_default_reply_network(monkeypatch):
+    """Legacy unit cases use the baseline; default-pipeline tests explicitly remove this override."""
+    monkeypatch.setenv("PROCUDEAL_REPLY_INTERPRETATION", "off")
+    monkeypatch.setenv("PROCUDEAL_DECISION_REVIEW", "off")
+
+
 class Clock:
     """A clock the tests move by hand, so the 60-second rule is testable without waiting."""
 

@@ -1,0 +1,821 @@
+{
+ "schema_version": 1,
+ "supplier_id": "sup:70260",
+ "name": "Mechanik Tauvelt GmbH",
+ "meta": {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "source_hash": "339ea0b51c301780dbfb33de6830f12a95ed22e10928dcbed9b4b9f2d9a3a08d",
+  "pipeline_hash": "a403b853477102fc24e16118743ed029093ca8ec4330025e977b511f8bf07495",
+  "built": "2026-10-25T06:19:09.647725+00:00",
+  "seconds": 34.7,
+  "errors": {}
+ },
+ "observations": [
+  {
+   "id": "obs:85956e2f1511bedf",
+   "text": "Supplier asks for invoice payment within 10 days, offering a cash discount in return (no percentage stated).",
+   "kind": "supplier_statement",
+   "source": "doc:20260913-70260-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-09-13",
+   "valid_until": null,
+   "review": {
+    "id": "obs:85956e2f1511bedf",
+    "verdict": "supported",
+    "reason": "Matches the supplier email of 2026-09-13; no discount percentage is stated."
+   }
+  },
+  {
+   "id": "obs:95db34d312d111cc",
+   "text": "Current terms: payment 30 days, FCA, standard lead time 35 days.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"incoterm\": \"FCA\", \"name\": \"Mechanik Tauvelt GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:95db34d312d111cc",
+    "verdict": "supported",
+    "reason": "Matches the master record: 30 days payment, FCA, 35-day standard lead time."
+   }
+  },
+  {
+   "id": "obs:0b626e5fe0aefd6f",
+   "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+   "kind": "fact",
+   "source": "ctr:4600070260#3.1",
+   "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+   "parts": [
+    "part:320012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:0b626e5fe0aefd6f",
+    "verdict": "supported",
+    "reason": "Matches contract clause 3.1."
+   }
+  },
+  {
+   "id": "obs:415019df0a5e45f2",
+   "text": "Framework agreement runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+   "kind": "fact",
+   "source": "ctr:4600070260#8.1",
+   "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+   "parts": [
+    "part:320012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:415019df0a5e45f2",
+    "verdict": "supported",
+    "reason": "Matches contract clause 8.1."
+   }
+  },
+  {
+   "id": "obs:44705f0f0a7d289f",
+   "text": "At the 2025-11-15 renewal the supplier asked +2.6 % and settled at -1.0 %.",
+   "kind": "fact",
+   "source": "EV-2026-70260-320012",
+   "quote": "\"asked_pct\": 2.6, \"date\": \"2025-11-15\", \"event_id\": \"EV-2026-70260-320012\", \"note\": \"\", \"part_id\": \"part:320012\", \"settled_pct\": -1.0",
+   "parts": [
+    "part:320012"
+   ],
+   "observed_at": "2025-11-15",
+   "valid_until": null,
+   "review": {
+    "id": "obs:44705f0f0a7d289f",
+    "verdict": "supported",
+    "reason": "Matches the negotiation event: asked +2.6%, settled -1.0% on 2025-11-15."
+   }
+  },
+  {
+   "id": "obs:ac3216805336d696",
+   "text": "Part 320012 price fell 5.3% from 111.85 to latest 105.87 EUR per piece.",
+   "kind": "fact",
+   "source": "evidence:part:320012:orders",
+   "quote": "\"first_price\": 111.85, \"last_order\": \"2026-09-30\", \"latest\"",
+   "parts": [
+    "part:320012"
+   ],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:ac3216805336d696",
+    "verdict": "supported",
+    "reason": "The orders record shows first price 111.85, latest price 105.87 and price change -5.3%."
+   }
+  },
+  {
+   "id": "obs:533b7a41b4827a94",
+   "text": "Owner offered to walk the buyer through their calculation (hourly rates and material) to help settle prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260212-70260-M1",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+   "parts": [],
+   "observed_at": "2026-02-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:533b7a41b4827a94",
+    "verdict": "supported",
+    "reason": "Matches the call note of 2026-02-12."
+   }
+  },
+  {
+   "id": "obs:60e00ffeddb7499c",
+   "text": "Owner recalled supplying at the old price for a quarter in 2022 and said he expects partnership in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260322-70260-M4",
+   "quote": "He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.",
+   "parts": [],
+   "observed_at": "2026-03-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:60e00ffeddb7499c",
+    "verdict": "supported",
+    "reason": "Matches the meeting note of 2026-03-22."
+   }
+  },
+  {
+   "id": "obs:3be65d6b4e81384d",
+   "text": "Sales director said they are reviewing small accounts and will focus on customers with volume.",
+   "kind": "supplier_statement",
+   "source": "doc:20260522-70260-M3",
+   "quote": "they are reviewing small accounts and will focus on customers with volume.",
+   "parts": [],
+   "observed_at": "2026-05-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3be65d6b4e81384d",
+    "verdict": "supported",
+    "reason": "Matches the meeting note of 2026-05-22."
+   }
+  },
+  {
+   "id": "obs:90088993b7cef450",
+   "text": "87% of invoices were paid late, average 4.4 days after due; 3 unpaid.",
+   "kind": "fact",
+   "source": "evidence:invoices",
+   "quote": "\"avg_days_paid_after_due\": 4.4, \"avg_days_paid_after_due_last_12m\": 4.1, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 72, \"max_days_late\": 14, \"paid_late_pct\": 87.0, \"paid_over_10_days_late_pct\": 1.4, \"short_paid_without_discount\": 0, \"unpaid\": 3",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:90088993b7cef450",
+    "verdict": "supported",
+    "reason": "Matches the invoice record: 87% paid late, average 4.4 days after due, 3 unpaid."
+   }
+  },
+  {
+   "id": "obs:2adabed6407a63cc",
+   "text": "Quality agreement: 95 % on-time delivery target, EUR 150 flat fee per supplier-caused complaint.",
+   "kind": "fact",
+   "source": "ctr:4600070260#6.1",
+   "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+   "parts": [
+    "part:320012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:2adabed6407a63cc",
+    "verdict": "supported",
+    "reason": "Matches contract clause 6.1."
+   }
+  },
+  {
+   "id": "obs:2591a26da3b41bbc",
+   "text": "OTD reached 100.0% in the rolling 12 months to 2025Q2.",
+   "kind": "fact",
+   "source": "sc:70260@2025Q2",
+   "quote": "\"otd_pct\": 100.0, \"period_end\": \"2025-06-30\"",
+   "parts": [],
+   "observed_at": "2025-06-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:2591a26da3b41bbc",
+    "verdict": "supported",
+    "reason": "Matches the 2025Q2 scorecard: OTD 100.0%."
+   }
+  },
+  {
+   "id": "obs:3b57f3bfb9e1c943",
+   "text": "OTD fell to 92.0% in the rolling 12 months to 2025Q4.",
+   "kind": "fact",
+   "source": "sc:70260@2025Q4",
+   "quote": "\"otd_pct\": 92.0, \"period_end\": \"2025-12-31\"",
+   "parts": [],
+   "observed_at": "2025-12-31",
+   "valid_until": null,
+   "review": {
+    "id": "obs:3b57f3bfb9e1c943",
+    "verdict": "supported",
+    "reason": "The 2025Q4 scorecard shows OTD 92.0%, down from 95.8% in 2025Q3."
+   }
+  },
+  {
+   "id": "obs:8b9ce975cb17988e",
+   "text": "Last 12 months for part 320012: 26 receipts, 7.7% late, average 9.0 days late when late, max 10 days.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"avg_days_late_when_late\": 9.0, \"early_pct\": 0.0, \"late_pct\": 7.7, \"max_days_late\": 10, \"on_time_confirmed_pct\": 92.3, \"on_time_requested_pct\": 92.3, \"part_id\": \"part:320012\", \"receipts\": 26",
+   "parts": [
+    "part:320012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:8b9ce975cb17988e",
+    "verdict": "supported",
+    "reason": "Matches the part-level delivery data for the last 12 months."
+   }
+  },
+  {
+   "id": "obs:89e048e24849f8c4",
+   "text": "Part 320012 had 0 ppm and no QNs over the last 12 months on 1354 received pieces.",
+   "kind": "fact",
+   "source": "evidence:part:320012:part_quality",
+   "quote": "\"latest_qns\": [], \"ppm_last_12m\": 0, \"qns\": 0, \"received_last_12m\": 1354",
+   "parts": [
+    "part:320012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:89e048e24849f8c4",
+    "verdict": "supported",
+    "reason": "Matches the part quality record: 0 ppm, no QNs, 1354 received."
+   }
+  },
+  {
+   "id": "obs:cc112f103a4915e7",
+   "text": "Equity ratio 38.8%; credit index 240, unchanged from 12 months ago.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 240, \"credit_index_12m_ago\": 240, \"equity_ratio_pct\": 38.8",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:cc112f103a4915e7",
+    "verdict": "supported",
+    "reason": "Matches the intel record: equity ratio 38.8%, credit index 240 now and 12 months ago."
+   }
+  }
+ ],
+ "hypotheses": [],
+ "verified_unselected": [
+  {
+   "id": "obs:c3e42b774f9a4e8f",
+   "text": "Owner cited supplying at old price for a quarter in 2022 and said he expects partnership in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260322-70260-M4",
+   "quote": "in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.",
+   "parts": [],
+   "observed_at": "2026-03-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:c3e42b774f9a4e8f",
+    "verdict": "supported",
+    "reason": "Matches the meeting note of 2026-03-22."
+   }
+  },
+  {
+   "id": "obs:e2572282da79b368",
+   "text": "Owner offered to walk buyer through their cost calculation (hourly rates and material) to help settle prices.",
+   "kind": "supplier_statement",
+   "source": "doc:20260212-70260-M1",
+   "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+   "parts": [],
+   "observed_at": "2026-02-12",
+   "valid_until": null,
+   "review": {
+    "id": "obs:e2572282da79b368",
+    "verdict": "supported",
+    "reason": "Matches the call note of 2026-02-12."
+   }
+  },
+  {
+   "id": "obs:1c1d52bc902c2a0b",
+   "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+   "kind": "supplier_statement",
+   "source": "doc:20260913-70260-M2",
+   "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+   "parts": [],
+   "observed_at": "2026-09-13",
+   "valid_until": null,
+   "review": {
+    "id": "obs:1c1d52bc902c2a0b",
+    "verdict": "supported",
+    "reason": "Matches the email of 2026-09-13."
+   }
+  },
+  {
+   "id": "obs:b36dbc477b0a5ac6",
+   "text": "Supplier is family-owned with 45 staff, turnover band 5-10 M EUR.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"owner_type\": \"family\", \"staff\": 45, \"supplier_id\": \"sup:70260\", \"turnover_band\": \"5-10 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:b36dbc477b0a5ac6",
+    "verdict": "supported",
+    "reason": "Matches the intel record: family-owned, 45 staff, turnover band 5-10 M EUR."
+   }
+  },
+  {
+   "id": "obs:f731adbe6da04070",
+   "text": "Contract payment term is 30 days net.",
+   "kind": "fact",
+   "source": "ctr:4600070260#4.1",
+   "quote": "Payment: 30 days net.",
+   "parts": [
+    "part:320012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:f731adbe6da04070",
+    "verdict": "supported",
+    "reason": "Matches contract clause 4.1."
+   }
+  },
+  {
+   "id": "obs:efe1d2968e92e28a",
+   "text": "Delivery FCA with standard lead time of 35 days from order.",
+   "kind": "fact",
+   "source": "ctr:4600070260#5.1",
+   "quote": "Delivery FCA; standard lead time 35 days from order.",
+   "parts": [
+    "part:320012"
+   ],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:efe1d2968e92e28a",
+    "verdict": "supported",
+    "reason": "Matches contract clause 5.1."
+   }
+  },
+  {
+   "id": "obs:cc0088671c9d141a",
+   "text": "Supplier's sales director said they are reviewing small accounts and will focus on customers with volume.",
+   "kind": "supplier_statement",
+   "source": "doc:20260522-70260-M3",
+   "quote": "said they are reviewing small accounts and will focus on customers with volume.",
+   "parts": [],
+   "observed_at": "2026-05-22",
+   "valid_until": null,
+   "review": {
+    "id": "obs:cc0088671c9d141a",
+    "verdict": "supported",
+    "reason": "Matches the meeting note of 2026-05-22."
+   }
+  },
+  {
+   "id": "obs:28a6b78cdea710a7",
+   "text": "Over all 72 receipts, 5.6% late with a maximum of 27 days late.",
+   "kind": "fact",
+   "source": "evidence:deliveries",
+   "quote": "\"late_pct\": 5.6, \"max_days_late\": 27, \"on_time_confirmed_pct\": 94.4, \"on_time_requested_pct\": 94.4, \"receipts\": 72",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:28a6b78cdea710a7",
+    "verdict": "supported",
+    "reason": "Matches the all-time delivery data: 72 receipts, 5.6% late, max 27 days."
+   }
+  }
+ ],
+ "specialists": {
+  "economics": {
+   "observations": [
+    {
+     "text": "Part 320012 price history: EUR 111.85 (2023), 107.34 (2024, -4.0%), 106.98 (2025, -0.3%), 105.87 from 2026-01-01 (-1.0%).",
+     "kind": "fact",
+     "source": "evidence:part:320012:price_history",
+     "quote": "\"price\": 105.87, \"price_unit\": 1, \"supplier_id\": \"sup:70260\", \"valid_from\": \"2026-01-01\"",
+     "parts": [
+      "320012"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier asks for invoice payment within 10 days, offering a cash discount in return (no percentage stated).",
+     "kind": "supplier_statement",
+     "source": "doc:20260913-70260-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-09-13",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier master payment terms are 30 days, with no skonto recorded; buyer standard is 60 days net.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Owner offered to walk the buyer through their calculation (hourly rates and material) to help settle prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260212-70260-M1",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+     "parts": [],
+     "observed_at": "2026-02-12",
+     "valid_until": null
+    },
+    {
+     "text": "Owner cited supplying at old price for a quarter in 2022 and said he expects partnership in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260322-70260-M4",
+     "quote": "in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.",
+     "parts": [],
+     "observed_at": "2026-03-22",
+     "valid_until": null
+    },
+    {
+     "text": "Sales director said they are reviewing small accounts and will focus on customers with volume.",
+     "kind": "supplier_statement",
+     "source": "doc:20260522-70260-M3",
+     "quote": "they are reviewing small accounts and will focus on customers with volume.",
+     "parts": [],
+     "observed_at": "2026-05-22",
+     "valid_until": null
+    },
+    {
+     "text": "Category team estimate: cold-drawn bar producer prices (weight 0.2 for part 320012) rose 12.3% over 12 months to 2026-08.",
+     "kind": "fact",
+     "source": "evidence:part:320012:drivers",
+     "quote": "\"change_12m_pct\": 12.3, \"change_from_low_pct\": 12.6, \"change_from_peak_pct\": -2.3, \"change_from_top_pct\": -7.5, \"estimate\": \"category team estimate 2026-06\"",
+     "parts": [
+      "320012"
+     ],
+     "observed_at": "2026-08",
+     "valid_until": null
+    },
+    {
+     "text": "Family-owned AT supplier, 45 staff, turnover band EUR 5-10 M, equity ratio 38.8%, credit index 240 unchanged over 12 months.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 240, \"credit_index_12m_ago\": 240, \"equity_ratio_pct\": 38.8, \"filed_fy\": 2024, \"founded\": 1979, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 45, \"supplier_id\": \"sup:70260\", \"turnover_band\": \"5-10 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "persona": {
+   "observations": [
+    {
+     "text": "Owner offered to walk buyer through their cost calculation (hourly rates and material) to help settle prices.",
+     "kind": "supplier_statement",
+     "source": "doc:20260212-70260-M1",
+     "quote": "he offered to walk us through their calculation (hourly rates and material) if that helps to settle prices.",
+     "parts": [],
+     "observed_at": "2026-02-12",
+     "valid_until": null
+    },
+    {
+     "text": "Owner recalled supplying at the old price for a quarter in 2022 and said he expects partnership in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260322-70260-M4",
+     "quote": "He reminded us that in 2022 they kept supplying at the old price for a quarter and said he expects partnership in return.",
+     "parts": [],
+     "observed_at": "2026-03-22",
+     "valid_until": null
+    },
+    {
+     "text": "Sales director said they are reviewing small accounts and will focus on customers with volume.",
+     "kind": "supplier_statement",
+     "source": "doc:20260522-70260-M3",
+     "quote": "they are reviewing small accounts and will focus on customers with volume.",
+     "parts": [],
+     "observed_at": "2026-05-22",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260913-70260-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-09-13",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is family-owned with 45 staff, turnover band 5-10 M EUR.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"owner_type\": \"family\", \"staff\": 45, \"supplier_id\": \"sup:70260\", \"turnover_band\": \"5-10 M EUR\"",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Equity ratio 38.8%; credit index 240, unchanged from 12 months ago.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"credit_index\": 240, \"credit_index_12m_ago\": 240, \"equity_ratio_pct\": 38.8",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "87% of invoices were paid late, average 4.4 days after due; 3 unpaid.",
+     "kind": "fact",
+     "source": "evidence:invoices",
+     "quote": "\"avg_days_paid_after_due\": 4.4, \"avg_days_paid_after_due_last_12m\": 4.1, \"discount_taken\": 0, \"discount_taken_after_period\": 0, \"invoices\": 72, \"max_days_late\": 14, \"paid_late_pct\": 87.0, \"paid_over_10_days_late_pct\": 1.4, \"short_paid_without_discount\": 0, \"unpaid\": 3",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Current terms: payment 30 days, FCA, standard lead time 35 days.",
+     "kind": "fact",
+     "source": "evidence:master",
+     "quote": "\"incoterm\": \"FCA\", \"name\": \"Mechanik Tauvelt GmbH\", \"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null, \"standard_lead_time_days\": 35",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  },
+  "contract": {
+   "observations": [
+    {
+     "text": "Framework agreement runs 2025-07-01 to 2027-06-30 and extends by 12 months unless terminated with 90 days' notice.",
+     "kind": "fact",
+     "source": "ctr:4600070260#8.1",
+     "quote": "Valid from 2025-07-01 to 2027-06-30; extends by 12 months unless terminated with 90 days' notice.",
+     "parts": [
+      "part:320012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Prices are fixed per calendar year; changes require written notice at least 90 days before year end.",
+     "kind": "fact",
+     "source": "ctr:4600070260#3.1",
+     "quote": "Prices as per the price annex, fixed for each calendar year. Changes require written notice of at least 90 days before the end of the calendar year.",
+     "parts": [
+      "part:320012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Contract payment term is 30 days net.",
+     "kind": "fact",
+     "source": "ctr:4600070260#4.1",
+     "quote": "Payment: 30 days net.",
+     "parts": [
+      "part:320012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Delivery FCA with standard lead time of 35 days from order.",
+     "kind": "fact",
+     "source": "ctr:4600070260#5.1",
+     "quote": "Delivery FCA; standard lead time 35 days from order.",
+     "parts": [
+      "part:320012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Quality agreement: 95 % on-time delivery target, EUR 150 flat fee per supplier-caused complaint.",
+     "kind": "fact",
+     "source": "ctr:4600070260#6.1",
+     "quote": "on-time delivery target 95 %, flat fee of EUR 150 per supplier-caused complaint.",
+     "parts": [
+      "part:320012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Supplier requested payment within 10 days, offering a cash discount in return.",
+     "kind": "supplier_statement",
+     "source": "doc:20260913-70260-M2",
+     "quote": "Could you pay our invoices within 10 days? In return we would grant a cash discount.",
+     "parts": [],
+     "observed_at": "2026-09-13",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier's sales director said they are reviewing small accounts and will focus on customers with volume.",
+     "kind": "supplier_statement",
+     "source": "doc:20260522-70260-M3",
+     "quote": "said they are reviewing small accounts and will focus on customers with volume.",
+     "parts": [],
+     "observed_at": "2026-05-22",
+     "valid_until": null
+    },
+    {
+     "text": "At the 2025-11-15 renewal the supplier asked +2.6 % and settled at -1.0 %.",
+     "kind": "fact",
+     "source": "EV-2026-70260-320012",
+     "quote": "\"asked_pct\": 2.6, \"date\": \"2025-11-15\", \"event_id\": \"EV-2026-70260-320012\", \"note\": \"\", \"part_id\": \"part:320012\", \"settled_pct\": -1.0",
+     "parts": [
+      "part:320012"
+     ],
+     "observed_at": "2025-11-15",
+     "valid_until": null
+    }
+   ]
+  },
+  "performance": {
+   "observations": [
+    {
+     "text": "Rolling 12-month OTD for the scorecard to 2026Q3 is 92.3%, below the 95% quality-agreement target; score 96.2, class A green.",
+     "kind": "fact",
+     "source": "sc:70260@2026Q3",
+     "quote": "\"otd_pct\": 92.3, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 0, \"qn_count\": 0, \"quarter\": \"2026Q3\", \"received_qty\": 1354, \"score\": 96.2",
+     "parts": [],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "OTD reached 100.0% in the rolling 12 months to 2025Q2.",
+     "kind": "fact",
+     "source": "sc:70260@2025Q2",
+     "quote": "\"otd_pct\": 100.0, \"period_end\": \"2025-06-30\"",
+     "parts": [],
+     "observed_at": "2025-06-30",
+     "valid_until": null
+    },
+    {
+     "text": "OTD fell to 92.0% in the rolling 12 months to 2025Q4.",
+     "kind": "fact",
+     "source": "sc:70260@2025Q4",
+     "quote": "\"otd_pct\": 92.0, \"period_end\": \"2025-12-31\"",
+     "parts": [],
+     "observed_at": "2025-12-31",
+     "valid_until": null
+    },
+    {
+     "text": "Last 12 months for part 320012: 26 receipts, 7.7% late, average 9.0 days late when late, max 10 days.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"avg_days_late_when_late\": 9.0, \"early_pct\": 0.0, \"late_pct\": 7.7, \"max_days_late\": 10, \"on_time_confirmed_pct\": 92.3, \"on_time_requested_pct\": 92.3, \"part_id\": \"part:320012\", \"receipts\": 26",
+     "parts": [
+      "part:320012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Over all 72 receipts, 5.6% late with a maximum of 27 days late.",
+     "kind": "fact",
+     "source": "evidence:deliveries",
+     "quote": "\"late_pct\": 5.6, \"max_days_late\": 27, \"on_time_confirmed_pct\": 94.4, \"on_time_requested_pct\": 94.4, \"receipts\": 72",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 320012 had 0 ppm and no QNs over the last 12 months on 1354 received pieces.",
+     "kind": "fact",
+     "source": "evidence:part:320012:part_quality",
+     "quote": "\"latest_qns\": [], \"ppm_last_12m\": 0, \"qns\": 0, \"received_last_12m\": 1354",
+     "parts": [
+      "part:320012"
+     ],
+     "observed_at": null,
+     "valid_until": null
+    },
+    {
+     "text": "Part 320012 price fell 5.3% from 111.85 to latest 105.87 EUR per piece.",
+     "kind": "fact",
+     "source": "evidence:part:320012:orders",
+     "quote": "\"first_price\": 111.85, \"last_order\": \"2026-09-30\", \"latest\"",
+     "parts": [
+      "part:320012"
+     ],
+     "observed_at": "2026-09-30",
+     "valid_until": null
+    },
+    {
+     "text": "Supplier is a 45-staff family-owned AT GmbH, ISO 9001, VDA 6.3 grade B, credit index 240 unchanged over 12 months.",
+     "kind": "fact",
+     "source": "evidence:intel",
+     "quote": "\"certifications\": \"ISO 9001\", \"credit_index\": 240, \"credit_index_12m_ago\": 240, \"equity_ratio_pct\": 38.8, \"filed_fy\": 2024, \"founded\": 1979, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 45",
+     "parts": [],
+     "observed_at": null,
+     "valid_until": null
+    }
+   ]
+  }
+ },
+ "rejected": [
+  {
+   "id": "obs:5caa1d23a3fb817a",
+   "text": "Supplier master payment terms are 30 days, with no skonto recorded; buyer standard is 60 days net.",
+   "kind": "fact",
+   "source": "evidence:master",
+   "quote": "\"payment_days\": 30, \"skonto_days\": null, \"skonto_pct\": null",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:5caa1d23a3fb817a",
+    "verdict": "reject",
+    "reason": "The 60-day buyer standard is not in the cited master record; it comes from the company policy, not the cited source."
+   }
+  },
+  {
+   "id": "obs:a61c310c45dca63b",
+   "text": "Family-owned AT supplier, 45 staff, turnover band EUR 5-10 M, equity ratio 38.8%, credit index 240 unchanged over 12 months.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"credit_index\": 240, \"credit_index_12m_ago\": 240, \"equity_ratio_pct\": 38.8, \"filed_fy\": 2024, \"founded\": 1979, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 45, \"supplier_id\": \"sup:70260\", \"turnover_band\": \"5-10 M EUR\"",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:a61c310c45dca63b",
+    "verdict": "reject",
+    "reason": "Country AT is not in the cited intel record; that field is in the master record, which is not cited."
+   }
+  },
+  {
+   "id": "obs:578e7a4e8874c268",
+   "text": "Rolling 12-month OTD for the scorecard to 2026Q3 is 92.3%, below the 95% quality-agreement target; score 96.2, class A green.",
+   "kind": "fact",
+   "source": "sc:70260@2026Q3",
+   "quote": "\"otd_pct\": 92.3, \"period_end\": \"2026-09-30\", \"period_start\": \"2025-10-01\", \"ppm\": 0, \"qn_count\": 0, \"quarter\": \"2026Q3\", \"received_qty\": 1354, \"score\": 96.2",
+   "parts": [],
+   "observed_at": "2026-09-30",
+   "valid_until": null,
+   "review": {
+    "id": "obs:578e7a4e8874c268",
+    "verdict": "reject",
+    "reason": "The 95% target comparison is not in the cited scorecard; it comes from the contract, which is not cited."
+   }
+  },
+  {
+   "id": "obs:d3462e0ac6495360",
+   "text": "Supplier is a 45-staff family-owned AT GmbH, ISO 9001, VDA 6.3 grade B, credit index 240 unchanged over 12 months.",
+   "kind": "fact",
+   "source": "evidence:intel",
+   "quote": "\"certifications\": \"ISO 9001\", \"credit_index\": 240, \"credit_index_12m_ago\": 240, \"equity_ratio_pct\": 38.8, \"filed_fy\": 2024, \"founded\": 1979, \"group_parent\": null, \"legal_form\": \"GmbH\", \"owner_type\": \"family\", \"staff\": 45",
+   "parts": [],
+   "observed_at": null,
+   "valid_until": null,
+   "review": {
+    "id": "obs:d3462e0ac6495360",
+    "verdict": "reject",
+    "reason": "Country AT is not in the cited intel record."
+   }
+  }
+ ],
+ "validation": {
+  "dropped": [
+   {
+    "role": "economics",
+    "observation": {
+     "text": "Part 320012 price history: EUR 111.85 (2023), 107.34 (2024, -4.0%), 106.98 (2025, -0.3%), 105.87 from 2026-01-01 (-1.0%).",
+     "kind": "fact",
+     "source": "evidence:part:320012:price_history",
+     "quote": "\"price\": 105.87, \"price_unit\": 1, \"supplier_id\": \"sup:70260\", \"valid_from\": \"2026-01-01\"",
+     "parts": [
+      "320012"
+     ],
+     "observed_at": "2026-01-01",
+     "valid_until": null
+    },
+    "why": "unknown part"
+   },
+   {
+    "role": "economics",
+    "observation": {
+     "text": "Category team estimate: cold-drawn bar producer prices (weight 0.2 for part 320012) rose 12.3% over 12 months to 2026-08.",
+     "kind": "fact",
+     "source": "evidence:part:320012:drivers",
+     "quote": "\"change_12m_pct\": 12.3, \"change_from_low_pct\": 12.6, \"change_from_peak_pct\": -2.3, \"change_from_top_pct\": -7.5, \"estimate\": \"category team estimate 2026-06\"",
+     "parts": [
+      "320012"
+     ],
+     "observed_at": "2026-08",
+     "valid_until": null
+    },
+    "why": "unknown part"
+   }
+  ]
+ }
+}
