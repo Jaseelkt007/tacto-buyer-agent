@@ -18,6 +18,12 @@ export const reviewExamples: { id: ReviewExampleId; label: string }[] = [
   { id: "unsupported", label: "Unsupported" },
 ];
 
+export const reviewOutcomes = [
+  { label: "NO ISSUE", description: "No supported issue found in the proposed action." },
+  { label: "RECONSIDER", description: "A supported finding deserves another policy check." },
+  { label: "UNAVAILABLE", description: "No usable review result; the policy action remains in place." },
+];
+
 type ReviewFinding =
   | { kind: "finding"; title: string; detail: string }
   | { kind: "no-issue"; title: string; detail: string }

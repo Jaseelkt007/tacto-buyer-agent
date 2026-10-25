@@ -170,22 +170,28 @@ export function EngineConnections({
         const from = layout.nodes.get(connection.from);
         const to = layout.nodes.get(connection.to);
         if (!from || !to) return null;
+        const id = `${connection.from}-${connection.to}`;
+        const highlighted = ["policy-writer", "writer-reviewer", "reviewer-supplier"].includes(id);
         return (
           <path
-            key={`${connection.from}-${connection.to}`}
-            data-connection={`${connection.from}-${connection.to}`}
+            key={id}
+            data-connection={id}
             data-kind={connection.kind}
+            data-highlighted={highlighted ? "true" : undefined}
             d={pathFor(from, to, connection)}
             fill="none"
             stroke={
-              connection.kind !== "policy"
+              highlighted
+                ? "var(--accent)"
+                : connection.kind !== "policy"
                 ? "var(--accent-ink)"
                 : active === connection.to
                   ? "var(--accent)"
                   : "#b5bdc5"
             }
-            strokeDasharray={connection.kind !== "policy" ? "4 4" : undefined}
-            strokeWidth={connection.kind === "feedback" || active === connection.to ? 1.5 : 1.15}
+            strokeDasharray={connection.kind === "feedback" ? "4 4" : undefined}
+            strokeOpacity={connection.kind === "feedback" ? 0.65 : 1}
+            strokeWidth={highlighted ? 2.5 : active === connection.to ? 1.5 : 1.15}
             strokeLinejoin="round"
             strokeLinecap="round"
             markerEnd={`url(#${markerId})`}

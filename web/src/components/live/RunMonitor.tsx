@@ -74,9 +74,9 @@ const STAGES: Record<
     icon: <SendIcon />,
   },
   supplier: {
-    title: "Supplier reply",
-    text: "Send the reviewed email. Receive the next offer.",
-    tag: "EMAIL FEEDBACK",
+    title: "Send to supplier",
+    text: "Dispatch the reviewed email. Receive the supplier’s reply.",
+    tag: "SEND & RECEIVE",
     icon: <InboxIcon />,
   },
   outcome: {
@@ -742,6 +742,12 @@ export function RunMonitor({
                   </small>
                   <code>v1.9 + advisory LLMs</code>
                 </div>
+                <p className="monitor-dispatch-path" aria-label="Reviewed email delivery path">
+                  <span>Decision policy</span><i aria-hidden="true">→</i>
+                  <span>Email writer</span><i aria-hidden="true">→</i>
+                  <strong>LLM decision review</strong><i aria-hidden="true">→</i>
+                  <span>Send to supplier</span>
+                </p>
                 <div className="monitor-deal-flow" ref={lanes}>
                   <EngineConnections
                     containerRef={lanes}

@@ -5,6 +5,7 @@ import {
   reviewerNode,
   reviewExamples,
   reviewFinding,
+  reviewOutcomes,
   type ReviewExample,
   type ReviewExampleId,
 } from "@/lib/reviewer";
@@ -36,6 +37,11 @@ export function ReviewNode({
         <span className="monitor-node-description">
           {reviewerNode.description}
         </span>
+        <span className="monitor-review-outcomes" aria-label="Possible review outcomes">
+          {reviewOutcomes.map((outcome) => (
+            <span key={outcome.label} title={outcome.description}>{outcome.label}</span>
+          ))}
+        </span>
       </button>
   );
 }
@@ -65,6 +71,14 @@ export function ReviewInspector() {
         Saved decisions, checked against earlier public exchanges. Buyer actions
         stay unchanged.
       </p>
+      <dl className="monitor-review-outcome-guide">
+        {reviewOutcomes.map((outcome) => (
+          <div key={outcome.label}>
+            <dt>{outcome.label}</dt>
+            <dd>{outcome.description}</dd>
+          </div>
+        ))}
+      </dl>
       <div
         className="monitor-review-examples"
         aria-label="Saved reviewer examples"
