@@ -27,7 +27,7 @@ export default function Intro() {
           <div className="intro-message">
             <p className="intro-eyebrow"><span /> AUTONOMOUS PROCUREMENT</p>
             <h1 id="intro-title">Every Move,<br /><span>A Reason.</span></h1>
-            <p className="intro-description">ProcuDeal helps manufacturers cut procurement costs through autonomous, evidence-backed negotiations with transparent, explainable decisions.</p>
+            <p className="intro-description">ProcuDeal helps manufacturers <strong>cut procurement costs</strong> through <strong>autonomous, evidence-backed negotiations</strong> with transparent, explainable decisions.</p>
             <div className="intro-actions">
               <Link href="/" className="intro-primary">See our results <span aria-hidden="true">↗</span></Link>
               <Link href="/demo" className="intro-secondary">Start the demo <span aria-hidden="true">→</span></Link>
