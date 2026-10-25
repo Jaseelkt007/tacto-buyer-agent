@@ -50,6 +50,7 @@ FEATURES = {
     "quote_cap": False,  # v1.8: the opening quote caps the full cost; later prices do not
     "measured_rate": False,  # v1.8: its cost of money from its own sheets that differ only in payment days
     "health_refresh": False,  # v1.8: health price and ceiling recomputed whenever the estimate changes
+    "stated_limit": True,  # N: a limit it states in an open reply is ready like a final offer (P02: it walked)
 }
 
 
@@ -813,6 +814,8 @@ class Negotiator:
             return False if below_health else "agreed"  # below its health price: counter at that price
         if not side.ours or not side.theirs:
             return False
+        if on("stated_limit") and "limit" in side.last.traits and not below_health:
+            return "it states its limit"  # pushed past a stated limit it walks (P02); the accept check still runs
         # proactive_clause: its price on our mix counts the clause's protection; a sheet without our
         # clause is only comparable once it says agreed or final
         if side.driver and not _has_clause(standing(events)[1], side.driver.series):

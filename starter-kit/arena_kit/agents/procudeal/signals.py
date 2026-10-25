@@ -28,6 +28,12 @@ TRAITS = {
     # "We need to clarify this internally - we will come back to you on price" (v1.7; not "we have clarified")
     "clarify": r"need to clarify (?:this |that )?internally|will come back to you on (?:the )?price"
     r"|check (?:this |that )?internally",
+    # A limit it states in an open reply: "this represents our limit", "we have reached our absolute limit",
+    # "we really cannot go below €45.50", "€46.00 is the best we can do", "the absolute bottom line".
+    # In 142 recorded runs it never went lower after these; "reaching the limit of our flexibility" and
+    # "costs that limit …" are not limits (it did go lower) and do not match.
+    "limit": r"(?:represents|reached|is) (?:our|the) (?:absolute )?limit|our absolute limit"
+    r"|(?:cannot|can't|can not) go (?:any )?(?:below|lower)|the best we can do|bottom line",
 }
 # The cost driver an opening quote asserts: "CU-NOTATION rose 47.7 % in twelve months and is 20 % of our cost."
 DRIVER = re.compile(r"(\S+) rose ([\d.]+) ?% in twelve months and is (\d+) ?% of our cost")
